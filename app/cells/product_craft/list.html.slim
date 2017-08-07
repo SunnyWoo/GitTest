@@ -1,0 +1,21 @@
+#craft.tab-pane
+  .widget-box.widget-color-blue.ui-sortable-handle
+    .widget-header.header-color-blue
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th = t('product_codes.code')
+              th = t('product_codes.description')
+              th = t('product_codes.category_names')
+              th = t('product_codes.product_model_count')
+              th
+          tbody
+            - @product_crafts.each do |craft|
+              tr
+                td= craft.code
+                td= craft.description
+                td= craft.products.map { |product| product.category.try(:name) }.uniq
+                td= craft.products.count
+                td= link_to '修改', edit_admin_product_code_path(craft, code_type: 'craft'), class: 'btn btn-primary btn-mini', remote: true

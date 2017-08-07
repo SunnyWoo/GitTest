@@ -1,0 +1,11 @@
+- order = activity.trackable
+- payment_method = activity.extra_info[:payment_method]
+- payment_price = activity.extra_info[:payment_price]
+- payment_id = activity.extra_info[:payment_id]
+- order_price = activity.extra_info[:order_price]
+- translated_payment_method = t("activerecord.attributes.order.payment_#{payment_method}")
+div 訂單 #{link_to_admin_order order } 使用 #{translated_payment_method} #{logcraft_keyword('付款有誤', 'red') }
+div = "錯誤訊息: " + activity.message
+div = "付款ID:   #{payment_id}" if payment_id.present?
+div = "付款金額:  #{payment_price}"
+div = "訂單金額:  #{order_price}"

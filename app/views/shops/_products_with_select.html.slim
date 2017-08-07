@@ -1,0 +1,37 @@
+.cmdp_container.shop-content
+  .grid_2.filters
+    .filter-block
+      .horizontal
+        .sub-title = edit_translator('page.text.sort')
+        .content
+          .dropdown.dropdown-small#sort_products
+            button#sort_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+              span.val
+                | New
+              span.caret
+            ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'New', url_for(params.merge(sort: 'new'))
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'Random', url_for(params.merge(sort: 'random'))
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'Popular', url_for(params.merge(sort: 'popular'))
+
+  = render 'shops/select_model', model: @model
+
+    .margin-top-fixed
+
+  .products
+    - if @works.length > 0
+      = render partial: 'editor/shared/work', collection: @works
+    - else
+      .empty-result
+        = edit_translator('page.text.no_product_found')
+
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(@works, inner_window: 1)
+    .margin-top-fixed

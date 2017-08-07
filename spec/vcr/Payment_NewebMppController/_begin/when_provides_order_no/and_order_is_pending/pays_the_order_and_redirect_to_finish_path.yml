@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://collector.newrelic.com/agent_listener/12//get_redirect_host?marshal_format=json
+    body:
+      encoding: UTF-8
+      string: "[]"
+    headers:
+      content-encoding:
+      - identity
+      host:
+      - collector.newrelic.com
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - NewRelic-RubyAgent/3.9.0.229 (ruby 2.2.1 x86_64-darwin14) zlib/1.2.8
+      content-type:
+      - application/octet-stream
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - text/plain
+      content-length:
+      - '133'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"exception":{"message":"Invalid license key, please contact support@newrelic.com","error_type":"NewRelic::Agent::LicenseException"}}'
+    http_version: '1.1'
+  recorded_at: Fri, 08 May 2015 09:11:02 GMT
+recorded_with: VCR 2.9.2

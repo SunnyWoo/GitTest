@@ -1,0 +1,13 @@
+.tags-item {
+  display: inline-block;
+  padding: 5px;
+  margin: 1px;
+}
+
+// 做 tagcloud 用
+@for $i from 1 through 10 {
+  .tags-item-#{$i} {
+    background-color: hsl(0, 80, 50 + $i * 3);
+    font-size: #{1.9 - 0.1 * $i}em;
+  }
+}

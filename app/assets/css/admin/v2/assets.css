@@ -1,0 +1,15 @@
+/* line 1, ../../../stylesheets/admin/v2/assets.scss */
+.assets-preview-container {
+  width: 320px; }
+  /* line 4, ../../../stylesheets/admin/v2/assets.scss */
+  .assets-preview-container .assets-image {
+    max-width: 100%; }
+
+/* line 9, ../../../stylesheets/admin/v2/assets.scss */
+.assets-image {
+  max-width: 100px; }
+
+/* line 13, ../../../stylesheets/admin/v2/assets.scss */
+.assets-sort {
+  float: right;
+  width: auto; }

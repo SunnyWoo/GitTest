@@ -1,0 +1,11 @@
+- menu = %w(download) if Region.china?
+= render 'store/shared/header', menu: menu, download_path: download_store_work_path(@store, @work)
+= render 'store/shared/work_info', work: @work, store: @store
+/ = render 'store/shared/side_menu', menu: menu, download_path: download_store_work_path(@store, @work)
+
+.checkoutFooter.fob
+  a.checkoutFooter-cart [title=t('store.preview.cart') number=@cart.item_sum data-checkout-footer-cart href=store_cart_path(@store)]
+  = link_to t('store.sidebar_menu.share'), share_store_work_path(@store, @work), class: 'checkoutFooter-option'
+  .checkoutFooter-option.checkoutFooter-option--highlight[data-checkout-footer-add-item data-remove-after-add-item-success]
+    =t('store.preview.footer.cart')
+  = link_to t('store.share.back_index'), store_path(@store), class: 'checkoutFooter-option checkoutFooter-option--primary dn', data: { 'display-after-add-item-success': true }

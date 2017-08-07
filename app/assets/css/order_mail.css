@@ -1,0 +1,278 @@
+/* line 1, ../stylesheets/order_mail.scss */
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* line 21, ../stylesheets/order_mail.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px; }
+
+/* line 27, ../stylesheets/order_mail.scss */
+a {
+  color: #4fbd92; }
+
+/* line 30, ../stylesheets/order_mail.scss */
+.commandp_green {
+  color: #4fbd92; }
+
+/* clearfix */
+/* line 34, ../stylesheets/order_mail.scss */
+.clearfix {
+  zoom: 1; }
+
+/* line 35, ../stylesheets/order_mail.scss */
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0; }
+
+/* line 37, ../stylesheets/order_mail.scss */
+.cannot-read {
+  line-height: 70px;
+  height: 70px;
+  color: #455054;
+  background-color: #ececec; }
+
+/* line 44, ../stylesheets/order_mail.scss */
+#outside > tr > td {
+  background-color: #ececec; }
+
+/* line 49, ../stylesheets/order_mail.scss */
+#container td {
+  background-color: #FFF; }
+
+/* line 53, ../stylesheets/order_mail.scss */
+#header {
+  background-color: #fff;
+  padding: 15px 0 13px 40px; }
+
+/* line 57, ../stylesheets/order_mail.scss */
+#header2 {
+  background-color: #4fbd92;
+  padding: 15px 0 13px 40px; }
+
+/* line 61, ../stylesheets/order_mail.scss */
+.highlight {
+  color: #0072bc;
+  font-weight: bold; }
+
+/* line 65, ../stylesheets/order_mail.scss */
+.paragraph1 {
+  margin-bottom: 70px; }
+
+/* line 68, ../stylesheets/order_mail.scss */
+.c-margin {
+  margin-left: 35px;
+  margin-right: 35px; }
+
+/* line 72, ../stylesheets/order_mail.scss */
+.custom-margin1 {
+  margin-bottom: 16px; }
+
+/* line 75, ../stylesheets/order_mail.scss */
+#body {
+  font-size: 15px; }
+  /* line 77, ../stylesheets/order_mail.scss */
+  #body p {
+    color: #333333;
+    margin-bottom: 26px;
+    line-height: 24px; }
+  /* line 82, ../stylesheets/order_mail.scss */
+  #body ol {
+    padding-left: 20px;
+    margin-bottom: 26px; }
+    /* line 85, ../stylesheets/order_mail.scss */
+    #body ol li {
+      line-height: 24px; }
+  /* line 89, ../stylesheets/order_mail.scss */
+  #body .link {
+    width: 100%;
+    margin-bottom: 26px; }
+  /* line 93, ../stylesheets/order_mail.scss */
+  #body .center {
+    text-align: center; }
+  /* line 96, ../stylesheets/order_mail.scss */
+  #body .title {
+    width: 530px;
+    color: #4fbd92;
+    font-size: 55px;
+    font-style: italic;
+    font-family: Helvetica, sans-serif;
+    text-align: center; }
+  /* line 104, ../stylesheets/order_mail.scss */
+  #body .cover-img {
+    text-align: center;
+    padding: 10px 0; }
+    /* line 107, ../stylesheets/order_mail.scss */
+    #body .cover-img img {
+      min-height: 550px;
+      max-height: 550px;
+      max-width: 530px;
+      height: 550px; }
+  /* line 115, ../stylesheets/order_mail.scss */
+  #body .item-info .name, #body .item-info .device {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 8px; }
+  /* line 122, ../stylesheets/order_mail.scss */
+  #body .item-info .name > span {
+    font-weight: bold;
+    margin-right: 5px; }
+  /* line 127, ../stylesheets/order_mail.scss */
+  #body .download {
+    text-align: center;
+    margin-top: 20px; }
+  /* line 131, ../stylesheets/order_mail.scss */
+  #body .address {
+    width: 530px; }
+    /* line 133, ../stylesheets/order_mail.scss */
+    #body .address td {
+      width: 50%; }
+    /* line 136, ../stylesheets/order_mail.scss */
+    #body .address .adr-title {
+      margin: 10px 0; }
+    /* line 139, ../stylesheets/order_mail.scss */
+    #body .address .name {
+      font-weight: bold; }
+    /* line 142, ../stylesheets/order_mail.scss */
+    #body .address .name, #body .address .adr {
+      line-height: 18px; }
+  /* line 146, ../stylesheets/order_mail.scss */
+  #body .notice {
+    margin-bottom: 30px; }
+  /* line 149, ../stylesheets/order_mail.scss */
+  #body .orders-info {
+    margin-bottom: 40px; }
+    /* line 152, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody th {
+      padding: 8px 6px;
+      background-color: #455054;
+      color: #ffffff;
+      font-weight: normal; }
+    /* line 159, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody tr th, #body .orders-info tbody tr td {
+      padding: 8px 6px;
+      vertical-align: middle;
+      line-height: 22px; }
+    /* line 165, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .symbol {
+      font-size: 0.2em;
+      color: #777; }
+    /* line 170, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .summary td {
+      padding: 2px 6px; }
+    /* line 174, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .line {
+      border-bottom: 1px solid #c8c8c8; }
+    /* line 177, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .blue {
+      color: #0072bc; }
+    /* line 180, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .total-title, #body .orders-info tbody .total-final {
+      color: #0072bc;
+      font-size: 22px;
+      padding-top: 22px; }
+      /* line 184, ../stylesheets/order_mail.scss */
+      #body .orders-info tbody .total-title .symbol, #body .orders-info tbody .total-final .symbol {
+        font-size: 0.5em;
+        color: #0072bc;
+        vertical-align: top; }
+    /* line 190, ../stylesheets/order_mail.scss */
+    #body .orders-info tbody .total-final {
+      text-align: right; }
+    /* line 194, ../stylesheets/order_mail.scss */
+    #body .orders-info .spacing {
+      width: 35px; }
+    /* line 197, ../stylesheets/order_mail.scss */
+    #body .orders-info .items {
+      width: 130px;
+      text-align: center; }
+      /* line 200, ../stylesheets/order_mail.scss */
+      #body .orders-info .items img {
+        max-width: 120px; }
+    /* line 204, ../stylesheets/order_mail.scss */
+    #body .orders-info .items2 {
+      width: 130px;
+      text-align: center; }
+      /* line 207, ../stylesheets/order_mail.scss */
+      #body .orders-info .items2 img {
+        max-width: 100px; }
+    /* line 211, ../stylesheets/order_mail.scss */
+    #body .orders-info .description {
+      width: 170px;
+      text-align: left; }
+      /* line 214, ../stylesheets/order_mail.scss */
+      #body .orders-info .description .i {
+        line-height: 22px; }
+    /* line 218, ../stylesheets/order_mail.scss */
+    #body .orders-info .price {
+      width: 80px;
+      text-align: left; }
+    /* line 222, ../stylesheets/order_mail.scss */
+    #body .orders-info .qty {
+      width: 60px;
+      text-align: center; }
+    /* line 226, ../stylesheets/order_mail.scss */
+    #body .orders-info .total {
+      width: 90px;
+      text-align: right; }
+
+/* line 233, ../stylesheets/order_mail.scss */
+#footer h1 {
+  font-size: 38px;
+  font-style: italic;
+  font-family: Helvetica, sans-serif;
+  color: #333; }
+/* line 239, ../stylesheets/order_mail.scss */
+#footer a {
+  margin-right: 10px; }
+
+/* line 243, ../stylesheets/order_mail.scss */
+#copyright {
+  background-color: #f7f7f7;
+  color: #999;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 13px; }
+  /* line 249, ../stylesheets/order_mail.scss */
+  #copyright p {
+    line-height: 20px; }
+  /* line 252, ../stylesheets/order_mail.scss */
+  #copyright .padding {
+    height: 22px; }
+
+/* line 256, ../stylesheets/order_mail.scss */
+#margin-bottom {
+  background-color: #ececec; }
+
+/* line 259, ../stylesheets/order_mail.scss */
+.red {
+  color: red; }
+
+/* line 263, ../stylesheets/order_mail.scss */
+img.store_kv {
+  width: 100%; }

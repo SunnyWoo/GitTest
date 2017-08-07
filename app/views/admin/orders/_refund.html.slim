@@ -1,0 +1,15 @@
+.modal.fade id="refund_#{order.id}"
+  .modal-dialog
+    .modal-content
+      = simple_form_for order, url: admin_order_refund_path(order), method: :patch do |f|
+        .modal-header
+          a.close href="#" data-dismiss="modal"  ×
+          h3 = "#{order.payment.capitalize }" + t('orders.show.h3_refund.title')
+        .modal-body.center
+          = t('orders._refund.currency', order_currency: order.currency)
+          br
+          = f.input :price, label: t('orders._refund.input_price.label') ,required: true, hint: t('orders._refund.input_price.hint'), input_html: { max: order.price_after_refund, min: 0, value: order.price_after_refund }
+          = f.input :refund_memo, label: "備註"
+        .modal-footer
+          a.close.btn href="#" data-dismiss="modal" cancel
+          = f.button :submit, data: { confirm: t('orders._refund.input_price.confirm') }

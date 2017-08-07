@@ -1,0 +1,332 @@
+.check_out {
+  .margin-b30 {
+    margin-bottom: 30px;
+  }
+
+  .check_out_wording {
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  .check_out_summery {
+    width: 100%;
+    margin-top: 30px;
+  thead, thead tr, thead th {
+      background-color: $word-color;
+    }
+    thead td {
+      padding: 0 15px;
+      line-height: 30px;
+      color: #FFF;
+      font-weight: 200;
+      span {
+        color: #FFF;
+      }
+    }
+    .tr_line {
+      border-bottom: 1px solid $line-color;
+      padding: 0px 20px 15px;
+    }
+    tbody, tfoot {
+      background-color: #f6f7f2;
+      td {
+        @extend .word-break;
+        padding: 15px 15px;
+        a {
+          text-decoration: none;
+        }
+      }
+      tr:first-child > td {
+        padding-top: 30px;
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
+    tfoot {
+      td {
+        padding: 8px 15px;
+      }
+      .tr_line {
+        padding: 0px 20px 22px;
+      }
+    }
+    .sub-total {
+      td {
+        padding: 30px 15px;
+      }
+      span {
+        font-size: 1.5em;
+        color: $main-color;
+      }
+    }
+  }
+
+  .check_out_coupon_box {
+    margin-top: 18px;
+    color: $sub-words-color;
+
+    input {
+      width: 300px;
+      height: 45px;
+      font-size: 1em;
+      padding: 0 10px;
+      border: 1px solid $line-color;
+    }
+
+    button {
+      margin-left: 20px;
+      font-size: 1.3em;
+      height: 48px;
+      width: 138px;
+      background-color: $main-color;
+      &, * {
+        color: #fff;
+      }
+      border: 0;
+      &,
+      &:active,
+      &.active {
+        &:focus {
+          @include opacity(.8);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        @include opacity(.8);
+        text-decoration: none;
+      }
+
+      &:active,
+      &.active {
+        outline: 0;
+        background-image: none;
+        @include box-shadow(inset 0 5px 10px rgba(0,0,0,.125));
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        cursor: not-allowed;
+        pointer-events: none; // Future-proof disabling of clicks
+        @include opacity(.65);
+      }
+    }
+    .coupon_error {
+      font-size: 1em;
+      margin-top: 10px;
+      color: #f87a7a;
+      font-style: italic;
+    }
+    .coupon_box {
+      margin-top: 12px;
+    }
+  }
+
+  .check_out_title {
+    @extend .item-title;
+  }
+
+  .check_out_title_with_margin {
+    @extend .check_out_title;
+    margin-top: 70px;
+  }
+
+  .address_info_list {
+
+    #address_info_add {
+      display: inline-flex;
+      background:transparent image-url('editor/add.png') no-repeat;
+      padding-left: 24px;
+      margin-bottom: 30px;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    #address_info_add:hover{
+      background:transparent image-url('editor/add-hover.png') no-repeat;
+      a {
+        color: $main-color;
+      }
+    }
+
+    .address_info_block {
+      padding: 0px 0px 30px 35px;
+      width: 350px;
+      line-height: 1.5em;
+      strong {
+        font-weight: 700;
+      }
+    }
+    strong {
+      font-weight: normal;
+    }
+    .pull-right {
+      margin-right: 80px;
+    }
+
+    li {
+      font-size: 1em;
+    }
+  }
+
+  .check_out_radio {
+    margin-bottom: 26px;
+  }
+
+  .check_out_radio_label {
+    font-size: 1em;
+    font-weight: normal;
+    color: $tnd-color;
+    margin-left: 10px;
+  }
+
+  .check_out_radio_label_rigth {
+    @extend .check_out_radio_label;
+    float: right;
+    margin-right:  82px;
+  }
+
+  .check_out_subtotal {
+    float: right;
+  }
+
+  .check_out_show_coupon {
+    color: #4fbd92;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 4px;
+  }
+
+  .check_out_clear_coupon {
+    color: #4fbd92;
+    font-size: 14px;
+    opacity: .5;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 0px;
+  }
+
+  .check_out_clear_coupon:hover {
+    opacity: 1;
+  }
+
+  .errors {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #f87a7a;
+    font-style: italic;
+    margin-bottom: 30px;
+  }
+
+  .icons-info_normal {
+    margin-top: -8px;
+    margin-left: 5px;
+    cursor: pointer;
+    &:hover {
+      @extend .icons-info_hover;
+    }
+  }
+}
+
+.check_out_form {
+  position: relative;
+  margin-bottom: 60px;
+  div {
+    margin-bottom: 30px;
+  }
+  .label {
+    margin-bottom: 5px;
+    label {
+      display: block;
+      font-weight: bold;
+      color: $tnd-color;
+    }
+  }
+
+  .required label:after {
+    content: '(Required)';
+    margin-left: 10px;
+    color: $sub-words-color;
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .error {
+    font-size: 1em;
+    margin-left: 10px;
+    color: #f87a7a;
+    font-style: italic;
+    float: left;
+    margin-bottom: 0px;
+  }
+
+  input {
+    width: 91%;
+    height: 45px;
+    padding: 0 20px;
+    border: 1px solid $line-color;
+    color: $sub-words-color;
+  }
+
+  select {
+    font-size: 1em;
+    width: 100%;
+    height: 45px;
+    border: 1px solid $line-color;
+    padding: 0 20px;
+    color: $sub-words-color;
+    @include border-radius(0px);
+    background: #FFF image_url('ico-arrow.png') 97% 12px scroll no-repeat;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor: pointer;
+  }
+
+  .btn {
+    width: 200px;
+    height: 70px;
+    border:none;
+    font-size: 1.3em;
+  }
+
+  .btn_address_info_gray {
+    @extend .btn-gray;
+    @extend .btn;
+    margin-left: 0px;
+  }
+
+  .btn_address_info {
+    @extend .btn-default;
+    @extend .btn;
+    margin-left: 34px;
+  }
+
+  .btn-redeem {
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+  }
+}
+
+.info-box {
+  margin-bottom: 60px;
+}
+
+.address-content {
+  input {
+    width: 93.6%;
+  }
+  select {
+    width: 100%;
+  }
+}
+
+.item-work-name {
+  a:hover, a:hover * {
+    color: $main-color;
+  }
+}

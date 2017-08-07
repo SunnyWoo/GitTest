@@ -1,0 +1,47 @@
+.well
+  = simple_form_for(form.ransack, url: target_list_admin_change_price_events_path,
+    class: 'form-horizontal', method: :get, remote: true) do |f|
+    = hidden_field_tag :target_type, 'StandardizedWorkPrice'
+    .row
+      .col-md-4
+        = f.input :product_category_id_eq, collection: form.categories, label: t('change_price_events.works.search_options.category')
+      .col-md-4
+        = f.input :product_id_eq, label: t('change_price_events.works.search_options.product_model'),
+                  as: :grouped_select,
+                  collection: form.categories,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .col-md-4
+        = f.input :user_of_Designer_type_display_name_cont, required: false, label: t('change_price_events.works.search_options.designer')
+      .col-md-4
+        = f.input :name_cont, required: false, label: t('change_price_events.works.search_options.work_name')
+      .col-md-4
+        = f.input :tags_name_cont, required: false, label: t('change_price_events.works.search_options.tag')
+      .col-md-4
+        = f.submit t('shared.form_actions.submit'), class: 'btn btn-success pull-right submit_btn'
+= simple_form_for(form, url: admin_change_price_events_path, as: :change_price_event, html: { class: 'form-inline' }, remote: true) do |f|
+  .widget-main.no-padding.target_list
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th= check_box_tag :all
+          th= t('change_price_events.works.search_options.category')
+          th= t('change_price_events.works.search_options.work_image')
+          th= t('change_price_events.works.search_options.work_name')
+          th= t('change_price_events.works.search_options.designer')
+          th= t('change_price_events.works.search_options.product_model')
+          th= t('change_price_events.works.search_options.tag')
+      tbody
+        - form.works.each do |work|
+          tr
+            td= check_box_tag('change_price_event[target_ids][]', work.id)
+            td= work.category.name
+            td= display_print_image(work)
+            td= work.name
+            td= work.user_display_name
+            td= work.product_name
+            td= work.tag_names
+  .event_form
+    = render 'form', f: f

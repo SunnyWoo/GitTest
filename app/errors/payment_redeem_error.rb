@@ -1,0 +1,2 @@
+class PaymentRedeemError < ApplicationError
+end

@@ -1,0 +1,6 @@
+tr
+  td = f.text_field :material
+  td = f.text_field :quantity
+  td
+    = f.hidden_field :_destroy
+    = link_to "删除", '#', class: "remove_fields"

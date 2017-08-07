@@ -1,0 +1,51 @@
+.careers {
+  .career-kv {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 40px;
+    text-align: center;
+    overflow: hidden;
+    background: #FFF image-url('career.png') center top scroll no-repeat;
+  }
+  .desc-lists {
+    padding-left: 25px;
+    li {
+      list-style: decimal outside;
+      margin-right: 10px;
+    }
+  }
+  .job {
+    margin-bottom: 30px;
+    .name {
+      font-size: 1em;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+    ul.desc-lists {
+      list-style: none;
+    }
+  }
+  .jobs {
+    .job-group {
+      display: block;
+      margin-bottom: 30px;
+      font-size: 1em;
+      color: $word-color;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .job-lists {
+      margin-bottom: 30px;
+      > div {
+        display: block;
+        font-size: 1em;
+        color: $word-color;
+        margin-bottom: 12px;
+        margin-left: 18px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

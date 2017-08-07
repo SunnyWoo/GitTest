@@ -1,0 +1,35 @@
+- @order.order_items.each do |item|
+  - itemable = item.itemable
+  tr class=('has-special-price' if itemable.has_special_price?)
+    td.item = link_to_web_work(itemable, image_tag(itemable.order_image.thumb.url))
+    td.item-name
+      = link_to_web_work(itemable, render_work_name_with_device(itemable))
+    - if itemable.has_special_price?
+      td.price.list-price= render_item_original_price(itemable)
+      td.price.list-special-price= render_item_price(itemable)
+    - else
+      td.price= render_item_price(itemable)
+      td.price
+    td.multi X
+    td.qty
+      .dropdown.dropdown-small
+        button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+          span.val
+            = item.quantity
+          span.caret
+        ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+          - 10.times do |x|
+            li role="update_qty"
+              .i role="menuitem" tabindex="-1" data-uuid="#{itemable.uuid}" data-value="#{x+1}" #{x+1}
+
+    td.total= render_item_price_with_quantity(item)
+    td.del
+      = link_to cart_path(itemable.uuid), remote: true, method: :delete do
+        .icons-profile_delete_normal
+    td.hide
+      = render 'cart/ua_ec/ua_data', work: itemable, qty: item.quantity, step: '1'
+tr
+  td.summary colspan='7'
+    .sub-total.pull-right
+      span = edit_translator('page.cart.span.subtotal')
+      span = render_subtotal(@order)

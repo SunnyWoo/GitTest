@@ -1,0 +1,13 @@
+.modal.fade id='change_tags'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      .modal-body.row
+        .col-md-3 = t('tags.index.thead.name')
+        .col-md-9
+          = select_tag :tag_ids, options_from_collection_for_select(Tag.all, :id, :name),
+            class: 'tag_select2 form-control', multiple: true, style: 'width: 100%'
+      .modal-footer
+        = submit_tag 'Submit', class: 'btn btn-success form-control'

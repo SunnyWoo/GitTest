@@ -1,0 +1,81 @@
+.delivery_note {
+  .content {
+    .logo img {
+      width: 20mm;
+      height: 20mm;
+    }
+    .head {
+      .head_label {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      div {
+        margin-bottom: 3mm;
+      }
+    }
+
+    .blockquote {
+      border-left: 1mm solid #eeeeee;
+    }
+
+    .list {
+      table {
+        width: 100%;
+        margin-top: 10mm;
+
+        thead {
+          border-top: 0.3mm solid #000;
+          border-bottom: 0.3mm solid #000;
+          display: table-header-group;
+        }
+
+        tbody {
+          border-bottom: 0.3mm solid #000;
+          page-break-inside: avoid;
+        }
+
+        tr {
+          page-break-inside: avoid
+        }
+
+        th, td {
+          padding: 3mm 1mm;
+          text-align: left;
+        }
+
+        th {
+          border-top: 0.3mm solid #000;
+          border-bottom: 0.3mm solid #000;
+        }
+      }
+    }
+
+    .count {
+      .row {
+        padding-top: 3mm;
+      }
+
+      .title {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .order_count {
+        margin-top: 3mm;
+        padding-bottom: 3mm;
+        border-top: 0.3mm solid #000;
+        border-bottom: 0.3mm solid #000;
+      }
+    }
+  }
+}
+
+.qrcode {
+  height: 20mm;
+  width: 20mm;
+  div {
+    width: 20mm;
+    text-align: center;
+  }
+}

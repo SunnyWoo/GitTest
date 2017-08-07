@@ -1,0 +1,7 @@
+= t('shared.language.title')
+|：
+= link_to_unless I18n.locale == :en, t('shared.language.en'), locale: 'en'
+| |
+= link_to_unless I18n.locale == :'zh-TW', t('shared.language.zh-TW'), locale: 'zh-TW'
+| |
+= link_to_unless I18n.locale == :ja, t('shared.language.ja'), locale: 'ja'

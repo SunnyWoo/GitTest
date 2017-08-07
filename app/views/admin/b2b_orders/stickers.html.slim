@@ -1,0 +1,27 @@
+- admin_title t('b2b_orders.sticker.page_title')
+
+.well
+  = link_to 'excel模板', '/download/example.xlsx', class: 'btn btn-primary btn-mini', target: '_blank'
+  = link_to '图片模板', '/download/images.zip', class: 'btn btn-primary btn-mini', target: '_blank'
+  = link_to '贴纸样式', '/download/CACS001-CA_15X15.pdf', class: 'btn btn-primary btn-mini', target: '_blank'
+
+  h4 excel模板介绍
+  p id: 该条数据的唯一标识， 图片的文件名必须以该内容命名
+  p name: 贴纸会显示的名称
+  p 属性1: 贴纸的第一个属性
+  p 属性2: 贴纸的第二个属性
+  p 属性3: 贴纸的第三个属性
+  p 属性4: 贴纸的第四个属性
+  p 属性5: 贴纸的第五个属性
+
+  p 注意: 属性超过5条会导致贴纸的排版问题
+
+.well
+  = form_tag admin_b2b_orders_stickers_path, method: :post, multipart: true do
+    p 邮件:
+    = text_field_tag :email
+    p excel:
+    = file_field_tag :excel
+    p 图片:
+    = file_field_tag :images_zip
+    =  submit_tag 'Import', class: 'btn btn-primary btn-mini'

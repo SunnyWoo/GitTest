@@ -1,0 +1,16 @@
+- @admin_title = '編輯商店'
+
+= simple_form_for current_store, url: store_backend_store_path, method: :patch do |f|
+  = f.input :name
+  = f.input :slug
+
+  = f.input :password
+  = f.input :password_confirmation
+
+  = f.input :avatar, as: :image
+
+  = f.input :logo, as: :image
+
+  .form-actions
+    = f.button :submit
+

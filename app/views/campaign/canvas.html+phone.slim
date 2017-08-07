@@ -1,0 +1,83 @@
+.owl-carousel
+  - %w(kv_dog kv_campuscafe).each do |kv|
+    .kv_middle
+      = image_tag "campaign/canvas/mobile/#{kv}_bg.png", class: 'carousel-img', alt: 'commandp canvas'
+      = image_tag "campaign/canvas/mobile/#{kv}_tc.png", class: 'kv-img', alt: 'commandp canvas'
+
+.m-announcement 我印，讓無框畫變得更有趣！
+.m-hr
+
+.conavs_mobile
+  .mobile-v2-title
+    | 我印，
+    br 讓我的窩更溫暖
+  .conavs_hr
+  .video
+    iframe width='100%' height='280' src='https://www.youtube.com/embed/KTaBC3os-NE?enablejsapi=1' frameborder='0' allowfullscreen=true
+
+  .wording
+    p Olivia 與超 Q 的小柴一起運用我印將他們的家打造得更加溫馨舒適，也讓他們的小窩更溫暖!
+
+  .btns
+    = link_to '開始印', '#', class: 'btn btn-default btn-small open_deeplink ga-event',
+              data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: 'create',
+                      'ga-event-category' => 'Campaign - Canvas - Mobile',
+                      'ga-event-action' => 'Launch App',
+                      'ga-event-label' => 'Create Canvas - Home Style' }
+
+  .mobile-v2-title
+    | 我印，
+    br 讓藝術無所不在
+  .conavs_hr
+
+  .wording
+    p 城市裡有許多 美好的片刻稍縱即逝，我印的藝術家們透過無框畫捕捉每一刻珍貴的回憶，留下最美的畫面，無論是甜蜜的、多愁善感的、還是意義深遠的片段，在這個方正四角的小世界裡，一切似乎都變得更有趣了。
+  .products
+    = render partial: 'editor/shared/work_mobilev2',
+             collection: @works, as: 'work', locals: { category: 'Campaign - Canvas - Mobile' }
+  .btns
+    = link_to '更多商品', shop_path(@canvas_model.slug), class: 'btn btn-default btn-small open_deeplink ga-event',
+              data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: 'shop',
+                        'ga-event-category' => 'Campaign - Canvas - Mobile',
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => 'Designer Shop - Canvas' }
+  .products
+    .owl-carousel
+      - 1..3.times do |i|
+        .kv_middle
+          = image_tag "campaign/canvas/images/campaign_canvas_0#{i+1}.jpg", alt: 'commandp 我印 無框畫'
+
+  .product_detail
+    .mobile-v2-title
+      | 我印，
+      br 讓風格更有特色
+    .conavs_hr
+    .wording
+      p 妝點居家，風格自己創造！無框畫採用輕量化專利設計， 日本高畫質寫真印刷技術，可一次購買多幅 任意排列，直接用無痕膠帶貼於壁面，免釘牆施工。
+    .text-center
+      = image_tag 'campaign/canvas/mobile/price.png', alt: 'commandp 我印 無框畫 價格'
+    .camp_margin-top-25.btns
+      = link_to '立即購買', shop_index_path, class: 'btn btn-default btn-small open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: 'shop',
+                        'ga-event-category' => 'Campaign - Canvas - Mobile',
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => 'Designer Shop - Canvas' }
+
+.mobile-v2-title
+  | Share on
+  br
+  | Social Media
+
+  .mobile-v2-fb-btn.ga-event data-ga-event-category='Campaign - Canvas - Mobile' data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url('campaign/canvas/canvas_post.jpg')) data-facebook-link=(campaign_url(id: 'canvas')) data-facebook-caption='我印，讓無框畫變得更有趣！' 分享到 Facebook
+
+= link_to '分享到 Line', "http://line.naver.jp/R/msg/text/我印，讓無框畫變得更有趣！ #{campaign_url(id: 'canvas')}", {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>'Campaign - Canvas - Mobile', 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+.app-promotion
+  .title
+    | 購買 無框畫 系列商品
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'

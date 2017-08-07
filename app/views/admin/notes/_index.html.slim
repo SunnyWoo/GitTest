@@ -1,0 +1,20 @@
+.modal.fade id=id
+  .modal-dialog
+    .modal-content
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th Date
+            th Message
+            th User
+        tbody
+          - notes.each do |note|
+            tr
+              td= note.created_at
+              td= note.message
+              td= note.admin_name
+
+      = simple_form_for notes.new, as: :note, url: admin_noteable_notes_path(noteable), remote: true, html: {class: 'form-horizontal'} do |f|
+        .modal-header
+          h3 Add Note
+        = render 'form', f: f

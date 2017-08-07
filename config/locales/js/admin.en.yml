@@ -1,0 +1,62 @@
+en:
+  js:
+    button:
+      cancel: Cancel
+      save: Save
+      edit: Edit
+      search: Search
+    coupon:
+      new:
+        title: Add Coupon
+        detail: Coupon Detail
+        detail_desc: Create your coupon code, and specify the usage limit.
+        name: Name (max. 25 character limit)
+        count: How many unique coupon can be added?
+        equal_to: Equal to
+        greater_than: Greater than
+        code: Coupon Code (max. 20 character limit)
+        generate_code: Generate code
+        usage_limit: How many times can this coupon be used?
+        no_limit: No limit
+        expired: Specify when the coupon begins and ends
+        begin: Coupon begins
+        expires: Coupon expires
+        never_expires: Never expires
+        more: More Setting
+        more_desc: Set extra condition
+        base_price: Base Pricing
+        original_price: Orginal Price
+        special_price: Special Price
+        user_usage_limit: Maximum allowed usage per user
+        target: Coupon Target
+        all_order: All order
+        order_over: Order over
+        specify_products: Specify product models
+        specify_product_categories: Specify Product Category
+        specify_designers: Specify designers
+        specify_products_designers: Specify designers and models
+        specify_work: Specify work
+        specify_bdevent: Specify Bdevent
+        shipping_fee: Shipping fee
+        type: Coupon Type
+        discount_amount: Discount Amount ($)
+        discount_percentage: Discount Percentage (%)
+        pay_amount: Pay Amount ($)
+        discount_none: None
+        item_limit: Quantity (Set)
+        simple: Simple
+        rules: Combination
+        rule1: Rule 1
+        rule2: Rule 2
+        rule_quantity: MOQ
+      index:
+        list: Coupon List
+        auto_approval: Auto Approval Coupon
+        search_desc: Starting typing code name or coupom code to search
+        detail: Details
+        used_count: Used
+        start_end: Start / End
+        code: Coupon Code
+        status: Status
+        unused: Unused
+        used: Used

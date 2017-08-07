@@ -1,0 +1,7 @@
+---
+- code: '1'
+  description: "熱轉印"
+- code: '2'
+  description: "直噴"
+- code: '3'
+  description: "熱昇華"

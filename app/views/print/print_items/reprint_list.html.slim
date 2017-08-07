@@ -1,0 +1,22 @@
+= render 'print/print_items/nav', active: 'reprint'
+= render 'print/shared/notice_bar'
+.well.well-small
+  = form_tag reprint_list_print_print_items_path, class: 'form-horizontal', method: :get do |f|
+    span 重印時間:
+    = text_field_tag :prepare_at_gteq, params[:prepare_at_gteq], class: 'datetimepicker'
+    span ~
+    = text_field_tag :prepare_at_lteq, params[:prepare_at_lteq], class: 'datetimepicker'
+    = submit_tag '送出', class: 'btn btn-primary'
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter 重印記錄
+    .widget-toolbar
+      span.badge.badge-danger = @print_items.count
+    .widget-toolbar
+      = link_to '匯出重印歷史記錄', '###', onclick: "$('#export_reprint_histroy_form').modal('show');"
+  .widget-body
+    .widget-main.no-padding
+      = render 'reprint_list', print_items: @print_items, product_models: @product_models
+
+= will_paginate @print_items
+= render 'print/print_items/export_reprint_histroy_form'

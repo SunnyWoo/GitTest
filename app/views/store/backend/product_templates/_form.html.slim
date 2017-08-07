@@ -1,0 +1,4 @@
+= f.input :name, label: 'Name', as: :string
+= f.association :product, as: :grouped_select, collection: ProductCategory.available, group_method: :available_products, group_label_method: :name, label_method: :name, value_method: :id
+= f.input :description, as: :text, label: '敘述', input_html: { class: 'tinymce' }
+= f.submit '提交', class: 'btn btn-small btn-info'

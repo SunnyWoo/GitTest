@@ -1,0 +1,16 @@
+doctype mobile
+html
+  head
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1'
+    = display_meta_tags
+    = csrf_meta_tags
+    = stylesheet_link_tag 'designer_store', media: 'all', 'data-turbolinks-track': true
+    = render 'store/shared/ga_ecommerce_tracking', ga_id: Settings.b2b2c.ecommerce_tracking_ga_id
+    = javascript_include_tag 'flexible', 'data-turbolinks-track': true
+    = javascript_include_tag 'designer_store', 'data-turbolinks-track': true
+    = favicon_link_tag @store.logo.s32.url if @store.try(:logo).present?
+
+  body class="#{controller_name}_controller #{action_name}_action"
+    = Gon::Base.render_data camel_case: true, camel_depth: :recursive, namespace: 'jsPageData'
+    = yield

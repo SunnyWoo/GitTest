@@ -1,0 +1,79 @@
+// *************************************
+//
+//   Product Sort
+//   -> 商品排序的選項
+//
+// *************************************
+
+.productSort
+  display: flex
+  @include rem(height, 50px)
+  @include rem(padding, 10px 0)
+  background-color: $c-bg-white
+  border-top: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.productSort.is-newest
+  .productSort-time
+    color: $c-text-primary
+
+.productSort.is-cheapest
+  .productSort-price
+    color: $c-text-primary
+    &:after
+      background-image: asset-data-url('designer_store/double_arrow_down.png')
+
+.productSort.is-mostExpensive
+  .productSort-price
+    color: $c-text-primary
+    &:after
+      background-image: asset-data-url('designer_store/double_arrow_up.png')
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+%productSort-column
+  flex: 1
+  color: $c-text-implicit
+  @include rem(height, 30px)
+  @include rem(line-height, 30px)
+  @include rem(font-size, $f-size-content)
+  text-align: center
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+  &:not(:first-child)
+    border-left: 1px solid $c-border
+
+.productSort-time
+  @extend %productSort-column
+
+.productSort-price
+  @extend %productSort-column
+  display: flex
+  justify-content: center
+
+  &:after
+    display: inline
+    content: ''
+    background-image: asset-data-url('designer_store/double_arrow.png')
+    @include rem(height, 30px)
+    @include rem(width, 30px)
+    @include rem(background-size, 18px 18px)
+    background-position: center
+    background-repeat: no-repeat

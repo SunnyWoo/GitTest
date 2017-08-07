@@ -1,0 +1,83 @@
+// *************************************
+//
+//   Share Modal
+//   -> 用來分享連結的 modal
+//
+// *************************************
+
+.shareModal
+  display: block
+  @include rem(max-width, 349px)
+  margin-left: 0
+  margin-right: 0
+  border-radius: 5px
+  background-color: $c-bg-white
+  color: $c-text-content
+  @include rem(padding, 35px)
+  @include rem(width, 362px)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.shareModal-platform
+  display: flex
+  justify-content: center
+  @include rem(margin-top, 30px)
+  @include rem(margin-bottom, 52px)
+
+.shareModal-platform-btn
+  @include rem(width, 77px)
+  @include rem(height, 77px)
+  background-repeat: no-repeat
+  background-position: center
+  @include rem(background-size, 77px)
+  cursor: pointer
+  &:not(:first-of-type)
+    @include rem(margin-left, 11px)
+  &:not(:last-of-type)
+    @include rem(margin-right, 11px)
+
+.shareModal-platform-btn--facebook
+  background-image: asset-data-url('designer_store/facebook@2x.png')
+.shareModal-platform-btn--twitter
+  background-image: asset-data-url('designer_store/twitter@2x.png')
+.shareModal-platform-btn--line
+  background-image: asset-data-url('designer_store/line@2x.png')
+.shareModal-platform-btn--weibo
+  background-image: asset-data-url('designer_store/weibo@2x.png')
+.shareModal-platform-btn--qq
+  background-image: asset-data-url('designer_store/qq@2x.png')
+.shareModal-platform-btn--wechat
+  background-image: asset-data-url('designer_store/wechat@2x.png')
+
+.shareModal-hint
+  line-height: 1
+
+.shareModal-link
+  @include rem(margin, 20px 0)
+  border: 1px solid $c-border
+  color: $c-text-implicit
+  @include rem(height, 40px)
+  width: 100%
+  @include rem(line-height, 40px)
+  @include rem(padding, 0 36px)
+  text-overflow: ellipsis
+  white-space: nowrap
+  overflow: hidden
+
+.shareModal-cancel
+  color: $c-text-hightlight
+  cursor: pointer

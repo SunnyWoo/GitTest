@@ -1,0 +1,24 @@
+- admin_title t('works.new.page_title')
+
+= simple_form_for([:admin, @work], as: :work, class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.input :name, label: t('works.attributes.name')
+  = f.input :description, label: t('works.attributes.description')
+  = f.input :model_id, label: t('works.attributes.spec'),
+                       as: :grouped_select,
+                       collection: ProductCategory.all,
+                       group_method: :products,
+                       group_label_method: :name,
+                       label_method: :name,
+                       value_method: :id,
+                       include_blank: false
+  .upload-previewer
+  = f.input :print_image, as: :file, label: t('works.attributes.print_image'), input_html: { data: { preview_at: '.upload-previewer' } }
+  = f.input :print_image_cache, as: :hidden
+  = f.input :work_type, label: t('works.attributes.work_type'), collection: Work::WORK_TYPES, include_blank: false
+  = f.input :featured, collection: [true, false], include_blank: false
+  = f.association :price_tier, include_blank: true, collection: options_for_price_tier_select
+  = hidden_field_tag 'work[user_type]', 'Designer'
+  = f.input :user_id, label: t('works.attributes.user'), collection: Designer.ordered, label_method: :display_name, value_method: :id, include_blank: false
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

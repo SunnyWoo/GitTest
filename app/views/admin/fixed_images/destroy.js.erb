@@ -1,0 +1,2 @@
+$('td:has(#<%= dom_id(@work, :rfi) %>) img').attr({src: '<%= j @work.original_print_image.thumb.url %>'});
+$('#<%= dom_id(@work, :rfi) %>').remove();

@@ -1,0 +1,28 @@
+- if artworks.present?
+  .cmdp_container
+    .grid_6
+      .item-title.camp_margin-top-55.text-center.camp_margin-bottom-35.camp-fontweight-400
+        = wordings.try(:artwork_title).present? ? wordings.try(:artwork_title) : "#{name} Artworks"
+    - artworks.each do |artwork|
+      - if artwork.is_a?(CampaignImage)
+        .text-center.camp_artwork class=(artworks_class)
+          - option = {}
+          - option.merge!({ target: :blank }) if artwork.try(:open_in_new_tab)
+          - option.merge!({ class: 'cursor_default' }) unless artwork.link.present?
+          = link_to artwork.link, option do
+            = image_tag artwork.file.url, alt: artwork.desc, class: 'img-center'
+            - if artwork.desc.present?
+              .camp_artwork_description
+                = artwork.desc
+      - else
+        - artworks.zip(artworks_descriptions).each do |(artwork, description)|
+          .text-center class=(artworks_class)
+            = image_tag artwork, alt: description, class: 'img-center'
+            - if description.present?
+              .camp_artwork_description
+                = description
+
+
+  .camp_margin-top-87
+- else
+  .camp_margin-top--30

@@ -1,0 +1,26 @@
+- if Date.today >= wordings.gift_starts_at.to_date && Date.today <= wordings.gift_ends_at.to_date
+  .cmdp_container.bgmen-event
+    .item-title.text-center style='margin: 60px 0 0 0;'
+      = wordings.gift_title
+    .grid_6.event-detial
+      .grid_nested
+        .grid_3.left-block
+          .event-detial-inner-block
+            .event-title 活動名稱
+            .event-desc.highlightspan = wordings.gift_name
+            p.event-desc
+            p.event-desc
+          .event-detial-inner-block
+            .event-title 活動方式
+            p.event-desc = simple_format(auto_link(wordings.gift_desc))
+        .grid_3.right-block
+          .event-detial-inner-block
+            .event-title
+              = wordings.try(:gift_plean_title).present? ? wordings.gift_plean_title : '贈獎方式'
+            p.event-desc
+              - if wordings.gift_line.to_b
+                | #{wordings.gift_starts_at}-#{wordings.gift_ends_at} 用戶加入我印
+                a.highlightspan LINE ID : commandp
+                | 並提供：
+            - wordings.gift_mode_desc.split(/\n/).each do |desc|
+              p.event-desc = auto_link(desc)

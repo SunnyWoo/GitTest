@@ -1,0 +1,29 @@
+/* line 1, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block {
+  border: 1px solid darkgray;
+  margin: 1em 0; }
+
+/* line 6, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block-id {
+  float: left;
+  font-size: 85%;
+  color: gray; }
+
+/* line 12, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block-item-id {
+  font-size: 85%;
+  color: gray; }
+
+/* line 17, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block-item-title, .home-block-item-subtitle, .home-block-item-href {
+  text-align: center; }
+
+/* line 21, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block-item-image {
+  height: 200px;
+  width: 20%;
+  display: inline-block; }
+
+/* line 27, ../../../stylesheets/admin/v2/home_blocks.scss */
+.home-block-item-image-text {
+  text-align: center; }

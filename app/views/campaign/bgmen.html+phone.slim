@@ -1,0 +1,118 @@
+.owl-carousel
+  .kv_middle
+    = image_tag 'campaign/bgmen/mobile/mobile_kv_bgman_bg.png', class: 'carousel-img', lazy:true
+    = image_tag 'campaign/bgmen/mobile/mobile_kv_bgman_cn.png', class: 'kv-img', lazy:true
+.m-announcement
+  | 我印 X BG MEN 搞笑出擊第二波！全面限時特惠再加贈全新 LINE 動態貼圖！
+
+- if params[:targetids]
+  .tab-opener data-targetids="#{params[:targetids]}"
+
+.m-hr
+/ .mobile-v2-title
+/   | BG MEN's
+/   br
+/   | Video
+
+/ iframe width="320" height='240' src="https://www.youtube.com/embed/wDyZlMGSDsI" frameborder="0" allowfullscreen=true
+
+.products
+
+  .mobile-v2-title
+    | BG MEN
+    br
+    | 精選商品
+
+
+  - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+  select class=(select_class) data-category='Campaign - BG MEN'
+    - @category_names.each do |key, val|
+      option.filter value=(key) = val
+
+  .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+  - @category_products.each do |key, val|
+    .filted id=(key)
+      = render partial: 'editor/shared/work_mobilev2',
+              collection: val, as: 'work', locals: { category: 'Campaign - BG MEN' }
+
+.about-bgmen
+  .item-title.text-center.color-fixed
+    | About BG MEN
+  = image_tag 'campaign/bgmen/mobile/aboutbgmen.png', lazy:true
+  .m-wording
+    p
+      | 「BG」就是「Blue and Green」，
+      br
+      | 你要說是「逼機」也可以啦！
+      br
+      | 他們兩個就跟你我一樣，在社會上打滾多年
+      br
+      | 發現人生就像玩「洗巴辣」(擲骰子)
+      br
+      | 高潮不會常常有，十次總有八次糗
+      br
+      | 鳥人鳥事甩不掉，做啥都會被靠夭
+      br
+      | 覺得人生充滿「逼機」嗎？
+      br
+      | 就讓不怕醜、不怕糗的超級搞笑英雄
+      br
+      | 「BG MEN」來解救你吧！
+
+    = link_to 'BG MEN 官方帳號', 'http://line.me/ti/p/ZcJohnA4xl', {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>'Campaign - BG MEN', 'data-ga-event-action'=> 'Add Line', 'data-ga-event-label' => 'BG MEN'}
+
+.mobile-v2-title
+  | Share on
+  br
+  | Social Medias
+
+  .mobile-v2-fb-btn.ga-event data-ga-event-category='Campaign - BG MEN' data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url('campaign/bgmen/fbshare.jpg')) data-facebook-link=(campaign_url(id: 'bgmen')) data-facebook-caption='我印 X BG MEN 搞笑商品獨家首賣，加贈 LINE 貼圖！'  分享到 Facebook
+
+= link_to '分享到 Line', 'http://line.naver.jp/R/msg/text/我印 X BG MEN 搞笑商品獨家首賣，加贈 LINE 貼圖！ https://commandp.com/zh-TW/campaign/BGMEN', {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>'Campaign - BG MEN', 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+.bgmen-line-sticker
+  .mobile-v2-title
+    | BG MEN's
+    br
+    | Line Stickers
+
+
+  = link_to 'https://store.line.me/stickershop/product/4326/zh-Hant' do
+
+    .line-sticker-itemtitle BG MEN 動動感謝祭
+    = image_tag 'campaign/bgmen/line_1.png' , lazy:true, alt:'BG MEN 動動感謝祭'
+
+  = link_to 'https://store.line.me/stickershop/product/1001988/zh-Hant' do
+
+    .line-sticker-itemtitle BG MEN
+    = image_tag 'campaign/bgmen/line_2.png' , lazy:true, alt:'BG MEN'
+
+.event-detial
+  .event-detial-inner-block
+    .event-title 活動名稱
+    .event-desc.highlightspan BG MEN 商品全面特惠，限時加贈 LINE 動態貼圖！
+    p.event-desc
+    p.event-desc
+    .event-title 活動方式
+    p.event-desc 活動期間內凡購買 BG MEN 設計師商品，可憑購買訂單編號獲贈一組 BG MEN LINE 動態貼圖。
+    .event-title 贈獎方式
+    p.event-desc
+      | 10/26 ~ 11/15 用戶加入 BG MEN
+      a.highlightspan LINE ID : bg_men
+      | 並提供：
+    p.event-desc 一、包含任一款 BG MEN 商品購買完成之訂單編號。
+    p.event-desc 二、訂購者 Email
+    p.event-desc
+      | 核對完成後即可獲贈一組「BG MEN 動什麼動」 BG MEN LINE 動態貼圖
+      br
+      |（若已購買過貼圖或是無法領取貼圖者，我印將以其他優惠方式代替）。
+.app-promotion
+  .title
+    | 購買 BG MEN 系列商品
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'

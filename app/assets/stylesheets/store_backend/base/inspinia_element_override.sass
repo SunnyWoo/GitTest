@@ -1,0 +1,143 @@
+/* 覆寫 INSPINIA Theme or Bootstrap 元件的樣式 */
+
+//  - 每一個覆寫的元件「一定」要標上覆寫的來源檔案，以檔名標注就行了
+//  - 同一個檔案的覆寫集中放置
+//  - Here is example:
+//
+//    // -------------------------------------
+//    //   button.scss
+//    // -------------------------------------
+//
+//    .btn
+//      border-radius: 10px
+//
+//    .btn-success.btn-outline
+//      color: #fecf4c
+//
+
+// -------------------------------------
+//   base.scss
+// -------------------------------------
+
+body
+  overflow-x: auto
+  background-color: transparent
+
+#wrapper
+  overflow-x: auto
+
+#page-wrapper
+  position: inherit
+  margin: 0 0 0 $sidebar-width
+  min-height: 1200px
+  min-width: (1024 - $sidebar-width)
+  z-index: $z-page-wrapper
+
+.breadcrumb > .active
+  font-weight: 700
+  &:before
+    // normalize prefix style
+    font-weight: normal
+
+.gray-bg, .bg-muted
+  background-color: #E5E5E5
+
+// -------------------------------------
+//   button.scss
+// -------------------------------------
+
+.btn-secondary
+  background-color: $c-secondary
+  border-color: $c-secondary
+  color: #FFFFFF
+
+.btn-secondary.btn-outline
+  color: $c-secondary
+
+.btn-primary.btn-outline:hover,
+.btn-secondary.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover
+  color: #fff
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary, .btn-secondary:active:focus, .btn-secondary:active:hover, .btn-secondary.active:hover, .btn-secondary.active:focus
+  background-color: darken($c-secondary, 3%)
+  border-color: darken($c-secondary, 3%)
+  color: #FFFFFF
+
+.btn-secondary:active, .btn-secondary.active, .open .dropdown-toggle.btn-secondary
+  background-image: none
+
+.btn-secondary.disabled, .btn-secondary.disabled:hover, .btn-secondary.disabled:focus, .btn-secondary.disabled:active, .btn-secondary.disabled.active, .btn-secondary[disabled], .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus, .btn-secondary[disabled]:active, .btn-secondary.active[disabled], fieldset[disabled] .btn-secondary, fieldset[disabled] .btn-secondary:hover, fieldset[disabled] .btn-secondary:focus, fieldset[disabled] .btn-secondary:active, fieldset[disabled] .btn-secondary.active
+  background-color: lighten($c-secondary, 4%)
+  border-color: lighten($c-secondary, 4%)
+
+// -------------------------------------
+//   navigation.scss
+// -------------------------------------
+
+.navbar-default
+  background-color: $nav-bg
+
+.navbar-default.navbar-default // [hack] 寫兩個 selector 只是為了覆蓋優先權重
+  .nav > li.active > a
+    color: white
+    background-color: $navy
+
+  .nav > li.active > a:hover
+    background-color: $navy
+
+  .nav > li.active
+    border-left: 4px solid $navy
+    background: #E5E5E5
+
+  .nav-second-level.nav > li > a
+    background-color: transparent
+    &:hover
+      color: $navy
+    &:active
+      color: $navy
+
+  .nav-second-level li a[href='#']
+    cursor: default
+    color: $navy
+    &:hover
+      background-color: transparent
+      color: $navy
+    &:active
+      background-color: transparent
+      color: $navy
+
+
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus
+  background-color: #EBEBEB
+  color: $nav-text-color
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus
+  background: #EBEBEB
+
+.mini-navbar .nav .nav-second-level
+  background-color: #E5E5E5
+
+.canvas-menu.mini-navbar .nav-second-level
+  background: #E5E5E5
+
+.navbar-default .special_link a
+  background: $c-secondary
+  color: white
+
+.navbar-default .special_link a:hover
+  background: darken($c-secondary, 5%) !important
+  color: white
+
+.navbar-default .landing_link a
+  background: lighten($c-secondary, 3%)
+  color: white
+
+.navbar-default .landing_link a:hover
+  background: $c-secondary !important
+  color: white
+
+body.fixed-sidebar.mini-navbar .navbar-static-side
+  opacity: 0

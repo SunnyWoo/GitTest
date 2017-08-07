@@ -1,0 +1,21 @@
+#category.tab-pane.in.active
+  .widget-box.widget-color-blue.ui-sortable-handle
+    .widget-header.header-color-blue
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th = t('product_codes.code')
+              th = t('product_codes.description')
+              th = t('product_codes.category_names')
+              th = t('product_codes.product_model_count')
+              th
+          tbody
+            - @category_codes.each do |category_code|
+              tr
+                td= category_code.code
+                td= category_code.description
+                td= category_code.category.try(:name)
+                td= category_code.products.count
+                td= link_to '修改', edit_admin_product_code_path(category_code, code_type: 'category_code'), class: 'btn btn-primary btn-mini', remote: true

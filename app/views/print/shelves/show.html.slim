@@ -1,0 +1,39 @@
+.page-header
+  h1  倉儲貨架
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 = "貨架編號: #{@shelf.serial}"
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                - %i(serial category_name material_serial material_name quantity).each do |attr|
+                  th = Shelf.human_attribute_name(attr)
+            tbody
+                tr
+                  - %i(serial category_name material_serial material_name quantity).each do |attr|
+                    td = @shelf.send(attr)
+.row
+  .col-xs-6
+    .widget-box
+      .widget-header
+        h5 = '操作紀錄'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 時間
+                th 行為
+                th 操作者
+                th 備註
+              - @shelf.activities.order('created_at DESC').each do |activity|
+                tr
+                  td = I18n.l activity.created_at, format: :long
+                  td = "#{Shelf.human_attribute_name("actions.#{activity.key}")} #{activity.extra_info['quantity']}"
+                  td = activity.user.username
+                  td = activity.message

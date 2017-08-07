@@ -1,0 +1,1362 @@
+zh-TW:
+  admin:
+    asset_packages:
+      index:
+        page_title: &asset_packages 素材庫
+    home_blocks:
+      index:
+        page_title: &home_blocks 首頁區塊
+    tags:
+      index:
+        page_title: &tags 標籤
+    promotions:
+      index:
+        page_title: &promotions 促銷活動
+    change_price_events:
+      index:
+        page_title: &change_price_events 批次調價
+    versions:
+      index:
+        page_title: '%{class_name}#%{id} 的版本歷史'
+    oauth_apps:
+      index:
+        page_title: &oauth_apps OAuth 應用程式
+      show:
+        page_title: 'OAuth 應用程式: %{app}'
+    v2:
+      shared:
+        sidebar:
+          asset_packages: *asset_packages
+          home: 首頁設定
+          home_blocks: *home_blocks
+          tags: *tags
+          oauth_apps: *oauth_apps
+          promotions: *promotions
+          change_price_events: *change_price_events
+    search:
+      plz_search: '請搜尋'
+  shared:
+    source: "來源"
+    unknown_source: "未知來源"
+    wordings:
+      "yes": "是"
+      "no": "否"
+      used: "已使用"
+      not_used: "未使用"
+    welcome: "歡迎"
+    warn: "警告"
+    form_actions:
+      operation: "操作"
+      submit: "送出"
+      back: "返回"
+      edit: "編輯"
+      new: "新增"
+      delete: "刪除"
+      restore: "恢复"
+      history: "記錄"
+      send_coupon: "send coupon to all"
+      finish: "完成"
+      search: "搜尋"
+      view: "檢視"
+      refund: "退款"
+      reset: "重設"
+      resend: "重新寄信"
+      open: "開啟"
+      send_test: "發送測試 E-mail"
+      reupload: "重新上傳"
+      next: "下一步"
+      disable: 關閉
+      enable: 開啟
+      both_ok: 皆可
+      fallback: '回逤'
+      apply: '套用'
+      manual: '手動套用'
+    language:
+      title: "變換語言: "
+      en: "美國(英文)"
+      zh-TW: "台灣(繁體中文)"
+      ja: "日本(日本語)"
+      zh-CN: "中國(簡體中文)"
+      zh-HK: "香港(簡體中文)"
+    confirm:
+      delete: "確定要刪除?"
+      restore: "確定要恢复?"
+      submit: '確定送出?'
+    unlock: '解鎖'
+    search_option: "搜尋條件"
+    versions: 歷史
+  helper:
+    rebuild_print_image_link: "重新製圖"
+    rebuild_order_image_link: "重新製圖"
+    remove_fixed_image: "移除上傳圖"
+    rebuild_ai_link: "重新製圖"
+  paper_trail:
+    thead:
+      id: "編號"
+      item: "品項"
+      item_id: "品項 ID"
+      action: "動作"
+      user: "操作者"
+      update_at: "更新時間"
+      object: "Object"
+      object_change: "Object Change"
+  site_settings:
+    sidebar_name: "版本管理"
+    index:
+      page_title: "網站參數管理"
+      crumb:
+        list: "列表"
+      thead:
+        name: "設定名稱"
+        value: "設定值"
+        description: "敘述"
+        operation: "操作"
+    edit:
+      page_title: "編輯: %{key}"
+    create:
+      page_title: "建立參數"
+    attributes:
+      key: '鍵'
+      value: "值"
+      description: "敘述"
+  account:
+    sidebar_name: 帳號管理
+  admins:
+    sidebar_name: "管理員管理"
+    index:
+      page_title: "管理員列表"
+      thead:
+        id: "編號"
+        email: "信箱"
+        sign_in_count: "登入次數"
+        sign_in_at: "本次登入時間"
+        last_sign_in_at: "上次登入時間"
+        sign_ip: "本次登入ip"
+        last_sign_ip: "上次登入ip"
+        created_at: "建立時間"
+        operation: "操作"
+    new:
+      page_title: "新增管理者"
+    edit:
+      page_title: "編輯: %{email}"
+    attributes:
+      email: "信箱"
+      password: "密碼"
+      password_confirm: "密碼確認"
+    errors:
+      password_complexity: 'Password 必須包含英文字母大小寫以及數字'
+  users:
+    sidebar_name: "使用者管理"
+    index:
+      page_title: "使用者列表"
+      thead:
+        id: "編號"
+        email: "信箱"
+        role: "角色"
+        avatar: "頭像"
+        sign_in_count: "登入次數"
+        last_sign_in_at: "上次登入"
+        auth_token: "Auth Token"
+        operation: "操作"
+    clear_mobile:
+      link: "清除手機號碼"
+      confirm: "你真的要清除手機號碼嗎？此使用者將無法再用此手機號登入"
+      notice: "手機號碼清除成功"
+    edit:
+      page_title: "編輯: %{email}"
+    show:
+      page_title: "使用者: %{name}"
+      page_second_title: "動態"
+    attributes:
+      role: "角色"
+  designers:
+    sidebar_name: 設計師管理
+    index:
+      page_title: 設計師管理
+    new:
+      page_title: 新增設計師
+    edit:
+      page_title: 編輯設計師
+  factories:
+    sidebar_name: 工廠管理
+    edit:
+      page_title: '編輯工廠資料'
+    index:
+      page_title: '工廠列表'
+    new:
+      page_title: '新增工廠'
+  factory_members:
+    sidebar_name: 工廠帳號管理
+    edit:
+      page_title: '編輯工廠使用者'
+    index:
+      page_title: '工廠使用者列表'
+    new:
+      page_title: '新增工廠用戶'
+  activities:
+    sidebar_name: "動態列表"
+    index:
+      page_title: "動態列表"
+  marketing_sms:
+    sidebar_name: 營銷短訊
+    index:
+      page_title: 營銷短訊
+      submit: 發送短訊
+      review: 预览
+      thead:
+        created_at: 發送時間
+        operator: 操作者
+        send_type: 發送模式
+        content: 短訊內容
+        status: 狀態
+    attributes:
+      sms_type: 發送廠商
+      send_type: 發送模式
+      test_phone: 測試手機號碼
+      content: 短訊內容
+  designs:
+    sidebar_name: "設計集"
+    index:
+      page_title: "設計集"
+      empty_page_title: "嘩! 目前還沒有任何設計!"
+      empty_third_page_title: "還不快搶第一?"
+      thead:
+        id: "設計 ID"
+        cover_img: "縮圖"
+        designer: "設計師"
+        name: "名稱"
+        product_type: "產品類型"
+    new_button: "開始新設計"
+    edit_button: "編輯文案"
+    new:
+      page_title: "新增設計集"
+    edit:
+      page_title: "編輯設計集"
+    measure:
+      text_danger:
+        insufficient_resolution: "圖片解析度不足"
+        image: "圖片: "
+        device: "設備: "
+  works:
+    sidebar_name: "作品集"
+    attributes:
+      name: "名稱"
+      description: "敘述"
+      spec: "作品規格"
+      print_image: "作品圖片"
+      work_type: "作品權限"
+      feature: "Featured"
+      user: "使用者"
+      designer_price_tier: '設計師商品特價'
+    index:
+      page_title: "作品集"
+      search:
+        search_work: 找作品
+        expand: 展開...
+      thead:
+        id: "編號"
+        cover_image: "縮圖"
+        print_image: "Print Image"
+        order_image: "訂單用縮圖"
+        email: "信箱"
+        user: 使用者
+        name: "名稱"
+        description: "敘述"
+        model: "模組"
+        special_price: "指定價格"
+        status: "狀態"
+        feature: "特色商品"
+        featured: 特色商品
+        impressions_count: 計數
+        product_code: 商品编码
+        layer: "Layer"
+        archive_state: 封存狀態
+        operation: "操作"
+        aasm_state: "狀態"
+    archive_state:
+      none: 還未封存
+      fresh: 新鮮
+      stale: 老舊
+    new:
+      page_title: "新增作品"
+    show:
+      page_title:
+        layer_list: "%{name}的圖層列表"
+        status: "動態"
+    history:
+      page_title: "作品集"
+      crumb:
+        work_list: "作品列表"
+        work: "作品 編號: %{id} History"
+    edit:
+      page_title:
+        edit: "編輯: %{name}"
+      preview: "作品預覽"
+      change_product_notice: 因商品編碼一旦建立就無法修改, 若必須更新作品規格請另外新增作品並選擇正確的作品規格以產生新商品編碼
+    crop:
+      page_title: "Cut Range"
+      forth_page_title: "預覽 (參考用, 不要當真)"
+  standardized_works:
+    index:
+      page_title: 標準化作品集
+    new:
+      page_title: 新增標準化作品
+    edit:
+      page_title: 編輯標準化作品
+  work_sets:
+    sidebar_name: 批次上傳
+    index:
+      page_title: 批次上傳
+      upload: 上傳
+      upload_limit: 檔案大小限制 50MB. 如果你需要更大, 請先問過 Jimmy 的拳頭, 或者乖乖拆兩批...
+  archived_works:
+    sidebar_name: 歸檔作品
+    show:
+      recopy: 重新複製Layers
+  fees:
+    sidebar_name: "各種費用類型管理"
+    index:
+      page_title: "各種費用類型管理"
+      thead:
+        name: "名稱"
+        description: "敘述"
+        created_at: "建立於"
+    new:
+      page_title: "新增匯率"
+    edit:
+      page_title: "編輯: %{name}"
+    attributes:
+      name: "費用名稱"
+      description: "描述"
+      price: "價格"
+  impositions:
+    index:
+      page_title: 拼版設定
+    new:
+      page_title: '新增 %{model} 拼版設定'
+    edit:
+      page_title: '編輯 %{model} 拼版資訊'
+  orders:
+    sidebar_name: "訂單"
+    sidebar_name_list: "訂單列表"
+    sidebar_name_approve: "訂單審核"
+    sidebar_name_approve_invoice: "發票審核"
+    sidebar_name_deliver_list: '抛單列表'
+    index:
+      page_title: "訂單"
+      crumb:
+        list: "訂單列表"
+      fifth_page_title: "訂單搜尋"
+      placeholder:
+        search_input: "搜尋（include order no., phone no., ship id, email, coupon code and coupon name）"
+      sort_order: "排序方式:"
+      link_to_add: "增加篩選條件"
+      thead:
+        id: "編號"
+        cover_img: "縮圖"
+        order_no: "訂單編號"
+        order_state: "訂單狀態"
+        production_state: "生產狀態"
+        order_created_at: "訂單成立時間"
+        tel: "電話"
+        order_amount_nt: "訂單總金額"
+        order_amount: "訂單總金額"
+        currency: "貨幣"
+        ship: "物流方式"
+        ship_code: "物流單號"
+        destination: "目的地(國家)"
+        operation: "操作"
+        platform: "製作平台"
+        flags: '訂單標籤'
+    show:
+      risk_tip: 潛在風險
+      risk_country: '運送國家和訂購者所在國家不同'
+      page_title: "訂單"
+      crumb:
+        order_list: "訂單列表"
+        view_order: "檢視 訂單 No: %{order_no}"
+      h3_order:
+        title: "訂單 No: %{order_no}"
+        crumb:
+          created_at: "訂單 建立於 : %{date}"
+      h3_fee:
+        title: "費用計算"
+        thead:
+          currency: "幣別"
+          items_fee: "品項小記 Amount"
+          discount: "折抵"
+          ship_fee: "物流費用"
+          order_amount: "訂單總金額"
+          order_amount_nt: "訂單總金額"
+      h3_order_info:
+        title: "訂單基本資訊"
+        thead:
+          uid: "User ID"
+          order_state: "訂單狀態"
+          production_state: "生產狀態"
+          ship_code: "物流單號"
+          customer_service: "客服單號"
+          payment_gateway: "交易管道"
+          payment_id: "交易ID"
+          operation: "操作"
+        get_sale: "取得 Sale ID"
+      h3_item:
+        title: "品項總覽"
+        thead:
+          item: "品項ID"
+          work: "作品ID"
+          item_name: "品項名稱"
+          item_model: "產品類型"
+          production: "生產狀態"
+          amount: "數量"
+          currency: "幣別"
+          price: "單價"
+          sub_total: "小計"
+          operation: "操作"
+      h3_discount:
+        title: "折抵明細"
+        thead:
+          discount: "折抵方式"
+          coupon: "Coupon碼"
+          discount_amount: "折抵金額"
+          currency: "幣別"
+          note: "Note"
+      h3_ship:
+        title: "物流明細"
+        thead:
+          ship_gateway: "物流方式/物流公司"
+          ship_fee: "費用"
+          currency: "幣別"
+          ship_code: "物流單號"
+          inquiry: "查詢"
+          shipping_way: "運送方式"
+        link_to_oversea: "國際包裹查詢"
+        link_to_domestic: "國內包裹查詢"
+      h3_address:
+        title: "地址資訊"
+        thead:
+          type: "類型"
+          addressee: "收件人"
+          mail: "Email"
+          address: "地址"
+          tel: "電話"
+          operation: "操作"
+      h3_refund:
+        title: "退款"
+        thead:
+          date: "退款日期"
+          currency: "退款幣別"
+          price: "退款幣值"
+          amount: "退款金額"
+          note: "備註"
+          refund_no: "退款 ID"
+        link_to_refund: "建立一筆退款"
+        error_messages:
+          price_after_refund_less_than_zero: "退款金額大於實收金額。"
+          price_after_refund_equals_zero: "此訂單已無法再做退款動作，因為訂單可退款金額已為零，或是該訂單的金額為零"
+          refund_amount_is_zero: "退款金額不可為零！"
+          not_allowed: "此訂單狀態無法做退款動作！"
+      h3_invoice:
+        title: "發票資訊"
+        thead:
+          invoice_state: "發票狀態"
+          invoice_rate: "發票稅率"
+          invoice_number: "發票號碼"
+          invoice_memo: "備註"
+          invoice_number_created_at: "發票開立日期"
+        link_to_refund: "建立一筆退款"
+      h3_status: "動態"
+      flags:
+        internal_transfer: '對站拋單'
+        external_transfer: '外部拋單'
+        combined_shipping: '併單'
+      exec_refund: "退款"
+      create_refund_record: "建立退款記錄"
+      h3_viewable: '訂單前端顯示: %{flag}'
+      h3_locked_or_not: '訂單價格鎖定: %{flag} '
+      unlock: '解鎖'
+    toolbar:
+      resend: 重新寄信
+      resend_confirm: 你確定要重新寄信嗎?
+      notice: 重寄收據與桌布 Email
+      update_email_hint: 更改Email
+    adjustment_creation:
+      title: '手動建立Adjustment'
+      button: '建立 Adjustment'
+      create_succcess: '建立成功'
+      create_fail: '建立失敗'
+    history:
+      page_title: "訂單"
+      crumb_order_list: "訂單列表"
+      crumb_order_history: "訂單記錄 No: %{order_no}"
+    approve:
+      page_title: "Order"
+      crumb:
+        check_order: "Order Check"
+      thead:
+        id: "序號"
+        cover_img: "縮圖"
+        order_no: "訂單編號"
+        aasm_state: "訂單狀態"
+        production_state: "生產狀態"
+        created_at: "訂單成立時間"
+        created_source: "訂單建立來源"
+        approval_state: "審核狀態"
+        operation: "操作"
+        memo: "備忘"
+        billing_info: "帳單資訊"
+        shipping_info: "運送資訊"
+      link_to_approve: "通過審核"
+      approve_confirm: "請再次確認，圖片！ 確定通過訂單？"
+    approve_invoice:
+      invoice_state_eq: '發票狀態 等於'
+    _refund:
+      h3_refund: "Paypal 退款"
+      currency: "幣別: %{order_currency}"
+      input_price:
+        label: "退款金額"
+        hint: "請輸入退款金額"
+        confirm: "確定要退款?"
+    _order:
+      confirm: "你確定要強制更改訂單狀態?"
+      btn_update_order: "更改訂單狀態"
+  currency_types:
+    sidebar_name: "貨幣類型"
+    index:
+      page_title: "匯率種類列表"
+      thead:
+        name: "名稱"
+        shorthand: "簡寫"
+        exchange_rate_nt: "換算台幣匯率"
+        description: "描述"
+        created_at: "建立於"
+    new:
+      page_title: "新增匯率"
+    edit:
+      page_title: "編輯: %{name}"
+    attributes:
+      name: "貨幣名稱"
+      code: "貨幣代碼"
+      rate: "換算台幣匯率"
+      description: "描述"
+  product_models:
+    sidebar_name: "產品類型"
+    index:
+      page_title: "產品類型列表"
+      thead:
+        category: "產品線名稱"
+        name: "產品細項名稱(商店顯示名稱)"
+        description: "描述"
+        suffix: "Suffix"
+        added: "已上架"
+        created_at: "建立於"
+        option: "操作"
+        placeholder: '選擇產品圖面'
+        material: "商品材質"
+        weight: "商品重量"
+      preview_composers: 管理預覽圖面
+      variants: 变种
+    _work_specs:
+      thead:
+        name: "Editor Key"
+        description: "描述"
+        width: "寬度(mm)"
+        height: "高度(mm)"
+        dpi: "解析度(DPI)"
+        background_image: '預設背景圖面(Background Image)'
+        cover_image: '遮罩陰影圖(Cover Image)'
+        operation: "操作"
+      link_to_add: "新增預覽圖面"
+    new:
+      page_title: "新增類型"
+    edit:
+      page_title: "編輯: %{name}"
+    sort:
+      page_title: 分類排序設定
+      sub_title: (拖移更動排序)
+    attributes:
+      enable_white: '產生白墨圖'
+      category_id: "Category ID"
+      key: "Product Key"
+      dir_name: 廠商完整名稱
+      name: "產品名稱"
+      suffix: "Suffix Ex: Cases"
+      description: "描述"
+      added: "產品上架(勾選即代表上架)"
+      short_name: "短名"
+      factory: "印刷工廠"
+      slug: '網址網域名稱(請使用英文與底線)'
+      price_tier: '原價'
+      customized_special_price_tier: '客製化商品特價'
+      customized_special_price_tier_nil: '無特價'
+      outdated_price: '舊價格參考(請忽略)'
+      factory: "工廠"
+      material: "商品材質"
+      weight: "商品重量"
+      auto_imposite: 自動拼版
+      currency:
+        price: "價格"
+      external_code: '外部廠商對應貨碼'
+      enable_composite_with_horizontal_rotation: '雙面拼接模式'
+      create_order_image_by_cover_image: '直接使用cover_image當做order_image(目前僅適用個人作品)'
+      enable_back_image: '產生背面圖(目前僅適用上海公交卡)'
+      profit: '分潤成本'
+    error_messages:
+      factory_ids: "請選擇一或多間工廠"
+  products:
+    sidebar_name: '產品列表 (新)'
+    index:
+      page_title: "產品列表"
+      new_category: 新增產品類別
+      new_model: 新增產品
+    new:
+      page_title: '新增產品類別'
+    show:
+      locale: 語系
+      name: 名稱
+  preview_composers:
+    index:
+      page_title: "%{model} 的預覽合成器"
+      samples: 顯示樣本
+      sample_notes: 樣本會在每次更新合成器時一併更新. 繪製樣本需要一些時間, 請耐心等候.
+      thead:
+        id: 流水編號(不用理會)
+        type: 預覽圖型態
+        key: Key
+        available: 是否顯示於前台(True為顯示)
+        operation: Operation
+    select_type:
+      page_title: 選擇預覽合成器類型
+      simple: 單一合成預覽圖(預覽圖當中合成單一設計圖)
+      front_back: 多個合成預覽圖(預覽圖當中合成多個設計圖)
+      vertical_displace: 扭曲合成預覽圖(預覽圖當中，將設計圖扭曲與位移)
+      fixed: 固定圖片預覽圖(使用固定照片當作預覽圖，並不合成設計圖於預覽圖當中)
+    new:
+      page_title: 建立預覽合成器
+    edit:
+      page_title: 編輯預覽合成器
+    form:
+      use_outer_size: '注意: 你必須提供外框尺寸, 系統才能順利的繪製出正確的圖.'
+    new_button: 新增
+    rebuild_button: 重新整理
+    rebuild_button_warning: 按下 "確定" 後將會清除一個月內所有作品的縮圖, 並且重新製作縮圖. 未完成期間可能產生破圖, 請問你真的要重新產生嗎?
+    attributes:
+      available: 是否顯示於前台(True為顯示)
+      background: 預覽圖尺寸
+      background_width: 寬度(px)
+      background_height: 高度(px)
+      case: 陰影遮罩圖(Cover Image)
+      mask: 設計圖示範例
+      mask_left: 設計圖示座標 - X軸(px)
+      mask_top: 設計圖示座標 - Y軸(px)
+      mask_height: 設計圖示高度(px)
+      mask_width: 設計圖示寬度(px)
+  preview_samples:
+    index:
+      page_title: 樣本
+      no_samples: 目前沒有樣本.
+  coupons:
+    sidebar_name: "Coupon券"
+    index:
+      search:
+        thead:
+          title: "Coupon名稱"
+          code: "Coupon碼"
+      page_title: "Coupon 列表"
+      thead:
+        name: "Coupon名稱"
+        coupon_code: "Coupon碼"
+        use_state: "使用狀態"
+        expires_at: "失效時間"
+        is_event: "活動使用"
+        operation: "操作"
+    new:
+      page_title: "新增Coupon券"
+    edit:
+      page_title: "編輯: %{name}"
+    attributes:
+      title: "Coupon 名稱"
+      code: "Coupon碼, 可留空，系統會自動產生"
+      expires_at: "過期時間(預設為建立起算一年)"
+      event: "活動使用Coupon Code, 此Coupon 可以重複使用"
+      currency:
+        price: "價格"
+    show:
+      link_to_list: "Coupon列表"
+      crumb_code: "Coupon碼: %{code}"
+      table:
+        thead:
+          name: "名稱"
+          currency: "幣別"
+          price: "價格"
+    search:
+      thead:
+        title: "Coupon名稱"
+        code: "Coupon碼"
+        count: "已使用數量"
+        orders_used: "已使用訂單"
+        order_no: "訂單編號"
+        created_at: "建立於"
+        view: "檢視"
+  emails:
+    sidebar_name: "預覽 Email"
+    index:
+      page_title: "預覽 Email"
+      crumb:
+        send_test: "寄送測試 E-mail"
+      form_tag:
+        item:
+          label: "測試項目"
+          tips: "可以多選不同的樣式"
+  questions:
+    sidebar_name: "Q&A"
+    list: "問題列表"
+    index:
+      page_title: "Q&A 管理"
+      crumb:
+        list: "問題列表"
+      thead:
+        id: "編號"
+        category: "問題類型"
+        question: "問題"
+        ans: "解答"
+        operation: "操作"
+    new:
+      page_title: "新增問題"
+    edit:
+      page_title: "編輯: %{question}"
+    attributes:
+      category: "問題類型"
+      question: "問題"
+      ans: "解答"
+  question_categories:
+    sidebar_name: "問題類型"
+    index:
+      page_title: "Q&A 管理"
+      crumb:
+        list: "問題類型列表"
+      thead:
+        id: "編號"
+        name: "名稱"
+        operation: "操作"
+    new:
+      page_title: "新增問題類型"
+    edit:
+      page_title: "編輯: %{name}"
+    attributes:
+      name: "問題"
+  reports:
+    sidebar_name: "Report"
+    index:
+      page_title: "Report"
+      crumb:
+        list: "Report 列表"
+      search_attributes:
+        start_at: "開始日期"
+        end_at: "結束日期"
+        price: "訂單金額"
+        platform: "平台"
+        country: "地區"
+      link_to_update: "手動更新report"
+      thead:
+        date: "日期"
+        orders: "訂單數量"
+        items: "品項數量"
+        users: "購買使用者數"
+        sub_count: "小計總金額"
+        total_discount: "折扣總金額"
+        total_ship: "運費總金額"
+        total_order_amount: "訂單總金額"
+        avg_order_amount: "平均訂單金額"
+        avg_user_amount: "平均每人金額"
+    report_type:
+      designer_items_sell_list: '設計師商品銷售明細'
+      order_items_sell_list: '總訂單商品銷售明細'
+      product_model_sell_list: '產品類型銷售明細'
+  home_slides:
+    sidebar_name: "Home Slides"
+    index:
+      page_title: "Home Slides"
+      crumb:
+        list: "Home Slides 列表"
+      search_option: "搜尋條件"
+      search_attributes:
+        enabled: "是否顯示"
+        set: "集合"
+      thead:
+        id: "序號"
+        title: "Title"
+        link: "Link"
+        template: "Template"
+        background: "背景圖片"
+        slide: "前景圖片"
+        enabled: "是否顯示"
+        created_at: "建立時間"
+        priority: "排序權重"
+        operation: "操作"
+        set: "系列"
+    new:
+      page_title: "新增 Slide"
+    edit:
+      page_title: "編輯 Slide"
+    attributes:
+      set: "系列"
+      link: "Link - 需要包含 Http://"
+      slide: "圖片 - 上傳圖片建議大小(1020 x 500)"
+      enabled: "Is Viewable?"
+  home_products:
+    sidebar_name: 首頁產品
+  messages:
+    sidebar_name: "訊息/Email"
+    index:
+      page_title: "訊息/Email"
+      email_contains: 'Email 包含...'
+  features:
+    sidebar_name: "功能管理"
+    index:
+      page_title: "功能管理"
+      feature_name: 名稱
+      enable_for_admin: 管理者可用?
+      enable_for_user: 一般人可用?
+      enable_for_factory: 工廠可用?
+  banners:
+    sidebar_name: Banners
+    index:
+      page_title: Banners
+    errors:
+      either_url_or_deeplink: "如果Url跟Deeplink同時掉到水裡，你只能救一個，你會選誰？"
+  announcements:
+    index:
+      page_title: 網站公告
+  price_tiers:
+    sidebar_name: 價格階級
+  notifications:
+    sidebar_name: 發送推播
+    publish: 發送
+    notice:
+      publish: 成功加入推播排程
+      confirm: 確定發送推播？
+    errors:
+      device_type_error: "DeviceType 不能為空 或 必須包含(%{type})"
+    report: 推播報表
+  devices:
+    sidebar_name: Device list
+  mobile_uis:
+    sidebar_name: 行動裝置 UI
+    index:
+      page_title: 行動裝置 UI
+    edit:
+      page_title: 編輯 行動裝置 UI
+    new:
+      page_title: 新增 行動裝置 UI
+  home_links:
+    sidebar_name: 首頁連結
+    index:
+      page_title: 首頁連結
+    edit:
+      page_title: 編輯 首頁連結
+    new:
+      page_title: 新增 首頁連結
+  newsletter_subscriptions:
+    sidebar_name: 訂閱電子報清單
+  newsletters:
+    sidebar_name: 電子報
+    new:
+      page_title: 新增電子報
+    edit:
+      page_title: 編輯電子報
+    show:
+      page_title: 檢視電子報
+  auto_coupons:
+    index:
+      page_title: 自動審核Coupon
+  campaigns:
+    sidebar_name: Camapign
+    index:
+      page_title: Camapign list
+    new:
+      page_title: New Camapign
+    edit:
+      page_title: Edit Camapign
+    aasm_states_label: V3狀態
+  work_specs:
+    attributes:
+      name: 规格名稱
+      width: 寬度(mm)
+      height: 高度(mm)
+      dpi: 解析度(DPI)
+      background_image: 預覽背景圖(Background Image)
+      overlay_image: 遮罩陰影圖(Cover Image)
+      shape: 設計圖裁切形狀
+      alignment_points: 設計圖自行繪製定位點
+      background_color: 背景圖顏色
+      enable_white: '產生白墨圖'
+      dir_name: 廠商完整名稱
+      description: "描述"
+      auto_imposite: 自動拼版
+      enable_composite_with_horizontal_rotation: '雙面拼接模式'
+      create_order_image_by_cover_image: '直接使用cover_image當做order_image(目前僅適用個人作品)'
+      enable_back_image: '產生背面圖(目前僅適用上海公交卡)'
+  asset_package_categories:
+    index:
+      page_title: 貼圖包類別
+      thead:
+        packages_total: '貼圖包總數'
+        downloads_total: '該類別下載總次數'
+        status: '狀態'
+        operation: '操作'
+      status:
+        available: '開啟'
+        unavailable: '未開啟'
+    edit:
+      page_title: '編輯貼圖包分類 %{name}'
+      packages_sort: '貼圖包排序'
+    new:
+      page_title: '新增貼圖包分類'
+  cp_resources:
+    sidebar_name: 編輯器貼圖管理
+    edit:
+      page_title: 更新 編輯器貼圖 V%{version}
+      small_package: 小圖包
+      large_package: 大圖包
+    new:
+      page_title: 新增 編輯器貼圖
+  bdevents:
+    sidebar_name: 兌換活動
+    index:
+      page_title: 兌換活動頁
+      page_title_with_type: 兌換活動頁 %{event_type}
+    new:
+      page_title: 新增 兌換活動
+      page_title_with_type: 新增 兌換活動 %{event_type}
+    edit:
+      page_title: 編輯 兌換活動
+      page_title_with_type: 編輯 兌換活動 %{event_type}
+  masks:
+    sidebar_name: 'Mask'
+    index:
+      page_title: 'Masks'
+      material: '材料'
+      image: '圖片'
+      operation: '操作'
+    new:
+      page_title: '新建Mask'
+    attributes:
+      material_name: '材料名'
+  work_templates:
+    manage: '管理 work template'
+    sidebar_name: 'Work Template'
+    operation: '操作'
+    index:
+      page_title: 'Work Template'
+      aasm_state: '狀態'
+      overlay_image: '前景圖'
+      background_image: '背景圖'
+      mask: 'Mask'
+    new:
+      page_title: '新建 Template'
+    edit:
+      page_title: '编辑 Template'
+    attributes:
+      aasm_state: '狀態'
+      overlay_image: '前景圖'
+      background_image: '背景圖'
+      masks: 'Masks'
+      material_name: '材料名稱'
+      scale_x: 'Scale X'
+      scale_y: 'Scale Y'
+      position_x: 'Position X'
+      position_y: 'Position Y'
+      orientation: '方向'
+  aasm_states_label: AASM 狀態
+  aasm_states:
+    is_published: 已發佈
+    is_preparing: 準備中
+    is_closed: 已關閉
+  header_links:
+    sidebar_name: "Header Link"
+    edit:
+      page_title: "编辑 Header Link"
+    index:
+      page_title: "Header Link"
+    new:
+      page_title: "新建 Header Link"
+  coupon_notices:
+    sidebar_name: "優惠券簡訊"
+    show:
+      page_title: "優惠券簡訊"
+    edit:
+      page_title: "編輯優惠券簡訊"
+    index:
+      page_title: "優惠券簡訊"
+      coupon: "优惠券"
+      notice: "信息"
+      available: "有效"
+      platform: "手机/邮箱"
+      region: "中国/全球"
+    new:
+      page_title: "新建優惠券簡訊"
+    preview:
+      page_title: "優惠券簡訊预览"
+  collections:
+    sidebar_name: Collection
+    index:
+      page_title: Collection
+      thead:
+        name: 識別名稱
+        operation: 操作
+        work_amount: 作品數量
+    works_button: 作品
+    new:
+      page_title: 新建Collection
+    edit:
+      page_title: 編輯Collection
+    works:
+      list: 作品清單
+      add: 增加標籤
+      search_options:
+        designer: 設計師
+        product_model: 產品類型
+        work_name: 作品名稱
+        tag: 標籤
+        work_image: 縮圖
+    add_button: 增加
+    remove_button: 移除
+    add_success: 增加標籤成功!
+    remove_success: 移除標籤成功!
+  tags:
+    index:
+      page_title: 標籤
+      thead:
+        name: 識別名稱
+        operation: 操作
+        work_amount: 作品數量
+        sort: 排序
+    works_button: 作品
+    new:
+      page_title: 新建標籤
+    edit:
+      page_title: 編輯標籤
+    all_works: 搜索作品
+    works:
+      list: 作品清單
+      add: 增加作品
+      search_options:
+        designer: 設計師
+        product_model: 產品類型
+        work_name: 作品名稱
+        tag: 標籤
+        work_image: 縮圖
+      apply_button: 增加標籤
+      remove_button: 移除標籤
+      apply_success: 增加標籤成功!
+      remove_success: 移除標籤成功!
+      works_button: 設計師作品
+  product_codes:
+    export:
+      name: 商品編碼导出
+      type: 导出方式
+      export_all: 全部导出
+      export_by_time: 按时间导出
+      time_gteq: 時間大於
+      time_lteq: 時間小於
+      submit: 导出
+    material_codes:
+      category: 物料編碼商品大類
+      material: 物料編碼商品材質
+      craft: 物料編碼制作工藝
+      spec: 物料編碼商品規格
+      base_code: 商品碼基碼
+    sidebar_name: 商品編碼
+    material_code_manage: 物料編碼管理
+    work_code_manage: 作品編碼管理
+    category_code: 商品大類
+    category: 商品大類
+    material: 材質
+    craft: 工藝
+    spec: 商品規格
+    code_type: 編碼類別
+    code: 類別編碼
+    description: 類別描述
+    category_names: '類別名稱'
+    product_model_count: product model 數量
+  channel_codes:
+    manage: 作品編碼管理
+    code: 渠道代碼
+    description: 渠道描述
+  deliver_order:
+    order_no: '訂單編號'
+    deliver_no: '抛單編號'
+    image: '縮圖'
+    created_at: '訂單建立時間'
+    delivered_at: '訂單抛單時間'
+    shipped_at: '台灣出貨時間'
+    aasm_state: '處理進度'
+    updated_at: '更新时间'
+    deliver_failed: '抛单失败列表'
+    index:
+      page_title: '抛單列表'
+  recommend_sorts:
+    sidebar_name: 預設排序
+    index:
+      page_title: 預設排序
+      thead:
+        design_platform: 平台
+        sort: 排序
+        operation: 操作
+    edit:
+      page_title: 編輯預設排序
+    sort_options:
+      new: 最新
+      popular: 最熱
+      price_asc: 價格由低到高
+      price_desc: 價格由高到低
+      random: 隨機
+  import_orders:
+    sidebar_name: '导入订单'
+    index:
+      page_title: '导入订单'
+      platform_code: '管易平台订单号'
+      order_no: '订单编号'
+      message: '错误信息'
+      failed_retry: '失败重试'
+      failed:
+        message:
+          work_not_found_error: '商品不存在'
+          order_existed_error: '订单已存在'
+          guanyi_not_found_error: '未在管易找到数据'
+          guanyi_error: '管易错误'
+  promotions:
+    sidebar_name: '優惠活動管理'
+    for_product_category:
+      description: '選擇多種產品類別，套用統一的優惠計價公式，包括固定折扣金額、固定折扣比例，或固定售價金額。'
+    for_product_model:
+      description: '選擇多種產品類型，套用統一的優惠計價公式，包括固定折扣金額、固定折扣比例，或固定售價金額。'
+    for_itemable_price:
+      description: '選擇多種產品（類別、類型或標準作品），針對各項商品指定各自的優惠售價。'
+    for_shipping_fee:
+      description: '免運優惠活動，設定一種免運的條件，訂單滿足該條件即可免運'
+    index:
+      page_title: 活動改價
+      thead:
+        name: 活動優惠識別名稱
+        type: 優惠目標
+        operation: 操作
+        aasm_state: 狀態
+        begin_at: 距離開始時間
+        ends_at: 距離結束時間
+        info: 條件與內容
+        descritpion: 說明描述
+      button:
+        submit: 提交
+    messages:
+      confirm: 確定提交?
+      submit_success: 提交成功!
+      submit_fail: 提交失敗!
+      fallback_success: 回逤成功!
+      manual_success: 應用成功!
+      fallback_fail: 抱歉, 我們無法回逤這張訂單的活動
+      manual_fail: 抱歉, 我們無法應用這張訂單的活動
+      unlimited_duration: 無限期
+    new:
+      page_title: 新建活動優惠
+    edit:
+      page_title: 編輯活動優惠
+    show:
+      page_title: 瀏覽 %{name} 活動優惠
+    type_options:
+      for_product_category: 產品類別批次優惠
+      for_product_model: 產品型號批次優惠
+      for_standardized_work: 標準化商品批次優惠
+      for_itemable_price: 多商品自訂金額優惠
+      for_shipping_fee: 免運優惠
+      for_order_price: 整筆訂單優惠
+      Promotion::ForProductCategory: 產品類別
+      Promotion::ForProductModel: 產品類型
+      Promotion::ForStandardizedWork: 標準化作品
+      Promotion::ForOrderPrice: 訂單總額
+    status_options:
+      selected: 已選擇
+      none_selected: 未選擇
+    rule_options:
+      simple_discount: 單品優惠價
+      shipping_fee_discount: 免運優惠
+    attributes:
+      name: 名稱
+      description: 活動描述
+      type: 類型
+      targets: 折扣目標價
+      rule: 規則
+      begins_at: 開始時間
+      ends_at: 結束時間
+      rule_price_tier: 金額
+      rule_threshold_price_tier: 訂單總額超過
+      free_shipping: 免運費
+    rule_discount_type_text:
+      fixed: 折扣金額
+      percentage: 折扣
+      pay: 結賬金額
+    promotable_scope:
+      standardized_work: '設計師商品'
+      product_model: '產品型號的所有商品'
+      product_category: '產品類別的所有商品'
+    works:
+      apply: 增加
+      remove: 移除
+      search_options:
+        category: 產品類別
+        designer: 設計師
+        product_model: 產品類型
+        work_name: 作品名稱
+        tag: 標籤
+        work_image: 縮圖
+        status: 狀態
+    content:
+      for_shipping_fee: "對符合 <em>%{rules}</em> 條件的訂單給予運費減免"
+      for_itemable_price: "對 <em>%{promotables}</em> 等商品設定各自的優惠金額"
+      unified_discount: "對 <em>%{promotables}</em> 等商品採 <em>%{discount}</em> 計價"
+      unset: '未設定條件'
+    rule:
+      condition:
+        threshold: '訂單總額超過 %{price}'
+        include_designers: '特定設計師'
+        include_product_models: '特定 Product Model'
+        include_works: '特定兌換商品'
+        include_designers_models: '特定設計師與 Product Model'
+        include_product_categories: '特定 Product Category'
+        include_bdevent: '特定 Bdevent'
+        include_free_shipping_coupon: '使用特定免運 Coupon'
+  discount_formula:
+    percentage:
+      humanize: "扣除商品價 %{percentage} 金額"
+    fixed:
+      humanize: "以商品價減 %{binded_price} 計算"
+    pay:
+      humanize: "固定以 %{binded_price} 優惠價"
+  change_price_events:
+    index:
+      page_title: 批次調價
+      thead:
+        operation: 操作
+        target_type: 調價類別
+        created_at: 調價日期
+        operator: 操作者
+        items: 調價品項
+        price: 金額
+        status: 狀態
+      button:
+        submit: 提交
+        rerun: 重新執行
+        log: 記錄列表
+    new:
+      page_title: 新建批次改價
+    target_type:
+      StandardizedWorkPrice: 設計師商品指定價格
+      ProductPrice: Product Model 原價
+      ProductCustomizedPrice: Product Model 客製化價格
+    works:
+      search_options:
+        category: 產品類別
+        designer: 設計師
+        product_model: 產品類型
+        work_name: 作品名稱
+        tag: 標籤
+        work_image: 縮圖
+        status: 狀態
+  change_price_histories:
+    index:
+      page_title: 批次調價記錄列表
+      thead:
+        original_price: 調價前價格
+        target_price: 調價後價格
+        changeable: 調價品項
+  purchase_categories:
+    sidebar_name: '採購類型'
+    index:
+      page_title: '採購類型列表'
+      purchase_categort: '採購類型'
+      price_tier: '價格區間'
+      product_type: '產品類型'
+      purchase_count: '採購數量'
+      purchase_price: '採購價格'
+    new:
+      page_title: '新建採購類型'
+    edit:
+      page_title: '新建採購類型'
+  purchase:
+    sidebar_name: '採購'
+  durations:
+    sidebar_name: '採購期'
+    index:
+      page_title: '採購期'
+      duration: '採購期'
+      category_name: '採購類型'
+      product_type: '產品類型'
+      price_tier: '價格區間'
+      b2c_count: 'B2C数量'
+      purchase_price: '採購價格'
+  adjustments:
+    attributes:
+      source_name: 來源名稱
+      adjustable: 目標對象
+      event: 應用事件
+      target: 應用單位
+      value: 價格變動
+      quantity: 數量
+      description: 敘述
+      created_at: 應用時間
+  dashboard:
+    sidebar_name: 'Dashboard'
+    watching_order: '订单关注'
+  b2b_orders:
+    sidebar_name: 'B2b订单'
+    sticker:
+      sidebar_name: 'B2b贴纸'
+      page_title: 'B2b贴纸'
+  stores:
+    sidebar_name: '商店帳號管理'
+    index:
+      page_title: '商店列表'
+    new:
+      page_title: '新增商店'
+    edit:
+      page_title: '編輯商店'
+  daily_reports:
+    sidebar_name: '每日追蹤報表'
+    page_title: '每日追蹤報表列表'
+    order_sticker:
+      page_title: '訂單商品貼圖使用數據'
+      interval: '期間: %{starts_at} ~ %{ends_at}'
+      products: '產品類型: %{product_keys}'
+  option_types:
+    sidebar_name: '商品規格'
+    product:
+      attributes:
+        name: '名稱'
+        key: '鍵'
+    attributes:
+      name: 名稱
+      presentation: 描述
+    index:
+      page_title: '商品規格列表'
+    new:
+      page_title: '新增商品規格'
+    edit:
+      page_title: "編輯商品規格: %{name}"
+    show:
+      page_title: "商品規格: %{name} "
+  variants:
+    index:
+      page_title: "%{product} 商品型態"
+      options: '选项'
+    new:
+      page_title: "新增 %{product} 商品型態"
+    edit:
+      page_title: '编辑 %{product} 商品型態'
+  rewards:
+    sidebar_name: '優惠領取'
+    page_title: '優惠領取'
+    new:
+      page_title: '新增優惠領取'
+    edit:
+      page_title: '編輯優惠領取'

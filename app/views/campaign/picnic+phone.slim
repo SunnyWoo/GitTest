@@ -1,0 +1,205 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy: true
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy: true
+.m-announcement style='background-color: #f6f7f2;border-bottom: 1px #e5e5e5 solid;'
+  = @title
+.camp_margin-top-33
+- select_class = browser.ios? ? 'campaign-page-select-ios' : 'campaign-page-select'
+select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+  - { info: '活動介紹', create: '客製素材', product: '熱賣商品' }.each do |key, val|
+    option.filter value=(key) = val
+
+.campaign-page#info_page
+  .mobile-v2-title style='font-weight: 400;'
+    | LET'S GO
+    br
+    | PICNIC
+    br
+    | 活動介紹
+  .m-picnic-block.text-center
+    .title
+      | 趣好康 1
+    .desc
+      | 於 10/4「妞新聞 不然，趣野餐」
+      br
+      | 活動現場下載我印 APP+ 按我印 FB 讚，
+      br
+      | 就可免費讓插畫家繪製插畫，
+      br
+      | 並獲得 150 元我印折價卷！
+    .title
+      | 趣好康 2
+    .desc
+      | 於 9/17-10/4 活動期間凡購買
+      br
+      | 趣野餐相關商品單筆滿 899 元，
+      br
+      | 10/4「妞新聞 不然，趣野餐」活動當天，
+      br
+      | 可免費讓插畫家繪製插畫
+      br
+      | 並免費製作成馬克杯乙個（價值 499 元）
+      br
+      br
+      | 活動日期：2015 年 10 月 4 日 星期日
+      br
+      br
+      | 活動地點：華山園區
+    br
+    = image_tag 'campaign/picnic/images/m-bg.png', alt: @name
+  .m-picnic-block-2.text-center
+    .mobile-v2-title.title  style='font-weight: 400;'
+      | LET'S GO
+      br
+      | PICNIC
+      br
+      | 插畫家介紹
+    .m-picnic-designer
+      = link_to 'https://www.facebook.com/eyetuface', target: '_blank' do
+        = image_tag 'campaign/picnic/images/designer.png', alt: '陳遴而 Liner Chen'
+      .desc
+        | 陳遴而 Liner Chen
+        br
+        br
+        | Hi！ Say cheese！
+        br
+        | 喜歡創作、喜歡畫畫的我們！
+        br
+        | 做自己喜歡做的事、做令人開心的事。
+        br
+        | 當初一個想畫畫的衝動，
+        br
+        | 實現了我們分享創意的好點子。
+        br
+        | 一雙好鞋、幾支畫筆，
+        br
+        | 再來一顆微笑太陽，
+        br
+        | EYE TÜ FACE 歡樂每一個人。
+    .m-picnic-designer
+      = link_to 'https://www.facebook.com/peachdayisagoodday', target: '_blank' do
+        = image_tag 'campaign/picnic/images/designer-2.png', alt: '蘇姵嘉 Peggy'
+      .desc
+        | 蘇姵嘉 Peggy
+        br
+        br
+        | P each day is a good day
+        br
+        | 每一天都是好的一天，
+        br
+        | 期許每一天都能是特別的一天。
+        br
+        | 每一天都能認識新的自己，
+        br
+        | 每一天都過得更美妙一點，
+        br
+        | 每一天都更加期待每一天。
+  .m-picnic-block-3.text-center
+    .mobile-v2-title style='font-weight: 400; margin-top:60px;'
+      | 我印 X
+      br
+      | LET'S GO
+      br
+      | PICNIC
+    .desc
+      | 10/4 星期日快來找我們吧！
+      br
+      | 下載我印 APP 並按我印粉絲團讚，
+      br
+      | 可以免費讓兩位插畫家幫你畫畫，
+      br
+      | 並把畫作做成商品唷！
+      br
+      | 9/17-10/4 活動期間
+      br
+      | 凡購買趣野餐相關商品單筆滿 899 元，
+      br
+      | 還可以免費獲得一個杯子唷！
+  = link_to image_url 'campaign/picnic/images/map.png', html: { target: :_blank } do
+    = image_tag 'campaign/picnic/images/m-map.png', class: 'm-picnic-map', lazy: true, alt: "我印 X #{@name}"
+
+
+
+.campaign-page#create_page
+  .products.happysummer
+    .mobile-v2-title style='font-weight: 400;'
+      | LET'S GO PICNIC
+      br
+      | 素材下載
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-1-new.png', alt: @title, width: '60px'
+      .step-title 1. 選擇載體與下載素材
+      .step-desc 選擇您中意的產品載體，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-2-new.png', alt: @title, width: '60px'
+      .step-title 2. 載入素材與製作
+      .step-desc 選擇您中意的產品載體，並載入下載的素材，開始自己動手設計屬於自己的商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-3-new.png', alt: @title, width: '60px'
+      .step-title 3. 快速結帳，全球直送
+      .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+    .mobile-v2-title
+      | 選擇素材
+    - select_class = browser.ios? ? 'material-select-ios' : 'material-select'
+    select.select_material class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @work_categories.each do |category_id, obj|
+        - obj[:models].each do |model|
+          option.filter selected=('selected' if model.key == @default_model.key) value=(model.key) data=({category_key: model.category.key}) = model.name
+    .hide#material_span data=({key: @default_model.key, category_key: @default_category.key })
+    - @materials.each_with_index do |material, i|
+      .product.material class=('hide' if i >= 3)
+        .product-mobile
+          = image_tag "campaign/picnic/material/thumb/#{material}.jpg", width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+              = material.split('_').map(&:classify).join(' ')
+          = link_to '#', class: 'btn btn-default btn-happysummer material_download', download: :material_download,
+                         target: '_blank', data: { material: material, platform: 'Mobile' } do
+            | 下載樣式
+          br
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create?category=#{@default_category.key}",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+    .page.material
+      #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                    'ga-event-action' => 'click',
+                                                    'ga-event-label' => 'material see more'})
+        | 下一頁
+    .camp_margin-bottom-35
+
+.campaign-page#product_page
+  .products
+    .mobile-v2-title
+      | LET'S GO
+      br
+      | PINNIC
+      br
+      | 熱賣商品
+
+    - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+    select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @category_names.each do |key, val|
+        option.filter value=(key) = val
+    .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+    - @category_products.each do |key, val|
+      .filted id=(key)
+        = render partial: 'editor/shared/work_mobilev2',
+                collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+.app-promotion
+  .title
+    = "購買 #{@name} 系列商品"
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+
+#campaing_inof.hidden data=({key: @key})

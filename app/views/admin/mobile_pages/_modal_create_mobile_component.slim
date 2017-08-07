@@ -1,0 +1,14 @@
+.modal-dialog
+  .modal-content
+    = simple_form_for mobile_page.mobile_components.new, remote: true,
+                      url: admin_mobile_page_mobile_components_path(mobile_page_id: mobile_page),
+                      method: :post do |f|
+      .modal-header
+        a.close href="#" data-dismiss="modal"  ×
+        h3 新增元件
+      .modal-body
+        = f.label :key, '元件類型'
+        = f.select :key, MobileComponent::KEYS
+      .modal-footer
+        a.close.btn href="#" data-dismiss="modal" cancel
+        = f.submit '新增', class: 'btn btn-primary'

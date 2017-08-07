@@ -1,0 +1,84 @@
+--- !ruby/object:Pingpp::Charge
+retrieve_options: {}
+api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+values:
+  :id: ch_bzfznHmbb90CyzPCuHWjPSiL
+  :object: charge
+  :created: 1437471549
+  :livemode: false
+  :paid: false
+  :refunded: false
+  :app: app_u9ujT414KeXTLaLO
+  :channel: alipay
+  :order_no: 157L000147US
+  :client_ip: 192.168.1.1
+  :amount: 300000
+  :amount_settle: 0
+  :currency: cny
+  :subject: Your Subject
+  :body: Your Body
+  :extra: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values: {}
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :time_paid: 
+  :time_expire: 1437557949
+  :time_settle: 
+  :transaction_no: 
+  :refunds: !ruby/object:Pingpp::ListObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values:
+      :object: list
+      :url: "/v1/charges/ch_bzfznHmbb90CyzPCuHWjPSiL/refunds"
+      :has_more: false
+      :data: []
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :amount_refunded: 0
+  :failure_code: 
+  :failure_msg: 
+  :metadata: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values: {}
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :credential: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values:
+      :object: credential
+      :alipay: !ruby/object:Pingpp::PingppObject
+        retrieve_options: {}
+        api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+        values:
+          :orderInfo: _input_charset="utf-8"&body="Your Body"&it_b_pay="1440m"&notify_url="https%3A%2F%2Fapi.pingxx.com%2Fnotify%2Fcharges%2Fch_bzfznHmbb90CyzPCuHWjPSiL"&out_trade_no="157L000147US"&partner="2008057291598012"&payment_type="1"&seller_id="2008057291598012"&service="mobile.securitypay.pay"&subject="Your
+            Subject"&total_fee="30"&sign="dWZYWFBDUFN1MUNPamJIdUgwOU95ajU0"&sign_type="RSA"
+        unsaved_values: !ruby/object:Set
+          hash: {}
+        transient_values: !ruby/object:Set
+          hash: {}
+        previous_metadata: 
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :description: 
+unsaved_values: !ruby/object:Set
+  hash: {}
+transient_values: !ruby/object:Set
+  hash: {}
+previous_metadata: {}

@@ -1,0 +1,49 @@
+- breadcrumb :admin_mobile_campaigns
+- admin_title 'Moblie Campaign'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th ID
+            th KV
+            th Title
+            th 發佈時間
+            th 活動期間
+            th UpdatedAT
+            th CreatedAT
+            th
+              | Position
+              span.red data=({rel: 'tooltip'}) title='拖拉欄位可以更改 Position（排序）'
+                = fa_icon 'question-circle'
+            th 是否開放
+            th
+        tbody.sortable
+          - @mobile_campaigns.each do |mobile_campaign|
+            tr data=({url: update_position_admin_mobile_campaign_path(mobile_campaign), page: params[:page], per_page: @per_page})
+              td= mobile_campaign.id
+              td= image_tag(mobile_campaign.kv.thumb.url) if mobile_campaign.kv.present?
+              td= mobile_campaign.title
+              td= l mobile_campaign.publish_at, format: :long
+              td
+                = l mobile_campaign.starts_at, format: :long
+                br ~
+                = l mobile_campaign.ends_at, format: :long
+              td= l mobile_campaign.updated_at, format: :long
+              td= l mobile_campaign.created_at, format: :long
+              td= mobile_campaign.position
+              td= display_true_or_false_icon(mobile_campaign.is_enabled)
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mobile_campaign]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), url_for([:admin, mobile_campaign]), class: 'btn btn-danger', data: { method: 'delete', confirm: 'Are you sure?' }
+
+= will_paginate @mobile_campaigns

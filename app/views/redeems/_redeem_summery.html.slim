@@ -1,0 +1,30 @@
+.item-title = edit_translator('page.cart_check_out.summary_alias')
+table.check_out_summery
+  thead
+    tr
+      td width='50%' = edit_translator('page.cart_check_out.thead.redeem_item')
+      td width='20%' style='text-align: center;' = edit_translator('page.cart_check_out.thead.td2')
+      td width='30%' style='text-align: right;' = edit_translator('page.cart_check_out.thead.td3')
+  tbody
+    - @order.order_items.each do |item|
+      - itemable = @redeem_work
+      tr
+        td.item-work-name
+          = link_to render_work_path(itemable) do
+            = render_work_name_with_device(itemable)
+
+        td style='text-align: center;' = item.quantity
+        td style='text-align: right;'= edit_translator('page.cart_check_out.free')
+        td.hide
+          = render 'cart/ua_ec/ua_data', work: itemable, qty: item.quantity, step: '2'
+
+- if !@order.coupon.present?
+  .check_out_coupon_box.cart-lists
+    input type='text' name='redeem_code' id='redeem_code' placeholder= t('page.cart_check_out.coupon_code_placehoder')
+    input type='hidden' name='gid' id='gid' value=@redeem_work.to_sgid.to_s
+    button id='verify_redeem' data-page='check_out' = edit_translator('page.cart.btns.verify')
+    .coupon_error.hide 兌換碼錯誤
+    .coupon_notice.hide 兌換碼 OK
+
+    = link_to t('page.cart_check_out.btns.redeem'), '#',id: 'submit_redeem',
+              class: 'btn btn-default btn-redeem', disabled: 'disabled'

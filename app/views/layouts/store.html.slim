@@ -1,0 +1,59 @@
+doctype 5
+html lang='zh-TW'
+  head
+    meta charset='utf-8'
+    meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'
+    title ⌘P Dashboard #{@admin_title}
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.png'
+    = stylesheet_link_tag 'admin_v2', 'designer_template_editor', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin_v2', 'designer_template_editor', 'data-turbolinks-track' => true
+    - unless come_from_china?
+      script src="https://maps.googleapis.com/maps/api/js?v=3.exp"
+    = include_webpack_assets 'application'
+  body.no-skin
+    = Gon::Base.render_data camel_case: true, camel_depth: :recursive, namespace: 'jsPageData'
+    javascript:
+      window.I18n.defaultLocale = "#{I18n.default_locale}";
+      window.I18n.locale = "#{I18n.locale}";
+      window.I18n.fallbacks = true;
+    #navbar.navbar.navbar-default
+      #navbar-container.navbar-container
+        .navbar-header.pull-left
+          a.navbar-brand href="#"
+            small
+              | Store Dashboard
+        .navbar-header.pull-right
+          ul.nav.ace-nav
+            li.light-blue
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                - if current_store.avatar.present?
+                  = image_tag(current_store.avatar.thumb.url, class: 'nav-user-photo')
+                - else
+                  = image_tag('img_fbdefault.png', class: 'nav-user-photo')
+                span.user-info
+                  small Welcome,
+                  = current_store.name
+                i.icon-caret-down
+              ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                li
+                  = link_to edit_store_backend_store_path do
+                    = fa_icon 'pencil-square-o', class: 'menu_icon', text: '編輯商店資料'
+                  = link_to destroy_store_session_path, method: :delete do
+                    = fa_icon 'power-off', class: 'menu_icon', text: '登出'
+    .main-container
+      = render 'store/shared/sidebar'
+      .main-content
+        .breadcrumbs
+          == breadcrumbs style: :bootstrap, autoroot: false
+          .pull-right = render 'admin/shared/change_locale'
+        .page-content
+          .row
+            .col-xs-12
+              .page-header
+                h1
+                  = @admin_title
+                  - if @admin_subtitle
+                    small = @admin_subtitle
+              = render 'store/shared/notice_bar'
+              = yield

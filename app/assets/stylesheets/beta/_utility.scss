@@ -1,0 +1,256 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+.info-box {
+  margin-bottom: 60px;
+}
+
+.form-box {
+  margin-bottom: 30px;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.margin-right {
+  margin-right: 60px;
+}
+
+.dotted-line {
+  border-bottom: 1px dotted $word-color;
+  padding-bottom: 30px;
+}
+
+.nomore-result {
+  margin: 90px 0 120px;
+}
+
+.msg-error {
+  font-size: 1em;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #f87a7a;
+  font-style: italic;
+}
+
+.msg-notice {
+  font-size: 1em;
+  font-weight: 300;
+  margin-top: 10px;
+  color: $main-color;
+  font-style: italic;
+}
+
+.word-break {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.response {
+  .notice {
+    @extend .msg-notice;
+  }
+  .error {
+    @extend .msg-error;
+  }
+}
+// Icons
+// ------------------------
+
+.icons-30 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+// Floats
+// -------------------------
+
+.clearfix {
+  @include clearfix();
+}
+.center-block {
+  @include center-block();
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  @include text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.affix {
+  position: fixed;
+  @include translate3d(0, 0, 0);
+}
+
+// Dropdown
+//---------------------------------
+
+.dropdown {
+  position: relative;
+  .dropdown-shop {
+    position: relative;
+    width: 240px;
+    height: 45px;
+    @include border-radius(25px);
+    border: 1px solid $word-color;
+    background-color: #FFF;
+    text-align: center;
+    &:hover {
+      background-color: lighten($sub-words-color, 30%);
+    }
+  }
+  .disabled {
+    border: 1px solid $grey-out;
+    color: $grey-out;
+    cursor: default;
+    &:hover {
+      background-color: #FFF;
+    }
+  }
+  .dropdown-menu {
+    width: 240px;
+    li {
+      padding: 4px 10px;
+      line-height: 1em;
+      font-weight: normal;
+      &:hover {
+        background-color: $line-color;
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+  .caret {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    border-top: 6px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+  }
+}
+
+.dropdown-small {
+  .dropdown-shop {
+    width: 140px;
+  }
+  .dropdown-menu {
+    width: 140px;
+    min-width: 140px;
+  }
+}
+
+// Article title
+//---------------------------------
+
+.item-title {
+  font-size: 2.375em;
+  font-weight: 200;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 60px;
+  &, & * {
+    color: $main-color;
+  }
+}
+
+.title-margin-bottom {
+  margin-bottom: 30px;
+}
+
+.slogan-text {
+  margin-top: 60px;
+  text-align: center;
+  @extend .item-title;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Animations
+//---------------------------------
+
+.fadeIn {
+  @include fadeIn($duration: 0.6s);
+}
+
+.fadeOut {
+  @include fadeOut($duration: 0.6s);
+}
+
+.fadeInMask {
+  @include fadeInMask($duration: 0.6s);
+}
+
+.fadeOutMask {
+  @include fadeOutMask($duration: 0.6s);
+}
+
+.fadeInLeft {
+  @include fadeInLeft($duration: 0.5s);
+}
+
+.fadeOutLeft {
+  @include fadeOutLeft($duration: 0.5s);
+}
+
+.fadeInRight {
+  @include fadeInRight($duration: 0.5s);
+}
+
+.fadeOutRight {
+  @include fadeOutRight($duration: 0.5s);
+}

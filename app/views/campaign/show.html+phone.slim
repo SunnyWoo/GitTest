@@ -1,0 +1,68 @@
+- @campaign_cache_key = [:campaign, @campaign, @works, I18n.locale, current_currency_code, params[:page], params[:m]]
+- cache @campaign_cache_key, expires_in: 1.hours do
+  .owl-carousel
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      .kv_middle
+        = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt]
+        = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt]
+  .m-announcement = @title
+  .m-hr
+
+  - if @wordings.try(:artwork_first).to_b
+    = render 'artwork', name: @name,
+                        wordings: @wordings,
+                        artworks: @artworks,
+                        artworks_descriptions: @artworks_descriptions
+  - else
+    - if !@wordings.try(:hide_product).to_b
+      = render 'products', campaign: @campaign,
+                           works: @works,
+                           name: @name,
+                           key: @key,
+                           category_names: @category_names,
+                           category_products: @category_products
+
+  - if @about_img.present?
+    = render 'about', name: @name,
+                      about_img: @about_img,
+                      about_wording: @about_wording
+
+  - if !@wordings.try(:artwork_first).to_b
+    = render 'artwork', name: @name,
+                        wordings: @wordings,
+                        artworks: @artworks,
+                        artworks_descriptions: @artworks_descriptions
+  - else
+    - if !@wordings.try(:hide_product).to_b
+      = render 'products', campaign: @campaign,
+                           works: @works,
+                           name: @name,
+                           key: @key,
+                           category_names: @category_names,
+                           category_products: @category_products
+
+  = render 'gift', wordings: @wordings if @wordings.try(:gift_title).present?
+  - if @wordings.try(:show_instagram).to_b
+    = render 'instagram', wordings: @wordings,
+                          ig_images: @ig_images
+
+  .mobile-v2-title style='margin-bottom: 45px'
+    | Share on
+    br
+    | Social Media
+
+  .mobile-v2-title
+    .mobile-v2-fb-btn.ga-event data-ga-event-category="Campaign - #{@key} - Mobile" data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url(@share_img)) data-facebook-link=(campaign_url(id: @key)) data-facebook-caption=(@title) 分享到 Facebook
+
+  = link_to '分享到 Line', "http://line.naver.jp/R/msg/text/#{@title} #{campaign_url(id: @key)}", {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>"Campaign - #{@key} - Mobile", 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+  .app-promotion
+    .title
+      = "購買 #{@name} 系列商品"
+      br
+      | 請下載 我印 App
+    = link_to 'http://bit.ly/1nMC8yU' do
+      = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+    = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+      = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'

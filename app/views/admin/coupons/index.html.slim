@@ -1,0 +1,14 @@
+- admin_title t('coupons.index.page_title')
+
+ul.nav.nav-tabs
+  li.active = link_to admin_coupons_path do
+    =' fa_icon 'table', class: 'ace-icon'
+    span = t('coupons.index.page_title')
+  li = link_to admin_auto_coupons_path do
+    =' fa_icon 'star', class: 'ace-icon'
+    span = t('auto_coupons.index.page_title')
+
+.pull-right
+  = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+= react_component 'CPA.Coupons.Index', {search_url: admin_coupons_path}, {id: 'coupons_app'}

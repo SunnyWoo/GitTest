@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.qq.com/oauth2.0/me?access_token=error_token
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - tws
+      date:
+      - Tue, 04 Aug 2015 07:55:13 GMT
+      content-type:
+      - text/html; charset=utf-8
+      content-length:
+      - '78'
+      connection:
+      - close
+      cache-control:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: |
+        callback( {"error":100016,"error_description":"access token check failed"} );
+    http_version: '1.1'
+  recorded_at: Tue, 04 Aug 2015 07:55:13 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,5 @@
+$('body').append("<%= j render 'modal', channel_code: @channel_code %>");
+$('#channel_code').modal('show');
+$('#channel_code').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

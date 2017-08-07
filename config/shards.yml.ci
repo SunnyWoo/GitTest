@@ -1,0 +1,17 @@
+octopus:
+  replicated: true
+  environments:
+    - development
+  development:
+    slave1:
+      host: localhost
+      adapter: postgresql
+      database: commandp_development
+      username: commandp
+      password:
+    slave2:
+      host: localhost
+      adapter: postgresql
+      database: commandp2_development
+      username: commandp
+      password:

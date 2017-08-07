@@ -1,0 +1,26 @@
+.cmdp_container.user_login
+  .form.grid_4.prefix_1.suffix_1
+    h1.item-title.contact-title Forgot Password
+    .title-desc.text-center Forget your password? Enter your email address to reset it.
+    .dotted-line
+    .login_form
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        .form-field
+          = f.input :email, autofocus: true, label: 'E-mail', placeholder: 'hi@commandp.com'
+        - if devise_error_messages?
+          .error
+            i.alert
+            = devise_error_messages!
+        .notice
+          i.mail
+          | Check your email momentarily.
+
+        .text-center
+          .forget_btn = f.button :submit, "Reset Password"
+          br
+          .forget_desc
+            | Wait a minute. I remember everything now.
+            br
+            | Take me back to
+            = link_to ' Login ', new_session_path(resource_name)
+            | Page.

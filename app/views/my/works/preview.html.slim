@@ -1,0 +1,60 @@
+.has-carousel-placeholder
+  .carousel
+    .carousel-cell 
+      img src="http://lorempixel.com/414/414/people/1"
+    .carousel-cell 
+      img src="http://lorempixel.com/414/414/people/2"
+    .carouser-cell 
+      img src="http://lorempixel.com/414/414/people/3"
+
+.productPreviewRow
+  .productPreviewRow-item iPhone6 Plus 手機殼
+.productPreviewRow
+  .productPreviewRow-item
+    span.price--current ￥79
+    span.price--original ￥79
+.productPreviewRow.has-calculator
+  .productPreviewRow-item = t('store.preview.amount')
+  .productPreviewRow-item
+    .calculator
+      .calculator-item.calculator-item--plus
+      .calculator-item.calculator-item--result 1
+      .calculator-item.calculator-item--minusShadow
+      .calculator-item.calculator-item--minus
+
+.productPreviewRow--intervalGap
+
+.workPreviewFooter
+  .workPreviewFooter-item.workPreviewFooter-item--cart
+    span.cartName = t('store.preview.cart')
+    span.cartNum 3
+  .workPreviewFooter-item.workPreviewFooter-item--button = t('store.preview.footer.download')
+  .workPreviewFooter-item.workPreviewFooter-item--button.isHighlight = t('store.preview.footer.cart')
+
+.tab-list
+  .tab.active data-tab-name="tab1"
+    .label = t('store.preview.tab.desciption')
+  .tab data-tab-name="tab2"
+    .label = t('store.preview.tab.spec')
+  .tab data-tab-name="tab3"
+    .label = t('store.preview.tab.information')
+
+.tab-container
+  #tab1.tab-content.active
+    div tab1
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  #tab2.tab-content
+    div tab2
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  #tab3.tab-content
+    div tab3
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+.sidebarMenu.rightBottom
+  button.sidebarMenu-item.sidebarMenu-item--goToTop.hidden
+  button.sidebarMenu-item.sidebarMenu-item--info
+  .info.hidden
+    .info-item.info-item--share = t('store.sidebar_menu.share')
+    .info-item.info-item--search = t('store.sidebar_menu.search')
+    .info-item.info-item--cart = t('store.sidebar_menu.cart')
+    .info-item.info-item--contact = t('store.sidebar_menu.contact')

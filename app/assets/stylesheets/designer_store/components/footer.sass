@@ -1,0 +1,54 @@
+// *************************************
+//
+//   Footer
+//   -> 商店主頁的頁面註腳
+//
+// *************************************
+
+.footer
+  display: flex
+  color: $c-text-implicit
+  border-top: 1px solid $c-border
+  background-color: $c-bg-footer
+  @include rem(font-size, 12px)
+  @include rem(height, 40px)
+  justify-content: center
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+.has-sticky-footer
+  min-height: 100%
+  @include rem(margin-bottom, -40px)
+
+  &:after
+    display: block
+    @include rem(height, 40px)
+    content: ''
+    background-color: $white
+
+
+    // -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+%footer-column
+  height: 40px
+  text-align: center
+  @include rem(line-height, 40px)
+  flex: 1
+
+.footer-phone
+  @extend %footer-column
+
+.footer-businessTime
+  @extend %footer-column

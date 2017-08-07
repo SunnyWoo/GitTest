@@ -1,0 +1,21 @@
+.page-header
+  h3 訂單處理進度
+= render 'print/shared/notice_bar'
+.btn-group.btn-group-lg.schedule_type role='group'
+  - Print::OrderPrintSchedulePresenter::TYPE_OPTION.each do |type, humanize|
+    = link_to humanize, schedule_print_orders_path(type: type),
+      class: "btn btn-light #{type} #{@schedule_presenter.active_class(type)}"
+
+form.form-search
+  input#timestamp_no_input.input-medium.search-query type="text" name="number" value="#{params[:number]}" placeholder="列印編號, 訂單編號" style="width: 720px;"
+    button#temp_shelf_order_search.btn.btn-sm.btn-primary type="submit"  Search
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 訂單處理進度
+        .widget-toolbar
+          span.badge.badge-danger= @schedule_presenter.orders_count
+      .widget-body
+        .widget-main.no-padding
+          = render 'schedule_list', schedule_presenter: @schedule_presenter

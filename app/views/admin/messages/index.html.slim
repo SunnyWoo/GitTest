@@ -1,0 +1,41 @@
+- admin_title t('messages.index.page_title')
+
+= form_for @search, url: admin_messages_path, method: 'get', class: 'form-inline' do |f|
+  .form-group
+    .input-group
+      = f.text_field :mail_to_cont, placeholder: t('messages.index.email_contains'), class: 'form-control search-query'
+      span.input-group-btn
+        = f.button :submit, class: 'btn btn-purple btn-sm'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+      ' Page
+      = @messages.current_page
+      | /
+      = @messages.total_pages
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead.thin-border-bottom
+          tr
+            th = Message.human_attribute_name(:id)
+            th = Message.human_attribute_name(:title)
+            th = Message.human_attribute_name(:mail_to)
+            th = Message.human_attribute_name(:created_at)
+            th = Message.human_attribute_name(:operations)
+        tbody
+          - @messages.each do |message|
+            tr
+              td = message.id
+              td = link_to message.title, admin_message_path(message), data: {open_in_dialog: true}
+              td = message.mail_to
+              td = l(message.created_at)
+              td
+                .btn-toolbar
+                  = link_to t('shared.form_actions.open'), admin_message_path(message), class: 'btn btn-primary btn-sm', data: {open_in_dialog: true}
+                  = link_to t('shared.form_actions.resend'), resend_admin_message_path(message), class: 'btn btn-danger btn-sm', data: {disable_on_submit: true, remote: true, method: 'post'}
+
+
+= will_paginate @messages

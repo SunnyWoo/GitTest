@@ -1,0 +1,7 @@
+- breadcrumb :cp_resources
+- admin_title t('cp_resources.sidebar_name')
+
+.row
+  ul
+    - @cp_resource.list_urls.each do |url|
+      li = link_to url, url, target: :blank

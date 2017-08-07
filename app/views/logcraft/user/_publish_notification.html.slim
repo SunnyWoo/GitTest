@@ -1,0 +1,7 @@
+- device = activity.trackable.devices.find(activity.extra_info[:device_id])
+- user = activity.trackable
+- user_link = link_to "#{user.username}(#{user.id})", admin_user_path(user)
+div
+  | 於 #{l activity.created_at, format: :long} To:#{user_link} #{logcraft_keyword '推播加入排程'}
+  br Message: #{activity.message}
+  | Device: #{device.id}/#{device.device_type}/#{device.os_version}/#{l device.created_at, format: :long}

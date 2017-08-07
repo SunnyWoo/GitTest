@@ -1,0 +1,289 @@
+canvas { 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+}
+
+.font_sample {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 12px 0;
+  line-height: 1.5em;
+  cursor: pointer;
+  &:hover {
+    color: $main-color;
+  }
+}
+
+@font-face {
+  font-family: "Abel";
+  src: font_url("Abel-Regular.ttf");
+}
+
+.font-abel {
+  font-family: "Abel", sans-serif;
+}
+
+@font-face {
+  font-family: "Akbar";
+  src: font_url("akbar.ttf");
+}
+
+.font-akbar {
+  font-family: "Akbar", sans-serif;
+}
+
+@font-face {
+  font-family: "always forever";
+  src: font_url("always_forever.ttf") format('truetype');
+}
+
+.font-always-forever {
+  font-family: "always forever", sans-serif;
+}
+
+@font-face {
+  font-family: "Amatic";
+  src: font_url("Amatic-Bold.ttf");
+}
+
+.font-amatic {
+  font-family: "Amatic", sans-serif;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: font_url("Anton.ttf") format('truetype');
+}
+
+.font-anton {
+  font-family: "Anton", sans-serif;
+}
+
+@font-face {
+  font-family: "Bangers";
+  src: font_url("Bangers.ttf");
+}
+
+.font-bangers {
+  font-family: "Bangers", sans-serif;
+}
+
+@font-face {
+  font-family: "Billy";
+  src: font_url("billy.ttf");
+}
+
+.font-billy {
+  font-family: "Billy", sans-serif;
+}
+
+@font-face {
+  font-family: "Bite Bullet";
+  src: font_url("Bite___Bullet.ttf");
+}
+
+.font-bite-bullet {
+  font-family: "Bite Bullet", sans-serif;
+}
+
+@font-face {
+  font-family: "BROWNIElight";
+  src: font_url("BROWNIElight.otf");
+}
+
+.font-brownielight {
+  font-family: "BROWNIElight", sans-serif;
+}
+
+@font-face {
+  font-family: "Caesar Dressing";
+  src: font_url("CaesarDressing-Regular.ttf");
+}
+
+.font-caesar-dressing {
+  font-family: "Caesar Dressing", sans-serif;
+}
+
+@font-face {
+  font-family: "Changa One";
+  src: font_url("ChangaOne-Italic.ttf");
+}
+
+.font-changa-one {
+  font-family: "Changa One", sans-serif;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: font_url("Cinzel-Regular.otf");
+}
+
+.font-cinzel {
+  font-family: "Cinzel", sans-serif;
+}
+
+@font-face {
+  font-family: "Close";
+  src: font_url("Close.otf");
+}
+
+.font-close {
+  font-family: "Close", sans-serif;
+}
+
+@font-face {
+  font-family: "Fabu";
+  src: font_url("Fabu-Regular.ttf");
+}
+
+.font-fabu {
+  font-family: "Fabu", sans-serif;
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: font_url("FredokaOne-Regular.ttf");
+}
+
+.font-fredoka-one {
+  font-family: "Fredoka One", sans-serif;
+}
+
+@font-face {
+  font-family: "High Tide";
+  src: font_url("HighTide.otf");
+}
+
+.font-high-tide {
+  font-family: "High Tide", sans-serif;
+}
+
+@font-face {
+  font-family: "Hitchhiker";
+  src: font_url("Hitchhiker.ttf");
+}
+
+.font-hitchhiker {
+  font-family: "Hitchhiker", sans-serif;
+}
+
+@font-face {
+  font-family: "LDFComicSansHairline";
+  src: font_url("LDFComicSansHairline.ttf");
+}
+
+.font-ldfcomicsanshairline {
+  font-family: "LDFComicSansHairline", sans-serif;
+}
+
+@font-face {
+  font-family: "Lemon";
+  src: font_url("Lemon_Regular.ttf");
+}
+
+.font-lemon {
+  font-family: "Lemon", sans-serif;
+}
+
+@font-face {
+  font-family: "Lobster1.4";
+  src: font_url("Lobster_1.4.otf");
+}
+
+.font-lobster1-4 {
+  font-family: "Lobster1.4", sans-serif;
+}
+
+@font-face {
+  font-family: "Lobster14";
+  src: font_url("Lobster_1.4.otf");
+}
+
+.font-lobster14 {
+  font-family: "Lobster14", sans-serif;
+}
+
+@font-face {
+  font-family: "Megrim";
+  src: font_url("Megrim.ttf");
+}
+
+.font-megrim {
+  font-family: "Megrim", sans-serif;
+}
+
+@font-face {
+  font-family: "Piedra";
+  src: font_url("Piedra-Regular.otf");
+}
+
+.font-piedra {
+  font-family: "Piedra", sans-serif;
+}
+
+@font-face {
+  font-family: "Raleway Dots";
+  src: font_url("RalewayDots-Regular.ttf");
+}
+
+.font-raleway-dots {
+  font-family: "Raleway Dots", sans-serif;
+}
+
+@font-face {
+  font-family: "Righteous";
+  src: font_url("Righteous-Regular.ttf");
+}
+
+.font-righteous {
+  font-family: "Righteous", sans-serif;
+}
+
+@font-face {
+  font-family: "Simplifica";
+  src: font_url("SIMPLIFICA_Typeface.ttf");
+}
+
+.font-simplifica {
+  font-family: "Simplifica", sans-serif;
+}
+
+@font-face {
+  font-family: "Snickles";
+  src: font_url("Snickles.ttf");
+}
+
+.font-snickles {
+  font-family: "Snickles", sans-serif;
+}
+
+@font-face {
+  font-family: "SUNN";
+  src: font_url("SUNN.otf");
+}
+
+.font-sunn {
+  font-family: "SUNN", sans-serif;
+}
+
+@font-face {
+  font-family: "Uglyhandwriting";
+  src: font_url("uglyhandwriting.ttf");
+}
+
+.font-uglyhandwriting {
+  font-family: "Uglyhandwriting", sans-serif;
+}
+
+@font-face {
+  font-family: "Wire One";
+  src: font_url("WireOne.ttf");
+}
+
+.font-wire-one {
+  font-family: "Wire One", sans-serif;
+}

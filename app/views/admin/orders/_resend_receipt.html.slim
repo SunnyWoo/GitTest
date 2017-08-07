@@ -1,0 +1,14 @@
+.modal.fade id="resend_receipt"
+  .modal-dialog
+    .modal-content
+      = simple_form_for order, url: admin_order_receipt_path(order), method: :post do |f|
+        .modal-header
+          a.close href="#" data-dismiss="modal"  ×
+          h3 = t('orders.toolbar.resend')
+          div= t('orders.toolbar.notice')
+        .modal-body.center
+          = f.simple_fields_for(:billing_info) do |c|
+            = c.input :email, placeholder: order.billing_info_email, hint: t('orders.toolbar.update_email_hint')
+        .modal-footer
+          a.close.btn href="#" data-dismiss="modal" cancel
+          = f.button :submit, t('orders.toolbar.resend'), data: { confirm: t('orders.toolbar.resend_confirm'), disable_on_submit: true }

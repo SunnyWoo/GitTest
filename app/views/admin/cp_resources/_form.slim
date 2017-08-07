@@ -1,0 +1,4 @@
+= f.error_notification
+= f.input :version, disabled: true
+= f.input :aasm_state, collection: CpResource.aasm.states_for_select
+= f.submit

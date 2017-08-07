@@ -1,0 +1,17 @@
+<!-- Facebook Conversion Code for 結帳次數 - 我印網路科技 1 -->
+<script>(function() {
+var _fbq = window._fbq || (window._fbq = []);
+if (!_fbq.loaded) {
+ var fbds = document.createElement('script');
+ fbds.async = true;
+ fbds.src = '//connect.facebook.net/en_US/fbds.js';
+ var s = document.getElementsByTagName('script')[0];
+ s.parentNode.insertBefore(fbds, s);
+ _fbq.loaded = true;
+}
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6025685191983', {'value':'<%= order.price %>','currency':'<%= order.currency%>'}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6025685191983&amp;cd[value]=<%= order.price %>&amp;cd[currency]=<%= order.currency%>&amp;noscript=1" /></noscript>
+<% (session[:fb_track_order_ids] ||= []) << order.id %>

@@ -1,0 +1,16 @@
+- extra_info = activity.extra_info
+- device = activity.trackable
+- user_link = link_to_user(device.user) if device.user
+- notification_id = activity.extra_info['notification_id']
+div
+  | #{user_link} 的 Device 已傳送推播
+  br
+  = link_to 'Notification', admin_notification_path(notification_id) if notification_id
+  pre
+    | token: #{device.token}
+    br
+    | device_type: #{device.device_type}
+    br
+    | message: #{activity.message}
+    br
+    | res: #{extra_info.to_json}

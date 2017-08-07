@@ -1,0 +1,19 @@
+common: &default_settings
+  license_key: ''
+  app_name: My Application
+  log_level: info
+development:
+  <<: *default_settings
+  app_name: My Application (Development)
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  app_name: My Application (Staging)
+
+production:
+  <<: *default_settings

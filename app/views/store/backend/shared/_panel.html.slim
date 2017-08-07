@@ -1,0 +1,13 @@
+- title_html ||= nil
+- title ||= nil
+- html_options ||= {}
+
+.ibox *html_options
+  - if title_html || title
+    .ibox-title
+      - if title_html.present?
+        = raw title_html
+      - elsif title.present?
+        h3 = title
+  .ibox-content
+    = yield

@@ -1,0 +1,17 @@
+= content_tag_for(:tr, standardized_work) do
+  td = standardized_work.id
+  th = render_standardized_work_print_image(standardized_work)
+  td
+    = standardized_work.product.category.name
+    br
+    = standardized_work.product.name
+  td = standardized_work.name
+  td = render_price standardized_work.prices[current_currency_code], currency_code: current_currency_code
+  td = standardized_work.aasm_state
+  td = standardized_work.bought_count
+  td = standardized_work.created_at
+  td
+    = link_to t('shared.form_actions.edit'), edit_store_backend_standardized_work_path(standardized_work), class: 'btn btn-info'
+    = render_store_standardized_work_build_previews_button(standardized_work)
+    = render_store_standardized_work_build_print_image_button(standardized_work)
+    = render_store_standardized_state_button(standardized_work)

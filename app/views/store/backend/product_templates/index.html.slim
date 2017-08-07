@@ -1,0 +1,35 @@
+- admin_title '設計模版列表'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            td= 'ID'
+            td= 'Name'
+            td= 'Product'
+            td= 'Type'
+            td= 'Status'
+            td= 'Bought Count'
+            td= 'Created at'
+            td= 'Operation'
+        tbody
+          - @templates.each_with_index do |template, index|
+            tr
+              td = index + 1
+              td = template.name
+              td = template.product.name
+              td = template.template_type
+              td = template.aasm_state
+              td = template.bought_count
+              td = template.created_at
+              td
+                = link_to t('shared.form_actions.edit'), edit_store_backend_product_template_path(template), class: 'btn btn-info'
+= will_paginate @templates

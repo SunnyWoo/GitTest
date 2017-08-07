@@ -1,0 +1,46 @@
+.page-header
+  h1 物料清单
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 物料清单
+        .widget-toolbar
+          = link_to '物料紀錄', activities_print_shelf_materials_path, class: 'btn btn-primary btn-mini'
+          = link_to '新增', new_print_shelf_material_path, class: 'btn btn-primary btn-mini'
+          = link_to '補貨', stocking_print_shelf_materials_path, class: 'btn btn-primary btn-mini'
+          = link_to '导出CSV', print_shelf_materials_path(format: :csv), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th = ShelfMaterial.human_attribute_name(:image)
+                th= sort_link @q, :serial ,  ShelfMaterial.human_attribute_name(:serial)
+                th= sort_link @q, :name ,  ShelfMaterial.human_attribute_name(:name)
+                th= sort_link @q, :quantity ,  ShelfMaterial.human_attribute_name(:quantity)
+                th= sort_link @q, :safe_minimum_quantity ,  ShelfMaterial.human_attribute_name(:safe_minimum_quantity)
+                th= sort_link @q, :scrapped_quantity ,  ShelfMaterial.human_attribute_name(:scrapped_quantity)
+                th 操作
+              tr
+                = search_form_for @q, url: print_shelf_materials_path do |f|
+                  th
+                  th = f.search_field :serial_cont
+                  th = f.search_field :name_cont
+                  th colspan='4' = f.submit 'Search'
+            tbody
+              - @shelf_materials.each do |material|
+                tr class=('redzone' if material.stock_warning?)
+                  td = image_tag(material.image.url, width: '100px')
+                  td = material.serial
+                  td = material.name
+                  td = material.quantity
+                  td
+                     = material.safe_minimum_quantity
+                     = "(低於安全庫存)" if material.stock_warning?
+                  td = material.scrapped_quantity
+                  td
+                    = link_to '修改', edit_print_shelf_material_path(material), class: 'btn btn-primary btn-mini'
+                    = link_to '详细', print_shelf_material_path(material), class: 'btn btn-primary btn-mini'
+                    = link_to '盘点', adjusting_print_shelf_material_path(material), class: 'btn btn-primary btn-mini'

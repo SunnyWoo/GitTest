@@ -1,0 +1,80 @@
+// .main {
+//   margin-top: 20px;
+// }
+
+#search {
+  width: 606px;
+  height: 40px;
+  border: 1px solid $line-color;
+  font-size: 1em;
+  padding: 0 25px;
+  color: $word-color;
+  @include border-radius(40px);
+  @include placeholder {
+    color: $sub-words-color;
+  }
+}
+
+.lists {
+  li {
+    font-size: 1em;
+    padding: 18px 20px;
+    margin-bottom: 6px;
+    border: 1px solid $line-color;
+    i {
+      position: absolute;
+      top: -4px;
+      right: -35px;
+    }
+    .arti-header {
+      color: $li-word-color;
+      cursor: pointer;
+    }
+    .content {
+      color: $li-word-color;
+      border-top: 1px solid $line-color;
+      margin-top: 17px;
+      padding-top: 15px;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.help {
+  .help-list {
+    > a {
+      display: block;
+      margin-bottom: 30px;
+      font-size: 1em;
+      color: $word-color;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+  .article-lists {
+    margin-bottom: 30px;
+    > a {
+      display: block;
+      font-size: 1em;
+      color: $word-color;
+      margin-bottom: 12px;
+      margin-left: 18px;
+      text-decoration: none;
+    }
+  }
+}
+
+.questions {
+  .arti-header {
+    position: relative;
+    width: 580px;
+    line-height: 24px;
+  }
+  .content, .content p, .content span {
+    color: $sub-words-color;
+  }
+  .highlight, .content .highlight {
+    color: $main-color;
+    font-weight: bold;
+  }
+}

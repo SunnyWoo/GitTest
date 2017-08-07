@@ -1,0 +1,21 @@
+ul.nav.nav-tabs
+  li class= ('active' if resources_name == 'User')
+    = link_to admin_users_path do
+      = fa_icon 'users', class: 'ace-icon'
+      span = t('users.sidebar_name')
+  li class= ('active' if resources_name == 'Admin')
+    = link_to admin_admins_path do
+      = fa_icon 'tachometer', class: 'ace-icon'
+      span = t('admins.sidebar_name')
+  li class= ('active' if resources_name == 'Designer')
+    = link_to admin_designers_path do
+      = fa_icon 'magic', class: 'ace-icon'
+      span = t('designers.sidebar_name')
+  li class= ('active' if resources_name == 'FactoryMember')
+    = link_to admin_factory_members_path do
+      = fa_icon 'print', class: 'ace-icon'
+      span = t('factory_members.sidebar_name')
+  li class= ('active' if resources_name == 'Store')
+    = link_to admin_stores_path do
+      = fa_icon 'child', class: 'ace-icon'
+      span = t('stores.sidebar_name')

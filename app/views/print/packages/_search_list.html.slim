@@ -1,0 +1,19 @@
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 订单包裹
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 包裹編號
+                th 操作
+
+            tbody
+              td = package.package_no
+              td
+                - unless Region.china?
+                  = link_to '查看順豐電子運單', print_pdf_sf_express_waybill_path(id: package.id,
+                                                                              format: :pdf), target: '_blank', id: "sf_pdf_#{package.id}", class: "btn btn-success"

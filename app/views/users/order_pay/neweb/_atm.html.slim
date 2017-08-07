@@ -1,0 +1,34 @@
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.payment_type")
+  .pull-left
+    = t("activerecord.attributes.order.payment_#{@order.payment}")
+  .pull-left
+    i#atm_popup.icons-30.icons-info_normal
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.bank")
+  .pull-left
+    | 第一銀行
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.bank_code")
+  .pull-left
+    | 007
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.bank_account")
+  .pull-left
+    = @order.payment_info['payment_id']
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.price")
+  .pull-left
+    = render_subtotal(@order)
+.info-row.clearfix
+  .pull-left.order-info-title
+    = t("activerecord.attributes.order.pay_expired")
+  .pull-left
+    = render_datetime(@order.payment_info['expired_at'])
+
+= render 'atm_notice'

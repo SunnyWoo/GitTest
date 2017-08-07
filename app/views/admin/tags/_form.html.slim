@@ -1,0 +1,14 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if member.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: member.errors.full_messages
+  .well
+    h4.green.smaller.lighter
+    = f.input :name
+    .well
+      = f.simple_fields_for :translations do |d|
+        = d.input :locale, label: false, as: :hidden
+        = d.input :text, as: :string, label: d.object.locale
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_tags_path, class: 'btn btn-info'

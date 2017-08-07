@@ -1,0 +1,82 @@
+// *************************************
+//
+//   Component Name
+//   -> collection-list
+//
+// *************************************
+.has-carousel-placeholder
+  width: 100%
+  @include rem(min-height, 30px)
+  background-color: $c-bg-disabled
+
+.productPreviewRow
+  display: flex
+  align-items: center
+  justify-content: space-between
+  @include rem(height, 50px)
+  @include rem(padding, 0 15px)
+  background-color: white
+  @include rem(border-bottom, 1px solid $c-border)
+  &.has-calculator
+    padding-right: 0
+
+.calculator
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  @include rem(height, 50px)
+  @include rem(width, 150px)
+  @include rem(line-height, 50px)
+  text-align: center
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+.productPreviewRow--intervalGap
+  @include rem(height, 15px)
+
+.calculator-item--plus
+  background-position: center
+  @include rem(background-size, 20px)
+  background-repeat: no-repeat
+  background-image: asset_data_url('designer_store/plus.png')
+  cursor: pointer
+
+.calculator-item--minus
+  background-position: center
+  @include rem(background-size, 20px)
+  background-repeat: no-repeat
+  background-image: asset_data_url('designer_store/minus.png')
+  cursor: pointer
+.calculator-item--minusShadow
+  background-position: center
+  @include rem(background-size, 20px)
+  background-repeat: no-repeat
+  background-image: asset_data_url('designer_store/minus_shadow.png')
+  cursor: not-allowed
+
+.calculator-item--result
+  cursor: text
+
+.price--current
+  color: $red
+  @include rem(margin-right, 5px)
+.price--original
+  color: $c-text-implicit
+  text-decoration: line-through
+  @include rem(font-size, $f-size-hint)
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+.calculator-item
+  flex: 1
+  border-left: 1px solid $c-border

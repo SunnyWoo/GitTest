@@ -1,0 +1,2 @@
+.well
+  = react_component 'CPA.Coupons.Form', coupon: member.to_react, action: url_for([:admin, member]), method: member.persisted? ? 'PATCH' : 'POST'

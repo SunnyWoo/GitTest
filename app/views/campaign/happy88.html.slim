@@ -1,0 +1,156 @@
+- cache [@key, @model]
+  .owl-carousel
+    .kv_middle
+      = image_tag @kv_images[:bg], class: 'carousel-img', alt: @kv_images[:alt]
+      - kv_lagn = locale.match(/zh/) ? :tc : :en
+      - @kv_images[kv_lagn].each do |src|
+        = image_tag src, class: 'kv-img', alt: @kv_images[:alt]
+
+  .camp_announcement = @title
+
+  .cmdp_container.happysummer style='margin-bottom: -5px;'
+    .grid_6.text-center
+      .item-title.margin-top-fixed.text-center style='margin: 55px 0 60px 0'
+        | 爸爸的禮物不能等！父親節限定快速到貨服務！
+
+  .cmdp_container.happysummer
+    .grid_3
+      .step-block
+        .step-title
+          p
+            | 活動優惠碼：
+            span.highlightspan HAPPY88
+          br
+          p
+            | 優惠折扣：
+            span.desc 指定商品 8 折以及限定快速到貨服務。
+          br
+          p
+            | 優惠品項：
+            span.desc 手機殼、悠遊卡、馬克杯。
+          br
+          p
+            | 優惠期間：
+            span.desc 2015/07/24 - 2015/08/03 10:00 AM
+
+    .grid_3
+      .step-block.step-block2
+        .step-title 活動說明
+        .step-desc
+          p
+            | 活動期間內，凡使用折扣碼 HAPPY88 訂購成功並完成付款程序之訂單，均可享指定商品 8 折優惠以及免運限時快送 8/8 前保證到貨服務。（本活動限時快送運送範圍僅限台灣地區）
+    .grid_6
+      hr style='margin: 0 0 60px 0;'
+
+  .cmdp_container.happysummer style='margin-top: -5px;'
+    .grid_6
+      #material_download_title.item-title.text-center style='  margin-bottom: 55px;'
+        | HAPPY FATHER'S DAY 客製化禮物教學
+
+    .cmdp_container.step-block3 style='margin-bottom: 55px;'
+      .grid_2
+        .step-img = image_tag 'campaign/happysummer/images/icon-1.png', alt: @title, width: 50, height: 50
+        .step-title 1. 選擇設計樣式並下載
+        .step-desc 先選擇想要製作的產品，再挑選喜歡的圖案樣式，點選下載後儲存素材於你的電腦或是手機相簿內。
+      .grid_2
+        .step-img = image_tag 'campaign/happysummer/images/icon-2.png', alt: @title, width: 50, height: 50
+        .step-title 2. 製作專屬客製化禮物
+        .step-desc 點選『開始印』功能，選擇想製作的禮物，再上傳剛才下載的圖檔至編輯器內，發揮創意動手設計。
+      .grid_2
+        .step-img = image_tag 'campaign/happysummer/images/icon-3.png', alt: @title, width: 50, height: 50
+        .step-title 3. 立即結帳，全球直送
+        .step-desc 完成製作後，點選預覽確認，多種結帳方式任你選擇。
+
+    hr
+
+    .grid_6
+      .item-title.text-center style='margin: -15px 0 10px 0;'
+        #material_span data=({key: @default_model.key})
+          = @default_model.name
+
+    .grid_6.text-center style='margin-bottom: -15px;'
+      .happysummer-nav
+        = edit_translator('page.text.model')
+        | :
+      ul.main-nav.happysummer-nav
+        - @work_categories.each do |key, obj|
+          li.sub-nav
+            - if obj[:models].size == 1
+              - model = obj[:models].first
+              = link_to '#', class: 'select_material', data: { key: model.key } do
+                = model.name
+                = image_tag 'campaign/happysummer/images/line.png', class: 'line'
+            - else
+              span
+                = obj[:category].name
+                = image_tag 'campaign/happysummer/images/down-arrow.png', class: 'down-arrow'
+                = image_tag 'campaign/happysummer/images/line.png', class: 'line'
+
+            - if obj[:models].size > 1
+              ul.sub-nav-ul
+                - obj[:models].each do |model|
+                  li = link_to model.name, '#', class: 'select_material', data: { key: model.key }
+
+    .margin-top-fixed
+    .products.campaign_works
+      - @materials.each do |material|
+        .grid_2
+          .product.material
+            = link_to '#', class: 'product-detail material_download', download: :material_download, target: '_blank',
+                                                                      data: { material: material, platform: 'Web' } do
+              = image_tag "campaign/happy88/material_thumb/#{material}.jpg", width: 310, heigth: 310
+              .mask
+              = link_to '#download', class: 'material_download_icon material_download',
+                        download: :material_download, target: '_blank',
+                        data: { material: material, platform: 'Web' }
+                = image_tag 'campaign/happysummer/images/download.png'
+                br
+                | 點此開啟素材
+
+  .happysummer
+    .hr-block2
+      .text-center.camp_margin-top-10
+        = link_to new_work_path, title: t('page.btns.create') do
+          = image_tag 'campaign/happysummer/images/create.png'
+        .create_desc 下載完喜愛的樣式後，點選『開始印』，立即發揮你的無限創意！
+
+  .cmdp_container.happysummer
+    .grid_6
+      .item-title.margin-top-fixed.text-center style='margin-bottom: 10px;'
+        = "#{@key} 獨家商品！"
+
+    .grid_6.text-center style='margin-bottom: -25px;'
+      .happysummer-nav
+        = edit_translator('page.text.model')
+        | :
+      ul.main-nav.happysummer-nav
+        - @work_categories.each do |key, obj|
+          li.sub-nav
+            - nav_url = '#'
+            - if obj[:models].size == 1
+              - nav_url = url_for(params.merge(m: obj[:models].first.slug, page: 1))
+
+            = link_to nav_url do
+              = obj[:category].name
+              - if obj[:models].size > 1
+                = image_tag 'campaign/happysummer/images/down-arrow.png', class: 'down-arrow'
+
+              = image_tag 'campaign/happysummer/images/line.png', class: 'line'
+            - if obj[:models].size > 1
+              ul
+                - obj[:models].each do |model|
+                  li = link_to model.name, url_for(params.merge(m: model.slug, page: 1))
+
+    .margin-top-fixed
+    .products.campaign_works data-ga-category=("Campaign - #{@key} - Web")
+      - if @works.length > 0
+        = render partial: 'editor/shared/work', collection: @works
+      - else
+        .empty-result
+          = edit_translator('page.text.no_product_found')
+
+    .grid_6
+      .center-block.search_pagination
+        = will_paginate(@works, inner_window: 1)
+      .margin-top-fixed
+  #campaing_inof.hidden data=({key: @key})

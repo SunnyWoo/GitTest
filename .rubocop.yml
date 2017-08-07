@@ -1,0 +1,37 @@
+inherit_from:
+  - ./config/rubocop.relaxed.yml
+
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - db/schema.rb
+
+Rails:
+  Enabled: true
+
+Style/AndOr:
+  Enabled: false
+
+Style/RaiseArgs:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/PredicateName:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/FirstParameterIndentation:
+  Enabled: false
+
+Rails/Validation:
+  Enabled: false
+
+SpaceAroundEqualsInParameterDefault:
+  Enabled: false

@@ -1,0 +1,13 @@
+.tag_fields
+  .well
+    = f.input :style, collection: HeaderLinkTag::STYLE, include_blank: false
+    h4.green.smaller.lighter Title (en is required)
+    .row
+      = f.simple_fields_for :translations do |tl|
+        .col-xs-2
+          = tl.input :locale, label: false, as: :hidden
+          - is_required = tl.object.locale == :en ? true : false
+          = tl.input :title, as: :string, label: tl.object.locale, required: is_required
+
+    = f.hidden_field :_destroy
+    = link_to '删除', '#', class: 'remove_fields'

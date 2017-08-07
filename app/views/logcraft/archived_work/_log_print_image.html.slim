@@ -1,0 +1,4 @@
+- work = activity.trackable
+- url = activity.extra_info[:url]
+div 紀錄 Work #{link_to_admin_work work} 的 print image.
+div = display_image_with_url(url) if url.present?

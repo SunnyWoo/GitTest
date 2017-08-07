@@ -1,0 +1,17 @@
+
+.profile-user-info.profile-user-info-striped
+  .profile-info-row
+    .profile-info-name Name
+    .profile-info-value = current_store.name
+  .profile-info-row
+    .profile-info-name 網址
+    .profile-info-value = link_to store_url(current_store), store_url(current_store), target: :blank
+  .profile-info-row
+    .profile-info-name E-mail
+    .profile-info-value = current_store.email
+  .profile-info-row
+    .profile-info-name 店家標題
+    .profile-info-value = current_store.title
+  .profile-info-row
+    .profile-info-name Store footer image
+    .profile-info-value = image_tag current_store.store_footer_img

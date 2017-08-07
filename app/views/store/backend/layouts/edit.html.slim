@@ -1,0 +1,31 @@
+- @admin_title = '編輯商店排版'
+
+= simple_form_for current_store, url: store_backend_layout_path, method: :patch do |f|
+  = f.input :title, label: '標題', as: :string
+  = f.input :description, label: '敘述', as: :text, input_html: { class: 'tinymce' }
+  .well
+    h2 Tap 設定
+
+    = f.simple_fields_for(StoreTapSettings.new(current_store.tap_settings), class: 'inline') do |cf|
+      = cf.input :default, label: '預設', as: :select, collection: @tap_collection
+
+      .row
+        .col-md-6
+          = cf.input :create_name, label: "#{et('store.custom_product')} 名稱", hint: "預設為 #{et('store.custom_product')} 可以重新命名"
+        .col-md-6
+          = cf.input :shop_name, label: "#{et('store.store_product')} 名稱", hint: "預設為 #{et('store.store_product')} 可以重新命名"
+
+
+
+
+  = f.nested_fields_for :components, class_name: 'StoreComponent' do |ff|
+    .well
+      = ff.input :key, label: '類別', as: :select, collection: StoreComponent::KEYS, input_html: { class: 'store_layout_key' }
+      = ff.input :image, label: '圖片', as: :image, wrapper_html: { class: render_store_layout_component_input_class(ff.object, 'image') }
+      = ff.input :content, label: '內容', as: :text, wrapper_html: { class: render_store_layout_component_input_class(ff.object, 'content') }
+      = ff.remove_nested_fields_link '刪除', data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'
+
+  = f.add_nested_fields_link :components, '增加元件',  class: 'btn btn-xs btn-info'
+
+  .form-actions
+    = f.button :submit

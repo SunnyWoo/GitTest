@@ -1,0 +1,18 @@
+#alert_notice.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .close data-dismiss='modal'
+          i.icons-30.icons-cancel_normal
+      .modal-body
+        .item-title.order-notice-title
+          | Your design has been saved!
+        .content
+          p
+            | You can check your design at
+            = link_to 'My Gallery', works_users_path
+            | .
+          ul.social
+            li= link_to 'Facebook', "#{t('share.facebook_fan_page')}", class: 'social-icon icons-fb_normal work_share_to_fb', target: '_blank'
+
+            li= link_to 'Twitter', 'https://twitter.com/share?url=https://commandp.com&text=commandp prints your creativity!', class: 'social-icon icons-twitter_normal work_share_to_twitter', data: { related: 'twitterdev', count: 'none' }

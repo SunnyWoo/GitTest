@@ -1,0 +1,31 @@
+.page-header
+  h1
+    = link_to '包裝工作站', print_package_path(list: :normal)
+  h3
+    = link_to '簡易列表', print_package_path(list: :simple)
+= render 'print/shared/notice_bar'
+- if @list == 'normal'
+  form.form-search action="#{print_package_path}" style="width:30%"
+    .input-group
+      input#print_search_order_no.form-control placeholder=("搜尋訂單 ...") name="q" type="text"
+        span.input-group-btn
+          button#print_search_order_submit.btn.btn-sm.btn-info.no-radius type="submit"
+            i.icon-share-alt
+            | 搜尋
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 待處理項目
+        - if @list == 'simple'
+          .widget-toolbar
+            span.badge.badge-danger = render_print_items_count(@orders)
+          .widget-toolbar
+            = link_to '导出csv', print_package_path(list: :simple, format: :csv), target: '_blank'
+        - else
+          .widget-toolbar
+            span.badge.badge-danger = @orders_count
+      .widget-body
+        .widget-main.no-padding
+          = render_package_list(@list, @orders)
+= will_paginate(@orders) if @page_mode

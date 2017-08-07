@@ -1,0 +1,33 @@
+en:
+  page:
+    user:
+      item_title: "Account"
+      profile: 'My Profile'
+      address: 'Address'
+      order_history: 'Order History'
+      my_gallery: 'My Gallery'
+      change_background: 'Change background image.'
+      log_out: Log Out
+      need_help: 'Need Help?'
+      need_help_text: 'Have problems with your order?'
+      btns:
+        save: Save Changes
+        edit: Edit
+        delete: Del
+        add_new_address: Add new address
+        faq: FAQ
+      thead:
+        order_no: Order ID
+        date: Date
+        order_st: Order Status
+        price: Price
+      profile_attrs:
+        name: "Name"
+        location: "Location"
+        gender: "Gender"
+        gender_male: "Male"
+        gender_female: "Female"
+        gender_unspecified: "Unspecified"
+    work:
+      title: Create Your Own
+      del_confirm: Are you sure you want to delete this work?

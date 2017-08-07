@@ -1,0 +1,10 @@
+- payment_method = activity.extra_info[:payment_method]
+- order = activity.trackable
+- price = activity.extra_info[:price]
+- error_message = activity.extra_info[:error_message]
+- translated_payment_method = t("activerecord.attributes.order.payment_#{payment_method}")
+- translated_payment_method += ": #{order.payment.capitalize}" if order.payment.present?
+- if %(paypal stripe).include?order.payment
+  div 使用 #{logcraft_keyword translated_payment_method} 執行了退款，但發生失敗，退款金額: #{price}, 錯誤原因: #{error_message}.
+- else
+  div 使用 #{logcraft_keyword translated_payment_method} 建立了退款記錄，但發生失敗，退款金額: #{price}, 錯誤原因: #{error_message}.

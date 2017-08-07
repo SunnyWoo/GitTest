@@ -1,0 +1,6 @@
+.price_tier_fields
+  .well
+    = f.input :count_key, label: t('purchase_categories.index.purchase_count')
+    = f.input :price, label: t('purchase_categories.index.purchase_price')
+    = f.hidden_field :_destroy
+    = link_to '删除', '#', class: 'remove_fields'

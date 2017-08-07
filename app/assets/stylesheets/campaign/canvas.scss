@@ -1,0 +1,141 @@
+.conavs_background {
+  background-image: image_url('campaign/canvas/images/bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.conavs_container {
+  .cmdp_container {
+    width: 1050px;
+    margin-bottom: 0px;
+  }
+
+  .conavs_grid_3 {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 525px;
+    height: 525px;
+  }
+
+  .block_title {
+    text-align: center;
+    margin-top: 125px;
+  }
+  .block_title_2 {
+    text-align: center;
+    margin-top: 110px;
+  }
+  .block_title_3 {
+    text-align: center;
+    margin-top: 68px;
+  }
+
+  .block_hr {
+    width: 60px;
+    border: 1px #98DAC1 solid;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 55px;
+  }
+
+  .block_wording {
+    text-align: center;
+    width: 428px;
+    margin: auto;
+    margin-bottom: 50px;
+    line-height: 25px;
+  }
+
+  .block_wording2 {
+    @extend .block_wording;
+    margin-bottom: 90px;
+  }
+
+  .block_wording_bottom {
+    margin-bottom: 105px;
+  }
+
+  .owl-carousel {
+    width: 510px;
+    overflow: hidden;
+  }
+
+  .product_detail {
+    border-top: 1px #f7f7f7 solid;
+    border-right: 1px #f7f7f7 solid;
+    border-bottom: 1px #f7f7f7 solid;
+    height: 498px;
+  }
+
+  .btn-canvas {
+    background-color: transparent;
+    color: #4fbd92;
+    border: 1px solid #4fbd92;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 100;
+    font-family: Helvetica, Arial;
+  }
+}
+
+.conavs_mobile {
+  .conavs_hr {
+    width: 60px;
+    border: 1px #98DAC1 solid;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  .video {
+    width: 90%;
+    margin: auto;
+  }
+
+  .wording {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 45px;
+  }
+
+  .btns {
+    text-align: center;
+    clear: both;
+    font-size: 1.1em;
+    .btn {
+      width: 145px;
+      height: 50px;
+    }
+  }
+
+  .images {
+    width: 280px;
+    margin: auto;
+    height: 280px;
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .owl-carousel {
+    margin-top: 75px;
+    img {
+      width: 100%;
+    }
+    .slick-list {
+      height: 100%;
+    }
+  }
+
+  .product_detail {
+    background-color: #f3f3f3;
+    padding-top: 30px;
+    padding-bottom: 70px;
+    .mobile-v2-title {
+      color: #333333;
+    }
+  }
+}

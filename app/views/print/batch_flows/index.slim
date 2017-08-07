@@ -1,0 +1,110 @@
+.page-header data-page='batch_flow_index'
+  h1 Batch(上傳商品)
+= render 'print/shared/notice_bar'
+
+
+
+h3.header.smaller.lighter.green
+  span7
+    | 目前未上傳總數：#{@pending_print_items.size}
+  span5.pull-right
+    - if @pending_print_items.size > 0
+      = link_to '#create_batch', data: { toggle: 'modal' }, class: 'btn btn-primary btn-sm' do
+        = fa_icon 'cloud-upload'
+        = '新增上傳排程'
+    - else
+      = link_to '#', class: 'btn btn-primary btn-sm disabled' do
+        = fa_icon 'cloud-upload'
+        = '目前沒有需上傳的檔案'
+
+.row
+  .col-xs-12
+    = will_paginate @batch_flows
+    table.table
+      thead
+        td ID
+        td 工廠
+        td 批號/預計到貨
+        td 狀態
+        td 商品型號
+        td 印製項目數
+        td 更新時間
+        td
+        td
+      tbody
+        - @batch_flows.each do |batch_flow|
+          tr
+            td= batch_flow.id
+            td= batch_flow.factory.name
+            td
+              = batch_flow.number_with_source
+              br
+              = l(batch_flow.deadline, format: :long)
+            td= batch_flow.aasm_state
+            td
+              ul
+                - batch_flow.product_models.each do |product_model|
+                  li = "#{product_model.name}"
+            td
+              span.badge.badge-danger= batch_flow.print_item_ids.size
+            td= l batch_flow.updated_at, format: :long
+            td
+              - if batch_flow.completed?
+                ul.list-unstyled
+                  - batch_flow.attachments.each do |attachment|
+                    li = link_to "下載#{attachment.title}", attachment.file.url, class: 'btn btn-sm btn-grey', target: :blank
+            td
+              - if batch_flow.initialized?
+                = link_to '上傳', start_print_batch_flow_path(batch_flow), class: 'btn btn-sm btn-primary', method: :post, data: { confirm: 'Sure ?' }
+              - if batch_flow.initialized? || batch_flow.failed?
+                = link_to '重置', print_batch_flow_path(batch_flow), class: 'btn btn-sm btn-danger',
+                          method: :delete, data: { confirm: 'Are you sure?' }
+              = link_to '歷史', history_print_batch_flow_path(batch_flow), class: 'btn btn-sm btn-light'
+
+
+    = will_paginate @batch_flows
+
+.modal.fade id="create_batch"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        a.close href="#" data-dismiss="modal"  ×
+        h3 新增上傳排程
+      =  simple_form_for(BatchFlow.new, url: print_batch_flows_path, method: :post, html: { novalidate: false }) do |f|
+        .modal-body
+          .row
+            .col-xs-4
+              h4
+                | 目前未上傳總數：#{@pending_print_items.size}
+              h4 預計出貨時間
+              = f.input :deadline, as: :string, label: false, input_html: { class: 'batch_deadline_picker', value: @defualt_batch_deadline }
+          .row
+            .col-xs-4
+              h4 選擇要上傳的工廠
+              - factories = Factory.all
+              .form-group.select.optional
+                = f.label :factory_id
+                - options = options_for_select(factories.map{ |f| [f.name, f.id, { data: { locale: f.locale } }] })
+                = select_tag('batch_flow[factory_id]', options, class: 'select optional form-control')
+              = f.input :locale, collection: Factory::LOCALES, include_blank: false, label: '選擇PDF要輸出的語系',
+                                 selected: lambda { |locale| locale == factories.first.locale }
+          .row
+            .col-xs-8
+              h4 選擇要上傳的型號
+              / - product_models = @group_print_items.map{ |p| ["#{p.product.name}(#{p.count}) by #{p.product.factory.name}", p.model_id] }
+              / = f.input :product_model_ids, as: :check_boxes, collection: product_models
+          - @group_print_items.each do |p|
+            - id = "batch_flow_product_model_ids_#{p.model_id}"
+            .row
+              .col-xs-8
+                input type='checkbox' name= 'batch_flow[product_model_ids][]' id=(id) value=(p.model_id)
+                label for=(id) style='padding-left:5px'
+                  = p.product.name
+                  span.badge.badge-danger= p.count
+                  span.label.label-success.arrowed= "#{p.product.factory.name}"
+
+                / = f.input :product_model_ids, as: :check_box, input_html: { value: p.model_id}, label: label
+
+        .modal-footer
+          a.close.btn href="#" data-dismiss="modal" cancel
+          = f.submit '新增', class: 'btn btn-primary'

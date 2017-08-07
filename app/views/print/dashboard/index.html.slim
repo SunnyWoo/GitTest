@@ -1,0 +1,58 @@
+.page-header data-page='dashboard_index'
+  h1 印刷工作站
+/! /.page-header
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    = render 'print/shared/check_ftp', ftp_service_status: @ftp_service_status
+    span.btn.btn-primary 分類:
+    .btn-group
+      button.btn.btn-primary.drop.down-toggle data-toggle="dropdown" type="button"
+        = @category.name
+        span.icon-caret-down.icon-on-right
+        span.badge.badge-danger
+          = render_category_print_items_count(@category.id)
+      ul.dropdown-menu.dropdown-default
+        - @categories.each do |category|
+          li
+            = link_to print_print_path(category_id: category.id) do
+              = "#{category.name}:"
+              span.badge.badge-danger
+                = render_category_print_items_count(category.id)
+    .space-8
+    ul.nav.nav-tabs
+      - @factory_product_models_with_category.each do |model|
+        li class="#{'active' if model.id. == @model.id}"
+          = link_to print_print_path(category_id: @category.id, model_id: model.id) do
+            = "#{model.name}: "
+            span.badge.badge-danger data-behavior="model-#{model.id}-items-count"
+              = render_model_print_items_count(model.id)
+    .col-xs-12.widget-container-span.ui-sortable.no-padding
+      .widget-box
+        .widget-header
+          .widget-toolbar
+            - model_uploading_count = render_model_print_items_count(@model.id, :uploading)
+            - if params[:aasm_state] == 'uploading'
+              = link_to print_print_path(category_id: @category.id, model_id: @model.id) do
+                = "未上傳的檔案(#{render_model_print_items_count(@model.id)})"
+            - else
+              = link_to print_print_path(category_id: @category.id, model_id: @model.id, aasm_state: :uploading) do
+                = "上傳中的檔案(#{model_uploading_count})"
+            | &nbsp;&nbsp;
+            = link_to '拼版後整批上傳', upload_print_impositions_path(model_id: @model.id), class: 'btn btn-mini btn-info', data: {disable_on_submit: true, remote: true, method: 'post'}
+        .widget-body
+          .widget-main.no-padding
+            table.table.table-bordered.table-striped
+              thead.thin-border-bottom
+                tr
+                  th= sort_link @search, :order_item_order_order_no ,"訂單編號"
+                  th 序號
+                  th 內容
+                  th 進入工作站時間
+                  th style='width: 100px' 累計處理時間
+                  th= sort_link @search, :order_item_order_created_at , "訂單成立時間"
+                  th= sort_link @search, :print_item_order_item_order_shipping_info_shipping_way, "出貨方式"
+                  th 留言
+                  th 操作
+              tbody id="model-#{@model.id}-section"
+                = render 'print/order_items/print_items', print_items: @print_items

@@ -1,0 +1,20 @@
+/! Nav tabs
+ul.nav.nav-tabs role='tablist'
+  li class=active_for_current_page('public')
+    = link_to 'Public', admin_works_path(q: {work_type_eq: 0})
+  li class=active_for_current_page('special price')
+    = link_to 'Special Price', admin_works_path(q: {price_tier_id_null: '0'})
+  li class=active_for_current_page('private')
+    = link_to 'Private', admin_works_path(q: {work_type_eq: 1})
+  li class=active_for_current_page('finished')
+    = link_to 'Finished', admin_works_path(q: {finished_eq: 1})
+  li class=active_for_current_page('all')
+    = link_to 'All', admin_works_path
+  li class=active_for_current_page('feature')
+    = link_to 'Feature', admin_works_path(q: {feature_eq: true})
+  li class=active_for_current_page('standardized')
+    = link_to 'Standardized', admin_standardized_works_path
+  li class=active_for_current_page('archived')
+    = link_to 'Archived', admin_archived_works_path
+  li class=active_for_current_page('deleted')
+    = link_to 'Deleted', admin_works_path(deleted: true)

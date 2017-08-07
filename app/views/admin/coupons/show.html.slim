@@ -1,0 +1,36 @@
+- admin_title t('coupons.show.link_to_list'), subtitle: t('coupons.show.crumb_code', code: @resource.code)
+
+.row
+  .col-md-6
+    table.table.table-striped.table-bordered.table-hover
+      tr
+        td= t('coupons.index.thead.name')
+        td= @resource.title
+      tr
+        td= t('coupons.index.thead.coupon_code')
+        td= @resource.code
+      tr
+        td= t('coupons.index.thead.expires_at')
+        td= @resource.expired_at
+      tr
+        td= t('coupons.index.thead.use_state')
+        td= coupon_usage_count(@resource)
+      tr
+        td= t('coupons.index.thead.is_event')
+        td= render_yes_or_no(@resource.event?)
+      tr
+        td= t('coupons.show.table.thead.price')
+        td
+          table.table
+            tr
+              td= t('coupons.show.table.thead.name')
+              td= t('coupons.show.table.thead.currency')
+              td= t('coupons.show.table.thead.price')
+            - @resource.currencies.each do |c|
+              tr
+                td= c.name
+                td= c.code
+                td= c.price
+
+    = link_to t('shared.form_actions.back'), url_for(action: :index), class: 'btn btn-success'
+    = link_to t('shared.form_actions.edit'), url_for(action: :edit), class: 'btn btn-info'

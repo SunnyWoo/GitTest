@@ -1,0 +1,27 @@
+= simple_form_for [:admin, option_type] do |f|
+  = f.input :name
+  = f.input :presentation
+
+  .widget-box.widget-color-blue
+    .widget-header
+      h5.widget-title.bigger.lighter
+        = fa_icon 'table', class: 'ace-icon'
+      span Option Values
+      .widget-toolbar
+        .btn-group
+          = link_to_add_fields '增加', f, :option_values, target: '#option_values_fields'
+
+    .widget-body
+      .widget-main.no-padding
+        table.table
+          thead
+            tr
+              th = t('option_types.attributes.name')
+              th = t('option_types.attributes.presentation')
+              th = t('shared.form_actions.operation')
+
+          tbody#option_values_fields
+            = f.simple_fields_for :option_values do |builder|
+              = render 'option_value_fields', f: builder
+
+  = f.button :submit

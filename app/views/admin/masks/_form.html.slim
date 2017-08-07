@@ -1,0 +1,8 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.input :material_name, label: t('masks.attributes.material_name')
+  .well
+    .upload-mask-image
+    = f.input :image, as: :image, input_html: { data: { preview_at: '.upload-mask-image' } }
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

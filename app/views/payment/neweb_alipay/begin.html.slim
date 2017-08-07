@@ -1,0 +1,1 @@
+form action=@alipay_url method='post' data-auto-submit=true data-form-timeout=true data-millisecond="#{Settings.payment_timeout.to_i * 1000}" data-redirect-to="#{finish_payment_neweb_alipay_url(order_no: @order.order_no)}"

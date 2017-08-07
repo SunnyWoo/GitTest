@@ -1,0 +1,4 @@
+- changeset = activity.extra_info[:changeset]
+div
+  | 更新 FactoryMember #{activity.trackable.username} 資訊
+  pre = factory_member_changed_info(activity)

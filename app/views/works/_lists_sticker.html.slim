@@ -1,0 +1,14 @@
+.sticker-lists
+  .head
+    .prev-step data-target='#stickerPanel'
+      i.overlays-img_addlayer_icon_back_normal
+    = t('editor.stickers')
+    .close-panel
+      i.overlays-img_addlayer_icon_cancel_normal
+  .components
+    - editor_sticker_list.each do |hash|
+      - file, name = hash.values_at(:file, :name)
+      .obj data-type='obj' data-prop='sticker' data-obj=file data-obj-name=name
+        i = image_tag("editor/sticker_186px/#{name}.png")
+        / .name = name
+        .mask

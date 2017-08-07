@@ -1,0 +1,23 @@
+---
+engines:
+  rubocop:
+    enabled: true
+    exclude_fingerprints:
+    - f364b253858b540b4c12fd29c6bdf80f
+    - 62371e5518e75997bc7bf5f244a57a22
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "app/**/*"
+  - "lib/**/*"
+  - "**.rb"
+languages:
+  Ruby: true
+exclude_paths:
+  - vendor/**/*
+  - "*.md"
+  - "*.yml"
+  - "*.txt"
+  - ".rspec"
+  - ".gitignore"

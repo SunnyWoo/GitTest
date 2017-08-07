@@ -1,0 +1,6 @@
+zh-CN:
+  record_invalid_error: 找不到指定的资料
+  token_required: "缺少必要的参数: auth_token"
+  invalid_token: '找不到合法的 Token'
+  invalid_user_agent: '请确认你的请求header 中包含commandp 指定的User-Agent。'
+  verification_code_is_sent: '验证码已发送'

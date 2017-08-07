@@ -1,0 +1,13 @@
+- cache [@store, I18n.locale, @work] do
+  = render 'store/shared/header', store: @store
+  = render 'store/shared/work_info', work: @work, store: @store
+  / = render 'store/shared/side_menu', menu: %w(search contact)
+
+.checkoutFooter.fob
+  a.checkoutFooter-cart [title=t('store.preview.cart') number=@cart.item_sum data-checkout-footer-cart href=store_cart_path(@store)]
+  button.checkoutFooter-option.checkoutFooter-option--highlight[
+    data = { \
+      'checkout-footer-add-item' => true,
+      ec: @work.to_ecommerce_tracking \
+    }
+  ]=t('store.preview.footer.cart')

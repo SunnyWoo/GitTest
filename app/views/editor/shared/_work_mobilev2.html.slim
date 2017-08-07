@@ -1,0 +1,27 @@
+- cache [I18n.locale, current_currency_code, work.product, work] do
+
+  .product id='#{work.uuid}' data-category-key='#{work.product_key}' class=('has-special-price' if work.has_special_price?)
+    .product-mobile
+      = image_tag work.order_image.mobile.url, width: 288, heigth: 288, lazy: true
+      .product-desc
+        .product-name-v2
+          = render_work_name_without_model(work)
+        .product-model-v2
+          = work.product_name
+
+        .info-v2.clearfix
+          .author-v2.pull-left
+            = work.user_display_name
+          .price-v2.pull-right
+            - if work.has_special_price?
+              .price-original-price = render_item_original_price(work)
+              .price-special-price = render_item_price(work)
+            - else
+              .price-original-price = render_item_price(work)
+
+
+      div.btn.btn-default.btn-mobile-cart.add_to_cart id=work.uuid data={ behavior: 'add_to_cart',ga: "{ \"target\": \"#ga_info_#{work.uuid}\", \"name\": \"add\"}", mobileToggle:'mobile-cart-activated', mobileAddText:t('page.btns.add_to_cart'), mobileAddedText:t('page.btns.added'), mobileAddingText:t('page.btns.adding'), mobileRemovingText:t('page.btns.removing'), mobileAddPath:add_cart_path(work.uuid), work: render_work_name_without_model(work), model: work.product_name, mobileDelPath:cart_path(work.uuid), category: category }
+        = edit_translator('page.btns.add_to_cart')
+
+    = render 'works/ua_data', work: work
+

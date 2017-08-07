@@ -1,0 +1,28 @@
+#orders_table
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th= t('shared.paper_trail.thead.id')
+        th= t('shared.paper_trail.thead.item')
+        th= t('shared.paper_trail.thead.item_id')
+        th= t('shared.paper_trail.thead.action')
+        th= t('shared.paper_trail.thead.user')
+        th width=''
+          = t('shared.paper_trail.thead.update_at')
+        th= t('shared.paper_trail.thead.object')
+        th= t('shared.paper_trail.thead.object_change')
+
+    tbody
+      = content_tag_for :tr, @versions do |version|
+        td = version.id
+        td = version.item_type
+        td = version.item_id
+        td = version.event
+        td = render_version_author(version)
+        td = l version.created_at, format: :long
+        td
+          pre
+            = version.object
+        td
+          pre
+            = version.object_changes

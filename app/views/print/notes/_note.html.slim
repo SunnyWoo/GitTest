@@ -1,0 +1,6 @@
+tr id="tr_note_#{note.id}"
+  td= l note.created_at, format: :long
+  td= auto_link_with_nl2br(note.message)
+  td= note.user_name
+  - if current_factory_member == note.user && !readonly
+    td = link_to 'Edit', edit_print_order_note_path(note.noteable, note), class: 'btn btn-info btn-xs', data: { remote: true }

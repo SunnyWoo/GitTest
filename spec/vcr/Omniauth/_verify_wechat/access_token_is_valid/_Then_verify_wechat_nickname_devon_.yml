@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weixin.qq.com/sns/userinfo?access_token=OezXcEiiBSKSxW0eoylIeBTpHEUOchDk&openid=oN01fwuX0-M1-V4odxHO_KwNVKdQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.0
+      date:
+      - Wed, 12 Aug 2015 05:31:30 GMT
+      content-type:
+      - text/plain
+      content-length:
+      - '337'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"openid":"oN01fwuX0-M1-V4odxHO_KwNVKdQ","nickname":"devon","sex":1,"language":"zh_TW","city":"","province":"Taipei","country":"TW","headimgurl":"http:\/\/wx.qlogo.cn\/mmopen\/fZ7Tt5hBIysHKsDVxiaUYBtfthqrsuk81BDDJiaLibWYgmXdVro6mFubYwOneLJXxEk7iaFc8TCbNPgVUTXwNkLuBQAL7pjjp4kd\/0","privilege":[],"unionid":"o0XC3wXf7ly07z-lZBht0rc9dnk4"}'
+    http_version: '1.1'
+  recorded_at: Wed, 12 Aug 2015 05:31:30 GMT
+recorded_with: VCR 2.9.2

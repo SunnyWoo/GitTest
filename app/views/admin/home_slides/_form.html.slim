@@ -1,0 +1,38 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if member.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: member.errors.full_messages
+  .well
+    = f.input :title, required: true, as: 'string', input_html: { class: 'span5' }
+    = f.input :title2, input_html: { class: 'span5' }
+    = f.input :title3, input_html: { class: 'span5' }
+    = f.input :content1, input_html: { class: 'span5' }
+    = f.input :content2, input_html: { class: 'span5' }
+    = f.input :content3, input_html: { class: 'span5' }
+
+  .well
+    h4.green.smaller.lighter
+      = t('home_slides.index.thead.slide')
+      | en 圖片一定要上傳
+    = f.simple_fields_for :translations do |d|
+      .well
+        = d.input :locale, label: false, as: :hidden
+        - is_required = d.object.locale == :en ? true : false
+        = d.input :slide, as: :image, label: d.object.locale, required: is_required
+
+  .well
+    h4.green.smaller.lighter = t('home_slides.index.thead.background')
+    = f.input :background, as: :image
+  .well
+    = f.label :set, t('home_slides.attributes.set')
+    = f.input :set, label: false, as: :select, collection: HomeSlide::AVAILABLE_SETS, include_blank: false
+    = f.label :link, t('home_slides.attributes.link')
+    = f.input :link, label: false, placeholder: 'http://commandp.com'
+    = f.input :template, collection: HomeSlide.templates.keys, include_blank: false
+    = f.label :is_enabled do
+      = f.check_box :is_enabled, class: 'ace'
+      span.lbl = t('home_slides.attributes.enabled')
+    = f.input :priority, collection: 1..10, include_blank: false
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_home_slides_path, class: 'btn btn-info'

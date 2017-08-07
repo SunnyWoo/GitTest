@@ -1,0 +1,63 @@
+zh-TW:
+  js:
+    button:
+      cancel: 取消
+      save: 儲存
+      edit: 編輯
+      search: 搜寻
+      export_used_orders: 匯出明細
+    coupon:
+      new:
+        title: 新增優惠券
+        detail: 折扣碼內容
+        detail_desc: 建立你的折扣碼以及使用條件
+        name: 折扣碼名稱（上限為 25 個字）【名稱會顯示於訂單內容上】
+        count: 增加多少個獨立的折扣代碼?
+        equal_to: 等於
+        greater_than: 大於
+        code: 折扣碼（上限為 20 個字）【結帳時輸入的字符】
+        generate_code: 產生折扣碼
+        usage_limit: 此折扣碼可使用次數？
+        no_limit: 無限制
+        expired: 設定折扣碼的開始與結束日期
+        begin: 折扣碼開始日期
+        expires: 折扣碼結束日期
+        never_expires: 永不過期
+        more: 進階設定
+        more_desc: 優惠卷進階設定
+        base_price: 優惠計價基準
+        original_price: 原價
+        special_price: 特價
+        user_usage_limit: 單一用戶使用次數
+        target: 優惠標的
+        all_order: 整筆訂單優惠
+        order_over: 訂單總額超過
+        specify_products: 特定Product Model
+        specify_product_categories: 特定Product Category
+        specify_designers: 特定設計師
+        specify_products_designers: 特定設計師與Product Model
+        specify_work: 特定兌換商品
+        specify_bdevent: 特定 Bdevent
+        shipping_fee: 運費
+        type: 優惠方式
+        discount_amount: 固定扣除金額
+        discount_percentage: 固定折扣比例
+        pay_amount: 固定結單金額
+        discount_none: 無
+        item_limit: 最多優惠組數
+        simple: 單一優惠目標
+        rules: 複合優惠目標
+        rule1: 優惠條件一
+        rule2: 優惠條件二
+        rule_quantity: 條件個數
+      index:
+        list: 折扣碼列表
+        auto_approval: 自動審核折扣碼
+        search_desc: 輸入折扣碼名稱或是折扣碼搜尋
+        detail: 折扣碼細節
+        used_count: 已使用次數
+        start_end: 開始 / 結束日期
+        code: 折扣碼
+        status: 狀態
+        unused: 未使用
+        used: 已使用

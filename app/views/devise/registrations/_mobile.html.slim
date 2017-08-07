@@ -1,0 +1,25 @@
+.login_form#mobile class=(params[:register_method] == 'mobile' ? '' : 'hide')
+  = simple_form_for(@user, as: @user, url: registration_path(@user)) do |f|
+    = hidden_field_tag :register_method, 'mobile'
+    .form-field
+      = f.input :mobile, as: :string, placeholder: '手机号码', required: true
+    .form-field
+      = f.label '验证码', required: true
+      = text_field_tag :captcha, nil, required: true, maxlength: 5, class: 'captcha'
+      = simple_captcha_options[:image]
+      = simple_captcha_options[:refresh_button]
+    .form-field
+      = f.label '手机验证码', required: true
+      = text_field_tag :code, nil, required: true
+      = link_to '发送验证码', '###', class: 'btn btn-default send-code', disabled: 'disabled'
+    .form-field
+      = f.input :password, required: true
+    .form-field
+      = f.input :password_confirmation, required: true
+
+    footer.margin-top-fixed
+      .text-center
+        = f.submit 'Create Profile', class: 'btn btn-default'
+        .sign_up_link
+          | Have an account ?
+          = link_to ' Login', new_session_path(@user)

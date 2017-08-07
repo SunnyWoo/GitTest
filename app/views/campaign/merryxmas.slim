@@ -1,0 +1,150 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_images[:bg], class: 'carousel-img', alt: @kv_images[:alt]
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_images[:alt]
+
+.campaign-nav.text-center
+  ul
+    li
+      a href="#info" 活動介紹
+    li
+      a href="#create" 素材下載
+    li
+      a href="#product" 熱賣商品
+    li
+      a href="#event" 活動花絮
+
+.campaign-page#info_page
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.text-center style='font-weight: 400;margin: 30px 0 35px 0;'
+        | 我印造夢計畫活動介紹
+      .desc.text-center style='width: 585px; margin: auto; line-height: 22px; font-weight: bold;'
+        | 這次活動邀請了 19 位藝人，布魯斯，蔡昌憲，林敬倫，官鴻，郭源元，陳零九，小八，Gentleman，鍾欣怡，昆凌，梁以辰，Ruby，林慧蓉，劉薰愛，蔡淑臻，成語蕎 一起參與這次的造夢計畫，用他們的創作幫助偏鄉的小朋友實現他們的夢想，也邀請你和我印一起讓夢想發芽。
+
+  .merryxmas-block2
+    .cmdp_container
+      .grid_6.margin-top-fixed
+        .item-title style='margin-top: 60px;margin-bottom: -20px;'
+          | 我印邀請你一起讓夢想發芽
+        .merryxmas-vidoe
+          iframe width='773' height='435' src='https://www.youtube.com/embed/4SsE_sNMg5A?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.text-center style='font-weight: 400;margin: 30px 0;'
+        | 您的愛心可以讓孩子們的夢想發芽茁壯
+      .desc.text-center style='width: 585px; margin: auto; line-height: 22px; font-weight: bold; margin-bottom: 15px;'
+        | 台灣有許多偏鄉國小正面臨著併校與廢校的危機，學校對部落而言是精神的象徵，除了教育功能之外，也是部落文化與知識的傳承。如果部落的小學沒了，會繼而使家長攜幼兒向外遷移的惡性循環，部落文化將難以傳承。
+        br
+        br
+        | 為了將部落的文化被保存下來，您可以下載藝人的愛心畫作，製作出獨一無二的聖誕節禮物，送禮物也可以幫助小朋友們，一起過一個有意義溫暖的聖誕節。
+        br
+        br
+        | 我印將捐贈12月至1月扣除成本全數捐給花蓮港口國小，希望可以幫助解決國小修繕的現況，也能幫助國小後續的經營，透過造夢計畫可以讓社會大眾對於偏鄉國小所面臨的危機有更多的了解。
+
+.campaign-page#create_page
+  .cmdp_container.happysummer style='margin-top: 62px;'
+    .grid_6
+      #material_download_title.item-title.text-center style='margin-bottom: 55px;font-weight: 400;'
+        = "藝人創作素材下載"
+    .grid_6
+      .cmdp_container.step-block3 style='margin-bottom: 55px;'
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-1.png', alt: @title, width: 50, height: 50
+          .step-title 1. 選擇載體與下載素材
+          .step-desc 選擇您中意的產品載體，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-2.png', alt: @title, width: 50, height: 50
+          .step-title 2. 載入素材與製作
+          .step-desc 選擇您中意的產品載體，並載入下載的素材，開始自己動手設計屬於自己的商品。
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-3.png', alt: @title, width: 50, height: 50
+          .step-title 3. 快速結帳，全球直送
+          .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+    hr
+
+    .margin-top-fixed
+    .products.campaign_works
+      - (1..17).each do |i|
+        - i = i.to_s.rjust(2, '0')
+        .grid_2
+          .product.material
+            - download_url = image_path("campaign/merryxmas/material/#{i}.jpg")
+            = link_to download_url, class: 'product-detail', target: '_blank' do
+              = image_tag "campaign/merryxmas/material/#{i}_display.jpg", width: 310, heigth: 310
+              .mask
+              = link_to download_url, class: 'material_download_icon', target: '_blank' do
+                = image_tag 'campaign/happysummer/images/download.png'
+                br
+                | 點此開啟素材
+      .grid_2
+        .product.material
+          = image_tag "campaign/merryxmas/material/comming.jpg", width: 310, heigth: 310
+
+  .happysummer style='margin-bottom: -55px;'
+    .hr-block2
+      .text-center.camp_margin-top-10
+        = link_to new_work_path, title: t('page.btns.create') do
+          = image_tag 'campaign/happysummer/images/create.png'
+        .create_desc 下載完素材後，只要一鍵，即可立即製作與發揮你的創意。
+
+.campaign-page#product_page
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.margin-top-fixed.text-center.camp_margin-bottom-35.camp-fontweight-400
+        | 造夢計畫 熱賣商品
+
+    .web-bgmen-selectmodel-margin
+      .grid_2
+       .web-bgmen-placeholder
+      - params.merge!(anchor: 'product')
+      = render 'select_models', model: @model, ga_category: "Campaign - #{@key} - Web", work_models: @work_models
+
+    .margin-top-fixed
+    .products.campaign_works data-ga-category=("Campaign - #{@key} - Web")
+      - if @works.length > 0
+        = render partial: 'editor/shared/work', collection: @works
+      - else
+        .empty-result
+          = edit_translator('page.text.no_product_found')
+
+    .grid_6
+      .center-block.search_pagination
+        = will_paginate(@works, inner_window: 1)
+      .margin-top-fixed
+
+.campaign-page#event_page
+  .cmdp_container style='margin-bottom: 110px;'
+    .grid_6.margin-top-fixed.text-center
+      .item-title style='font-weight: 400;margin: 30px 0 35px 0;'
+        | 造夢計畫-活動花絮
+      .merryxmas-vidoe style='font-weight: bold;line-height: 22px;margin: 40px 0;'
+        | 我印第二次造訪了花蓮港口國小，這次帶著小小的心意來和孩子們一起渡過不一樣的聖誕節。
+        br
+        | 透過這次活動能讓更多人了解偏鄉國小面臨的危機。
+        br
+        | 希望大家能用行動一起幫助港口國小，讓孩子們勇於追夢，讓夢想茁壯發芽。
+        br
+      iframe width='773' height='435' src='https://www.youtube.com/embed/qNQnoAqKvjo?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+  #xmax_photos.merryxmas-block2 style='height: 1090px;margin-bottom: -30px;'
+    .cmdp_container
+      .grid_6
+        .item-title style='margin: 60px 0 0 0;'
+          | 看更多活動花絮照吧
+      .grid_6.text-center style='color: #FFF;margin: 40px 15px;'
+        | 我們跟小朋友一起吃聖誕大餐，跟去部落跟阿公學做漁網的照片都在這裡唷！
+
+      .products.campaign_works
+        - @photos.each do |photo|
+          .grid_2 style='margin-top: 30px;'
+            = link_to "https://d2i5hifyddc647.cloudfront.net/campaign/2015/xmas/+b/#{photo}", target: '_blank' do
+              = image_tag "https://d2i5hifyddc647.cloudfront.net/campaign/2015/xmas/#{photo}"
+      .grid_6
+        #campaign_xmas.center-block.search_pagination style='margin-top: 35px;'
+          = will_paginate @photos, inner_window: 1, param_name: 'photo_page', params: { anchor: 'event' }
+
+

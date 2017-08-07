@@ -1,0 +1,56 @@
+body.users.order_history {
+  table {
+    width: 100%;
+    margin-top: 30px;
+    thead, thead tr, thead th {
+      background-color: $word-color;
+    }
+    thead td {
+      padding: 0 20px;
+      line-height: 30px;
+      color: #FFF;
+      font-weight: 200;
+      span {
+        color: #FFF;
+      }
+    }
+
+    tbody {
+      td {
+        // padding: 30px 0px 30px 20px;
+        border-bottom: 1px solid $line-color;
+        a {
+          display: block;
+          padding: 30px 20px;
+          text-decoration: none;
+        }
+      }
+      tr:hover td {
+        color: $main-color;
+        a { color: $main-color; }
+      }
+    }
+  }
+
+  #article {
+    margin-bottom: 60px;
+  }
+}
+
+#order_history_list {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  span {
+    padding-bottom: 15px;
+    display: block;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.unpaid {
+  * {
+    color: $main-color;
+  }
+}

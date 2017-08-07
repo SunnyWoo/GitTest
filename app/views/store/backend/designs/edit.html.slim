@@ -1,0 +1,28 @@
+- admin_title I18n.t('store.design.page_title', name: @template.name)
+
+.col-xs-6
+  ul.nav.nav-tabs
+    li class = render_active_class_for_template_form_tab('photo_only', @template, true)
+      = link_to '#photo_only_form', data: { toggle: 'tab' } do
+        => fa_icon 'table', class: 'ace-icon'
+        span = I18n.t('store.design.forms.photo_only')
+    li class = render_active_class_for_template_form_tab('text_only', @template)
+      = link_to '#text_only_form', data: { toggle: 'tab' } do
+        => fa_icon 'table', class: 'ace-icon'
+        span = I18n.t('store.design.forms.text_only')
+    li class = render_active_class_for_template_form_tab('text_and_photo', @template)
+      = link_to '#text_and_photo_form', data: { toggle: 'tab' } do
+        => fa_icon 'table', class: 'ace-icon'
+        span = I18n.t('store.design.forms.text_and_photo')
+  .tab-content
+    .tab-pane class = render_active_class_for_template_form_tab('photo_only', @template, true) id='photo_only_form'
+      .well
+        = render 'form', template: @template, type: 'photo_only'
+    .tab-pane class = render_active_class_for_template_form_tab('text_only', @template) id='text_only_form'
+      .well
+        = render 'form', template: @template, type: 'text_only'
+    .tab-pane class = render_active_class_for_template_form_tab('text_and_photo', @template) id='text_and_photo_form'
+      .well
+        = render 'form', template: @template, type: 'text_and_photo'
+.col-xs-6
+  #template_editor

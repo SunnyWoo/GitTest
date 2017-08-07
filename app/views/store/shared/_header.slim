@@ -1,0 +1,32 @@
+- menu ||= []
+- share_target ||= ''
+- showShareMask = in_wexin? || Region.china?
+
+.has-header
+  header#header
+    .header-item.header-item--menu data-trigger-toggle='#menu-mask, #burger-menu'
+      #burgerMenuButton data-trigger-toggle='#menu-mask, #burger-menu'
+    .header-item--logo
+      = image_tag('designer_store/logo@2x.png', class: '')
+    .header-item.header-item--functionalIcon
+      - if menu.include? 'download'
+        = link_to '', download_path, class: 'header-item-menu header-item-menu--download'
+
+      - if menu.include? 'share'
+        - if showShareMask
+          button class='header-item-menu header-item-menu--share' data-trigger-show='#wexin-mask' data-trigger-hide='#menu-mask, #burger-menu'
+        - else
+          - if share_target =~ /^[\.\#]/
+            .header-item-menu.header-item-menu--share[data-trigger-show=share_target data-trigger-hide='#menu-mask, #burger-menu']
+          - else
+            = link_to '', share_target, class: 'header-item-menu header-item-menu--download'
+
+      - if menu.include? 'cart'
+        = link_to '', store_cart_path(store), class: 'header-item-menu header-item-menu--cart'
+
+  = render 'store/shared/burger_menu_item'
+
+- if showShareMask
+  = render 'store/shared/wexin_share_mask'
+
+= render 'store/shared/menu_mask'

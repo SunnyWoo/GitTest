@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"99.90"}}],"redirect_urls":{"return_url":"https://app.com/callback"}}'
+    headers:
+      X-Paypal-Sandbox-Email-Address:
+      - Platform.sdk.seller@gmail.com
+      Authorization:
+      - Bearer A101.5GjtqIgTz3ERrowwRAhg_TxfP8--mGFlzrtF5S5cgfoANUigyX_qarJiNZwpQGuK.dMU1KCAv3V3hF5QhxYwD4tHMl0m
+      Content-Type:
+      - application/json
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Paypal-Request-Id:
+      - 15597fe5-f0fb-4730-a6d9-460b06d64fba
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 10 Dec 2015 03:52:30 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3002.slc.paypal.com;threadId=427
+      Paypal-Debug-Id:
+      - 65d7dd405ce61
+      - 65d7dd405ce61
+      Correlation-Id:
+      - 65d7dd405ce61
+      Content-Language:
+      - "*"
+      Content-Length:
+      - '302'
+      Vary:
+      - Authorization
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D4277561430;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.cancel_url","issue":"This
+        field required when payment_method is ''paypal''"}],"message":"Invalid request
+        - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"65d7dd405ce61"}'
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:52:30 GMT
+recorded_with: VCR 2.9.3

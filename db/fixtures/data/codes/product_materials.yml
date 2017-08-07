@@ -1,0 +1,31 @@
+---
+- code: PCG
+  description: PC 光面
+- code: PCM
+  description: PC 磨砂面
+- code: TPU
+  description: "硅胶"
+- code: SCO
+  description: "炻瓷"
+- code: GCO
+  description: "骨瓷"
+- code: HCZ
+  description: "合成纸"
+- code: TMO
+  description: "桐木"
+- code: ABS
+  description: ABS
+- code: NKZ
+  description: "牛卡纸"
+- code: PUL
+  description: PU 人造皮革
+- code: EPS
+  description: "保麗龍"
+- code: COT
+  description: "棉"
+- code: POL
+  description: Poly 帆布
+- code: PSF
+  description: "蜜桃絨"
+- code: SMR
+  description: "軟毛絨"

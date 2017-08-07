@@ -1,0 +1,278 @@
+class @RenderCanvas
+	constructor: (settings)->
+		@layers = null
+		@layer_flag = 0
+		@server_layers = 0
+		@flag = true
+		@defaultSettings =
+			uiConfig:  settings.uiConfig
+			ctrConfig: settings.ctrConfig
+			default:   settings.default
+
+	getStart: (layers) =>
+		@layers = layers
+		layer = layers[@layer_flag]
+
+		if _.size(@layers) > @layer_flag
+			if layer.position > 0
+				type = @getLayerType(layer.layer_type)
+				uuid = layer.uuid
+
+				# TODO: check server response for layer type
+				if layer.layer_type is 1
+					material = layer.image_url
+					material_name = layer.material_name
+				else if layer.layer_type is 9
+					material = layer.font_name
+					material_name = layer.font_text
+				else if layer.layer_type is 2
+					material = layer.color.replace('0x', '#')
+					material_name = ''
+				else
+					material = @getMaterial(layer.material_name)
+					material_name = layer.material_name
+
+				@converObjtoLayer(layer, type, material, material_name, uuid)
+			else
+				@dropLayer(layer)
+		else
+			@getEnd()
+		return
+
+	dropLayer: (layer) ->
+		path = $('#drawing').data('layersPath')
+		url = path + '/' + layer.uuid
+
+		$.ajax(
+			url: url
+			type: 'DELETE'
+		).done((response) =>
+			console.log 'Data Saved: ', response
+			@layer_flag++
+			@getStart(@layers)
+			return
+		).fail((response) =>
+			console.log 'Error: ', response.responseText
+			return
+		)
+		return
+
+	getLayerType: (id) ->
+		layer_type = [ 'camera'
+									, 'photo'
+									, 'background_color'
+									, 'shape'
+									, 'crop'
+									, 'line'
+									, 'sticker'
+									, 'texture'
+									, 'typography'
+									, 'text'
+									, 'lens_flare'
+									, 'spot_casting'
+									, 'spot_casting_text' ]
+
+		return layer_type[id]
+
+	getMaterial: (name) ->
+		material_url = $('.obj[data-obj-name=' + name + ']').data('obj')
+
+		return material_url;
+
+	converObjtoLayer: (current_layer, type, data, material_name, uuid)->
+		cmdp.is_re_render = true
+
+		switch type
+			when 'background_color'
+				@renderBackgroundtoCanvas(current_layer, uuid)
+			when 'text'
+				@renderTexttoCanvas(current_layer, type, data, material_name, uuid)
+			when 'photo', 'shape', 'line', 'sticker', 'texture', 'typography'
+				@renderImagetoCanvas(current_layer, type, data, material_name, uuid)
+		return
+
+	renderImagetoCanvas: (current_layer, type, data, material_name, uuid)->
+		image = fabric.Image.fromURL data, (oImg) =>
+			oImg_width = oImg.getWidth()
+			oImg_height = oImg.getHeight()
+
+			switch type
+				when 'photo'
+					obj_zoom = Math.abs(current_layer.scale_y * _zoom * 2)
+					scale_val = obj_zoom / (_modal_h / oImg.height)
+					oImg.original_scale = _modal_h / oImg_height
+				when 'texture'
+					obj_zoom = Math.abs(current_layer.scale_x * _zoom)
+					scale_val = obj_zoom / (_modal_w / 3000) / _print_zoom
+					oImg.original_scale = (_modal_w / oImg_width) * _print_zoom
+				else
+					obj_zoom = Math.abs(current_layer.scale_x * _zoom)
+					scale_val = obj_zoom / (_modal_w / 2500) / _print_zoom
+					oImg.original_scale = (_modal_w / oImg_width) * _print_zoom
+
+			# TODO: 鏡射功能已經移除
+			flip_x = current_layer.scale_x < 0 ? true : false
+			flip_y = current_layer.scale_y < 0 ? true : false
+
+			top = current_layer.position_y * _zoom + _canvas_y
+			left = current_layer.position_x * _zoom + _canvas_x
+			opacity = current_layer.transparent
+			angle = current_layer.orientation
+			color = current_layer.color?.replace('0x', '#')
+
+			$('.item .value[data-val="sl-scale"]').text(Math.round(scale_val * 100))
+			$('.item .value[data-val="sl-rotation"]').text(Math.round(angle * 1000) / 1000)
+			$('.item .value[data-val="sl-transparency"]').text(Math.round(opacity * 100 * 1000) / 1000)
+
+			oImg.set
+				width: oImg_width
+				height: oImg_height
+				scaleX: obj_zoom
+				scaleY: obj_zoom
+				flipX: flip_x
+				flipY: flip_y
+				originX: 'center'
+				originY: 'center'
+				top: top
+				left: left
+				opacity: opacity
+				angle: angle
+
+			oImg.set @defaultSettings.uiConfig
+			oImg.setControlsVisibility @defaultSettings.ctrConfig
+
+			oImg.hash_key = uuid
+			cmdp.tmp_key = uuid
+
+			# 存入 server layer 順序
+			layers_info =
+				'key': uuid
+				'layer': current_layer.position
+			cmdp.server_layers.push(layers_info)
+
+			oImg.layer = current_layer.position
+			oImg.fillColor = color
+
+			cmdp.storage.addObjs(type, data, material_name, oImg, _canvas_x, _canvas_y)
+			cmdp.c.add oImg
+			cmdp.c.setActiveObject oImg
+
+			if type isnt 'photo'
+				oImg.filters[0] = new fabric.Image.filters.Tint  color: color
+				oImg.applyFilters cmdp.c.renderAll.bind(cmdp.c)
+
+			setTimeout( =>
+				key = cmdp.addThumb(uuid, oImg.toDataURL())
+				if $('.layer[data-key=' + key + ']').length > 0
+					@layer_flag++
+					@getStart(@layers)
+				else
+					console.log 'Something wrong......o_O'
+				return
+			,100)
+		, crossOrigin: 'anonymous'
+
+		return
+
+	renderBackgroundtoCanvas: (current_layer, uuid)->
+
+		opacity = current_layer.transparent
+		$('.item .value[data-val="sl-transparency"]').text(Math.round(opacity * 100 * 1000) / 1000)
+
+		if current_layer.color is ''
+			current_layer.color = '#000000'
+
+		rect = new fabric.Rect(
+			width: _modal_w / _zoom
+			height: _modal_h / _zoom
+			fill: current_layer.color.replace('0x', '#')
+			originX: 'center'
+			originY: 'center'
+			top: _canvas_y
+			left: _canvas_x
+			scaleX: 1
+			scaleY: 1
+			opacity: opacity
+			lockMovementX: true
+			lockMovementY: true
+			hasControls: false
+			hasBorders: false
+		)
+
+		cmdp.tmp_key = uuid
+		rect.hash_key = uuid
+
+		# 存入 server layer 順序
+		layers_info =
+				'key': uuid
+				'layer': current_layer.position
+		cmdp.server_layers.push(layers_info)
+
+		rect.layer = current_layer.position
+		rect.fillColor = current_layer.color.replace('0x', '#')
+
+		cmdp.storage.addObjs('background_color', current_layer.color.replace('0x', '#'), null, rect, _canvas_x, _canvas_y)
+		cmdp.c.add rect
+		cmdp.c.renderAll()
+		cmdp.c.setActiveObject rect
+
+		key = cmdp.addThumb(uuid, cmdp.c.getActiveObject().toDataURL())
+		if $('.layer[data-key=' + key + ']').length > 0
+			@layer_flag++
+			@getStart(@layers)
+		else
+			console.log 'Something wrong......o_O'
+
+		return
+
+	renderTexttoCanvas: (current_layer, type, material, text, uuid)->
+
+		params =
+			fontFamily: material
+			prop: 			type
+			uuid: 			uuid
+			reRender: 	true
+			position: 	current_layer.position
+			color: 			current_layer.color.replace('0x', '#')
+			top: 				current_layer.position_y * _zoom + _canvas_y
+			left: 			current_layer.position_x * _zoom + _canvas_x
+			opacity: 		current_layer.transparent
+			angle: 			current_layer.orientation
+			flip_x:			current_layer.scale_x < 0 ? true : false
+			flip_y:			current_layer.scale_y < 0 ? true : false
+			zoom: 			Math.abs(current_layer.scale_x) / _text_zoom
+			alignment: 	current_layer.text_alignment.toLowerCase()
+
+		scale_val = params.zoom / 5
+
+		$('.item .value[data-val="sl-scale"]').text(Math.round(scale_val * 100))
+		$('.item .value[data-val="sl-rotation"]').text(Math.round(params.angle * 1000) / 1000)
+		$('.item .value[data-val="sl-transparency"]').text(Math.round(params.opacity * 100 * 1000) / 1000)
+
+		textObj = new cmdp.Text(text, cmdp.c, cmdp.storage, @defaultSettings, params)
+		cmdp.tmp_key = textObj.render()
+
+		# 存入 server layer 順序
+		layers_info =
+				'key': uuid
+				'layer': current_layer.position
+		cmdp.server_layers.push(layers_info)
+
+		thumbUrl = "<%= image_url('editor/text_thumb.png').to_s %>"
+		key = cmdp.addThumb(uuid, thumbUrl)
+		if $('.layer[data-key=' + key + ']').length > 0
+			@layer_flag++
+			@getStart(@layers)
+		else
+			console.log 'Something wrong......o_O'
+
+		return
+
+	getEnd: ->
+		if _isDebug
+			console.log 'Render End!!!!!!', cmdp.server_layers
+		setTimeout( ->
+			$('#loading_cover').addClass('hide')
+			return
+		, 500)
+		return

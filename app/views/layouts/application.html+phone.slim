@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content='width=device-width, initial-scale=1.0' name='viewport'
+    meta content='pMJfuoCx4SCeUutzlzNdfkNnUmq_rB77szI6VEvyXfo' name='google-site-verification'
+    meta content='app-id=898632563' name='apple-itunes-app'
+
+    = display_meta_tags
+    = canonical_tag
+    = favicon_link_tag 'favicon.png'
+    = render 'shared/commandp_variable'
+    = stylesheet_link_tag  'phone', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "https://js.stripe.com/v1/", "phone", "data-turbolinks-track" => false
+    = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
+    = csrf_meta_tags
+    - if locale == :'zh-CN'
+      = render 'shared/baidu_tongji'
+    - else
+      = render 'shared/ua'
+    - if !Rails.env.production?
+      meta content='noindex' name='robot'
+
+  body class="#{controller_name} #{action_name} locale-#{I18n.locale}"
+    .main-container
+      = yield
+      = render 'shared/alexa'
+
+    .mobilev2.eat10
+      = render 'campaign/popups/ct'
+      = render 'campaign/popups/cvs711'
+      = render 'campaign/popups/cvslife'
+      = render 'campaign/popups/cvsok'
+      = render 'campaign/popups/cvsfami'
+      = render 'shared/tag_manager' if Region.global?

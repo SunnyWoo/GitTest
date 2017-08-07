@@ -1,0 +1,4 @@
+- admin_title t('orders.approve.page_title'), subtitle: t('orders.approve.crumb.check_order')
+- breadcrumb :admin_unapproved_orders
+
+= react_component 'CPA.Unapproved.Index', {apiUrl: unapproved_admin_orders_path, itemCountUrl: unapproved_counts_admin_orders_path}, {id: 'unappeoved_app'}

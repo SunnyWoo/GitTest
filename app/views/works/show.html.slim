@@ -1,0 +1,112 @@
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+- cache_work @work do
+  .cmdp_container.details
+    .grid_3.detail-imgs
+      .show-box
+        - @work.ordered_previews.each_with_index do |preview, index|
+          = image_tag preview.image.url, class: 'animated hide', data: { img: index + 1 }, width: 480, heigth: 480
+
+      .thumb-list
+        ul
+          - @work.ordered_previews.each_with_index do |preview, index|
+            li data-thumb=(index + 1)
+              = image_tag preview.image.thumb.url, class: 'thumb'
+
+    .grid_3.detail-info
+      .info-head.block.clearfix
+        .left.pull-left
+          = image_tag @work.user.avatar.s154.url, class: 'author-img'
+        .right.pull-left
+          h1.product-name
+            = render_string_with_br(truncate(@work.name, length: 46), 23)
+          .author-name= @work.user_display_name
+      - if !@work.try(:redeem?)
+        .qty.block.horizontal
+          .sub-title= edit_translator('page.text.qty')
+          .content
+            .dropdown.dropdown-small
+              button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+                span.val 1
+                span.caret
+              ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+                - 10.times do |i|
+                  li role="item_qty"
+                    .i role="menuitem" tabindex="-1" data-value="#{i+1}" #{i+1}
+      .model.block.horizontal
+        .sub-title= edit_translator('page.text.model')
+        .content
+          .dropdown
+            button#model_dropdown.disabled.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button" #{@work.product_name}
+      / v3 select same design product
+      / .model.block.horizontal
+      /   .sub-title= edit_translator('page.text.model')
+      /   .content
+      /     .dropdown
+      /       button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+      /         span.val = @work.product_name
+      /         = content_tag(:span, nil, class: 'caret').html_safe if @same_design.size > 0
+      /       ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+      /         - @same_design.each do |work|
+      /           li = link_to work.product_name, shop_work_path(work.product, work)
+      - unless @work.try(:redeem?)
+        - if @work.has_special_price?
+          .price.block.clearfix.has-special-price
+            .fee.pull-left.fee-price
+              = render_item_original_price(@work)
+            .fee.pull-left.fee-special-price
+              = render_item_price(@work)
+            .notice.pull-left
+              = edit_translator('page.text.free_shipping')
+        - else
+          .price.block.clearfix
+            .fee.pull-left.fee-price
+              = render_item_price(@work)
+            .notice.pull-left
+              = edit_translator('page.text.free_shipping')
+      .btns.block
+        - if @work.try(:redeem?)
+          = link_to t('page.btns.redeem'), new_redeem_path(gid: @work.to_sgid.to_s), class: 'btn btn-default',
+                    rel: 'nofollow'
+        - else
+          = link_to edit_translator('page.btns.add_to_cart'),
+                    add_cart_path(@work.uuid),
+                    class: 'btn btn-default add_to_cart',
+                    title: t('page.btns.add_to_cart'),
+                    rel: 'nofollow',
+                    data: { method: :put, behavior: 'add_to_cart', ga: { target: "#ga_info_#{@work.uuid}", name: 'add' } }
+        .share-link
+          = render 'editor/shared/social_links'
+      - if policy(@work).update?
+        .func-links.block.clearfix
+          .back-to-edit.pull-left
+            = link_to edit_work_path(@work) do
+              i.preview-img_icon_backtoedit_normal
+              span Back to Edit
+
+      .description.block
+        .sub-title= edit_translator('page.text.desc')
+        .content.simple-format
+          = simple_format @work.product_description
+      .shipping.block
+        .sub-title= edit_translator('page.text.shipping')
+        .content.simple-format
+          p = edit_translator('page.text.shipping_desc')
+      / .tags.block
+        .sub-title Tags
+        ul
+          -5.times do
+            li.tag
+              = link_to 'iphone', '#'
+              | ,
+            li.tag
+              = link_to 'case', '#'
+              | ,
+    = render 'works/ua_data', work: @work
+
+- if @recommend_works
+  .cmdp_container
+    .grid_6
+      .item-title.margin-top-fixed.text-center= edit_translator('page.title.you_may_also_like')
+    = render partial: 'editor/shared/work', collection: @recommend_works

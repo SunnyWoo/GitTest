@@ -1,0 +1,12 @@
+#confirm_notice.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        .item-title.confirm-title
+          = edit_translator('editor.delete.title')
+        .content
+          .confirm-text
+            = edit_translator('editor.delete.confirm_message')
+          .center-block
+            .btn.btn-cancel.btn-margin data-dismiss='modal' = edit_translator('editor.delete.cancel')
+            #del_confirmed.btn.btn-default = edit_translator('editor.delete.continue')

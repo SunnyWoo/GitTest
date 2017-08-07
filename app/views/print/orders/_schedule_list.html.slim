@@ -1,0 +1,46 @@
+- orders = schedule_presenter.orders
+= will_paginate(orders)
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 訂單編號
+      th 項目數量
+      th 內容
+      th 留言
+      th 拋單
+      th 外部拋單
+      th 拼单
+      th 累計天數
+      th 訂單審核通過時間
+      th 操作
+  tbody
+    - orders.each do |order|
+      tr id="order_schedule_#{order.id}"
+        td
+          = render_order_shipper(order)
+          br
+          = order.remote_info['order_no']
+        td= order.print_items_count
+        td
+          table.table.table-bordered
+            thead.thin-border-bottom
+              tr
+                th 列印編號
+                th 型號
+                th 狀態
+                th 操作
+            - order.print_items.each do |print_item|
+                tr
+                  td = print_item.render_timestamp_no_with_highlight params[:number]
+                  td = print_item.product_name
+                  td = print_item.render_aasm_state_in_schedule
+                  td = print_item.link_to_workspace
+
+        td = render 'print/notes/notes', noteable: order
+        td = order.render_remote_notice
+        td = order.render_external_production_notice
+        td = order.render_merge_notice
+        td = order.render_days_from_approved_at
+        td = l order.approved_at, format: :long
+        td = order.link_to_disable_schedule
+= will_paginate(orders)

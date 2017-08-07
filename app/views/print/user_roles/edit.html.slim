@@ -1,0 +1,25 @@
+= render 'print/shared/notice_bar'
+.page-header
+  h1 編輯系統帳號
+= simple_form_for @factory_member, url: print_user_role_path, html: { class: 'form-horizontal' } do |f|
+  .col-xs-10
+    .form-inputs
+      .form-group
+        = f.label :factory_id
+        div = current_factory.name
+    .form-inputs
+      = f.input :username, disabled: true
+    .form-inputs
+      = f.input :email, disabled: true
+    .form-inputs
+      = f.input :password
+    .form-inputs
+      = f.input :password_confirmation
+    .form-inputs
+      = f.input :enabled,
+                :collection => [['啟用', true], ['停用', false]],
+                :as => :radio_buttons
+    .form-inputs
+      = f.input :role_group_ids, collection: FactoryRoleGroup.all, as: :select, input_html: { value: @factory_member.role_group_ids.first }
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'

@@ -1,0 +1,46 @@
+= f.simple_fields_for :bdevent_redeem do |d|
+  = d.input :bdevent_id, as: :hidden, hints: false
+  .row
+    .col-xs-6.form-inline
+      label.inline 兌換碼類型
+      - select_option = (d.object.quantity == 1)  ? 0 : 1
+      = select_tag 'redeem_type', options_for_select([ ['Equal to', 0], ['Greater than', 1] ], select_option),
+                   disabled: true
+      = d.input :quantity, label: false, disabled: true, hints: false, as: :integer,
+                input_html: { class: 'input-small' }
+  #redeem_usage_count_limit
+    .row
+      .col-xs-5.form-inline
+        label.inline 設定兌換碼(自行填寫 或 不填寫自動產生)
+        = d.input :code, label: false, required: false, hints: false, disabled: true
+
+    .row.form-inline
+      .col-xs-4
+        label.inline 使用次數
+        = d.input :usage_count_limit, label: false, hints: false
+        = check_box_tag 'no_limit', true, (d.object.no_limit?)
+        label.inline No Limit
+
+  .row
+    .col-xs-6
+      = d.label '指定兌商品'
+      br
+      = d.select :product_model_ids, @product_models, { include_blank: false, hints: false },
+        { multiple: true, style: 'width: 100%', data: { tags: true, bdevent_id: d.object.bdevent_id } }
+  .row
+    .col-xs-6
+      = d.label '指定兌換作品'
+  .row
+    - d.object.works.each do |work|
+      .col-sm-4
+        .col-xs-6
+          = image_tag work.order_image.mobile.url
+        .col-xs-6
+          | ID：
+          = link_to work.id, admin_work_path(work), target: :blank
+          br
+          = "Model：#{work.product_name}"
+          br
+          = "Name：#{work.name}"
+          br
+          = "Username：#{work.user_display_name}"

@@ -1,0 +1,19 @@
+$default-spacing: 12px;
+@import "editor/default/*.png";
+@include all-default-sprites;
+
+$overlays-spacing: 10px;
+@import "editor/overlays/*.png";
+@include all-overlays-sprites;
+
+$edittools-spacing: 10px;
+@import "editor/edittools/*.png";
+@include all-edittools-sprites;
+
+$popup-spacing: 10px;
+@import "editor/popup/*.png";
+@include all-popup-sprites;
+
+$preview-spacing: 12px;
+@import "editor/preview/*.png";
+@include all-preview-sprites;

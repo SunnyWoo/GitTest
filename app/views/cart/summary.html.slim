@@ -1,0 +1,95 @@
+- payment_method_name = t("activerecord.attributes.order.payment_#{@order.payment_method}")
+.cmdp_container.summary
+  .grid_6
+    = render_cell :announcement, :announcement
+  .grid_6
+    - if flash[:notice]
+      .error-notice
+        = flash[:notice]
+  .grid_6
+    .item-title.margin-top-fixed.text-center = edit_translator('page.cart_check_out.btns.summary')
+    .cart_wording = edit_translator('page.cart_check_out.text1')
+    .divider_line
+      = image_tag('editor/divider_line.png')
+
+  .grid_6
+    .item-title = t('page.cart.items', items: @order.order_items.size)
+    table
+      thead
+        tr
+          td.item = edit_translator('page.cart.thead.td1')
+          td.item-name width='43%'
+          td.price = edit_translator('page.cart.thead.td3')
+          td.special_price = edit_translator('page.cart.thead.td6')
+          td.qty = edit_translator('page.cart.thead.td4')
+          td.total = edit_translator('page.cart.thead.td5')
+      tbody id='cart_itmes'
+        - @order.order_items.each do |item|
+          - itemable = item.itemable
+          tr class=('has-special-price' if itemable.has_special_price?)
+            td.item
+              .img
+                = link_to image_tag(itemable.order_image.thumb.url), render_work_path(itemable)
+            td.item-name
+              .itme
+                = link_to render_work_name_with_device(itemable), render_work_path(itemable)
+            - if itemable.has_special_price?
+              td.price.list-price= render_item_original_price(item)
+              td.price.list-special-price= render_item_price(item)
+            - else
+              td.price= render_item_price(item)
+              td.price
+            td.qty= item.quantity
+            td.total= render_item_price_with_quantity(item)
+          tr.hide
+            td
+              = render 'cart/ua_ec/ua_data', work: itemable, qty: item.quantity, step: '3'
+      tfoot
+        tr
+          td colspan='3'
+          td = edit_translator('page.cart_check_out.subtotal')
+          td = render_price(@order.order_items_total)
+        tr
+          td colspan='3'
+          td = edit_translator('page.cart_check_out.shipping_cost')
+          td = render_shipping_price(@order)
+        tr
+          td colspan='3'
+          td = edit_translator('page.cart.span.discount')
+          td = render_price(-@order.discount)
+
+        tr.sub-total
+          td colspan='2'
+          td colspan='2'
+            span= edit_translator('page.cart_check_out.total')
+          td
+            span.check_out_subtotal= render_subtotal(@order)
+
+  .grid_6
+    .info-box
+      .item-title Shipping information
+      .info_block
+        = render partial: 'address_info', locals: { obj: @order.shipping_info }
+
+    .info-box
+      .item-title Billing information
+      .info_block
+        = render partial: 'address_info', locals: { obj: @order.billing_info }
+
+    .info-box
+      .item-title Payment Method
+      .info_block
+        = payment_method_name
+
+    .info-box
+      .item-title Delivery Type
+      .info_block
+        - shipping_way = @order.shipping_info_shipping_way
+        = edit_translator("activerecord.attributes.address_info.shipping_way_#{shipping_way}")
+        .pull-right
+          = render_shipping_way_fee(shipping_way)
+
+  .grid_6.margin-top-fixed.text-center
+    = link_to edit_translator('page.cart.btns.countinue_shopping'), root_path, class: 'btn btn-cancel btn-margin'
+    = link_to "Pay with #{payment_method_name}", begin_payment_path(@order.payment_method), class: 'btn btn-default', id: 'going_payment', method: :post
+    .margin-top-fixed

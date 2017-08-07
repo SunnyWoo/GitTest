@@ -1,0 +1,18 @@
+- admin_title t('notifications.report')
+- breadcrumb :report_admin_notification
+
+table.table
+  tr
+    td Time
+    td= @notification.delivery_at
+  tr
+    td Status
+    td= @notification.status
+  tr
+    td Message
+    td= @notification.message
+  tr
+    td Open Count
+    td= @notification.notification_trackings_count
+hr
+= high_chart("some_id", @chart)

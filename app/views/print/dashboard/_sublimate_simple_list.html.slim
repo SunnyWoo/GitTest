@@ -1,0 +1,19 @@
+table.table.table-bordered.table-striped.table-hover
+  thead.thin-border-bottom
+    tr
+      th= sort_link @search, :order_item_order_order_no , '訂單編號'
+      th= sort_link search, :order_item_timestamp_no , '列印編號'
+      th= sort_link search, :order_item_model_name , '產品類型'
+      th= sort_link search, :order_item_order_shipping_info_shipping_way , '出貨方式'
+      th 折扣码
+      th 发票
+  tbody
+    - @print_items.each do |print_item|
+      - order = print_item.order_item.order
+      tr
+        td= render_order_shipper(order)
+        td= render_timestamp_no(print_item)
+        td= print_item.product_name
+        td= print_item.render_shipping_way_with_color
+        td= render_coupon_info(order.coupon)
+        td= order.rate_type_name

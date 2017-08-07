@@ -1,0 +1,28 @@
+html
+  head
+    = stylesheet_link_tag 'order_mail', media: :all
+
+  body style=("margin: 0; padding: 0;")
+    table#outside cellpadding="0" cellspacing="0" width="100%"
+      tr
+        td align="center" valign="top"
+          table#container align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+            tr
+              td align="center"
+                .cannot-read
+            tr
+              td#body
+                = yield
+
+            tr
+              td align="center"
+                #copyright
+                  .padding
+                  p Use of this Web site constitutes acceptance of the TERMS OF USE
+                  p Copyright © 2013-2015, commandp Inc. All rights reserved.
+                  .padding
+      tr
+        td align="center" valign="top"
+          table#margin-bottom align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+            tr
+              td height="100"

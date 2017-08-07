@@ -1,0 +1,69 @@
+.mobile.mobilev2.eat10.mobile_order_result
+  .mobilev2-top = edit_translator('page.order_results.thank_for_shopping')
+  .popups-bg
+    .fixed-top-placeholder
+    .order-result-detail
+      p.order-result-wording = edit_translator('page.order_results.success_wording_mobile_1')
+      p.order-result-wording = edit_translator('page.order_results.success_wording_mobile_2')
+      p.order-result-wording = edit_translator('page.order_results.success_wording_mobile_3')
+
+      .p12
+      .order-result-item
+        span
+          = edit_translator('page.order_results.order_no')
+          | ：
+        .order-info = @order.order_no
+
+      .order-result-item
+        span
+          = edit_translator('page.cart_check_out.total')
+          | ：
+        .order-info = render_price(@order.price, currency_code: @order.currency)
+
+      - payment_way = t("activerecord.attributes.order.payment_#{@order.payment}")
+      .order-result-item
+        span
+          = edit_translator('page.cart_check_out.payment')
+          | ：
+        .order-info = payment_way
+      - details = show_payment_id_for_user(@order).gsub!(/<.*?>/, '').split(',')
+      - details.each do |line|
+        - parts = line.split(':')
+        - parts[0] += "：" if parts.length > 1
+        .order-result-item
+          span = parts[0]
+          .order-info = parts[1].strip
+      .order-result-item
+        span E-mail：
+        .order-info = @order.billing_info_email
+
+
+    - if @order.payment == 'neweb/mmk'
+      .cvs-helps-title 超商繳費教學
+      .cvs-helps-border
+        .cvs-help-button.cvs711-popup-open 7-ELEVEn ibon
+        .cvs-help-button.cvsfami-popup-open 全家便利商店 FamiPort
+        .cvs-help-button.cvslife-popup-open 萊爾富 Life-ET
+        .cvs-help-button-last.cvsok-popup-open ＯＫ便利商店 OK.go
+
+    - if @order.payment == 'neweb/atm'
+      .cvs-helps-border
+        .cvs-help-button-last.ct-popup-open ATM 繳費教學
+
+    - if !!request.referer.try{ |url| url.match(/campaign\/bgmen/) }
+      = render 'campaign/bgmen/order_result', failure: false
+    - else
+      .fixed-top-60
+      = link_to t('page.btns.back_index'), root_path, class: 'mobilev2-footer-order-result'
+
+- @order.order_items.each do |item|
+  - itemable = item.itemable
+  .hide
+    = render 'order_results/ua_data', work: itemable, qty: item.quantity
+
+.hide
+  = render 'order_results/purchase_data', order: @order
+  - if session[:fb_track_order_ids] && !session[:fb_track_order_ids].include?(@order.id)
+    = render 'order_results/facebook_conversion_tracking', order: @order
+  - if locale == :'zh-CN'
+    = render 'shared/baidu_tongji_track_order', order: @order

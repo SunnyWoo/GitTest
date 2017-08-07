@@ -1,0 +1,7 @@
+= f.hidden_field :target_type
+= f.error_notification
+.error_messages
+  - if @form.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: @form.errors.full_messages
+= f.input :price_tier_id, as: :select, collection: options_for_price_tier_select
+= f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

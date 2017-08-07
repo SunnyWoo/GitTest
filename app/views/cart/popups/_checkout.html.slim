@@ -1,0 +1,99 @@
+#checkout-popup.popups
+  .popus-container
+    .mobilev2-content.form-billing
+      #address-form-alert-notice
+      .address-form-subtitle.form-title = t('page.cart_check_out.shipping_title')
+      form.form#address-form
+        .form-group#truename
+          label.control-label
+            input class='without_label' type='text' placeholder=(t('activerecord.attributes.billing_profile.name'))
+            .form-control-warn
+        .form-group#email
+          label.control-label
+            input class='without_label' type='email' placeholder=(t('activerecord.attributes.billing_profile.email'))
+            .form-control-warn
+        .form-group#address1
+          label.control-label
+            input class='without_label' type='text' placeholder=(t('activerecord.attributes.billing_profile.address'))
+            .form-control-warn
+        .form-group#city
+          label.control-label
+            input class='without_label' type='text' placeholder=(t('activerecord.attributes.billing_profile.city'))
+            .form-control-warn
+        .form-group#zipcode
+          label.control-label
+            input class='without_label' type='text' placeholder=(t('activerecord.attributes.billing_profile.zip_code'))
+            .form-control-warn
+        .form-group#state
+          label.control-label
+            span.label-span = t('activerecord.attributes.billing_profile.country')
+            select#country_code
+              = options_for_select(BillingProfile.countries_with_country_code, selected: 'TW')
+            .form-control-warn
+        .form-group.last-form-group#phone
+          label.control-label
+            input class='without_label' type='text' placeholder=(t('activerecord.attributes.billing_profile.phone'))
+            .form-control-warn
+      .payment-subtitle = t('page.cart_check_out.payment')
+      .form
+        .form-group
+          label.control-label
+            span.label-span-long = t('activerecord.attributes.order.payment_paypal')
+            input.radiobox-input.payment-radio-box  type='radio' name='payment'  value='paypal'
+            span.radiobox-icon
+        .form-group
+          label.control-label
+            span.label-span-long = t('activerecord.attributes.order.payment_stripe')
+            input.radiobox-input.payment-radio-box  type='radio' name='payment'  value='stripe'
+            span.radiobox-icon
+        - if current_country_code == 'TW'
+          .form-group
+            label.control-label
+              span.label-span-long = t('activerecord.attributes.order.payment_neweb_mmk')
+              input.radiobox-input.payment-radio-box  type='radio' name='payment' value='neweb/mmk'
+              span.radiobox-icon
+          .form-group
+            label.control-label
+              span.label-span-long = t('activerecord.attributes.order.payment_neweb_atm')
+              input.radiobox-input.payment-radio-box  type='radio' name='payment' value='neweb/atm'
+              span.radiobox-icon
+      .shipping-subtitle = t('page.cart_check_out.delivery_title')
+      .form
+        .form-group.not-show-cod
+          label.control-label
+            span.label-span-mid = t('activerecord.attributes.billing_profile.shipping_way_standard').gsub(/ business/, '')
+            span.shipping-way-fee = render_shipping_way_fee('standard')
+            input.radiobox-input.shipping-radio-box type='radio' name='shipping_info_shipping_way' value='standard'
+            span.radiobox-icon
+      .coupon-subtitle
+        = t('page.cart_check_out.coupon_code')
+        span#coupon_ok.success.hide = t('page.cart_check_out.coupon_valid.success')
+        span#coupon_bad.fail.hide = t('page.cart_check_out.coupon_valid.fail')
+      .form
+        .coupon-group-block
+          input.coupon-group#coupon_code type='text' name='coupon' placeholder=(t('page.cart_check_out.coupon_code_placehoder'))
+          input.coupon-submit type='submit' data-waitingbg=(image_url('campaign/mobilev2/waiting.gif'))
+      .summary-title = t('page.cart_check_out.summary')
+      .summary-block
+        .summary-list
+          .summary-item
+            .summary-key = t('page.cart.span.subtotal')
+            .summary-value#subtotal
+          .summary-item
+            .summary-key = t('page.cart_check_out.shipping_cost')
+            .summary-value#shipping_fee
+          .summary-item.last-summary-item
+            .summary-key = t('page.cart.span.coupon')
+            .summary-value#discount
+        .grand-total-item
+          .grand-total-key = t('page.cart_check_out.total')
+          .grand-total-value#grandtotal
+        .mask#summary-mask
+      .mobilev2-footer#checkout_but
+        = "Pay with "
+        = t("activerecord.attributes.order.payment_#{@order.payment_method}")
+  .mobilev2-top
+    .leftnavs
+      .back-icon.checkout-popup-close
+        = image_tag 'campaign/mobilev2/back.png'
+    = t('page.cart_check_out.title')

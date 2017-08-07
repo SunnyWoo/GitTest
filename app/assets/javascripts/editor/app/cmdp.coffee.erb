@@ -1,0 +1,1001 @@
+class @CMDP
+  constructor: ->
+    settings = new AppSettings()
+    @defaultSettings =
+      uiConfig:  settings.getUiConfig()
+      ctrConfig: settings.getCtrConfig()
+      default:   settings.getDefaultSettings()
+    @sliderSettings =
+      opacity:
+        min: 0
+        max: 1
+      rotation:
+        min: -180
+        max: 180
+      scale:
+        min: 0.1
+        max: 5
+    @c = editorApp.getMainCanvas()
+    @path = $('#drawing').data('layersPath')
+    @tmp_thumb = null
+    @tmp_key = null
+    @tmpInputImage = {}
+    @pendingJobs = new PendingJobs()
+    @uploadTimes = 0
+    @storage = new CanvaStorage()
+    @group = []
+    @inited = false
+    @layer = 0
+    @sever_total_layers = 0
+    @server_layers = []
+    @old_top = 0
+    @old_left = 0
+    @scale_position = 0
+    @scale_val = null
+    @is_scale = false
+    @is_init = false
+    @is_re_render = false
+    @render_work = new RenderCanvas(@defaultSettings)
+    @re_render_size = 0
+    @opacity_val = null
+    @rotation_val = null
+    @get_object = null
+
+  init: ->
+    model_init_shape = $('#drawing').data('modelInitShape')
+
+    @c.on('object:added', @addLayer)
+    @c.on('object:selected', @onObjectSelected)
+    @c.on('selection:cleared', @removeSettings)
+    @c.on('after:render', @afterRender)
+    @c.on('object:scaling', @lockScale)
+    @c.on('object:modified', @changeSettings)
+
+    # bind get/set active object
+    $(document).on 'click', '.layer > .thumb', ->
+      key = $(this).closest('.layer').data('key')
+      layers = _.size($('.layer'))
+      index = Math.abs($('.layer').index($('.layer[data-key=' + key + ']')) - layers)
+      $('.layer > .thumb').removeClass('active')
+      $(this).addClass('active')
+      cmdp.c.setActiveObject(cmdp.c.item(index))
+      return
+
+    # get Canvas object --------------------
+
+    work_id = $('#drawing').data('work_id')
+
+    # Slider setting -----------------------
+    @scale_val = @addSlider('sl-scale', @sliderSettings.scale.max, @sliderSettings.scale.min, 1)
+    @rotation_val = @addSlider('sl-rotation', @sliderSettings.rotation.max, @sliderSettings.rotation.min, 0)
+    @opacity_val = @addSlider('sl-transparency', @sliderSettings.opacity.max, @sliderSettings.opacity.min, 1)
+    $('.slider').on 'mousedown', ->
+      $(document).one 'mouseup', (e) ->
+        cmdp.c.fire 'object:modified', @get_object
+        return
+      return
+    # Slider setting -----------------End---
+
+    $.ajax(
+      url: @path
+      type: 'GET'
+      cache: false
+      data: work_id
+    ).done((response) =>
+
+      if _isDebug
+        console.log 'Data Saved: ', response
+      @re_render_size = _.size(response.layers)
+
+
+      fabric.Image.fromURL model_init_shape, (init_layer) =>
+        init_layer_width = init_layer.getWidth()
+        init_layer_height = init_layer.getHeight()
+        obj_zoom = (_modal_w / init_layer_width)
+        top = _canvas_y
+        left = _canvas_x
+
+        init_layer.set
+          width: init_layer_width
+          height: init_layer_height
+          scaleX: obj_zoom
+          scaleY: obj_zoom
+          originX: 'center'
+          originY: 'center'
+          top: top
+          left: left
+          selectable: false
+
+        init_layer.isInitLayer = true
+
+        @init_layer = init_layer
+        @c.add init_layer
+
+        if @re_render_size
+          i = 0
+          $('#add_overlay').addClass('hide')
+          @sever_total_layers = _.size(response.layers)
+          @render_work.getStart(response.layers)
+        else
+          @c.renderAll()
+          setTimeout( ->
+            $('#loading_cover').addClass('hide')
+            return
+          , 500)
+
+        return
+      , crossOrigin: 'anonymous'
+      return
+    ).fail((response) ->
+      Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+      return
+    )
+
+    @initLayer()
+
+    return
+  addc: (type, obj, re_render=false) =>
+    # type: 類型
+    # data: 元素來源
+    # prop: 屬性(次分類)
+    data      = obj.data
+    data_name = obj.data_name
+    prop      = obj.prop
+    uuid      = if obj.uuid then obj.uuid else false
+
+    canvas = @c
+    @is_re_render = re_render
+
+    if _.size(@storage.objs) >= _layerLimit
+      alert 'Sorry! Layers over limit.'
+      return false
+
+    makeHashKey = ->
+      d = new Date().getTime()
+      key = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) ->
+        r = (d + Math.random() * 16) % 16 | 0
+        d = Math.floor(d / 16)
+        ((if c is "x" then r else (r & 0x7 | 0x8))).toString 16)
+      key
+
+    @renderImg = (prop, data, uuid) =>
+      obj_zoom = null
+      @layer++
+      if prop is 'photo'
+        # Disable preview button, when update settings
+        $('#preview .btn').attr('disabled', true)
+        $('#preview .btn .normal').addClass('hide')
+        $('#preview .btn .saving').removeClass('hide')
+        $('#preview .spin').removeClass('hide')
+        @pendingJobs.add(uuid)
+
+      fabric.Image.fromURL data, (oImg) =>
+        oImg_width = oImg.getWidth()
+        oImg_height = oImg.getHeight()
+        if prop is 'photo'
+          obj_zoom = (_modal_h / oImg_height)
+          if (oImg_height * obj_zoom) > _modal_h
+            obj_zoom = (_modal_w / oImg_width)
+        else
+          obj_zoom = (_modal_w / oImg_width) * _print_zoom
+
+        top = _canvas_y
+        left = _canvas_x
+
+        oImg.set
+          width: oImg_width
+          height: oImg_height
+          scaleX: obj_zoom
+          scaleY: obj_zoom
+          originX: 'center'
+          originY: 'center'
+          top: top
+          left: left
+
+        oImg.set @defaultSettings.uiConfig
+        oImg.setControlsVisibility @defaultSettings.ctrConfig
+        if uuid is false
+          @tmp_key = makeHashKey()
+        else
+          @tmp_key = uuid
+        oImg.hash_key = @tmp_key
+        oImg.layer = @layer
+        oImg.fillColor = if prop is 'photo' then '' else '#000000'
+        oImg.original_scale = obj_zoom
+        @storage.addObjs(prop, data, data_name, oImg, _canvas_x, _canvas_y)
+        canvas.add oImg
+        canvas.setActiveObject oImg
+        @addThumb(@tmp_key, canvas.getActiveObject().toDataURL())
+
+        return
+      , crossOrigin: 'anonymous'
+
+      return
+
+    @renderCropPath = (w, h)->
+      # add crop rect
+      w = Math.round(w) - 10
+      h = Math.round(h) - 10
+      path_w = 1000
+      path_h = 1000
+      start = path_w / 2
+      inner_start = w / 2
+      path = 'M-' + start + ',-' + start + 'h' + path_w + 'v' + path_h + 'h-' + path_w + 'zM-' + inner_start + ',-' + inner_start + 'v' + h + 'h' + w + 'v-' + h + 'z'
+      # console.log 'path -->>>>>', path
+      rect = new fabric.Path(path,
+          width: 300
+          height: 300
+          originX: 'center'
+          originY: 'center'
+          fill: 'black'
+          left: _canvas_x
+          top: _canvas_y
+          selectable: false
+        )
+      canvas.add rect
+      canvas.sendBackwards(rect)
+      canvas.renderAll()
+      return
+
+    switch type
+      when 'bg'
+        rect = new fabric.Rect(
+          width: _modal_w / _zoom
+          height: _modal_h / _zoom
+          fill: data
+          originX: 'center'
+          originY: 'center'
+          top: _canvas_y
+          left: _canvas_x
+          scaleX: 1
+          scaleY: 1
+          lockMovementX: true
+          lockMovementY: true
+          hasControls: false
+          hasBorders: false
+        )
+        if uuid is false
+          @tmp_key = makeHashKey()
+        else
+          @tmp_key = uuid
+        rect.hash_key = @tmp_key
+        @layer++
+        rect.layer = @layer
+        rect.fillColor = ''
+        @storage.addObjs(prop, data, null, rect, _canvas_x, _canvas_y)
+        canvas.add rect
+        cmdp.c.renderAll()
+        canvas.setActiveObject rect
+        @addThumb(@tmp_key, canvas.getActiveObject().toDataURL())
+
+      when 'crop'
+        fabric.Image.fromURL data, (oImg) =>
+          oImg_width = oImg.getWidth()
+          oImg_height = oImg.getHeight()
+          obj_zoom = (_modal_w / oImg_width) * _print_zoom
+          top = _canvas_y
+          left = _canvas_x
+
+          # scale image down, and flip it, before adding it onto canvas
+          oImg.set
+            width: oImg_width
+            height: oImg_height
+            scaleX: obj_zoom
+            scaleY: obj_zoom
+            originX: 'center'
+            originY: 'center'
+            top: top
+            left: left
+
+          oImg.set @defaultSettings.uiConfig
+          oImg.setControlsVisibility @defaultSettings.ctrConfig
+          if uuid is false
+            @tmp_key = makeHashKey()
+          else
+            @tmp_key = uuid
+          oImg.hash_key = @tmp_key
+          oImg.layer = @layer
+          oImg.original_scale = obj_zoom
+          @storage.addObjs(prop, data, data_name, oImg, _canvas_x, _canvas_y)
+          canvas.add oImg
+          canvas.setActiveObject oImg
+          @addThumb(@tmp_key, canvas.getActiveObject().toDataURL())
+          @renderCropPath(oImg_width*obj_zoom, oImg_height*obj_zoom)
+          return
+
+      when 'obj'
+        @renderImg(prop, data, uuid)
+      when 'text'
+        position = @layer++
+        params =
+          fontFamily: data
+          prop: prop
+          uuid: uuid
+          reRender: re_render
+          position: position
+
+        textObj = new cmdp.Text(data_name, @c, @storage, @defaultSettings, params)
+        @tmp_key = textObj.render()
+
+        thumbUrl = "<%= image_url('editor/text_thumb.png').to_s %>"
+        @addThumb(@tmp_key, thumbUrl)
+
+      when 'upload_img'
+        @renderImg(prop, data, uuid)
+      else
+
+    $('#add_overlay').addClass('hide')
+    @c = canvas
+
+    return
+
+  initLayer: =>
+    start = null
+    stop = null
+    $("#obj_layers").sortable(
+      revert: 0
+      axis: "y"
+      opacity: 0.8
+      placeholder: "layer-placeholder"
+      start: (event, ui) ->
+        start = ui.item.index()
+        # console.log 'start -->', start
+        return
+      update: (event, ui) ->
+        stop = ui.item.index()
+        key = $(ui.item[0]).attr('data-key')
+        origin_index = _.findIndex(cmdp.c.getObjects(), { 'hash_key': key })
+        target = cmdp.c.getObjects()[origin_index]
+        i = 0
+        # console.log 'Done -->', start, ' --> ', stop
+
+        if stop < start
+          diff = start - stop
+          # console.log diff
+          while i < diff
+            cmdp.c.bringForward(target)
+            i++
+        else if stop > start
+          diff = stop - start
+          # console.log diff
+          while i < diff
+            cmdp.c.sendBackwards(target)
+            i++
+
+        layers = $('.layer').length
+        $('.layer').each ->
+          key = $(this).data('key')
+          cmdp.storage.setLayer(key, layers)
+          cmdp.setLayer(key)
+          layers--
+          return
+
+        $('.layer-top').removeClass('layer-top')
+        $('.layer').eq(0).addClass('layer-top')
+        return
+    ).disableSelection()
+    return
+
+  addThumb: (key, obj, status=false) =>
+    if status is 'update'
+      if @storage.objs[@get_object.hash_key].prop is 'background_color'
+        $('.layer[data-key="' + key + '"] .thumb .img').remove()
+        $('.layer[data-key="' + key + '"] .thumb').html('<div class="img"><div class="bg-thumb" style="background:' + @get_object.getFill() + ';"></div></div><div class="mask"></div>')
+      else if @storage.objs[@get_object.hash_key].prop is 'text'
+        return key
+      else
+        $('.layer[data-key="' + key + '"] .thumb .img').attr('src', obj)
+    else
+      if $("#obj_layers .layer").length is 0
+        # console.log 'add obj or update-->', @tmp_key
+        $("#obj_layers").append "<div class=\"layer layer-top\" data-key=\"" + key + "\"><div class=\"thumb active\"></div></div>"
+      else
+        $(".layer-top").before("<div class=\"layer layer-top\" data-key=\"" + key + "\"><div class=\"thumb active\"></div></div>").removeClass('layer-top')
+
+      $('.layer[data-key="' + key + '"] .thumb').html('<img class="img" src="' + obj + '" /><div class="mask"></div>')
+
+      @check_is_render_mode()
+
+    return key
+
+  check_is_render_mode: ->
+    if @re_render_size > 1
+      @re_render_size--
+    else
+      @is_re_render = false
+    return
+
+  addLayer: (e) =>
+
+    if @is_re_render is true
+      # console.log 'Re-render layers...', @storage.objs[@tmp_key]
+    else
+      url = @path
+      key = e.target.hash_key
+
+      if typeof key isnt 'undefined'
+        if @storage.objs[key].prop is 'text'
+          text_zoom = _text_zoom
+        else
+          text_zoom = 1
+
+        if @storage.objs[key].prop is 'photo'
+          data = new FormData()
+          data.append 'uuid', e.target.hash_key
+          data.append 'position', @storage.objs[key].layer
+          data.append 'scale_x', @storage.objs[key].scaleX * text_zoom
+          data.append 'scale_y', @storage.objs[key].scaleY * text_zoom
+          data.append 'file', @tmpInputImage
+
+          @uploadImageFile(url, data, key)
+        else
+          data =
+            'uuid': e.target.hash_key
+            'position': @storage.objs[key].layer
+            'layer_type': @storage.objs[key].prop
+            'position': @storage.objs[key].layer
+            'material_name': @storage.objs[key].material_name
+            'image_url': @storage.objs[key].data
+            'scale_x': @storage.objs[key].scaleX * text_zoom
+            'scale_y': @storage.objs[key].scaleY * text_zoom
+            'text_alignment': 'left'
+            'text_spacing_x': 0
+            'text_spacing_y': 0
+            'color': @storage.objs[key].color.replace('#', '0x')
+            'font_text': @storage.objs[key].text
+            'font_name': @storage.objs[key].font_name
+
+          $.ajax(
+            url: url
+            type: 'POST'
+            data: data
+          ).done((response) ->
+            return
+          ).fail((response) ->
+            Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+            return
+          )
+
+    return
+
+  uploadImageFile: (url, data, uuid) ->
+    @uploadTimes++
+
+    $.ajax(
+      url: url
+      type: 'POST'
+      data: data
+      processData: false
+      contentType: false
+    ).done((response) =>
+      @pendingJobs.remove(response.uuid)
+      $('#preview .btn').attr('disabled', false)
+      $('#preview .btn .normal').removeClass('hide')
+      $('#preview .btn .saving').addClass('hide')
+      $('#preview .spin').addClass('hide')
+      @uploadTimes = 0
+      return
+    ).fail((response) =>
+      if @uploadTimes < 3
+        @uploadImageFile(url, data)
+      else
+        @uploadTimes = 0
+
+        @storage.removeObjs(uuid)
+        cmdp.c.remove(@get_object)
+        @layer_count = _.size @storage.objs
+
+        _.forEachRight @storage.objs, (e) =>
+          @storage.objs[e.hash_key].layer = @layer_count
+          @layer_count--
+          return
+        $('.layer[data-key="' + @tmp_key + '"]').remove()
+        $('.layer').removeClass('layer-top').eq(0).addClass('layer-top')
+
+        $('#preview .btn').attr('disabled', false)
+        $('#preview .btn .normal').removeClass('hide')
+        $('#preview .btn .saving').addClass('hide')
+        $('#preview .spin').addClass('hide')
+
+        Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+      return
+    )
+
+  afterRender: =>
+    e = @c.getActiveObject()
+    if typeof e isnt "undefined"
+      if e isnt null
+        @storage.setObjs(e)
+        @reRenderPath(e)
+        if _isDebug and typeof e.getLeft() isnt "undefined"
+          cmdp.showDebug(e, e.hash_key)
+    return
+
+  reRenderPath: (e) ->
+    key = e.hash_key
+    index = cmdp.c.getItemByKey(key)[1]
+    if typeof key isnt 'undefined'
+      if @storage.objs[key].prop is 'crop' and typeof cmdp.c.item(index-1) isnt 'undefined'
+        path = cmdp.c.item(index-1)
+        path.set(
+          scaleX: e.getScale()
+        )
+    return
+
+  onObjectSelected: =>
+    @get_object = @c.getActiveObject()
+    @tmp_key = @get_object.hash_key
+    prop_type = @storage.objs[@get_object.hash_key].prop
+
+    if @is_re_render is true
+      if prop_type is 'photo'
+        scale_range = @get_object.getScaleX() / (if @get_object.original_scale > 0 then @get_object.original_scale else 1)
+      else if prop_type is 'text'
+        scale_range = @get_object.getScaleX() / 5
+      else if prop_type is 'texture'
+        scale_range = @get_object.getScaleX() / ((if _modal_w > 0 then _modal_w else 1) / 3000) / (if _print_zoom > 0 then _print_zoom else 0.7)
+      else
+        scale_range = @get_object.getScaleX() / ((if _modal_w > 0 then _modal_w else 1) / 2500) / (if _print_zoom > 0 then _print_zoom else 0.7)
+    else
+      scale_range = @get_object.getScaleX() / (if @get_object.original_scale > 0 then @get_object.original_scale else 1)
+
+    @scale_val.setStart(scale_range)
+    @rotation_val.setStart(@get_object.getAngle())
+    @opacity_val.setStart(@get_object.getOpacity())
+    $('#input-text').val(@get_object.text)
+
+    $('.layer > .thumb').removeClass('active')
+    $('.layer[data-key=' + @tmp_key + '] > .thumb').addClass('active')
+    @checkAvailableSettings(@get_object)
+    $('#setObj').removeClass('hide fadeOutRight').addClass('fadeInRight')
+
+    # load color picker
+    if prop_type is 'text' or prop_type is 'background_color'
+      color = @get_object.getFill()
+      $(".color-picker").spectrum 'set', color
+    else
+      if prop_type isnt 'photo'
+        setTimeout( =>
+          color = @get_object.fillColor
+          $(".color-picker").spectrum 'set', color
+          return
+        , 300)
+
+    if prop_type is 'text'
+      fontFamily = if @get_object.fontFamily is 'Lobster14' then 'Lobster1.4' else @get_object.fontFamily
+      $('.font-current').text(fontFamily)
+      $('.font_sample').each( ->
+        if $(this).text() is fontFamily
+          fontClassName = 'font-current ' + $(this).data('lib')
+          $('.font-current').removeClass().addClass(fontClassName).data('className', $(this).data('lib'))
+        return
+        )
+
+    @checkPrintQuality(@get_object)
+
+    return
+
+  removeSettings: =>
+    if @is_init isnt true
+      $('#setObj').removeClass('fadeInRight').addClass('fadeOutRight hide')
+      $('.layer .thumb').removeClass('active')
+    return
+
+  checkPrintQuality: (obj) ->
+    i = 0
+    starsHtml = ''
+    if @storage.objs[obj.hash_key].prop is 'photo'
+      result = Math.round(Math.pow(1 / @storage.objs[obj.hash_key].scaleY, 2)/0.2)
+
+      if result >= 5
+        stars = 5
+      else if result < 1
+        stars = 1
+      else
+        stars = result
+
+      while i < 5
+        if i < stars
+          starsHtml += '<span class="fa fa-circle"></span>'
+        else
+          starsHtml += '<span class="fa fa-circle fa-unstar"></span>'
+        i++
+
+      $('#work_info .print-quality')
+        .removeClass('hide')
+        .children('.quality')
+        .html(starsHtml)
+
+      if _isDebug
+        console.log 'Print Quality >>', stars, result
+    else
+      $('#work_info .print-quality').addClass('hide')
+    return
+
+  checkAvailableSettings: (e) ->
+    key = @get_object.hash_key
+    prop = @storage.objs[key].prop
+
+    # reset settings
+    $('.options > .item').hide()
+
+    if prop is 'sticker' or prop is 'typography' or prop is 'shape' or prop is 'line' or prop is 'texture'
+      $('#set_scale').show()
+      $('#set_rotation').show()
+      $('#set_transparency').show()
+      $('#set_color').show()
+      $('#set_alignment').show()
+      # $('#set_reflect').show()
+      $('#set_del').show()
+    else if prop is 'background_color'
+      $('#set_transparency').show()
+      $('#set_color').show()
+      $('#set_del').show()
+    else if prop is 'text'
+      $('#set_scale').show()
+      $('#set_rotation').show()
+      $('#set_transparency').show()
+      $('#set_color').show()
+      $('#set_text_alignment').show()
+      $('#set_del').show()
+      $('#set_text').show()
+      $('#set_font').show()
+    else if prop is 'photo'
+      $('#set_scale').show()
+      $('#set_rotation').show()
+      $('#set_transparency').show()
+      $('#set_alignment').show()
+      # $('#set_reflect').show()
+      $('#set_del').show()
+    return
+
+  addSlider: (name, max=100, min=0, start=0) ->
+    # console.log 'addSlider'
+    class_name = '.' + name
+    obj_slider = document.querySelector(class_name)
+    slider_clbk = new Powerange(obj_slider,
+      hideRange: true
+      decimal: true
+      min: min
+      max: max
+      start: start
+    )
+
+    switch name
+      when 'sl-scale'
+        $('.item .value[data-val=' + name + ']').text(start*100)
+        @listenSlider(name, obj_slider)
+      when 'sl-rotation'
+        $('.item .value[data-val=' + name + ']').text(start)
+        @listenSlider(name, obj_slider)
+      when 'sl-transparency'
+        $('.item .value[data-val=' + name + ']').text(start*100)
+        @listenSlider(name, obj_slider)
+
+    slider_clbk
+
+  listenSlider: (name, slider_input) =>
+    slider_input.onchange = =>
+      # console.log 'onChange --> ', name, slider_input.value
+      if name is 'sl-scale'
+        @is_scale = true
+      if isFinite(slider_input.value)
+        if name is 'sl-rotation' and Math.abs((slider_input.value % 45) / 45) < 0.035
+          # Forced conversion value to the multiples of 45
+          newValue = parseInt(slider_input.value / 45, 10)
+          slider_input.value = 45 * newValue
+        else if name is 'sl-rotation'
+          slider_input.value = parseInt(slider_input.value, 10)
+        @objSetting(name, slider_input.value)
+      return
+    return
+
+  objSetting: (opt, value) ->
+    # console.log 'objSetting', opt, value
+    unless typeof cmdp.c is "undefined"
+      unless typeof @get_object is "undefined"
+        obj = @get_object
+        switch opt
+          when "sl-scale"
+            new_scale =  @get_object.original_scale * value
+            obj.set
+              scaleX: new_scale
+              scaleY: new_scale
+            # console.log value, new_scale
+            $('.item .value[data-val=' + opt + ']').text(Math.round(value * 100 * 1000) / 1000)
+          when "sl-rotation"
+            $('.item .value[data-val=' + opt + ']').text(Math.round(value * 1000) / 1000)
+            obj.setAngle parseInt(value).toFixed(2)
+          when "sl-transparency"
+            $('.item .value[data-val=' + opt + ']').text(Math.round(value * 100 * 1000) / 1000)
+            obj.setOpacity value
+
+        cmdp.c.renderAll()
+    else
+      console.log "Canvas did not initialized."
+      false
+    return
+
+  lockScale: =>
+    @is_scale = true
+    e = cmdp.c.getActiveObject()
+    zoom = e.scaleX / e.original_scale
+    if zoom >= 5
+      e.set
+        scaleX: e.original_scale * 5
+        scaleY: e.original_scale * 5
+        top: @old_top
+        left: @old_left
+      .setCoords()
+      zoom = 5
+    else if zoom <= 0.1
+      e.set
+        scaleX: e.original_scale * 0.1
+        scaleY: e.original_scale * 0.1
+        top: @old_top
+        left: @old_left
+      .setCoords()
+      zoom = 0.1
+    else
+      @old_top = e.getTop()
+      @old_left = e.getLeft()
+
+    @scale_val.setStart(zoom)
+    $('.item .value[data-val=sl-scale]').text(Math.round(zoom * 10000) / 100)
+    return
+
+  setFlipX: ->
+    flag = @get_object.getFlipX()
+    if flag
+      @get_object.setFlipX(false)
+    else
+      @get_object.setFlipX(true)
+    cmdp.c.renderAll()
+
+    cmdp.c.fire 'object:modified', @get_object
+    return
+
+  setFlipY: ->
+    flag = @get_object.getFlipY()
+    if flag
+      @get_object.setFlipY(false)
+    else
+      @get_object.setFlipY(true)
+    cmdp.c.renderAll()
+
+    cmdp.c.fire 'object:modified', @get_object
+    return
+
+  setAlignmentV: ->
+    canvas = @c
+    target = canvas.getActiveObject()
+    target.setLeft(canvas.getWidth()/2)
+    canvas.renderAll()
+
+    cmdp.c.fire 'object:modified', @get_object
+    return
+
+  setAlignmentH: ->
+    canvas = @c
+    target = canvas.getActiveObject()
+    target.setTop(canvas.getHeight()/2)
+    canvas.renderAll()
+
+    cmdp.c.fire 'object:modified', @get_object
+    return
+
+  setColor: (color) =>
+    key = @get_object.hash_key
+    switch @storage.objs[key].prop
+      when 'text'
+        @get_object.setColor color
+        @get_object.fillColor = color
+        cmdp.c.renderAll()
+      when 'background_color'
+        @get_object.setFill color
+        @get_object.fillColor = color
+        cmdp.c.renderAll()
+      else
+        @get_object.fillColor = color
+        @get_object.filters[0] = new fabric.Image.filters.Tint  color: color
+        @get_object.applyFilters cmdp.c.renderAll.bind(cmdp.c)
+
+    @storage.setObjColor(@get_object, color)
+
+    cmdp.c.fire 'object:modified', @get_object
+    return
+
+  setLayer: (key) =>
+    url = @path + '/' + key
+    data =
+      'position': @storage.objs[key].layer
+    $.ajax(
+      url: url
+      type: 'PUT'
+      data: data
+    ).done((response) ->
+      if _isDebug
+        console.log 'Data Saved: ', response
+      return
+    ).fail((response) ->
+      Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+      return
+    )
+
+    return
+
+  changeSettings: (e) =>
+    # Disable preview button, when update settings
+    $('#preview .btn').attr('disabled', true)
+    $('#preview .btn .normal').addClass('hide')
+    $('#preview .btn .saving').removeClass('hide')
+    $('#preview .spin').removeClass('hide')
+
+    # console.log 'Update! -->', @get_object.hash_key, @get_object
+    if @is_scale is false
+      setTimeout( =>
+        @tmp_thumb = @get_object.toDataURL()
+        @addThumb(@get_object.hash_key, @tmp_thumb, 'update')
+        return
+      , 200)
+    else
+      @is_scale = false
+
+    key = @get_object.hash_key
+    url = @path + '/' + key
+
+    if @storage.objs[key].prop is 'text'
+      text_zoom = _text_zoom
+      text = @storage.objs[key].text
+      textSettings =
+        fontFamily: @storage.objs[key].font_name
+        scaleX:     @storage.objs[key].scaleX
+        scaleY:     @storage.objs[key].scaleY
+        color:      @storage.objs[key].color
+        opacity:    @storage.objs[key].opacity
+      imageData = tmpDraw.renderTextImage(text, textSettings)
+      tmpDraw.clearAll()
+
+      imageBlob = dataURLtoBlob(imageData)
+    else
+      text_zoom = 1
+
+    text_alignment = @storage.objs[key].text_align.substring(0, 1).toUpperCase() + @storage.objs[key].text_align.slice(1)
+
+    data = new FormData()
+
+    data.append 'position', @storage.objs[key].layer
+    data.append 'layer_type', @storage.objs[key].prop
+    data.append 'position', @storage.objs[key].layer
+    data.append 'material_name', @storage.objs[key].material_name
+    data.append 'scale_x', (@storage.objs[key].scaleX) * text_zoom
+    data.append 'scale_y', (@storage.objs[key].scaleY) * text_zoom
+    data.append 'position_x', @storage.objs[key].left
+    data.append 'position_y', @storage.objs[key].top
+    data.append 'orientation', @storage.objs[key].angle
+    data.append 'color', @storage.objs[key].color.replace('#', '0x')
+    data.append 'transparent', @validValue(@sliderSettings.opacity, @storage.objs[key].opacity)
+    if @storage.objs[key].font_name is 'Lobster14'
+      data.append 'font_name', 'Lobster1.4'
+    else
+      data.append 'font_name', @storage.objs[key].font_name
+    data.append 'font_text', @storage.objs[key].text
+    data.append 'text_spacing_x', 0
+    data.append 'text_spacing_y', 0
+    data.append 'text_alignment', text_alignment
+    if imageBlob
+      data.append 'filtered_image', imageBlob, 'text_img.png'
+
+    if _isDebug
+      console.log 'FormData >>', data
+
+    if not _.contains(@pendingJobs.getObjs(), key)
+      $.ajax(
+        url: url
+        type: 'PUT'
+        processData: false
+        contentType: false
+        data: data
+      ).done((response) ->
+        if _isDebug
+          console.log 'Data Saved: ', response
+        $('#preview .btn').attr('disabled', false)
+        $('#preview .btn .normal').removeClass('hide')
+        $('#preview .btn .saving').addClass('hide')
+        $('#preview .spin').addClass('hide')
+        return
+      ).fail((response) ->
+        Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+        return
+      )
+    else
+      if _isDebug
+        console.log 'Server did not response yet...'
+
+    @checkPrintQuality(@get_object)
+    return
+
+  validValue: (valid, value) ->
+    if value > valid.max
+      value = valid.max
+    if value < valid.min
+      value = valid.min
+    value
+
+  removeObj: ->
+    key = @get_object.hash_key
+    url = @path + '/' + key
+
+    $.ajax(
+      url: url
+      dataType: 'json'
+      type: 'DELETE'
+    ).done((response) =>
+      @storage.removeObjs(key)
+      cmdp.c.remove(@get_object)
+      @layer_count = _.size @storage.objs
+
+      _.forEachRight @storage.objs, (e) =>
+        @storage.objs[e.hash_key].layer = @layer_count
+        @layer_count--
+        return
+      $('.layer[data-key="' + @tmp_key + '"]').remove()
+      $('.layer').removeClass('layer-top').eq(0).addClass('layer-top')
+      $('#confirm_notice').modal('hide')
+
+      if _isDebug
+        console.log 'Data Saved: ', response
+      return
+    ).fail((response) =>
+      Gritter.error_msg('Error', 'Oops! Server has something wrong!')
+      return
+    )
+
+    return
+
+  outputToPreview: (force=false)->
+    if @is_init is false
+
+      checkSafeArea = new SafeArea()
+      checkSafeArea.canvas = @c
+      areaIsOK = checkSafeArea.groupAllObjects()
+
+      if areaIsOK or force
+        output = new CanvasPreview()
+        output.canvas = @c
+        output.outputToPreview()
+
+        @c.clipTo = null
+        model_background = $('#drawing').data('modelBackground')
+        @c.setOverlayImage model_background, @c.renderAll.bind(@c),
+          width: _modal_w
+          height: _modal_h
+        $('.layer > .thumb').removeClass('active')
+      else
+        $('#safe_notice').modal('show')
+    return
+
+  getActiveObj: ->
+    @c.getActiveObject()
+
+  showDebug: (e, key) ->
+    obj = @storage.objs[key]
+    $("#debug").removeClass("hide").html "<div>Key: " + obj.hash_key + "</div><div>Prop: " + obj.prop + "</div><div>Data: " + obj.data + "</div><div>Width: " + obj.width + "</div><div>Height: " + obj.height + "</div><div>ScaleX: " + obj.scaleX + "</div><div>ScaleY: " + obj.scaleY + "</div><div>Angle: " + obj.angle + "</div><div>X: " + obj.left + "</div><div>Y: " + obj.top + "</div><div>Opacity: " + obj.opacity + "</div><div>Color: " + obj.color + "</div><div>Layer: " + obj.layer + "</div><div>Text: " + obj.text + "</div><div>Font: " + obj.font_name + "</div><div>Text align: " + obj.text_align + "</div><div>Spacing X: " + obj.text_spacing_x + "</div><div>Spacing Y: " + obj.text_spacing_y + "</div>"
+    return
+
+  splitPath: (str) ->
+    rawParts = str.split("/")
+    parts = []
+    i = 0
+    len = rawParts.length
+    part = undefined
+
+    while i < len
+      part = ""
+      parts.push part + rawParts[i]
+      ++i
+    data = parts[parts.length - 1].split(".")
+    data[0]
+
+window.cmdp = new CMDP()
+cmdp.init()

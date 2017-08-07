@@ -1,0 +1,27 @@
+- admin_title t('.page_title')
+- breadcrumb :admin_change_price_histories
+
+= render 'admin/works/nav', active: 'change_price_events'
+.well
+  = render_change_price_event_info(@change_price_event)
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+  .widget-body
+    = will_paginate @histories
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('change_price_histories.index.thead.changeable')
+            th= t('change_price_histories.index.thead.original_price')
+            th= t('change_price_histories.index.thead.target_price')
+        tbody
+          - @histories.each do |history|
+            tr
+              td= link_to_changeable(history.changeable)
+              td= render_tooltip_price_tier history.original_price_tier if history.original_price_tier
+              td= render_tooltip_price_tier history.target_price_tier
+    = will_paginate @histories

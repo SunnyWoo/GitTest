@@ -1,0 +1,9 @@
+- admin = activity.trackable
+div
+  |#{admin.email}  #{logcraft_keyword('登入失敗', 'red') }
+  br
+  = "IP:  #{activity[:extra_info][:ip]}"
+  br
+  = "OS:  #{activity[:extra_info][:os]}"
+  br
+  = "Browser:   #{activity[:extra_info][:browser]}"

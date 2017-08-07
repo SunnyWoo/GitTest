@@ -1,0 +1,9 @@
+tr
+  td= check_box_tag('selected[]', work.id)
+  td= work.category.name
+  td= display_print_image(work, lazy: false)
+  td= work.name
+  td= work.user_display_name
+  td= work.product_name
+  td= work.tag_names
+  td= link_to 'Add', new_admin_promotion_reference_path(current_promotion, gid: work.to_gid), remote: true, class: 'btn btn-info', data: { promotable: 'standardized_work', action: 'add', gid: work.to_gid_param }

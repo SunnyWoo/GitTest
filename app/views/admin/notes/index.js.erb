@@ -1,0 +1,9 @@
+<% id = 'notes_modal' %>
+$('body').append('<%= j render 'index', id: id, noteable: @noteable, notes: @notes %>');
+$('#<%= id %>').modal('show');
+$('#new_note').on('submit', function(e) {
+  $('#<%= id %>').modal('hide');
+});
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

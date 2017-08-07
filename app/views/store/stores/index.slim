@@ -1,0 +1,111 @@
+header.header.container
+  a.header-item.btn--menu
+    = image_tag('store_landing_page/btn_menu.png', class: '')
+  a.header-item.btn-logo
+    = image_tag('store_landing_page/logo.png', class: '')
+  a.header-item.btn-share
+    = image_tag('store_landing_page/btn_share.png', class: '')
+ul.header-menu
+  a.header-menu-item(href='./')
+    = image_tag('store_landing_page/home.png', class: 'header-menu-item-img')
+    span.header-menu-item-title 首頁
+  a.header-menu-item(href='/orders/search')
+    = image_tag('store_landing_page/search.png', class: 'header-menu-item-img')
+    span.header-menu-item-title 查詢訂單
+  a.header-menu-item(href='/support')
+    = image_tag('store_landing_page/contact.png', class: 'header-menu-item-img')
+    span.header-menu-item-title 聯絡客服
+
+.kv
+  = image_tag('store_landing_page/kv.png', class: '')
+  .kv-content
+    .kv-title = I18n.t('store.index.kv_title')
+    .kv-desc = I18n.t('store.index.kv_desc')
+    - if Region.china?
+      .kv-desc 无需起订量 ｜ 无需存货 ｜ 无需发货
+    a.kv-button href='/support' = I18n.t('store.index.kv_btn')
+
+.section.section1.container
+  .section-title = I18n.t('store.index.section_1_title')
+  .section-desc = I18n.t('store.index.section_1_desc')
+  ol.section-list
+    - I18n.t('store.index.section_1_list').each do |list|
+      li = list[:text]
+  = image_tag('store_landing_page/section_1.png', class: 'woh')
+
+.section.section2
+  .section-title.container = I18n.t('store.index.section_2_title')
+  .section-desc.container = I18n.t('store.index.section_2_desc')
+  .section-card-list
+    - I18n.t('store.index.section_2_list').each do |list|
+      .flip-container(onClick="this.classList.toggle('hover');")
+        .flipper
+          .front
+            .section-card-list-title = list[:title]
+            = image_tag(list[:image], class: 'card-image')
+            = image_tag('store_landing_page/open.png', class: 'card-btn--open card-btn')
+          .back
+            .section-card-list-title = list[:title]
+            ul.section-card-list-desc
+              - list[:desc].each do |desc|
+                li.section-card-list-desc-item = desc[:item]
+            = image_tag('store_landing_page/close.png', class: 'card-btn--close card-btn')
+
+.section.section3.container
+  .section-title = I18n.t('store.index.section_3_title')
+  .section-desc = I18n.t('store.index.section_3_desc')
+  .store-landing-page-swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        .step-list
+          .step-item.active 1
+          .step-item 2
+          .step-item 3
+        = image_tag('store_landing_page/section_3_1.png', class: 'section3-slide-img')
+        .section3-list-desc = I18n.t('store.index.section_3_1_text')
+      .swiper-slide
+        .step-list
+          .step-item 1
+          .step-item.active 2
+          .step-item 3
+        = image_tag('store_landing_page/section_3_2.png', class: 'section3-slide-img')
+        .section3-list-desc = I18n.t('store.index.section_3_2_text')
+      .swiper-slide
+        .step-list
+          .step-item 1
+          .step-item 2
+          .step-item.active 3
+        = image_tag('store_landing_page/section_3_3.png', class: 'section3-slide-img')
+        .section3-list-desc = I18n.t('store.index.section_3_3_text')
+  a.btn-more href='./support' = I18n.t('store.index.know_more_btn_text')
+
+footer.footer
+  p
+    | Use of this Web site constitutes acceptance
+    br
+    | of the Service Terms
+    br
+    | Copyright © 2016, commandp Inc. All rights reserved.
+
+
+= image_tag('store_landing_page/back_to_top.png', class: '', id: 'btn--backToTop')
+
+- if Region.china?
+  .modal
+    .modal-content-cn
+      p
+       |点击右上角
+       br
+       |分享到朋友圈！
+    = image_tag('store_landing_page/arrow.png', class: '', id: 'arrow-wechat')
+- else
+  .modal
+    .modal-content
+      .modal-content-title 將頁店分享到：
+      .modal-content-share-list
+        = image_tag('store_landing_page/fb.png', class: 'modal-content-share-list-item', id: 'share-btn--fb')
+        = image_tag('store_landing_page/twitter.png', class: 'modal-content-share-list-item', id: 'share-btn--twitter')
+        = image_tag('store_landing_page/line.png', class: 'modal-content-share-list-item', id: 'share-btn--line')
+      .modal-content-desc 拷貝連結
+      .modal-content-link
+      .modal-content-cnacel 取消

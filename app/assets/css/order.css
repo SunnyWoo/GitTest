@@ -1,0 +1,183 @@
+/*
+ *= require font-awesome
+ */
+/* line 5, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../../../Applications/Koala.app/Contents/Resources/app.nw/rubygems/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 7, ../stylesheets/order.scss */
+body {
+  text-align: center;
+  color: #8B8B8B;
+  font-family: 'Helvetica', sans-serif; }
+
+/* line 12, ../stylesheets/order.scss */
+.container {
+  width: 960px;
+  margin: 0 auto; }
+
+/* line 17, ../stylesheets/order.scss */
+.logo {
+  overflow: hidden;
+  *zoom: 1;
+  position: relative; }
+
+/* line 21, ../stylesheets/order.scss */
+.logo img {
+  display: block;
+  margin: 0 auto; }
+
+/* line 25, ../stylesheets/order.scss */
+div.cash_on_delivery {
+  position: absolute;
+  background: #f7f7f7;
+  padding: 20px;
+  top: 10px;
+  right: 10px; }
+
+/* line 33, ../stylesheets/order.scss */
+h1.order_id {
+  font-size: 42px;
+  font-weight: 200;
+  text-align: center; }
+
+/* line 39, ../stylesheets/order.scss */
+.order-head {
+  margin-bottom: 30px; }
+  /* line 41, ../stylesheets/order.scss */
+  .order-head small {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px; }
+
+/* line 48, ../stylesheets/order.scss */
+.left, .right {
+  float: left;
+  width: 40%;
+  text-align: left; }
+  /* line 52, ../stylesheets/order.scss */
+  .left h2, .right h2 {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 15px; }
+  /* line 58, ../stylesheets/order.scss */
+  .left p.name, .right p.name {
+    font-size: 15px;
+    color: #666;
+    font-weight: bold; }
+  /* line 63, ../stylesheets/order.scss */
+  .left p.order-id, .right p.order-id {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #8B8B8B; }
+  /* line 68, ../stylesheets/order.scss */
+  .left p, .right p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px; }
+
+/* line 76, ../stylesheets/order.scss */
+.left {
+  margin-left: 105px; }
+
+/* line 80, ../stylesheets/order.scss */
+.right {
+  margin-left: 45px; }
+
+/* line 84, ../stylesheets/order.scss */
+.clearfix {
+  clear: both; }
+
+/* line 88, ../stylesheets/order.scss */
+.order_item {
+  float: left;
+  width: 50%;
+  margin-top: 70px; }
+  /* line 93, ../stylesheets/order.scss */
+  .order_item .image > img {
+    width: 160px; }
+  /* line 97, ../stylesheets/order.scss */
+  .order_item .check, .order_item .order_item_info {
+    float: left;
+    margin-right: 30px; }
+  /* line 101, ../stylesheets/order.scss */
+  .order_item .check {
+    border: 2px solid #8d8d8d;
+    width: 60px;
+    height: 60px;
+    margin-left: 60px; }
+  /* line 107, ../stylesheets/order.scss */
+  .order_item .order_item_info p {
+    line-height: 22px;
+    font-weight: 200; }
+  /* line 111, ../stylesheets/order.scss */
+  .order_item p.model {
+    font-weight: 400; }
+  /* line 114, ../stylesheets/order.scss */
+  .order_item .qr-code {
+    float: left; }
+    /* line 116, ../stylesheets/order.scss */
+    .order_item .qr-code > img {
+      width: 60px; }
+
+@media print {
+  /* line 123, ../stylesheets/order.scss */
+  a:link:after, a:visited:after {
+    content: ""; } }
+/* line 130, ../stylesheets/order.scss */
+.print .logo img {
+  width: 70px; }

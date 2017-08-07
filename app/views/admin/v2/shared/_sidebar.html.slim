@@ -1,0 +1,108 @@
+.sidebar.responsive
+  ul.nav.nav-list
+    - if admin_signed_in?
+      = admin_sidebar_link t('dashboard.sidebar_name'), admin_dashboard_watching_order_path, 'list'
+      = admin_sidebar_link t('site_settings.sidebar_name'), admin_site_settings_path, 'dollar'
+      = admin_sidebar_link t('account.sidebar_name'), admin_users_path, 'users'
+      = admin_sidebar_link t('activities.sidebar_name'), admin_activities_path, 'rss'
+      = admin_sidebar_link(t('marketing_sms.sidebar_name'), admin_sms_marketing_path, 'send') if Region.china?
+      = admin_sidebar_link t('collections.sidebar_name'), admin_collections_path, 'flask'
+      = admin_sidebar_link t('works.sidebar_name'), admin_works_path(q: {work_type_eq: '0'}), 'flask'
+      = admin_sidebar_link t('asset_package_categories.index.page_title'), admin_asset_package_categories_path, 'leaf'
+      = admin_sidebar_link t('cp_resources.sidebar_name'), admin_cp_resources_path, 'file'
+      = admin_sidebar_link t('fees.sidebar_name'), admin_fees_path, 'money'
+      = admin_sidebar_link t('promotions.sidebar_name'), admin_promotions_path, 'money'
+      = admin_sidebar_link t('rewards.sidebar_name'), admin_rewards_path, 'money'
+      li.active.hsub
+        a.dropdown-toggle href='#'
+          = fa_icon 'barcode', class: 'menu-icon'
+          span.menu-text = t('product_codes.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('product_codes.material_code_manage'), admin_product_codes_path, 'barcode'
+          = admin_sidebar_link t('product_codes.work_code_manage'), admin_channel_codes_path, 'envelope-o'
+          = admin_sidebar_link t('product_codes.export.name'), exporting_admin_product_codes_path, 'envelope-o'
+      li.active.hsub.open
+        a.dropdown-toggle href=admin_orders_path
+          = fa_icon 'shopping-cart', class: 'menu-icon'
+          span.menu-text = t('orders.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('orders.sidebar_name_list'), admin_orders_path, 'list'
+          = admin_sidebar_link unapproved_admin_orders_path, 'list-ul'
+            = t('orders.sidebar_name_approve')
+            span.badge.badge-important
+              = render_order_unapproved_count
+          = admin_sidebar_link t('orders.sidebar_name_approve_invoice'), approve_invoice_admin_orders_path, 'list-ul'
+          = admin_sidebar_link t('deliver_order.index.page_title'), admin_deliver_orders_path, 'list-ul'
+          = admin_sidebar_link t('import_orders.sidebar_name'), admin_import_orders_path, 'list-ul'
+      = admin_sidebar_link t('currency_types.sidebar_name'), admin_currency_types_path, 'dollar'
+      li.active.hsub.open
+        a.dropdown-toggle
+          = fa_icon 'shopping-cart', class: 'menu-icon'
+          span.menu-text = t('product_models.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('product_models.sidebar_name'), admin_product_models_path, 'list'
+          = admin_sidebar_link t('option_types.sidebar_name'), admin_option_types_path, 'list'
+      = admin_sidebar_link t('products.sidebar_name'), admin_products_path, 'mobile-phone'
+      = admin_sidebar_link t('coupons.sidebar_name'), admin_coupons_path, 'money'
+      = admin_sidebar_link t('coupon_notices.sidebar_name'), admin_coupon_notices_path, 'money'
+      li.active.hsub.open
+        a.dropdown-toggle href='#'
+          = fa_icon 'envelope', class: 'menu-icon'
+          span.menu-text Email
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('emails.sidebar_name'), admin_emails_path, 'search'
+          = admin_sidebar_link t('messages.sidebar_name'), admin_messages_path, 'envelope-o'
+          = admin_sidebar_link t('newsletters.sidebar_name'), admin_newsletters_path, 'envelope'
+          = admin_sidebar_link 'Email Banner', admin_email_banners_path, 'picture-o'
+      li.active.hsub.open
+        a.dropdown-toggle href='#'
+          = fa_icon 'question', class: 'menu-icon'
+          span.menu-text = t('questions.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('questions.list'), admin_questions_path, 'list'
+          = admin_sidebar_link t('question_categories.sidebar_name'), admin_question_categories_path, 'list-ul'
+      = admin_sidebar_link t('reports.sidebar_name'), admin_reports_path, 'mobile'
+      = admin_sidebar_link t('features.sidebar_name'), admin_features_path, 'flag'
+      = admin_sidebar_link t('.home'), admin_home_products_path, 'picture-o'
+      = admin_sidebar_link t('banners.sidebar_name'), admin_banners_path, 'minus'
+      = admin_sidebar_link t('recommend_sorts.index.page_title'), admin_recommend_sorts_path, 'sort'
+      = admin_sidebar_link t('mobile_uis.sidebar_name'), admin_mobile_uis_path, 'picture-o'
+      = admin_sidebar_link t('announcements.index.page_title'), admin_announcements_path, 'bullhorn'
+      = admin_sidebar_link t('notifications.sidebar_name'), admin_notifications_path, 'envelope'
+
+      = admin_sidebar_link t('.oauth_apps'), admin_oauth_apps_path, 'puzzle-piece'
+      li.active.hsub.open
+        a.dropdown-toggle href='#'
+          = fa_icon 'rocket', class: 'menu-icon'
+          span.menu-text Campaign
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('campaigns.sidebar_name'), admin_campaigns_path
+          = admin_sidebar_link t('bdevents.sidebar_name'), admin_bdevents_path
+          = admin_sidebar_link 'Mobile Page', admin_mobile_pages_path
+      = admin_sidebar_link t('masks.sidebar_name'), admin_masks_path, 'rocket'
+      = admin_sidebar_link t('factories.sidebar_name'), admin_factories_path, 'wrench'
+      li.active.hsub.open
+        a.dropdown-toggle href='#'
+          = fa_icon 'wrench', class: 'menu-icon'
+          span.menu-text = t('purchase.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('purchase_categories.sidebar_name'), admin_purchase_categories_path, 'wrench'
+          = admin_sidebar_link t('durations.sidebar_name'), admin_purchase_durations_path, 'wrench'
+      li.active.hsub.open
+        a.dropdown-toggle href='#'
+          = fa_icon 'wrench', class: 'menu-icon'
+          span.menu-text = t('b2b_orders.sidebar_name')
+          b.arrow.fa.fa-angle-down
+        ul.submenu.nav-show
+          = admin_sidebar_link t('b2b_orders.sticker.sidebar_name'), admin_b2b_orders_stickers_path, 'wrench'
+      = admin_sidebar_link t('daily_reports.sidebar_name'), admin_daily_report_path, 'paper-plane'
+
+  .sidebar-toggle.sidebar-collapse
+    i.ace-icon.fa.fa-angle-double-left data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"

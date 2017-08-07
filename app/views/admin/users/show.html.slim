@@ -1,0 +1,12 @@
+- admin_title t('users.show.page_title', name: @user.username)
+= render 'publish_notificaion', user: @user
+
+= link_to "#publish_notification_#{@user.id}", class: 'btn no-border btn-primary btn-sm', data: {toggle: 'modal'} do
+  = fa_icon('envelope')
+  = t('notifications.sidebar_name')
+
+h2 = t('users.show.page_second_title')
+
+= will_paginate @activities
+= render_activities @activities
+= will_paginate @activities

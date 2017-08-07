@@ -1,0 +1,49 @@
+span.hide#current_model data-model_id="#{@model.id}"
+.page-header
+  h1
+    = link_to '熱轉印工作站', print_sublimate_path(category_id: @category.id, model_id: @model.id, list: :normal)
+  h3
+    = link_to '簡易列表', print_sublimate_path(list: :simple)
+/! /.page-header
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    - if @list == 'normal'
+      span.btn.btn-primary 分類:
+      .btn-group
+        button.btn.btn-primary.drop.down-toggle data-toggle="dropdown" type="button"
+          = @category.name
+          span.icon-caret-down.icon-on-right
+          span.badge.badge-danger
+            = render_category_print_items_count(@category.id, :printed)
+        ul.dropdown-menu.dropdown-default
+          - @categories.each do |category|
+            li
+              = link_to print_sublimate_path(category_id: category.id) do
+                = "#{category.name}:"
+                span.badge.badge-danger
+                  = render_category_print_items_count(category.id, :printed)
+      .space-8
+      ul.nav.nav-tabs
+        - @factory_product_models_with_category.each do |model|
+          li class="#{'active' if model.id. == @model.id}"
+            = link_to print_sublimate_path(category_id: @category.id, model_id: model.id, list: @list) do
+              = "#{model.name}: "
+              span.badge.badge-danger data-behavior="model-#{model.id}-items-count"
+                = render_model_print_items_count(model.id, :printed)
+    .widget-box
+      .widget-header
+        h5 待處理項目
+        .widget-toolbar.no-border
+          span.badge.badge-danger data-behavior="model-#{@model.id}-items-count"= @print_items.count
+        - if @list == 'normal'
+          .widget-toolbar
+            button#sublimate_check_submit.btn.btn-success.btn-sm.bigger
+              = fa_icon 'check'
+              | 完成熱轉印
+        - else
+          .widget-toolbar
+            = link_to '导出csv', print_sublimate_path(list: :simple, format: :csv), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          = render_sublimate_list(@list, @print_items, @search)

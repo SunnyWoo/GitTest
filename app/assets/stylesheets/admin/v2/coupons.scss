@@ -1,0 +1,34 @@
+.coupon-filters {
+  width: 100%;
+}
+
+.coupon-search {
+  padding: 10px 0;
+  input.form-control {
+    height: 42px;
+    width: 500px;
+    margin-right: 10px; 
+  }
+}
+
+.select-group {
+  display: inline-block;
+  .used-value {
+    height: 30px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+  }
+}
+
+.children-display {
+  color: #428bca;
+  cursor: pointer;
+}
+
+select:disabled {
+  background-color: #eee;
+}
+
+.couponUsed {
+  color: #961010;
+}

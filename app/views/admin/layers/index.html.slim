@@ -1,0 +1,58 @@
+- admin_title '作品列表'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th ID
+            th 作品
+            th orientation
+            th scale_x
+            th scale_y
+            th color
+            th transparent
+            th font_name
+            th font_text
+            th image
+            th name
+            th layer_type
+            th layer_no
+            th position_x
+            th position_y
+            th text_spacing_x
+            th text_spacing_y
+            th text_alignment
+            th filter_type
+            th position
+            th filter
+            th filtered_image
+        tbody
+          = content_tag_for :tr, @search.result do |mt|
+            td= mt.id
+            td= mt.orientation
+            td= mt.scale_x
+            td= mt.scale_y
+            td= mt.color
+            td= mt.transparent
+            td= mt.font_name
+            td= mt.font_text
+            td= image_tag(mt.image.thumb.url) if mt.image.present?
+            td= mt.material_name
+            td= mt.layer_type
+            td= mt.layer_no
+            td= mt.position_x
+            td= mt.position_y
+            td= mt.text_spacing_x
+            td= mt.text_spacing_y
+            td= mt.text_alignment
+            td= mt.filter_type
+            td= mt.position
+            td= mt.filter
+            td= image_tag(mt.filtered_image.thumb.url) if mt.filtered_image.present?
+
+= will_paginate @resources

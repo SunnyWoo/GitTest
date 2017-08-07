@@ -1,0 +1,2 @@
+$('.products').html("<%= j render partial: 'editor/shared/work', collection: @works %>");
+$('.search_pagination').html("<%= j will_paginate(@works, inner_window: 1) %>");

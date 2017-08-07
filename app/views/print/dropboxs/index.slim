@@ -1,0 +1,15 @@
+|歡迎!! 您已經登入Dropbox成功！
+br
+|以下是您的dropbox內容:
+br
+/ = @client.ls.map(&:path).each_with_index do |file, index|
+- @client.ls.each_with_index do |file, index|
+  |&nbsp;&nbsp;
+  = index+1
+  - if file.is_dir?
+    = "(目錄) : "
+  - else
+    = "(檔案) : "
+  = file.path
+  br
+

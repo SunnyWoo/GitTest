@@ -1,0 +1,28 @@
+- breadcrumb :option_type, @option_type.name
+- admin_title t('option_types.show.page_title', name: @option_type.name)
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    span Products
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.back'), url_for(action: :index), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table
+        thead
+          tr
+            th = t('option_types.product.attributes.name')
+            th = t('option_types.product.attributes.key')
+            th = t('shared.form_actions.operation')
+
+        tbody
+          - @option_type.products.each do |product|
+            tr
+              td = product.name
+              td = product.key
+              td
+                = link_to t('shared.form_actions.edit'), edit_admin_product_model_path(product), class: 'btn btn-sm'

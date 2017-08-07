@@ -1,0 +1,22 @@
+//= require designer_store/vendors/editor
+//= require_self
+
+#template_editor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newLayer {
+  -webkit-user-select: none;
+}
+
+.textAreaBorder {
+  display: inline-block;
+  position: absolute;
+  color: yellow;
+  text-align: center;
+  border: 2px dashed red;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}

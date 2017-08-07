@@ -1,0 +1,111 @@
+.owl-carousel
+  .kv_middle
+    = image_tag 'campaign/bgmen/web/bgmen_web_kv_bg.png', class: 'carousel-img'
+    = image_tag 'campaign/bgmen/web/bgmen_web_kv_cn.png', class: 'kv-img'
+.bgmen-kv-text 我印 X BG MEN 搞笑出擊第二波！全面限時特惠再加贈全新 LINE 動態貼圖！
+
+
+
+.cmdp_container
+  .grid_6
+    #announcement data-innerfade=true
+      .announcement
+
+  / .grid_6
+  /   .item-title.margin-top-fixed.text-center.bgmen-video-title
+  /     | BG MEN's Video
+
+  / .grid_6.text-center
+  /   iframe width="520" height='435' src="https://www.youtube.com/embed/wDyZlMGSDsI" frameborder="0" allowfullscreen=true
+
+.cmdp_container.bgmen-event
+  .grid_6.event-detial
+    .grid_nested
+      .grid_3.left-block
+        .event-detial-inner-block
+          .event-title 活動名稱
+          .event-desc.highlightspan BG MEN 商品全面特惠，限時加贈 LINE 動態貼圖！
+          p.event-desc
+          p.event-desc
+        .event-detial-inner-block
+          .event-title 活動方式
+          p.event-desc 活動期間內凡購買 BG MEN 設計師商品，可憑購買訂單編號獲贈一組 BG MEN LINE 動態貼圖。
+      .grid_3.right-block
+        .event-detial-inner-block
+          .event-title 贈獎方式
+          p.event-desc
+            | 10/26 ~ 11/15 用戶加入 BG MEN
+            a.highlightspan LINE ID : bg_men
+            | 並提供：
+          p.event-desc 一、包含任一款 BG MEN 商品購買完成之訂單編號。
+          p.event-desc 二、訂購者 Email
+          p.event-desc 核對完成後即可獲贈一組「BG MEN 動什麼動」 BG MEN LINE 動態貼圖（若已購買過貼圖或是無法領取貼圖者，我印將以其他優惠方式代替）。
+
+.cmdp_container
+  .grid_6
+    .item-title.margin-top-fixed.text-center.bgmen-pc-2nd-title
+      | BG MEN 獨家商品，加贈 LINE 動態貼圖！
+
+  .web-bgmen-selectmodel-margin
+    .grid_2
+      .web-bgmen-placeholder
+    = render 'select_models', model: @model, ga_category: 'Campaign - BG MEN - Web', work_models: @work_models
+
+  .margin-top-fixed
+  .products
+    - if @works.length > 0
+      = render partial: 'editor/shared/work', collection: @works
+    - else
+      .empty-result
+        = edit_translator('page.text.no_product_found')
+
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(@works, inner_window: 1)
+    .margin-top-fixed
+
+
+.about-duncan
+  .cmdp_container
+    .grid_6
+      .item-title.margin-top-fixed.text-center.color-fixed
+        | About BG MEN
+
+    .grid_6.bgmen-about-img
+      = image_tag 'campaign/bgmen/aboutbgmen.png'
+    .grid_6
+      .wording
+        p
+          | 「BG」就是「Blue and Green」，你要說是「逼機」也可以啦！他們兩個就跟你我一樣，
+          br
+          | 在社會上打滾多年，發現人生就像玩「洗巴辣」(擲骰子)，高潮不會常常有，十次總有八次糗，
+          br
+          | 鳥人鳥事甩不掉，做啥都會被靠夭，覺得人生充滿「逼機」嗎？
+          br
+          | 就讓不怕醜、不怕糗的超級搞笑英雄「BG MEN」來解救你吧！
+
+    .grid_6
+      .item-title.margin-top-fixed.text-center.color-fixed.bgmen-pc-3nd-title
+        | BG MEN's  LINE 官方帳號
+
+    .grid_6.text-center.bgmen-pc-qrcode
+      = image_tag 'campaign/bgmen/qrcode_share_bgmen.jpg'
+
+
+.cmdp_container
+  .grid_6.text-center
+    .item-title.margin-top-fixed.text-center.bgmen-pc-4nd-title
+      | BG MEN's Line Stickers
+
+
+    = link_to 'https://store.line.me/stickershop/product/4326/zh-Hant', class: 'bgmen-pc-line-pic-link' do
+
+      .line-sticker-itemtitle.bgmen-pc-line-title BG MEN 動動感謝祭
+      = image_tag 'campaign/bgmen/line_1.png', alt:'BG MEN 動動感謝祭', class: 'img-center bgmen-pc-line-bg'
+
+    = link_to 'https://store.line.me/stickershop/product/1001988/zh-Hant', class: 'bgmen-pc-line-pic-link' do
+
+      .line-sticker-itemtitle.bgmen-pc-line-title BG MEN
+      = image_tag 'campaign/bgmen/line_2.png', alt:'BG MEN', class: 'img-center bgmen-pc-line-bg'
+
+.bgmen-pc-last-placeholder

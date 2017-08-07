@@ -1,0 +1,26 @@
+.cmdp_container
+  .grid_6.margin-top-fixed
+    .item-title.margin-top-fixed.text-center.camp_margin-bottom-35.camp-fontweight-400
+      = "#{name} 獨家設計款"
+
+  .web-bgmen-selectmodel-margin
+    .grid_2
+     .web-bgmen-placeholder
+    = render 'select_models', model: model, ga_category: "Campaign - #{key} - Web", work_models: work_models
+
+  .margin-top-fixed
+  .products.campaign_works data-ga-category=("Campaign - #{key} - Web")
+    - if works.length > 0
+      - works.each do |work|
+        - if work.redeem?
+          = render partial: 'editor/shared/redeem_work', locals: { work: work }
+        - else
+          = render partial: 'editor/shared/work', locals: { work: work }
+    - else
+      .empty-result
+        = edit_translator('page.text.no_product_found')
+
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(works, inner_window: 1)
+    .margin-top-fixed

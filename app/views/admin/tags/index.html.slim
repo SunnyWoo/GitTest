@@ -1,0 +1,41 @@
+- admin_title t('.page_title')
+- breadcrumb :admin_tags
+
+= render 'admin/works/nav', active: 'tags'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+        = link_to t('tags.all_works'), url_for(action: :all_works), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('tags.index.thead.name')
+            th zh-CN
+            th zh-TW
+            th zh-HK
+            th en
+            th ja
+            th= t('tags.index.thead.operation')
+        tbody
+          - @resources.each do |tag|
+            tr
+              td= tag.name
+              td= tag.text_zh_cn
+              td= tag.text_zh_tw
+              td= tag.text_zh_hk
+              td= tag.text_en
+              td= tag.text_ja
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, tag]), class: 'btn btn-info'
+                  = link_to t('tags.works_button'), url_for([:works, :admin, tag]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), admin_tag_path(tag),
+                    class: 'btn btn-danger', data: { method: :delete,
+                    confirm: t('shared.confirm.delete') }

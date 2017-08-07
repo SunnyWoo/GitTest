@@ -1,0 +1,25 @@
+.login-social-title-block
+  .title-second =I18n.t('simple_form.social_network.title')
+
+.cmdp_container
+  .login-social-links
+    - if come_from_china?
+      .login-social-link-bg
+        = link_to user_omniauth_authorize_path(:qq), class: "login-social-link" do
+          .login-social-qq =I18n.t('simple_form.social_network.qq')
+
+      .login-social-link-bg
+        = link_to user_omniauth_authorize_path(:weibo), class: "login-social-link" do
+          .login-social-weibo =I18n.t('simple_form.social_network.weibo')
+    -  else
+      .login-social-link-bg
+        = link_to user_omniauth_authorize_path(:facebook), class: "login-social-link" do
+          .login-social-fb Facebook
+
+      .login-social-link-bg
+        = link_to user_omniauth_authorize_path(:twitter), class: "login-social-link" do
+          .login-social-twit Twitter
+
+      .login-social-link-bg
+        = link_to user_omniauth_authorize_path(:google_oauth2), class: "login-social-link" do
+          .login-social-gplus Google Plus

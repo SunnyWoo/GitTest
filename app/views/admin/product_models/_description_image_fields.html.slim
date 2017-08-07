@@ -1,0 +1,5 @@
+.description_image_fields
+  .product_description_image
+  = f.input :image, as: :image, input_html: {data: {preview_at: '.product_description_image'}}
+  = f.hidden_field :_destroy
+  = link_to '删除', '#', class: 'remove_fields'

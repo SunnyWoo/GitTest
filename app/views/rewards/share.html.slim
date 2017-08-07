@@ -1,0 +1,21 @@
+= render 'reward_static', reward: @reward
+- if session[:reward_validation].to_a.include? @hash
+  .reward-info
+    .hr
+    .reward-info-row
+      .reward-info-item.reward-info-item--1 我的大頭貼
+      .reward-info-item.reward-info-item--2
+        .reward-info-item--preview
+          = image_tag(@reward.avatar.url, size: '120x120')
+        = link_to '', reward_download_path(@reward), class: 'reward-info-item--download'
+      .reward-info-item.reward-info-item--3 無可取代的個人魅力，立即更換你的大頭貼，因為醜臉書 94 狂！
+    .hr
+    .reward-info-row
+      .reward-info-item.reward-info-item--1 我的優惠碼
+      .reward-info-item.reward-info-item--2 = @reward.coupon_code
+      .reward-info-item.reward-info-item--3 於我印購買開始印客製化商品，結帳時輸入此優惠碼，可折抵 $300（此優惠碼限用一次）
+    .hr
+- else
+  .reward-action
+    = link_to '看更多', 'https://event.commandp.com/uglilybookdesign/share', class: 'reward-action-btn'
+    = link_to '立即訂製', 'https://event.commandp.com/uglilybookdesign/order-set/', class: 'reward-action-btn'

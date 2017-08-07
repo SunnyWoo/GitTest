@@ -1,0 +1,605 @@
+zh-TW:
+  country:
+    Australia: '澳洲'
+    Canada: '加拿大'
+    China: '中國'
+    France: '法國'
+    Germany: '德國'
+    HongKong: '香港'
+    Japan: '日本'
+    Macao: '澳門'
+    Malaysia: '馬來西亞'
+    NewZealand: '紐西蘭'
+    Singapore: '新加坡'
+    SouthKorea: '韓國'
+    Taiwan: '台灣'
+    UnitedKingdom: '英國'
+    UnitedStates: '美國'
+  activerecord:
+    errors:
+      models:
+        announcement:
+          attributes:
+            default:
+              at_least_one: '資料庫中至少要有一筆預設的公告'
+    models:
+      user: 使用者
+      order: 訂單
+      billing_profile: 帳單檔案
+      order_item: 訂單項目
+      work: 作品
+      layer: 圖層
+      shipping_info: 運送資訊
+      announcement: 網站公告
+      shelf: 倉儲貨架
+      shelf_material: 倉儲物料
+    attributes:
+      announcement:
+        message: '訊息'
+        start_at: '開始時間'
+        end_at: '結束時間'
+        default: '預設'
+      user:
+        id: 'ID'
+        email: '電子郵件'
+        sign_in_count: '登入次數'
+        current_sign_in_at: '最近登入時間'
+        last_sign_in_at: '上次登入時間'
+        current_sign_in_ip: '最近登入IP'
+        last_sign_in_ip: '上次登入IP'
+        created_at: '註冊時間'
+        auth_token: '登入碼'
+        role: '角色(normal, designer, guest)'
+        name: '用戶名'
+        mobile: '手機號碼'
+        password: '密碼'
+        password_confirmation: '確認密碼'
+      order:
+        order_no: '訂單編號'
+        user: '使用者'
+        aasm_state: '訂單狀態'
+        created_at: '建立時間'
+        price: '訂單金額'
+        currency: '貨幣'
+        payment_type: '付款方式'
+        bank: '銀行'
+        bank_code: '銀行代碼'
+        bank_account: '銀行帳號'
+        pay_account: '繳款代號'
+        pay_expired: '繳費期限'
+        payment_id: 'PayPal 付款ID'
+        payment_nuandao_b2b: '暖島冒險合作'
+        payment_taobao_b2c: '淘寶'
+        payment_tianmao_b2c: '天貓'
+        payment_paypal: 'PayPal'
+        "payment_neweb/atm": 'ATM 轉帳'
+        "payment_neweb_atm": 'ATM 轉帳'
+        "payment_neweb/mmk": '超商繳費'
+        "payment_neweb_mmk": '超商繳費'
+        "payment_neweb/alipay": '支付寶'
+        "payment_neweb_alipay": '支付寶'
+        "payment_neweb_mpp": '信用卡支付'
+        payment_cash_on_delivery: '貨到付款(NT$30)'
+        payment_stripe: 信用卡支付 #非台灣地區的Credit Card是由Stripe負責，台灣是藍星
+        payment_pingpp_alipay: 'Ping++ 支付寶'
+        payment_pingpp_alipay_wap: 'Ping++ 支付寶'
+        payment_pingpp_wx: 'Ping++ 微信'
+        payment_pingpp_upacp: 'Ping++ 銀聯'
+        payment_pingpp_upacp_wap: 'Ping++ 銀聯'
+        payment_pingpp_bfb: 'Ping++ 百度錢包'
+        payment_pingpp_alipay_qr: '支付寶掃碼支付'
+        payment_pingpp_wx_pub_qr: '微信掃碼支付'
+        payment_pingpp_upacp_pc: 'Ping++ 銀聯PC网页支付'
+        payment_pingpp_alipay_pc_direct: 'Ping++ 支付寶PC網頁支付'
+        payment_redeem: '兌換碼'
+        aasm_state/pending: 未付款
+        aasm_state/waiting_for_payment: 等待付款
+        aasm_state/paid: 已付款
+        aasm_state/canceled: 取消
+        aasm_state/packaged: 包裝
+        aasm_state/shipping: 運送中
+        aasm_state/refunded: 已退款
+        aasm_state/part_refunded: 部分退款
+        aasm_state/part_refunding: 部分退款中
+        aasm_state/refunding: 退款中
+        packaging_state:
+          package_ongoing: '未打包'
+          part_packaged: '部分打包'
+          all_packaged: '全部打包'
+        shipping_state:
+          shipping_ongoing: '未出货'
+          part_shipping: '部分出货'
+          all_shipping: '全部出货'
+      billing_profile: &attributes_billing_profile
+        id: 'ID'
+        address: '地址'
+        city: '城市'
+        name: '姓名'
+        phone: '電話'
+        state: '州'
+        zip_code: '郵遞區號'
+        country: '地區'
+        address_name: '名稱'
+        email: 電子郵件
+        shipping_way_standard: 標準運送 (10-15 工作日)
+        shipping_way_express: 快速運送 (7-10 工作日)
+        shipping_way_cash_on_delivery: 貨到付款
+      address_info:
+        <<: *attributes_billing_profile
+      order_item:
+        quantity: '數量'
+        itemable_id: '作品ID'
+      work:
+        work_type:
+          is_private: 私人
+          is_public: 公開
+          redeem: 兌換商品
+        description: 敘述
+        model: 產品類型
+        cover_image: 客戶上傳預覽圖
+        print_image: 送印用圖
+        order_image: 訂單用縮圖
+        finished: 已完成
+        feature: 特色商品
+      design:
+        material: 上傳設計
+        user: 選擇設計師
+        name: 設計名稱
+        description: 設計描述
+      print_item:
+        aasm_state:
+          pending: 未上傳
+          uploading: 上傳中
+          printed: 已上傳
+          sublimated: 已熱轉印
+          onboard: 已包裝
+          delivering: 拋單中
+          received: 拋單完成
+          qualified: 已質檢
+      temp_shelf:
+        serial: 貨架編號
+        description: 描述
+      shelf:
+        serial: 貨架編號
+        category_name: 貨架類別
+        material_serial: 商品編號
+        material_name: 物料名稱
+        serial_name: 貨架名稱
+        section: 商品編號
+        name: 商品名稱
+        quantity: 數量
+        safe_minimum_quantity: 最小安全數量
+      shelf/actions:
+        ship_shelf: 取货
+        stock_shelf: 補貨
+        move_in: 移入
+        move_out: 移出
+        adjust: 盤點調整
+        ship: 取货
+        stock: 上架
+        allocate: 調撥
+        restore: 返架
+      collection:
+        name: 識別名稱
+      shelf_material:
+        image: 圖片
+        serial: 物料編號
+        name: 物料名稱
+        quantity: 數量
+        safe_minimum_quantity: 最小安全數量
+        scrapped_quantity: 報廢數
+      shelf_material/actions:
+        stock: 補貨
+        adjust: 盤點調整
+      print_history:
+        print_type: 重印類別
+        reason: 原因說明
+      factory_member:
+        factory_id: 所属公司
+        username: 識別名稱
+        role_groups: 權限群組
+        role_group_ids: 權限群組
+        enabled: 帳號狀態
+        last_sign_in_at: 最後登錄時間
+        encrypted_password: 密碼
+      role_group:
+        name: 識別名稱
+        roles: 權限
+      product_category:
+        tag_ids: 標籤
+      product_model:
+        tag_ids: 標籤
+      import_order:
+        file: 文件
+        created_at: 導入時間
+        aasm_state: 狀態
+        aasm_state/pending: 未上傳
+        aasm_state/importing: 上傳中
+        aasm_state/finished: 已完成
+        succeed: 成功
+        failed: 失敗
+      promotion:
+        name: 名稱
+        description: 活動描述
+        type: 類型
+        targets: 折扣目標價
+        rule: Rule
+        begins_at: 開始時間
+        ends_at: 結束時間
+        aasm_state:
+          pending: 草稿
+          ready: 準備完成
+          started: 已開始
+          ended: 已結束
+          stopped: 已中止
+      reception:
+        state: 狀態
+        serial: 貨架編號
+        description: 描述
+      change_price_event:
+        aasm_state/pending: 已計劃
+        aasm_state/processing: 處理中
+        aasm_state/completed: 已完成
+        aasm_state/failed: 失敗
+  ransack:
+    asc: "舊=>新"
+    desc: "新=>舊"
+    predicates:
+      cont: "包含"
+      not_cont: "不包含"
+      start: "開頭是"
+      end: "結尾是"
+      gt: "大於"
+      gteq: "大於等於"
+      lt: "小於"
+      lteq: "小於等於"
+      eq: "等於"
+      matches: "相似於"
+      true: "結果為true(布林值)"
+      false: "結果為false(布林值)"
+      present: '非空值'
+      null: '空值'
+  shelf:
+    new_category: 新增貨架類別
+  storage:
+    shelf_serial: 貨架編號
+    shelf_name: 貨架名稱
+    material_name: 物料名稱
+    material_serial: 物料編號
+    quantity: 數量
+    message: 備註
+  work:
+    work_type:
+      is_private: 私人
+      is_public: 公開
+  order:
+    state:
+      pending: 未付款
+      waiting_for_payment: 等待付款
+      paid: 已付款
+      canceled: 取消
+      packaged: 包裝
+      shipping: 運送中
+      refunded: 已退款
+      part_refunded: 部分退款
+      part_refunding: 部分退款中
+      refunding: 退款中
+    work_state:
+      ongoing: 準備中
+      working: 生產中
+      finish: 完成
+    invoice_state:
+      invoice_not_upload: '發票未上傳'
+      invoice_ready_upload: 發票準備上傳
+      invoice_uploading: '發票為上傳中'
+      invoice_upload_error: '發票上傳失敗'
+      invoice_uploaded: '發票已上傳'
+      invoice_finish: '發票開立完成'
+      invoice_free: '免開發票'
+    payment:
+      nuandao_b2b: 暖島冒險
+      paypal: PayPal
+      cash_on_delivery: 貨到付款
+    show:
+      work_product: 商品/產品類型
+      quantty_price: 數量 x 特價
+      quantty_original_price: 數量 x 單價
+      total: 特價合計
+      original_total: 單價合計
+      item_discount: Discount
+      total: "合計"
+      delivery: "制作方"
+      work_state: "完成狀態"
+      deliver_local: "本地"
+      deliver_shanghai: "上海"
+      deliver_taiwan: 台灣
+  promotion_reference:
+    error:
+      had_been_included: '已經存在目前的優惠清單中了'
+  adjustment:
+    description:
+      admin:
+        manual: '客服調整'
+      default:
+        apply: '符合活動資格'
+        fallback: '活動已結束'
+        manual: '客服調整'
+        supply: '符合新活動資格'
+      promotion:
+        apply: '符合活動資格'
+        fallback: '活動結束'
+        supply: '符合新活動資格'
+  share:
+    facebook_fan_page: https://www.facebook.com/commandpzh
+  delivery:
+    made_from_taiwan: '台灣生產'
+    made_from_shanghai: 上海生產
+    made_from_factory: "%{factory_name}生產"
+  not_found_error: "未找到"
+  brand:
+    name: 我印
+  redeem:
+    title: '兌換專區'
+    start_redeem: '開始兌換'
+    input_code: '請輸入兌換代碼'
+    verify: '驗證'
+    verify_failed: '兌換碼輸入錯誤，請重新輸入！'
+    event_description: '活動說明'
+    print: '開始印'
+    success: '恭喜你！兌換成功'
+    noted: '知道了'
+    shipping_info:
+      title: '新增收貨地址'
+      info: '運送資訊'
+      name: '收貨人'
+      phone: '手機號碼'
+      phone_placeholder: '0910 000 123'
+      email: '電子郵件'
+      country: '國家'
+      state: '所在地區'
+      state_placeholder: '縣市區'
+      address: '詳細地址'
+      zip: '郵遞區號'
+      confirm: '確定兌換'
+    editor:
+      redeem_button: '下一步'
+  about:
+    title: 30 秒將手機中數位照片變成有設計感的實體商品
+    description: 我印將手機中的數位照片變成各種有設計感的實體商品，不論是 iphone 手機殼、貼紙還是相片書等商品,完成只需 30 秒,5 個工作天送到你家
+    page-title: 印出你的隨心所欲！
+    page-description: "%{style}我印%{style_close}讓你輕鬆製作與購買各種充滿設計感的"
+    page-description-emphase: 手機殼、個性化貼紙、明信片、桌曆與相片書等各種商品
+    page-description-emphase-2: "僅需透過%{style}我印%{style_close}的 App，30 秒完成，3 天送到你家！"
+    about: 關於我們
+    about-content-1: 智慧型手機的發明讓你捕捉到更多的珍貴鏡頭，而各大社交網站也讓你能及時與朋友分享這些精彩瞬間，但這還不夠。我印結合了傳統印刷與線上客制化服務，無論是卡片、手機殼還是貼紙都能成為你的畫布，讓分享更真實。
+    about-content-2: 制作一個完美的禮物，你只需要負責創作，
+    about-content-3: 剩下的我們會替你完成。
+    our-story: 我們的故事
+    our-story-content: 我印的靈感來自於列印的指令鍵，簡單的快捷鍵“⌘＋P”便能讓電腦進行列印的動作，猶如我們提供的用戶體驗一樣方便順暢。我們將印刷的樂趣留給你，枯燥艱難的技術由我們來完成。
+    our-mission: 我們的使命
+    our-mission-content: 讓印刷更平易近人，以往令人望而生卻的複雜技術及高單價的印刷服務被我們濃縮成一項簡單有趣的體驗，任何人都能夠透過手中的智慧型手機輕鬆享受低單價高品質的印刷技術。
+    our-product: 我們的產品
+    our-product-content-1: 我們的產品來自你的創作，我們相信最美好的用戶體驗便是讓用戶自行決定他要什麼！我印能讓你手機裡的珍貴照片根據你的需要，化身為手機殼、應景的節日卡片或各種形式的禮物。
+    our-product-content-2: 下載我印 App 準備接收屬於你獨一無二的產品！
+    quick-look: 我印目前支援 iOS，快下載我印 App 製作屬於你的產品。
+    job-inquirires: 加入我們
+    job-inquirires-content-1: 我印網路科技 commandp inc. 結合傳統的數位印刷與最新的網路技術，目標打造一個能夠提升人們生活品質的產品與服務，讓冰冷的數位影像變成有溫度的產品，
+    job-inquirires-content-2: 從台灣開始，放眼全球。成員們皆來自於各領域的年輕並且有活力的專業人才，若您也有相同的眼光與熱情，加入我們！
+    job-inquirires-content-3: 請將履歷寄送至
+    follow-us: 喜歡嗎？別忘了給一個讚或是關注我們！
+    job-opening: 工作機會
+  home:
+    title: 我印－用手機照片訂製手機殼、悠遊卡、馬克杯、掛鐘、iPad Covers 等各種客製化商品
+    description: 我印將手機中的照片訂製成各種有設計感的客製化商品，不論是 iPhone 手機殼、Samsung 手機殼、悠遊卡、馬克杯、掛鐘、iPad Covers，只需30 秒就能客製化完成，10－12 個工作天送到你家，全球直送，100%滿意度保證。除了客製化凸顯個人品味，更是生日禮物、各式送禮禮物的最佳推薦。
+    page-title: 我印 App 僅需 30 秒
+    page-title-2: 完成獨一無二的手機殼
+    promo-li1: 快速客製你的手機殼
+    promo-li2: 購買知名設計師製作的手機殼
+    promo-li3: 免運費 10 天內送到你手中
+    anounce: 2.24.2014 正式上線
+    download-apps: iOS and Android App 即將上架！
+    coupon-title: NT$180 優惠代碼
+    coupon-description: "%{style}我印%{style_close} App，最後上線倒數中！"
+    coupon-description-2: 創作 iPhone 6 手機殼，現折 NT$180！
+    email-placeholder: "優惠代碼：WELCOME6"
+    submit-btn: 輸入
+    li1: 優惠代碼的有效期限會到 2014 年 10 月 26 日。
+    li2: 優惠代碼僅能折抵第一次消費。
+    li3: 禁止優惠代碼轉讓或販售行為。
+    li4: 我印有權保留變更或終止本優惠代碼折扣碼時間、內容之權利。
+    left-title: 手機殼
+    left-description: 我印參考世界大廠標準，提供 100% 的密合度與高防護性作為你手機的新衣，除了專屬於你的設計之外，還讓你幾乎感受不到他的存在。
+    right-title: 手機膜
+    right-description: 硬度達 3H 的亮面保護膜，透過特殊的處理，輕鬆好貼讓你的手機保護膜硬式跟別人不一樣！
+    sent-success: 成功寄出！感謝您
+  question:
+    li1: 常見問題
+    li2: 聯絡我們
+    li3: 隱私政策
+    li4: 使用條款
+    li5: 訂單查詢
+    help: 幫助
+    content1: 我們來幫你！
+    content2: 找不到解答嗎？請立即聯絡我們。
+    contact_us: 聯絡我們
+  simple_form:
+    labels:
+      zendesk_service:
+        username: 姓名
+        email: 電子郵件
+        category: 類別
+        subject: 主旨
+        description: 描述
+        attachments: 附件
+      reception:
+        state: 狀態
+        serial: 貨架編號
+        description: 描述
+      promotion:
+        name: 名稱
+        description: 活動描述
+        type: 類型
+        begins_at: 開始時間
+        ends_at: 結束時間
+        unlimited: 無限期
+      rules:
+        condition: '條件類型'
+        threshold_id: '設定金額'
+        designer_ids: '選擇設計師'
+        product_model_ids: '選擇產品型號'
+        product_category_ids: '選擇產品類別'
+        work_gids: '選擇商品'
+        bdevent_id: '選擇 Bdevent'
+        quantity: '符合條件數量'
+      rule_parameters:
+        discount_type: '優惠公式類型'
+        price_tier_id: '公式金額'
+        percentage: '百分比'
+    options:
+      reception:
+        state:
+          received_on_temp_shelf: '已收貨且放入貨架'
+          received_only: '已收貨'
+      rules:
+        condition:
+          threshold: '訂單總額超過'
+          include_designers: '特定設計師'
+          include_product_models: '特定 Product Model'
+          include_works: '特定兌換商品'
+          include_designers_models: '特定設計師與 Product Model'
+          include_product_categories: '特定 Product Category'
+          include_bdevent: '特定 Bdevent'
+          include_free_shipping_coupon: '使用免運 Coupon'
+      rule_parameters:
+        discount_type:
+          fixed: '固定扣除金額'
+          percentage: '固定百分比折扣'
+          pay: '固定結帳售價'
+    hints:
+      zendesk_service:
+        category: 請選擇最適合的類別
+        description: 請輸入您詳細的描述
+        attachments: 新增圖片或拖曳圖片到這邊
+    placeholders:
+      billing_info: &placeholders_billing_info
+        name: Name
+        email: commandp@gmail.com
+        country: Select region
+        phone: +886 0910 000 123
+      shipping_info:
+        <<: *placeholders_billing_info
+      social_network:
+        title: 使用第三方賬戶登錄
+        qq: QQ
+        weibo: 微博
+  support:
+    categories:
+      product: Product/產品
+      create_your_own: Create Your Own/創建您自己的
+      billing: Billing/帳單
+      shipping: Shipping/運送
+      ordering: Ordering/訂購
+      artist_information: Artist Information/藝術家
+  career:
+    title: 加入 commandp 我印 團隊 | Careers
+    description: commandp Inc. 結合傳統印刷與網路技術，透過軟硬整合，讓數位影像變成有溫度的產品，從台灣放眼全球。我們的成員來自於各領域的專業人才，若您也有相同的眼光與熱情，加入我們！
+  helpers:
+    label:
+      order[shipping_info]:
+        <<: *attributes_billing_profile
+      order[billing_info]:
+        <<: *attributes_billing_profile
+      shipping_info:
+        <<: *attributes_billing_profile
+      billing_info:
+        <<: *attributes_billing_profile
+      address_info:
+        <<: *attributes_billing_profile
+      order_status_form:
+        order_id: 訂單編號
+    submit:
+      zendesk_form:
+        create: '送出'
+  errors:
+    address_info_list: 請新增或選擇一個地址
+    stripe:
+      not_paid: "此付款沒有被正確的執行，請檢查或聯繫我們!"
+    shipping_way_empty: "運送方式不能為空"
+    order_items_empty: "訂單項目不能為空"
+    paramater_invalid: "不符合的參數"
+    same_products_in_promotions: "商品 %{names} 已經被優惠了"
+  email:
+    send_coupon:
+      subject: 輸入我印折扣碼，客製化手機殼現折新台幣 300 元！
+  shipping_info:
+    shipping_way:
+      standard: 標準運送 (10-12 工作日)
+      express: 快速運送 (7-10 工作日)
+      cash_on_delivery: 貨到付款
+      global:
+        standard: 標準運送 (10-12 工作日)
+        express: 快速運送 (7-10 工作日)
+        cash_on_delivery: 貨到付款
+      china:
+        standard: 標準運送
+        express: 順豐運送
+        cash_on_delivery: 貨到付款
+  text:
+    free: 免費
+  will_paginate:
+    previous_label: 上一頁
+    next_label: 下一頁
+    page_gap: "&hellip;"
+  address_btns:
+    add: 送交
+    cancel: 取消
+  notification:
+    status:
+      'true': 已發送
+      'false': 未發送
+  wishlist:
+    json:
+      message:
+        can_add: "尚未加入!"
+        can_not_add: "已加入!"
+        not_login: "使用者尚未登入!"
+  newsletter:
+    state:
+      unsent: 未發送
+      sending: 發送中
+      sended: 已發送
+    sent: 發送成功
+  questionnaire:
+    join: 點此參加
+  factory:
+    china:
+      location: "中國"
+    global:
+      location: "台灣"
+  company:
+    china:
+      website: 'commandp.com.cn'
+      name: '优印（上海）信息科技有限公司'
+    global:
+      website: 'commandp.com'
+      name: '我印網路科技股份有限公司'
+    nuandao:
+      website: 'nuandao.com'
+      name: '北京暖岛网络信息科技有限公司'
+  pdf:
+    ticker:
+      work_type: "客製化商品"
+      catrgory: "商品類別"
+      model: "商品規格"
+      material: "商品材質"
+      weight: "商品重量"
+      location: "商品產地"
+      weixin_service: "噗印微信客服"
+      facebook_fans: "FB 粉絲頁"
+      order_qrcode: "商品編號掃描"
+      nuandao_website: 暖岛官网
+  factory_member:
+    enabled: 啟用
+    disabled: 停用
+    encrypted_password_updated: 被更新
+    info_updated: "從 %{from} 到 %{to}"

@@ -1,0 +1,13 @@
+- admin_title t('.page_title')
+ul.nav.nav-tabs
+  li
+    = link_to admin_asset_package_categories_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('asset_package_categories.index.page_title')
+  li.active
+    = link_to admin_asset_packages_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('.asset_packages')
+br
+
+= react_component 'CPA.Assets.App'

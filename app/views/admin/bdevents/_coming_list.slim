@@ -1,0 +1,33 @@
+.widget-body
+  .widget-main.no-padding
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th ID
+          th Image
+          th 活動名稱
+          th Start/End
+          th Enabled
+          th Operation
+      tbody
+        - @bdevents.each do |bdevent|
+          tr
+            td= bdevent.id
+            td
+              = link_to bdevent.coming_soon_image.url, title: bdevent.title, class: 'popup-image' do
+                = image_tag bdevent.coming_soon_image.thumb.url
+            td= bdevent.title
+            td
+              | Start at：
+              = l bdevent.starts_at, format: :long
+              br
+              br
+              | End at：
+              = l bdevent.ends_at, format: :long
+            td= bdevent.is_enabled.to_s
+            td
+              .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, bdevent]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), url_for([:admin, bdevent]), class: 'btn btn-danger', data: { method: 'delete', confirm: 'Are you sure?' }
+
+= will_paginate @bdevents

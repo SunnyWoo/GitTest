@@ -1,0 +1,12 @@
+- admin_title t('notifications.sidebar_name')
+- breadcrumb :admin_notifications
+
+.pull-right.add-margin
+  = link_to admin_devices_path, class: 'btn ' do
+    = t('devices.sidebar_name')
+
+  = link_to url_for(action: :new), class: 'btn btn-success' do
+    = fa_icon('envelope')
+    = t('shared.form_actions.new')
+
+= react_component 'CPA.Notification.Index', {apiUrl: admin_notifications_path}

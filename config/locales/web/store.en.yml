@@ -1,0 +1,176 @@
+en:
+  store:
+    show:
+      no_work_message: product is still in preparation
+    product_template:
+      sidebar_name: 'Product Template'
+    layout:
+      sidebar_name: 'Store Layout & Info'
+    design:
+      page_title: 'Edit Template Design: %{name}'
+      forms:
+        photo_only: 'Photo Only'
+        text_only: 'Text Only'
+        text_and_photo: 'Text and Photo'
+    preview:
+      page_title: 'Preview Template: %{name}'
+      amount: Amount
+      cart: Cart
+      footer:
+        download: Download
+        cart: Add to cart
+      tab:
+        desciption: desciption
+        spec: specification
+        information: information
+        description_image_title: Description
+    status:
+      page_title: 'Edit Template Status: %{name}'
+    forms:
+      photo_only:
+        errors:
+          template_image_dimensions: 'Difference of either width or height of template image from the product should be in 5 pxs. suggest: %{suggest}'
+      text_only:
+        hint:
+          color: 'Hex color code only'
+    shared:
+      update_success: 'Update Successfully'
+      create_success: 'Create Successfully'
+    custom_product: Create
+    store_product: Store
+    support:
+      phone: 聯繫客服：+886 225472789
+      business_time: 週一至週五：10:00 - 19:00
+
+    editor:
+      errors:
+        reach_text_width_limit: reached text width limit
+        upload_image_failed: upload work failed
+      select_photo: Photo
+      change_text: Text
+      preview: Preview
+      text_input_placeholder: typing something...
+      quality_text: Quality
+
+    attributes:
+      image:
+        kv:
+          dimension_error: 'width & height of KV must fit: 1242x600'
+
+    order:
+      next: Next
+      order_no: Order No
+      billing_info_phone: Phone
+      payment: Payment
+      pay_price: Payment amount
+      shipping_info_name: Name
+      shipping_info_full_address: Address
+      order_subtotal: Subtotal
+      discount: Discount
+      shipping_fee: Shipping Fee
+      order_price: Total
+      other_order: Other order
+      enter_again: Try again
+
+    error:
+      order_not_found: Not Found!
+    backend:
+      standardized_works:
+        sidebar_name: 'Standardized Works'
+        index:
+          page_title: 'Standardized Works List'
+        new:
+          page_title: 'Batch Upload for Creating Standardized Works'
+          upload_limited: 'The limit of file size is 50MB'
+        edit:
+          page_title: 'Edit Standardized Work: %{name}'
+          print_image_notification: 'PrintImage version would not be updated until submiting the date'
+      preview_composers:
+        page_title: 'Edit Preview Composer'
+    sidebar_menu:
+      download: Download Work
+      share: Share
+      search: Search
+      cart: Cart
+      contact: Contact
+
+    share:
+      share_content_placeholder: say something....
+      share_button: share
+      share_hint: 'share your work to:'
+      copy_link: copy link
+      cancel: cancel
+      lets_make_it_now: let's make it now
+      other_works: Other Works
+      other_templates: Other Templates
+      back_index: Back Index
+
+    download:
+      saveImage: long press to save image
+
+    seo:
+      store_title: '%{name}'
+      store_desc: '%{name} | 一站式服務輕鬆實現你的開店夢，提供個人化商品訂製以及商城模式，搭配完整的客服、金流、物流服務，讓你的商品＆設計快速銷售至全球各地。'
+      contact_us_title: 'Contact us'
+      contact_us_desc: '任何關於商品的相關問題，均可與我們聯繫。我們在此為你提供協助。'
+      share_title: '%{name} Share'
+      share_desc: '%{name} 必定成為焦點目光的完美作品。即刻分享，獲得更多注目，讓你的設計成為熱門討論話題。'
+      download_title: '%{name} Download'
+      download_desc: '%{name} 別讓完美作品只存在你的記憶中。一鍵長按立即下載儲存。'
+      editor_title: '%{name} 一頁客製'
+      editor_desc: '提供多樣化的設計版型，讓你快速客製想要的商品，兼具美感與效率的一頁客製，30 秒立即製作完成。'
+      preview_title: 'Preview'
+      preview_desc: '立即預覽訂購商品詳情，一目了然所有細節。'
+      order_search_title: 'Order Search'
+      order_search_desc: '快速查詢你的訂單資料及紀錄，隨時掌握訂單進度。'
+    index:
+      kv_title: 我印頁店，一夜致富
+      kv_desc: 將你的創意轉變成源源不絕的收益
+      kv_btn: 立即洽詢
+      section_1_title: 將創意無限延伸
+      section_1_desc: 集結你的設計，實現創業夢，創造更多價值。透過我印提供的頁店服務，與全世界分享你的創意點子，再次享受創作的樂趣。
+      section_1_list:
+        - text: 免串接客製化編輯器
+        - text: 完整供應鏈管理
+        - text: 自由發揮設計創意
+      section_2_title: 服務 6 大核心
+      section_2_desc: 實現多樣少量客製化生產能力，無需承擔庫存壓力，提供便利行銷工具，快速開啟線上網頁商城。
+      section_2_list:
+        - title: 專屬商城
+          image: store_landing_page/section_2_1.png
+          desc:
+            - item: 客製化影像編輯器技術
+            - item: 提供創意延伸互動設計
+            - item: 隨時上架各式設計版型
+        - title: 專業客服支援
+          image: store_landing_page/section_2_2.png
+          desc:
+            - item: 提供消費者完整售後服務
+            - item: 提供店家即時技術支援
+        - title: 安全電子支付
+          image: store_landing_page/section_2_3.png
+          desc:
+            - item: 電子支付快速便利
+            - item: 第三方金流保障買賣安全
+            - item: 多國金流一次串接免煩惱
+        - title: 工廠按單生產
+          image: store_landing_page/section_2_4.png
+          desc:
+            - item: 按單生產免庫存
+            - item: 多樣少量高品質
+        - title: 全球物流寄送
+          image: store_landing_page/section_2_5.png
+          desc:
+            - item: 與國際物流快遞合作
+            - item: 全球各地皆可送
+        - title: 銷售追蹤系統
+          image: store_landing_page/section_2_6.png
+          desc:
+            - item: 從生產到出貨一手掌握
+            - item: 即時報表隨時追蹤不漏單
+      section_3_title: 立即開始 3 步驟
+      section_3_desc: 提供所有品牌、用戶，便利的行銷渠道及客製化影像編輯軟體等功能，您只需要一鍵註冊，就能立即開啟收益的大門。
+      section_3_1_text: 一鍵註冊
+      section_3_2_text: 上傳創意
+      section_3_3_text: 創造價值
+      know_more_btn_text: 了解更多

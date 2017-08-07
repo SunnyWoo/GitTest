@@ -1,0 +1,48 @@
+- admin_title t('asset_package_categories.index.page_title')
+
+ul.nav.nav-tabs
+  li.active
+    = link_to admin_asset_package_categories_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('asset_package_categories.index.page_title')
+  li
+    = link_to admin_asset_packages_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('.asset_packages')
+
+.well.well-xs
+  h4 = t('shard.search_option')
+  = simple_form_for @search, url: admin_asset_package_categories_path, method: :get do |f|
+    = f.input :translations_name_cont, label: t('asset_package_categories.index.thead.name')
+    = f.input :available_eq, label: t('asset_package_categories.index.thead.status'), as: :radio_buttons, collection: collection_for_package_category_status
+    br = f.button :submit, t('shared.form_actions.submit')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('asset_package_categories.index.thead.name')
+            th= sort_link @search, :packages_count, t('asset_package_categories.index.thead.packages_total')
+            th= sort_link @search, :downloads_count, t('asset_package_categories.index.thead.downloads_total')
+            th= t('asset_package_categories.index.thead.status')
+            th= t('asset_package_categories.index.thead.operation')
+        tbody
+          - @categories.each do |category|
+            tr
+              td= category.name
+              td= category.try(:packages_count)
+              td= category.try(:downloads_count)
+              td= render_package_category_status(category.available?)
+              td
+                .btn-group
+                    = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, category]), class: 'btn btn-info'
+
+/ = will_paginate @announcements

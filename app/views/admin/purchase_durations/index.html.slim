@@ -1,0 +1,28 @@
+- breadcrumb :purchase_durations
+- admin_title t('durations.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th = t('durations.index.duration')
+            th = t('durations.index.product_type')
+            th = t('durations.index.category_name')
+            th = t('durations.index.b2c_count')
+            th = t('durations.index.purchase_price')
+            th = t('durations.index.price_tier')
+        tbody
+          - @durations.each do |duration|
+            - duration.histories.each do |history|
+              tr
+                td = history.duration.year_month
+                td = history.product.name
+                td = history.category_name
+                td = history.b2c_count
+                td = history.price
+                td = history.price_tiers.as_json

@@ -1,0 +1,56 @@
+- promotion = promotion_form.promotion
+- works = promotion_form.works
+- categories = promotion_form.product_categories
+- content_for :references_list do
+  = hidden_field_tag :promotable_type, 'StandardizedWork'
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th= check_box_tag :all
+        th= t('promotions.works.search_options.category')
+        th= t('promotions.works.search_options.work_image')
+        th= t('promotions.works.search_options.work_name')
+        th= t('promotions.works.search_options.designer')
+        th= t('promotions.works.search_options.product_model')
+        th= t('promotions.works.search_options.tag')
+        th= t('promotions.index.thead.status')
+    tbody
+      - works.each do |work|
+        tr
+          td= check_box_tag('promotable_ids[]', work.id)
+          td= work.category.name
+          td= display_print_image(work, lazy: false)
+          td= work.name
+          td= work.user_display_name
+          td= work.product_name
+          td= work.tag_names
+          td= promotion_form.promotable_status(work)
+  = will_paginate works
+
+.well
+  = simple_form_for promotion_form.search, url: edit_admin_promotion_path(promotion), method: 'get', html: { class: 'search-work-form' } do |f|
+    .row
+
+      .col-md-4
+        = f.input :product_category_id_eq, collection: categories, label: t('promotions.works.search_options.category')
+      .col-md-4
+        = f.input :product_id_eq, label: t('promotions.works.search_options.product_model'),
+                  as: :grouped_select,
+                  collection: categories,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .col-md-4
+        = f.input :user_of_Designer_type_display_name_cont, required: false, label: t('promotions.works.search_options.designer')
+      .col-md-4
+        = f.input :name_cont, required: false, label: t('promotions.works.search_options.work_name')
+      .col-md-4
+        = f.input :tags_name_cont, required: false, label: t('promotions.works.search_options.tag')
+      .col-md-4
+        = f.input :promotion_references_promotion_id_eq, collection: promotion_form.status_options,
+          required: false, label: t('promotions.works.search_options.status')
+      .col-md-12
+        = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+.widget-main.no-padding
+  = render 'change_promotion_references_form', promotion_form: promotion_form, content: content_for(:references_list)

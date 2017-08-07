@@ -1,0 +1,6 @@
+- breadcrumb :edit_cp_resource, @cp_resource
+- admin_title t('cp_resources.edit.page_title')
+
+.col-xs-6
+  = simple_form_for(@cp_resource, url: [:admin, @cp_resource], class: 'form-horizontal') do |f|
+    = render 'form', f: f, cp_resource: @cp_resource

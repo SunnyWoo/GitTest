@@ -1,0 +1,15 @@
+= simple_form_for @shelf_material, url: [:print, @shelf_material], html: {class: 'form-horizontal'} do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :serial
+    .form-inputs
+      = f.input :name
+    .form-inputs
+      = f.input :quantity, disabled: action_name == 'edit' || action_name == 'new'
+    .form-inputs
+      = f.input :safe_minimum_quantity
+    .well
+      .upload-material-image
+      = f.input :image, as: :image, input_html: {data: {preview_at: '.upload-material-image'}}
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'

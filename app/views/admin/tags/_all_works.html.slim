@@ -1,0 +1,57 @@
+.widget-head
+  ul.nav.nav-tabs
+    li class=('active' if @work_type == 'StandardizedWork')
+      = link_to all_works_admin_tags_path(work_type: 'StandardizedWork') do
+        span StandardizedWork
+    li class=('active' if @work_type == 'Work')
+      = link_to all_works_admin_tags_path(work_type: 'Work') do
+        span  Work
+.well
+  = simple_form_for @search, url: all_works_admin_tags_path, method: 'get', html: { class: 'search-work-form' } do |f|
+    = hidden_field_tag :work_type, @work_type
+    .row
+      .col-md-3
+        = f.input :user_of_Designer_type_display_name_cont,
+          required: false,
+          label: t('tags.works.search_options.designer')
+      .col-md-3
+        = f.input :product_id_eq, label: t('tags.works.search_options.product_model'),
+                  as: :grouped_select,
+                  collection: ProductCategory.all,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .col-md-3
+        = f.input :name_cont,
+          required: false, label: t('tags.works.search_options.work_name')
+      .col-md-3
+        = f.input :tags_name_cont, required: false, label: t('tags.works.search_options.tag')
+      .col-md-12
+        = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+.widget-main.no-padding
+  = form_tag work_tags_admin_tags_path, method: :put
+    = hidden_field_tag :update_type
+    = render 'modal'
+    = link_to t('tags.works.apply_button'), '###', class: 'btn btn-success pull-left change-tag', data: { type: 'apply'}
+    = link_to t('tags.works.remove_button'), '###', class: 'btn btn-success pull-left change-tag', data: { type: 'remove'}
+
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th= check_box_tag :all
+          th= t('tags.works.search_options.work_image')
+          th= t('tags.works.search_options.work_name')
+          th= t('tags.works.search_options.designer')
+          th= t('tags.works.search_options.product_model')
+          th= t('tags.works.search_options.tag')
+      tbody
+        - works.each do |work|
+          tr
+            td= check_box_tag "work_ids[#{work.class.to_s}][]", work.id
+            td= display_print_image(work)
+            td= work.name
+            td= work.user_display_name
+            td= work.product_name
+            td= work.tag_names
+= will_paginate works

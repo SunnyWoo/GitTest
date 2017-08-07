@@ -1,0 +1,33 @@
+#image
+  display: block
+  width: 100%
+  background-color: $c-bg-disabled
+
+#share-area
+  display: flex
+  flex-direction: column
+  @include rem(min-height, 322px)
+  @include rem(padding, 30px 30px 45px 30px)
+
+  justify-content: center
+  align-items: center
+
+  .shareArea-textarea
+    display: block
+    width: 100%
+    @include rem(padding, 16px 12px)
+    border: 1px solid $c-primary
+    border-radius: 4px
+    @include rem(font-size, $f-size-content)
+    line-height: 1.4
+
+  .shareArea-button
+    display: block
+    @include rem(width, 170px)
+    @include rem(height, 55px)
+    @include rem(margin-top, 30px)
+    text-align: center
+    color: $c-text-white
+    border-radius: 2px
+    background-color: $c-primary
+    @include rem(line-height, 55px)

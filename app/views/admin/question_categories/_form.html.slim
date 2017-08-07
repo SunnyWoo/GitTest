@@ -1,0 +1,7 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = member.errors.full_messages if member.errors.size > 0
+  = f.input :name, label: t('question_categories.attributes.name')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_questions_path, class: 'btn btn-info'

@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://202.39.48.216/kotsmsapi-1.php?dlvtime=0&dstaddr=&password=&smbody=%A7%DA%A6L%B1z%A6n%A1A%B1z%AA%BA%C5%E7%C3%D2%BDX%ACO:%201234567&username=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 10 Dec 2015 04:56:48 GMT
+      Server:
+      - Apache/2.2.3 (CentOS)
+      X-Powered-By:
+      - PHP/5.1.6
+      Content-Length:
+      - '10'
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=BIG5
+    body:
+      encoding: UTF-8
+      string: |
+        kmsgid=-2
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 04:56:48 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,233 @@
+.yto_express_waybill {
+  .content {
+    padding: 1mm;
+
+    .top {
+      height: 110mm;
+    }
+    .bottom {
+      height: 65mm;
+    }
+
+    .header {
+      height: 16mm;
+      padding: 2mm;
+      border-bottom: 1mm solid #3b579d;
+
+      .product_info {
+        .title {
+          font-size: 14pt;
+          font-weight: bold;
+        }
+        .price {
+          margin-top: 1mm;
+          font-size: 9pt;
+        }
+      }
+
+      .consignee_branch {
+        width: 60mm;
+        float: left;
+        text-align: center;
+
+        img {
+          height: 10mm;
+          width: 25mm;
+        }
+      }
+    }
+
+    .datou {
+      height: 20mm;
+      text-align: center;
+      font-size: 36pt;
+      font-weight: bold;
+      border-bottom: 1mm dashed #0b0c18;
+    }
+
+    .mail_no {
+      height: 17mm;
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 1mm dashed #0b0c18;
+
+      img {
+        height: 12mm;
+        width: 60mm;
+      }
+    }
+
+    .receipt {
+      .receipt_info {
+        font-size: 10pt;
+        border-right: 1mm dashed #0b0c18;
+        .shipping_info {
+          font-size: 11pt;
+          font-weight: bold;
+          height: 20mm;
+          border-bottom: 1mm dashed #0b0c18;
+          .person {
+            width: auto;
+            float: left;
+          }
+          .message {
+            width: 75mm;
+            text-align: left;
+            float: right;
+          }
+        }
+        .billing_info {
+          height: 20mm;
+          border-bottom: 1mm dashed #0b0c18;
+          .person {
+            width: auto;
+            float: left;
+          }
+          .message {
+            width: 75mm;
+            text-align: left;
+            float: right;
+          }
+        }
+        .receipt_message {
+          .signature {
+            height: 15mm;
+            margin-left: 5px;
+            border-right: 1mm dashed #0b0c18;
+          }
+          .timing {
+            .title {
+              margin-left: -10px;
+            }
+            .time {
+              margin: 10px 0 0 20px;
+
+              letter-spacing: 1px;
+            }
+          }
+
+        }
+      }
+      .receipt_content {
+        margin-left: -20px;
+        margin-top: 60px;
+        width: auto;
+        text-align: left;
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .logo {
+      .logo_mail_no {
+        height: 15mm;
+        text-align: center;
+
+        img {
+          height: 10mm;
+          width: 60mm;
+        }
+      }
+    }
+
+    .receive {
+      border-bottom: 1mm dashed #0b0c18;
+      .receive_info {
+        font-size: 10pt;
+        border-right: 1mm dashed #0b0c18;
+        .shipping_info {
+          height: 15mm;
+
+          .person {
+            width: auto;
+            float: left;
+          }
+          .message {
+            width: 75mm;
+            text-align: left;
+            float: right;
+          }
+        }
+        .billing_info {
+          height: 15mm;
+          border-bottom: 1mm dashed #0b0c18;
+          .person {
+            width: auto;
+            float: left;
+          }
+          .message {
+            width: 75mm;
+            text-align: left;
+            float: right;
+          }
+        }
+      }
+
+      .receive_content {
+        margin-left: -20px;
+        margin-top: 30px;
+        width: auto;
+        text-align: left;
+        span {
+          display: block;
+        }
+      }
+    }
+
+    .detail {
+      .item_info {
+        height: 20mm;
+        border-right: 1mm dashed #0b0c18;
+      }
+      border-bottom: 1mm dashed #0b0c18;
+
+      .title {
+        font-size: 8pt;
+        width: auto;
+        float: left;
+      }
+      .items {
+        font-size: 6pt;
+        width: auto;
+        margin: 10px;
+        float: left;
+        span {
+          display: block;
+        }
+      }
+      .package_no {
+        table {
+          width: 17mm;
+          height: 17mm;
+          border-width: 0;
+          border-style: none;
+          border-color: #0000ff;
+          border-collapse: collapse;
+        }
+
+        td {
+          border-left: solid 2px #000;
+          padding: 0;
+          margin: 0;
+          width: 0px;
+          height: 2px;
+        }
+
+        td.black {
+          border-color: #000;
+        }
+        td.white {
+          border-color: #fff;
+        }
+      }
+
+    }
+
+    .footer {
+      height: auto;
+      clear: both;
+      font-size: 9pt;
+    }
+  }
+}

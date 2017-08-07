@@ -1,0 +1,80 @@
+doctype html
+html
+	head
+	  meta charset="utf-8"
+	  meta content="width=device-width, initial-scale=1.0" name="viewport"
+		= display_meta_tags
+	  = stylesheet_link_tag 'rewards'
+	body class=['campaign','show','locale-zh-TW']
+		#fb-root
+		javascript:
+		  (function(d, s, id) {
+		    var js, fjs = d.getElementsByTagName(s)[0];
+		    if (d.getElementById(id)) return;
+		    js = d.createElement(s); js.id = id;
+		    js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8";
+		    fjs.parentNode.insertBefore(js, fjs);
+		  }(document, 'script', 'facebook-jssdk'));
+		header.header.container
+		  a.header-item.header-item-logo.logo href="https://commandp.com/zh-TW" title="我印"
+		  a.header-item.text-p href="https://commandp.com/zh-TW/works/new" title="開始印"  開始印
+		  a.header-item.text-p href="https://commandp.com/zh-TW/shop" title="設計師商店" 設計師商店
+		  a.header-item.text-p href="https://commandp.com/product/info?categoryKey=case" title="產品介紹" 產品介紹
+		  a.header-item.text-p href="https://commandp.com/mobile" title="APP" APP
+		  a.header-item.text-p href="https://commandp.com/b2b" title="大量訂製" 大量訂製
+		  a.m-header-logo href="https://commandp.com/zh-TW" title="我印"
+		    = image_tag 'rewards/m-logo.png' , class: 'woh'
+		main
+			.container
+				= yield
+		footer#footer.footer--desktop
+		  .cmdp_container
+		    .grid_6
+		      ul.f-nav
+		        li
+		          a href="http://bit.ly/1nMC8yU"  iOS APP
+		        li
+		          a href="/zh-TW/about"  關於我們
+		        li
+		          a href="/zh-TW/support"  聯絡我們
+		        li
+		          a href="/zh-TW/questions"  幫助
+		        li
+		          a href="/zh-TW/orders/order_status"  訂單狀態
+		        li
+		          a href="/zh-TW/careers"  加入我印
+		      ul.f-lang-nav
+		        li
+		          a href="/en/campaign/uglilybook"  English
+		        li
+		          a href="/zh-TW/campaign/uglilybook"  繁體中文
+		        li
+		          a href="/zh-CN/campaign/uglilybook"  简体中文
+		        li
+		          a href="/ja/campaign/uglilybook"  日本語
+		      ul.social
+		        li
+		          a.social-icon.icons-fb_normal.share_fb_feed href="https://www.facebook.com/commandpzh" target="_blank"  Facebook
+		        li
+		          a.social-icon.icons-twitter_normal.twitter-share-button data-count="none" data-related="twitterdev" href="https://twitter.com/share"  Twitter
+		        li
+		          a.social-icon.icons-instagram_normal href="https://instagram.com/commandptw" target="_blank"  Instagram
+		      p
+		        | Use of this Web site constitutes acceptance of the
+		        a href="/service_terms" > TERMS OF USE
+		        | Copyright © 2016, commandp Inc. All rights reserved.
+
+		footer.footer--mobile
+		  ul.social.tac
+		    li
+		      a.social-icon.icons-fb_normal.share_fb_feed href="https://www.facebook.com/commandpzh" target="_blank"  Facebook
+		    li
+		      a.social-icon.icons-twitter_normal.twitter-share-button data-count="none" data-related="twitterdev" href="https://twitter.com/share"  Twitter
+		    li
+		      a.social-icon.icons-instagram_normal href="https://instagram.com/commandptw" target="_blank"  Instagram
+		  p.tac
+		    | Copyright © 2016, commandp Inc.
+		    br
+		    | All rights reserved.
+
+		= javascript_include_tag 'rewards'

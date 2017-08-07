@@ -1,0 +1,34 @@
+h2 = category.key
+
+= link_to t('products.show.edit'), edit_admin_product_category_path(category), class: 'btn', remote: true
+
+table.table
+  thead
+    tr
+      th = t('products.show.locale')
+      th = t('products.show.name')
+
+  tbody
+    - I18n.available_locales.each do |locale|
+      tr
+        td = locale
+        td = category.send(category.localized_attr_name_for(:name, locale))
+
+p Available: #{category.available}
+p = "#{t('product_codes.material_codes.category')}: #{category.code}"
+p = "#{t('activerecord.attributes.product_category.tag_ids')}: #{category.tags.map(&:name).join(',')}"
+
+table.table
+  thead
+    th Version
+    th Image
+  today
+    tr
+      td 80*80
+      td = image_tag category.image.s80.url
+    tr
+      td 160*160
+      td = image_tag category.image.s160.url
+    tr
+      td Origin
+      td = image_tag category.image.url

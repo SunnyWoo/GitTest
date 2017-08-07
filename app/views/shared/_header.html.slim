@@ -1,0 +1,42 @@
+//Header
+header.header
+  .cmdp_container
+    .grid_1
+        - if Region.china?
+          = link_to '', root_url(host: Settings.host_cn), class: 'logo', title: t('site.name')
+        - else
+          = link_to '', root_url(host: Settings.host), class: 'logo', title: t('site.name')
+    .grid_5.nav
+      ul.nav-right
+        li= link_to edit_translator('page.btns.search'), '#', class: 'nav-icons icons-topbar_search_normal search_btn', title: t('page.btns.search')
+        li
+          = link_to cart_index_path, class: 'nav-icons icons-topbar_shoppingcart_normal', title: t('page.btns.shopping_cart') do
+            span.cart-items
+              = render_cart_items
+        li
+          - if normal_user_signed_in?
+            .nav-icons.profile-btn
+              = image_tag current_user.avatar.s35.url, alt: 'User avatar'
+              .profile_dropdown.hide
+                .arrow_t_int
+                ul
+                  li= link_to t('page.user.my_gallery'), works_users_path
+                  li= link_to t('page.user.profile'), profile_users_path
+                  li= link_to t('page.user.address'), address_users_path
+                  li= link_to t('page.user.order_history'), order_history_users_path
+                  li= link_to t('page.user.log_out'),destroy_user_session_path, method: :delete
+          - else
+            - if come_from_china?
+              = link_to t('page.btns.user'), new_user_session_path, class: 'nav-icons icons-topbar_login_normal profile', title: t('page.btns.user')
+            - else
+              i#login_popup.nav-icons.icons-topbar_login_normal.profile
+              = render '/shared/popup/login_popup'
+      .nav-left
+        - if come_from_china?
+          = link_to edit_translator('page.btns.app'), 'http://bit.ly/1nMC8yU', class: 'header-2'
+          = link_to edit_translator('page.btns.shop'), shop_index_url(host: Settings.host_cn), title: t('page.btns.shop'), class: 'header-2'
+          = link_to edit_translator('page.btns.create'), new_work_url(host: Settings.host_cn), title: t('page.btns.create'), class: 'header-2'
+        - else
+          = link_to edit_translator('page.btns.app'), 'http://bit.ly/1nMC8yU', class: 'header-2'
+          = link_to edit_translator('page.btns.shop'), shop_index_url(host: Settings.host), title: t('page.btns.shop'), class: 'header-2'
+          = link_to edit_translator('page.btns.create'), new_work_url(host: Settings.host), title: t('page.btns.create'), class: 'header-2'

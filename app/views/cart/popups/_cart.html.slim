@@ -1,0 +1,38 @@
+#cart-popup.popups
+  .popus-container
+    #cart-is-empty
+      .mobilev2-content.mobile-cart-content
+        .hide
+          .cart-item-block#cartdemoblock
+            img#image.cart-item-image.pull-left
+            p.cart-item-price#price.pull-right
+            p.cart-item-title#title
+            p.cart-item-model#model
+            .cart-item-btns
+              span.cart-item-del-text
+                = edit_translator('page.cart.btns.delete')
+              span.cart-item-qty-text
+                = edit_translator('page.cart_check_out.thead.td2')
+                | :
+              select#qty class=(browser.ios? ? 'cart-item-qty-value-ios' : 'cart-item-qty-value')
+                - for i in (1..9)
+                  option value=(i) #{i}
+        .cart-is-empty-notice
+          = image_tag 'campaign/mobilev2/cart_cart_empty.png'
+          br
+          = edit_translator('page.cart.text2')
+        .mobilev2-footer
+          = link_to t('page.btns.back_index'), shop_index_path
+    #cart-isnot-empty.hide
+      .mobilev2-content.mobile-cart-content
+        .cart-subtotal-block
+          = edit_translator('page.cart.span.subtotal')
+          span#cart-subtotal.pull-right
+
+        .mobilev2-footer.checkout-popup-open
+          = edit_translator('page.cart.btns.check_out')
+  .mobilev2-top
+    = edit_translator('page.cart.title')
+    .navs
+      span.cart-icon
+        i.fa.fa-shopping-cart

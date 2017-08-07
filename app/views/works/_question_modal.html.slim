@@ -1,0 +1,20 @@
+.modal.fade id=id
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h3.item-title.margin-top-fixed.text-center.quetionnaire-title 你填問卷我送優惠碼
+      .modal-body.text-center
+        p 請再給我們 1 分鐘的時間，協助參加我們的改善計畫調查。
+        br
+        p 參與完成後，我印團隊將會致贈一組 85 折優惠碼，
+        br
+        p 供你稍後結帳時直接折抵使用，感謝你的支持！
+        br
+        br
+        br
+        br
+        p.center-block.text-center
+          .quetionnaire-buttom
+            .btn.btn-cancel.btn-margin data-dismiss='modal'
+              = edit_translator('editor.delete.cancel')
+            = link_to edit_translator('questionnaire.join'), "https://docs.google.com/forms/d/1LnuQjFglXNNFiWYFivkyAqT84PqjWO8XFdBOVgjTvWU/viewform?c=0&w=1", class: 'btn btn-default', target: "_blank", id: 'questionnaire_link'

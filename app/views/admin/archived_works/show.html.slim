@@ -1,0 +1,42 @@
+- admin_title "#{@work.id} #{@work.name}", subtitle: @work.product_name
+- breadcrumb :admin_archived_work, @work
+
+= link_to '編輯', url_for([:edit, :admin, @work]), class: 'btn btn-success'
+
+= render 'admin/works/images', work: @work
+
+.page-header
+  h2 = t('works.show.page_title.layer_list', name: @work.name)
+
+= render 'admin/works/layers', work: @work
+= mount_react_app 'LayersEditor', { 'workId' => @work.id }, ['archivedLayers']
+
+.page-header
+  h2 = t('works.show.page_title.preview_list', name: @work.name)
+
+= render 'admin/works/previews', work: @work
+
+- @order_items.each do |order_item|
+  .row
+    .col-md-6
+      .page-header
+        - order_link = link_to(order_item.order_id, admin_order_path(order_item.order_id))
+        h2 = "Note (Order##{order_link})".html_safe
+      = render 'admin/notes/notes', noteable: order_item
+
+.row
+  .col-md-6
+    .page-header
+      h2 = t('works.show.page_title.status')
+
+    = render_activities @work.activities.from_old_to_new
+
+.page-header
+  h2 Work info
+table.table.table-striped.table-bordered.table-hover
+  tr
+    td UUID
+    td= @work.uuid
+  tr
+    td= t('shared.source')
+    td= @work.application.blank? ? t('shared.unknown_source') : @work.application.name

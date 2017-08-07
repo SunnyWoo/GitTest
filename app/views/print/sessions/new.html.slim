@@ -1,0 +1,27 @@
+.cmdp_container.user_login
+  .form.grid_4.prefix_1.suffix_1
+    h1.item-title.contact-title Login to commandp
+    .title-desc.text-center Thanks for coming back. We love you too.
+    .dotted-line
+      - if flash[:error]
+        .error.margin-top-fixed
+          i.alert
+          = flash[:error]
+      - if flash[:notice]
+        .notice.margin-top-fixed
+          i.mail
+          = flash[:notice]
+    .login_form
+      = simple_form_for @sign_in_factory_member, url: factory_member_session_path, method: 'post' do |f|
+        .form-field
+          = f.input :code, as: :string, label: 'Code'
+        .form-field
+          = f.input :username, as: :string, label: 'Username'
+        .form-field
+          = f.input :password, label: 'Password'
+        = check_box_tag :remember_me, 1, params[:remember_me] do
+        = label_tag :remember_me, 'Remember me', class: 'remember-me-label'
+
+        footer.margin-top-fixed
+          .text-center
+            = f.submit 'Login', class: 'btn btn-default'

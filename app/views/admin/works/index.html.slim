@@ -1,0 +1,75 @@
+- admin_title t('works.index.page_title')
+- breadcrumb :admin_works
+
+= render 'admin/works/nav', active: 'works'
+
+.well.well-small
+  h2
+    = t('works.index.search.search_work')
+    button.btn.btn-sm data-show-detail='.search-work-form' = t('works.index.search.expand')
+  = simple_form_for @search, url: admin_works_path, method: 'get', html: { class: 'search-work-form hide' } do |f|
+    .row
+      .span3
+        = f.input :slug_or_uuid_cont, required: false
+      .span3
+        = f.input :name_cont, required: false
+      .span3
+        = f.input :model_id_eq, label: t('works.attributes.model'),
+                  as: :grouped_select,
+                  collection: ProductCategory.all.includes(:translations, [products: :translations]),
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .hide
+        = f.input :work_type_eq
+        = f.input :price_tier_id_null
+        = f.input :finished_eq
+        = f.input :feature_eq
+      .span3
+        = f.button :submit, t('shared.form_actions.submit')
+
+= render 'admin/works/work_nav'
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          = sortable_links @search, %W(id cover_image print_image order_image email name description model special_price aasm_state feature impressions_count product_code operation), i18n_prefix: 'works.index.thead'
+        tbody
+          = content_tag_for :tr, @resources do |mt|
+            td= link_to mt.id, admin_work_path(mt)
+            td
+              = display_cover_image(mt)
+            td
+              = display_print_image(mt)
+              div = rebuild_print_image_link(mt)
+            td
+              = display_order_image(mt)
+              - if mt.print_image.present?
+                div = rebuild_order_image_link(mt)
+            td= link_to mt.user_display_name, admin_user_path(mt.user)
+            td= link_to mt.name, url_for([:admin, mt]) if mt.name.present?
+            td= simple_format(mt.description)
+            td= mt.product_name
+            td= render_item_price(mt) if mt.price_tier
+            td= I18n.t("work.work_type.#{mt.work_type}")
+            td= mt.feature
+            td= mt.impressions_count
+            td= mt.product_code
+            td
+              - if params[:deleted].to_b
+                = link_to t('shared.form_actions.restore'), restore_admin_work_path(mt), method: :post, class: 'btn btn-minier btn-danger', data: {confirm: t('shared.confirm.restore')}
+              - else
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-minier btn-info'
+                = link_to t('shared.form_actions.history'), admin_work_history_path(mt), class: 'btn btn-minier btn-info'
+                = link_to t('shared.form_actions.delete'), url_for([:admin, mt]), method: :delete, class: 'btn btn-minier btn-danger', data: { confirm: t('shared.confirm.delete') }
+
+= will_paginate @resources

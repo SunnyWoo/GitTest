@@ -1,0 +1,8 @@
+.row
+  - work.previews.each do |preview|
+    .col-md-3.span3 id=dom_id(preview)
+      h3 = preview.key
+      = image_tag preview.image.url
+      - unless preview.high_quality
+        .alert.alert-warning 注意: 此為使用 cover image 製作之低畫質版本.
+      = link_to t('shared.form_actions.delete'), admin_preview_path(preview), class: 'btn btn-danger', data: {method: 'delete', remote: true}

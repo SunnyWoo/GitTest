@@ -1,0 +1,7 @@
+en:
+  activemodel:
+    attributes:
+      admin/change_price_event_form:
+        target_ids: Items
+        price_tier_id: Price
+        target_type: TargetType

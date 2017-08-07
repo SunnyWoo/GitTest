@@ -1,0 +1,24 @@
+- admin_title t('recommend_sorts.index.page_title')
+- breadcrumb :admin_recommend_sorts
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('recommend_sorts.index.thead.design_platform')
+            th= t('recommend_sorts.index.thead.sort')
+            th= t('recommend_sorts.index.thead.operation')
+        tbody
+          - @resources.each do |resource|
+            tr
+              td= resource.design_platform
+              td= I18n.t('recommend_sorts.sort_options')[resource.sort.to_sym]
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, resource]), class: 'btn btn-info'

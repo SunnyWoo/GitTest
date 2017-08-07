@@ -1,0 +1,29 @@
+.home-block {
+  border: 1px solid darkgray;
+  margin: 1em 0;
+}
+
+.home-block-id {
+  float: left;
+  font-size: 85%;
+  color: gray;
+}
+
+.home-block-item-id {
+  font-size: 85%;
+  color: gray;
+}
+
+.home-block-item-title, .home-block-item-subtitle, .home-block-item-href {
+  text-align: center;
+}
+
+.home-block-item-image {
+  height: 200px;
+  width: 20%;
+  display: inline-block;
+}
+
+.home-block-item-image-text {
+  text-align: center;
+}

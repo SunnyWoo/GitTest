@@ -1,0 +1,10 @@
+- order = activity.trackable
+- email = activity.extra_info[:email]
+- message_id = activity.extra_info[:message_id]
+- locale = activity.extra_info[:locale] || I18n.default_locale.to_s
+div 寄出了 #{link_to_admin_order order} 的付款資訊至 #{email}，語系為 #{locale}.
+- if message_id.present?
+  div
+    = link_to '信件內容', admin_message_path(message_id), data: {open_in_dialog: true}
+    | |
+    = link_to t('shared.form_actions.resend'), resend_admin_message_path(message_id), data: {disable_on_submit: true, remote: true, method: 'post', confirm: "#{t('shared.form_actions.resend')} ?"}

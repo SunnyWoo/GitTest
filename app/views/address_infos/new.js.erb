@@ -1,0 +1,15 @@
+
+<%
+  id = dom_id(@address_info, :create)
+  r_path = check_out_cart_index_path
+  r_path = address_users_path if @page == 'profile'
+  new_form = j render 'new', id: id, address_info: @address_info, r: r_path
+%>
+$('#<%= @id %>').html('<%= new_form %>').removeClass('hide').show();
+$('#cancel_<%= id %>').on('click', function() {
+  $('#<%= @id %>').hide();
+  <% if @page == 'profile' %>
+    $("#new_address_info_form").parent('li').find('.arti-header .content').hide()
+  <% end %>
+  return false;
+});

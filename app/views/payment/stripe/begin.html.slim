@@ -1,0 +1,51 @@
+.cmdp_container
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center
+      = edit_translator("activerecord.attributes.order.payment_#{@order.payment_method}")
+    .cart_wording = edit_translator('page.cart_check_out.text1')
+    .divider_line
+      = image_tag('editor/divider_line.png')
+  .grid_6
+
+    = form_for :order, url: @url, html: { id: 'new_order_stripe' }, data: { form_timeout: true, millisecond: Settings.payment_timeout.to_i * 1000, redirect_to: finish_payment_stripe_path(order_no: @order.order_no)} do |f|
+      .order-sprite
+        = f.hidden_field :stripe_card_token
+        div.text_field
+          .label
+            = label_tag :card_number, "Credit Card Number"
+            span.required
+              | (Required)
+          .card-number
+            = text_field_tag :card_number_1, nil, name: "card_number_1", placeholder: '0000', maxlength: 4, class: 'input-col'
+            .dash -
+            = text_field_tag :card_number_2, nil, name: "card_number_2", placeholder: '0000', maxlength: 4, class: 'input-col'
+            .dash -
+            = text_field_tag :card_number_3, nil, name: "card_number_3", placeholder: '0000', maxlength: 4, class: 'input-col'
+            .dash -
+            = text_field_tag :card_number_4, nil, name: "card_number_4", placeholder: '0000', maxlength: 4, class: 'input-col'
+            .error
+        div.text_field
+          .label
+            = label_tag :card_month, "Expiration Date"
+            span.required
+              | (Required)
+          .ex-date
+            = text_field_tag :card_month, nil, name: "card_month", placeholder: 'MM', maxlength: 2, class: 'input-col'
+            .dash
+              | /
+            = text_field_tag :card_year, nil, name: "card_year", placeholder: 'YY', maxlength: 2, class: 'input-col'
+            .error
+        div.text_field
+          .label
+            = label_tag :card_code, "CVC"
+            span.required
+              | (Required)
+          .card-code
+            = text_field_tag :card_code, nil, name: "card_code", maxlength: 3, class: 'input-col'
+            .error
+
+        .field
+          = submit_tag "Pay #{render_subtotal(@order)}", class: "btn btn-default"
+        #stripe_error
+          noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.

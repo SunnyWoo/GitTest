@@ -1,0 +1,10 @@
+<% id = dom_id(@form.profile, :edit) %>
+$('body').append('<%= j render 'modal', id: id, form: @form %>');
+$('#<%= id %>').modal('show');
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});
+
+$('#<%= id %>').on('shown.bs.modal', function(){
+  $('#<%= id %>').find('.select2').select2({minimumInputLength: 1});
+})

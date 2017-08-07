@@ -1,0 +1,13 @@
+.modal.fade id="create_adjustment"
+  .modal-dialog
+    .modal-content
+      = simple_form_for :adjustment, url: admin_order_adjustments_path(order), method: :post do |f|
+        .modal-header
+          a.close href="#" data-dismiss="modal"  ×
+          h3 = t('orders.adjustment_creation.title')
+        .modal-body.center
+          = f.input :value, as: :float
+          = f.input :description, as: :text
+        .modal-footer
+          a.close.btn href="#" data-dismiss="modal" cancel
+          = f.button :submit, t('shared.form_actions.submit'), data: { confirm: t('shared.confirm.submit') }

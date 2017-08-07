@@ -1,0 +1,84 @@
+main {
+  @include rem(padding-top, 60px);
+  @include bp(mobile) {
+    @include rem(padding-top, 30px);
+  }
+}
+
+.emptyParagraph {
+  height: 16px;
+}
+
+.emptyParagraph--l {
+  height: 24px;
+}
+
+.separationLine {
+  display: block;
+  @include rem(height, 1px);
+  background-color: $c-separationLine;
+  @include rem(margin, 30px);
+  @include bp(mobile) {
+    @include rem(margin, 30px);
+  }
+}
+
+.stepWrapper {
+	@include rem(margin-bottom, 120px);
+  @include bp(mobile) {
+    @include rem(margin-bottom, 30px);
+  }
+}
+
+.stepWrapper-title {
+	@include rem(margin-bottom, 60px);
+  @include bp(mobile) {
+    @include rem(margin-bottom, 30px);
+  }
+}
+
+input[type="radio"],
+input[type="file"],
+input[type="checkbox"] {
+  display: none;
+}
+
+.moreOption {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+  @include bp(mobile) {
+    @include rem(bottom, 10px);
+    @include rem(right, 0);
+  }
+  p {
+    @include rem(margin-right, 30px);
+    @include bp(mobile) {
+      @include rem(margin-right, 0);
+      position: absolute;
+      @include rem(right, 10px);
+      @include rem(top, -25px);
+      @include rem(font-size, $fz-s);
+    }
+  }
+}
+.moreOption-item {
+  border: 1px solid $c-border;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  &.active {
+    border-color: $c-border-highlight;
+  }
+}
+
+@include bp(mobile) {
+  form {
+    @include rem(margin-bottom, 30px)
+  }
+}

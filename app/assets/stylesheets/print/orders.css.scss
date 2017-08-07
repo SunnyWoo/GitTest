@@ -1,0 +1,17 @@
+.schedule_type{
+  .btn {
+    color: #333 !important;
+    border: 5px solid #fff;
+  }
+
+  .active {
+    border: 5px solid #abbac3;
+  }
+
+  .expedited {
+    background: yellow !important;
+  }
+  .urgent {
+    background: red !important;
+  }
+}

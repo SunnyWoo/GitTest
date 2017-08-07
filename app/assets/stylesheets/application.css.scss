@@ -1,0 +1,86 @@
+/*
+  *= require fancybox
+  *= require font-awesome
+  *= require tooltipster
+  *= require theme
+  *= require home
+  *= require_tree ./common
+  *= require_self
+  *= require_tree ./campaign
+*/
+
+@import "beta/plugins/loading";
+
+@import "beta/vendor";
+@import "beta/default";
+@import "beta/mixins";
+@import "beta/progress_bar";
+@import "beta/animate";
+@import "beta/utility";
+@import "beta/typography";
+@import "beta/button";
+@import "beta/conflict_fixed";
+@import "beta/header";
+@import "beta/slick";
+@import "beta/pagination";
+@import "beta/home";
+@import "beta/kv_style";
+@import "beta/faq";
+@import "beta/support";
+@import "beta/terms_privacy";
+@import "beta/career";
+@import "beta/article";
+@import "beta/detail";
+@import "beta/my_gallery";
+@import "beta/preview";
+@import "beta/cart";
+@import "beta/check_out";
+@import "beta/summary";
+@import "beta/profile";
+@import "beta/shop";
+@import "editor/ui_sprite";
+@import "editor/preview";
+@import "beta/plugins/modals";
+@import "beta/icon";
+@import "beta/profile_address";
+@import "beta/profile_order";
+@import "beta/profile_order_history";
+@import "beta/order_results";
+@import "beta/order_stripe";
+@import "beta/footer";
+@import "beta/special_price";
+@import "beta/sign_in";
+@import "beta/sign_up";
+@import "beta/login_social_links";
+@import "beta/qrcode";
+@import "search";
+@import "modal/modal2";
+
+.edit-able {
+  width: 250px;
+  margin: 0 auto;
+  input {
+    @extend .pull-left;
+    border: 1px solid $line-color;
+    padding: 0 10px;
+  }
+  button {
+    @extend .pull-left;
+    @extend .btn;
+    min-width: 43px;
+    height: 43px;
+    background-color: $main-color;
+    padding: 0;
+    opacity: 1;
+    &:hover {
+      background-color: $main-color;
+      opacity: .8;
+    }
+    span {
+      display: block;
+      width: 30px;
+      height: 20px;
+      margin-left: 7px;
+    }
+  }
+}

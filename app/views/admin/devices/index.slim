@@ -1,0 +1,23 @@
+- admin_title t('devices.sidebar_name')
+- breadcrumb :admin_devices
+
+= will_paginate @devices
+
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th = sort_link(@search, :id)
+      th = sort_link(@search, :token)
+      th = sort_link(@search, :endpoint_arn)
+      th = sort_link(@search, :is_enabled)
+      th = sort_link(@search, :updated_at)
+  tbody
+    - @devices.each do |device|
+      tr
+        td = device.id
+        td = device.token
+        td = device.token
+        td = device.is_enabled
+        td = device.updated_at
+
+= will_paginate @devices

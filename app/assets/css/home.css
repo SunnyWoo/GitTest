@@ -1,0 +1,287 @@
+/*
+  *= require normalize
+  *= require_self
+*/
+/* line 7, ../stylesheets/home.scss */
+#home.content {
+  padding: 0; }
+  /* line 9, ../stylesheets/home.scss */
+  #home.content .promotion {
+    width: 100%;
+    background-color: #00C694;
+    position: relative;
+    height: 493px; }
+  /* line 15, ../stylesheets/home.scss */
+  #home.content #promotion-header {
+    background: url('/images/img_prelaunchmain_phone.png?1476379220') no-repeat;
+    height: 500px;
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    top: -6px; }
+    /* line 22, ../stylesheets/home.scss */
+    #home.content #promotion-header .promotion-slogan {
+      margin-left: 530px;
+      padding-top: 90px;
+      margin-bottom: 40px; }
+    /* line 27, ../stylesheets/home.scss */
+    #home.content #promotion-header .download-apps {
+      margin-left: 530px;
+      margin-top: 40px; }
+      /* line 30, ../stylesheets/home.scss */
+      #home.content #promotion-header .download-apps img.android {
+        margin-left: 10px; }
+      /* line 33, ../stylesheets/home.scss */
+      #home.content #promotion-header .download-apps span {
+        display: block;
+        color: white;
+        font-family: 'Helvetica';
+        margin-top: 10px; }
+    /* line 43, ../stylesheets/home.scss */
+    #home.content #promotion-header h2 {
+      color: white;
+      font-size: 52px;
+      margin: 5px 0; }
+    /* line 48, ../stylesheets/home.scss */
+    #home.content #promotion-header p {
+      margin-top: 50px;
+      color: white;
+      font-size: 22px; }
+    /* line 53, ../stylesheets/home.scss */
+    #home.content #promotion-header .promotion-sub-words {
+      margin-left: 530px; }
+      /* line 55, ../stylesheets/home.scss */
+      #home.content #promotion-header .promotion-sub-words ul {
+        list-style: disc outside;
+        margin-left: 30px; }
+        /* line 58, ../stylesheets/home.scss */
+        #home.content #promotion-header .promotion-sub-words ul li {
+          color: #FFF;
+          font-size: 20px;
+          line-height: 32px; }
+  /* line 67, ../stylesheets/home.scss */
+  #home.content .wrap section.about {
+    background: url('/images/bg_line.png?1476379220') center top no-repeat; }
+  /* line 70, ../stylesheets/home.scss */
+  #home.content .wrap section.form {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 0 60px;
+    padding-top: 60px;
+    width: 1100px;
+    margin-bottom: 60px;
+    background: url('/images/bg_line.png?1476379220') center bottom no-repeat; }
+    /* line 78, ../stylesheets/home.scss */
+    #home.content .wrap section.form h1 {
+      color: #4da684;
+      font-size: 52px;
+      margin: 0 0 20px; }
+    /* line 83, ../stylesheets/home.scss */
+    #home.content .wrap section.form p {
+      font-size: 32px;
+      margin-bottom: 0; }
+    /* line 87, ../stylesheets/home.scss */
+    #home.content .wrap section.form .input-group {
+      position: relative;
+      display: table;
+      border-collapse: separate;
+      width: 50%;
+      margin: 0 auto; }
+    /* line 94, ../stylesheets/home.scss */
+    #home.content .wrap section.form form#new_marketing {
+      margin-top: 60px; }
+    /* line 97, ../stylesheets/home.scss */
+    #home.content .wrap section.form input#marketing_email {
+      height: 54px;
+      padding: 6px 12px;
+      font-size: 22px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      position: relative;
+      z-index: 2;
+      float: left;
+      width: 100%;
+      margin-bottom: 0;
+      display: table-cell;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0; }
+      /* line 119, ../stylesheets/home.scss */
+      #home.content .wrap section.form input#marketing_email:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    /* line 126, ../stylesheets/home.scss */
+    #home.content .wrap section.form input#marketing_email.has-error {
+      border-color: #a94442;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      padding-left: 30px; }
+    /* line 132, ../stylesheets/home.scss */
+    #home.content .wrap section.form .error-icon {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      color: #a94442;
+      z-index: 999;
+      font-size: 2em; }
+    /* line 145, ../stylesheets/home.scss */
+    #home.content .wrap section.form .error-message {
+      color: #a94442;
+      margin-top: 15px; }
+    /* line 150, ../stylesheets/home.scss */
+    #home.content .wrap section.form .input-group-btn {
+      position: relative;
+      font-size: 0;
+      white-space: nowrap;
+      width: 1%;
+      vertical-align: middle;
+      display: table-cell; }
+      /* line 157, ../stylesheets/home.scss */
+      #home.content .wrap section.form .input-group-btn .btn {
+        height: 54px;
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 42px;
+        font-size: 24px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #333;
+        background-color: #F3F3F3;
+        border-color: #ccc;
+        position: relative;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        margin-left: -1px; }
+  /* line 186, ../stylesheets/home.scss */
+  #home.content .wrap .anouncement {
+    font-size: 16px;
+    color: #999999;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 53px; }
+    /* line 193, ../stylesheets/home.scss */
+    #home.content .wrap .anouncement ol {
+      margin-bottom: 0; }
+  /* line 195, ../stylesheets/home.scss */
+  #home.content .wrap .two-columns {
+    text-align: center;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    background: url('/images/bg_line.png?1476379220') center bottom no-repeat; }
+  /* line 201, ../stylesheets/home.scss */
+  #home.content .wrap .left, #home.content .wrap .right {
+    width: 50%;
+    float: left; }
+    /* line 204, ../stylesheets/home.scss */
+    #home.content .wrap .left h2, #home.content .wrap .right h2 {
+      font-size: 32px;
+      color: #333333;
+      font-family: 'Raleway', sans-serif;
+      font-weight: bold; }
+    /* line 210, ../stylesheets/home.scss */
+    #home.content .wrap .left span, #home.content .wrap .right span {
+      display: block;
+      margin: 0 auto;
+      width: 380px;
+      color: #333333;
+      font-size: 18px;
+      line-height: 1.5; }
+  /* line 219, ../stylesheets/home.scss */
+  #home.content .wrap .coupon-code {
+    margin: 8px 0; }
+    /* line 221, ../stylesheets/home.scss */
+    #home.content .wrap .coupon-code input {
+      width: 520px;
+      padding: 15px 10px;
+      margin-top: 15px;
+      font-size: 20px;
+      color: #455055;
+      border: 1px solid #e1e1e1;
+      text-align: center;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
+
+/* line 235, ../stylesheets/home.scss */
+.success-box, .error-box {
+  min-height: 181px;
+  text-align: center;
+  background-image: url('/images/bg_prelaunchmain_popup.png?1476379220');
+  font-size: 22px; }
+  /* line 236, ../stylesheets/home.scss */
+  .success-box a.fancy-close, .error-box a.fancy-close {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: url('/images/btn_prelaunchmain_popup_close_pressed.png?1476379220');
+    top: 15px;
+    right: 15px; }
+  /* line 246, ../stylesheets/home.scss */
+  .success-box .message, .error-box .message {
+    padding-top: 70px; }
+  /* line 252, ../stylesheets/home.scss */
+  .success-box span, .error-box span {
+    padding-left: 15px; }
+
+/* line 255, ../stylesheets/home.scss */
+.success-box {
+  color: #66cc99; }
+
+/* line 259, ../stylesheets/home.scss */
+.error-box {
+  color: #cc0000; }
+
+/* line 263, ../stylesheets/home.scss */
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color: #666666; }
+
+/* line 268, ../stylesheets/home.scss */
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color: #666666; }
+
+/* line 273, ../stylesheets/home.scss */
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color: #666666; }
+
+/* line 278, ../stylesheets/home.scss */
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color: #666666; }

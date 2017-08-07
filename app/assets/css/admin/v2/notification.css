@@ -1,0 +1,28 @@
+/* line 1, ../../../stylesheets/admin/v2/notification.scss */
+.add-margin {
+  margin-bottom: 10px; }
+
+/* line 5, ../../../stylesheets/admin/v2/notification.scss */
+.read-only {
+  background-color: #EEE; }
+
+/* line 9, ../../../stylesheets/admin/v2/notification.scss */
+.form-inline .noti-country {
+  margin-bottom: 10px;
+  min-width: 200px; }
+
+/* line 14, ../../../stylesheets/admin/v2/notification.scss */
+.noti-infobox-fixed {
+  margin-top: 50px;
+  height: auto;
+  width: 250px;
+  padding: 10px 15px; }
+
+/* line 21, ../../../stylesheets/admin/v2/notification.scss */
+.noti-input-fixed {
+  margin-top: 10px; }
+
+/* line 25, ../../../stylesheets/admin/v2/notification.scss */
+.noti-notice {
+  margin-top: 12px;
+  margin-left: 10px; }

@@ -1,0 +1,6 @@
+ul.nav.nav-tabs
+  li class=('active' if active == 'watching_order')
+    = link_to admin_dashboard_watching_order_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('dashboard.watching_order')
+      span.badge.badge-danger = orders_count

@@ -1,0 +1,186 @@
+#setObj {
+  position: fixed;
+  top: 71px;
+  right: 0;
+  width: 216px;
+  border-left: 1px solid $line-color;
+  background-color: #FFF;
+  overflow: auto;
+  z-index: 1;
+  .item {
+    border-bottom: 1px solid $line-color;
+    padding: 10px;
+    .slider {
+      padding: 25px 0 20px;
+    }
+    .name, .value {
+      font-size: 0.86em;
+      color: $sub-words-color;
+    }
+    .symbol-normal, .symbol-rotate {
+      font-size: 0.86em;
+      color: $sub-words-color;
+    }
+    .symbol-rotate {
+      i {
+        width: 8px;
+        height: 8px;
+        font-size: 8px;
+      }
+    }
+    .group {
+      @extend .clearfix;
+      i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+      .edittools-reflect_v_normal:hover {
+        @extend .edittools-reflect_v_hover;
+      }
+      .edittools-reflect_h_normal:hover {
+        @extend .edittools-reflect_h_hover;
+      }
+      .edittools-center_v_normal:hover {
+        @extend .edittools-center_v_hover;
+      }
+      .edittools-center_h_normal:hover {
+        @extend .edittools-center_h_hover;
+      }
+      .edittools-aligncenter_normal:hover {
+        @extend .edittools-aligncenter_hover;
+      }
+      .edittools-alignleft_normal:hover {
+        @extend .edittools-alignleft_hover;
+      }
+      .edittools-alignright_normal:hover {
+        @extend .edittools-alignright_hover;
+      }
+      .edittools-delete_normal:hover {
+        @extend .edittools-delete_hover;
+      }
+    }
+    .g-1 {
+      i {
+        margin: 15px auto;
+      }
+    }
+    .g-2 {
+      i {
+        @extend .pull-left;
+        margin: 15px 34px;
+      }
+    }
+    .g-3 {
+      i {
+        @extend .pull-left;
+        margin: 15px 12px;
+      }
+      .edittools-aligncenter_normal {
+        margin: 15px 28px;
+      }
+    }
+    .form {
+      margin: 15px 0;
+      textarea {
+        width: 96%;
+        height: 70px;
+        border: 1px solid $line-color;
+      }
+      .font-current {
+        width: 98%;
+        height: 36px;
+        line-height: 36px;
+        border: 1px solid $line-color;
+        text-align: center;
+        font-weight: 400;
+        cursor: pointer;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  .btn-editor {
+    min-width: 194px;
+  }
+}
+
+#input-text {
+  width: 172px;
+  height: 45px;
+  border: 1px solid $line-color;
+  padding: 0 10px;
+}
+
+// update color picker style
+.sp-replacer {
+  position: relative;
+  width: 185px;
+  height: 30px;
+  border: 1px solid $line-color;
+  background-color: #FFF;
+  &:hover, &.sp-active {
+    border: 1px solid shade($line-color, 20%);
+    .sp-dd {
+      background-color: $main-color;
+    }
+  }
+}
+.sp-preview {
+  width: 100%;
+  height: 30px;
+  border: 0;
+}
+.sp-container {
+  border: 1px solid $line-color;
+  background-color: #FFF;
+  .sp-choose {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    border: 0;
+    color: #FFF;
+    padding: 0;
+    height: 50px;
+    min-width: 194px;
+    background: $main-color;
+    opacity: 1;
+    @include border-radius(0);
+    &:hover {
+      background: $main-color;
+      border: 0;
+      opacity: .8;
+    }
+  }
+}
+.sp-slider {
+  height: 2px;
+  border: 1px solid shade($line-color, 50%);
+  background-color: shade($line-color, 50%);
+}
+.sp-color, .sp-hue, .sp-initial {
+  border: 1px solid shade($line-color, 20%);
+}
+.sp-container {
+  position: inherit;
+}
+.sp-dd {
+  display: none;
+  // position: absolute;
+  // text-indent: -9999px;
+  // background: $line-color image_url('editor/color.png') center center scroll no-repeat;
+  // top: 0px;
+  // right: 0px;
+  // width: 41px;
+  // height: 34px;
+}
+.sp-button-container {
+  .sp-cancel {
+    display: none;
+  }
+}
+.color-container {
+  position: inherit;
+}

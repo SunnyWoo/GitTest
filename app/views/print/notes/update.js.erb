@@ -1,0 +1,2 @@
+$("#tr_note_<%= @note.id %>").after('<%= j render 'note', note: @note, readonly: false %>')
+$("#tr_note_<%= @note.id %>:first").remove()

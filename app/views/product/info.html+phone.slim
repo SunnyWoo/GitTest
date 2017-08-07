@@ -1,0 +1,71 @@
+.owl-carousel id="product_intro_kv"  data-key=@categoryKey
+  - @product[:m_kv].each do |kv|
+    .kv_middle
+      = image_tag product_page_asset_url(kv[:image]), class: 'carousel-img', alt: kv[:alt], lazy: false
+
+.productintro-page
+  .m-announcement = @title
+  .productintro-header-block
+    .mobile-v2-title
+      = @product[:m_feature_title]
+    .productintro-header-subtitle
+      = @product[:m_feature_subtitle]
+    a.productintro-header-btn data-key=@categoryKey
+      = @product[:m_customize_button]
+
+  .productintro-feature-block
+    - @product[:m_features].each do |feature|
+      .table
+        .table-row
+          .feature-item
+            .table-cell
+              .icon-block
+                img.feature-icon src=product_page_asset_url(feature[:icon])
+            .content-block.table-cell
+              .title-block
+                .title
+                  = feature[:title]
+                .arrow-icon
+              .content
+                = feature[:content]
+    = image_tag product_page_asset_url(@product[:m_spec_image_url]), class: 'productintro-spec-image', lazy: false
+
+  .productintro-feature-block
+    - @product[:m_specs].each do |spec|
+      .table
+        .table-row
+          .feature-item.spec-item
+            .table-cell
+              .icon-block
+                img.spec-icon src=product_page_asset_url(spec[:icon])
+            .content-block.table-cell
+              .title
+                = spec[:title]
+              .content
+                = spec[:content]
+
+  .owl-carousel.lucky2016m-kv-go-info.productintro-desc-kv
+    - @product[:m_image_row_images].each do |desc|
+      .kv_middle
+        = image_tag product_page_asset_url(desc), class: 'carousel-img', lazy: false
+
+  .owl-carousel.lucky2016m-kv-go-info.productintro-step-kv
+    - @product[:m_tutorial_kv_images].each do |tutorial|
+      .kv_middle
+        = image_tag product_page_asset_url(tutorial), class: 'carousel-img', lazy: false
+
+  .productintro-price-block
+    h1.title
+      = @product[:m_customize_title]
+    h2.subtitle
+      = @product[:m_customize_subtitle]
+    h3.divider
+    .price-block
+      span.old-price
+        = @product[:m_customize_original_price]
+      span.new-price
+        = @product[:m_customize_price]
+    .productintro-header-btn.make-btn
+      = @product[:m_customize_button]
+
+#campaing_inof.hidden data=({key: @key})

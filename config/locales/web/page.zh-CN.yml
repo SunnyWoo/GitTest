@@ -1,0 +1,67 @@
+zh-CN:
+  page:
+    title:
+      featured_products: 推荐商品
+      dont_take_our: 看看他们怎么说
+      you_may_also_like: 你也许也会喜欢
+    text:
+      sort: 排序
+      model: 产品类型
+      category: 类别
+      qty: 数量
+      free_shipping: 全球直送
+      desc: 描述
+      shipping: 运送
+      shipping_desc: '国际运送 10-12 天。若需急件结帐时亦有快件选项可选择。'
+      new_year:
+        shipping_desc: "国际运送 10-12 工作天。因应中国新年假期，订单延迟至2/24 开始寄送。若有急件需求者，可于结帐页面选择快速运送，2/24 起优先出货。"
+      not_support_mobile: '很抱歉，此功能暂不支援手机版页面'
+      not_support_mobile_ios:
+        - '为提供给您更优质及顺畅的购物体验，'
+        - '请点以下下载iOS APP，'
+        - '或以电脑开启使用服务。'
+      not_support_mobile_android:
+        - '为提供给您更优质及顺畅的购物体验，'
+        - '请点以下下载android APP，'
+        - '或以电脑开启使用服务。'
+      no_product_found: 抱歉！目前没有这个类型的产品。
+    btns:
+      search: 搜寻
+      shopping_cart: 购物车
+      user: 使用者
+      shop: 设计师商店
+      create: 开始印
+      app: iOS APP
+      about_us: 关于我们
+      help: 帮助
+      contact_us: 联络我们
+      order_status: 订单状态
+      careers: 职缺
+      add_to_cart: 加入购物车
+      added: 已加入购物车
+      adding: 加入中...
+      removing: 移出中...
+      redeem: 立即兑换
+    login:
+      title: 加入我们的会员
+      notice: 立即注册，只需几秒钟。
+      connect_to_facebook: "连结至FACEBOOK"
+    support:
+      select_q_class: 请选择你的问题分类。
+      enter_q_content: "请详细输入你的问题内容。"
+    preview:
+      rendering: 预览图制作中
+  mobile:
+    passwords:
+      successfully_modified: '修改密码成功'
+      reset_password: '请重新设定密码'
+      reset: '重置密码'
+    confirmations:
+      successfully_confirmed: '验证连结验证成功'
+      confirmation_expired: '验证连结已失效'
+      invalid_token: '点选以下按钮回到应用程序登录'
+      successfully_send: '请至 Email 收取验证信'
+      resend: '重新发送'
+    shared:
+      back_to_app: '回到应用程序'
+

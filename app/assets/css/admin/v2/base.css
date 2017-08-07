@@ -1,0 +1,65 @@
+/* line 1, ../../../stylesheets/admin/v2/base.scss */
+img {
+  max-width: 100%; }
+
+/* line 5, ../../../stylesheets/admin/v2/base.scss */
+.btn {
+  margin-right: 5px; }
+
+/* line 9, ../../../stylesheets/admin/v2/base.scss */
+.cpa-filter-input {
+  float: left;
+  background-color: #2283C5;
+  padding: 6px 12px;
+  min-width: 150px;
+  height: 42px;
+  margin-right: 10px;
+  margin-bottom: 10px; }
+  /* line 18, ../../../stylesheets/admin/v2/base.scss */
+  .cpa-filter-input .cpa-select-input {
+    margin-right: 10px; }
+  /* line 22, ../../../stylesheets/admin/v2/base.scss */
+  .cpa-filter-input .cpa-date-input {
+    padding: 0 10px;
+    width: 155px;
+    height: 29px; }
+  /* line 28, ../../../stylesheets/admin/v2/base.scss */
+  .cpa-filter-input .del {
+    background-color: #64a8d6;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-top: 2px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer; }
+
+/* line 46, ../../../stylesheets/admin/v2/base.scss */
+.default-filter {
+  margin-right: 10px; }
+
+/* line 50, ../../../stylesheets/admin/v2/base.scss */
+.padding-right {
+  margin-right: 15px; }
+
+/* line 54, ../../../stylesheets/admin/v2/base.scss */
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* line 58, ../../../stylesheets/admin/v2/base.scss */
+.error {
+  color: #d16e6c; }
+
+/* line 62, ../../../stylesheets/admin/v2/base.scss */
+label.inline {
+  margin-right: 10px; }
+
+/* line 67, ../../../stylesheets/admin/v2/base.scss */
+.modal .select2-container {
+  width: 100%; }

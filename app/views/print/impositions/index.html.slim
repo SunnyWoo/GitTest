@@ -1,0 +1,10 @@
+.page-header
+  h1 = t('impositions.index.page_title')
+
+- @categories.each do |category|
+  - products = category.products
+  h2 = category.name || category.key
+  - if products.size > 0
+    = render 'products', products: products
+  - else
+    | (未建立 ProductModel)

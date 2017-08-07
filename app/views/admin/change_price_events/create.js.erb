@@ -1,0 +1,6 @@
+<% if @save_flag %>
+  window.location.href = "<%= admin_change_price_events_path %>";
+<% else %>
+  $('.error_messages', '.event_form').html("<%= j render('admin/shared/form_error_notification', errors: @form.errors.full_messages) %>")
+  $("input[type='submit']", '.event_form').attr('disabled', false)
+<% end %>

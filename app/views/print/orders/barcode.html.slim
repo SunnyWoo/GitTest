@@ -1,0 +1,9 @@
+= hidden_field_tag :order_no, @order.order_no
+p style='padding-top: 2px;' 中国站订单编号
+#order_no_barcode
+
+- if @order.remote_id.present?
+  = hidden_field_tag :deliver_order_no, @order.remote_info['order_no']
+  p style='padding-top: 2px;page-break-before: always' 台湾站订单编号
+  #deliver_order_no_barcode
+= javascript_include_tag 'print'

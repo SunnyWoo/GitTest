@@ -1,0 +1,36 @@
+- admin_title t('works.edit.page_title.edit', name: @resource.name), subtitle: @resource.product_name
+- breadcrumb :edit_admin_work, @resource
+
+= render 'images', work: @resource
+
+.page-header
+  h2 編輯作品
+
+  = simple_form_for(@resource, as: :work, url: [:admin, @resource], class: 'form-horizontal') do |f|
+    = f.error_notification
+    - if @resource.user.is_a?(Designer) || @resource.user.role.to_s == 'designer'
+      = f.input :slug, label: t('works.attributes.key')
+      = f.input :name, label: t('works.attributes.name')
+      = f.input :description, label: t('works.attributes.description')
+      .well
+        h3 = t('works.edit.change_product_notice')
+        = f.input :model_id, label: t('works.attributes.spec'),
+                             as: :grouped_select,
+                             collection: ProductCategory.all,
+                             group_method: :products,
+                             group_label_method: :name,
+                             label_method: :name,
+                             value_method: :id,
+                             include_blank: false
+      .upload-previewer
+      = f.input :print_image, as: :file, label: t('works.attributes.print_image'), input_html: { data: { preview_at: '.upload-previewer' } }
+      = f.input :work_type, label: t('works.attributes.work_type'), collection: Work::WORK_TYPES, include_blank: false
+      = f.input :featured, collection: [true, false], include_blank: false
+      = f.association :price_tier, include_blank: true, collection: options_for_price_tier_select, label: t('works.attributes.designer_price_tier')
+      = hidden_field_tag 'work[user_type]', 'Designer'
+      = f.input :user_id, label: t('works.attributes.user'), collection: Designer.all, label_method: :display_name, value_method: :id, include_blank: false
+      = f.input :tag_ids, collection: Tag.all, input_html: { class: 'tag_select2', multiple: true }
+    - else
+      = f.input :print_image, as: :file, label: t('works.attributes.print_image')
+    .form-actions
+      = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

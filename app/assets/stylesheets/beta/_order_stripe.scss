@@ -1,0 +1,65 @@
+.order-sprite {
+  width: 420px;
+  margin: 0 auto 30px;
+  overflow: hidden;
+  .text_field {
+    .label {
+      margin-bottom: 10px;
+      margin-right: 10px;
+      color: $tnd-color;
+    }
+    label {
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .required {
+      font-style: italic;
+      color: tint($tnd-color, 20%);
+      margin-left: 10px;
+    }
+    input {
+      font-size: 1em;
+      height: 45px;
+      padding: 0 20px;
+      border: 1px solid $line-color;
+      color: $sub-words-color;
+      margin: 0px 5px 0px 0px;
+    }
+    .card-number input, .ex-date input {
+      display: inline-block;
+      width: 45px;
+      &:focus {
+        border-color: $main-color;
+      }
+    }
+    .card-code input {
+      width: 90px;
+      &:focus {
+        border-color: $main-color;
+      }
+    }
+    .card-number, .ex-date, .card-code {
+      margin-bottom: 30px;
+    }
+    .dash {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+  .btn {
+    position:relative;
+    float: left;
+    left: 50%;
+    width: 220px;
+    margin-left: -110px;
+  }
+  .error {
+    @extend .msg-error;
+  }
+}
+#stripe_error {
+  margin-top: 110px;
+  text-align: center;
+  font-weight: 500;
+  @extend .msg-error;
+}

@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=SetEndpointAttributes&Attributes.entry.1.key=Enabled&Attributes.entry.1.value=true&Attributes.entry.2.key=CustomUserData&Attributes.entry.2.value=device_id%3A1%20updated_at%3A%202015-12-10%2011%3A30%3A42%20%2B0800&EndpointArn=dcfec27297f950dd1ccf9b0eb2e8ab8e&Timestamp=2015-12-10T03%3A30%3A42Z&Version=2010-03-31
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      Content-Length:
+      - '319'
+      User-Agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      Host:
+      - sns.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20151210T033043Z
+      X-Amz-Content-Sha256:
+      - 62ca120ba6a685f7973310041e4b23e2630e3d021671cd8c3f319bc5cd122db9
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=blah/20151210/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=17b742260078cb6cec0876515b94114b1ff828f7cf9a8a8746f0ca523804ae18
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amzn-Requestid:
+      - 3b20579e-6d2c-5731-bda6-197c990f49f5
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '305'
+      Date:
+      - Thu, 10 Dec 2015 03:30:43 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidClientTokenId</Code>
+            <Message>The security token included in the request is invalid.</Message>
+          </Error>
+          <RequestId>3b20579e-6d2c-5731-bda6-197c990f49f5</RequestId>
+        </ErrorResponse>
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:30:43 GMT
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: UTF-8
+      string: Action=SetEndpointAttributes&Attributes.entry.1.key=Enabled&Attributes.entry.1.value=true&Attributes.entry.2.key=CustomUserData&Attributes.entry.2.value=device_id%3A1%20updated_at%3A%202015-12-10%2011%3A30%3A42%20%2B0800&EndpointArn=dcfec27297f950dd1ccf9b0eb2e8ab8e&Timestamp=2015-12-10T03%3A30%3A43Z&Version=2010-03-31
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      Accept-Encoding:
+      - ''
+      Content-Length:
+      - '319'
+      User-Agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      Host:
+      - sns.ap-northeast-1.amazonaws.com
+      X-Amz-Date:
+      - 20151210T033043Z
+      X-Amz-Content-Sha256:
+      - 426628a0df86888934e279cb38dee03e592d7ad0bbba29e90129208f1be510cb
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=blah/20151210/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=d24299372fd5462fd7f3da248314354c8bf42f9bc3b01c4aed543af9dbf7a9e5
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      X-Amzn-Requestid:
+      - ca7c0836-ab80-5696-bbe9-46d45fa3d832
+      Content-Type:
+      - text/xml
+      Content-Length:
+      - '305'
+      Date:
+      - Thu, 10 Dec 2015 03:30:42 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidClientTokenId</Code>
+            <Message>The security token included in the request is invalid.</Message>
+          </Error>
+          <RequestId>ca7c0836-ab80-5696-bbe9-46d45fa3d832</RequestId>
+        </ErrorResponse>
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:30:43 GMT
+recorded_with: VCR 2.9.3

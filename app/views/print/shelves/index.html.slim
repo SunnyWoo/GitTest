@@ -1,0 +1,50 @@
+.page-header
+  h1 倉儲貨架
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 倉儲貨架
+        .widget-toolbar
+          = link_to '倉儲貨架紀錄', activities_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '揀貨對應', print_pickings_path, class: 'btn btn-primary btn-mini'
+          = link_to '新增貨架', new_print_shelf_path, class: 'btn btn-primary btn-mini'
+          = link_to '上架', stocking_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '取貨', changing_print_shelves_path(changing_action: 'ship'), class: 'btn btn-primary btn-mini'
+          = link_to '反架', restoring_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '移貨', moving_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '盤點調整', adjusting_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '調撥', changing_print_shelves_path(changing_action: 'allocate'), class: 'btn btn-primary btn-mini'
+          = link_to '导出CSV', print_shelves_path(format: :csv), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th= sort_link @q, :serial ,  Shelf.human_attribute_name(:serial)
+                th= sort_link @q, :category_name ,  Shelf.human_attribute_name(:category_name)
+                th= sort_link @q, :material_serial ,  Shelf.human_attribute_name(:material_serial)
+                th= sort_link @q, :material_name ,  Shelf.human_attribute_name(:material_name)
+                th= sort_link @q, :quantity ,  Shelf.human_attribute_name(:quantity)
+                th= sort_link @q, :material_safe_minimum_quantity ,  Shelf.human_attribute_name(:safe_minimum_quantity)
+                th 操作
+              tr
+                = search_form_for @q, url: print_shelves_path do |f|
+                  th = f.search_field :serial_cont
+                  th = f.search_field :serial_name_cont
+                  th = f.search_field :material_serial_cont
+                  th = f.search_field :material_name_cont
+                  th colspan='4' = f.submit 'Search'
+            tbody
+              - @shelves.each do |shelf|
+                tr class=('redzone' if shelf.material_stock_warning?)
+                  - %i(serial category_name material_serial material_name).each do |attr|
+                    td = shelf.send(attr)
+                  td
+                    = shelf.quantity
+                    = "(低於安全庫存)" if shelf.material_stock_warning?
+                  td = shelf.material_safe_minimum_quantity
+                  td
+                    = link_to '修改', edit_print_shelf_path(shelf), class: 'btn btn-primary btn-mini'
+                    = link_to '操作記錄', print_shelf_path(shelf), class: 'btn btn-primary btn-mini'

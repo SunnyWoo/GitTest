@@ -1,0 +1,48 @@
+body {
+  font-size: 3mm;
+}
+
+.page-break {
+  display: block;
+  clear: both;
+  page-break-after: always;
+}
+
+.pdf_footer {
+  .bottom{
+    padding-top: 16mm;
+  }
+
+  .blockquote {
+    border-left: 0.3mm solid #eeeeee;
+    padding-left: 3mm;
+    p {
+      font-size: 3mm;
+      font-weight: 3mm;
+      margin: auto;
+      color: #898989;
+      vertical-align: text-bottom;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.qrcode {
+  table {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+  }
+
+  td {
+    border-left: solid 3px #000;
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    height: 3px;
+  }
+
+  td.black { border-color: #000; }
+  td.white { border-color: #fff; }
+}

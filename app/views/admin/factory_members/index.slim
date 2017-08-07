@@ -1,0 +1,35 @@
+- admin_title t('factory_members.index.page_title')
+- breadcrumb :admin_factory_members
+
+= render 'admin/v2/shared/account_groups_nav', resources_name: @factory_members.name
+
+= will_paginate @factory_members
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Id
+              th Username
+              th Email
+              th Factory
+              th Operations
+          tbody
+            - @factory_members.each do |factory_member|
+              tr
+                td = factory_member.id
+                td = factory_member.username
+                td = factory_member.email
+                td = factory_member.factory.name
+                td = link_to t('shared.form_actions.edit'), edit_admin_factory_member_path(factory_member), class: 'btn btn-sm'
+
+= will_paginate @factory_members

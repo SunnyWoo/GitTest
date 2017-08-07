@@ -1,0 +1,38 @@
+body.users.address {
+
+  .lists li {
+    i {
+      position: static;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .add-addr {
+    color: $sub-words-color;
+  }
+
+  #address {
+    margin-bottom: 60px;
+  }
+
+  .func-icons {
+    margin-top: -6px;
+  }
+
+  .address-form {
+    // width: 462px;
+    margin: 0 auto;
+  }
+
+  .address-content {
+    border: 0;
+    padding: 18px 0;
+  }
+
+  .arti-header {
+    cursor: default;
+  }
+}

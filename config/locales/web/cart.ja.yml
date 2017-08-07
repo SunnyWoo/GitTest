@@ -1,0 +1,60 @@
+ja:
+  page:
+    cart:
+      title: 'ショッピングカート'
+      items: '%{items} アイテム'
+      thead:
+        td1: 購入商品
+        td2: 名前
+        td3: 販売価格
+        td4: 数量
+        td5: 総計
+        td6: セール
+      btns:
+        countinue_shopping: ショッピングを続ける
+        check_out: レジに進む
+        verify: 認証
+        delete: 削除
+        shop: デザイナーショップ
+        create: 作成
+      span:
+        coupon: クーポンコード
+        subtotal: '小計:'
+        discount: 割引き
+      text1: 海外直送
+      text2: アイテムがありません
+      text3: デザイナーショップへ行く
+    cart_check_out:
+      title: お支払い
+      text1: 海外直送
+      shipping_title: 配送情報
+      add_address: 新規住所入力
+      billing_title: ご請求先情報
+      payment_title: ご注文詳細
+      delivery_title: 配送方法
+      track_code: 検索コード
+      summary: 確認
+      summary_alias: 詳細
+      thead:
+        redeem_item: 商品取引所
+        td1: あなたのアイテム
+        td2: 数量
+        td3: 販売価格
+        td4: セール
+      subtotal: 商品金額
+      shipping_cost: 送料
+      coupon_code: クーポンコード
+      coupon_code_placehoder: クーポンコードを入力してください
+      coupon_valid:
+        success: 成功
+        fail: 失败
+      total: 合計
+      free: 今だけ無料
+      payment: 支払方法
+      btns:
+        summary: 明細
+        redeem: 交換の確認
+      notification:
+        new_year: "印刷工場の旧正月休暇のため、2月24日より順次発送させていただきます。お急ぎ便を選択された場合には2月24日に優先して発送いたします"
+    back_to_check_out:
+      btn: 支払いに戻る

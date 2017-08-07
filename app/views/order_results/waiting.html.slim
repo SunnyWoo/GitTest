@@ -1,0 +1,34 @@
+.cmdp_container.summary
+  .grid_6
+    = render_cell :announcement, :announcement
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center
+      = t('page.order_results.order_id', id: @order.order_no)
+    .cart_wording = t('page.order_results.success_sub_wording')
+    .divider_line
+      = image_tag('editor/divider_line.png')
+    .content_text
+      .row
+        / TODO: 需要載入付款方式：貨到付款 或 iBon ID
+        - payment_way = t("activerecord.attributes.order.payment_#{@order.payment}")
+        = t('page.order_results.waiting_wording_1', payment: payment_way)
+      .row
+        = show_payment_id_for_user(@order)
+      .row
+        = t('page.order_results.waiting_wording_2')
+      .row
+        = t('page.order_results.sent_to')
+        span = @order.billing_info_email
+      - to_path = user_signed_in? ? order_history_users_path : order_users_path(@order.order_no)
+      = link_to t('page.order_results.btn'), to_path, class: 'btn btn-default'
+
+- @order.order_items.each do |item|
+  - itemable = item.itemable
+  .hide
+    = render 'order_results/ua_data', work: itemable, qty: item.quantity
+
+.hide
+  = render 'order_results/purchase_data', order: @order
+  - if session[:fb_track_order_ids] && !session[:fb_track_order_ids].include?(@order.id)
+    = render 'order_results/facebook_conversion_tracking', order: @order

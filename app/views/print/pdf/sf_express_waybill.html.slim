@@ -1,0 +1,87 @@
+.content
+  .logo
+    = wicked_pdf_image_tag 'sf_express/logo.jpg', class: 'logo_image'
+    .notice
+    .land-logo
+    = wicked_pdf_image_tag 'sf_express/phone.png', class: 'phone_image'
+  .barcode-info
+    .sf-mailno-barcode
+      img src="data:image/png;base64,#{Base64.encode64(@mailno_barcode)}"
+      .mailno=render_sf_express_mailno(@ship_code)
+    .business-type
+      div.name 標準快遞
+      div.destination 目的地
+      div.destination-code= @destcode
+  .recipient
+    .title
+      div 收方:
+    .address
+      .detail=@package.shipping_info.full_address
+      .contact="#{@package.shipping_info_name} #{@package.shipping_info_phone}"
+    .print-time="打印時間: #{Time.zone.now.strftime('%F %R')}"
+  .bill
+    .detail
+      div 件数: 1
+      div 月結帳號: #{Settings.sf_express.custid}
+      div 實際重量:
+      div 計費重量:
+      div 付款方式: 寄付月結
+      div.foot-title 轉寄協議客戶
+    .amount
+      .collection
+        span 代收貨款:
+        br 0元
+      .ship 運費:
+  .render
+    .title
+      div 寄方:
+    .address
+      .info
+        .detail=SfExpressService::J_ADDRESS
+        .contact="#{SfExpressService::J_COMPANY} #{Settings.sf_express.j_tel}"
+      .original-code="原寄地: #{@origincode}"
+    .worker
+      div 收件員:
+      div 寄件日期:
+      div 派件員:
+    .receiver 收方簽署:
+  .middle-logo
+    .image-div
+      = wicked_pdf_image_tag 'sf_express/logo.jpg', class: 'logo_image'
+      = wicked_pdf_image_tag 'sf_express/phone.png', class: 'phone_image'
+    .sf-mailno-barcode
+      img src="data:image/png;base64,#{Base64.encode64(@mailno_barcode)}"
+      .mailno=render_sf_express_mailno(@ship_code)
+  .addresses
+    .sender
+      .title
+        div 寄方:
+      .address
+        .detail=SfExpressService::J_ADDRESS
+        .contact="#{SfExpressService::J_COMPANY} #{Settings.sf_express.j_tel}"
+    .receiver
+      .title
+        div 收方:
+      .address
+        .detail=@package.shipping_info.full_address
+        .contact="#{@package.shipping_info_name} #{@package.shipping_info_phone}"
+      .render-time 寄件日期:
+  .footer
+    table
+      thead
+        tr
+          th 數量
+          th 托寄物
+          th 備註
+      tbody
+        tr
+          td=@package.print_items_count
+          td=render_order_item_info(@package)
+          td
+        tr
+          td colspan='2'
+            .orderno-name 訂單號:
+            .orderno-barcode
+              img src="data:image/png;base64,#{Base64.encode64(@package_no_barcode)}"
+              .orderno=@package.package_no
+          td.amount 費用合計:

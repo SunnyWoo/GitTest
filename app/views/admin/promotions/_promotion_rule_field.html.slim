@@ -1,0 +1,16 @@
+= f.hidden_field :id
+= f.input :condition, collection: pf.object.rule_condition_options, input_html: { data: { role: 'condition' } }
+div data-condition='threshold'
+  = f.input :threshold_id, collection: options_for_price_tier_select
+div data-condition='include_product_models'
+  = f.input :product_model_ids, collection: [], include_hidden: false, input_html: { class: 'select2', multiple: true, data: { source: admin_products_path, model: 'product', selected: Array(f.object.product_model_ids).join(',') } }
+div data-condition='include_designers'
+  = f.input :designer_ids, collection: [], include_hidden: false, input_html: { class: 'select2', multiple: true, data: { source: admin_designers_path, model: 'designer', selected: Array(f.object.designer_ids).join(',') } }
+div data-condition='include_product_categories'
+  = f.input :product_category_ids, collection: [], include_hidden: false, input_html: { class: 'select2', multiple: true, data: { source: admin_product_categories_path, model: 'category', selected: Array(f.object.product_category_ids).join(',') } }
+div data-condition='include_works'
+  = f.input :work_gids, collection: [], include_hidden: false, input_html: { class: 'select2', multiple: true, data: { source: admin_works_path(q: { work_type_eq: 3 }, page: 'all' ), model: 'work', selected: Array(f.object.work_gids).join(',') } }
+div data-condition='include_bdevent'
+  = f.input :bdevent_id, collection: [], input_html: { class: 'select2', data: { source: admin_bdevents_path, model: 'bdevent', selected: Array(f.object.bdevent_id).join(',') } }
+div data-condition='item'
+  = f.input :quantity

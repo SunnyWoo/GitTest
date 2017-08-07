@@ -1,0 +1,16 @@
+span.ftp_service_status data-val="#{ftp_service_status}"
+- if ftp_service_status.to_i == 200
+  .alert.alert-block.alert-success
+    i.icon-ok.green
+    | FTP 狀態：
+    strong.green
+      | #{@ftp_service_status} OK&nbsp;
+    | ，可以上傳檔案到FTP。
+- else
+  meta
+  .alert.alert-block.alert-danger
+    i.icon-remove
+    | FTP 狀態：
+    strong.red
+      | #{@ftp_service_status} Error&nbsp;
+    | ，無法上傳檔案到 FTP, 請聯絡系統人員。

@@ -1,0 +1,7 @@
+.cmdp_container
+  .grid_6
+    .item-title.margin-top-fixed.text-center Payment
+    .text-center.margin-top-fixed 恭喜付款成功！
+    p 訂單編號：#{ @order.order_no }
+    hr
+    = render @extra_info if @extra_info

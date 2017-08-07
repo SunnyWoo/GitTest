@@ -1,0 +1,16 @@
+.modal.fade id='reception_modal'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      = simple_form_for form, url: print_print_item_reception_path(form.item), as: :reception, html: {class: 'form-horizontal'} do |f|
+        .modal-header
+          h3 處理收貨
+          h5 列印編號: #{form.timestamp_no}
+        .modal-body
+          = f.input :state, collection: form.state_option, as: :radio_buttons, required: true
+          = f.input :serial, input_html: { data: { enable: 'received_on_temp_shelf' } }
+          = f.input :description, as: :text, input_html: { data: { enable: 'received_on_temp_shelf' } }
+        .modal-footer
+          = f.button :submit, '送出', class: 'btn-primary'

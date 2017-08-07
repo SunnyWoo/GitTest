@@ -1,0 +1,10 @@
+- url = role_group.persisted? ? print_role_group_path(role_group) : print_role_groups_path
+- method = role_group.persisted? ? 'put' : 'post'
+= simple_form_for role_group, url: url, html: { class: 'form-horizontal', method: method } do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :name, label: '群組識別名稱'
+    .form-inputs
+      = f.input :role_ids, collection: Role.all, as: :check_boxes
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'

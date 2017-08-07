@@ -1,0 +1,30 @@
+- admin_title t('fees.index.page_title')
+- breadcrumb :admin_fees
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th = t('fees.index.thead.name')
+            th = t('fees.index.thead.description')
+            th = t('fees.index.thead.created_at')
+            th
+        tbody
+          = content_tag_for :tr, @search.result do |mt|
+            td= mt.name
+            td= mt.description
+            td= l mt.created_at, format: :long
+            td
+              .btn-group
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-info'
+                = link_to t('shared.form_actions.delete'), url_for([:admin, mt]), method: :delete, class: 'btn btn-danger', confirm: confirm_message
+
+= will_paginate @resources

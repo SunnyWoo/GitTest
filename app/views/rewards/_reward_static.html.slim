@@ -1,0 +1,9 @@
+h1.text-h1.tac Hello I Am 這就是我
+section.reward-campaignDesc.tac
+  | 每張臉都是顏值十足的完美藝術傑作，立即分享給你的親朋好友，讓大家再次認識你吧！
+  .reward-share
+    p.text-p 分享至
+    = link_to '', "http://www.facebook.com/sharer/sharer.php?u=#{request.host + url_for(reward)}", class: 'share-item share-item--facebook', target:"_blank"
+    = link_to '', "http://line.me/R/msg/text/?我印 | 我印 x 醜臉書 - HELLO I AM 訂製設計組合 https://api.commandp.com#{url_for(reward)}", class: 'share-item share-item--line'
+
+= image_tag reward.cover.url , class: 'woh img--banner'

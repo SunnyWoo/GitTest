@@ -1,0 +1,42 @@
+= simple_form_for(@mobile_campaign, url: [:admin, @mobile_campaign], class: 'form-horizontal') do |f|
+  = f.error_notification
+
+  .row
+    .col-xs-3
+      - publish_at = f.object.publish_at ? f.object.publish_at.strftime("%F %H:%M") : nil
+      = f.input :publish_at, as: :string, hints: false, input_html: { class: 'datetimepicker', value: publish_at }
+
+  .row
+    .col-xs-3
+      - starts_at = f.object.starts_at ? f.object.starts_at.strftime("%F %H:%M") : nil
+      = f.input :starts_at, as: :string, hints: false, input_html: { id: 'datetimepicker_start', value: starts_at }
+    .col-xs-3
+      - ends_at = f.object.ends_at ? f.object.ends_at.strftime("%F %H:%M") : nil
+      = f.input :ends_at, as: :string, hints: false, input_html: { id: 'datetimepicker_end', value: ends_at }
+
+  table.table.table-striped id='bdevent_form'
+    thead
+      td 顯示語系
+      td KV
+      td Ticker
+      td Title
+      td DescShort
+    = f.simple_fields_for :translations do |d|
+      tr
+        td
+          = d.object.locale
+          = d.input :locale, as: :hidden, hints: false
+        td
+          = link_to d.object.kv.url, title: d.object.locale, class: 'popup-image' do
+            = image_tag d.object.kv.url, width: 200 if d.object.kv.url
+          = d.input :kv, label: false, hints: false
+        td = d.input :ticker, label: false, hints: false
+        td = d.input :title, label: false, hints: false
+        td = d.input :desc_short, label: false, hints: false
+
+  = f.label :campaign_type
+  = f.select :campaign_type, MobileCampaign.aasm(:campaign_type).states.map(&:name), hints: false
+
+  = f.input :is_enabled, hints: false
+
+  = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

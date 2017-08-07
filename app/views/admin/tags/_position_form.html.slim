@@ -1,0 +1,14 @@
+.modal.fade id="position_form_#{tagging.id}"
+  .modal-dialog
+    .modal-content
+      = form_tag tagging_position_admin_tag_path(@tag, tagging_id: tagging.id), method: :put
+        .modal-header
+          button class="close" data-dismiss="modal" aria-label="Close"
+            span aria-hidden="true" &times;
+        .modal-body.row
+          .col-md-3 = t('tags.index.thead.sort')
+          .col-md-9
+            = select_tag :position, options_for_select((1..20).to_a, tagging.position),
+              include_blank: true, class: 'form-control'
+        .modal-footer
+          = submit_tag 'Submit', class: 'btn btn-success form-control'

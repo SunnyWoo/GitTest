@@ -1,0 +1,66 @@
+- breadcrumb :product_models
+- admin_title t('product_models.index.page_title')
+
+.well.well-small
+  h2
+    | Search Product Model
+    br
+    button.btn.btn-sm data-show-detail='.search-work-form' = t('works.index.search.expand')
+  = simple_form_for @search, url: admin_product_models_path, method: 'get', html: { class: 'search-work-form hide' } do |f|
+    .row
+      .span3
+        = f.input :category_id_eq, required: false, collection: ProductCategory.all.includes(:translations)
+      .span3
+        = f.input :key_or_name_cont, required: false
+      .span3
+        = f.button :submit, t('shared.form_actions.submit')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to 'Export', export_admin_product_models_path, class: 'btn btn-yellow', id: 'product_model_export'
+        = link_to 'Import', import_admin_product_models_path, class: 'btn btn-warning'
+        = link_to t('product_models.sort.page_title'), url_for(action: :sort), class: 'btn'
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= check_box_tag 'select_all', date: { 'select-all': true, column: :product_model_id }
+            th= sort_link(@search, :category_id, t('product_models.index.thead.category'))
+            th= sort_link(@search, :key, t('product_models.attributes.key'))
+            th= sort_link(@search, :name, t('product_models.index.thead.name'))
+            th= t('product_models.index.thead.placeholder')
+            th= t('product_models.index.thead.material')
+            th= t('product_models.index.thead.weight')
+            th= sort_link(@search, :available, t('product_models.index.thead.added'))
+            th= sort_link(@search, :created_at, t('product_models.index.thead.created_at'))
+            th= t('product_models.index.thead.operation')
+        tbody
+          - @resources.each do |mt|
+            tr
+              td= check_box_tag :product_model_id, mt.id, false, data: { key: mt.key }
+              td= mt.category.name
+              td= mt.key
+              td= mt.name
+              td= image_tag(mt.placeholder_image.url, width: 200)
+              td= mt.material
+              td= mt.weight
+              td= render_yes_or_no(mt.available?)
+              td= l mt.created_at, format: :long
+              td
+                .btn-group
+                  = link_to t('product_models.index.variants'), admin_product_model_variants_path(mt), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-info'
+                  = link_to t('product_models.index.preview_composers'), admin_product_model_preview_composers_path(mt), class: 'btn btn-info'
+                  = link_to t('work_templates.manage'), admin_product_model_work_templates_path(mt), class: 'btn btn-info'
+                  = link_to_versions(mt, class: 'btn btn-info')
+            /tr
+              td
+              td colspan='7' = render 'work_specs', model: mt
+
+= will_paginate @resources

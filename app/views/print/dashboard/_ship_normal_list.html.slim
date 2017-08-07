@@ -1,0 +1,81 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 包裹編號
+      th 訂單編號
+      th 項目數量
+      th 內容
+      th 留言
+      th 订单处理状态
+      th 折扣码
+      th 出貨方式
+      th.col-sm-3 操作
+  tbody
+    - @packages.each do |package|
+      tr
+        td = package.package_no
+        td
+          - package.orders.each do |order|
+            = render_order_shipper(order)
+            br
+            = order.remote_info['order_no']
+            br
+        td= package.order_items_quantity
+        td
+          table.table.table-bordered
+            thead.thin-border-bottom
+              tr
+                th 型號
+                th 列印編號
+                th 縮圖
+                th 狀態
+                th 审核描述
+                - if Region.china?
+                  th 条形码
+            - package.print_items.each do |print_item|
+              tr
+                td = print_item.product_name
+                td = render_timestamp_no(print_item)
+                td = render_print_item_preview(print_item)
+                td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+                td = print_item.temp_shelf_description
+                  - if Region.china?
+                    td = link_to '订单条形码', barcode_print_order_path(order), target: '_blank', class: 'btn'
+        td
+          - package.orders.each do |order|
+            - unless order.notes.empty?
+              = render 'print/notes/notes', noteable: order, readonly: true
+        td
+          - package.orders.each do |order|
+            = "(#{order.packaging_state}/#{order.shipping_state})"
+            br
+        td
+          - package.orders.each do |order|
+            = render_coupon_info(order.embedded_coupon)
+            br
+        td = package.render_shipping_ways_with_color
+        td
+          = simple_form_for Print::ShipForm.new, url: print_package_ship_path(package) do |f|
+            = f.input :logistics_supplier_id, collection: logistics_suppliers, as: :select, label: '物流商'
+            = f.input :ship_code, label: '包裹号码'
+            - if package.split_order?
+              = f.input :invoice_number, label: '发票号码'
+              = f.input :update_invoice_number, label: '更新发票号码', input_html: { value: package.split_order.invoice_number }
+            .form-actions
+              .col-md-offset-3.col-md-9
+                - if package.split_order?
+                  = f.button :button, '更新发票', class: :update_invoice_number, 'data-url': print_order_update_invoice_path(package.split_order)
+                  | &nbsp; &nbsp; &nbsp;
+                = f.button :submit, '出货'
+              - if Region.global?
+                = link_to '順豐速運(島內)', print_package_sf_express_path(package),
+                          method: 'post', remote: true, class: 'pull-right',
+                          data: { confirm: '順豐自動下單僅供島內寄件使用,確認使用順豐速運?' }
+                = link_to '順豐島內電子運單', print_pdf_sf_express_waybill_path(id: package.id, format: :pdf),
+                          target: '_blank', class: 'hide pull-right', id: "sf_pdf_#{package.id}"
+              - if Region.china?
+                = link_to '圆通', print_package_yto_express_path(package),
+                          method: 'post', remote: true, class: 'pull-right',
+                          data: {confirm: '確認使用圆通?'}
+                = link_to '圆通电子运单', print_pdf_yto_express_waybill_path(id: package.id, format: :pdf),
+                          target: '_blank', class: 'hide pull-right', id: "yto_pdf_#{package.id}"

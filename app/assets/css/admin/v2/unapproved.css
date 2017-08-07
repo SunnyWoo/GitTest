@@ -1,0 +1,32 @@
+/* line 1, ../../../stylesheets/admin/v2/unapproved.scss */
+.show-order-item {
+  min-width: 360px; }
+  /* line 3, ../../../stylesheets/admin/v2/unapproved.scss */
+  .show-order-item td, .show-order-item td {
+    width: 120px;
+    text-align: center; }
+
+/* line 10, ../../../stylesheets/admin/v2/unapproved.scss */
+.unapproved-results ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0; }
+/* line 15, ../../../stylesheets/admin/v2/unapproved.scss */
+.unapproved-results .order-info {
+  max-width: 250px;
+  line-height: 2em; }
+  /* line 18, ../../../stylesheets/admin/v2/unapproved.scss */
+  .unapproved-results .order-info span.info {
+    font-weight: bold;
+    font-size: 13px; }
+
+/* line 25, ../../../stylesheets/admin/v2/unapproved.scss */
+.show-notes {
+  width: 360px; }
+  /* line 27, ../../../stylesheets/admin/v2/unapproved.scss */
+  .show-notes td, .show-notes th {
+    width: 30%;
+    word-break: break-all; }
+  /* line 31, ../../../stylesheets/admin/v2/unapproved.scss */
+  .show-notes .msg {
+    width: 45%; }

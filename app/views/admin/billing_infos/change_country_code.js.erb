@@ -1,0 +1,9 @@
+<% id = dom_id(@form.profile, :edit) %>
+<% update_url = admin_order_shipping_info_path(@form.billable, @form.profile) %>
+$('#<%= id %>').replaceWith('<%= j render 'modal', id: id, form: @form %>');
+$('#<%= id %>').modal('show');
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $('.modal-backdrop').remove();
+});
+
+$('#<%= id %>').find('.select2').select2({minimumInputLength: 1});

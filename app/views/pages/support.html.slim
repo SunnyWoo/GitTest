@@ -1,0 +1,26 @@
+.cmdp_container
+  .form.grid_4.prefix_1.suffix_1
+    h1.item-title.contact-title= edit_translator('question.contact_us')
+    = simple_form_for @zendesk_ticket, url: receive_support_path, id: 'new_request' do |f|
+      .form-field
+        = f.input :email
+      .form-field
+        = f.input :category do
+          = f.select :category, t('support.categories').map { |k, v| [v,k] }
+      .form-field
+        = f.input :subject
+      .form-field
+        = f.input :description
+      .form-field
+        = f.label :attachments
+        span.file-note
+          a = t('simple_form.hints.zendesk_service.attachments')
+        #filelist
+        = f.input :attachments, label: false, as: :file, :input_html => { :multiple => true ,accept: 'image/x-png, image/gif, image/jpeg', class: 'upload'}
+      footer
+        .response
+          .notice
+            = flash[:notice] if flash[:notice]
+          .error
+            = flash[:error] if flash[:error]
+        = f.submit

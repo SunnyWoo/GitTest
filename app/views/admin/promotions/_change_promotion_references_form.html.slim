@@ -1,0 +1,11 @@
+- promotion = promotion_form.promotion
+= form_tag update_promotion_references_admin_promotion_path(promotion), method: :put
+  = hidden_field_tag :type, promotion.type
+  = hidden_field_tag :change_action
+  .row
+    - apply_button_text = t('promotions.works.apply') + t("promotions.type_options.#{promotion.type}")
+    - remove_button_text = t('promotions.works.remove') + t("promotions.type_options.#{promotion.type}")
+    = submit_tag apply_button_text, class: 'btn btn-success pull-left change-promotion-references', data: { action: 'apply'}
+    = submit_tag remove_button_text, class: 'btn btn-success pull-left change-promotion-references', data: { action: 'remove'}
+  br
+  = content

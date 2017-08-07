@@ -1,0 +1,44 @@
+- admin_title t('currency_types.index.page_title')
+
+ul.nav.nav-tabs
+  li.active = link_to admin_currency_types_path do
+    =' fa_icon 'dollar', class: 'ace-icon'
+    span = t('currency_types.sidebar_name')
+  li = link_to admin_price_tiers_path do
+    =' fa_icon 'table', class: 'ace-icon'
+    span = t('price_tiers.sidebar_name')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= t('currency_types.index.thead.name')
+            th= t('currency_types.index.thead.shorthand')
+            th= t('currency_types.index.thead.exchange_rate_nt')
+            th= t('currency_types.index.thead.precision')
+            th
+              = t('currency_types.index.thead.example_display')
+              | 9999.99
+            th= t('currency_types.index.thead.description')
+            th= t('currency_types.index.thead.created_at')
+            th
+        tbody
+          = content_tag_for :tr, @search.result do |mt|
+            td= mt.name
+            td= mt.code
+            td= mt.rate
+            td= mt.precision
+            td= render_price(9999.99, currency_code: mt.code)
+            td= mt.description
+            td= l mt.created_at, format: :long
+            td= link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-minier btn-info'
+
+= will_paginate @resources

@@ -1,0 +1,20 @@
+.page-header
+  h1 = t('impositions.new.page_title', model: @model.name)
+
+.row
+  .col-sm-4
+    h2 Asgard 式拼版
+    = link_to params.merge(type: 'Asgard')
+      = image_tag 'impositions/asgard.png', class: 'imposition-icon'
+
+  .col-sm-4
+    h2 Vanaheim 式拼版
+    = link_to params.merge(type: 'Vanaheim')
+      = image_tag 'impositions/vanaheim.png', class: 'imposition-icon'
+
+  .col-sm-4
+    h2
+      ' Alfheim 式拼版
+      = image_tag 'impositions/new.gif'
+    = link_to params.merge(type: 'Alfheim')
+      = image_tag 'impositions/alfheim.png', class: 'imposition-icon'

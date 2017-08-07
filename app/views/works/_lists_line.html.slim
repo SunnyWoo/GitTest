@@ -1,0 +1,14 @@
+.line-lists
+  .head
+    .prev-step data-target='#linePanel'
+      i.overlays-img_addlayer_icon_back_normal
+    = t('editor.lines')
+    .close-panel
+      i.overlays-img_addlayer_icon_cancel_normal
+  .components
+    - editor_line_list.each do |hash|
+      - file, name = hash.values_at(:file, :name)
+      .obj data-type='obj' data-prop='line' data-obj=file data-obj-name=name
+        i = image_tag("editor/line_186px/#{name}.png")
+        .name = name
+        .mask

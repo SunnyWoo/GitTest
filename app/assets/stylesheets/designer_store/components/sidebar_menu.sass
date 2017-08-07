@@ -1,0 +1,36 @@
+.sidebarMenu
+  cursor: pointer
+
+.sidebarMenu-tooltip
+  position: absolute
+  @include rem(bottom, 60px)
+  right: 0
+
+.sidebarMenu-option
+  display: flex
+  flex-direction: column
+  @include rem(width, 50px)
+  @include rem(border-top-left-radius, 3px)
+  @include rem(border-bottom-left-radius, 3px)
+  overflow: hidden
+
+.sidebarMenu-option-item
+  flex: 1
+  @include rem(height, 50px)
+  cursor: pointer
+  border: none
+  margin: 0
+  padding: 0
+  background-color: rgba($black, 0.75)
+  background-position: center
+  @include rem(background-size, 20px)
+  background-repeat: no-repeat
+
+  &:not(:last-of-type)
+    border-bottom: 1px solid $c-border
+
+.sidebarMenu-option-item--goToTop
+  background-image: asset_data_url('designer_store/go_to_top.png')
+
+.sidebarMenu-option-item--info
+  background-image: asset_data_url('designer_store/dots.png')

@@ -1,0 +1,20 @@
+= content_tag_for(:tr, work) do
+  td = work.id
+  td = render_standardized_work_print_image(work)
+  td
+    - work.previews.each do |preview|
+      = display_image(preview.image)
+  td = link_to_user(work.user)
+  td = work.name
+  td = work.product_name
+  td = render_item_price(work) if work.price_tier
+  td = work.aasm_state
+  td = work.featured
+  td = render_standardized_work_archive_state(work)
+  td = work.product_code
+  td
+    = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, work]), class: 'btn btn-minier btn-info'
+    = render_admin_standardized_work_build_previews_button(work)
+    = render_admin_standardized_work_build_print_image_button(work)
+    = render_admin_standardized_state_button(work)
+    = render_create_archived_standardized_work_button(work)

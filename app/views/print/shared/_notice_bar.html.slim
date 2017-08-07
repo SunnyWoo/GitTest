@@ -1,0 +1,11 @@
+- [:notice, :error, :alert].each do |level|
+  - unless flash[level].blank?
+    div class="alert alert-block alert-#{flash_class(level)}"
+      button.close type="button" data-dismiss="alert"
+        i.icon-remove
+      - if flash[level].is_a?(Array)
+        ul
+          - flash[level].each do |msg|
+            li = msg
+      - else
+        = content_tag :p, flash[level]

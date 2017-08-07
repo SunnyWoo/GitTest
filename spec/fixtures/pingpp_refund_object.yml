@@ -1,0 +1,30 @@
+--- !ruby/object:Pingpp::Refund
+retrieve_options: {}
+api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+values:
+  :id: re_znbHyHWPW1G0PCu5SOOiHyn5
+  :object: refund
+  :order_no: znbHyHWPW1G0PCu5SOOiHyn5
+  :amount: 100
+  :created: 1449636303
+  :succeed: false
+  :status: pending
+  :time_succeed: 
+  :description: true
+  :failure_code: refund_wait_operation
+  :failure_msg: "需要打开地址进行下一步退款操作: https://mapi.alipay.com/gateway.do?_input_charset=utf-8&batch_no=20151209znbHyHWPW1G0PCu5SOOiHyn5&batch_num=1&detail_data=2015081284330130%5E100%5E1&notify_url=https%3A%2F%2Fapi.pingxx.com%2Fnotify%2Fcharges%2Fch_jjjbzTeTeHe9PKaHyPCyLmDO%2Frefunds%2Fre_znbHyHWPW1G0PCu5SOOiHyn5&partner=2008479469686133&refund_date=2015-12-09%2012%3A45%3A03&seller_user_id=2008479469686133&service=refund_fastpay_by_platform_pwd&sign=NEdLS2lMOG0xRzAwdlhYWDVLRHV2SDBT&sign_type=RSA"
+  :metadata: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values: {}
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :charge: ch_jjjbzTeTeHe9PKaHyPCyLmDO
+unsaved_values: !ruby/object:Set
+  hash: {}
+transient_values: !ruby/object:Set
+  hash: {}
+previous_metadata: {}

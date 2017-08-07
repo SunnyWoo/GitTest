@@ -1,0 +1,36 @@
+td= order.id
+td
+  / - if order_item = order.order_items.first
+  - if order.order_items
+    - order.order_items.each do |order_item|
+      - if order_item.itemable
+        = image_tag(order_item.itemable_order_image.thumb.url, width: '100px')
+      - else
+        p.red 遺失作品資訊, 作品可能被刪除了
+td= order.order_no
+td
+  div = I18n.t("order.state.#{order.aasm_state}")
+  a.btn.btn-sm data-order-state-updater=true
+    = t('orders._order.btn_update_order')
+  = form_for [:admin, order], html: {class: 'form-inline form-order-state-updater', data: {confirm: t('orders._order.confirm')}} do |f|
+    ' 改成
+    = f.select :aasm_state, order_state_options(order)
+    = submit_tag t('shared.form_actions.submit'), class: 'btn btn-danger btn-sm'
+td= I18n.t("order.work_state.#{order.work_state}")
+td= l order.created_at, format: :long
+td= order.shipping_info_phone
+td= render_price(order.render_twd_price, currency_code: 'TWD')
+td= render_price(order.price, currency_code: order.currency)
+td= order.currency
+td= order.shipping_info_shipping_way
+td= order.ship_code
+td= order.shipping_info_country
+td
+  = link_to t('shared.form_actions.view'), admin_order_path(order), { class: 'btn btn-sm btn-info', role: 'button' }
+  | &nbsp;
+  - if order.paid? || order.part_refunded?
+    = link_to t('shared.form_actions.refund'), "#paypal_refund_#{order.id}" ,
+      { class: 'btn btn-sm btn-danger', role: 'button', 'data-toggle' => 'modal' }
+    = render :partial => "refund", locals: { order: order }
+  | &nbsp;
+  = link_to 'History', admin_order_history_path(order), { class: 'btn btn-sm btn-grey', role: 'button' }

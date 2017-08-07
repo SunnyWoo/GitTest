@@ -1,0 +1,2 @@
+class GuanyiError < ApplicationError
+end

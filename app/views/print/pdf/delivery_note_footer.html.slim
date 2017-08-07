@@ -1,0 +1,8 @@
+.row style='height: 15mm'
+.pdf_footer.col-xs-12
+  .col-xs-10.bottom
+    .blockquote
+      p = t('delivery_note.foot_note').html_safe
+  .col-xs-2.qrcode
+    = qrcode_as_html(@order.order_no)
+    div = t('delivery_note.order_no')

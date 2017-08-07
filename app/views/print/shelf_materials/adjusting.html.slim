@@ -1,0 +1,10 @@
+.page-header
+  h1 调整
+= render 'print/shared/notice_bar'
+
+= simple_form_for @shelf_material, url: adjust_print_shelf_material_path(@shelf_material), method: :put, html: {class: 'form-horizontal'} do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :quantity
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'

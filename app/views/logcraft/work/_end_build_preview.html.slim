@@ -1,0 +1,8 @@
+- work = activity.trackable
+- composer = PreviewComposer.find(activity.extra_info[:composer_id])
+- preview = Preview.find_by(id: activity.extra_info[:preview_id])
+div 完成製作 #{link_to_admin_work work} 的預覽圖 (#{composer.key}).
+- if preview
+  div = display_image preview.image
+- else
+  div = '(找不到產生的縮圖, 可能因為重製被刪除了)'

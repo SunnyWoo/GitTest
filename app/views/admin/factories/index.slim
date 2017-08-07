@@ -1,0 +1,35 @@
+- admin_title t('factories.index.page_title')
+- breadcrumb :admin_factories
+
+= will_paginate @factories
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Id
+              th Display Name
+              th Code
+              th Contact Email
+              th Locale
+              th Operations
+          tbody
+            - @factories.each do |factory|
+              tr
+                td = factory.id
+                td = factory.name
+                td = factory.code
+                td = factory.contact_email
+                td = factory.locale
+                td = link_to t('shared.form_actions.edit'), edit_admin_factory_path(factory), class: 'btn btn-sm'
+
+= will_paginate @factories

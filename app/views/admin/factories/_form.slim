@@ -1,0 +1,7 @@
+= simple_form_for [:admin, factory] do |f|
+  = f.input :name
+  = f.input :code
+  = f.input :contact_email
+  = f.input :locale, collection: Factory::LOCALES, include_blank: false
+  .form-actions
+    = f.button :submit

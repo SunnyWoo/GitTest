@@ -1,0 +1,51 @@
+.ptfh[
+  data-product
+  itemscope
+  itemtype="http://schema.org/Product"
+  data={ ec: work.to_ecommerce_tracking }
+]
+  .cover.cover--loading [data-widget-slick data-square-cover-image]
+    - if work.previews_ready?
+      - work.ordered_previews.each do |preview|
+        .cover-image
+          = image_webp preview.image, itemprop: 'image', alt: work.name, class: 'cover-image', data: { 'square-cover-image' => true }
+
+  .productPreviewRow
+    .productPreviewRow-item [itemprop="name"] = work.product_name
+  .productPreviewRow
+    .productPreviewRow-item [itemscope itemtype ="http://schema.org/AggregateOffer"]
+      span.price--current [itemprop="lowPrice"] = render_item_price(work)
+      - if work.has_special_price?
+        span.price--original [itemprop="highPrice"] = render_item_original_price(work)
+
+  .productPreviewRow.has-calculator
+    .productPreviewRow-item = t('store.preview.amount')
+    .productPreviewRow-item
+      .calculator
+        .calculator-item.calculator-item--minusShadow
+        .calculator-item.calculator-item--minus
+        .calculator-item.calculator-item--result[data-quantity] 1
+        .calculator-item.calculator-item--plus
+
+  .productPreviewRow--intervalGap
+
+  .tab-list
+    .tab.active data-tab-name="tab1"
+      =t('store.preview.tab.desciption')
+    .tab data-tab-name="tab2"
+      =t('store.preview.tab.spec')
+    .tab data-tab-name="tab3"
+      =t('store.preview.tab.information')
+
+  .tab-container
+    #tab1.tab-content.descriptionBlock.active [itemprop="description"]
+      = simple_format work.description
+    #tab2.tab-content.descriptionBlock [itemprop="description"]
+      - if work.model_images.present?
+        h2 = t('store.preview.tab.description_image_title')
+        #description-image
+          - work.model_images.each do |image|
+            = image_tag(image)
+      = simple_format work.model_description
+    #tab3.tab-content.descriptionBlock [itemprop="description"]
+      = simple_format store.description

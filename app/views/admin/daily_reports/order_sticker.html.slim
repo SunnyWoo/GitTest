@@ -1,0 +1,54 @@
+- admin_title t('daily_reports.order_sticker.page_title')
+h4 = t('daily_reports.order_sticker.interval', starts_at: @starts_at.strftime('%Y-%m-%d'), ends_at: @ends_at.strftime('%Y-%m-%d'))
+h4 = t('daily_reports.order_sticker.products', product_keys: product_keys)
+
+.well
+  h4 = 'Order Sticker'
+  form.form.form-inline action="#{order_sticker_admin_daily_report_path}" method='get'
+    .form-group
+      label for='starts_at'
+        |&nbsp Starts at: &nbsp
+      input#starts_at.form-control name='starts_at' placeholder='開始時間' type='date' required='required'
+    .form-group
+      label for='ends_at'
+        |&nbsp Ends at: &nbsp
+      input#ends_at.form-control name='ends_at' placeholder='結束時間' type='date'
+    .form-group
+      label for='products'
+        |&nbsp Products: &nbsp
+      select#products.form-control.tag_select2 name='products[]' multiple='multiple' type='text'
+        = options_for_product_model_key
+    .form-group
+      button#markering_report_form_submit.btn.btn-sm.btn-info type='submit'
+        |送出
+
+h3 = @data.sticker_usage_trend[:title]
+|各貼圖類型每日使用數據(若某客製化商品有3個line的圖層，圖層數量計作3，購買數量為2，則再乘上2，該商品的line圖層使用計作6)
+.well
+  p = @data.sticker_usage_trend[:columns].inspect
+#sticker_useage_trend data-columns=@data.sticker_usage_trend[:columns].to_json data-axis-x=@data.sticker_usage_trend[:axis_x].to_json
+
+
+h3 = @data.sticker_usage_growth_trend[:title]
+|各貼圖類型邊際使用成長曲線(由每日使用數據的今期減去前一期而得，其中日期間距請參照x軸)
+.well
+  p = @data.sticker_usage_growth_trend[:columns].inspect
+#sticker_usage_growth_trend data-columns=@data.sticker_usage_growth_trend[:columns].to_json data-axis-x=@data.sticker_usage_growth_trend[:axis_x].to_json
+
+h3 = @data.sticker_usage_proportion[:title]
+|各貼圖類型每日使用數據佔每日全部類型加總的分配比例(分子:各貼圖每日使用數據 / 分母:每日所有已付費的訂單的所有客製化商品圖層數再乘上購買數量再全部加總)
+.well
+  p = @data.sticker_usage_proportion[:columns].inspect
+#sticker_usage_proportion data-columns=@data.sticker_usage_proportion[:columns].to_json data-axis-x=@data.sticker_usage_proportion[:axis_x].to_json
+
+h3 = @data.sticker_usage_count_propotion[:title]
+|期間內所有各貼圖使用數據累積分配比例
+.well
+  p = @data.sticker_usage_count_propotion[:columns].inspect
+#sticker_usage_count_propotion data-columns=@data.sticker_usage_count_propotion[:columns].to_json
+
+.row
+  .col-md-offset-6
+    = link_to t('shared.form_actions.back'), :back, class: 'btn btn-info'
+
+= javascript_include_tag 'daily_report/order_sticker'

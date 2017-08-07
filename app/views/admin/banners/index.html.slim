@@ -1,0 +1,42 @@
+- admin_title t('banners.index.page_title')
+
+= will_paginate @banners
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th Id
+            th Image
+            th Name
+            th Begin on
+            th End on
+            th Countries
+            th Operations
+        tbody
+          - @banners.each do |banner|
+            tr
+              td = banner.id
+              td = image_tag banner.image.on_the_fly_process(resize_to_limit: [300, nil]).url
+              td = banner.name
+              td = banner.begin_on
+              td = banner.end_on
+              td
+                ul
+                  - banner.countries.each do |code|
+                    li = Country[code].name
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), edit_admin_banner_path(banner), class: 'btn btn-sm'
+                  = link_to t('shared.form_actions.delete'), admin_banner_path(banner), class: 'btn btn-sm', data: { method: 'delete', confirm: 'Are you sure?' }
+
+= will_paginate @banners

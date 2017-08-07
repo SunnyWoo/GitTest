@@ -1,0 +1,7 @@
+en:
+  record_invalid_error: Record Invalid
+  token_required: 'Missing params: auth_token'
+  invalid_token: 'Token invalid'
+  invalid_user_agent: 'Please make sure your request has a User-Agent header that commandp needs.'
+  order_expire_day_auto_cancel: 'Because of the order exceeds the payment period has been automatically canceled, Please re-orders'
+  verification_code_is_sent: 'Verification code is sent.'

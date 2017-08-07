@@ -1,0 +1,13 @@
+- order = activity.trackable
+- email = activity.extra_info[:email]
+
+- message_id = activity.extra_info[:message_id]
+- mailer = activity.extra_info[:mailer]
+- locale = activity.extra_info[:locale] || I18n.default_locale.to_s
+- mailer_name = mailer.nil? ? '收據與桌布' : mailer
+div
+  | 寄出了 #{link_to_admin_order order} 的#{mailer_name}至 #{email}，語系為 #{locale}.
+  | (#{link_to t('orders.toolbar.resend'), '#resend_receipt', data: {toggle: 'modal'}})
+  - if message_id.present?
+    div
+      = link_to '信件內容', admin_message_path(message_id), data: {open_in_dialog: true}

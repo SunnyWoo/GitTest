@@ -1,0 +1,2 @@
+class YonyouError < ApplicationError
+end

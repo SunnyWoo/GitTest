@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api:key-3dmux9y88eyi5yeyl39tkriyp2ap1-u3@api.mailgun.net/v2/lists/commandp_test-all@sandbox31739.mailgun.org/members
+    body:
+      encoding: US-ASCII
+      string: address=test%40commandp.com&vars=%7B%7D&subscribed=yes
+    headers:
+      accept:
+      - "*/*; q=0.5, application/xml"
+      accept-encoding:
+      - gzip, deflate
+      content-length:
+      - '54'
+      content-type:
+      - application/x-www-form-urlencoded
+      user-agent:
+      - Ruby
+      authorization:
+      - Basic YXBpOmtleS0zZG11eDl5ODhleWk1eWV5bDM5dGtyaXlwMmFwMS11Mw==
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx
+      date:
+      - Wed, 23 Sep 2015 04:43:14 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '61'
+      connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "message": "Address already exists 'test@commandp.com'"
+        }
+    http_version: '1.1'
+  recorded_at: Wed, 23 Sep 2015 04:43:15 GMT
+recorded_with: VCR 2.9.2

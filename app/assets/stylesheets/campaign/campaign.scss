@@ -1,0 +1,294 @@
+.camp_announcement {
+  background-color: #f6f7f2;
+  @extend .label-1;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  a {
+    margin-left: 20px;
+  }
+}
+
+.camp_margin-top-fixed {
+  margin-top: 40px;
+}
+
+.camp_margin-top-55 {
+  margin-top: 55px;
+}
+
+.camp_margin-top-87 {
+  margin-top: 87px;
+}
+
+.camp_margin-top-33 {
+  margin-top: 33px;
+}
+
+.camp_margin-top-25 {
+  margin-top: 25px;
+}
+
+.camp_margin-top-170 {
+  margin-top: 170px;
+}
+
+.camp_margin-top-10 {
+  margin-top: 10px;
+}
+.camp_margin-top--30  {
+  margin-top: -30px;
+}
+
+.camp_margin-bottom-35 {
+  margin-bottom: 35px;
+}
+
+.camp_artworks {
+  img {
+    width: 100%;
+    border: black 1px solid;
+    margin-top: 30px;
+  }
+}
+.camp_artworks2 {
+  img {
+    width: 320px;
+    margin-top: 20px;
+  }
+}
+
+.camp_avatar_cover {
+  position: relative;
+  div {
+    position: absolute;
+    left: 245px;
+  }
+}
+
+.camp_avatar {
+  height: 300px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.camp_sign {
+  position: absolute;
+  top: 225px;
+  right: 212px;
+  width: 200px;
+}
+
+.camp_artwork {
+  a {
+    text-decoration: none;
+  }
+}
+
+.cursor_default {
+  cursor: default;
+}
+
+.camp_artwork_description {
+  font-weight: bolder;
+  margin-top: 20px;
+}
+
+.camp-fontweight-400 {
+  font-weight: 400;
+}
+
+// campaign page
+.campaign-page {
+  display: none;
+}
+
+.campaign-nav {
+  background: #F2F5F7;
+  height: 60px;
+  font-size: 16px;
+  min-width: 1020px;
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    li {
+      padding: 20px;
+      a {
+        color: #47627d;
+      }
+    }
+    li:hover, li.active {
+      padding: 20px;
+      a {
+        color: #4fbd92;
+      }
+    }
+
+    li.active {
+      border-bottom: 4px solid #4fbd92;
+    }
+  }
+}
+
+.campaign-nav-red {
+  background: white;
+  ul {
+    li:hover, li.active {
+      a {
+        color: #ce2925;
+      }
+    }
+    li.active {
+      border-bottom: 4px solid #ce2925;
+    }
+  }
+}
+
+.campaign-inpage-nav {
+  .round-item {
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+    font-size: 0;
+    margin-right: 15px;
+  }
+}
+
+.campaign-inpage-nav-item {
+  display: inline-block;
+  transition: opacity .2s;
+  opacity: .45;
+  cursor: pointer;
+
+  &:hover, &.active {
+    opacity: 1;
+  }
+
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.campaign-page-select-ios {
+  background: white;
+  color: #333;
+  height: 50px;
+  line-height: 50px;
+  width: 290px;
+  display: block;
+  margin: 0 auto 30px auto;
+  font-size: 16px;
+  text-align: center;
+  text-indent: 15px;
+}
+
+.campaign-page-select {
+  background: transparent;
+  border: 1px solid #333;
+  color: #333;
+  height: 50px;
+  line-height: 50px;
+  width: 290px;
+  display: block;
+  margin: 0 auto 30px auto;
+  font-size: 16px;
+  text-align: center;
+  text-indent: 15px;
+}
+
+.mobile_pagination {
+  .pagination {
+    .previous_page, .next_page {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      border-radius: 5px;
+      font-size: 20px;
+      font-size: 20px;
+      opacity: 1 !important;
+      background-color: #4fbd92;
+      line-height: 50px !important;
+      height: 50px !important;
+      width: 50%;
+      margin-left: 80px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.kv-img-denka {
+  position: relative;
+}
+
+.kv-denka-column {
+  background: #000;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  width: 355px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.kv-denka-column-right {
+  margin-left: 390px;
+}
+
+img.kv-denka-row {
+
+  transition: transform 5s cubic-bezier(1,0,0,1), opacity 1s linear;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(1.2, 1.2);
+
+  &.deactive {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  &.active {
+    opacity: 1;
+    transition: transform 5s linear, opacity 1s linear;
+    transform: scale(1, 1);
+    z-index: 2;
+  }
+
+  &.closing {
+    z-index: 1;
+  }
+}
+
+.kv-denka-column-middle {
+  width: 1100px;
+  height: 500px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.cp-instagram {
+  text-align: center;
+  font-size: 17px;
+  line-height: 23px;
+}
+
+.ig-images {
+  margin-top: 60px;
+  text-align: center;
+  img {
+    margin: 0;
+  }
+}

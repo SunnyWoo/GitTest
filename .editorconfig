@@ -1,0 +1,26 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# http://editorconfig.org
+
+root = true
+
+# Base suggestions for
+# https://github.com/styleguide/ruby
+#
+# Use soft-tabs with a two space indent.
+# Never leave trailing whitespace.
+# End each file with a blank newline.
+
+[*]
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{rb,yml,slim,scss,css,js,coffee}]
+indent_style = space
+indent_size = 2
+
+[*.{md,markdown}]
+indent_style = space
+indent_size = 4

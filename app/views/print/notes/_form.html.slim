@@ -1,0 +1,5 @@
+.modal-body
+  = f.input :message, as: :text, input_html: { class: 'test', cols: 5, rows: 10 }
+  = f.input :user_id, :as => :hidden
+.modal-footer
+  = f.button :submit, class: 'btn-primary'

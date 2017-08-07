@@ -1,0 +1,29 @@
+- admin_title I18n.t('store.backend.preview_composers.page_title')
+= simple_form_for @composer, as: :preview_composer, url: store_backend_product_template_preview_composers_path(@template, key: @composer.key), method: :patch do |f|
+  h3 = "Preview Composer: #{@composer.key.humanize}"
+  .alert.alert-info = t('preview_composers.form.use_outer_size')
+  .row
+    .col-sm-4
+      = field_set_tag t('preview_composers.attributes.background')
+        - if @composer.background.uploader.present?
+          = image_tag @composer.background.uploader.url, class: 'dashed-border transparent-grid'
+        = f.input :background_file, as: :image
+        = f.input :background_width, value: 640, label: t('preview_composers.attributes.background_width')
+        = f.input :background_height, value: 640, label: t('preview_composers.attributes.background_height')
+    .col-sm-4
+      = field_set_tag t('preview_composers.attributes.case')
+        - if @composer.case.uploader.present?
+          = image_tag @composer.case.uploader.url, class: 'dashed-border transparent-grid'
+        = f.input :case_file, as: :image
+    .col-sm-4
+      = field_set_tag t('preview_composers.attributes.mask')
+        - if @composer.mask.uploader.present?
+          = image_tag @composer.mask.uploader.url, class: 'dashed-border transparent-grid'
+        = f.input :mask_file, as: :image
+        = f.input :mask_left, label: t('preview_composers.attributes.mask_left')
+        = f.input :mask_top, label: t('preview_composers.attributes.mask_top')
+        = f.input :mask_width, label: t('preview_composers.attributes.mask_width')
+        = f.input :mask_height, label: t('preview_composers.attributes.mask_height')
+  .col-sm-12
+    .form-actions
+      = f.submit I18n.t('shared.form_actions.submit'), class: 'btn btn-small btn-primary'

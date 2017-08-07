@@ -1,0 +1,43 @@
+.col-xs-6
+  = simple_form_for(@mobile_page, url: [:admin, @mobile_page], class: 'form-horizontal',
+                    defaults: { placeholder: false, hint: false } ) do |f|
+    = f.error_notification
+    .col-xs-6
+      - begin_at = f.object.begin_at ? f.object.begin_at.strftime("%F %H:%M") : nil
+      = f.input :begin_at, as: :string, input_html: { id: 'datetimepicker_start', value: begin_at }
+    .col-xs-6
+      - close_at = f.object.close_at ? f.object.close_at.strftime("%F %H:%M") : nil
+      = f.input :close_at, as: :string, input_html: { id: 'datetimepicker_end', value: close_at }
+    .col-xs-12
+      = f.input :key
+    .col-xs-12
+      = f.input :title
+    .col-xs-12
+      = f.input :page_type, collection: MobilePage.page_types.keys, include_blank: false
+    .col-xs-12
+      = f.input :country_code, collection: MobilePage::COUNTRY_CODES , include_blank: false
+    .col-xs-12
+      = f.input :is_enabled
+    .col-xs-12
+      - if @mobile_page.new_record?
+        .alert.alert-block.alert-danger
+          | 新增後才可以開始新增 Mobile Page 元件
+      - else
+        #mobile_component_list = render 'mobile_component_list', mobile_page: @mobile_page
+
+    = f.submit class: 'btn btn-primary'
+    - unless @mobile_page.new_record?
+      = link_to 'Preview', '###', data: { url: preview_admin_mobile_page_path(@mobile_page) }, class: 'btn btn-success mobile_page_preview'
+
+- unless @mobile_page.new_record?
+  .col-xs-6
+    ul#preview_tab.nav.nav-tabs.hide role="tablist"
+      - MobilePagePreview::DEVICES.each do |name, size|
+        - width, height = size.split('x')
+        - active = 'active' if name == :iphone5s
+        li role='presentation' class="#{active}"
+          = link_to name, '###', class: 'preview_device', data: { toggle: 'tab', url: preview_by_device_admin_mobile_page_path(@mobile_page), device: name, width: width, height: height }
+    #preview_iframe
+
+#create_mobile_component.modal.fade
+  = render 'modal_create_mobile_component', mobile_page: @mobile_page unless @mobile_page.new_record?

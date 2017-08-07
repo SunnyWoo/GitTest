@@ -1,0 +1,15 @@
+.itemdiv.dialogdiv id=dom_id(activity)
+  .user
+    = admin_avatar_for(activity.user)
+
+  .body
+    .time
+      = fa_icon 'clock-o', class: 'ace-icon'
+      = time_tag activity.created_at
+
+    .name
+      = admin_username_for(activity.user)
+      = logcraft_source_tag(activity)
+
+    .text
+      = yield

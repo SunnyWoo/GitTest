@@ -1,0 +1,4 @@
+- payment_method = activity.extra_info[:payment_method]
+- order = activity.trackable
+- translated_payment_method = t("activerecord.attributes.order.payment_#{payment_method}")
+div 要求使用 #{logcraft_keyword translated_payment_method} 支付訂單 #{link_to_admin_order(order)}.

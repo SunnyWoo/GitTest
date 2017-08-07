@@ -1,0 +1,13 @@
+- order = activity.trackable
+- ship_code_was = activity.extra_info['ship_code_was']
+- ship_code = activity.extra_info['ship_code']
+- shipping_way = activity.extra_info['shipping_way']
+- shipping_way_was = activity.extra_info['shipping_way_was']
+div
+  | 更改了訂單：#{ order.order_no }的運送資訊
+  - unless ship_code == ship_code_was
+    br
+    | 物流單號從 #{ship_code_was} 改為 #{ship_code}
+  - unless shipping_way == shipping_way_was
+    br
+    | 運送方式從 #{shipping_way_was} 改為 #{shipping_way}

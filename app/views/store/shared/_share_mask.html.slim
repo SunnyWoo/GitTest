@@ -1,0 +1,18 @@
+- share_url ||= '#'
+
+#share-mask.mask [data-trigger-hide='#share-mask']
+  .mask-content
+    .shareModal
+      .shareModal-hint=t('store.share.share_hint')
+      .shareModal-platform
+        - if Region.china?
+          #weiboBtn.shareModal-platform-btn.shareModal-platform-btn--weibo
+          #qqBtn.shareModal-platform-btn.shareModal-platform-btn--qq
+          #wechatBtn.shareModal-platform-btn.shareModal-platform-btn--wechat
+        - else
+          #facebookBtn.shareModal-platform-btn.shareModal-platform-btn--facebook
+          #twitterBtn.shareModal-platform-btn.shareModal-platform-btn--twitter
+          #lineBtn.shareModal-platform-btn.shareModal-platform-btn--line
+      .shareModal-hint=t('store.share.copy_link')
+      input.shareModal-link[type="text" onclick="this.focus();this.select()" readonly="readonly" value=share_url]
+      .shareModal-cancel [data-trigger-hide='#share-mask']=t('store.share.cancel')

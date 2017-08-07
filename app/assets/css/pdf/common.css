@@ -1,0 +1,45 @@
+/* line 1, ../../stylesheets/pdf/common.css.scss */
+body {
+  font-size: 3mm; }
+
+/* line 5, ../../stylesheets/pdf/common.css.scss */
+.page-break {
+  display: block;
+  clear: both;
+  page-break-after: always; }
+
+/* line 12, ../../stylesheets/pdf/common.css.scss */
+.pdf_footer .bottom {
+  padding-top: 16mm; }
+/* line 16, ../../stylesheets/pdf/common.css.scss */
+.pdf_footer .blockquote {
+  border-left: 0.3mm solid #eeeeee;
+  padding-left: 3mm; }
+  /* line 19, ../../stylesheets/pdf/common.css.scss */
+  .pdf_footer .blockquote p {
+    font-size: 3mm;
+    font-weight: 3mm;
+    margin: auto;
+    color: #898989;
+    vertical-align: text-bottom;
+    padding-bottom: 0; }
+
+/* line 31, ../../stylesheets/pdf/common.css.scss */
+.qrcode table {
+  border-width: 0;
+  border-style: none;
+  border-color: #0000ff;
+  border-collapse: collapse; }
+/* line 38, ../../stylesheets/pdf/common.css.scss */
+.qrcode td {
+  border-left: solid 3px #000;
+  padding: 0;
+  margin: 0;
+  width: 0px;
+  height: 3px; }
+/* line 46, ../../stylesheets/pdf/common.css.scss */
+.qrcode td.black {
+  border-color: #000; }
+/* line 47, ../../stylesheets/pdf/common.css.scss */
+.qrcode td.white {
+  border-color: #fff; }

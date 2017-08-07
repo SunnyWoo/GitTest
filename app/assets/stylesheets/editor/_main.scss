@@ -1,0 +1,203 @@
+.editor, .works.edit {
+  .main {
+    border-top: 1px solid $line-color;
+    background: image-url('editor/bg_editor.png') 0 0 scroll repeat transparent;
+  }
+  .icon-20 {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+  .head, .modal-header {
+    position: relative;
+    .close-panel{
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+          @extend .overlays-img_addlayer_icon_cancel_hover;
+        }
+      }
+    }
+    .prev-step {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+          @extend .overlays-img_addlayer_icon_back_hover;
+        }
+      }
+    }
+  }
+  .modal-header {
+    .close{
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &:hover {
+          @extend .popup-icon_cancel_hover;
+        }
+      }
+    }
+  }
+}
+
+#editor_init {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-color: $tnd-color;
+  opacity: .7;
+  z-index: 999;
+}
+
+#drawing {
+  margin: 42px auto;
+}
+
+#setObj {
+  margin-top: 70px;
+}
+
+#preview {
+  position: absolute;
+  top: 71px;
+  right: 0;
+  .spin {
+    position: absolute;
+    top: 20px;
+    left: 166px;
+    width: 32px;
+    height: 32px;
+    background-image: image-url('home/spin1.gif')
+  }
+}
+
+#work_info {
+  position: absolute;
+  top: 80px;
+  left: 105px;
+  .work-name {
+    position: relative;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    max-width: 365px;
+    word-wrap: break-word;
+    margin-bottom: 8px;
+  }
+  .model-name {
+    font-size: 1em;
+  }
+  i {
+    width: 30px;
+    height: 30px;
+    margin-top: 0px;
+    margin-left: 8px;
+    cursor: pointer;
+    &:hover {
+      @extend .edittools-img_icon_backtoedit_hover
+    }
+  }
+  .print-quality {
+    margin-top: 10px;
+    span {
+      margin-left: 5px;
+    }
+    .fa {
+      font-size: 0.8em;
+    }
+    .fa-unstar {
+      color: $line-color;
+    }
+  }
+}
+
+#add_overlay {
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
+  cursor: pointer;
+  z-index: 99;
+  .default-img_icon_addlayer_default_normal {
+    display: block;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    @extend .default-img_icon_addlayer_default_hover;
+  }
+}
+
+#tmp_data {
+  display: none;
+}
+
+#debug {
+  position: fixed;
+  width: 250px;
+  right: 230px;
+  bottom: 20px;
+  padding: 15px;
+  font-size: 10px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.edit-able {
+  position: absolute;
+  top: 5px;
+  z-index: 99;
+  width: 250px;
+  input {
+    @extend .pull-left;
+    border: 1px solid $line-color;
+    padding: 0 10px;
+  }
+  button {
+    @extend .pull-left;
+    @extend .btn;
+    min-width: 43px;
+    height: 43px;
+    background-color: $main-color;
+    padding: 0;
+    opacity: 1;
+    &:hover {
+      background-color: $main-color;
+      opacity: .8;
+    }
+    span {
+      display: block;
+      width: 30px;
+      height: 20px;
+      margin-left: 7px;
+    }
+  }
+}
+
+.draw-clock canvas {
+  @include border-radius(50%);
+  border: 1px dashed shade($line-color, 10%);
+}
+
+.draw-cases canvas {
+  border: 1px dashed shade($line-color, 10%);
+}

@@ -1,0 +1,66 @@
+ja:
+  page:
+    title:
+      featured_products: おすすめ商品
+      dont_take_our: お客様の声
+      you_may_also_like: こちらもおすすめ
+    text:
+      sort: 並び替え
+      model: アイテム
+      category: カテゴリー
+      qty: 数量
+      free_shipping: 海外直送
+      desc: 説明
+      shipping: 配送
+      shipping_desc: 通常配送:10-12日。お急ぎ便も選択することができます。
+      new_year:
+        shipping_desc: "国際配送:10-12 営業日。2月13日-2月23日は印刷工場の旧正月休暇に伴い、配送作業をお休みさせていただきます。お急ぎ便は2月24日に優先して発送いたします。ご不便をお掛け致しますがよろしくお願い致します。"
+      not_support_mobile: '申し訳ありません。この機能は、モバイル·ページに対応していません。'
+      not_support_mobile_ios:
+        - 'アプリ版のコマプリを下記からダウンロード'
+        - '頂けますでしょうか。'
+        - 'もしくはパソコンにてご覧頂けます。'
+      not_support_mobile_android:
+        - 'アプリ版のコマプリを下記からダウンロード'
+        - '頂けますでしょうか。'
+        - 'もしくはパソコンにてご覧頂けます。'
+      no_product_found: Sorry! There is no product found.
+    btns:
+      search: 検索
+      shopping_cart: ショッピングカート
+      user: ユーザー
+      shop: 買う
+      create: つくる
+      app: iOS APP
+      about_us: コマプリについて
+      help: ヘルプ
+      contact_us: お問い合わせ
+      order_status: 注文履歴
+      careers: 採用情報
+      add_to_cart: カートに入れる
+      added: カートに入れました!
+      adding: しばらくお待ちください...
+      removing: しばらくお待ちください...
+      redeem: 今すぐ交換
+    login:
+      title: 会員になる
+      notice: アカウント登録は数秒でできます。
+      connect_to_facebook: "Facebookへのリンク"
+    support:
+      select_q_class: お問い合わせの種類を選択してください。
+      enter_q_content: お問い合わせの内容を詳しくご記入ください。
+    preview:
+      rendering: プレビュー準備中
+  mobile:
+    passwords:
+      successfully_modified: 'パスワードの変更に成功しました'
+      reset_password: 'パスワードをリセットしてください。'
+      reset: 'パスワードをリセットしてください。'
+    confirmations:
+      successfully_confirmed: 'メール認証成功'
+      confirmation_expired: '確認メール有効期限が切れています'
+      invalid_token: 'APPに戻るには、ここをクリックしてください'
+      successfully_send: '確認用メールを送る'
+      resend: '再送信'
+    shared:
+      back_to_app: 'アプリに戻る'

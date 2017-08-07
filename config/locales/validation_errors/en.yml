@@ -1,0 +1,24 @@
+en:
+  errors:
+    messages:
+      child_event_coupon: should be 1 because quantity is > 1
+      invalid_fixed_coupon: should not be blank because discount type is %{discount_type}
+      invalid_percentage_coupon: should > 0 and < 1 because discount type is percentage
+      invalid_threshold_coupon: should not be blank because condition is threshold
+      invalid_usage_count_limit: should greater than or equal to usage count
+      invalid_begin_at: should start at future
+      invalid_expired_at: should end at future
+      invalid_expired_at_on_update: Coupon is not allow to change
+      invalid_designer_ids: should choose designer
+      invalid_product_model_ids: should choose product_model
+      invalid_product_category_ids: should choose product category
+      invalid_work_gids: should choose work
+      invalid_coupon_rules: invalid coupon rules
+      invalid_coupon_rules_quantity: quantity should > 0
+      coupon_condition_is_disabled: coupon is disabled
+      coupon_condition_is_not_satisfied: condition is not satisfied.
+      print_items_do_not_be_created_correctly: "Order's print_items number did not correspond to its order_items need"
+      image:
+        equal_to: "%{length} must be equal to %{count} pixels"
+        greater_than_or_equal_to: "%{length} must be greater or equal to %{count} pixels"
+        less_than_or_equal_to: "%{length} must be less than or equal to %{count} pixels"

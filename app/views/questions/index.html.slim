@@ -1,0 +1,32 @@
+//Search
+.cmdp_container
+  .grid_4.prefix_2
+    input#search type='text' placeholder='Search on commandp'
+
+.cmdp_container
+  #sidebar.grid_2
+    = render_cell :help, :sidebar, @question_categories
+
+  article#article.grid_4
+    - @question_categories.each do |question_category|
+      section id=question_category.name.gsub(' ', '_')
+        h2.item-title
+          = link_to '#' + question_category.name.gsub(' ', '_') do
+            span = "#{question_category.name}"
+            span.q-size.hide = "(#{question_category.questions.size})"
+
+        ul.lists
+          - question_category.questions.each do |question|
+            li
+              .arti-header
+                = question.question
+                i.icon-30.icons-faq_open.pull-right
+              .content.hide = question.answer.html_safe
+    section
+      .item-title.title-fixed
+        = edit_translator('question.content1')
+      .words
+        = edit_translator('question.content2')
+      = link_to support_path, class:'btn-q btn-q-default' do
+        = edit_translator('question.contact_us')
+    .margin-top-fixed

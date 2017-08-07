@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ATqzAhBOpH7HX6JSJfd0iiLwxV-NY6Q_dkgPJ3vWiZjduwozYhZW6QKTGPdV:ECLwyBDuAXKH2uAy5thfqnJa2SsTtc5S208TWcvLbuK3xfD5r_O3OX8HY4PS@api.sandbox.paypal.com/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      content-type:
+      - application/x-www-form-urlencoded
+      authorization:
+      - Basic QVRxekFoQk9wSDdIWDZKU0pmZDBpaUx3eFYtTlk2UV9ka2dQSjN2V2laamR1d296WWhaVzZRS1RHUGRWOkVDTHd5QkR1QVhLSDJ1QXk1dGhmcW5KYTJTc1R0YzVTMjA4VFdjdkxidUszeGZENXJfTzNPWDhIWTRQUw==
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbjava2.slc.paypal.com;threadId=275
+      paypal-debug-id:
+      - 7834e7b1cf2ce
+      server_info:
+      - identitysecuretokenserv:v1.oauth2.token&CalThreadId=165&TopLevelTxnStartTime=1493b1f1862&Host=slcsbidensectoken502.slc.paypal.com&pid=24940
+      date:
+      - Thu, 23 Oct 2014 03:48:54 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '428'
+    body:
+      encoding: UTF-8
+      string: '{"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.*
+        https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks
+        openid https://uri.paypal.com/services/invoicing https://api.paypal.com/v1/vault/credit-card/.*","access_token":"A015NciKFWsec7BQFQurVg6LrwGX-V.W7786hRNklSQJn14","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":28800}'
+    http_version: '1.1'
+  recorded_at: Thu, 23 Oct 2014 03:48:54 GMT
+- request:
+    method: get
+    uri: https://api.sandbox.paypal.com/v1/payments/payment/fail
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      x-paypal-sandbox-email-address:
+      - Platform.sdk.seller@gmail.com
+      authorization:
+      - Bearer A015NciKFWsec7BQFQurVg6LrwGX-V.W7786hRNklSQJn14
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbjava3.slc.paypal.com;threadId=236
+      paypal-debug-id:
+      - a1eeee20cec9e
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=10401&TopLevelTxnStartTime=1493b1f1d37&Host=slcsbpaymentsplatformserv3001.slc.paypal.com&pid=3382
+      content-language:
+      - "*"
+      date:
+      - Thu, 23 Oct 2014 03:48:55 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '207'
+    body:
+      encoding: UTF-8
+      string: '{"name":"INVALID_RESOURCE_ID","message":"The requested resource ID
+        was not found","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#INVALID_RESOURCE_ID","debug_id":"a1eeee20cec9e"}'
+    http_version: '1.1'
+  recorded_at: Thu, 23 Oct 2014 03:48:55 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,7 @@
+zh-TW:
+  record_invalid_error: 找不到指定的資料
+  token_required: '缺少必要的參數: auth_token'
+  invalid_token: '找不到合法的 Token'
+  invalid_user_agent: '請確認你的請求 header 中包含 commandp 指定的 User-Agent。'
+  order_expire_day_auto_cancel: '該訂單由於超過付款期限已自動取消，請重新下單'
+  verification_code_is_sent: '驗證碼已發送'

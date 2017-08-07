@@ -1,0 +1,39 @@
+.filter-block {
+  display: inline-block;
+}
+
+.shops, .search {
+  .filters{
+    .sub-title {
+      width: auto;
+    }
+  }
+  .dropdown {
+    .dropdown-shop {
+      width: 220px;
+    }
+    .dropdown-menu {
+      width: 220px;
+      min-width: 220px;
+    }
+  }
+  .dropdown-small {
+    .dropdown-shop {
+      width: 140px;
+    }
+    .dropdown-menu {
+      width: 140px;
+      min-width: 140px;
+    }
+  }
+}
+
+.shop-content {
+  overflow: auto;
+  min-height: 660px;
+}
+
+.empty-result {
+  text-align: center;
+  margin-top: 300px;
+}

@@ -1,0 +1,52 @@
+.page-header
+  form.form-search
+    input#package_no_input.input-medium.search-query type="text" name="package_no" value="#{params[:package_no]}" placeholder="包裹編號" style="width: 720px;"
+    button#packages_search.btn.btn-sm.btn-primary type="submit"  Search
+  - if @package
+    h5
+      | 包裹編號:
+      = @package.package_no
+    h5 物流編號: #{@package.ship_code}
+    h5 出貨時間: #{l(@package.shipped_at, format: :long) if @package.shipped_at}
+
+= render 'print/shared/notice_bar'
+
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            - if @print_items
+              thead.thin-border-bottom
+                tr
+                  th 訂單編號
+                  th 商品編號
+                  th 縮圖
+                  th 型號
+                  th 列印編號
+                  th 進入印刷工作站
+                  th 進入熱轉印工作站
+                  th 完成點收質檢
+                  th 進入包裝站
+                  th 進入出貨站
+                  th 审核描述
+              tbody
+                - @print_items.each do |print_item|
+                  tr
+                    td= print_item.order.order_no
+                    td= print_item.order_item.itemable.product_code
+                    td= render_print_item_preview(print_item)
+                    td= print_item.product_name
+                    td= print_item.timestamp_no
+                    td= l(print_item.prepare_at, format: :long) if print_item.prepare_at
+                    td= l(print_item.print_at, format: :long) if print_item.print_at
+                    td= l(print_item.qualified_at, format: :long) if print_item.qualified_at
+                    td= l(print_item.sublimated_at, format: :long) if print_item.sublimated_at
+                    td= l(print_item.onboard_at, format: :long) if print_item.onboard_at
+                    td = print_item.temp_shelf_description
+            - else
+              tr
+                td
+                  | 無結果

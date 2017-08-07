@@ -1,0 +1,79 @@
+body.profile {
+  #user_avatar {
+    position: relative;
+    margin: 65px auto 40px;
+    width: 310px;
+    img {
+      @include border-radius(50%);
+      // border: 1px solid $line-color;
+      height: 154px;
+      width: 154px
+    }
+    #mask {
+      @include border-radius(50%);
+      height: 154px;
+      width: 154px;
+      background-color: $main-color;
+      position: absolute;
+      // border: 1px solid $main-color;
+      opacity: .0;
+    }
+    #mask:hover {
+      cursor: pointer;
+      opacity: .6;
+    }
+    #edit {
+      position: absolute;
+      top: 63px;
+      left: 63px;
+    }
+  }
+
+  .profile_form {
+    position: relative;
+    margin-bottom: 60px;
+    .text_field {
+      .label label {
+        font-size: 1em;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: $tnd-color;
+      }
+
+      input {
+        font-size: 1em;
+        width: 448px;
+        height: 45px;
+        padding: 0 20px;
+        border: 1px solid $line-color;
+        color: $sub-words-color;
+        margin-bottom: 30px;
+      }
+    }
+    .gender_radio {
+      label {
+        display: block;
+        float:left;
+        font-size: 1em;
+        font-weight: bold;
+        color: $tnd-color;
+        margin-left: 10px;
+        padding: 2px 2em 0 0
+      }
+      input[type=radio], input.radio {
+        float:left;
+        clear:none;
+        margin: 2px 0 0 2px;
+      }
+    }
+  }
+}
+
+.help-list, .help {
+  a:hover {
+    &, * {
+      color: $main-color;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon icon, class: 'ace-icon'
+      = title
+    - if toolbar
+      .widget-toolbar = toolbar
+  .widget-body
+    .widget-main.no-padding
+      = content

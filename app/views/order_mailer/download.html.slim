@@ -1,0 +1,26 @@
+.paragraph1
+
+.title.paragraph1.c-margin
+  = image_tag('email/nl_text_yourwallpaper.png')
+
+.paragraph1.c-margin
+  p
+    = t('email.order.share.hello', username: @user.username)
+  p
+    span.highlight = t('email.order.share.order_id', order_no: @order.order_no)
+    = t('email.order.download.content_1')
+  p
+    = t('email.order.download.content_2')
+
+  - @order.order_items.each do |item|
+    - next if !item.itemable.product.key.match(/case|cover/)
+      - image_url = item.itemable_print_image.url || item.itemable_cover_image.url
+      p.item-info
+        span.name
+          span= item.itemable_name
+          | Wallpaper
+        span.device= item.itemable_product.name
+      p.cover-img
+        = image_tag(image_url)
+      p.download
+        = link_to image_tag('email/btn_download_normal.png'), image_url

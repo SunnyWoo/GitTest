@@ -1,0 +1,23 @@
+#orders-search-form
+  input
+    width: 100%
+    @include rem(height, 50px)
+    @include rem(line-height, 50px)
+    @include rem(padding-left, 15px)
+    border-bottom: 1px solid $c-border
+    @include rem(font-size, $f-size-input)
+    &:first-of-type
+      border-top: 1px solid $c-border
+    &::-webkit-input-placeholder
+      color: $c-text-placeholder
+      @include rem(font-size, $f-size-content)
+    &::-moz-placeholder
+      color: $c-text-placeholder
+      @include rem(font-size, $f-size-content)
+    &:-ms-input-placeholder
+      color: $c-text-placeholder
+      @include rem(font-size, $f-size-content)
+
+#button--queryOrder
+  position: fixed
+  bottom: 0

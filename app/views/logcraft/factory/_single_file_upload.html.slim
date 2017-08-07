@@ -1,0 +1,5 @@
+- work = PrintItem.find(activity.extra_info[:print_item_id]).order_item.itemable
+div
+  | 開始上傳 #{link_to_admin_work work} 到 FTP
+  br Message:
+  pre = activity.message

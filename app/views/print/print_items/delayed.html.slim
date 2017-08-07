@@ -1,0 +1,21 @@
+= render 'print/print_items/nav', active: 'delayed'
+
+h2 = "訂單審核日期在#{@delayed_time.strftime('%Y-%m-%d %H:%M:%S')}前的視為遲到"
+= render 'print/shared/notice_bar'
+.well.well-small
+    form.form-search
+      input#timestamp_no_input.input-medium.search-query type="text" name="number" value="#{params[:number]}" placeholder="輸入訂單編號,印刷序號,列印編號" style="width: 720px;"
+        button#temp_shelf_order_search.btn.btn-sm.btn-primary type="submit"  Search
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter 遲到訂單
+    .widget-toolbar
+      span.badge.badge-danger = @print_items.count
+    .widget-toolbar
+      = link_to '匯出遲到歷史記錄', '###', onclick: "$('#export_delayed_histroy_form').modal('show');"
+  .widget-body
+    .widget-main.no-padding
+      = render 'list', print_items: @print_items, product_models: @product_models
+
+= will_paginate @print_items
+= render 'print/print_items/export_delayed_histroy_form'

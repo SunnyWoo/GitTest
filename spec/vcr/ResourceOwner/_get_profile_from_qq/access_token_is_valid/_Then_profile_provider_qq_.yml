@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.qq.com/oauth2.0/me?access_token=BA4D3E48D8EC4238CF01CDE942567085
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - tws
+      date:
+      - Thu, 30 Jul 2015 07:26:53 GMT
+      content-type:
+      - text/html; charset=utf-8
+      content-length:
+      - '83'
+      connection:
+      - close
+      cache-control:
+      - no-cache
+    body:
+      encoding: UTF-8
+      string: |
+        callback( {"client_id":"101238358","openid":"4CEB92554772C935D4812517AABDA5D1"} );
+    http_version: '1.1'
+  recorded_at: Thu, 30 Jul 2015 07:26:53 GMT
+- request:
+    method: get
+    uri: https://graph.qq.com/user/get_user_info?access_token=BA4D3E48D8EC4238CF01CDE942567085&format=json&oauth_consumer_key=101238358&openid=4CEB92554772C935D4812517AABDA5D1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - tws
+      date:
+      - Thu, 30 Jul 2015 07:26:54 GMT
+      content-type:
+      - text/html; charset=utf-8
+      content-length:
+      - '283'
+      connection:
+      - close
+      content-encoding:
+      - gzip
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICAgInJldCI6IDAsCiAgICAibXNnIjogIiIsCiAgICAiaXNfbG9zdCI6
+        MCwKICAgICJuaWNrbmFtZSI6ICLkuIkiLAogICAgImdlbmRlciI6ICLnlLci
+        LAogICAgInByb3ZpbmNlIjogIuaxn+ilvyIsCiAgICAiY2l0eSI6ICLkuZ3m
+        sZ8iLAogICAgInllYXIiOiAiMTk4OCIsCiAgICAiZmlndXJldXJsIjogImh0
+        dHA6XC9cL3F6YXBwLnFsb2dvLmNuXC9xemFwcFwvMTAxMjM4MzU4XC80Q0VC
+        OTI1NTQ3NzJDOTM1RDQ4MTI1MTdBQUJEQTVEMVwvMzAiLAogICAgImZpZ3Vy
+        ZXVybF8xIjogImh0dHA6XC9cL3F6YXBwLnFsb2dvLmNuXC9xemFwcFwvMTAx
+        MjM4MzU4XC80Q0VCOTI1NTQ3NzJDOTM1RDQ4MTI1MTdBQUJEQTVEMVwvNTAi
+        LAogICAgImZpZ3VyZXVybF8yIjogImh0dHA6XC9cL3F6YXBwLnFsb2dvLmNu
+        XC9xemFwcFwvMTAxMjM4MzU4XC80Q0VCOTI1NTQ3NzJDOTM1RDQ4MTI1MTdB
+        QUJEQTVEMVwvMTAwIiwKICAgICJmaWd1cmV1cmxfcXFfMSI6ICJodHRwOlwv
+        XC9xLnFsb2dvLmNuXC9xcWFwcFwvMTAxMjM4MzU4XC80Q0VCOTI1NTQ3NzJD
+        OTM1RDQ4MTI1MTdBQUJEQTVEMVwvNDAiLAogICAgImZpZ3VyZXVybF9xcV8y
+        IjogImh0dHA6XC9cL3EucWxvZ28uY25cL3FxYXBwXC8xMDEyMzgzNThcLzRD
+        RUI5MjU1NDc3MkM5MzVENDgxMjUxN0FBQkRBNUQxXC8xMDAiLAogICAgImlz
+        X3llbGxvd192aXAiOiAiMCIsCiAgICAidmlwIjogIjAiLAogICAgInllbGxv
+        d192aXBfbGV2ZWwiOiAiMCIsCiAgICAibGV2ZWwiOiAiMCIsCiAgICAiaXNf
+        eWVsbG93X3llYXJfdmlwIjogIjAiCn0K
+    http_version: '1.1'
+  recorded_at: Thu, 30 Jul 2015 07:26:54 GMT
+recorded_with: VCR 2.9.2

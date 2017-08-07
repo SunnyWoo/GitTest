@@ -1,0 +1,70 @@
+.mobile-kv {
+  .slick-dots {
+    bottom: 34px;
+  }
+
+  .slick-dots li {
+    height: 7px;
+    width: 7px;
+  }
+
+  .slick-dots li button {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 7px;
+    height: 7px;
+    width: 7px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .slick-next, .slick-prev {
+    bottom: 23px;
+    background: transparent;
+    top: initial;
+    z-index: 0;
+  }
+
+  .slick-next {
+    opacity: 1;
+    height: 27px;
+    width: 27px;
+    right: 24.4%;
+    background-image: image-url('campaign/denka/mobile/arrow_1_right.png');
+    &:hover {
+      background-image: image-url('campaign/denka/mobile/arrow_2_right.png');
+    }
+  }
+
+  .slick-prev {
+    opacity: 1;
+    height: 27px;
+    width: 27px;
+    left: 24.4%;
+    background-image: image-url('campaign/denka/mobile/arrow_1_left.png');
+    &:hover {
+      background-image: image-url('campaign/denka/mobile/arrow_2_left.png');
+    }
+  }
+
+  .kv-button {
+    top: 370px;
+    left: 50%;
+    width: 320px;
+    margin-left: -160px;
+    text-align: center;
+    position: absolute;
+  }
+
+  .kv-button-shop-now {
+    display: inline-block;
+    width: 164px;
+    height: 41px;
+    background: transparent;
+    background-size: cover;
+    background-image: image-url('campaign/denka/mobile/btn_denka_normal@2x.png');
+    &:hover {
+      background-image: image-url('campaign/denka/mobile/btn_denka_pressed@2x.png');
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.container {
+  width: $w-container;
+  margin: 0 auto;
+  @include bp(mobile) {
+    width: 100vw;
+    @include rem(padding, 0 10px);
+  }
+}
+
+.tac {
+  text-align: center;
+}
+
+.woh {
+  width: 100%;
+}
+
+.ma {
+  display: block;
+  margin: 0 auto;
+}
+
+.text-h1 {
+  font-size: $fz-xxxl;
+  color: $c-title;
+  @include bp(mobile) {
+    @include rem(font-size, $fz-xl);
+  }
+}
+
+.text-h1--mobile {
+  @include rem(font-size, $fz-xl);
+  color: $c-title;
+}
+
+.text-h2 {
+  font-size: $fz-xxl;
+  color: $c-title;
+}
+
+.text-h3 {
+  font-size: $fz-xl;
+  color: $c-normal;
+}
+
+.text-h3--mobile {
+  font-size: $fz-xl;
+  color: $c-normal;
+}
+
+.text-h4 {
+  font-size: $fz-l;
+  color: $c-normal;
+}
+
+.text-p {
+  @include rem(font-size, $fz);
+  color: $c-normal;
+}
+
+.text-p--mobile {
+  @include rem(font-size, $fz-m);
+  color: $c-normal;
+}
+
+.text-p--highlight {
+  font-size: $fz;
+  color: $c-error;
+}
+
+.mb--l {
+  margin-bottom: 120px;
+}
+.mb--m {
+  margin-bottom: 60px;
+}
+
+.form-margin {
+  @include rem(margin-top, 60px);
+  @include bp(mobile) {
+    @include rem(margin-top, 30px);
+  }
+}
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: $c-border;
+}

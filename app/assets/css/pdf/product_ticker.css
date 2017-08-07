@@ -1,0 +1,76 @@
+/* line 2, ../../stylesheets/pdf/product_ticker.css.scss */
+.product_ticker .content {
+  width: 75mm;
+  height: 61.5mm;
+  font-weight: 900;
+  margin-left: 2mm; }
+  /* line 9, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .header .logo img {
+    width: 13mm;
+    height: 13mm; }
+  /* line 15, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .product_cont {
+    margin-top: 5mm;
+    border-bottom: 0.3mm solid #575757; }
+    /* line 19, ../../stylesheets/pdf/product_ticker.css.scss */
+    .product_ticker .content .product_cont .product_img {
+      padding-bottom: 3mm;
+      width: 13mm;
+      float: left; }
+      /* line 23, ../../stylesheets/pdf/product_ticker.css.scss */
+      .product_ticker .content .product_cont .product_img img {
+        width: 13mm;
+        max-height: 13mm; }
+    /* line 29, ../../stylesheets/pdf/product_ticker.css.scss */
+    .product_ticker .content .product_cont .work_name {
+      font-size: 13px;
+      padding-left: 2mm;
+      float: left;
+      width: 33mm; }
+    /* line 36, ../../stylesheets/pdf/product_ticker.css.scss */
+    .product_ticker .content .product_cont .info {
+      width: 100%;
+      float: left; }
+    /* line 41, ../../stylesheets/pdf/product_ticker.css.scss */
+    .product_ticker .content .product_cont td, .product_ticker .content .product_cont th {
+      white-space: nowrap; }
+  /* line 48, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode img {
+    width: 13mm;
+    height: 13mm;
+    margin-bottom: 1mm; }
+  /* line 54, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode div {
+    float: right;
+    width: 14mm;
+    text-align: center;
+    font-size: 2mm; }
+  /* line 61, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode table {
+    width: 13mm;
+    height: 13mm;
+    float: right;
+    margin-bottom: 1mm;
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse; }
+  /* line 72, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode td {
+    border-left: solid 2px #000;
+    padding: 0;
+    margin: 0;
+    width: 0px;
+    height: 2px; }
+  /* line 80, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode td.black {
+    border-color: #000; }
+  /* line 81, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .qrcode td.white {
+    border-color: #fff; }
+  /* line 84, ../../stylesheets/pdf/product_ticker.css.scss */
+  .product_ticker .content .footer {
+    padding-top: 2.3mm; }
+    /* line 87, ../../stylesheets/pdf/product_ticker.css.scss */
+    .product_ticker .content .footer .company {
+      font-size: 10px; }

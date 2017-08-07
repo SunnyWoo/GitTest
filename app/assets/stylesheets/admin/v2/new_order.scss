@@ -1,0 +1,81 @@
+.btn-margin-right {
+  margin-right: 10px;
+}
+
+.filters {
+  margin-bottom: 10px;
+}
+
+.form-search {
+  .search-label {
+    margin-right: 10px;
+  }
+}
+
+.add-filter {
+  height: 34px;
+  width: 270px;
+  padding: 5px 10px;
+  background-color: #2283C5;
+  color: #FFF;
+  .platform, .value {
+    width: 120px;
+    margin: 0 10px 0 0;
+    background-color: tint(#2283C5, 80%);
+    border: 0;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .value {
+    margin: 0;
+  }
+}
+
+.filter-options {
+  div {
+    float: left;
+    margin-right: 10px;
+    background-color: #2283C5;
+    padding: 8px 15px 7px;
+    color: #FFF;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    .del {
+      background-color: #64a8d6;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-top: 1px;
+      margin-left: 10px;
+      vertical-align: top;
+      line-height: 16px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
+
+.filters {
+  ul {
+    clear: both;
+    list-style: none;
+    margin: 0;
+    li {
+      float: left;
+      margin-right: 10px;
+    }
+  }
+}
+
+#order_results {
+  .order img {
+    width: 100px;
+  }
+}
+
+#orders_table {
+  thead .sort {
+    cursor: pointer;
+  }
+}

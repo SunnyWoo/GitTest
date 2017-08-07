@@ -1,0 +1,53 @@
+.page-header
+  h1 移貨
+= render 'print/shared/notice_bar'
+= simple_form_for @storage, url: move_print_shelves_path(@storage), html: {class: 'form-horizontal'} do |f|
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h4 移出货架
+        .widget-toolbar
+          = link_to '增加移出', '#', id: :add_move_from
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-bordered.table-striped.move_from
+          thead.thin-border-bottom
+            tr
+              th 货架编号
+              th 物料编号
+              th 数量
+            = fields_for 'move_from[from]', @storage do |b|
+              tr.move_from
+                td = b.text_field :shelf_serial, class: 'form-control'
+                td = b.text_field :material_serial, class: 'form-control'
+                td = b.text_field :quantity, class: 'form-control'
+
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h4 移入货架
+        .widget-toolbar
+          = link_to '增加移入', '#', id: :add_move_target
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-bordered.table-striped.move_target
+          thead.thin-border-bottom
+            tr
+              th 货架编号
+              th 物料编号
+              th 数量
+            = fields_for 'move_target[target]', @storage do |b|
+              tr.move_target
+                td = b.text_field :shelf_serial, class: 'form-control'
+                td = b.text_field :material_serial, class: 'form-control'
+                td = b.text_field :quantity, class: 'form-control'
+
+  .col-xs-12
+    .well
+      .form-inputs
+        .form-group.string
+          label = '備註'
+          = text_field_tag :message, nil, class: 'form-control'
+
+      .form-actions
+        = f.button :submit, '移貨', class: 'btn btn-primary'

@@ -1,0 +1,17 @@
+- form = for_shipping_fee
+.row data-role='promotion-form' data-type='for_shipping_fee'
+  .col-sm-6
+    = simple_form_for([:admin, form], class: 'form-horizontal') do |f|
+      = render 'admin/promotions/forms/shared_fields', f: f
+      .widget-box
+        .widget-header
+          h4.widget-title 設定免運條件
+        .widget-body
+          .widget-main
+            - f.object.rules.each_with_index do |rule, idx|
+              = f.simple_fields_for :rules, rule, index: idx do |rf|
+                = render 'admin/promotions/promotion_rule_field', f: rf, pf: f
+      .form-actions
+        = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+        = link_to t('shared.form_actions.back'), admin_promotions_path, class: 'btn btn-info'
+  .col-sm-6

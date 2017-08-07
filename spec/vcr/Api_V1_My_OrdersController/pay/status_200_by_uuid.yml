@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ATqzAhBOpH7HX6JSJfd0iiLwxV-NY6Q_dkgPJ3vWiZjduwozYhZW6QKTGPdV:ECLwyBDuAXKH2uAy5thfqnJa2SsTtc5S208TWcvLbuK3xfD5r_O3OX8HY4PS@api.sandbox.paypal.com/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      content-type:
+      - application/x-www-form-urlencoded
+      authorization:
+      - Basic QVRxekFoQk9wSDdIWDZKU0pmZDBpaUx3eFYtTlk2UV9ka2dQSjN2V2laamR1d296WWhaVzZRS1RHUGRWOkVDTHd5QkR1QVhLSDJ1QXk1dGhmcW5KYTJTc1R0YzVTMjA4VFdjdkxidUszeGZENXJfTzNPWDhIWTRQUw==
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbjava4.slc.paypal.com;threadId=238
+      paypal-debug-id:
+      - 2fca5066a6fa9
+      server_info:
+      - identitysecuretokenserv:v1.oauth2.token&CalThreadId=91&TopLevelTxnStartTime=147dfa82975&Host=slcsbidensectoken501.slc.paypal.com&pid=12608
+      date:
+      - Sat, 16 Aug 2014 16:30:45 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '428'
+    body:
+      encoding: UTF-8
+      string: '{"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.*
+        https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks
+        openid https://uri.paypal.com/services/invoicing https://api.paypal.com/v1/vault/credit-card/.*","access_token":"A015alqNUZCikn5sFK-7lMwexYJkgAc5KBsveZiziFyu.oU","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":28800}'
+    http_version: '1.1'
+  recorded_at: Sat, 16 Aug 2014 16:30:47 GMT
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"4417119669820331","type":"visa","expire_month":11,"expire_year":2018,"cvv2":"874","first_name":"Joe","last_name":"Shopper","billing_address":{"line1":"52
+        N Main ST","city":"Johnstown","country_code":"US","postal_code":"43210","state":"OH"}}}]},"transactions":[{"amount":{"currency":"USD","total":"1.00"},"description":"This
+        is the payment transaction description.","item_list":{"items":[{"quantity":"1","name":"item","price":"1","currency":"USD","sku":"item"}]}}]}'
+    headers:
+      authorization:
+      - Bearer A015alqNUZCikn5sFK-7lMwexYJkgAc5KBsveZiziFyu.oU
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      paypal-request-id:
+      - 1fe27608-6813-44e1-b494-01ff4e499b00
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbjava3.slc.paypal.com;threadId=34373
+      paypal-debug-id:
+      - 7bfec7e8a72dd
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=128&TopLevelTxnStartTime=147dfa82f35&Host=slcsbjm1.slc.paypal.com&pid=25157
+      content-language:
+      - "*"
+      date:
+      - Sat, 16 Aug 2014 16:31:05 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '1454'
+    body:
+      encoding: UTF-8
+      string: '{"id":"PAY-26J09954DF308492MKPXYONY","create_time":"2014-08-16T16:30:47Z","update_time":"2014-08-16T16:31:05Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx0331","expire_month":"11","expire_year":"2018","first_name":"Joe","last_name":"Shopper","billing_address":{"line1":"52
+        N Main ST","city":"Johnstown","state":"OH","postal_code":"43210","country_code":"US"}}}]},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00"}},"description":"This
+        is the payment transaction description.","item_list":{"items":[{"name":"item","sku":"item","price":"1.00","currency":"USD","quantity":"1"}]},"related_resources":[{"sale":{"id":"01R37095D8953781G","create_time":"2014-08-16T16:30:47Z","update_time":"2014-08-16T16:31:05Z","amount":{"total":"1.00","currency":"USD"},"state":"completed","parent_payment":"PAY-26J09954DF308492MKPXYONY","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/01R37095D8953781G","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/01R37095D8953781G/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-26J09954DF308492MKPXYONY","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-26J09954DF308492MKPXYONY","rel":"self","method":"GET"}]}'
+    http_version: '1.1'
+  recorded_at: Sat, 16 Aug 2014 16:31:06 GMT
+- request:
+    method: get
+    uri: https://api.sandbox.paypal.com/v1/payments/payment/PAY-26J09954DF308492MKPXYONY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      authorization:
+      - Bearer A015alqNUZCikn5sFK-7lMwexYJkgAc5KBsveZiziFyu.oU
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbjava1.slc.paypal.com;threadId=291
+      paypal-debug-id:
+      - e4986551a3a93
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=305&TopLevelTxnStartTime=147dfa87968&Host=slcsbjm2.slc.paypal.com&pid=26669
+      content-language:
+      - "*"
+      date:
+      - Sat, 16 Aug 2014 16:31:06 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '1454'
+    body:
+      encoding: UTF-8
+      string: '{"id":"PAY-26J09954DF308492MKPXYONY","create_time":"2014-08-16T16:30:47Z","update_time":"2014-08-16T16:31:05Z","state":"approved","intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"type":"visa","number":"xxxxxxxxxxxx0331","expire_month":"11","expire_year":"2018","first_name":"Joe","last_name":"Shopper","billing_address":{"line1":"52
+        N Main ST","city":"Johnstown","state":"OH","postal_code":"43210","country_code":"US"}}}]},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"1.00"}},"description":"This
+        is the payment transaction description.","item_list":{"items":[{"name":"item","sku":"item","price":"1.00","currency":"USD","quantity":"1"}]},"related_resources":[{"sale":{"id":"01R37095D8953781G","create_time":"2014-08-16T16:30:47Z","update_time":"2014-08-16T16:31:05Z","amount":{"total":"1.00","currency":"USD"},"state":"completed","parent_payment":"PAY-26J09954DF308492MKPXYONY","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/sale/01R37095D8953781G","rel":"self","method":"GET"},{"href":"https://api.sandbox.paypal.com/v1/payments/sale/01R37095D8953781G/refund","rel":"refund","method":"POST"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-26J09954DF308492MKPXYONY","rel":"parent_payment","method":"GET"}]}}]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-26J09954DF308492MKPXYONY","rel":"self","method":"GET"}]}'
+    http_version: '1.1'
+  recorded_at: Sat, 16 Aug 2014 16:31:07 GMT
+recorded_with: VCR 2.9.2

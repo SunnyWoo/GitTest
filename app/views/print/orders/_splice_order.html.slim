@@ -1,0 +1,59 @@
+#splice_order.modal.fade role="dialog"
+  .modal-dialog.modal-lg style="width: 80%;"
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      .modal-body
+        = simple_form_for [:print, Package.new], html: {class: 'form-horizontal'} do |f|
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th = check_box_tag 'check_all'
+                th 订单编号
+                th 出貨方式
+                th 内容
+                th 留言
+                th 折扣吗
+                th 订单总价
+                th 发票号码
+            tbody
+              - orders.each do |order|
+                tr
+                  td = f.fields_for 'orders[]', order do |p|
+                    = p.check_box :id, { checked: false, disabled: !order.can_be_packaged_all? }, order.id, nil
+                  td
+                    = render_order_shipper(order)
+                    br
+                    = order.remote_info['order_no']
+                  td = render_shipping_way_with_color(order.shipping_info.shipping_way)
+                  td
+                    table.table.table-bordered
+                      thead.thin-border-bottom
+                        tr
+                          th 列印編號
+                          th 型號
+                          th 縮圖
+                          th 狀態
+                          th 暂存区编号
+                          th style='min-width: 100px'  审核描述
+                          th 商品貼紙
+                        - order.print_items.each do |print_item|
+                          tr
+                            td = print_item.timestamp_no
+                            td = print_item.product.name
+                            td = render_print_item_preview(print_item)
+                            td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+                            td = print_item.temp_shelf_serial
+                            td = print_item.temp_shelf_description
+                            td = link_to '商品貼紙', print_pdf_product_ticker_path(order_item_id: print_item.order_item.id, format: :pdf), class: "btn btn-success", target: '_blank'
+                  td
+                    - unless order.notes.empty?
+                      = render 'print/notes/notes', noteable: order, readonly: true
+                  td = render_coupon_info(order.embedded_coupon)
+                  td = render_order_price(order)
+                  td = render 'print/orders/remote_update_invoice', order: order
+          .modal-footer.text-righ
+            = link_to '列印拼单出货单正面', '#' , class: "btn btn-success", id: :package_delivery_note, data: { href: print_pdf_package_delivery_note_path }
+            = link_to '列印拼单出货单背面',  render_delivery_note_back_url(orders.first.billing_info_country_code), class: "btn btn-success", id: :package_delivery_note, data: { href: print_pdf_package_delivery_note_path }
+            = f.button :submit, '拼单', class: 'btn btn-primary'

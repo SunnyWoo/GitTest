@@ -1,0 +1,20 @@
+
+.text-center
+  - if wordings.try(:instagram_desc).present?
+    div style='margin: 50px auto;font-size: 17px;line-height: 23px;'
+      = simple_format(wordings.try(:instagram_desc))
+      br
+      - if wordings.try(:instagram_htag).present?
+        span style='font-weight: bold;font-size: 20px;' ##{wordings.instagram_htag}
+  - else
+    .cp-instagram
+      = link_to 'https://www.instagram.com/commandptw/', target: :blank do
+        = image_tag 'campaign/instagram.png'
+        .at-cp @commandptw
+        .follow-cp-ig 追蹤我印 @ Instagram
+
+  = link_to 'https://www.instagram.com/commandptw/', target: :blank do
+    .ig-images
+      - if ig_images && ig_images.size > 0
+        - ig_images.each do |src|
+          = image_tag src

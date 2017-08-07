@@ -1,0 +1,17 @@
+= simple_form_for [:admin, mobile_ui] do |f|
+  = f.input :title
+  = f.input :description
+  = f.input :template
+  = f.input :image, as: :image
+  = f.input :is_enabled, label: "Enabled?"
+  = f.input :default, label: "Default?"
+  = f.input :priority, as: :select, collection: 1..10, include_blank: false
+  = f.label :date
+  .input-daterange.input-group data-daterange=true
+    = f.input_field :start_at, as: :string, class: 'input-sm form-control'
+    span.input-group-addon ~
+    = f.input_field :end_at, as: :string, class: 'input-sm form-control'
+  .row
+    .col-xs-12
+      .form-actions
+        = f.button :submit

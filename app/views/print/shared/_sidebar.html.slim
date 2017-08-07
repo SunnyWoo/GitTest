@@ -1,0 +1,140 @@
+#sidebar.sidebar
+  ul.nav.nav-list
+    li
+      = link_to print_print_path do
+        = fa_icon 'print'
+        '&nbsp;
+        span 印刷
+        span.badge.badge-danger = render_pending_count(current_factory)
+    li
+      = link_to print_sublimate_path do
+        = fa_icon 'flask'
+        '&nbsp;
+        span 熱轉印
+        span.badge.badge-danger = render_printed_count(current_factory)
+    li
+      = link_to print_temp_shelves_path do
+        = fa_icon 'flask'
+        '&nbsp;
+        span  質檢區
+        span.badge.badge-danger = render_temp_shelf_count(current_factory)
+    li
+      = link_to print_package_path do
+        = fa_icon 'gift'
+        '&nbsp;
+        span 包裝
+        span.badge.badge-danger = render_ready_package_count
+    li
+      = link_to print_ship_path do
+        = fa_icon 'truck'
+        '&nbsp;
+        span 出貨
+        span.badge.badge-danger = render_onboard_count
+
+    li.active.open
+      a.dropdown-toggle href='#'
+        = fa_icon 'truck', class: 'menu-icon'
+        '&nbsp;
+        span.menu-text 仓库
+        b.arrow.fa.fa-angle-down
+      ul.submenu.nav-show
+        = print_sidebar_link print_shelves_path, 'inbox'
+          '&nbsp;
+          = '貨架'
+          span.badge.badge-important
+            = render_shelves_count
+        = print_sidebar_link print_shelf_materials_path, 'gift'
+          '&nbsp;
+          = '物料'
+          span.badge.badge-important
+            = render_materials_count
+
+    - if policy(PrintItem).delayed?
+      li
+        = link_to delayed_print_print_items_path do
+          = fa_icon 'dropbox'
+          '&nbsp;
+          span 訂單狀態
+
+    li
+      = link_to schedule_print_orders_path do
+        = fa_icon 'list'
+        '&nbsp;
+        span 訂單處理進度
+    li
+      = link_to schedule_print_print_items_path do
+        = fa_icon 'list'
+        '&nbsp;
+        span 商品處理進度
+
+    li
+      = link_to history_print_orders_path do
+        = fa_icon 'dropbox'
+        '&nbsp;
+        span 歷史訂單
+    li.active.open
+      a.dropdown-toggle href='#'
+        = fa_icon 'truck', class: 'menu-icon'
+        '&nbsp;
+        span.menu-text 系統設定
+        b.arrow.fa.fa-angle-down
+      ul.submenu.nav-show
+        - if policy(FactoryRoleGroup).index?
+          = print_sidebar_link print_role_groups_path, 'dropbox'
+            '&nbsp;
+            = '權限群組'
+
+        - if policy(FactoryMember).update?
+          = print_sidebar_link print_user_roles_path, 'dropbox'
+            '&nbsp;
+            = '帳號管理'
+
+        - feature :imposition do
+          = print_sidebar_link print_impositions_path, 'th'
+            '&nbsp;
+            span = t('impositions.index.page_title')
+
+    li
+      = link_to print_packages_path do
+        = fa_icon 'gift'
+        '&nbsp;
+        span 包裹搜尋
+    li
+      = link_to qualified_report_print_print_items_path do
+        = fa_icon 'book'
+        '&nbsp;
+        span 質檢記錄
+
+    li
+      = link_to print_dropbox_path do
+        = fa_icon 'dropbox'
+        '&nbsp;
+        span Dropbox
+
+    li
+      = link_to print_batch_flows_path do
+        = fa_icon 'reorder'
+        '&nbsp;
+        span 批次生產作業
+    li
+      = link_to edit_print_factory_member_path(current_factory_member) do
+        = fa_icon 'dropbox'
+        '&nbsp;
+        span 帳號資訊
+    li
+      = link_to print_export_orders_path do
+        = fa_icon 'dropbox'
+        '&nbsp;
+        span 订单导出
+
+
+
+  #nav-search.nav-search style='width:90%; margin-left:10px;'
+    form.form-search action="#{print_search_path}"
+      .input-group
+        input#print_search_order_no.form-control placeholder=("搜尋訂單 ...") name="q" type="text"
+          span.input-group-btn
+            button#print_search_order_submit.btn.btn-sm.btn-info.no-radius type="submit"
+              i.icon-share-alt
+              | 搜尋
+    /= link_to '下載訂單', '/download/330x470x10M_89465.pdf', class: 'btn btn-lg btn-success'

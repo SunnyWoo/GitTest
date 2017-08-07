@@ -1,0 +1,38 @@
+= simple_form_for(variant, url: [:admin, product, variant], class: 'form-horizontal') do |f|
+  - product.option_types.each do |option_type|
+    = f.label :new_variant, option_type.presentation
+    = f.input :option_value_ids, collection: option_type.option_values, label: false, input_html: { name: 'variant[option_value_ids][]', class: 'tag_select2' }
+  .well
+    h3 Work Spec
+    = f.simple_fields_for :work_spec, variant.work_spec do |wsf|
+      = wsf.input :id, label: false, input_html: { type: :hidden, value: variant.work_spec.id }
+      = wsf.input :name, label: t('work_specs.attributes.name')
+      .row
+        .col-sm-4 = wsf.input :width, label: t('work_specs.attributes.width')
+        .col-sm-4 = wsf.input :height, label: t('work_specs.attributes.height')
+        .col-sm-4 = wsf.input :dpi, label: t('work_specs.attributes.dpi')
+      = wsf.input :background_image, as: :image, label: t('work_specs.attributes.background_image')
+      = wsf.input :overlay_image, as: :image, label: t('work_specs.attributes.overlay_image')
+      = wsf.input :shape, as: :select, collection: WorkSpec::SHAPES, include_blank: false, label: t('work_specs.attributes.shape')
+      = wsf.input :alignment_points, as: :select, collection: WorkSpec::ALIGNMENT_POINTS, include_blank: false, label: t('work_specs.attributes.alignment_points')
+      = wsf.input :background_color, as: :select, collection: WorkSpec::BACKGROUND_COLORS, include_blank: false, label: t('work_specs.attributes.background_color')
+      .row
+        .col-sm-3 = wsf.input :padding_top
+        .col-sm-3 = wsf.input :padding_right
+        .col-sm-3 = wsf.input :padding_bottom
+        .col-sm-3 = wsf.input :padding_left
+      = wsf.input :dir_name, label: t('work_specs.attributes.dir_name')
+      = wsf.input :placeholder_image, as: :image, label: t('work_specs.attributes.placeholder_image')
+      = wsf.input :watermark, as: :image, label: t('work_specs.attributes.watermark')
+      = wsf.input :remove_watermark, as: :boolean, label: t('work_specs.attributes.remove_watermark')
+      = wsf.input :print_image_mask, as: :image, label: t('work_specs.attributes.print_image_mask')
+      = wsf.input :remove_print_image_mask, as: :boolean, label: t('work_specs.attributes.remove_print_image_mask')
+      .row
+        .col-sm-2 = wsf.input :enable_white, label: t('work_specs.attributes.enable_white')
+        .col-sm-2 = wsf.input :auto_imposite, label: t('work_specs.attributes.auto_imposite')
+        .col-sm-2 = wsf.input :enable_composite_with_horizontal_rotation, label: t('work_specs.attributes.enable_composite_with_horizontal_rotation')
+        .col-sm-2 = wsf.input :create_order_image_by_cover_image, label: t('work_specs.attributes.create_order_image_by_cover_image')
+        .col-sm-2 = wsf.input :enable_back_image
+
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

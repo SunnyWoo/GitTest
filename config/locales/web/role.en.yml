@@ -1,0 +1,71 @@
+en:
+  role:
+    factory_member:
+      index: index
+      update: update
+    factory_role_group:
+      index: index
+      create: create
+      update: update
+    imposition:
+      create: create
+      update: update
+      destory: destory
+      upload: upload
+      download: download
+      versions: versions
+    note:
+      create: create
+      update: update
+    order_item:
+      delivery_complete: delivery_complete
+      product_ticker: product_ticker
+    order:
+      package: package
+      express: express
+      update_invoice: update_invoice
+      history: history
+      delivery_note_back: delivery_note_back
+      search: search
+      delivery_note: delivery_note
+      schedule: schedule list
+    print_item:
+      sublimate: sublimate
+      print: print
+      reprint: reprint
+      delayed: delayed
+      reprint_list: reprint_list
+      download_img: download_img
+      receive: receive
+      qualified_report: qualified_report
+      schedule: schedule list
+    product_model:
+      pick: pick
+    shelf:
+      index: index
+      create: create
+      update: update
+      change: change
+      stock: stock
+      move: move
+      activities: activities
+      export_csv: export_csv
+      restore: restore
+      adjust: adjust
+    temp_shelf:
+      create: create
+      update: update
+    shelf_material:
+      index: index
+      create: create
+      update: update
+      stock: stock
+      adjust: adjust
+      activities: activities
+    package:
+      index: index
+      create: create
+      ship: ship
+      sf_express: sf_express
+      sf_express_waybill: sf_express_waybill
+      delivery_note: delivery_note

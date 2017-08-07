@@ -1,0 +1,6 @@
+p
+  | 結束檔案上傳
+  br File : #{activity.extra_info[:file]}
+  | Upload Time : #{activity.extra_info[:upload_time]} sec
+  br Message:
+  pre = activity.message

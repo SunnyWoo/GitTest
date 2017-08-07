@@ -1,0 +1,7 @@
+<p>Hi! <%= @user.username %></p>
+
+<p>你的新作品已經做好了，請點選下面的連結進行下載</p>
+
+<p><%= link_to(@work.cover_image_url(:print), @work.cover_image_url(:print), only_path: false) %></p>
+
+<p>commandp</p>

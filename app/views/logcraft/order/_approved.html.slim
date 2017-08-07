@@ -1,0 +1,10 @@
+- order = activity.trackable
+- print_order_items_ids = activity[:extra_info][:print_order_items_ids] || []
+- order_items_ids = activity[:extra_info][:order_items_ids] || []
+- lack_of_order_items_ids = order_items_ids - print_order_items_ids
+
+div 審核通過了訂單 #{link_to_admin_order(order)}.
+div 預期print_items數量: #{activity[:extra_info][:print_items_expected_count]}
+div 實際print_items數量: #{activity[:extra_info][:print_items_actual_count]}
+- if lack_of_order_items_ids.present?
+  div 缺少了order_items_id: #{lack_of_order_items_ids.join(',')}

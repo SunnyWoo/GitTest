@@ -1,0 +1,56 @@
+.print.container
+  .logo
+    - if @order.shipping_info.cash_on_delivery?
+      = image_tag('logo_print.png', class: 'cash_on_delivery')
+      .cash_on_delivery
+        p 貨到付款 #{render_price(@order.render_twd_price, currency_code: 'TWD')}
+    - else
+      = image_tag('logo_print.png')
+  .order-head
+    h1.order_id Order ID : #{@order.order_no}
+    small #{l @order.created_at} | SHIPPING: #{render_shipping_way(@order.shipping_info.shipping_way)}
+
+  .left
+    h2 SHIPPING ADDRESS
+    p.name= @order.shipping_info_name
+    p= @order.shipping_info_address
+    p #{@order.shipping_info_city} #{@order.shipping_info_state}
+    p #{@order.shipping_info_zip_code} #{@order.shipping_info_country}
+    p= @order.shipping_info_phone
+
+  .right
+    h2 BILLING ADDRESS
+    p.name= @order.billing_info_name
+    p= @order.billing_info_address
+    p #{@order.billing_info_city} #{@order.billing_info_state}
+    p #{@order.billing_info_zip_code} #{@order.billing_info_country}
+    p= @order.billing_info_phone
+  .clearfix
+  - currency = @order.currency
+  - @order.print_items.each do |print_item|
+    - order_item = print_item.order_item
+    .order_item
+      .image
+        = image_tag order_item.itemable_order_image.thumb.url
+      .info
+        .check
+        .order_item_info
+          p= print_item.timestamp_no
+          p.model= order_item.itemable_product.name
+        .qr-code
+          /= image_tag('sample-qr-code.png')
+        .clearfix
+
+  - @order.order_items.delivery.each do |item|
+    - item.quantity.times do
+      .order_item
+        .image
+          = image_tag item.itemable_order_image.thumb.url
+        .info
+          .check
+          .order_item_info
+            p= render_made_from(item)
+            p.model= item.itemable_product.name
+          .qr-code
+            /= image_tag('sample-qr-code.png')
+          .clearfix

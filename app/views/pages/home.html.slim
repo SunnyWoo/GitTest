@@ -1,0 +1,67 @@
+= render_cell :home_slide, :home, set: "default"
+
+.cmdp_container
+
+  .grid_6
+    - @links.each do |link|
+      = link_to link.name, link.href
+      |~
+  .grid_6
+    = render_cell :announcement, :announcement
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center= edit_translator('page.title.featured_products')
+
+  .products
+    = render_cell :default_product, :product
+    = render partial: 'editor/shared/work', collection: @works
+
+.evaluation
+  .cmdp_container
+    .grid_6
+      .slogan-text
+        = edit_translator('page.title.dont_take_our')
+      .tweet.pull-left
+        .img.pull-left
+          = image_tag 'img_fb_xf.png'
+        .data.pull-left
+          .user
+            span.name
+              | 好喜歡！！大推！！
+            span
+              | 幸福小胖
+          .wording
+            | 超方便的客制化手機殼App，製作速度也超迅速，服務態度更是一級棒！...
+      .tweet.pull-left
+        .img.pull-left
+          = image_tag 'img_fb_bw.png'
+        .data.pull-left
+          .user
+            span.name
+              | This app is wicked！
+            span
+              | Bwang3
+          .wording
+            | Look forward for more features in the future, and the design is just fabulous. Most importantly the quality of the case, I'd say it's better then case mate!
+      .tweet.pull-left
+        .img.pull-left
+          = image_tag 'img_fb_annie.png'
+        .data.pull-left
+          .user
+            span.name
+              | Love it!!!!!!!
+            span
+              | Anniechichiiii
+          .wording
+            | 這個App質感超好的! 從來沒用過一個fit so well的iPhone case,收到殼子整個覺得大賺到,再也不買外面賣的爛殼了! 超級合理的價格,200分的印刷品質,界面使用起來也很順手 簡單易懂! 一玩就停不下來...
+      .tweet.pull-left
+        .img.pull-left
+          = image_tag 'img_fb_Kweepa.png'
+        .data.pull-left
+          .user
+            span.name
+              | Exactly what I was looking for
+            span
+              | Kweepa
+          .wording
+            | I've always wanted to be able to design and make my own iphone case. Gave this app a try. Was easy to use. Uploaded my own picture and made my payment. Received case in 4 days...

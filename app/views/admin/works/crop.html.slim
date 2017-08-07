@@ -1,0 +1,15 @@
+.row
+  .col-md-9
+    h1 = t('works.crop.page_title')
+    = image_tag(@resource.cover_image_url, id: 'cropbox', data: { spec_size: [@resource.spec_width * 2, @resource.spec_height * 2], true_size: [@resource.cover_image.width, @resource.cover_image.height] })
+
+  .col-md-3
+    h4 = t('works.crop.forth_page_title')
+    #preview-container style="width:#{@resource.spec_width * 2}px; height:#{@resource.spec_height * 2}px; overflow:hidden; border: 1px solid black"
+      = image_tag @resource.cover_image_url, id: 'preview'
+
+    = form_for [:admin, @resource] do |f|
+      - %w(x y w h).each do |attr|
+        = f.hidden_field "crop_#{attr}"
+      .actions
+        = f.submit t('shared.form_actions.finish'), class: 'btm btn-success'

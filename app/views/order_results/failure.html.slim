@@ -1,0 +1,20 @@
+.cmdp_container.summary
+	.grid_6
+		= render_cell :announcement, :announcement
+
+	.grid_6
+		.item-title.margin-top-fixed.text-center
+			= t('page.order_results.fail')
+		.divider_line
+			= image_tag('editor/divider_line.png')
+		.content_text
+			- if flash[:error]
+				.row
+					= flash[:error]
+			.row
+				= @error_message
+			.row
+				= t('page.order_results.fail_wording')
+			.margin-top-fixed.text-center
+				= link_to t('page.order_results.fail_btn'), check_out_cart_index_path, class: 'btn btn-default btn-margin'
+				= link_to edit_translator('page.btns.contact_us'), support_path, class: 'btn btn-default'

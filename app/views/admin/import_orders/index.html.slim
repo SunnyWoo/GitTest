@@ -1,0 +1,51 @@
+- admin_title t('import_orders.index.page_title')
+.well
+  = simple_form_for [:admin, @new_import], class: 'form-horizontal' do |f|
+    = f.input :file
+    = f.button :submit
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            - %w(file created_at aasm_state succeed failed).each do |attr|
+              th = ImportOrder.human_attribute_name(attr)
+            th = t('shared.form_actions.operation')
+        tbody
+          - @import_orders.each do |import|
+            tr
+              td = link_to import.file.filename, import.file.url
+              td = l(import.created_at, format: :long)
+              td = t("activerecord.attributes.import_order.aasm_state/#{import.aasm_state}")
+              td
+                table.table.table-striped.table-bordered.table-hover
+                  thead
+                    tr
+                      th = t('import_orders.index.platform_code')
+                      th = t('import_orders.index.order_no')
+                  tbody
+                    - import.succeeds.each do |succeed|
+                      tr
+                        td = succeed.guanyi_platform_code
+                        /td = succeed.order.try(:order_no)
+                        td = link_to succeed.order.order_no, admin_order_path(succeed.order)
+              td
+                table.table.table-striped.table-bordered.table-hover
+                  thead
+                    tr
+                      th = t('import_orders.index.platform_code')
+                      th = t('import_orders.index.message')
+                  tbody
+                    - import.failed.each do |detail|
+                      tr
+                        td = detail.platform_code
+                        td = t("import_orders.index.failed.message.#{detail.message.underscore}")
+              - if import.failed.present?
+                td = link_to t('import_orders.index.failed_retry'), admin_import_order_retry_path(import), method: :post, class: 'btn btn-info'
+
+= will_paginate(@import_orders)

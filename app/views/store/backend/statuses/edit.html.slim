@@ -1,0 +1,7 @@
+- admin_title I18n.t('store.status.page_title', name: @template.name)
+
+= simple_form_for @template, url: store_backend_product_template_status_path(@template), method: :patch do |f|
+  = f.association :price_tier, as: :select, label: '價格', collection: options_for_price_tier_select
+  = f.association :special_price_tier, as: :select, label: '特價', collection: options_for_price_tier_select
+  = f.input :aasm_state, as: :radio_buttons, label: '狀態', collection: render_collection_for_store_aasm
+  = f.submit I18n.t('shared.form_actions.submit'), class: 'btn btn-small btn-primary'

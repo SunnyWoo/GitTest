@@ -1,0 +1,13 @@
+en:
+  test:
+    name: "Test King!"
+    age: "100 years old"
+    message: "It works"
+  date:
+    message: "Should not be saved into redis"
+  time:
+    message: "Should not be saved into redis"
+  datetime:
+    message: "Should not be saved into redis"
+  number:
+    message: "Should not be saved into redis"

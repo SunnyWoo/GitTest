@@ -1,0 +1,17 @@
+<% if @package_service.errors.present? %>
+  alert("<%= @package_service.errors.full_messages %>");
+<% elsif @response[:success]  %>
+  $form = $('#yto_pdf_<%= @package.id %>').parents('form');
+  $('#print_ship_form_logistics_supplier_id', $form).val("<%= @logistics_supplier.id %>");
+  $('#print_ship_form_ship_code', $form).val("<%= @response[:mail_no] %>");
+  $('#yto_pdf_<%= @package.id %>').removeClass('hide').prev('a').hide();
+<% else %>
+  alert("<%= @response[:error_type] %> : <%= @response[:reason] %>");
+  <% if response[:repeat_order] %>
+    $form = $('#yto_pdf_<%= @package.id %>').parents('form');
+    $('#print_ship_form_logistics_supplier_id', $form).val("<%= @logistics_supplier.id %>");
+    $('#print_ship_form_ship_code', $form).val("<%= @package.yto_express['mail_no'] %>");
+    $('#yto_pdf_<%= @package.id %>').removeClass('hide').prev('a').hide();
+  <% end %>
+<% end %>
+

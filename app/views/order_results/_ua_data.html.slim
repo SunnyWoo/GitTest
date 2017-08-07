@@ -1,0 +1,8 @@
+.ga_order_data(id="ga_info_#{work.uuid}"
+           data-uuid=work.uuid
+           data-name=work.name
+           data-category=work.product_name
+           data-brand=work.user_display_name
+           data-list=(controller_name + "/" + action_name)
+           data-price=work.price_in_currency(current_currency_code)
+           data-quantity=qty)

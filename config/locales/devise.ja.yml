@@ -1,0 +1,68 @@
+ja:
+  devise:
+    confirmations:
+      confirmed: "アカウント認証に成功し、ログインしました。"
+      send_instructions: "アカウント認証の方法について記載したメールが数分で届きます。"
+      send_paranoid_instructions: "もしメールアドレスが既に登録されている場合、数分内にアカウント認証の方法について記載したメールが届きます。"
+    failure:
+      already_authenticated: "すでにログインしています。"
+      inactive: "そのアカウントは認証されていません。"
+      invalid: "無効のメールアドレスまたはパスワードです。"
+      invalid_token: "無効の認証情報です。"
+      locked: "そのアカウントはロックされています。"
+      not_found_in_database: "無効のメールアドレスまたはパスワードです。"
+      timeout: "すでにログインされてから時間がたっています、再度ログインしてください。"
+      unauthenticated: "続ける前にログインまたは新規登録する必要があります。"
+      unconfirmed: "続ける前にアカウントの認証をする必要があります。"
+    mailer:
+      team: 'コマプリ'
+      confirmation_instructions:
+        subject: "%{sitename} - メールアドレスの登録確認"
+        text1: 'こんにちは %{username}!'
+        text2: 'この度はコマプリでアカウント登録をいただき、誠にありがとうございます。メールアドレスの登録を完了してください。'
+        text3: 'メールアドレスの登録確認'
+        confirm_link_name: ''
+        text4: "登録が完了いたしましたら引き続きコマプリをご利用下さい。"
+
+      reset_password_instructions:
+        subject: "%{sitename} - パスワードをリセットします"
+        hello: "こんにちは %{username} さん"
+        text1: 'パスワードリセットの手続きを完了するために、以下のリンクをクリックしてください。再ログイン後、画面の指示に従いパスワードを更新して下さい。'
+        text2: 'パスワードを再設定します'
+        text3: ''
+      unlock_instructions:
+        subject: "アカウントの解除"
+    omniauth_callbacks:
+      failure: "%{reason}のため、%{kind}の情報を認証することができません。"
+      success: "あなたの%{kind}のアカウントは認証に成功しました。"
+    passwords:
+      no_token: "パスワード再設定のメールからでないと、このページにアクセスできません。もしパスワード再設定のメールからのアクセスでなければ、正しいURLであるか確認してください。"
+      send_instructions: "あなたのメールアドレスに数分内にパスワード変更設定のメールが届きます。"
+      send_paranoid_instructions: "もしメールアドレスが既に登録されている場合、数分内にパスワード変更のメールが届きます。"
+      updated: "パスワードの変更に成功し、ログインしました。"
+      updated_not_active: "パスワードの変更に成功しました。"
+    registrations:
+      destroyed: "アカウントの削除は成功しました。またのご利用をお待ちしております。"
+      signed_up: "ようこそ！アカウント登録に成功しました。"
+      signed_up_but_inactive: "アカウント登録に成功しました！アカウントがまだ有効でない為、ログインできません。"
+      signed_up_but_locked: "アカウント登録に成功しました。このアカウントはロックされているため、ログインできません。"
+      signed_up_but_unconfirmed: "確認用リンクをあなたのメールアドレスに送信しました。確認用リンクを開いてアカウントを有効にしてください。"
+      update_needs_confirmation: "アカウントの更新に成功しました。新しいメールアドレスを確認する必要があります。新しいメールアドレスに送信されたメールをチェックし、確認用リンクを開いてください。"
+      updated: "アカウントの更新に成功しました。"
+    sessions:
+      signed_in: "ログインに成功しました。"
+      signed_out: "ログアウトに成功しました。"
+    unlocks:
+      send_instructions: "数分内にアカウントの解除についての説明メールが届きます。"
+      send_paranoid_instructions: "もしアカウントが登録されている場合、数分でアカウントの解除についての説明メールが届きます。"
+      unlocked: "アカウントのロックの解除に成功しました。ログインをしてショッピングを続けてください。"
+  errors:
+    messages:
+      already_confirmed: "認証に成功しました、ログインをしてください。"
+      confirmation_period_expired: "%{period}の確認が必要です、新しいリクエストを送信してください。"
+      expired: "既に無効です、新しいものをリクエストしてください。"
+      not_found: "見つかりません。"
+      not_locked: "ロックされていません。"
+      not_saved:
+        one: "一つのエラーが発生しました、%{resource} は保存されました。"
+        other: "%{count} 個のエラーが発生しました、%{resource} は保存されました。"

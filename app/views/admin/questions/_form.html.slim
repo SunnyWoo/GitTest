@@ -1,0 +1,9 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = member.errors.full_messages if member.errors.size > 0
+  = f.input :question_category_id, label: t('questions.attributes.category'), collection: QuestionCategory.all, include_blank: false
+  = f.input :question, label: t('questions.attributes.question')
+  = f.text_area :answer, label: t('questions.attributes.ans'), class: 'tinymce', rows: 15
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_questions_path, class: 'btn btn-info'

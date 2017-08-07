@@ -1,0 +1,5 @@
+td= site_setting.key
+td= site_setting.value
+td= simple_format site_setting.description
+td
+  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, site_setting]), class: 'btn btn-info'

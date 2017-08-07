@@ -1,0 +1,143 @@
+- currency = @resource.currency
+- user = @resource.user
+- admin_title t('orders.show.page_title'), subtitle: t('orders.show.crumb.view_order', order_no: @resource.order_no)
+
+h3
+  | Order / ##{@resource.order_no} &nbsp;&nbsp;
+  span class="label label-success arrowed arrowed-right" #{l @resource.created_at, format: :long}
+  span class="label label-warning arrowed arrowed-right" from #{@resource.platform}
+pjqueryui-editable.js
+  .btn.no-border.btn-primary
+    | Status：
+    = editable @resource, :aasm_state, url: url_for([:admin, @resource]), type: :select, data: { source: Order.aasm.states.map(&:name) }
+  button class="btn no-border btn-info disabled" Production：#{@resource.work_state}
+  = link_to 'Refund', admin_order_path(@resource), class: 'btn no-border btn-primary'
+  = link_to 'History', admin_order_history_path(@resource), class: 'btn no-border btn-primary'
+  = link_to t('orders.toolbar.resend'), admin_order_receipt_path(@resource), class: 'btn no-border btn-primary', data: { remote: true, method: 'post', confirm: t('orders.toolbar.resend_confirm'), disable_on_submit: true }
+
+.row
+  .col-md-6
+    table.table.table-striped.table-bordered
+      thead
+        th colspan='3'
+          = t('orders.show.h3_item.title')
+      - @resource.order_items.each do |order_item|
+        - itemable = order_item.itemable
+        tr
+          td width='300px'
+            = link_to itemable.id, url_for([:admin, itemable]), target: '_blank'
+            | / #{itemable.product_name}
+          td.right_text
+            = "#{order_item.quantity} x "
+            = render_price(itemable.price_in_currency(currency), currency_code: currency)
+          td= render_price(order_item.price_in_currency(currency), currency_code: currency)
+      tr
+        td
+        td.right_text Subtotal
+        td = render_price(@resource.order_items_total)
+      - if @resource.coupon
+        - coupon_price = render_price(@resource.coupon_price, currency_code: currency)
+        tr
+          td
+            | Coupon
+            br= link_to "#{@resource.coupon.title}(-#{coupon_price})", edit_admin_coupon_path(@resource.coupon), target: '_blank'
+          td.right_text Discount
+          td = "-#{coupon_price}"
+      tr
+        td
+        td.right_text Shipping
+        td= render_price(@resource.shipping_price, currency_code: currency)
+      tr
+        td
+        td.right_text Total
+        td
+          = render_price(@resource.price, currency_code: currency)
+          br= "(#{render_price(@resource.render_twd_price, currency_code: 'TWD')})"
+      tr
+        td style='text-align: center;font-size: 1.5em;line-height: 40px;'
+          | Sale
+        td style='line-height: 40px;'
+          - if @resource.payment == 'paypal'
+              = link_to "#{t("activerecord.attributes.order.payment_#{@resource.payment}")}", admin_order_paypal_sale_id_path(@resource, format: 'js'), remote: true
+          - else
+              = "#{t("activerecord.attributes.order.payment_#{@resource.payment}")}"
+          = " at #{l @resource.created_at, format: :long}"
+        td
+          = render_price(@resource.price, currency_code: currency)
+          br= "(#{render_price(@resource.render_twd_price, currency_code: 'TWD')})"
+
+  .col-md-6
+    .tabbable
+      ul class="nav nav-tabs"
+        li class="active"
+          a data-toggle="tab" href="#shipping_info"
+            i class="fa icon-home bigger-110"
+            | Shipping Address
+        li
+          a data-toggle="tab" href="#billing_info"
+            i class="green icon-envelope-alt bigger-110"
+            | Billing Address
+    .tab-content
+      #shipping_info.tab-pane.active
+        - shipping_info = @resource.shipping_info
+          .pull-right
+            = link_to t('shared.form_actions.edit'), edit_admin_order_shipping_info_path(@resource, @resource.shipping_info, type: 'address'), class: 'btn btn-sm btn-info', data: { remote: true }
+          = shipping_info.name
+          address
+            div= shipping_info.address
+            div= "#{shipping_info.state} #{shipping_info.city}"
+            div= "#{shipping_info.zip_code} #{shipping_info.country}"
+        hr
+          .pull-right
+            = link_to t('shared.form_actions.edit'), edit_admin_order_shipping_info_path(@resource, @resource.shipping_info, type: 'email'), class: 'btn btn-sm btn-info', data: { remote: true }
+          = shipping_info.email
+          div= shipping_info.phone
+          div User: #{link_to "#{user.username}(#{user.id})", "/admin/users?q[id_eq]=#{user.id}", target: '_blank'}
+        hr
+          div Shipping Method：#{shipping_info.shipping_way}
+          div Tracking No.：#{@resource.ship_code}
+
+      #billing_info.tab-pane
+        - billing_info = @resource.billing_info
+          .pull-right
+            = link_to t('shared.form_actions.edit'), edit_admin_order_billing_info_path(@resource, @resource.billing_info, type: 'address'), class: 'btn btn-sm btn-info', data: { remote: true }
+          =billing_info.name
+          address
+            div= billing_info.address
+            div= "#{billing_info.state} #{billing_info.city}"
+            div= "#{billing_info.zip_code} #{billing_info.country}"
+        hr
+          .pull-right
+            = link_to t('shared.form_actions.edit'), edit_admin_order_billing_info_path(@resource, @resource.billing_info, type: 'email'), class: 'btn btn-sm btn-info', data: { remote: true }
+          = billing_info.email
+          div= billing_info.phone
+          div User: #{link_to "#{user.username}(#{user.id})", "/admin/users?q[id_eq]=#{user.id}", target: '_blank'}
+
+h3 = t('orders.show.h3_invoice.title')
+table.table
+  thead
+    tr
+      th = t('orders.show.h3_invoice.thead.invoice_state')
+      th = t('orders.show.h3_invoice.thead.invoice_number')
+      th = t('orders.show.h3_invoice.thead.invoice_memo')
+  tbody
+    tr
+      td = t("order.invoice_state.#{@resource.invoice_state}")
+      td = @resource.invoice_number
+      td
+        - if @resource.invoice_memo && @resource.invoice_memo.split('|').size == 14
+          - rows = ['訂單編號','出貨日期','訂單狀態(0 新單/1 修單/2 刪單)','發票號碼','發 票日期','發票狀態(開立、異常、作廢、待作廢、折讓、待折讓)','二聯或 三聯','電子/捐贈/紙本','稅率別','發票未稅金額','發票稅額','發票含稅金 額','買方統一編號','異動日期']
+          - rows = rows.zip @resource.invoice_memo.split('|')
+          - rows.each do |row|
+            = "#{row[0]}：#{row[1]}"
+            br
+        - else
+          = @resource.invoice_memo
+
+.row
+  .col-sm-6
+    h3 = t('orders.show.h3_status')
+    = render_activities @resource.activities
+  .col-sm-6
+    h3 Note
+    = render 'admin/notes/notes', noteable: @resource

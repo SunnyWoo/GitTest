@@ -1,0 +1,18 @@
+- breadcrumb :admin_newsletter_subscriptions
+- admin_title t('newsletter_subscriptions.sidebar_name')
+
+= will_paginate @subscriptions
+
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th Email
+      th Created At
+  tbody
+    - @subscriptions.each do |subscription|
+      tr
+        td = subscription.email
+        td = subscription.created_at
+
+
+= will_paginate @subscriptions

@@ -1,0 +1,1382 @@
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+/* line 8, ../stylesheets/rewards/foundation/_normalize.scss */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+/* line 18, ../stylesheets/rewards/foundation/_normalize.scss */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+/* line 31, ../stylesheets/rewards/foundation/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+/* line 50, ../stylesheets/rewards/foundation/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+/* line 61, ../stylesheets/rewards/foundation/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/* line 70, ../stylesheets/rewards/foundation/_normalize.scss */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+/* line 79, ../stylesheets/rewards/foundation/_normalize.scss */
+template,
+[hidden] {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+/* line 92, ../stylesheets/rewards/foundation/_normalize.scss */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+/* line 102, ../stylesheets/rewards/foundation/_normalize.scss */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/* line 115, ../stylesheets/rewards/foundation/_normalize.scss */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+/* line 125, ../stylesheets/rewards/foundation/_normalize.scss */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/* line 134, ../stylesheets/rewards/foundation/_normalize.scss */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+/* line 143, ../stylesheets/rewards/foundation/_normalize.scss */
+dfn {
+  font-style: italic; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* line 152, ../stylesheets/rewards/foundation/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+/* line 161, ../stylesheets/rewards/foundation/_normalize.scss */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+/* line 170, ../stylesheets/rewards/foundation/_normalize.scss */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* line 179, ../stylesheets/rewards/foundation/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 187, ../stylesheets/rewards/foundation/_normalize.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 191, ../stylesheets/rewards/foundation/_normalize.scss */
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+/* line 202, ../stylesheets/rewards/foundation/_normalize.scss */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+/* line 210, ../stylesheets/rewards/foundation/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* line 222, ../stylesheets/rewards/foundation/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+/* line 234, ../stylesheets/rewards/foundation/_normalize.scss */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/* line 243, ../stylesheets/rewards/foundation/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/* line 257, ../stylesheets/rewards/foundation/_normalize.scss */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+/* line 269, ../stylesheets/rewards/foundation/_normalize.scss */
+optgroup {
+  font-weight: bold; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/* line 278, ../stylesheets/rewards/foundation/_normalize.scss */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/* line 288, ../stylesheets/rewards/foundation/_normalize.scss */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+/* line 299, ../stylesheets/rewards/foundation/_normalize.scss */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/* line 310, ../stylesheets/rewards/foundation/_normalize.scss */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/* line 322, ../stylesheets/rewards/foundation/_normalize.scss */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+/* line 333, ../stylesheets/rewards/foundation/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/* line 346, ../stylesheets/rewards/foundation/_normalize.scss */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+/* line 359, ../stylesheets/rewards/foundation/_normalize.scss */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+/* line 368, ../stylesheets/rewards/foundation/_normalize.scss */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/* line 378, ../stylesheets/rewards/foundation/_normalize.scss */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/* line 388, ../stylesheets/rewards/foundation/_normalize.scss */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+/* line 397, ../stylesheets/rewards/foundation/_normalize.scss */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+/* line 406, ../stylesheets/rewards/foundation/_normalize.scss */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* line 416, ../stylesheets/rewards/foundation/_normalize.scss */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* line 1, ../stylesheets/rewards/foundation/_base.scss */
+* {
+  box-sizing: border-box;
+  line-height: 1.5; }
+
+/* line 6, ../stylesheets/rewards/foundation/_base.scss */
+a {
+  text-decoration: none; }
+
+@media (max-width: 76.8rem) {
+  /* line 10, ../stylesheets/rewards/foundation/_base.scss */
+  .desktop {
+    display: none; } }
+
+@media (min-width: 76.9rem) {
+  /* line 16, ../stylesheets/rewards/foundation/_base.scss */
+  .mobile {
+    display: none; } }
+
+/* line 1, ../stylesheets/rewards/foundation/_tools.scss */
+.container {
+  width: 960px;
+  margin: 0 auto; }
+  @media (max-width: 76.8rem) {
+    /* line 1, ../stylesheets/rewards/foundation/_tools.scss */
+    .container {
+      width: 100vw;
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 5 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      padding: 0 10px;
+      /* 9 */
+      padding: 0 0.625rem;
+      /* 9 */ } }
+
+/* line 10, ../stylesheets/rewards/foundation/_tools.scss */
+.tac {
+  text-align: center; }
+
+/* line 14, ../stylesheets/rewards/foundation/_tools.scss */
+.woh {
+  width: 100%; }
+
+/* line 18, ../stylesheets/rewards/foundation/_tools.scss */
+.ma {
+  display: block;
+  margin: 0 auto; }
+
+/* line 23, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h1 {
+  font-size: 38px;
+  color: #4FBD93; }
+  @media (max-width: 76.8rem) {
+    /* line 23, ../stylesheets/rewards/foundation/_tools.scss */
+    .text-h1 {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      font-size: 24px;
+      /* 9 */
+      font-size: 1.5rem;
+      /* 9 */ } }
+
+/* line 31, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h1--mobile {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 24px;
+  /* 9 */
+  font-size: 1.5rem;
+  /* 9 */
+  color: #4FBD93; }
+
+/* line 36, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h2 {
+  font-size: 28px;
+  color: #4FBD93; }
+
+/* line 41, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h3 {
+  font-size: 24px;
+  color: #455055; }
+
+/* line 46, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h3--mobile {
+  font-size: 24px;
+  color: #455055; }
+
+/* line 51, ../stylesheets/rewards/foundation/_tools.scss */
+.text-h4 {
+  font-size: 20px;
+  color: #455055; }
+
+/* line 56, ../stylesheets/rewards/foundation/_tools.scss */
+.text-p {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 16px;
+  /* 9 */
+  font-size: 1rem;
+  /* 9 */
+  color: #455055; }
+
+/* line 61, ../stylesheets/rewards/foundation/_tools.scss */
+.text-p--mobile {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 14px;
+  /* 9 */
+  font-size: 0.875rem;
+  /* 9 */
+  color: #455055; }
+
+/* line 66, ../stylesheets/rewards/foundation/_tools.scss */
+.text-p--highlight {
+  font-size: 16px;
+  color: #FF0000; }
+
+/* line 71, ../stylesheets/rewards/foundation/_tools.scss */
+.mb--l {
+  margin-bottom: 120px; }
+
+/* line 74, ../stylesheets/rewards/foundation/_tools.scss */
+.mb--m {
+  margin-bottom: 60px; }
+
+/* line 78, ../stylesheets/rewards/foundation/_tools.scss */
+.form-margin {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin-top: 60px;
+  /* 9 */
+  margin-top: 3.75rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 78, ../stylesheets/rewards/foundation/_tools.scss */
+    .form-margin {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      margin-top: 30px;
+      /* 9 */
+      margin-top: 1.875rem;
+      /* 9 */ } }
+
+/* line 84, ../stylesheets/rewards/foundation/_tools.scss */
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: #BBB; }
+
+/* line 1, ../stylesheets/rewards/components/_common.scss */
+main {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  padding-top: 60px;
+  /* 9 */
+  padding-top: 3.75rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 1, ../stylesheets/rewards/components/_common.scss */
+    main {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      padding-top: 30px;
+      /* 9 */
+      padding-top: 1.875rem;
+      /* 9 */ } }
+
+/* line 8, ../stylesheets/rewards/components/_common.scss */
+.emptyParagraph {
+  height: 16px; }
+
+/* line 12, ../stylesheets/rewards/components/_common.scss */
+.emptyParagraph--l {
+  height: 24px; }
+
+/* line 16, ../stylesheets/rewards/components/_common.scss */
+.separationLine {
+  display: block;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  height: 1px;
+  /* 9 */
+  height: 0.0625rem;
+  /* 9 */
+  background-color: #BBB;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin: 30px;
+  /* 9 */
+  margin: 1.875rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 16, ../stylesheets/rewards/components/_common.scss */
+    .separationLine {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      margin: 30px;
+      /* 9 */
+      margin: 1.875rem;
+      /* 9 */ } }
+
+/* line 26, ../stylesheets/rewards/components/_common.scss */
+.stepWrapper {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin-bottom: 120px;
+  /* 9 */
+  margin-bottom: 7.5rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 26, ../stylesheets/rewards/components/_common.scss */
+    .stepWrapper {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      margin-bottom: 30px;
+      /* 9 */
+      margin-bottom: 1.875rem;
+      /* 9 */ } }
+
+/* line 33, ../stylesheets/rewards/components/_common.scss */
+.stepWrapper-title {
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  margin-bottom: 60px;
+  /* 9 */
+  margin-bottom: 3.75rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 33, ../stylesheets/rewards/components/_common.scss */
+    .stepWrapper-title {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      margin-bottom: 30px;
+      /* 9 */
+      margin-bottom: 1.875rem;
+      /* 9 */ } }
+
+/* line 40, ../stylesheets/rewards/components/_common.scss */
+input[type="radio"],
+input[type="file"],
+input[type="checkbox"] {
+  display: none; }
+
+/* line 46, ../stylesheets/rewards/components/_common.scss */
+.moreOption {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 30px; }
+  @media (max-width: 76.8rem) {
+    /* line 46, ../stylesheets/rewards/components/_common.scss */
+    .moreOption {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      bottom: 10px;
+      /* 9 */
+      bottom: 0.625rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 5 */
+      /* 8 */
+      right: 0;
+      /* 9 */ } }
+  /* line 55, ../stylesheets/rewards/components/_common.scss */
+  .moreOption p {
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    margin-right: 30px;
+    /* 9 */
+    margin-right: 1.875rem;
+    /* 9 */ }
+    @media (max-width: 76.8rem) {
+      /* line 55, ../stylesheets/rewards/components/_common.scss */
+      .moreOption p {
+        /* 3 */
+        /* 3 */
+        /* 4 */
+        /* 5 */
+        /* 8 */
+        margin-right: 0;
+        /* 9 */
+        position: absolute;
+        /* 3 */
+        /* 3 */
+        /* 4 */
+        /* 6 */
+        /* 6 */
+        /* 7 */
+        right: 10px;
+        /* 9 */
+        right: 0.625rem;
+        /* 9 */
+        /* 3 */
+        /* 3 */
+        /* 4 */
+        /* 6 */
+        /* 6 */
+        /* 7 */
+        top: -25px;
+        /* 9 */
+        top: -1.5625rem;
+        /* 9 */
+        /* 3 */
+        /* 3 */
+        /* 4 */
+        /* 6 */
+        /* 6 */
+        /* 7 */
+        font-size: 12px;
+        /* 9 */
+        font-size: 0.75rem;
+        /* 9 */ } }
+
+/* line 66, ../stylesheets/rewards/components/_common.scss */
+.moreOption-item {
+  border: 1px solid #BBB;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center; }
+  /* line 75, ../stylesheets/rewards/components/_common.scss */
+  .moreOption-item.active {
+    border-color: #4FBD93; }
+
+@media (max-width: 76.8rem) {
+  /* line 81, ../stylesheets/rewards/components/_common.scss */
+  form {
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    margin-bottom: 30px;
+    /* 9 */
+    margin-bottom: 1.875rem;
+    /* 9 */ } }
+/* line 1, ../stylesheets/rewards/components/_header.scss */
+header.header {
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative; }
+  @media (max-width: 76.8rem) {
+    /* line 1, ../stylesheets/rewards/components/_header.scss */
+    header.header {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      height: 60px;
+      /* 9 */
+      height: 3.75rem;
+      /* 9 */
+      background-color: #4FBD93;
+      justify-content: center; } }
+
+/* line 14, ../stylesheets/rewards/components/_header.scss */
+.header-item {
+  padding: 22px; }
+  @media (max-width: 76.8rem) {
+    /* line 14, ../stylesheets/rewards/components/_header.scss */
+    .header-item {
+      padding: 0;
+      display: none; } }
+
+/* line 22, ../stylesheets/rewards/components/_header.scss */
+.header-item-logo {
+  width: 140px;
+  height: 40px;
+  padding-left: 0; }
+
+/* line 28, ../stylesheets/rewards/components/_header.scss */
+.m-header-logo {
+  display: none; }
+  @media (max-width: 76.8rem) {
+    /* line 28, ../stylesheets/rewards/components/_header.scss */
+    .m-header-logo {
+      display: inline-block;
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      width: 96px;
+      /* 9 */
+      width: 6rem;
+      /* 9 */ } }
+
+@media (max-width: 76.8rem) {
+  /* line 1, ../stylesheets/rewards/components/_footer.scss */
+  .footer--desktop {
+    display: none; } }
+
+/* line 7, ../stylesheets/rewards/components/_footer.scss */
+.footer--mobile {
+  display: none;
+  width: 100vw;
+  height: 84.2vw;
+  background-color: #455055; }
+  /* line 12, ../stylesheets/rewards/components/_footer.scss */
+  .footer--mobile .social {
+    /* 3 */
+    /* 3 */
+    /* 4 */
+    /* 6 */
+    /* 6 */
+    /* 7 */
+    /* 4 */
+    /* 5 */
+    padding: 80px 0;
+    /* 9 */
+    padding: 5rem 0;
+    /* 9 */ }
+    /* line 14, ../stylesheets/rewards/components/_footer.scss */
+    .footer--mobile .social .social-icon {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 5 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      margin: 0 20px;
+      /* 9 */
+      margin: 0 1.25rem;
+      /* 9 */ }
+  /* line 18, ../stylesheets/rewards/components/_footer.scss */
+  .footer--mobile p {
+    color: #fff; }
+  @media (max-width: 76.8rem) {
+    /* line 7, ../stylesheets/rewards/components/_footer.scss */
+    .footer--mobile {
+      display: block; } }
+
+/* line 7, ../stylesheets/rewards/components/_button.scss */
+.btn {
+  color: #fff;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  width: 400px;
+  /* 9 */
+  width: 25rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  height: 80px;
+  /* 9 */
+  height: 5rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  line-height: 80px;
+  /* 9 */
+  line-height: 5rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 28px;
+  /* 9 */
+  font-size: 1.75rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  border-radius: 4px;
+  /* 9 */
+  border-radius: 0.25rem;
+  /* 9 */ }
+  @media (max-width: 76.8rem) {
+    /* line 7, ../stylesheets/rewards/components/_button.scss */
+    .btn {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      width: 165px;
+      /* 9 */
+      width: 10.3125rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      height: 50px;
+      /* 9 */
+      height: 3.125rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      line-height: 50px;
+      /* 9 */
+      line-height: 3.125rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      font-size: 20px;
+      /* 9 */
+      font-size: 1.25rem;
+      /* 9 */ } }
+
+/* line 22, ../stylesheets/rewards/components/_button.scss */
+.btn--s {
+  color: #4FBD93;
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  width: 165px;
+  /* 9 */
+  width: 10.3125rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  height: 40px;
+  /* 9 */
+  height: 2.5rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  font-size: 16px;
+  /* 9 */
+  font-size: 1rem;
+  /* 9 */
+  /* 3 */
+  /* 3 */
+  /* 4 */
+  /* 6 */
+  /* 6 */
+  /* 7 */
+  border-radius: 4px;
+  /* 9 */
+  border-radius: 0.25rem;
+  /* 9 */
+  background-color: transparent;
+  border: 1px solid #4FBD93; }
+  @media (max-width: 76.8rem) {
+    /* line 22, ../stylesheets/rewards/components/_button.scss */
+    .btn--s {
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      width: 165px;
+      /* 9 */
+      width: 10.3125rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      height: 30px;
+      /* 9 */
+      height: 1.875rem;
+      /* 9 */
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      font-size: 14px;
+      /* 9 */
+      font-size: 0.875rem;
+      /* 9 */ } }
+
+/* line 37, ../stylesheets/rewards/components/_button.scss */
+.btn--normal {
+  background-color: #4FBD93; }
+
+/* line 41, ../stylesheets/rewards/components/_button.scss */
+.btn--disabled {
+  background-color: #BBB; }
+
+/* line 45, ../stylesheets/rewards/components/_button.scss */
+.btn--margin {
+  margin-bottom: 30px; }
+
+/* line 49, ../stylesheets/rewards/components/_button.scss */
+.btn--deletePhoto {
+  display: block;
+  margin: 30px auto; }
+
+/* line 1, ../stylesheets/rewards/components/_page.scss */
+.reward-campaignDesc {
+  width: 640px;
+  margin: 60px auto;
+  line-height: 24px; }
+  /* line 5, ../stylesheets/rewards/components/_page.scss */
+  .reward-campaignDesc a {
+    display: block; }
+  @media (max-width: 76.8rem) {
+    /* line 1, ../stylesheets/rewards/components/_page.scss */
+    .reward-campaignDesc {
+      width: auto;
+      font-size: 14px;
+      /* 3 */
+      /* 3 */
+      /* 4 */
+      /* 6 */
+      /* 6 */
+      /* 7 */
+      /* 4 */
+      /* 5 */
+      margin: 30px auto;
+      /* 9 */
+      margin: 1.875rem auto;
+      /* 9 */ } }
+
+/* line 15, ../stylesheets/rewards/components/_page.scss */
+.reward-carousel {
+  margin-bottom: 60px; }
+
+/* line 19, ../stylesheets/rewards/components/_page.scss */
+.reward-carousel-img {
+  width: 100%; }
+
+/* line 23, ../stylesheets/rewards/components/_page.scss */
+.slick-list {
+  min-width: auto;
+  max-height: auto; }
+
+/* line 28, ../stylesheets/rewards/components/_page.scss */
+.slick-prev {
+  left: 0;
+  transform: scale(0.5); }
+
+/* line 33, ../stylesheets/rewards/components/_page.scss */
+.slick-next {
+  right: 0;
+  transform: scale(0.5); }
+
+/* line 38, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram {
+  margin-bottom: 60px; }
+
+/* line 42, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram-desc {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px; }
+  @media (max-width: 76.8rem) {
+    /* line 42, ../stylesheets/rewards/components/_page.scss */
+    .reward-instagram-desc {
+      margin-bottom: 30px; } }
+
+/* line 51, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram-desc-item {
+  padding: 0 20px; }
+
+/* line 55, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+/* line 61, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram-content-item {
+  flex-basis: 33%; }
+
+/* line 65, ../stylesheets/rewards/components/_page.scss */
+.reward-instagram-content-img {
+  width: 100%; }
+
+/* line 69, ../stylesheets/rewards/components/_page.scss */
+.reward-form {
+  width: 400px;
+  margin: 0 auto; }
+  @media (max-width: 76.8rem) {
+    /* line 69, ../stylesheets/rewards/components/_page.scss */
+    .reward-form {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px; } }
+
+/* line 79, ../stylesheets/rewards/components/_page.scss */
+.reward-form-input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #BBB;
+  border-radius: 3px;
+  padding-left: 16px; }
+  /* line 85, ../stylesheets/rewards/components/_page.scss */
+  .reward-form-input:not(:last-of-type) {
+    margin-bottom: 20px; }
+    @media (max-width: 76.8rem) {
+      /* line 85, ../stylesheets/rewards/components/_page.scss */
+      .reward-form-input:not(:last-of-type) {
+        margin-bottom: 10px; } }
+
+/* line 93, ../stylesheets/rewards/components/_page.scss */
+.reward-form-submit {
+  width: 100%;
+  height: 80px;
+  background-color: #4FBD93;
+  border-radius: 3px;
+  font-size: 28px;
+  color: #fff;
+  border: none; }
+  @media (max-width: 76.8rem) {
+    /* line 93, ../stylesheets/rewards/components/_page.scss */
+    .reward-form-submit {
+      width: 165px;
+      height: 50px;
+      font-size: 20px; } }
+
+/* line 108, ../stylesheets/rewards/components/_page.scss */
+.reward-form-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; }
+  /* line 113, ../stylesheets/rewards/components/_page.scss */
+  .reward-form-error:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/error-sign.png");
+    background-size: contain; }
+
+/* line 123, ../stylesheets/rewards/components/_page.scss */
+.reward-form-error--msg {
+  padding-left: 5px;
+  color: #FF0000;
+  font-size: 14px; }
+
+/* line 129, ../stylesheets/rewards/components/_page.scss */
+.reward-share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0; }
+
+/* line 136, ../stylesheets/rewards/components/_page.scss */
+.reward-campaignDesc .share-item {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+/* line 145, ../stylesheets/rewards/components/_page.scss */
+.share-item--facebook {
+  background-image: asset_data_url("rewards/share_fackbook.png"); }
+
+/* line 149, ../stylesheets/rewards/components/_page.scss */
+.share-item--line {
+  background-image: asset_data_url("rewards/share_line.png"); }
+
+/* line 153, ../stylesheets/rewards/components/_page.scss */
+.reward-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 160px; }
+  @media (max-width: 76.8rem) {
+    /* line 153, ../stylesheets/rewards/components/_page.scss */
+    .reward-info-row {
+      flex-direction: column;
+      padding: 10px 0; } }
+
+/* line 164, ../stylesheets/rewards/components/_page.scss */
+.reward-info {
+  margin: 60px 0 150px; }
+  @media (max-width: 76.8rem) {
+    /* line 164, ../stylesheets/rewards/components/_page.scss */
+    .reward-info {
+      margin: 30px 0; } }
+
+/* line 171, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item {
+  display: flex;
+  align-items: center; }
+
+/* line 176, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item--1 {
+  font-size: 24px;
+  color: #4FBD93; }
+
+/* line 181, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item--2 {
+  width: 240px; }
+  @media (max-width: 76.8rem) {
+    /* line 181, ../stylesheets/rewards/components/_page.scss */
+    .reward-info-item--2 {
+      display: flex;
+      flex-direction: column;
+      font-size: 24px; } }
+
+/* line 190, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item--3 {
+  width: 500px; }
+  @media (max-width: 76.8rem) {
+    /* line 190, ../stylesheets/rewards/components/_page.scss */
+    .reward-info-item--3 {
+      width: 100%;
+      text-align: center; } }
+
+/* line 198, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item--preview {
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: asset_data_url("rewards/avatar.png"); }
+
+/* line 206, ../stylesheets/rewards/components/_page.scss */
+.reward-info-item--download {
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: asset_data_url("rewards/icon_download.png"); }
+  @media (max-width: 76.8rem) {
+    /* line 206, ../stylesheets/rewards/components/_page.scss */
+    .reward-info-item--download {
+      width: 60px;
+      height: 60px; } }
+
+/* line 218, ../stylesheets/rewards/components/_page.scss */
+.reward-action {
+  display: flex;
+  justify-content: space-around;
+  margin: 60px 0 150px; }
+  @media (max-width: 76.8rem) {
+    /* line 218, ../stylesheets/rewards/components/_page.scss */
+    .reward-action {
+      margin: 30px 0; } }
+
+/* line 227, ../stylesheets/rewards/components/_page.scss */
+.reward-action-btn {
+  width: 400px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background-color: #4FBD93;
+  font-size: 28px;
+  color: #fff;
+  border-radius: 4px; }
+  @media (max-width: 76.8rem) {
+    /* line 227, ../stylesheets/rewards/components/_page.scss */
+    .reward-action-btn {
+      width: 165px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 20px; } }

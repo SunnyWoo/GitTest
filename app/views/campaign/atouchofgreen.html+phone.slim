@@ -1,0 +1,156 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy: true
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy: true
+
+div style='background: #fef9f3;'
+  .m-announcement style='background-color: #f6f7f2;border-bottom: 1px #e5e5e5 solid;'
+    = @title
+  .camp_margin-top-33
+  - select_class = browser.ios? ? 'campaign-page-select-ios' : 'campaign-page-select'
+  select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+    - navs = { info: '活動介紹', product: '熱賣商品', trailer: '精彩預告' }
+    - navs.each do |key, val|
+      option.filter value=(key) = val
+
+  .campaign-page#info_page style='margin: 0 30px;'
+    .mobile-v2-title
+      | 我們的歷史
+      br
+      | 台北的故事
+    .mobile-v2-title2
+      | 我印 X 一把青
+
+    .text-center
+      .m-musicrun-desc style='font-weight: bold;'
+        | 2015 時值抗戰 70 週年的歷史時代，
+        br
+        | 親臨戰爭的⼈人們逐漸凋零。
+        br
+        | 我印與你一同穿梭時光，
+        br
+        | 用不同角度來回顧那個即將逝去的世代。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info1.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【秦芊儀-師娘】楊謹華飾
+      .mobile-v2-info
+        | 人稱師娘，華南師範大學英文科肄業，家族為浙江望族，抗戰前夕，嫁給十一大隊江偉成而放棄學業。外柔內剛的師娘，一路陪伴著偉成，並打理著空軍村裏的一切。她的青春，化作成跑道盡頭的行燈，在大時代裏，微弱爍著...她展現了那個年代女人的樣貌，溫柔卻剛強，為了愛情，不顧家人反對堅持下嫁偉成，從此過著平凡、但沒有安全感的生活，卻能以智慧和堅韌態度面對一切，一路照顧與開導，帶領女人們繼續向前。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info2.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【江偉成】楊一展飾
+      .mobile-v2-info
+        | 空軍大隊長，飛行技術精湛，性格剛毅果斷並嚴賞罰。從抗戰勝利、眾所景仰的英雄時的意氣風發，到為了陪伴妻子，考慮轉參謀職的內心交戰，至內戰爆發，指揮作戰，失去大隊之後的內心壓力與痛苦，而後輾轉到台灣後過著清貧生活。內心的淒涼與無奈，是整個動盪時代下許許多多人的代表與象徵。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info3.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【周瑋訓-小周】天心飾
+      .mobile-v2-info
+        | 空軍遺屬，人稱副隊娘。性格直率的她，常用她的大嗓門，嘻笑怒罵的掩飾內心荒寂。離亂歲月，每在時代嘯浪裡安然漂出的她，祇能任著師娘及朱青漸漸偏離了人生航線，無能為力....小周故事最能代表空軍特殊"傳統"角色，面對隨時可能發生的死亡與別離，在堅強中掩藏著脆弱。她的個性率真，情感卻細膩，活潑中帶點潑辣的個性，讓有她在的場合總能帶來溫暖與歡笑。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info4.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【邵志堅-小邵】藍鈞天飾
+      .mobile-v2-info
+        | 第十一大隊副隊長，個性正直、謹慎，遇事總瞻前顧後。原任大隊上尉作戰官，因原任副隊長代其迎戰日軍身亡，情義使然，放棄了與女友的感情，依空軍傳統和同袍遺願，「交接」小周與墨婷母女，自此生活在責任與摯愛的兩難之中。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info5.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【朱青】連俞涵飾
+      .mobile-v2-info
+        | 一個青澀女學生，帶著少女對愛情的渴望，因為一張空軍飛行員郭軫留下的字條來到南京。原本，她祇好奇那留字條的飛行員長什麼樣子，但千里見得郭軫後，她中斷了金陵女大的學業，與郭軫相戀，嫁進空軍眷村。然而最後等待她的，祇有失去座標的人生。從純潔、樸素的女學生，到經歷慘痛生離死別，辦若兩人，而後變成一個嫵媚成熟的女人。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info6.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【郭軫】吳慷仁飾
+      .mobile-v2-info
+        | 原就讀西北大學工程系航空工程組，對日抗戰時慨然投筆從戎，考入中央航校，是偉成的得意門生。作戰負傷，於某高中女生宿舍養傷之際，留下祇有編號未有姓名的字條。未料青春期艾的朱青竟依字條千里尋來。 漂泊靈魂終有自己的導航塔，他與朱青產生一段轟轟烈烈、刻苦銘心，但卻短暫的愛情。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info7.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'
+        | 【靳墨婷/邵墨婷】
+        br
+        | 大墨婷 - 溫貞菱飾
+      .mobile-v2-info
+        | 她聰慧早熟，年紀雖小，卻看盡了那段離亂的時代－在母親及兩個乾媽的身邊，親眼目睹那場戰爭的震盪，對男人、對女人、對一切生命的，無情催逼。生父曾是飛行大隊副隊長，在抗戰時期遭日軍擊落而殉職，後因母親小周改嫁，成為一位擁有兩位父親姓氏的女孩。之後隨部隊撤退到台灣，展開了她自己的青春，和焦飛開展一段屬於眷村第二代的生命故事，也看盡了空軍村裡的悲歡離合。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info8.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【顧肇鈞-小顧】鍾承翰飾
+      .mobile-v2-info
+        | 菜鳥飛官，抗戰末期考入航校。畢業後，對日抗戰已結束，往各大隊任准尉見習官見習。均被考評為不適飛行。小顧個性執拗，堅持要當飛行員。上級給了最後機會－調入十一大隊作最後考評。來到十一大隊後遇見已嫁給郭軫的朱青。此時小顧發現繫起朱青、郭軫千里姻緣的字條，自己才是始作俑者，認定自己才是字條主人，甘冒大不諱，執著於對學長妻子朱青的愛戀。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info9.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【老鞏】班鐵翔飾
+      .mobile-v2-info
+        | 對老鞏來說，機棚就是他的地盤，他一直感嘆自己是個修飛機的，連空軍陵都只准飛行員躺，但其實所有人都感念他，因為只要老鞏在，沒有什麼是他搞不定的，拆這裡補那裏、偷別隊的修理十一大隊，他唯一沒辦法的，就是看著這群飛行員自以為是地飛上去，他們不進廟、不拜神，各個都飛得比神仙快，就留他在地面上提心吊膽的等著。
+
+    div style='margin: 40px 0; border: 1px solid #e7dac8;'
+    .text-center
+      = image_tag 'campaign/atouchofgreen/info/mobile/info10.png', lazy: true
+      .mobile-v2-title3 style='color: #780e32;'【樊任先處長】樊光耀飾
+      .mobile-v2-info style='padding-bottom: 100px;'
+        | 空軍司令部處長，處長就像是導師般的存在，身為軍人，服從命令是必須的，所以他告訴自己，下決定時絕不感情用事。外表看似鐵腕無情，但暗地裡經常幫忙十一大隊處理善後，尤其最疼偉成，希望偉成出國受訓回來接參謀位，就不用在天上飛，過著提心吊膽的日子。
+
+  .campaign-page#product_page
+    .products
+      .mobile-v2-title
+        = @name
+        br
+        | 熱賣商品
+
+      - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+      select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+        - @category_names.each do |key, val|
+          option.filter value=(key) = val
+      .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+      - @category_products.each do |key, val|
+        .filted id=(key)
+          = render partial: 'editor/shared/work_mobilev2',
+                  collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+
+  .campaign-page#trailer_page
+    .products
+      .mobile-v2-title
+        | 一把青精彩預告
+      .musicrun-vidoe
+        iframe width='90%' height='242' src='https://www.youtube.com/embed/9wNO11rekvE?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+      div style='margin: 40px 0; border: 1px solid #e7dac8;'
+      .mobile-v2-title
+        | 一把青落地活動
+      .text-center
+        = link_to image_path 'campaign/atouchofgreen/info/schedule.png', target: 'blank' do
+          = image_tag 'campaign/atouchofgreen/info/mobile/schedule.png', lazy: true
+
+      = link_to '立即報名', 'http://goo.gl/OclX9P', class: 'btn btn-default btn-mobile-cart', target: 'blank',
+                style: 'margin: 20px 0 100px 0;'
+
+      div style='padding-bottom: 100px;'
+
+.app-promotion
+  .title
+    = "購買 #{@name} 系列商品"
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+
+#campaing_inof.hidden data=({key: @key})
+

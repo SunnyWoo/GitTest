@@ -1,0 +1,16 @@
+.modal.fade id=id
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h4.modal-title = t('preview_samples.index.page_title')
+      .modal-body
+        - if samples.empty?
+          .alert.alert-warning
+            = t('preview_samples.index.no_samples')
+        - else
+          - samples.each_slice(4) do |slice|
+            .row
+              - slice.each do |sample|
+                .col-xs-3
+                  = link_to sample.result.url, target: '_blank'
+                    = image_tag sample.result.sample.url

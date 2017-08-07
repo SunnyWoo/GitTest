@@ -1,0 +1,52 @@
+- admin_title t('users.index.page_title')
+- breadcrumb :admin_users
+
+= render 'admin/v2/shared/account_groups_nav', resources_name: 'User'
+
+.widget-box.ui-sortable-handle
+  .widget-body
+    .widget-main
+      .row
+        .col-xs-12
+          form.form-search action="#{admin_users_path}"
+            input.input-medium.search-query type="text"  name="q" placeholder="name, email, mobile" style="width: 720px;"
+            button.btn.btn-sm.btn-primary type="submit"  Search
+- if @resources.present?
+  .widget-box.widget-color-blue.ui-sortable-handle
+    .widget-header.header-color-blue
+      h5.widget-title.bigger.lighter
+        = fa_icon 'table', class: 'ace-icon'
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th= t('users.index.thead.id')
+              th name
+              th= t('users.index.thead.email')
+              th= t('users.index.thead.role')
+              th= t('users.index.thead.avatar')
+              th= t('users.index.thead.sign_in_count')
+              th= t('users.index.thead.last_sign_in_at')
+              th= t('users.index.thead.auth_token')
+              th= t('users.index.thead.operation')
+          tbody
+            = content_tag_for :tr, @resources do |mt|
+              td= mt.id
+              td= mt.username
+              td= mt.email
+              td= mt.role
+              td= image_tag(mt.avatar.s154.url)
+              td= mt.sign_in_count
+              td= l mt.last_sign_in_at, format: :long if mt.last_sign_in_at.present?
+              td= mt.auth_token
+              td
+                = link_to t('shared.form_actions.view'), url_for([:admin, mt]), class: 'btn btn-primary btn-minier'
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-minier'
+
+  = will_paginate @resources
+- else
+  div class='alert alert-block alert-danger'
+    button.close type='button' data-dismiss='alert'
+      i.icon-remove
+    = t('admin.search.plz_search')

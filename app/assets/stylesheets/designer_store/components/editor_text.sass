@@ -1,0 +1,57 @@
+// *************************************
+//
+//   Editor Text
+//   -> 編輯器的文字輸入區塊切版
+//
+// *************************************
+
+$editorText-height: 50px
+
+.editorText
+  position: relative
+  display: block
+  width: 100%
+  @include rem(padding-right, $editorText-height)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.editorText-input
+  display: block
+  width: 100%
+  @include rem(height, $editorText-height)
+  @include rem(padding, 0 15px)
+  border-top: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+  outline: none
+  background-color: $c-bg-white
+  @include rem(font-size, $f-size-content)
+  @include rem(line-height, $editorText-height)
+
+.editorText-btn
+  position: absolute
+  top: 0
+  right: 0
+  display: block
+  @include rem(width, $editorText-height)
+  @include rem(height, $editorText-height)
+  border-top: none
+  border-bottom: none
+  background-color: $c-primary
+  background-image: asset_data_url('designer_store/tick.png')
+  background-repeat: no-repeat
+  background-position: center
+  @include rem(background-size, 20px)

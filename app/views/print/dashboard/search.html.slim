@@ -1,0 +1,61 @@
+.page-header
+  - if @order
+    h5
+      | 訂單編號:
+      = link_to @order.order_no, [:print, @order]
+    h5 成立時間: #{l @order.created_at, format: :long}
+    h5 訂單狀態: #{@order.aasm.human_state}
+    .pull-right.btn-group
+      = link_to '出貨單正面', print_pdf_delivery_note_path(id: @order.id, format: :pdf), class: "btn btn-success", target: '_blank'
+      = link_to '出貨單背面', render_delivery_note_back_url(@order.billing_info_country_code), class: "btn btn-success", target: '_blank'
+
+= render 'print/shared/notice_bar'
+
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 訂單搜尋結果
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            - if @print_items || @order
+              thead.thin-border-bottom
+                tr
+                  - if @print_items.present?
+                    th 訂單編號
+                  th 商品編號
+                  th 縮圖
+                  th 型號
+                  th 留言
+                  th 列印編號
+                  th 列印類型
+                  th 進入印刷工作站
+                  th 進入熱轉印工作站
+                  th 進入質檢站
+                  th 完成點收質檢
+                  th 進入出貨站
+                  th 出貨時間
+                  th 审核描述
+                  th 重印原因
+                  th 操作
+
+              tbody
+                - if @print_items
+                  - @print_items.each do |print_item|
+                    = render 'print_item', print_item: print_item, show_order_no: true
+                - if @order
+                  - @order.order_items.each do |order_item|
+                    - order_item.print_items.each do |print_item|
+                      = render 'print_item', print_item: print_item, show_order_no: false
+            - else
+              tr
+                td
+                  | 無結果
+
+- if @print_items
+  - @print_items.each do |print_item|
+    = render 'print/packages/search_list', package: print_item.package if print_item.package_id?
+- if @order
+  - @order.packages.each do |package|
+    = render 'print/packages/search_list', package: package

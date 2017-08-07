@@ -1,0 +1,9 @@
+<% form_for(current_promotion, as: :promotion, url: '') do |f| %>
+  <%= f.simple_fields_for :promotion_references, @reference, index: @reference.promotable.to_gid_param do |rf| %>
+    <% @content = capture do %>
+      <%= render 'field', f: rf, price_tier_options: options_for_price_tier_select %>
+    <% end %>
+  <% end %>
+<% end %>
+
+$.promotionForm.appendReference("<%= escape_javascript(@content)%>");

@@ -1,0 +1,4 @@
+/* line 1, ../../../stylesheets/admin/v2/change_price_event.scss */
+.change_price_target_list .target_list {
+  max-height: 400px;
+  overflow-y: scroll; }

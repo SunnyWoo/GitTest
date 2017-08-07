@@ -1,0 +1,52 @@
+html
+  height: 100%
+
+[data-dpr="1"] html
+  font-size: $rem-baseline
+[data-dpr="2"] html
+  font-size: $rem-baseline * 2
+[data-dpr="2.5"] html
+  font-size: $rem-baseline * 2.5
+[data-dpr="2.75"] html
+  font-size: $rem-baseline * 2.75
+[data-dpr="3"] html
+  font-size: $rem-baseline * 3
+
+body
+  position: relative
+  width: 100%
+  height: 100%
+  padding: 0
+  margin: 0
+  @include rem(font-size, $f-size-content)
+  font-family: $f-family
+  color: $c-text-content
+  background-color: $c-bg-app
+  @include rem(max-width, 414px)
+  margin: 0 auto
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+*, *:after, *:before
+  box-sizing: border-box
+
+textarea, input
+  border-width: 0
+  padding: 0
+
+textarea:focus, input:focus, button:focus
+  outline: none
+
+ul
+  margin: 0
+  padding: 0
+
+button
+  border: 0
+  outline: none
+
+a
+  text-decoration: none
+  color: inherit
+
+input
+  border-radius: 0

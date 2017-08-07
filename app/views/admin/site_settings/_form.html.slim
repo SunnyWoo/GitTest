@@ -1,0 +1,9 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = member.errors.full_messages if member.errors.size > 0
+  = f.input :key, label: t('site_settings.attributes.key') if f.object.new_record?
+  = f.input :value, label: t('site_settings.attributes.value')
+  = f.input :description, label: t('site_settings.attributes.description')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_site_settings_path, class: 'btn btn-info'

@@ -1,0 +1,54 @@
+#article {
+  .words {
+    color: $sub-words-color;
+    line-height: 24px;
+    margin-bottom: 60px;
+  }
+  section {
+    margin-bottom: 60px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  p {
+    margin-bottom: 30px;
+    .name {
+      font-size: 1em;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+    ul.desc-lists {
+      list-style: none;
+    }
+  }
+  .notice {
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+  p.note {
+    a {
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+  }
+}
+
+.item-title {
+  @extend .item-title;
+  margin-bottom: 30px;
+  span {
+    color: $main-color;
+    margin-right: 10px;
+    color: $main-color;
+  }
+  a {
+    text-decoration: none;
+    cursor: default;
+  }
+}
+
+.sub-title {
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 30px;
+}

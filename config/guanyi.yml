@@ -1,0 +1,86 @@
+purchase:
+  rule:
+    case: 'case_sublimate'
+    matte_case: 'case_sublimate'
+    glass_case_tpu: 'case_pc'
+    glass_case: 'case_pc'
+    mug: 'mug'
+    sticker: 'sticker'
+    canvas:
+      15x15cm_canvas_cn: 'canvas_15x15'
+      45x30cm_canvas_cn: 'canvas_30x30_30x45'
+      30x30cm_canvas_cn: 'canvas_30x30_30x45'
+    usb:
+      usb_black_2G: 'usb_2G'
+      usb_white_2G: 'usb_2G'
+      usb_black_16G: 'usb_16G'
+      usb_white_16G: 'usb_16G'
+    powerbank:
+      powerbank_white_2500: 'powerbank_2500'
+      powerbank_black_2500: 'powerbank_2500'
+      powerbank_white_5000: 'powerbank_5000'
+      powerbank_black_5000: 'powerbank_5000'
+
+  fee:
+    case_sublimate:
+      0: 20.2
+      101: 17.1
+      501: 15.0
+      1001: 12.9
+    case_pc:
+      0: 15.4
+      101: 11.6
+      501: 9.4
+      1001: 7.2
+    mug:
+      0: 14.4
+      101: 11.7
+      501: 9.6
+      1001: 7.5
+    sticker:
+      0: 14.4
+      101: 11.7
+      501: 9.6
+      1001: 7.5
+    canvas_15x15:
+      0: 66.6
+      101: 14.7
+      501: 8.7
+      1001: 4.3
+    canvas_30x30_30x45:
+      0: 66.4
+      101: 37.5
+      501: 21.5
+      1001: 15.5
+    usb_2G:
+      0: 36.0
+      101: 24.3
+      501: 18.1
+      1001: 14.0
+    usb_16G:
+      0: 39.7
+      101: 28.9
+      501: 22.8
+      1001: 19.5
+    powerbank_2500:
+      0: 39.7
+      101: 28.9
+      501: 22.8
+      1001: 19.5
+    powerbank_5000:
+      0: 57.4
+      101: 39.5
+      501: 36.2
+      1001: 34.3
+
+  remote_sell_count:
+    case_sublimate: 1
+    case_pc: 1
+    mug: 1
+    sticker: 1
+    canvas_15x15: 1
+    canvas_30x30_30x45: 2
+    usb_2G: 2
+    usb_16G: 2
+    powerbank_2500: 2
+    powerbank_5000: 2

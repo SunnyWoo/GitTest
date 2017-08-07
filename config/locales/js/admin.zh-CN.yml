@@ -1,0 +1,62 @@
+zh-CN:
+  js:
+    button:
+      cancel: 取消
+      save: 储存
+      edit: 编辑
+      search: 搜寻
+    coupon:
+      new:
+        title: 新增优惠卷
+        detail: 优惠码内容
+        detail_desc: 建立你的优惠码以及使用条件
+        name: 优惠码名称（上限为 25 个字）【名称会显示于订单内容上】
+        count: 增加多少个独立的优惠代码?
+        equal_to: 等于
+        greater_than: 大于
+        code: 优惠码（上限为 20 个字）【结帐时输入的字符】
+        generate_code: 产出优惠码
+        usage_limit: 此优惠码可使用次数？
+        no_limit: 无限制
+        expired: 设定优惠码的开始与结束日期
+        begin: 优惠码开始日期
+        expires: 优惠码结束日期
+        never_expires: 永不过期
+        more: 进阶设定
+        more_desc: 优惠卷进阶设定
+        base_price: 优惠计价基准
+        original_price: 市场价
+        special_price: 促销价
+        user_usage_limit: 单一用户使用次数
+        target: 优惠品項
+        all_order: 整笔订单优惠
+        order_over: 订单总额超过
+        specify_products: 特定product model
+        specify_product_categories: 特定Product Category
+        specify_designers: 特定设计师
+        specify_products_designers: 特定设计师与product model
+        specify_work: 特定兌換商品
+        specify_bdevent: 特定 Bdevent
+        shipping_fee: 运费
+        type: 优惠方式
+        discount_amount: 固定扣除金额
+        discount_percentage: 固定折扣比例
+        pay_amount: 固定结单金额
+        discount_none: 無
+        item_limit: 最多优惠组数
+        simple: 单一优惠目标
+        rules: 复合优惠目标
+        rule1: 优惠条件一
+        rule2: 优惠条件二
+        rule_quantity: 条件个数
+      index:
+        list: 优惠码列表
+        auto_approval: 自动审核优惠码
+        search_desc: 输入优惠码名称或是优惠代码搜寻
+        detail: 优惠码详情
+        used_count: 已使用次数
+        start_end: 开始 / 结束日期
+        code: 优惠码
+        status: 状态
+        unused: 未使用
+        used: 已使用

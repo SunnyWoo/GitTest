@@ -1,0 +1,18 @@
+<%- column_titles = %w(訂單編號 商品類型 數量 商品单价 订单总价 下單時間 出貨時間 發票號碼 快递单号) -%>
+<% data = CSV.generate do |csv| %>
+          <%- csv << column_titles -%>
+          <%- @orders.each do |order| -%>
+              <%- order.order_items.each do |order_item| -%>
+                  <%- csv << [order.order_no,
+                              order_item.itemable.product_name,
+                              order_item.quantity,
+                              render_item_price(order_item.itemable),
+                              render_order_price(order),
+                              (l order.created_at, format: :long),
+                              order.shipped_at.nil? ? '' : (l order.shipped_at, format: :long),
+                              order.invoice_number || '空',
+                              order.ship_code] -%>
+              <%- end -%>
+          <%- end -%>
+<%- end -%>
+<%= mark_csv_data(data).html_safe %>

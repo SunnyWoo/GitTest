@@ -1,0 +1,9 @@
+- print_items = PrintItem.find(activity.extra_info[:print_item_ids])
+div
+  | 開始整批上傳
+  br Message:
+  pre
+    = activity.message+"\n"
+    - print_items.each do |print_item|
+      - work = print_item.order_item.itemable
+      = "開始上傳 #{link_to_admin_work work} 到 FTP\n".html_safe

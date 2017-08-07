@@ -1,0 +1,71 @@
+/* line 1, ../../../stylesheets/admin/v2/new_order.scss */
+.btn-margin-right {
+  margin-right: 10px; }
+
+/* line 5, ../../../stylesheets/admin/v2/new_order.scss */
+.filters {
+  margin-bottom: 10px; }
+
+/* line 10, ../../../stylesheets/admin/v2/new_order.scss */
+.form-search .search-label {
+  margin-right: 10px; }
+
+/* line 15, ../../../stylesheets/admin/v2/new_order.scss */
+.add-filter {
+  height: 34px;
+  width: 270px;
+  padding: 5px 10px;
+  background-color: #2283C5;
+  color: #FFF; }
+  /* line 21, ../../../stylesheets/admin/v2/new_order.scss */
+  .add-filter .platform, .add-filter .value {
+    width: 120px;
+    margin: 0 10px 0 0;
+    background-color: #d3e6f3;
+    border: 0;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px; }
+  /* line 30, ../../../stylesheets/admin/v2/new_order.scss */
+  .add-filter .value {
+    margin: 0; }
+
+/* line 36, ../../../stylesheets/admin/v2/new_order.scss */
+.filter-options div {
+  float: left;
+  margin-right: 10px;
+  background-color: #2283C5;
+  padding: 8px 15px 7px;
+  color: #FFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); }
+  /* line 43, ../../../stylesheets/admin/v2/new_order.scss */
+  .filter-options div .del {
+    background-color: #64a8d6;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-top: 1px;
+    margin-left: 10px;
+    vertical-align: top;
+    line-height: 16px;
+    text-align: center;
+    cursor: pointer; }
+
+/* line 60, ../../../stylesheets/admin/v2/new_order.scss */
+.filters ul {
+  clear: both;
+  list-style: none;
+  margin: 0; }
+  /* line 64, ../../../stylesheets/admin/v2/new_order.scss */
+  .filters ul li {
+    float: left;
+    margin-right: 10px; }
+
+/* line 72, ../../../stylesheets/admin/v2/new_order.scss */
+#order_results .order img {
+  width: 100px; }
+
+/* line 78, ../../../stylesheets/admin/v2/new_order.scss */
+#orders_table thead .sort {
+  cursor: pointer; }

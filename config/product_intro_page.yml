@@ -1,0 +1,465 @@
+---
+categories:
+  canvas:
+    meta_title: '無框畫 | 我印，讓你隨心所印，做自己喜歡的無框畫 '
+    meta_keyword: 我印,commandp,設計,照片,拼貼,客製化,個性化,無框畫,自製,禮物,畫框,時鐘,全家福,婚禮,情侶,自拍,貼圖
+    meta_description: 將手機照片搭上無框畫，只要 30 秒美照變名畫
+    meta_image_url: 'share/category_share_canvas.png'
+    m_feature_title: 無框畫
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/catgory_kv_canvas_1.png"
+    - image: "kv/catgory_kv_canvas_2.png"
+    - image: "kv/catgory_kv_canvas_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 輕量化專利設計，免釘牆施工，不傷害牆面。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 日本高畫質寫真印刷技術，專用畫布材質防水抗光照，搭配手工包框，影像延伸滿版不留白。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 分別提供 30x30 cm、45x30 cm 尺寸選擇，厚度 2.5 cm，質感滿點不失真。
+    m_specs:
+    - icon: "spec/CANVAS/category_spec_case_icon_light@2x.png"
+      title: 輕量化
+      content: 採用輕量化專利設計。
+    - icon: "spec/CANVAS/category_spec_case_icon_tech copy 2@2x.png"
+      title: 日本技術
+      content: 日本高畫質寫真印刷技術。
+    - icon: "spec/CANVAS/category_spec_canvas_icon_waterproof@2x.png"
+      title: 防水抗光
+      content: 防水仿石紋紙畫布材質，防水抗光照。
+    - icon: "spec/CANVAS/category_spec_canvas_icon_product_size@2x.png"
+      title: 多種尺寸
+      content: 分別提供 30x30 cm、45x30 cm 尺寸選擇，厚度 2.5 cm。
+    m_spec_image_url: "spec/CANVAS/category_spec_img_canvas@2x.png"
+    m_image_row_images:
+    - "spec/CANVAS/catgory_description_canvas_1@2x.png"
+    - "spec/CANVAS/catgory_description_canvas_2@2x.png"
+    - "spec/CANVAS/catgory_description_canvas_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_canvas_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_canvas_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_canvas_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_canvas_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_canvas_step_5.png"
+    m_customize_title: 客製化無框畫
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $199 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  case:
+    meta_title: '手機硬殼 | 我印，讓你隨心所印，做自己喜歡的手機硬殼 '
+    meta_keyword: 我印,commandp,手機殼,手機硬殼,cases,客製化手機殼,客製化,安卓,蘋果,apple,android,iPhone,Samsung,iPhone
+      6s/6,iPhone 6s Plus,iPhone 6 Plus,Note 5,S6,iPad
+    meta_description: 用自己喜歡的照片，30 秒印出想要的手機硬殼
+    meta_image_url: 'share/category_share_cases.png'
+    m_feature_title: 手機硬殼
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/catgory_kv_case_1.png"
+    - image: "kv/catgory_kv_case_2.png"
+    - image: "kv/catgory_kv_case_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 獨家技術 高品質 PVC 硬殼一體成型 抗刮抗磨  保護你的手機。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 孔位精準 方便使用 圓弧邊角設計 順手好拿不刮手。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 超輕 12.5g 超薄 0.7mm 100% 密合你的手機。
+    m_specs:
+    - icon: "spec/PHONE%20CASES/category_spec_case_icon_tech@2x.png"
+      title: 熱轉印技術
+      content: 特殊抗刮抗磨，亮麗顏料讓圖案層次豐富、細膩逼真。
+    - icon: "spec/PHONE%20CASES/category_spec_icon_case_material@2x.png"
+      title: PVC 硬殼
+      content: 一體成型材質，圓弧邊角設計，順手好拿不刮手 。
+    - icon: "spec/PHONE%20CASES/category_spec_case_icon_product_model@2x.png"
+      title: 密合度高
+      content: 100% 密合你的手機。
+    - icon: "spec/PHONE%20CASES/category_spec_case_icon_light@2x.png"
+      title: 超輕巧
+      content: 超輕 12.5g 超薄 0.7mm 重量：15 - 25 g （依據型號而有不同差異）。
+    m_spec_image_url: "spec/PHONE%20CASES/category_spec_img_thermal_transfer_phone_case@2x.png"
+    m_image_row_images:
+    - "spec/PHONE%20CASES/catgory_description_case_1@2x.png"
+    - "spec/PHONE%20CASES/catgory_description_case_2@2x.png"
+    - "spec/PHONE%20CASES/catgory_description_case_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_cases_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_cases_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_cases_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_cases_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_cases_step_5.png"
+    m_customize_title: 客製化手機硬殼
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $649 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  sticker:
+    meta_title: 貼紙 | 我印，讓你隨心所印，做自己喜歡的貼紙
+    meta_keyword: 我印,commandp,設計,照片,拼貼,客製化,個性化,自製,貼紙,禮物,畫框,全家福,婚禮,情侶,自拍,貼圖
+    meta_description: 客製化創意貼紙，貼出生活小確幸
+    meta_image_url: 'share/category_share_sticks.png'
+    m_feature_title: 貼紙
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/catgory_kv_sticker_1.png"
+    - image: "kv/catgory_kv_sticker_2.png"
+    - image: "kv/catgory_kv_sticker_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 讓自己的設計融入生活中點綴小事物，創造出更多無限可能。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 多種造型尺寸，搭配先進雷射切割技術，飽和色彩印刷不失真 。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: PP 合成紙環保材質無毒無味，防水撕不破特性，耐用持久。
+    m_specs:
+    - icon: "spec/STICKERS/category_spec_stickers_icon_recycle@2x.png"
+      title: 環保
+      content: 無毒、無味、可回收環保材質。
+    - icon: "spec/STICKERS/category_spec_stickers_icon_waterproof@2x.png"
+      title: 防水
+      content: PP 合成紙材質，主成份為聚丙烯塑膠。具有防水、撕不破、無殘膠及不易變黃特性。
+    - icon: "spec/STICKERS/category_spec_canvas_icon_product_size@2x.png"
+      title: A4 尺寸
+      content: 印製於 A4 紙張上，內含 21 枚貼紙。
+    m_spec_image_url: "spec/STICKERS/category_spec_img_sticker@2x.png"
+    m_image_row_images:
+    - "spec/STICKERS/catgory_description_sticker_1@2x.png"
+    - "spec/STICKERS/catgory_description_sticker_2@2x.png"
+    - "spec/STICKERS/catgory_description_sticker_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_sticker_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_sticker_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_sticker_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_sticker_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_sticker_step_5.png"
+    m_customize_title: 客製化貼紙
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $90 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  mug:
+    meta_title: '馬克杯 | 我印，讓你隨心所印，做自己喜歡的馬克杯'
+    meta_keyword: '我印,commandp,設計,照片,拼貼,客製化,個性化,悠遊卡,自製,禮物,全家福,婚禮,情侶,自拍,貼圖'
+    meta_description: '客製化特調專屬馬克杯，越喝越稱心'
+    meta_image_url: 'share/category_share_mugs.png'
+    m_feature_title: 馬克杯
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_mugs_kv_1.png"
+    - image: "kv/category_mugs_kv_2.png"
+    - image: "kv/category_mugs_kv_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 熱昇華壓燙技術，色彩鮮明持久。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 經典造型馬克杯，搭配好握手把。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 全陶瓷材質，可使用於洗碗機及微波爐。
+    m_specs:
+    - icon: "spec/MUGS/category_spec_mugs_icon_vase@2x.png"
+      title: 陶瓷製造
+      content: 可使用於洗碗機及微波爐。
+    - icon: "spec/MUGS/category_spec_mugs_icon_capcity@2x.png"
+      title: 標準容量
+      content: 350ml（11oz）容量，冷飲、熱飲均適用。
+    - icon: "spec/MUGS/category_spec_mugs_icon_colors@2x.png"
+      title: 不掉色
+      content: 熱昇華壓燙技術，色彩鮮明持久。
+    m_spec_image_url: "spec/MUGS/category_spec_img_mugs@2x.png"
+    m_image_row_images:
+    - "spec/MUGS/catgory_description_glass_mugs_1@2x.png"
+    - "spec/MUGS/catgory_description_glass_mugs_2@2x.png"
+    - "spec/MUGS/catgory_description_glass_mugs_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_mugs_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_mugs_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_mugs_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_mugs_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_mugs_step_5.png"
+    m_customize_title: 客製化馬克杯
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $499 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  smartcard:
+    meta_title: '悠遊卡 | 我印，讓你隨心所印，做自己喜歡的悠遊卡'
+    meta_keyword: '我印,commandp,設計,照片,拼貼,客製化,個性化,悠遊卡,自製,禮物,全家福,婚禮,情侶,自拍,貼圖'
+    meta_description: '客製化悠遊卡「嗶！」出你的個人主張'
+    meta_image_url: 'share/category_share_smartcaards.png'
+    m_feature_title: 悠遊卡
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_easycards_kv_1.png"
+    - image: "kv/category_easycards_kv_2.png"
+    - image: "kv/category_easycards_kv_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 正面全版可客製化的晶片悠遊卡 - 普卡。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 採用 UV 全彩噴墨印刷技術。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 霧面浮雕效果呈現，視覺鮮豔豐富且完美獨特。
+    m_specs:
+    - icon: "spec/EASYCARDS/category_spec_easycards_icon_tech@2x.png"
+      title: UV 全彩噴墨印刷技術
+      content: 色彩鮮豔飽和，層次感豐富。
+    - icon: "spec/EASYCARDS/category_spec_easycards_icon_print@2x.png"
+      title: 全版印刷
+      content: 卡片正面全版面均可客製化。
+    - icon: "spec/EASYCARDS/category_spec_easycards_icon_colors@2x.png"
+      title: 不掉色
+      content: 耐磨抗酒精，保證不褪色。
+    m_spec_image_url: "spec/EASYCARDS/category_spec_img_easycards@2x.png"
+    m_image_row_images:
+    - "spec/EASYCARDS/catgory_description_easycards_1@2x.png"
+    - "spec/EASYCARDS/catgory_description_easycards_2@2x.png"
+    - "spec/EASYCARDS/catgory_description_easycards_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_easycards_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_easycards_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_easycards_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_easycards_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_easycards_step_5.png"
+    m_customize_title: 客製化悠遊卡
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $399 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  clock:
+    meta_title: '掛鐘 | 我印，讓你隨心所印，做自己喜歡的掛鐘'
+    meta_keyword: '我印,commandp,設計,照片,拼貼,客製化,個性化,掛鐘,時鐘,圓型掛鐘,自製,禮物,全家福,婚禮,情侶,自拍,貼圖'
+    meta_description: '保存你的美好時光，使鐘如一'
+    meta_image_url: 'share/category_share_clocks.png'
+    m_feature_title: 掛鐘
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_clocks_kv_1.png"
+    - image: "kv/category_clocks_kv_2.png"
+    - image: "kv/category_clocks_kv_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 台灣製機芯，結合日本高畫質寫真技術，等於品質保證。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 經典圓形掛鐘，現代極簡風格，簡單、有型。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 木框 / 黑框 / 白框各式材質，搭配銀色指針質感加乘，低電量設計，使用碳鋅電池，節能省電更持久。
+    m_specs:
+    - icon: "spec/CLOCKS/category_spec_clocks_icon_simple_design@2x.png"
+      title: 簡約設計
+      content: 經典圓形掛鐘，現代極簡風格，簡單。有型。
+    - icon: "spec/CLOCKS/category_spec_clocks_icon_product_size@2x.png"
+      title: 多種選擇
+      content: 木框 / 黑框 / 白框各式材質選擇，搭配銀色指針質感加乘。
+    - icon: "spec/CLOCKS/category_spec_clocks_icon_production@2x.png"
+      title: 台灣製造
+      content: 台灣製機芯，結合日本高畫質寫真技術，等於品質保證。
+    - icon: "spec/CLOCKS/category_spec_clocks_icon_power@2x.png"
+      title: 省電耐久
+      content: 低電量設計，使用碳鋅電池，節能省電更持久。
+    m_spec_image_url: "spec/CLOCKS/category_spec_img_clocks@2x.png"
+    m_image_row_images:
+    - "spec/CLOCKS/catgory_description_glass_clocks_1@2x.png"
+    - "spec/CLOCKS/catgory_description_glass_clocks_2@2x.png"
+    - "spec/CLOCKS/catgory_description_glass_clocks_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_clocks_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_clocks_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_clocks_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_clocks_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_clocks_step_5.png"
+    m_customize_title: 客製化掛鐘
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $1,099 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  usb:
+    meta_title: 'USB 隨身碟 | 我印，讓你隨心所印，做自己喜歡的 USB 隨身碟'
+    meta_keyword: '我印,commandp,設計,照片,拼貼,客製化,個性化,USB 隨身碟,usb,隨身碟,行動儲存碟,自製,禮物,全家福,婚禮,情侶,自拍,貼圖'
+    meta_description: 'USB 隨身碟打造你的 3C 個性'
+    meta_image_url: 'share/category_share_usbs.png'
+    m_feature_title: USB 隨身碟
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_usbs_kv_1.png"
+    - image: "kv/category_usbs_kv_2.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: ABS 環保材質，防水防靜電耐高溫，檔案保存穩定快速。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 直噴高精密印刷，表面光滑鮮豔，色彩自然逼真。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 卡片式造型，纖薄輕巧，攜帶方便收納不佔空間。
+    m_specs:
+    - icon: "spec/USBS/category_spec_usbs_icon_recycle@2x.png"
+      title: ABS 環保材質
+      content: 防水防靜電耐高溫，檔案保存穩定快速。
+    - icon: "spec/USBS/category_spec_usbs_icon_print@2x.png"
+      title: 直噴高精密印刷
+      content: 表面光滑鮮豔，色彩自然逼真。
+    - icon: "spec/USBS/category_spec_usbs_icon_cards@2x.png"
+      title: 卡片式造型
+      content: 隨身碟厚度僅 1.97mm，纖薄輕巧，攜帶方便收納不佔空間。
+    m_spec_image_url: "spec/USBS/category_spec_img_usbs@2x.png"
+    m_image_row_images:
+    - "spec/USBS/catgory_description_glass_usbs_1@2x.png"
+    - "spec/USBS/catgory_description_glass_usbs_2@2x.png"
+    - "spec/USBS/catgory_description_glass_usbs_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_usbs_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_usbs_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_usbs_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_usbs_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_usbs_step_5.png"
+    m_customize_title: 客製化USB 隨身碟
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $399 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  glass_case:
+    meta_title: '透明手機殼 | 我印，讓你隨心所印，做自己喜歡的透明手機殼'
+    meta_keyword: '我印,commandp,手機殼,手機硬殼,cases,客製化手機殼,客製化,安卓,蘋果,透明手機殼,透明,glass case,apple,android,iPhone,Samsung,iPhone 6s/6,iPhone 6s Plus,iPhone 6 Plus,Note 5,S6,iPad'
+    meta_description: '透明手機殼，清澈無暇，內外兼美'
+    meta_image_url: 'share/category_share_glass_cases.png'
+    m_feature_title: 透明手機殼
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_glass_cases_kv_1.png"
+    - image: "kv/category_glass_cases_kv_1.png"
+    - image: "kv/category_glass_cases_kv_1.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 新型抗刮塗層，歷久彌新，高透光高抗刮材料，展現獨特設計。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 孔位精準 方便使用 圓弧邊角設計 順手好拿不刮手。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 超輕 11.65g 超薄 0.86mm 高品質 PC 材質 提供良好保護。
+    m_specs:
+    - icon: "spec/GLASS%20CASES/category_spec_glass_cases_icon_polish@2x.png"
+      title: 新型抗刮塗層
+      content: 歷久彌新，高透光高抗刮材料，展現獨特設計。
+    - icon: "spec/GLASS%20CASES/category_spec_glass_cases_icon_perpact_design@2x.png"
+      title: 完美設計
+      content: 孔位精準、方便使用。圓弧邊角設計，順手好拿不刮手。
+    - icon: "spec/GLASS%20CASES/category_spec_glass_cases_icon_material@2x.png"
+      title: PC 硬殼材質
+      content: 超輕 11.65g、超薄 0.86mm，高品質 PC 材質，提供手機良好保護。
+    m_spec_image_url: "spec/GLASS%20CASES/category_spec_img_glass_cases@2x.png"
+    m_image_row_images:
+    - "spec/GLASS%20CASES/catgory_description_glass_cases_1@2x.png"
+    - "spec/GLASS%20CASES/catgory_description_glass_cases_2@2x.png"
+    - "spec/GLASS%20CASES/catgory_description_glass_cases_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_transparent_glass_cases_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_transparent_glass_cases_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_transparent_glass_cases_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_transparent_glass_cases_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_transparent_glass_cases_step_5.png"
+    m_customize_title: 客製化透明手機殼
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $599 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+  cover:
+    meta_title: '保護套 | 我印，讓你隨心所印，做自己喜歡的手機保護套 '
+    meta_keyword: '我印,commandp,保護套,掀蓋皮套,covers,客製化保護套,客製化,平板,蘋果,apple,iPhone 6s/6,iPhone 6s Plus,iPhone 6 Plus,iPad'
+    meta_description: '用自己喜歡的照片，30 秒印出想要的手機保護套'
+    meta_image_url: 'share/category_share_covers.png'
+    m_feature_title: 保護套
+    m_feature_subtitle: 隨心所欲 印出你的客製化商品
+    m_feature_ticker: ''
+    m_feature_button: 開始製作
+    m_kv:
+    - image: "kv/category_cover_kv_1.png"
+    - image: "kv/category_cover_kv_2.png"
+    - image: "kv/category_cover_kv_3.png"
+    m_features:
+    - icon: "intro_icon/category_intro_icon_tech.png"
+      title: 技術
+      content: 最先進高畫質 Double UV Coating 數位彩繪技術。
+    - icon: "intro_icon/category_intro_icon_feature.png"
+      title: 特色
+      content: 多角度螢幕止滑設計，符合人體工學設計，打字更舒適，最新改良可立式結構，堅固平穩不易傾倒。
+    - icon: "intro_icon/category_intro_icon_size.png"
+      title: 規格
+      content: 內裡使用耐髒污 PU 合成皮，霧面防刮設計，耐磨不留指紋，完美包覆性，搭載螢幕吸付磁力省電休眠裝置。
+    m_specs:
+    - icon: "spec/COVERS/category_spec_covers_icon_human@2x.png"
+      title: 符合人體工學
+      content: 多角度螢幕止滑設計，符合人體工學設計，打字更舒適。
+    - icon: "spec/COVERS/category_spec_covers_icon_color@2x.png"
+      title: 色彩鮮豔
+      content: 最先進高畫質 Double UV Coating 數位彩繪技術，完美顯色不掉色。
+    - icon: "spec/COVERS/category_spec_covers_icon_steable@2x.png"
+      title: 耐磨防刮
+      content: 內裡使用耐髒污 PU 合成皮，霧面防刮設計，耐磨不留指紋。
+    - icon: "spec/COVERS/category_spec_covers_icon_friction@2x.png"
+      title: 高穩定度
+      content: 最新改良可立式結構，堅固平穩不易傾倒，提供完美包覆性，搭載螢幕吸付磁力省電休眠裝置。
+    m_spec_image_url: "spec/COVERS/category_spec_img_cover@2x.png"
+    m_image_row_images:
+    - "spec/COVERS/catgory_description_glass_cover_1@2x.png"
+    - "spec/COVERS/catgory_description_glass_cover_2@2x.png"
+    - "spec/COVERS/catgory_description_glass_cover_3@2x.png"
+    m_tutorial_kv_images:
+    - "tutorial/category_tutorial_img_plastic_covers_step_1.png"
+    - "tutorial/category_tutorial_img_plastic_covers_step_2.png"
+    - "tutorial/category_tutorial_img_plastic_covers_step_3.png"
+    - "tutorial/category_tutorial_img_plastic_covers_step_4.png"
+    - "tutorial/category_tutorial_img_plastic_covers_step_5.png"
+    m_customize_title: 客製化保護套
+    m_customize_subtitle: 讓你的創意獨一無二
+    m_customize_price: NT $899 起
+    m_customize_original_price: ''
+    m_customize_button: 我要製作
+    m_customize_button_href: ''
+host: 'http://static.commandp.com.cn/categoryPage/images'

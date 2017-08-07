@@ -1,0 +1,33 @@
+zh-CN:
+  print:
+    batch_flow:
+      attachment:
+        title:
+          all: '所有档案'
+          image: '印刷图片档案'
+          document: '总表文件与工单档案'
+      notification:
+        subject: '%{factory_name} %{number_with_source} 工单下载通知 from Commandp'
+      summary_table:
+        header:
+          batch_number: '批号'
+          deadline: '预计到货日'
+          item_number: '单品号'
+          location: '出货地'
+          order_number: '订单号'
+          product_name: '产品名称'
+          quantity: '数量'
+          shipping_number: '托运单号'
+          stat_title: '商品数量计算'
+          stat_product: '产品名称'
+          stat_quantity: '数量'
+          note: '备注'
+        filename: '%{source}%{batch_number}_总表'
+        is_reprint: '重印商品'
+      worksheet:
+        field:
+          batch_number: '批号'
+          item_number: '单品号'
+          order_number: '订单号'
+          product_name: '规格'
+        filename: '%{source}%{batch_number}_%{product_name}工单'

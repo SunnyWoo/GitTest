@@ -1,0 +1,138 @@
+- cache @key
+  .owl-carousel
+    .kv_middle
+      = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy:true
+      - kv_lagn = locale.match(/zh/) ? :tc : :en
+      - @kv_mobile_images[kv_lagn].each do |src|
+        = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy:true
+  #video.m-announcement = @title
+  .m-hr
+  .mobile-v2-title
+    | 結帳再 8 折
+    br
+    | 母親節保證到貨免運服務！
+
+
+  = render 'gift' if @wordings.try(:gift_title).present?
+
+  .event-detial.happysummer
+    .event-detial-inner-block
+      .event-title
+        | 活動優惠碼：
+        span.highlightspan MOM
+      .event-title
+        p 優惠折扣：
+        p 商品 8 折優惠以及 5/8 母親節前保證到貨*免運服務。
+      .event-title
+        p 優惠品項：
+        p 我印全系列商品。
+      .event-title
+        p 優惠期間：
+        p 2016/04/08 - 2016/04/24
+
+      .event-title 活動說明
+      p.event-desc
+
+        | 活動期間內，凡使用折扣碼 MOM 訂購成功並指定收單日前完成付款程序之訂單，均可享商品 8 折優惠以及 5/8 母親節前保證到貨*免運服務。（本活動保證到貨運送範圍僅限台灣地區）。
+        p = '*各商品品項 5/8 母親節保證到貨最後收單日：'
+        p 4/20：霧面硬殼、透明軟殼、透明硬殼、USB 隨身碟、木邊無框畫、貼紙商品。
+        p 4/25：手機硬殼、無框畫、抱枕、布書皮、T-shirts、掛鐘商品。
+      #create
+
+  .products.happysummer
+    .mobile-v2-title
+      | 2016 母親節客製化禮物教學
+
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-1.png', alt: @title
+      .step-title 1. 選擇設計樣式並下載
+      .step-desc 先選擇想要製作的產品，再挑選喜歡的圖案樣式，點選下載後儲存素材於你的電腦或是手機相簿內。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-2.png', alt: @title
+      .step-title 2. 製作專屬客製化禮物
+      .step-desc 點選『開始印』功能，選擇想製作的禮物，再上傳剛才下載的圖檔至編輯器內，發揮創意動手設計。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-3.png', alt: @title
+      .step-title 3. 立即結帳，全球直送
+      .step-desc 完成製作後，點選預覽確認，多種結帳方式任你選擇。
+
+    .mobile-v2-title
+      | 選擇素材
+
+    - @materials.each_with_index do |material, i|
+      .product.material class=('hide' if i >= 3)
+        .product-mobile
+          - image_url = "https://d2i5hifyddc647.cloudfront.net/campaign/2016/mothersday/JPG/#{material}.jpg"
+          = image_tag image_url, width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+              = material.split('_').map(&:classify).join(' ')
+          = link_to '#', class: 'btn btn-default btn-happysummer material_download',
+                         target: '_blank', data: { url: image_url, material: material, platform: 'Mobile' } do
+            | 下載樣式
+          br
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create}",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+    - @materials.each_with_index do |material, i|
+      .product.material class=('hide')
+        .product-mobile
+          - image_url = "https://d2i5hifyddc647.cloudfront.net/campaign/2016/mothersday/PNG/#{material}.png"
+          = image_tag image_url, width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+              = material.split('_').map(&:classify).join(' ')
+          = link_to '#', class: 'btn btn-default btn-happysummer material_download',
+                         target: '_blank', data: { url: image_url, material: material, platform: 'Mobile' } do
+            | 下載樣式
+          br
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+
+    .page.material
+      #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                    'ga-event-action' => 'click',
+                                                    'ga-event-label' => 'material see more'})
+        | 下一頁
+
+    .mobile-v2-title
+      = "2016 母親節精選商品"
+
+    - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+    select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @category_names.each do |key, val|
+        option.filter value=(key) = val
+    .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+    - @category_products.each do |key, val|
+      .filted id=(key)
+        = render partial: 'editor/shared/work_mobilev2',
+                collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+  .mobile-v2-title
+    | Share on
+    br
+    | Social Media
+
+    .mobile-v2-fb-btn.ga-event data-ga-event-category="Campaign - #{@key} - Mobile" data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url(@share_img)) data-facebook-link=(campaign_url(id: @key)) data-facebook-caption=(@title) 分享到 Facebook
+
+  = link_to '分享到 Line', "http://line.naver.jp/R/msg/text/#{@title} #{campaign_url(id: @key)}", {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>"Campaign - #{@key} - Mobile", 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+  .app-promotion
+    .title
+      = "購買 2016 母親節"
+      br
+      | 系列商品
+      br
+      | 請下載 我印 App
+    = link_to 'http://bit.ly/1nMC8yU' do
+      = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+    = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+      = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+  #campaing_inof.hidden data=({key: @key})

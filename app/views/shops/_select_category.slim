@@ -1,0 +1,16 @@
+.filters class="#{hide_model ? 'grid_2' : 'grid_4'}"
+  .filter-block
+    .horizontal
+      .sub-title = edit_translator('page.text.category')
+      .content
+        .dropdown
+          button#category_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+            span.val
+              = category.try(:name) || 'All'
+            span.caret
+          ul.dropdown-menu aria-labelledby="category_dropdown" role="menu"
+            - @categories.each do |category|
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=category.key
+                  = link_to category.friendly_name, shop_index_path(category: category.key)
+  .margin-top-fixed

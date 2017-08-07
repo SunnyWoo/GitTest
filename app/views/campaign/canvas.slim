@@ -1,0 +1,96 @@
+.owl-carousel
+  - %w(campaign_canvas kv_dog kv_campuscafe).each do |kv|
+    .kv_middle
+      = image_tag "campaign/canvas/web/#{kv}_bg.png", class: 'carousel-img', alt: 'commandp canvas'
+      = image_tag "campaign/canvas/web/#{kv}_tc.png", class: 'kv-img', alt: 'commandp canvas'
+
+.camp_announcement 我印，讓無框畫變得更有趣！
+
+.conavs_container.conavs_background
+  .cmdp_container
+    .conavs_grid_3.grid_3
+      .block_title style='margin-top: 100px;'
+        = image_tag 'campaign/canvas/images/wording_1.png', alt: '我印，讓我的店更有特色'
+      .block_hr
+      .block_wording
+        | 時下最潮 Campus Café 。除了超帥店員坐鎮以及自成一格的
+        br
+        | 校園裝潢外，最不能或缺的就是好吃的美食!
+        br
+        | 運用我印，將美味的食物轉化成
+        br
+        | 一幅幅的特色藝術，也讓店家潮上天啦!
+
+      .text-center
+        = link_to '開始印 30 x 30 cm 無框畫', works_path(model_id: @canvas_30_id), rel: :nofollow,
+                  alt: '開始印 30 x 30 cm 無框畫', class: 'btn btn-default btn-canvas ga-event',
+                  data: { method: :post, 'ga-event-category' => 'Campaign - Canvas - Web', 'ga-event-action' => 'click',
+                          'ga-event-label' => 'Create' }
+
+    .conavs_grid_3.grid_3
+      = link_to 'commandp 我印 X CampusCafe', 'https://www.youtube.com/watch?v=UmzG2iHx5Go', class: 'embed_youtube ga-event',
+                data: { width: '525', height: '525', prev_url: image_path('campaign/canvas/images/prev_1.png'),
+                'ga-event-category' => 'Campaign - Canvas - Web', 'ga-event-action' => 'Play',
+                'ga-event-label' => 'https://www.youtube.com/watch?v=UmzG2iHx5Go' }
+
+    .conavs_grid_3.grid_3
+      = link_to 'commandp 我印 X Olivia 尤緻妍 宣傳短片', 'https://www.youtube.com/watch?v=KTaBC3os-NE',
+                class: 'embed_youtube', data: { width: '525', height: '525',
+                prev_url: image_path('campaign/canvas/images/prev_2.png') }
+
+    .conavs_grid_3.grid_3
+      .block_title style='margin-top: 140px;' = image_tag 'campaign/canvas/images/wording_2.png', alt: '我印，讓我的窩更溫暖'
+      .block_hr
+      .block_wording Olivia 與超 Q 的小柴一起運用我印將他們的家打造得更加溫馨舒適，也讓他們的小窩更溫暖!
+      .text-center
+        = link_to '開始印 45 x 30 cm 無框畫', works_path(model_id: @canvas_45_id), rel: :nofollow,
+                  alt: '開始印', class: 'btn btn-default btn-canvas ga-event',
+                  data: { method: :post, 'ga-event-category' => 'Campaign - Canvas - Web', 'ga-event-action' => 'click',
+                          'ga-event-label' => 'Create' }
+.conavs_container
+  .cmdp_container
+    .grid_6
+      .block_title_2 = image_tag 'campaign/canvas/images/wording_3.png', alt: '我印，讓藝術無所不在'
+      .block_hr
+      .block_wording
+        | 城市裡有許多 美好的片刻稍縱即逝，我印的藝術家們
+        br
+        |透過無框畫捕捉每一刻珍貴的回憶，留下最美的畫面，
+        br
+        | 無論是甜蜜的、多愁善感的、還是意義深遠的片段，
+        br
+        | 在這個方正四角的小世界裡，一切似乎都變得更有趣了。
+      .block_wording_bottom
+
+    .products
+        = render partial: 'editor/shared/work', collection: @works
+
+    .grid_6
+      .camp_margin-top-33.text-center
+        = link_to '更多我印設計師獨家販售商品', shop_path(@canvas_model2.slug), class: 'btn btn-default btn-canvas'
+
+    .grid_6.camp_margin-top-170
+
+    .grid_3
+      .owl-carousel
+        - 1..3.times do |i|
+          .kv_middle width="510px"
+            = image_tag "campaign/canvas/images/campaign_canvas_0#{i+1}.jpg", alt: 'commandp 我印 無框畫'
+    .grid_3.product_detail
+      .block_title_3  = image_tag 'campaign/canvas/images/wording_4.png', alt: '無框畫，讓風格更有特色'
+      .block_hr style='margin-bottom: 43px;'
+      .block_wording style='margin-bottom: 42px;'
+        | 妝點居家，風格自己創造！無框畫採用輕量化專利設計，
+        br
+        | 日本高畫質寫真印刷技術，可一次購買多幅 任意排列，
+        br
+        | 直接用無痕膠帶貼於壁面，免釘牆施工。
+
+      .text-center style='margin-bottom: 45px;'
+        = image_tag 'campaign/canvas/images/wording_5.png', alt: 'commandp 我印 無框畫 價格'
+      .camp_margin-top-25.text-center
+        = link_to image_tag('campaign/canvas/images/buy.png', alt: '立即購買'), shop_path(@canvas_model.slug), class: 'ga-event',
+                  data: { 'ga-event-category' => 'Campaign - Canvas - Web', 'ga-event-action' => 'click',
+                          'ga-event-label' => 'Designer Shop - Canvas' }
+
+    .grid_6.camp_margin-top-170

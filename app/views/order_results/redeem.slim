@@ -1,0 +1,16 @@
+.cmdp_container.summary
+	.grid_6
+		= render_cell :announcement, :announcement
+
+	.grid_6
+		.item-title.margin-top-fixed.text-center
+			= t('page.order_results.order_id', id: @order.order_no)
+		.cart_wording = edit_translator('page.order_results.success_sub_wording')
+		.divider_line
+			= image_tag('editor/divider_line.png')
+		.content_text
+			.row
+				= edit_translator('page.order_results.sent_to')
+				span = @order.billing_info_email
+
+			= link_to t('page.cart.btns.countinue_shopping'), root_path, class: 'btn btn-default'

@@ -1,0 +1,12 @@
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th= t("coupons.search.thead.order_no")
+      th= t("coupons.search.thead.created_at")
+      th= t("coupons.search.thead.view")
+  tbody
+    - coupon.orders.each do |order|
+      tr
+        td= order.order_no
+        td= order.created_at
+        td= link_to t("shared.form_actions.view"), admin_order_path(order), class: "btn btn-sm btn-primary"

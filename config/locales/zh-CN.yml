@@ -1,0 +1,510 @@
+zh-CN:
+  country:
+    Australia: '澳洲'
+    Canada: '加拿大'
+    China: '中国'
+    France: '法国'
+    Germany: '德国'
+    HongKong: '香港'
+    Japan: '日本'
+    Macao: '澳门'
+    Malaysia: '马来西亚'
+    NewZealand: '新西兰'
+    Singapore: '新加坡'
+    SouthKorea: '韩国'
+    Taiwan: '台湾'
+    UnitedKingdom: '英国'
+    UnitedStates: '美国'
+  activerecord:
+    errors:
+      models:
+        announcement:
+          attributes:
+            default:
+              at_least_one: '资料库中至少要有一笔预设的公告'
+    models:
+      user: 用戶
+      order: 订单
+      billing_profile: 帐单档案
+      order_item: 订单品项
+      work: 作品
+      layer: 图层
+      shipping_info: 运送资讯
+      announcement: 网站公告
+      shelf: 仓储货架
+      import_order: 导入订单
+    attributes:
+      user:
+        id: 'ID'
+        email: '电子邮件'
+        sign_in_count: '登入次数'
+        current_sign_in_at: '最近登入时间'
+        last_sign_in_at: '上次登入时间'
+        current_sign_in_ip: '最近登入IP'
+        last_sign_in_ip: '上次登入IP'
+        created_at: '注册时间'
+        auth_token: '登入码'
+        role: '角色(normal, designer, guest)'
+        name: '用户名'
+        mobile: '手机号码'
+        password: '密码'
+        password_confirmation: '确认密码'
+        login: '邮箱/手机'
+      order:
+        order_no: '订单编号'
+        user: '用戶'
+        aasm_state: '订单状态'
+        created_at: '建立时间'
+        price: '订单金额'
+        currency: '货币'
+        payment_type: '付款方式'
+        bank: '银行'
+        bank_code: '银行代码'
+        bank_account: '银行账号'
+        pay_account: '缴款代号'
+        pay_expired: '缴费期限'
+        payment_id: 'PayPal 付款ID'
+        payment_nuandao_b2b: '暖岛冒险合作'
+        payment_taobao_b2c: '淘宝'
+        payment_tianmao_b2c: '天猫'
+        payment_paypal: 'PayPal'
+        "payment_neweb/atm": 'ATM 转账'
+        "payment_neweb_atm": 'ATM 转账'
+        "payment_neweb/mmk": '超商缴费'
+        "payment_neweb_mmk": '超商缴费'
+        "payment_neweb/alipay": '支付宝'
+        "payment_neweb_alipay": '支付宝'
+        "payment_neweb_mpp": '信用卡支付'
+        payment_cash_on_delivery: '货到付款(RMB 6)'
+        payment_stripe: '信用卡支付'
+        payment_pingpp_alipay: 'Ping++ 支付宝'
+        payment_pingpp_alipay_wap: 'Ping++ 支付宝'
+        payment_pingpp_wx: 'Ping++  微信'
+        payment_pingpp_upacp: 'Ping++ 银联'
+        payment_pingpp_upacp_wap: 'Ping++ 银联'
+        payment_pingpp_bfb: 'Ping++ 百度钱包'
+        payment_pingpp_alipay_qr: '支付宝扫码支付'
+        payment_pingpp_wx_pub_qr: '微信扫码支付'
+        payment_pingpp_upacp_pc: 'Ping++ 银联PC网页支付'
+        payment_pingpp_alipay_pc_direct: 'Ping++ 支付宝PC网页支付'
+        aasm_state/pending: 未付款
+        aasm_state/waiting_for_payment: 等待付款
+        aasm_state/paid: 已付款
+        aasm_state/canceled: 取消
+        aasm_state/packaged: 包裝
+        aasm_state/shipping: 运送中
+        aasm_state/refunded: 已退款
+        aasm_state/part_refunded: 部分退款
+        aasm_state/part_refunding: 部分退款中
+        aasm_state/refunding: 退款中
+        packaging_state:
+          package_ongoing: '未打包'
+          part_packaged: '部分打包'
+          all_packaged: '全部打包'
+        shipping_state:
+          shipping_ongoing: '未出货'
+          part_shipping: '部分出货'
+          all_shipping: '全部出货'
+
+      billing_profile: &attributes_billing_profile
+        id: 'ID'
+        address: '地址'
+        city: '城市'
+        name: '姓名'
+        phone: '电话'
+        state: '州'
+        zip_code: '邮政编码'
+        country: '地区'
+        address_name: '名称'
+        email: 电子邮件
+        shipping_way_standard: 标准运送 (10-15 工作日)
+        shipping_way_express: 快速到货 (7-10 工作日)
+        shipping_way_cash_on_delivery: 货到付款
+      address_info:
+        <<: *attributes_billing_profile
+      order_item:
+        quantity: '数量'
+        itemable_id: '作品ID'
+      work:
+        work_type:
+          is_private: 私人
+          is_public: 公开
+          redeem: 兌換商品
+        description: 信息
+        model: 产品类型
+
+
+
+        finished: 已完成
+        feature: 特色商品
+      design:
+        material: 上传设计
+        user: 选择设计师
+        name: 设计名称
+        description: 设计信息
+      print_item:
+        aasm_state:
+          pending: 未上传
+          uploading: 上传中
+          printed: 已上传
+          sublimated: 已热转印
+          onboard: 已包装
+          delivering: 抛单中
+          received: 抛单完成
+          qualified: 已质检
+      temp_shelf:
+        serial: 货架编号
+        description: 描述
+      shelf:
+        serial: 货架编号
+        category_name: 货架类型
+        material_serial: 商品编号
+        material_name: 商品名称
+        serial_name: 货架名称
+        section: 商品编号
+        name: 商品名称
+        quantity: 数量
+        safe_minimum_quantity: 最小安全数量
+      collection:
+        name: 识别名称
+      print_history:
+        print_type: 重印类别
+        reason: 原因说明
+      product_category:
+        tag_ids: 标签
+      product_model:
+        tag_ids: 标签
+      import_order:
+        file: 文件
+        created_at: 导入时间
+        aasm_state: 状态
+        aasm_state/pending: 未上传
+        aasm_state/importing: 上传中
+        aasm_state/finished: 已完成
+        succeed: 成功
+        failed: 失败
+      promotion:
+        name: 名称
+        description: 活动描述
+        type: 类型
+        targets: 折扣目标价
+        rule: Rule
+        begins_at: 开始时间
+        ends_at: 结束时间
+        aasm_state:
+          pending: 未提交
+          ready: 准备
+          started: 已开始
+          ended: 已完成
+          stopped: 已中止
+      change_price_event:
+        aasm_state/pending: 已计划
+        aasm_state/processing: 处理中
+        aasm_state/completed: 已完成
+        aasm_state/failed: 失败
+  ransack:
+    asc: "旧=>新"
+    desc: "新=>旧"
+    predicates:
+      cont: "包含"
+      not_cont: "不包含"
+      start: "开头是"
+      end: "结尾是"
+      gt: "大于"
+      gteq: "大于等于"
+      lt: "小于"
+      lteq: "小于等于"
+      eq: "等于"
+      matches: "相似于"
+      true: "结果为true(布林值)"
+      false: "结果为false(布林值)"
+      present: '非空值'
+      null: '空值'
+  work:
+    work_type:
+      is_private: 私人
+      is_public: 公开
+  order:
+    state:
+      pending: 未付款
+      waiting_for_payment: 等待付款
+      paid: 已付款
+      canceled: 取消
+      packaged: 包装
+      shipping: 运送中
+      refunded: 已退款
+      part_refunded: 部分退款
+      part_refunding: 部分退款中
+      refunding: 退款中
+    work_state:
+      ongoing: 准备中
+      working: 生产中
+      finish: 完成
+    payment:
+      nuandao_b2b: 暖岛冒险
+      paypal: PayPal
+      cash_on_delivery: 货到付款
+    show:
+      work_product: 商品/产品类型
+      quantty_price: 数量 x 单价
+      total: 合计
+  adjustment:
+    description:
+      admin:
+        manual: '客服调整'
+      default:
+        apply: '符合活动资格'
+        fallback: '活动已结束'
+        manual: '客服调整'
+        supply: '符合新活动资格'
+      promotion:
+        apply: '符合活动资格'
+        fallback: '活动已结束'
+        supply: '符合新活动资格'
+  share:
+    facebook_fan_page: https://www.facebook.com/commandpzh
+  not_found_error: "未找到"
+  brand:
+    name: 我印
+  redeem:
+    title: '兑换专区'
+    start_redeem: '立即兑换'
+    input_code: '请输入兑换代码'
+    verify: '验证'
+    verify_failed: '兑换码输入错误，请重新输入！'
+    event_description: '活动说明'
+    print: '开始印'
+    success: '恭喜你！兑换成功'
+    noted: '知道了'
+    shipping_info:
+      title: '新增收货地址'
+      info: '运送资讯'
+      name: '收货人'
+      phone: '手机号码'
+      phone_placeholder: '186 0000 0000'
+      state_placeholder: '省、直辖市、市区'
+      email: '邮箱'
+      country: '国家'
+      state: '所在地区'
+      address: '详细地址'
+      zip: '邮递区号'
+      confirm: '确定兑换'
+    editor:
+      redeem_button: '下一步'
+  about:
+    title: 30 秒将手机中数位照片变成有设计感的实体商品
+    description: 我印将手机中的数位照片变成各种有设计感的实体商品，不论是iphone 手机壳、贴纸还是相片书等商品,完成只需30 秒,5 个工作天送到你家
+    page-title: 印出你的随心所欲！
+    page-description: "%{style}我印%{style_close}让你轻松制作与购买各种充满设计感的"
+    page-description-emphase: 手机壳、个性化贴纸、明信片、桌历与相片书等各种商品
+    page-description-emphase-2: "仅需透过%{style}我印%{style_close}的App，30 秒完成，3 天送到你家！"
+    about: 关于我们
+    about-content-1: "智慧型手机的发明让你捕捉到更多的珍贵镜头，而各大社交网站也让你能及时与朋友分享这些精彩瞬间，但这还不够。我印结合了传统印刷与线上客制化服务，无论是卡片、手机壳还是贴纸都能成为你的画布，让分享更真实。"
+    about-content-2: "制作一个完美的礼物，你只需要负责创作，"
+    about-content-3: "剩下的我们会替你完成。"
+    our-story: "我们的故事"
+    our-story-content: "我印的灵感来自于列印的指令键，简单的快捷键“⌘＋P”便能让电脑进行列印的动作，犹如我们提供的用户体验一样方便顺畅。我们将印刷的乐趣留给你，枯燥艰难的技术由我们来完成。"
+    our-mission: 我们的使命
+    our-mission-content: "让印刷更平易近人，以往令人望而生却的复杂技术及高单价的印刷服务被我们浓缩成一项简单有趣的体验，任何人都能够透过手中的智慧型手机轻松享受低单价高品质的印刷技术。"
+    our-product: 我们的产品
+    our-product-content-1: 我们的产品来自你的创作，我们相信最美好的​​用户体验便是让用户自行决定他要什么！我印能让你手机里的珍贵照片根据你的需要，化身为手机壳、应景的节日卡片或各种形式的礼物。
+    our-product-content-2: 下载我印App 准备接收属于你独一无二的产品！
+    quick-look: 我印目前支援iOS，快下载我印App 制作属于你的产品。
+    job-inquirires: 加入我们
+    job-inquirires-content-1: 我印网路科技commandp inc.结合传统的数位印刷与最新的网路技术，目标打造一个能够提升人们生活品质的产品与服务，让冰冷的数位影像变成有温度的产品，
+    job-inquirires-content-2: 从台湾开始，放眼全球。成员们皆来自于各领域的年轻并且有活力的专业人才，若您也有相同的眼光与热情，加入我们！
+    job-inquirires-content-3: 请将履历寄送至
+    follow-us: 喜欢吗？别忘了给一个赞或是关注我们！
+    job-opening: 工作机会
+  home:
+    title: 我印－用手机照片订制手机壳、悠游卡、马克杯、挂钟、iPad Covers 等各种客制化商品
+    description: 我印将手机中的照片订制成各种有设计感的客制化商品，不论是iPhone 手机壳、Samsung 手机壳、悠游卡、马克杯、挂钟、iPad Covers，只需30 秒就能客制化完成，10－12 个工作天送到你家，全球直送，100% 满意度保证。除了客制化凸显个人品味，更是生日礼物、各式送礼礼物的最佳推荐。
+    page-title: 我印 App 仅需 30 秒
+    page-title-2: 完成独一无二的手机壳
+    promo-li1: 快速客制你的手机壳
+    promo-li2: 购买知名设计师制作的手机壳
+    promo-li3: 免运费 10 天内送到你手中
+    anounce: 2.24.2014 正式上线
+    download-apps: iOS and Android App 即将上架！
+    coupon-title: RMB 36元 折扣代码
+    coupon-description: "%{style}我印%{style_close} App，最后上线倒数中！"
+    coupon-description-2: 创作 iPhone 6 手机壳，現折 RMB 36！
+    email-placeholder: "折扣代码：WELCOME6"
+    submit-btn: 輸入
+    li1: 折扣代码的有效期限会到 2014 年 10 月 26 日。
+    li2: 折扣代码仅能折抵第一次消费。
+    li3: 禁止折扣代码转让或贩售行为。
+    li4: 我印有权保留变更或终止本折扣代码折扣码时间、内容之权利。
+    left-title: 手机壳
+    left-description: 我印参考世界大厂标准，提供100% 的密合度与高防护性作为你手机的新衣，除了专属于你的设计之外，还让你几乎感受不到他的存在。
+    right-title: 手机膜
+    right-description: 硬度达3H 的亮面保护膜，透过特殊的处理，轻松好贴让你的手机保护膜硬式跟别人不一样！
+    sent-success: 成功寄出！感谢您
+  question:
+    li1: 常见问题
+    li2: 联系我们
+    li3: 隐私政策
+    li4: 使用条款
+    li5: 订单查询
+    help: 帮助
+    content1: 我们来帮你！
+    content2: 找不到解答吗？请立即联系我们。
+    contact_us: 联系我们
+  simple_form:
+    labels:
+      zendesk_service:
+        username: 姓名
+        email: 电子邮件
+        category: 类别
+        subject: 主旨
+        description: 描述
+        attachments: 附件
+      reception:
+        state: 状态
+        serial: 货架编号
+        description: 描述
+      promotion:
+        name: 名称
+        description: 活动描述
+        type: 类型
+        begins_at: 开始时间
+        ends_at: 结束时间
+        unlimited: 无限期
+      rules:
+        condition: '条件类型'
+      rule_parameters:
+        discount_type: '优惠公式类型'
+        price_tier_id: '公式金额'
+        percentage: '百分比'
+    options:
+      reception:
+        state:
+          received_on_temp_shelf: '已收货且放入货架'
+          received_only: '已收货'
+      rules:
+        condition:
+          threshold: '订单总额超过'
+          include_designers: '特定设计师'
+          include_product_models: '特定 Product Model'
+          include_works: '特定兑换商品'
+          include_designers_models: '特定设计师与 Product Model'
+          include_product_categories: '特定 Product Category'
+          include_bdevent: '特定 Bdevent'
+          include_free_shipping_coupon: '使用免运 Coupon'
+      rule_parameters:
+        discount_type:
+          fixed: '固定扣除金额'
+          percentage: '固定百分比折扣'
+          pay: '固定结帐售价'
+    hints:
+      zendesk_service:
+        category: 请选择最适合的类别
+        description: 请输入您详细的描述
+        attachments: 新增图片或拖曳图片到这边
+    placeholders:
+      billing_info: &placeholders_billing_info
+        name: Name
+        email: commandp@gmail.com
+        country: Select region
+        phone: +886 0910 000 123
+      shipping_info:
+        <<: *placeholders_billing_info
+      social_network:
+        title: 使用第三方账户登录
+        qq: QQ
+        weibo: 微博
+  support:
+    categories:
+      product: Product/产品
+      create_your_own: Create Your Own/创建您自己的
+      billing: Billing/帐单
+      shipping: Shipping/运送
+      ordering: Ordering/订购
+      artist_information: Artist Information/艺术家
+  career:
+    title: 加入 commandp 我印 团队 | Careers
+    description: commandp Inc. 结合传统印刷与网路技术，透过软硬整合，让数位影像变成有温度的产品，从台湾放眼全球。我们的成员来自于各领域的专业人才，若您也有相同的眼光与热情，加入我们！
+  helpers:
+    label:
+      order[shipping_info]:
+        <<: *attributes_billing_profile
+      order[billing_info]:
+        <<: *attributes_billing_profile
+      shipping_info:
+        <<: *attributes_billing_profile
+      billing_info:
+        <<: *attributes_billing_profile
+      address_info:
+        <<: *attributes_billing_profile
+      order_status_form:
+        order_id: 订单编号
+    submit:
+      zendesk_form:
+        create: '送出'
+  errors:
+    address_info_list: 请新增或选择一个地址
+    stripe:
+      not_paid: "此付款没有准确的基础上执行，请检查或连系我们!"
+    shipping_way_empty: "运送方式不能为空"
+    order_items_empty: "订单项目不能为空"
+    paramater_invalid: "不符合的参数"
+    same_products_in_promotions: "商品 %{names} 已经被优惠了"
+  email:
+    send_coupon:
+      subject: 输入我印折扣码，客制化手机壳现折 RMB 60 元！
+  shipping_info:
+    shipping_way:
+      standard: 标准运送 (10-12 工作日)
+      express: 快速运送 (7-10 工作日)
+      cash_on_delivery: 货到付款
+      global:
+        standard: 标准运送 (10-12 工作日)
+        express: 快速运送 (7-10 工作日)
+        cash_on_delivery: 货到付款
+      china:
+        standard: 标准配送
+        express: 顺丰配送
+        cash_on_delivery: 货到付款
+  text:
+    free: 免费
+  will_paginate:
+    previous_label: "Prev"
+    next_label: "Next"
+    page_gap: "&hellip;"
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y-%m-%d %A %H:%M:%S %Z'
+      long: ! '%Y-%m-%d %H:%M'
+      short: ! '%d/%m/%Y'
+    pm: 下午
+  address_btns:
+    add: 送交
+    cancel: 取消
+  factory:
+    china:
+      location: "中国"
+    global:
+      location: "台湾"
+  company:
+    china:
+      website: 'commandp.com'
+      name: '优印（上海）信息科技有限公司'
+    global:
+      website: 'commandp.com'
+      name: '我印網路科技股份有限公司'
+    nuandao:
+      website: 'nuandao.com'
+      name: '北京暖岛网络信息科技有限公司'
+  pdf:
+    ticker:
+      work_type: "客制化商品"
+      catrgory: "类别"
+      model: "规格"
+      material: "材质"
+      weight: "重量"
+      location: "产地"
+      weixin_service: "噗印微信客服"
+      facebook_fans: "FB 粉丝页"
+      order_qrcode: "商品编号扫描"
+      nuandao_website: 暖岛官网

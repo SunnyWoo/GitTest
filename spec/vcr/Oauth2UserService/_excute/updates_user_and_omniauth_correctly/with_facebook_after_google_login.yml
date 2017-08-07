@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com//picture?width=999&height=999
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      access-control-allow-origin:
+      - "*"
+      content-type:
+      - image/jpeg
+      x-fb-trace-id:
+      - G4dT6GFf76d
+      x-fb-rev:
+      - '2080465'
+      pragma:
+      - no-cache
+      location:
+      - https://fbstatic-a.akamaihd.net/rsrc.php/v2/yA/r/gPCjrIGykBe.gif
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      facebook-api-version:
+      - v2.0
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      x-fb-debug:
+      - WgYtdbKlW8vXd8G82YZPypN7Bbaf1ZHg6HYQq8lGEMYBJkbi54StF1RizR6c3v5RkXEL1ZG55AxniFLCx2wKig==
+      date:
+      - Wed, 09 Dec 2015 06:04:29 GMT
+      connection:
+      - keep-alive
+      content-length:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:04:29 GMT
+- request:
+    method: get
+    uri: https://fbstatic-a.akamaihd.net/rsrc.php/v2/yA/r/gPCjrIGykBe.gif
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      last-modified:
+      - Mon, 01 Jan 2001 08:00:00 GMT
+      content-type:
+      - image/gif
+      access-control-allow-origin:
+      - "*"
+      timing-allow-origin:
+      - "*"
+      x-content-type-options:
+      - nosniff
+      content-md5:
+      - VihRI6ltUPAcz5nOpFf2IA==
+      x-fb-debug:
+      - 5/TFaHq0z5gU9aucCp78g3LuWm6Yg+V5q7vaLpl16dxZlpGcNdppiuQ/oyJn59HeWwDkiHvliBdT0/Bs/4fYIQ==
+      vary:
+      - Accept-Encoding
+      cache-control:
+      - public, max-age=8951614
+      expires:
+      - Mon, 21 Mar 2016 20:38:03 GMT
+      date:
+      - Wed, 09 Dec 2015 06:04:29 GMT
+      content-length:
+      - '2380'
+      connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        R0lGODlhxgB+AOYAAKioqOvr66Wlperq6qmpqdXV1bKystzc3MnJydjY2Lm5
+        ucDAwNnZ2cjIyLy8vLi4uNfX187Oztvb28XFxdPT08rKytra2tLS0r6+vqur
+        q9/f393d3eLi4tbW1t7e3r+/v+Pj47e3t8fHx7W1tcbGxqqqqtTU1MvLy8HB
+        wdHR0a+vr7a2tr29vbS0tMLCwtDQ0ODg4MPDw66urrCwsLGxsczMzMTExOHh
+        4bq6uujo6KSkpM/Pz+fn583NzbOzs+np6a2treTk5KysrOXl5aampqenp+zs
+        7O3t7e7u7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAA
+        LAAAAADGAH4AAAf/gEiCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+g
+        oaKjpKWmp6ipkkesra6vsLFHqrS1qLK4uay2vL2eusCxvsPElcHHrcXKy4zI
+        yMzQ0YPOz9LWw9Sz1NfcqbocBT01DuTlLB8LFScFGkatRu6whbvd9cay8SAd
+        ERMsPkREBAjUQVAgQCIjcGAQcUFCAHjxjtmbeCgYRCMaXiyYcbCjwI8GAYYs
+        smJCARgXJVKkaBFegBsnDHScGRDkR5E0i4xAsAGiypXdLD7kQAJAkSI0Z9oU
+        kPTg0SIAJvT0mQtoPWBGAgwQQQCAUaRNPYYM+xQqgAUoL0Z0ZTUoLogF/xx4
+        LRu2btOyRwGEiKAWnry20nLBC4LAAN6jd592VFz3cIwCav8ChoYPnoUFABkn
+        Njs371ewjZ/KuPCQarLJlPFBGEGWCGLXXgEQIFAig+0MJbp+tus674nSa2eh
+        XpbrAg2yh2WzqFChAIQE0KFfaNDgwWvQOctOME1veDFcBWQiN4sihYcgPAYM
+        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
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:04:29 GMT
+recorded_with: VCR 2.9.3

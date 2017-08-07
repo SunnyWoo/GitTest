@@ -1,0 +1,38 @@
+- admin_title t('auto_coupons.index.page_title')
+
+ul.nav.nav-tabs
+  li = link_to admin_coupons_path do
+    =' fa_icon 'table', class: 'ace-icon'
+    span = t('coupons.index.page_title')
+  li.active = link_to admin_auto_coupons_path do
+    =' fa_icon 'star', class: 'ace-icon'
+    span = t('auto_coupons.index.page_title')
+
+.well
+  = form_tag admin_auto_coupons_path, method: :post do
+    = label_tag :code, '自動審核Coupon'
+    = text_field_tag :code
+    br
+    = submit_tag t('shared.form_actions.submit'), class: 'btn btn-primary'
+
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    / .widget-toolbar
+    /   .btn-group
+    /     = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= t('coupons.index.thead.name')
+            th= t('coupons.index.thead.coupon_code')
+        tbody
+          = content_tag_for :tr, @auto_coupons do |coupon|
+            td= coupon.title
+            td= coupon.code
+
+= will_paginate @auto_coupons

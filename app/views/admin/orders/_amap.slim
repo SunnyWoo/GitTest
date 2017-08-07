@@ -1,0 +1,6 @@
+= javascript_include_tag "#{request.protocol}webapi.amap.com/maps?v=1.3&key=#{Settings.amap.api_key}"
+h2 AMap
+| 地址 : #{shipping_info.full_address}
+input id='shipping_address' value=(shipping_info.full_address) style='width: 250px;' type='hidden'
+
+#amap style="height: 250px;width: 400px;"

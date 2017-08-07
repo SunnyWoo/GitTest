@@ -1,0 +1,38 @@
+- admin_title t('product_models.index.page_title'), subtitle: "#{t('product_models.sort.page_title')} #{t('product_models.sort.sub_title')}"
+
+.row
+  .col-md-4
+    h1 ios
+    #nestable.dd
+      ol.dd-list.sortable
+        - @product_categories.ios_order.each do |product_category|
+          li.dd-item data-url='#{update_position_admin_product_category_path(product_category, platform: :ios)}'
+            .dd-handle.btn-yellow = "#{product_category.key} (#{product_category.name})"
+            ol.dd-list.sortable
+              - product_category.products.ios_order.each do |model|
+                li.dd-item data-position=model.ios data-url='#{update_position_admin_product_model_path(model, platform: :ios)}'
+                  .dd-handle = "#{model.key} (#{model.name})"
+
+  .col-md-4
+    h1 android
+    #nestable.dd
+      ol.dd-list.sortable
+        - @product_categories.android_order.each do |product_category|
+          li.dd-item data-url='#{update_position_admin_product_category_path(product_category, platform: :android)}'
+            .dd-handle.btn-yellow = "#{product_category.key} (#{product_category.name})"
+            ol.dd-list.sortable
+              - product_category.products.android_order.each do |model|
+                li.dd-item data-position=model.android data-url='#{update_position_admin_product_model_path(model, platform: :android)}'
+                  .dd-handle = "#{model.key} (#{model.name})"
+
+  .col-md-4
+    h1 website
+    #nestable.dd
+      ol.dd-list.sortable
+        - @product_categories.website_order.each do |product_category|
+          li.dd-item data-url='#{update_position_admin_product_category_path(product_category, platform: :website)}'
+            .dd-handle.btn-yellow = "#{product_category.key} (#{product_category.name})"
+            ol.dd-list.sortable
+              - product_category.products.website_order.each do |model|
+                li.dd-item data-position=model.website data-url='#{update_position_admin_product_model_path(model, platform: :website)}'
+                  .dd-handle = "#{model.key} (#{model.name})"

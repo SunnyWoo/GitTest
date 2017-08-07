@@ -1,0 +1,42 @@
+- breadcrumb :purchase_categories
+- admin_title t('purchase_categories.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th = t('purchase_categories.index.purchase_categort')
+            th = t('purchase_categories.index.price_tier')
+            th = t('purchase_categories.index.product_type')
+            th = t('shared.form_actions.operation')
+        tbody
+          - @categories.each do |category|
+            tr
+              td= category.name
+              td
+                table.table.table-striped.table-bordered
+                  thead
+                    tr
+                      th = t('purchase_categories.index.purchase_count')
+                      th = t('purchase_categories.index.purchase_price')
+                  tbody
+                    - category.price_tiers.each do |price_tier|
+                      tr
+                        td = price_tier.count_key
+                        td = price_tier.price
+              td
+                - category.product_references.each do |pr|
+                  =  pr.product.name
+                  br
+
+
+
+              td = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, category]), class: 'btn btn-info'

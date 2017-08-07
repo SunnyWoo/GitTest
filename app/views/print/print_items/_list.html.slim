@@ -1,0 +1,40 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 序號
+      th 縮圖
+      th 訂單編號
+      th 印刷序號
+      th 列印編號
+      th 工作站狀態
+      th 列印類型
+      th 重印類別
+      th 產品分類
+      th 產品類型
+      th 訂單審核通過時間
+      th 進入印刷工作站時間
+      th style='width: 100px' 累計處理時間
+      th 留言
+  tbody
+    - locale = Region.china? ? :'zh-CN' : :'zh-TW'
+    - print_items.each_with_index do |pi, index|
+      - order_item = pi.order_item
+      - order = order_item.order
+      - approved_act = order.approved_activity
+      - product = product_models.find { |p| p.id == order_item.itemable.model_id }
+      - category = product.category
+      tr
+        td = render_delayed_item_index(print_items, index)
+        td = render_print_item_preview(pi)
+        td = order.order_no
+        td = pi.id
+        td = pi.timestamp_no
+        td = t("activerecord.attributes.print_item.aasm_state.#{pi.aasm_state}")
+        td = pi.is_reprint? ? '重印' : '原始訂單'
+        td = pi.print_histories.last.try(:reprint_type_text)
+        td = category.name(locale)
+        td = product.name(locale)
+        td = l(approved_act.created_at, format: :long) if approved_act
+        td = l pi.prepare_at, format: :long
+        td = render_hours_from_target_time pi.prepare_at
+        td = order.notes.last.try(:message)

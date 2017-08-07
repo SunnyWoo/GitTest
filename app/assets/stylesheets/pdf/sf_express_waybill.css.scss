@@ -1,0 +1,320 @@
+@font-face {
+  font-family: 'simhei';
+  src: font_path('simhei.ttf');
+}
+$simhei: 'simhei', sans-serif;
+$border: 1px solid #000;
+
+.sf_express_waybill {
+  font-family: $simhei;
+  .content {
+    padding: 2mm;
+    border: $border;
+
+    .logo {
+      border: $border;
+      height: 14mm;
+      padding-left: 2mm;
+      padding-right: 2mm;
+
+      .logo_image {
+        height: 10mm;
+        float: left;
+        padding-top: 2mm;
+      }
+      .notice {
+        width: 20mm;
+        margin: auto 5mm;
+        float: left;
+        font-size: 24pt;
+        font-family: arial;
+        padding-top: 2mm;
+      }
+      .land-logo {
+        font-size: 24pt;
+        float: left;
+        line-height: 40pt;
+      }
+      .phone_image {
+        padding-top: 3mm;
+        float: right;
+        height: 12mm;
+      }
+    }
+
+    .barcode-info {
+      height: 19mm;
+      border-left: $border;
+      border-bottom: $border;
+      border-right: $border;
+
+      .sf-mailno-barcode {
+        width: 60mm;
+        float: left;
+        text-align: center;
+
+        img {
+          height: 12mm;
+          width: 45mm;
+          padding-top: 1mm;
+        }
+        .mailno {
+          text-align: center;
+          font-family: arial;
+          font-size: 10pt;
+        }
+      }
+      .business-type {
+        float: left;
+        width: 28mm;
+        height: 19mm;
+        border-left: $border;
+        text-align: center;
+
+        .name {
+          font-size: 12pt;
+          padding-top: 1mm;
+        }
+        .destination {
+          font-size: 6pt;
+          text-align: left;
+        }
+        .destination-code {
+          font-size: 24pt;
+          font-family: arial;
+          line-height: 22pt;
+        }
+      }
+    }
+    .recipient {
+      height: 17mm;
+      border-left: $border;
+      border-bottom: $border;
+      border-right: $border;
+      padding-top: 2mm;
+
+      .title {
+        width: 15mm;
+        float: left;
+        margin-right: 3mm;
+
+        div {
+          padding-left: 1mm;
+          font-size: 14pt;
+        }
+      }
+      .address {
+        float: left;
+        font-size: 8pt;
+        line-height: 10pt;
+
+        .city {
+          font-size: 14pt;
+          line-height: 16pt;
+        }
+      }
+      .print-time {
+        padding-top: 11mm;
+        text-align: right;
+        font-size: 7pt;
+      }
+    }
+    .bill {
+      height: 21mm;
+      border-left: $border;
+      border-bottom: $border;
+      border-right: $border;
+
+      .detail {
+        border-right: $border;
+        width: 60mm;
+        height: 21mm;
+        font-size: 7pt;
+        position: absolute;
+        float: left;
+
+        div {
+          // width: 28mm;
+          margin-left: 2mm;
+          margin-top: 1mm;
+        }
+        .foot-title {
+          font-size: 10pt;
+          font-weight: bold;
+          position: absolute;
+          right: 1mm;
+          bottom: 1mm;
+          text-align: right;
+        }
+      }
+      .amount {
+        float: right;
+        width: 29mm;
+        text-align: center;
+        .collection {
+          margin-top: 1mm;
+          border-bottom: $border;
+          height: 11mm;
+          font-size: 11pt;
+          span {
+            font-size: 12pt;
+          }
+        }
+        .ship {
+          font-size: 10pt;
+          margin-top: 2mm;
+        }
+      }
+    }
+    .render {
+      height: 14mm;
+      border-left: $border;
+      border-bottom: $border;
+      border-right: $border;
+      .title {
+        width: 13mm;
+        float: left;
+        margin-right: 1mm;
+
+        div {
+          padding-left: 1mm;
+          font-size: 14pt;
+        }
+      }
+      .address {
+        height: 13mm;
+        width: 35mm;
+        float: left;
+        font-size: 6pt;
+        margin-right: 1mm;
+        margin-top: 1mm;
+
+        .info {
+          height: 10mm;
+        }
+      }
+
+      .worker {
+        padding-left: 1mm;
+        border-left: $border;
+        border-right: $border;
+        width: 20mm;
+        float: left;
+        height: 14mm;
+        font-size: 6pt;
+        div {
+          padding-top: 1mm;
+        }
+      }
+      .receiver {
+        margin: 1mm 0 0 2mm;
+        float: left;
+        font-size: 7pt;
+      }
+      .original-code {
+        text-align: right
+      }
+    }
+    .middle-logo {
+      height: 14mm;
+      border-left: $border;
+      border-bottom: $border;
+      border-right: $border;
+
+      .image-div {
+        padding-top: 1mm;
+        padding-left: 1mm;
+        float: left;
+        width: 42mm;
+        img {
+          width: 20mm;
+        }
+      }
+      .sf-mailno-barcode {
+        float: left;
+        height: 14mm;
+        border-left: $border;
+        text-align: center;
+
+        img {
+          height: 8mm;
+          width: 45mm;
+          padding-left: 2mm;
+          padding-top: 1mm;
+        }
+        .mailno {
+          text-align: center;
+          font-family: arial;
+          font-size: 10pt;
+        }
+      }
+    }
+    .addresses {
+      height: 13mm;
+      border-left: $border;
+      border-right: $border;
+      font-size: 6pt;
+      .sender{
+        width: 45mm;
+      }
+      .title {
+        padding-top: 1mm;
+        width: 5mm;
+        float: left;
+        margin-right: 1mm;
+
+        div {
+          padding-left: 1mm;
+        }
+      }
+      .address {
+        width: 35mm;
+        float: left;
+        line-height: 10pt;
+        padding-top: 1mm;
+      }
+      .render-time {
+        width: 80mm;
+        padding-left: 41mm;
+        padding-top: 10mm;
+      }
+    }
+    .footer {
+      font-size: 6pt;
+      table {
+        width: 100%;
+
+        th:first-child {
+          width: 10mm;
+        }
+        th:first-last {
+          width: 30mm;
+        }
+        td, th {
+          text-align: center;
+          border: $border;
+          max-height: 6mm;
+        }
+        .amount {
+          padding-bottom: 4mm;
+        }
+        tbody tr {
+          height: 10mm;
+        }
+      }
+      .orderno-name {
+        width: 15mm;
+        float: left;
+      }
+      .orderno-barcode {
+        width: 50mm;
+        float: left;
+
+        img {
+          height: 5mm;
+          width: 45mm;
+        }
+      }
+    }
+  }
+}

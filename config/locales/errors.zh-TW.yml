@@ -1,0 +1,76 @@
+zh-TW:
+  errors:
+    work_not_found_error: '此商品目前無法購買，請稍候重試。'
+    record_invalid: '資料格式不正確.'
+    authentication_failed: '驗證失敗. 請重新登入.'
+    missing_token: '你必須登入才可以執行這個操作.'
+    cannot_use_coupon: '沒有滿足使用條件, 你不能使用這個折價券.'
+    record_not_found: '找不到資料'
+    invalid_coupon: '無法使用該優惠代碼'
+    work_not_finish_error: '作品尚未完成'
+    payment_time_out: '目前 %{payment} 付款連線逾時，請更換付款方式，或稍後再試。'
+    payment_price_conflict: "訂單價格與第三方服務支付價格不一致"
+    payment_invalid: '付款失敗，請聯絡我們予以檢查或支援'
+    invalid_mobile_code: '手機驗證碼錯誤'
+    mobile_registered: '該手機已註冊'
+    mobile_unregistered: '該手機未註冊'
+    send_mobile_code_fail: '發送失敗'
+    payment_type_error: '付款方式必須為 ATM或超商付款'
+    payment_state_error: '訂單狀態必須為waiting_for_payment'
+    invalid_publish_at_lt_starts_at: PublishAt 不能大於 StartsAt
+    invalid_starts_at_lt_end_at: StartsAt 不能大於 EndsAt
+    service_type: '必須要符合Service Object形式，要有execute行為'
+    no_sms_provider: "無效的SMS服務供應商 %{provider}!"
+    page_type_homepage_only_once: 'homepage 只能選一次'
+    invalid_begin_at_lt_close_at: '時間必須小於 Colse_at'
+    invalid_designer_ids: '請選擇設計師'
+    invalid_product_model_ids: '請選擇商品類型'
+    invalid_work_gids: '請選擇作品'
+    input_engish: '請輸入英文'
+    invalid_login_info: '帳號或密碼錯誤'
+    batch_flow_invalid_product_model_not_match_factory: '商品型號和工廠不匹配'
+    currency_exchange_error: 貨幣交換錯誤
+    # api
+    client_required: 缺少必要的參數 client_id 或 client_secret
+    invalid_client: 找不到合法的 client_id 或 client_secret
+    # v1
+    token_required: '缺少必要的參數: auth_token'
+    invalid_token: '找不到合法的 Token'
+    invalid_user_agent: '請確認你的請求 header 中包含 commandp 指定的 User-Agent。'
+    not_implemented: '未定義'
+    invalid_express_code: '請指定正確的快遞'
+
+    # v2
+    invalid_password_input: "密碼輸入錯誤!"
+    email_already_exists: "Email已被使用!"
+    invalie_params_oauth: "無效的OAuth參數!"
+    oauth_provider_missing: "無效的OAuth服務供應商 %{provider}!"
+
+    # v3
+    current_user_required: '使用者請先登入'
+    invalid_address_error: "錯誤的地址代碼（%{seg}: %{value}）"
+    invalid_url: '無效的Url'
+    invalid_mobile_error: '無效的手機號碼'
+    email_unuconfrmed: '請先確認您的 E-mail'
+    destroy_order_state_error: '無法刪除非『 已出貨 』的訂單！'
+    already_verified: '已經驗證過該郵箱'
+    too_many_request: '驗證次數過多,請稍後再進行驗證'
+    repay_payment_blacklist: '%{payment} 不適用二次付款'
+    over_payment_deadline: '已超過付款期限，訂單已取消'
+    payment_state_transition: "訂單狀態: '%{state}' 無法進行付款"
+    order_has_paid: '訂單已付款'
+    directory_missing: '目錄: %{dir} 不存在!'
+    order_record_not_found: '系統繁忙中，請重新嘗試或聯繫客服'
+    order_cancel_invalid: '訂單無法取消，請刷新頁面並重新嘗試'
+    order_price_expiration_error: '訂單金額已被變更，請重新確認結帳'
+    pricing:
+      shipping_fee:
+        address_unavailable: '地址未完整填寫無法計算運費'
+        unavailable: '訂單缺少運費資訊'
+    mobile_number_error: '你所填寫的手機號碼有誤，請再次確認'
+    invalid_currency: '使用的货币不正确'
+    service_object:
+      invalid_marketing_report_type: "無效的行銷報表類型: %{type}"
+    package_filename_error: "下列文件名稱不符合: %{filenames}"
+    package_filepath_error: "下列文件不符合: %{filepath}"
+    package_dirs_error: "下列目錄不符合: %{dirs}"

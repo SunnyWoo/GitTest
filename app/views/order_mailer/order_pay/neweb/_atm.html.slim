@@ -1,0 +1,21 @@
+= t("activerecord.attributes.order.payment_type")
+| ：
+= t("activerecord.attributes.order.payment_#{@order.payment}")
+br
+= t("activerecord.attributes.order.bank")
+| ：第一銀行
+br
+= t("activerecord.attributes.order.bank_code")
+| ：007
+br
+= t("activerecord.attributes.order.bank_account")
+| ：
+= @order.payment_info['payment_id']
+br
+= t("activerecord.attributes.order.price")
+| ：
+= render_subtotal(@order)
+br
+= t("activerecord.attributes.order.pay_expired")
+| ：
+= render_datetime(@order.payment_info['expired_at'])

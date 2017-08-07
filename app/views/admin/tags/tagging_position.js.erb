@@ -1,0 +1,5 @@
+$('body').append("<%= j render 'position_form', tagging: @tagging %>");
+$("#position_form_<%= @tagging.id %>").modal('show');
+$('#position_form_<%= @tagging.id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

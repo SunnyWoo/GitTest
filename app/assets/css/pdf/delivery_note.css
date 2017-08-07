@@ -1,0 +1,60 @@
+/* line 3, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .logo img {
+  width: 20mm;
+  height: 20mm; }
+/* line 8, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .head .head_label {
+  text-align: right;
+  font-weight: bold; }
+/* line 13, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .head div {
+  margin-bottom: 3mm; }
+/* line 18, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .blockquote {
+  border-left: 1mm solid #eeeeee; }
+/* line 23, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .list table {
+  width: 100%;
+  margin-top: 10mm; }
+  /* line 27, ../../stylesheets/pdf/delivery_note.css.scss */
+  .delivery_note .content .list table thead {
+    border-top: 0.3mm solid #000;
+    border-bottom: 0.3mm solid #000;
+    display: table-header-group; }
+  /* line 33, ../../stylesheets/pdf/delivery_note.css.scss */
+  .delivery_note .content .list table tbody {
+    border-bottom: 0.3mm solid #000;
+    page-break-inside: avoid; }
+  /* line 38, ../../stylesheets/pdf/delivery_note.css.scss */
+  .delivery_note .content .list table tr {
+    page-break-inside: avoid; }
+  /* line 42, ../../stylesheets/pdf/delivery_note.css.scss */
+  .delivery_note .content .list table th, .delivery_note .content .list table td {
+    padding: 3mm 1mm;
+    text-align: left; }
+  /* line 47, ../../stylesheets/pdf/delivery_note.css.scss */
+  .delivery_note .content .list table th {
+    border-top: 0.3mm solid #000;
+    border-bottom: 0.3mm solid #000; }
+/* line 55, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .count .row {
+  padding-top: 3mm; }
+/* line 59, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .count .title {
+  text-align: right;
+  font-weight: bold; }
+/* line 64, ../../stylesheets/pdf/delivery_note.css.scss */
+.delivery_note .content .count .order_count {
+  margin-top: 3mm;
+  padding-bottom: 3mm;
+  border-top: 0.3mm solid #000;
+  border-bottom: 0.3mm solid #000; }
+
+/* line 74, ../../stylesheets/pdf/delivery_note.css.scss */
+.qrcode {
+  height: 20mm;
+  width: 20mm; }
+  /* line 77, ../../stylesheets/pdf/delivery_note.css.scss */
+  .qrcode div {
+    width: 20mm;
+    text-align: center; }

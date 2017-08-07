@@ -1,0 +1,176 @@
+.mobile-kv = render partial: 'kv', locals: { images: @kv_mobile_images, locale: locale }
+
+.m-announcement = @title
+
+#m-denka-select.m-denka-select-block.camp_margin-top-33
+  - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+  select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+    - { info: '活動介紹', product: '熱賣商品', team: '幕後團隊' }.each do |key, val|
+      option.filter value=(key) = val
+
+.campaign-page.m-denka-block1#info_page
+  .mobile-v2-title style='font-weight: 400;color: #FFF;'
+    | 重金邀請時尚團隊
+    br
+    | 打造性感周荀
+  .title.text-center 我印 X Denka
+  .desc.text-center
+    | 我印首次與百變精靈 Denka 合作，
+    br
+    | 想要讓大家看到不一樣的
+    br
+    | 迪士尼故事經典角色，
+    br
+    | 打破大家對童話故事的既有印象，
+    br
+    | 邀請到時尚攝影師-陳書海，
+    br
+    | 與時尚團隊打造跟以往不同 Denka，
+    br
+    | 用時尚角度詮釋迪士尼經典角色，
+    br
+    | 現在就跟我們一起進入童話故事裡吧！
+
+  .m-denka-hr
+  .cosplay
+    = image_tag 'campaign/denka/mobile/cosplay1.png'
+  .title
+    | LITTLE
+    br
+    | RIDING HOOD
+    .cosplay-role - 小紅帽
+  .desc
+    | 除了以前童話故事中小紅帽孝順又勇敢的個性，也加上了現代女性的獨立自主，打破傳統對女性柔弱的形象，表現出更有魅力與魄力的小紅帽。
+
+  .m-denka-hr
+  .cosplay
+    = image_tag 'campaign/denka/mobile/cosplay2.png'
+  .title
+    | MALEFICENT
+    .cosplay-role - 黑魔女
+  .desc
+    | 由經典迪士尼故事改編黑魔女，表現出性感又不失帥氣模樣，表面冷酷但私底下卻有一顆柔軟的心，要表現出失去翅膀難過與想要復仇的心情，表現出善良之心的黑魔女。
+
+  .m-denka-hr
+  .cosplay
+    = image_tag 'campaign/denka/mobile/cosplay3.png'
+  .title
+    | MOLI
+    br
+    | PRINCESS
+    .cosplay-role - 茉莉公主
+  .desc
+    | 在迪士尼裡面最神秘的公主，很少人詮釋過這個角色，這個角色需要帶點神秘，展現出自信追尋夢想，由周荀表現出神秘又勇敢做自己的茉莉公主。
+
+
+  .m-denka-hr
+  .cosplay
+    = image_tag 'campaign/denka/mobile/cosplay4.png'
+  .title
+    | THE LITTLE
+    br
+    | MERMAID
+    .cosplay-role - 美人魚
+  .desc
+    | 每個女孩心中都想成為漂亮的美人魚，利用特殊的服裝讓 Denka 身上有閃閃發光的感覺，表現出美人魚對人類世界的好奇，與對愛情的奮不顧身。
+
+
+  .m-denka-hr
+  .cosplay
+    = image_tag 'campaign/denka/mobile/cosplay5.png'
+  .title
+    | ALICE IN
+    br
+    | WONDERLAND
+    .cosplay-role - 愛麗絲
+  .desc
+    | 愛麗絲擁有著豐富想像力，與天真無邪的俏皮，這次的妝容利用粉紅色的眼影，讓denka呈現的愛麗絲更有夢幻俏皮的感覺，表現出年輕女生對新鮮事物的好奇心。
+
+.campaign-page#product_page
+  .products
+    .mobile-v2-title
+      | 熱賣商品
+
+    - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+    select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @category_names.each do |key, val|
+        option.filter value=(key) = val
+    .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+    - @category_products.each do |key, val|
+      .filted id=(key)
+        = render partial: 'editor/shared/work_mobilev2',
+                collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+
+.campaign-page.m-denka-block2.text-center#team_page
+  .mobile-v2-title
+    | 超強華麗變身
+    br
+    | 幕後花絮
+  .title 我印 X Denka
+  .desc
+    | 想知道 Denka 在拍攝時發生什麼有趣好
+    br
+    | 玩的事嗎？那你就一定要看這次的貼身
+    br
+    | 20 小時跟拍，快點一起來看看吧！
+  .denka-video
+    iframe width='90%' height='242' src='https://www.youtube.com/embed/87tJUdUCHpk?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+  .mobile-v2-title style='margin-top: 80px;'
+    | 幕後時尚團隊介紹
+  .avatar
+    = image_tag 'campaign/denka/mobile/team1.png'
+  .name 陳書海 Ocean Chen
+  .m-info
+    | 專業攝影師暨攝影藝術家，
+    br
+    | 17 年專業攝影結合設計背景專長，
+    br
+    | 攝影技巧與後製手法深富創意與細膩感。
+    br
+    | 獲得許多國際知名企業、品牌、媒體
+    br
+    | 與名人指定拍攝。
+  .m-denka-hr
+
+  .avatar
+    = image_tag 'campaign/denka/mobile/team2.png'
+  .name 林維悌老師
+  .m-info
+    |無論是目錄走秀，
+    br
+    |無論是雜誌或是廣告，
+    br
+    |都是能穩定達成預期計劃的工作夥伴，
+    br
+    |受到許多時尚編輯們喜愛的厲害角色。
+  .m-denka-hr
+
+  .avatar
+    = image_tag 'campaign/denka/mobile/team3.png'
+  .name Winnie Huang
+  .m-info
+    | 舊金山藝術大學 Fashion
+    br
+    | Journalism/Styling 畢業。
+    br
+    | 後赴紐時尚媒體龍頭 Condé Nast International 實習，曾擔任影后
+    br
+    | 卡麥隆狄亞電影宣傳造型助理。
+
+  div style='margin-bottom: 60px;'
+
+
+
+.app-promotion
+  .title
+    = "購買 #{@name} 系列商品"
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+
+#campaing_inof.hidden data=({key: @key})

@@ -1,0 +1,26 @@
+.leftnavs
+  = link_to image_tag('campaign/mobilev2/back.png'), 'commandp-webview-bridge-staging://app_bridge_scene/back'
+
+- if @bdevents.size > 0
+  .event_list
+    - @bdevents.each do |bdevent|
+      .event_block data=({ id: bdevent.id, title: bdevent.title })
+        .banner = image_tag(bdevent.banner.try(:url), alt: bdevent.title)
+        .title = bdevent.title
+      .event_page data=({ id: bdevent.id, title: bdevent.title })
+        .kv_images
+          - bdevent.kv_images.each do |kv|
+            .kv_image style='width: 100%' = image_tag kv.file.url, class: 'kv-img'
+        br
+        = bdevent.title
+        br
+        = simple_format(bdevent.desc)
+
+- elsif @comings.present?
+  .event_list
+    - @comings.each do |coming|
+      .event_block
+        .banner = image_tag(coming.coming_soon_image, alt: coming.title)
+        .title
+          = coming.title
+          span.coming_soon 即將上市

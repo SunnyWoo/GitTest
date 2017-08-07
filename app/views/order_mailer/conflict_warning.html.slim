@@ -1,0 +1,12 @@
+div
+  = I18n.t('email.order.conflict.content', order_no: @order.order_no)
+div
+  | Logs
+  - @order.activities.where(key: :pay_conflict).each do |e|
+    p
+      = "Time: #{e.created_at}"
+      br
+      = "Message: #{e.message}"
+      br
+      = e.extra_info.to_json
+

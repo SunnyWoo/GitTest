@@ -1,0 +1,9 @@
+$(document).on 'page:change', ->
+  $('.simple_form_image_input').on 'change', (e) ->
+    $this = $(e.target)
+    if $this.val().match(/.*\.pdf/)
+      src = '<%= image_path("pdf_logo.png") %>'
+      $this.prev().find('img').attr('src', src).attr('alt', 'pdf_logo')
+      return false
+    else
+      return

@@ -1,0 +1,49 @@
+.owl-carousel
+  .kv_middle
+    = image_tag 'campaign/duncan/mobile/duncan_launch_bg.png', class: 'carousel-img'
+    = image_tag 'campaign/duncan/mobile/duncan_launch@2x.png', class: 'kv-img'
+.m-announcement.m-hr
+  | Duncan 獨家設計款現正發售中！
+
+= render 'app_download'
+.works.m-hr
+  .item-title
+    span Duncan 獨家設計
+  .products
+    = render partial: 'editor/shared/work_duncandesign',
+             collection: @works.limit(3), as: 'work'
+  = link_to '更多設計', '#', class: 'btn btn-more-duncan-design open_deeplink',
+    data: { deeplink_protocol: Settings.deeplink_protocol,
+            deeplink: 'shop?user=duncan' }
+= render 'app_download'
+
+.about-duncan
+  .item-title.text-center.color-fixed
+    | About Duncan
+  = image_tag 'campaign/mobile/img_duncan@2x.png'
+  .m-wording
+    p
+      | 花蓮人，現居台北。小時候的志願是當畫家；但基於現實因素沒有就讀相關科系。上高中之後常跑外面，一直到到踏入社會，大約有十年的時間沒有畫圖。曾經當過英語教師、民宿櫃檯、擺過地攤，也在軟體公司擔任過美工人員。
+    p
+      | 在 2013 年的某一天，因為在 Facebook 上看見了朋友分享另一位插畫家「翻白眼吧！溫蒂尼小姐。」的某篇圖文，驚覺「竟然有人在臉書上做這麼好玩的事情！」，於是過了幾天也創立了 Duncan 臉書專頁，並從此重拾了昔日於畫畫的熱忱。
+    p
+      | Duncan 的 Facebook 專頁目前已有超過 260 萬的粉絲，他擅長將自己的生活時事觀察化為插畫創作，總是可以讓人會心一笑。也曾與許多國內外知名廠牌合作。未來想要一直做自己喜歡做的事情，希望可以將整座城市都變成自己的伸展台。
+
+.duncan-works
+  .item-title
+    span Duncan’s
+    br
+    span Famous Artworks
+  = image_tag 'campaign/mobile/img_artworks_01@2x.png'
+  = image_tag 'campaign/duncan_works_2.png'
+  = image_tag 'campaign/duncan_works_6.png'
+
+.app-promotion
+  .title
+    | 購買 Duncan Design 系列商品
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'

@@ -1,0 +1,124 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dev%40commandp.me%2Ftoken:Id0CxoutQ8HIR84pQicXjEgCCbKlI7qQa3y7hpXi@commandp1409029583.zendesk.com/api/v2/tickets
+    body:
+      encoding: UTF-8
+      string: '{"ticket":{"requester":{"name":"Guest","email":"ima@trantow.biz"},"subject":"Support
+        test","assignee_id":null,"comment":{"value":"Support test"},"custom_fields":[{"id":22158785,"value":"ima@trantow.biz"},{"id":22158705,"value":"product"}]}}'
+    headers:
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      user-agent:
+      - ZendeskAPI API 1.8.0
+      authorization:
+      - Basic ZGV2QGNvbW1hbmRwLm1lL3Rva2VuOklkMEN4b3V0UThISVI4NHBRaWNYakVnQ0NiS2xJN3FRYTN5N2hwWGk=
+      content-type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - nginx
+      date:
+      - Fri, 31 Jul 2015 07:37:56 GMT
+      content-type:
+      - application/json; charset=UTF-8
+      content-length:
+      - '2470'
+      connection:
+      - close
+      status:
+      - 201 Created
+      x-zendesk-api-version:
+      - v2
+      x-frame-options:
+      - SAMEORIGIN
+      location:
+      - https://commandp1409029583.zendesk.com/api/v2/tickets/457.json
+      strict-transport-security:
+      - max-age=31536000;
+      x-ua-compatible:
+      - IE=Edge,chrome=1
+      etag:
+      - W/"9ce3520573163c78a611a8d09a5cb267"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-zendesk-origin-server:
+      - app13.pod4.sac1.zdsys.com
+      x-request-id:
+      - 0f618c6b-048c-46af-c6b7-b8ca3a61d710
+      x-runtime:
+      - '0.645908'
+      x-rack-cache:
+      - invalidate, pass
+      x-zendesk-request-id:
+      - e3399a8e6fb2b66fda4c
+      x-content-type-options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0aWNrZXQiOnsidXJsIjoiaHR0cHM6Ly9jb21tYW5kcDE0MDkwMjk1ODMu
+        emVuZGVzay5jb20vYXBpL3YyL3RpY2tldHMvNDU3Lmpzb24iLCJpZCI6NDU3
+        LCJleHRlcm5hbF9pZCI6bnVsbCwidmlhIjp7ImNoYW5uZWwiOiJhcGkiLCJz
+        b3VyY2UiOnsiZnJvbSI6e30sInRvIjp7fSwicmVsIjpudWxsfX0sImNyZWF0
+        ZWRfYXQiOiIyMDE1LTA3LTMxVDA3OjM3OjU2WiIsInVwZGF0ZWRfYXQiOiIy
+        MDE1LTA3LTMxVDA3OjM3OjU2WiIsInR5cGUiOm51bGwsInN1YmplY3QiOiJT
+        dXBwb3J0IHRlc3QiLCJyYXdfc3ViamVjdCI6IlN1cHBvcnQgdGVzdCIsImRl
+        c2NyaXB0aW9uIjoiU3VwcG9ydCB0ZXN0IiwicHJpb3JpdHkiOm51bGwsInN0
+        YXR1cyI6Im5ldyIsInJlY2lwaWVudCI6bnVsbCwicmVxdWVzdGVyX2lkIjox
+        MjM4Njc1ODk5LCJzdWJtaXR0ZXJfaWQiOjEyMzg2NzU4OTksImFzc2lnbmVl
+        X2lkIjpudWxsLCJvcmdhbml6YXRpb25faWQiOm51bGwsImdyb3VwX2lkIjoy
+        MTkwODgxNSwiY29sbGFib3JhdG9yX2lkcyI6W10sImZvcnVtX3RvcGljX2lk
+        IjpudWxsLCJwcm9ibGVtX2lkIjpudWxsLCJoYXNfaW5jaWRlbnRzIjpmYWxz
+        ZSwiZHVlX2F0IjpudWxsLCJ0YWdzIjpbXSwiY3VzdG9tX2ZpZWxkcyI6W10s
+        InNhdGlzZmFjdGlvbl9yYXRpbmciOnsic2NvcmUiOiJ1bm9mZmVyZWQifSwi
+        c2hhcmluZ19hZ3JlZW1lbnRfaWRzIjpbXSwiZmllbGRzIjpbXSwiYnJhbmRf
+        aWQiOjEwNzUzNX0sImF1ZGl0Ijp7ImlkIjozMDg0Mjc5MTAzOSwidGlja2V0
+        X2lkIjo0NTcsImNyZWF0ZWRfYXQiOiIyMDE1LTA3LTMxVDA3OjM3OjU2WiIs
+        ImF1dGhvcl9pZCI6MzU5NDIyMTA1LCJ2aWEiOnsiY2hhbm5lbCI6ImFwaSIs
+        InNvdXJjZSI6eyJmcm9tIjp7fSwidG8iOnt9LCJyZWwiOm51bGx9fSwibWV0
+        YWRhdGEiOnsic3lzdGVtIjp7ImNsaWVudCI6IlplbmRlc2tBUEkgQVBJIDEu
+        OC4wIiwiaXBfYWRkcmVzcyI6IjYwLjI1MC4zMi40NCIsImxvY2F0aW9uIjoi
+        VGFpd2FuIiwibGF0aXR1ZGUiOjIzLjUsImxvbmdpdHVkZSI6MTIxLjB9LCJj
+        dXN0b20iOnt9fSwiZXZlbnRzIjpbeyJpZCI6MzA4NDI3OTEwNDksInR5cGUi
+        OiJDb21tZW50IiwiYXV0aG9yX2lkIjoxMjM4Njc1ODk5LCJib2R5IjoiU3Vw
+        cG9ydCB0ZXN0IiwiaHRtbF9ib2R5IjoiPGRpdiBjbGFzcz1cInpkLWNvbW1l
+        bnRcIj48cD5TdXBwb3J0IHRlc3Q8L3A+PC9kaXY+IiwicHVibGljIjp0cnVl
+        LCJhdHRhY2htZW50cyI6W10sImF1ZGl0X2lkIjozMDg0Mjc5MTAzOX0seyJp
+        ZCI6MzA4NDI3OTEwNTksInR5cGUiOiJDcmVhdGUiLCJ2YWx1ZSI6IlN1cHBv
+        cnQgdGVzdCIsImZpZWxkX25hbWUiOiJzdWJqZWN0In0seyJpZCI6MzA4NDI3
+        OTEwNjksInR5cGUiOiJDcmVhdGUiLCJ2YWx1ZSI6Im5ldyIsImZpZWxkX25h
+        bWUiOiJzdGF0dXMifSx7ImlkIjozMDg0Mjc5MTA3OSwidHlwZSI6IkNyZWF0
+        ZSIsInZhbHVlIjpudWxsLCJmaWVsZF9uYW1lIjoicHJpb3JpdHkifSx7Imlk
+        IjozMDg0Mjc5MTA4OSwidHlwZSI6IkNyZWF0ZSIsInZhbHVlIjpudWxsLCJm
+        aWVsZF9uYW1lIjoidHlwZSJ9LHsiaWQiOjMwODQyNzkxMDk5LCJ0eXBlIjoi
+        Q3JlYXRlIiwidmFsdWUiOjIxOTA4ODE1LCJmaWVsZF9uYW1lIjoiZ3JvdXBf
+        aWQifSx7ImlkIjozMDg0Mjc5MTEwOSwidHlwZSI6IkNyZWF0ZSIsInZhbHVl
+        IjoxMjM4Njc1ODk5LCJmaWVsZF9uYW1lIjoicmVxdWVzdGVyX2lkIn0seyJp
+        ZCI6MzA4NDI3OTExMTksInR5cGUiOiJOb3RpZmljYXRpb24iLCJ2aWEiOnsi
+        Y2hhbm5lbCI6InJ1bGUiLCJzb3VyY2UiOnsidG8iOnt9LCJmcm9tIjp7Imlk
+        IjozNDI0MTQxNSwidGl0bGUiOiJOb3RpZnkgZ3JvdXAgb2YgYXNzaWdubWVu
+        dCJ9LCJyZWwiOiJ0cmlnZ2VyIn19LCJzdWJqZWN0IjoiW3t7dGlja2V0LmFj
+        Y291bnR9fV0gXCJ7e3RpY2tldC5ncm91cC5uYW1lfX1cIiBhc3NpZ25tZW50
+        OiAge3t0aWNrZXQudGl0bGV9fSIsImJvZHkiOiJUaGlzIHRpY2tldCAoI3t7
+        dGlja2V0LmlkfX0pIGhhcyBiZWVuIGFzc2lnbmVkIHRvIGdyb3VwICd7e3Rp
+        Y2tldC5ncm91cC5uYW1lfX0nLCBvZiB3aGljaCB5b3UgYXJlIGEgbWVtYmVy
+        LlxuXG57e3RpY2tldC5jb21tZW50c19mb3JtYXR0ZWR9fSIsInJlY2lwaWVu
+        dHMiOlszNTk0MjIxMDUsMzU5NDIyMDg1LDExMjE2ODA0MzksMTE1MTg4MTE1
+        NSw0MzU5MDA0MTldfSx7ImlkIjozMDg0Mjc5MTEyOSwidHlwZSI6Ik5vdGlm
+        aWNhdGlvbiIsInZpYSI6eyJjaGFubmVsIjoicnVsZSIsInNvdXJjZSI6eyJ0
+        byI6e30sImZyb20iOnsiaWQiOjQxODAxOTI1LCJ0aXRsZSI6Ik5vdGlmeSBy
+        ZXF1ZXN0ZXIgb2YgcmVjZWl2ZWQgcmVxdWVzdCJ9LCJyZWwiOiJ0cmlnZ2Vy
+        In19LCJzdWJqZWN0IjoiSEFIQUhBKHt7dGlja2V0LmlkfX0pICIsImJvZHki
+        OiLmu7/mhI/luqboqr/mn6Vcblxue3tzYXRpc2ZhY3Rpb24ucmF0aW5nX3Nl
+        Y3Rpb259fVx0IiwicmVjaXBpZW50cyI6WzEyMzg2NzU4OTldfV19fQ==
+    http_version: '1.1'
+  recorded_at: Fri, 31 Jul 2015 07:37:56 GMT
+recorded_with: VCR 2.9.2

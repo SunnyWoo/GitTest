@@ -1,0 +1,14 @@
+= simple_form_for(@email_banner, url: [:admin, @email_banner], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.input :name
+  - starts_at = f.object.starts_at ? f.object.starts_at.strftime("%F %H:%M") : nil
+  - ends_at = f.object.ends_at ? f.object.ends_at.strftime("%F %H:%M") : nil
+  = f.input :starts_at, as: :string, input_html: { class: 'datetimepicker', value: starts_at }
+  = f.input :ends_at, as: :string, input_html: { class: 'datetimepicker', value: ends_at }
+  = f.input :file
+  .well
+    = f.label :is_default do
+      = f.check_box :is_default, class: 'ace'
+      span.lbl = @email_banner.class.human_attribute_name(:is_default)
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

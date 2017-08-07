@@ -1,0 +1,58 @@
+en:
+  work:
+    new:
+      choose_product: Choose Product
+      your_image: Your Image Here
+  editor:
+    add_overlay: Add Overlay
+    photo: Photo
+    background_color: "Background Color"
+    shapes: Shapes
+    lines: Lines
+    stickers: Stickers
+    textures: Textures
+    typography: Typography
+    text: Text
+    crop: Crop
+    preview: Preview
+    print_quality: Print Quality
+    upload_photo:
+        title: Upload your photo
+        content: 'For virtual high-fives, your image should be...'
+        li1: 'At least 2000px in size (6mb max)'
+        li2: 'Saved in the RGB colorspace'
+        li3: 'Saved as a JPG or PNG'
+        li4: 'Your own original art, illustration or photograph!'
+        select_image: Select an image
+        next: Next
+    preview_items:
+      text_input: "Text Input"
+      font: "Font"
+      scale: "Scale"
+      rotation: "Rotation"
+      transparency: "Transparency"
+      color: "Color"
+      text_alignment: "Text Alignment"
+      delete: "Delete"
+      reflect: "Reflect"
+      alignment: "Alignment"
+    delete:
+      title: "Delete Overlay"
+      confirm_message: "You sure you want to delete this layer?"
+      continue: "Continue"
+      cancel: "Cancel"
+    safe_area:
+      title: Safe Area Alert
+      content_line_1: "Your design didn’t cover all surfaces of the product."
+      content_line_2: "Please go back and edit your design to ensure"
+      content_line_3: "that all surfaces of the product are covered. Or this might happen."
+      edit: "Edit"
+      preview: "Preview"
+    saving: "Archiving..."
+  my_design:
+    save_for_later: "Save for Later"
+    back_to_edit: "Back to Edit"
+    shop: "Shop"
+    description: "Description"
+    shipping: "Shipping"
+    shipping_message: "10-12 days for International. Expedited shipping is also available upon checkout."

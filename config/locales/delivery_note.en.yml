@@ -1,0 +1,38 @@
+en:
+  delivery_note:
+    to: To
+    address: Address
+    order_date: Order Date
+    shipping_method: Shipping Method
+    order_no: Order Number
+    item_no: Item Number
+    item_name: Item Description
+    price: Price
+    quantity: Quantity
+    subtotal: Subtotal
+    total: Total
+    coupon: Coupon
+    shipping_fee: Shipping Fee
+    estimated_total: Estimated total
+    foot_note: Thank you for shopping at commandp.com, we look forward to your visit again .<br />If you have any questions, please feel free to contact customer service, thank you !
+    team: commandp
+    back_note: Dear Customer, Thank you for choosing commandp! Please note that custom products can not be returned, only if quality defect. If you you received defect items, please contact our customer service hi@commandp.com describing the problem and send us the photo image of defects. You can also find us by QR code. we will contact you ASAP (excluding holidays).
+    return_address: Return Address
+    name: Name
+    phone: Phone number
+    return: Return
+    exchange: Exchange
+    reason: Reason
+    commandp: commandp
+    website: web site
+    weibo: weibo
+    ios: iOS
+    android: Android
+    back_title1: Return / Repair Instructions
+    back_title2: Return application
+    return_address_info: 3F., No.16, Sec. 5, Nanjing E. Rd., Songshan Dist., Taipei City 10597, Taiwan (R.O.C.)
+    customer_service_type: Customer Service
+    customer_service: hi@commandp.com
+    shipping_address: Shipping Address
+    return_product: Return Product
+    service_type: Request service type

@@ -1,0 +1,17 @@
+.modal.fade id=id
+  .modal-dialog
+    .modal-content
+      = simple_form_for order, url: polymorphic_path([:admin, order]), html: {class: 'form-horizontal order_update_invoice_number'} do |f|
+        .modal-header
+          h3 Edit Order
+        .modal-body
+          = f.input :invoice_number_created_at, label: t('orders.show.h3_invoice.thead.invoice_number_created_at'),
+                    hint: "ex: #{Time.zone.today.to_s}"
+          = f.input :invoice_number,
+                    label: t('orders.show.h3_invoice.thead.invoice_number'),
+                    maxlength: 10,
+                    pattern: '^[a-zA-Z]{2}[0-9]{8}$'
+          = f.input :invoice_memo, as: :text, label: t('orders.show.h3_invoice.thead.invoice_memo')
+          = f.input :invoice_state, as: :hidden, input_html: { value: 'invoice_finish' }
+        .modal-footer
+            = f.button :submit, class: 'btn-primary'

@@ -1,0 +1,90 @@
+#order-popup.popups
+  .popus-container
+
+    .mobilev2-top
+      .leftnavs
+        .back-icon.order-popup-close
+          = image_tag 'campaign/mobilev2/back.png'
+
+      | 確認訂單資訊
+
+
+    .mobilev2-content
+
+
+      .form-subtitle 付款方式
+      .form
+        .form-group
+          label.control-label
+            | 信用卡
+            input type='radio' name='payment_method' value=1
+        .form-group
+          label.control-label
+            | 貨到付款
+            input type='radio' name='payment_method' value=2
+        .form-group
+          label.control-label
+            | 超傷繳費
+            input type='radio' name='payment_method' value=3
+        .form-group
+          label.control-label
+            | ＡＴＭ轉賬
+            input type='radio' name='payment_method' value=4
+        .form-group
+          label.control-label
+            | PayPal
+            input type='radio' name='payment_method'  value=5
+        .form-group
+          label.control-label
+            | 支付寶
+            input type='radio' name='payment_method' value=6
+
+
+
+
+      .form
+        .form-subtitle 寄送方式
+
+        .form-group
+          label.control-label
+            | 標準（７－１０天）
+            input type='radio' name='shipping_method' value=1
+        .form-group
+          label.control-label
+            | 快速（３－６天）   NT$210
+            input type='radio' name='shipping_method' value=2
+
+      .form
+        .form-subtitle 折價券
+        .form-group
+          input type='text' name='coupon' placeholder='請輸入折價券編號'
+        input type='submit'
+
+
+      .form-subtitle 金額
+      p
+        span 小記
+        span NTD$999
+
+      p
+        span 運費
+        span NTD$999
+
+      p
+        span 貨到付款
+        span 否
+
+      p
+        span 折扣
+        span - NTD$0
+
+      p.grand-total
+        span 總金額
+        span NTD$1998
+
+
+
+
+    .mobilev2-footer
+      .order-popup-open
+        | 確認無誤，送出

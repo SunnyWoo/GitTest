@@ -1,0 +1,61 @@
+/* line 1, ../../../stylesheets/admin/v2/reports.scss */
+.report-filters {
+  float: left;
+  min-height: 52px; }
+
+/* line 6, ../../../stylesheets/admin/v2/reports.scss */
+.report-update {
+  float: right;
+  width: auto;
+  margin-bottom: 10px; }
+
+/* line 12, ../../../stylesheets/admin/v2/reports.scss */
+.rc-filter-input {
+  float: left;
+  background-color: #2283C5;
+  padding: 10px;
+  min-width: 150px;
+  min-height: 51px;
+  margin-right: 10px;
+  margin-bottom: 10px; }
+  /* line 21, ../../../stylesheets/admin/v2/reports.scss */
+  .rc-filter-input .rc-select-input {
+    margin-right: 10px; }
+  /* line 25, ../../../stylesheets/admin/v2/reports.scss */
+  .rc-filter-input .rc-date-input {
+    padding: 0 10px;
+    width: 155px;
+    height: 30px; }
+  /* line 31, ../../../stylesheets/admin/v2/reports.scss */
+  .rc-filter-input .del {
+    background-color: #64a8d6;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-top: 2px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer; }
+
+/* line 49, ../../../stylesheets/admin/v2/reports.scss */
+.report-search-result {
+  width: 100%;
+  margin-top: 10px; }
+
+/* line 54, ../../../stylesheets/admin/v2/reports.scss */
+.report-add-filter {
+  margin-right: 10px; }
+
+/* line 60, ../../../stylesheets/admin/v2/reports.scss */
+.table-striped > tbody > tr.total-summary > td {
+  background-color: #eee;
+  font-weight: bold; }
+/* line 64, ../../../stylesheets/admin/v2/reports.scss */
+.table-striped > tbody > tr.total-summary .title {
+  text-align: right; }

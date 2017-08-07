@@ -1,0 +1,54 @@
+.item-title = edit_translator('page.cart_check_out.summary_alias')
+table.check_out_summery
+  thead
+    tr
+      td width='40%' = edit_translator('page.cart_check_out.thead.td1')
+      td width='10%' style='text-align: center;' = edit_translator('page.cart_check_out.thead.td2')
+      td width='25%' style='text-align: center;' = edit_translator('page.cart_check_out.thead.td3')
+      td width='35%' style='text-align: right;' = edit_translator('page.cart_check_out.thead.td4')
+  tbody
+    - @order.order_items.each do |item|
+      - itemable = item.itemable
+      tr
+        td.item-work-name
+          = link_to render_string_with_br(render_work_name(itemable, 40), 18), render_work_path(itemable)
+        td style='text-align: center;' = item.quantity
+        - if itemable.has_special_price?
+          td style='text-align: center;' = render_item_original_price_with_quantity(item)
+          td style='text-align: right;' = render_item_price_with_quantity(item)
+        - else
+          td style='text-align: center;' = render_item_price_with_quantity(item)
+          td
+        td.hide
+          = render 'cart/ua_ec/ua_data', work: itemable, qty: item.quantity, step: '2'
+
+    tr
+      td.tr_line colspan='4'
+  tfoot
+    tr
+      td colspan='2'= edit_translator('page.cart_check_out.subtotal')
+      td colspan='2'= render_price(@order.order_items_total)
+    - if @order.coupon
+      tr
+        td colspan='2'
+          = edit_translator('page.cart_check_out.coupon_code')
+          span.check_out_show_coupon = @order.coupon.code
+          a.fa.fa-times.check_out_clear_coupon#clear_coupon
+        td colspan='2'= render_price(-@order.discount)
+    tr
+      td colspan='2'= edit_translator('page.cart_check_out.shipping_cost')
+      td colspan='2'= render_shipping_price(@order)
+    tr
+      td.tr_line colspan='4'
+    tr.sub-total
+      td colspan='2'
+        span= edit_translator('page.cart_check_out.total')
+      td colspan='2'
+        span.check_out_subtotal= render_subtotal(@order)
+
+- if !@order.coupon.present?
+  .check_out_coupon_box
+    input type='text' id='coupon_code' placeholder= t('page.cart_check_out.coupon_code_placehoder')
+    button id='verify_coupon' data-page='check_out' = edit_translator('page.cart.btns.verify')
+    .coupon_error = @coupon_error
+    .coupon_notice = @coupon_notice

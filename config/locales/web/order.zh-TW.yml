@@ -1,0 +1,25 @@
+zh-TW:
+  page:
+    order_status:
+      notice: 若要確認你的訂單狀態，請輸入你的 email 信箱以及訂購帳號，我們會將你過去 30 天內的訂購資訊 email 給你。
+    order_results:
+      success: '成功'
+      success_wording: '謝謝你的訂購！如果你選擇的物流方式是快速運送，你將會在 7-10 天內收到你的商品；如果你選擇的物流方式是標準運送，你將會在 10-12 天內收到你的商品（假日除外）。'
+      success_sub_wording: '成功！我們已收到你的訂單。'
+      success_wording_mobile_1: '謝謝你的訂購！'
+      success_wording_mobile_2: '如果你選擇的物流方式是快速運送，你將會在 7-10 天內收到你的商品；'
+      success_wording_mobile_3: '如果你選擇的物流方式是標準運送，你將會在 10-12 天內收到你的商品（假日除外）。'
+      fail: '抱歉!'
+      fail_wording: '抱歉，我們現在無法完成你的付款，請再試一次。請嘗試其他付款方式或聯絡 commandp 我印 客服。'
+      waiting: '請稍等'
+      waiting_wording_1: '謝謝你的訂購！你已選擇  [ %{payment} ]付款。'
+      waiting_wording_2: '如果你選擇的物流方式是快速運送，你將會在付款後 7-10 天收到你的商品；如果你選擇的物流方式是標準運送，你將會在付款後  10-12 天收到你的商品（假日除外）。'
+      order_id: '訂單編號  %{id}'
+      order_no: '訂單編號'
+      sent_to: '我們已將你的收據寄到:'
+      btn: '訂單紀錄'
+      fail_btn: '立刻結賬'
+      bank_id: '銀行代碼: '
+      bank_account: '付款帳戶: '
+      pay_account: "繳費代碼: "
+      thank_for_shopping: '感謝你的購買！'

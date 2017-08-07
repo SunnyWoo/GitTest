@@ -1,0 +1,33 @@
+$('body').append("<%= j render 'splice_order', orders: @orders %>");
+$('#splice_order').modal('show');
+$('#splice_order').on('hidden.bs.modal', function (e) {
+    $(e.target).remove();
+});
+
+$('.update_invoice_submit').on('click', function () {
+    var $invoice_number_input = $(this).parent().find('input[name="invoice_number"]');
+    $.ajax({
+        url: $(this).attr('data-url'),
+        type: 'PUT',
+        data: {format: 'json', order: {invoice_number: $invoice_number_input.val()}},
+        success: function (_result) {
+            Gritter.regular_msg('更新成功')
+        }
+    });
+    return false
+});
+
+$('#package_delivery_note').on('click', function () {
+    var $order_checkbox = $('#new_package').find('input:checkbox:checked');
+    if ($order_checkbox.length < 1) {
+        Gritter.error_msg('请选择...')
+    } else {
+        var pdf_href = $(this).data('href');
+        var serialize = $order_checkbox.serialize();
+        window.open(pdf_href + ".pdf?&" + serialize);
+    }
+});
+
+$('#check_all').on('click', function () {
+    $('#new_package tbody').find('input:checkbox').attr('checked', $('#check_all').is( ":checked" ))
+});

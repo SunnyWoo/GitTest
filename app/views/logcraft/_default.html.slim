@@ -1,0 +1,15 @@
+- expect_view[expect_view.rindex('/')] = '/_'
+p.red WARNING! missing template at `app/views/#{expect_view}.html.slim`.
+p
+  dt KEY:
+  dd = activity.key
+  dt TRACKABLE:
+  dd = "#{activity.trackable_type}##{activity.trackable_id}"
+  dt USER:
+  dd = "#{activity.user_type}##{activity.user_id}"
+  dt SOURCE:
+  dd = "#{activity.source.to_json}"
+  dt MESSAGE:
+  dd = "#{activity.message}"
+  dt EXTRA_INFO:
+  dd = "#{activity.extra_info.to_json}"

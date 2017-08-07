@@ -1,0 +1,24 @@
+= simple_form_for [:admin, banner] do |f|
+  = f.input :name
+  = f.input :deeplink
+  = f.input :url, hint: "Url 跟 Deeplink只能選填一個"
+  = f.input :image
+  = f.hint 'Size should be 520px x 720px'
+  = f.label :date
+  .input-daterange.input-group data-daterange=true
+    = f.input_field :begin_on, as: :string, class: 'input-sm form-control'
+    span.input-group-addon ~
+    = f.input_field :end_on, as: :string, class: 'input-sm form-control'
+  = f.label :countries
+
+  .row
+    - Banner.supported_countries.each do |country|
+      .col-md-2
+        label
+          = check_box_tag :'banner[countries][]', country.alpha2, banner.countries.include?(country.alpha2), class: 'ace'
+          span.lbl = country.name
+
+  = f.input :platforms, as: :check_boxes, collection: Banner::PLATFORMS
+
+  .form-actions
+    = f.button :submit

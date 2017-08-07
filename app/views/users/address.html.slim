@@ -1,0 +1,43 @@
+.cmdp_container
+  .grid_6
+    /= render_cell :announcement, :announcement
+    .margin-top-fixed
+
+  #sidebar.grid_2
+    = render 'slide'
+
+  article#address.grid_4
+    .item-title= edit_translator('page.user.address')
+    section
+      ul.lists
+        - @address_infos.each do |address_info|
+          li
+            .func-icons.pull-right
+              = link_to edit_address_info_path(address_info,page: 'profile'), data: {remote: true} do
+                i.edit
+              = link_to address_info_path(address_info, r: address_users_path), method: :delete do
+                i.del
+
+            .arti-header
+              = address_info.address_name
+            / .content.hide
+            /   div id="address_info_form_#{address_info.id}"
+              / div id="address_info_block_#{address_info.id}"
+              /   .address-box
+              /     .row= address_info.name
+              /     .row= address_info.address
+              /     .row= "#{address_info.state} #{address_info.zip_code}"
+              /     .row= address_info.city
+              /     .row= address_info.country
+              /     .row= address_info.email
+              /     .row= address_info.phone
+          li.address-content style="display:none;" id="address_info_form_#{address_info.id}"
+        li
+          .arti-header
+            - url = new_address_info_path(id: 'new_address_info_form', page: 'profile')
+            = link_to url, class:'add-addr' , data: { remote: true } do
+              .pull-right
+                i.add
+              = edit_translator('page.user.btns.add_new_address')
+
+        li#new_address_info_form.address-content style="display:none;"

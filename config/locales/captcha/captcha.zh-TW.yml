@@ -1,0 +1,8 @@
+zh-TW:
+  simple_captcha:
+    placeholder: "請輸入驗證碼"
+    label: "驗證碼:"
+    refresh_button_text: "刷新"
+    message:
+      default: "驗證碼不正確"
+      user: "驗證碼不正確"

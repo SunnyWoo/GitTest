@@ -1,0 +1,2 @@
+class OrderPayError < ApplicationError
+end

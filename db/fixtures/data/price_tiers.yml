@@ -1,0 +1,729 @@
+---
+- tier: 1
+  prices:
+    USD: 0.1
+    HKD: 0.1
+    TWD: 0.1
+    JPY: 0.1
+    CNY: 0.1
+- tier: 4
+  prices:
+    USD: 0.98
+    HKD: 5.0
+    TWD: 21.0
+    JPY: 80.0
+    CNY: 6.0
+- tier: 5
+  prices:
+    USD: 1.4
+    HKD: 10.8
+    TWD: 46.0
+    JPY: 168.0
+    CNY: 9.0
+- tier: 7
+  prices:
+    USD: 1.56
+    HKD: 12.1
+    TWD: 50.5
+    JPY: 26440.0
+    CNY: 9.9
+- tier: 8
+  prices:
+    USD: 1.85
+    HKD: 14.5
+    TWD: 70.0
+    JPY: 221.0
+    CNY: 12.0
+- tier: 10
+  prices:
+    USD: 3.0
+    HKD: 30.0
+    TWD: 96.5
+    JPY: 364.0
+    CNY: 18.9
+- tier: 13
+  prices:
+    USD: 3.0
+    HKD: 29.0
+    TWD: 101.0
+    JPY: 356.0
+    CNY: 20.0
+- tier: 14
+  prices:
+    TWD: 111.0
+    HKD: 29.0
+    USD: 3.95
+    JPY: 410.0
+    CNY: 19.0
+- tier: 15
+  prices:
+    TWD: 120.0
+    HKD: 29.0
+    USD: 3.95
+    JPY: 430.0
+    CNY: 25.0
+- tier: 18
+  prices:
+    TWD: 125.0
+    HKD: 29.0
+    USD: 3.95
+    JPY: 450.0
+    CNY: 25.0
+- tier: 19
+  prices:
+    TWD: 150.0
+    HKD: 39.0
+    USD: 4.95
+    JPY: 500.0
+    CNY: 29.0
+- tier: 23
+  prices:
+    TWD: 199.0
+    HKD: 49.0
+    USD: 6.95
+    JPY: 600.0
+    CNY: 39.0
+- tier: 24
+  prices:
+    TWD: 200.0
+    HKD: 49.0
+    USD: 6.95
+    JPY: 650.0
+    CNY: 39.0
+- tier: 27
+  prices:
+    USD: 7.5
+    HKD: 70.0
+    TWD: 215.0
+    JPY: 690.0
+    CNY: 44.0
+- tier: 45
+  prices:
+    TWD: 464.0
+    HKD: 119.0
+    USD: 15.95
+    JPY: 1700.0
+    CNY: 95.0
+- tier: 46
+  prices:
+    TWD: 499.0
+    HKD: 119.0
+    USD: 14.95
+    JPY: 1880.0
+    CNY: 99.0
+- tier: 96
+  prices:
+    USD: 83.0
+    HKD: 660.0
+    TWD: 2550.0
+    JPY: 9300.0
+    CNY: 500.0
+- tier: 52
+  prices:
+    TWD: 599.0
+    HKD: 139.0
+    JPY: 2780.0
+    USD: 19.95
+    CNY: 119.0
+- tier: 53
+  prices:
+    TWD: 600.0
+    HKD: 139.0
+    USD: 19.95
+    JPY: 2180.0
+    CNY: 119.0
+- tier: 54
+  prices:
+    TWD: 610.0
+    HKD: 149.0
+    USD: 19.95
+    JPY: 2200.0
+    CNY: 125.0
+- tier: 55
+  prices:
+    TWD: 615.0
+    HKD: 149.0
+    USD: 19.95
+    JPY: 2250.0
+    CNY: 125.0
+- tier: 56
+  prices:
+    TWD: 618.0
+    HKD: 149.0
+    USD: 20.95
+    JPY: 2270.0
+    CNY: 125.0
+- tier: 57
+  prices:
+    TWD: 619.0
+    HKD: 149.0
+    USD: 20.95
+    JPY: 2980.0
+    CNY: 129.0
+- tier: 58
+  prices:
+    TWD: 630.0
+    HKD: 169.0
+    USD: 20.95
+    JPY: 3000.0
+    CNY: 129.0
+- tier: 59
+  prices:
+    TWD: 648.0
+    HKD: 169.0
+    USD: 21.95
+    JPY: 3050.0
+    CNY: 129.0
+- tier: 60
+  prices:
+    TWD: 649.0
+    HKD: 169.0
+    JPY: 3080.0
+    USD: 21.95
+    CNY: 129.0
+- tier: 61
+  prices:
+    TWD: 659.0
+    HKD: 169.0
+    USD: 21.95
+    JPY: 3080.0
+    CNY: 129.0
+- tier: 3
+  prices:
+    TWD: 20.0
+    HKD: 4.9
+    USD: 0.95
+    JPY: 78.0
+    CNY: 5.0
+- tier: 6
+  prices:
+    TWD: 50.0
+    HKD: 10.0
+    USD: 1.99
+    JPY: 1601.0
+    CNY: 10.0
+- tier: 9
+  prices:
+    USD: 2.3
+    HKD: 18.0
+    TWD: 76.0
+    JPY: 281.0
+    CNY: 15.0
+- tier: 16
+  prices:
+    USD: 3.95
+    HKD: 29.0
+    TWD: 120.0
+    JPY: 430.0
+    CNY: 22.9
+- tier: 17
+  prices:
+    USD: 3.96
+    HKD: 30.0
+    TWD: 121.0
+    JPY: 431.0
+    CNY: 22.9
+- tier: 22
+  prices:
+    TWD: 180.0
+    HKD: 49.0
+    USD: 5.95
+    JPY: 550.0
+    CNY: 39.0
+- tier: 25
+  prices:
+    TWD: 210.0
+    HKD: 59.0
+    USD: 6.95
+    JPY: 680.0
+    CNY: 39.0
+- tier: 26
+  prices:
+    USD: 7.0
+    HKD: 60.0
+    TWD: 211.0
+    JPY: 681.0
+    CNY: 40.0
+- tier: 28
+  prices:
+    USD: 7.6
+    HKD: 72.0
+    TWD: 218.0
+    JPY: 700.0
+    CNY: 45.0
+- tier: 29
+  prices:
+    USD: 8.0
+    HKD: 69.0
+    TWD: 250.0
+    JPY: 700.0
+    CNY: 50.0
+- tier: 30
+  prices:
+    TWD: 250.0
+    HKD: 69.0
+    USD: 7.95
+    JPY: 700.0
+    CNY: 49.0
+- tier: 31
+  prices:
+    TWD: 299.0
+    HKD: 79.0
+    USD: 9.95
+    JPY: 800.0
+    CNY: 59.0
+- tier: 32
+  prices:
+    TWD: 300.0
+    HKD: 79.0
+    JPY: 1080.0
+    USD: 9.95
+    CNY: 59.0
+- tier: 33
+  prices:
+    USD: 9.1
+    HKD: 71.0
+    TWD: 303.0
+    JPY: 1077.0
+    CNY: 60.0
+- tier: 34
+  prices:
+    TWD: 308.0
+    HKD: 79.0
+    USD: 9.95
+    JPY: 860.0
+    CNY: 59.0
+- tier: 62
+  prices:
+    TWD: 666.0
+    HKD: 179.0
+    USD: 21.95
+    JPY: 3100.0
+    CNY: 135.0
+- tier: 35
+  prices:
+    TWD: 310.0
+    HKD: 79.0
+    USD: 9.95
+    JPY: 900.0
+    CNY: 65.0
+- tier: 36
+  prices:
+    USD: 10.0
+    HKD: 78.0
+    TWD: 325.0
+    JPY: 1190.0
+    CNY: 66.0
+- tier: 37
+  prices:
+    TWD: 345.0
+    HKD: 90.0
+    USD: 12.0
+    JPY: 1200.0
+    CNY: 69.0
+- tier: 39
+  prices:
+    TWD: 400.0
+    HKD: 100.0
+    USD: 12.0
+    JPY: 1400.0
+    CNY: 79.0
+- tier: 40
+  prices:
+    USD: 13.0
+    HKD: 101.0
+    TWD: 427.0
+    JPY: 1590.0
+    CNY: 84.0
+- tier: 41
+  prices:
+    USD: 13.4
+    HKD: 104.0
+    TWD: 442.0
+    JPY: 1600.0
+    CNY: 87.0
+- tier: 43
+  prices:
+    TWD: 450.0
+    HKD: 119.0
+    USD: 14.95
+    JPY: 1680.0
+    CNY: 89.0
+- tier: 47
+  prices:
+    TWD: 500.0
+    HKD: 129.0
+    USD: 16.95
+    JPY: 1800.0
+    CNY: 99.0
+- tier: 48
+  prices:
+    TWD: 510.0
+    HKD: 129.0
+    USD: 16.95
+    JPY: 1850.0
+    CNY: 99.0
+- tier: 50
+  prices:
+    TWD: 519.0
+    HKD: 139.0
+    USD: 16.95
+    JPY: 1880.0
+    CNY: 109.0
+- tier: 51
+  prices:
+    TWD: 599.0
+    HKD: 139.0
+    JPY: 3280.0
+    USD: 19.95
+    CNY: 119.0
+- tier: 90
+  prices:
+    TWD: 1727.0
+    HKD: 449.0
+    USD: 57.95
+    JPY: 6380.0
+    CNY: 349.0
+- tier: 72
+  prices:
+    USD: 30.0
+    HKD: 198.0
+    TWD: 890.0
+    JPY: 2780.0
+    CNY: 186.0
+- tier: 75
+  prices:
+    TWD: 900.0
+    HKD: 239.0
+    USD: 29.95
+    JPY: 3500.0
+    CNY: 179.0
+- tier: 76
+  prices:
+    TWD: 928.0
+    HKD: 239.0
+    USD: 29.95
+    JPY: 3580.0
+    CNY: 189.0
+- tier: 77
+  prices:
+    USD: 33.0
+    HKD: 198.0
+    TWD: 990.0
+    JPY: 2980.0
+    CNY: 198.0
+- tier: 91
+  prices:
+    TWD: 1758.0
+    HKD: 459.0
+    USD: 58.95
+    JPY: 6480.0
+    CNY: 349.0
+- tier: 92
+  prices:
+    TWD: 1999.0
+    HKD: 519.0
+    JPY: 9560.0
+    USD: 65.9
+    CNY: 399.0
+- tier: 93
+  prices:
+    TWD: 2245.0
+    HKD: 590.0
+    JPY: 8310.0
+    USD: 74.9
+    CNY: 459.0
+- tier: 94
+  prices:
+    TWD: 2396.0
+    HKD: 630.0
+    USD: 79.94
+    JPY: 8869.0
+    CNY: 479.0
+- tier: 95
+  prices:
+    TWD: 2500.0
+    HKD: 659.0
+    USD: 82.95
+    JPY: 9280.0
+    CNY: 499.0
+- tier: 97
+  prices:
+    TWD: 2696.0
+    HKD: 709.0
+    USD: 89.95
+    JPY: 9980.0
+    CNY: 539.0
+- tier: 98
+  prices:
+    TWD: 2999.0
+    HKD: 775.0
+    JPY: 14340.0
+    USD: 98.9
+    CNY: 599.0
+- tier: 99
+  prices:
+    TWD: 3146.0
+    HKD: 826.0
+    USD: 105.12
+    JPY: 11670.0
+    CNY: 599.0
+- tier: 100
+  prices:
+    TWD: 3190.0
+    HKD: 839.0
+    JPY: 11850.0
+    USD: 106.3
+    CNY: 599.0
+- tier: 101
+  prices:
+    TWD: 3196.0
+    HKD: 841.0
+    JPY: 11837.0
+    USD: 106.5
+    CNY: 599.0
+- tier: 102
+  prices:
+    TWD: 3500.0
+    HKD: 919.0
+    USD: 116.95
+    JPY: 12980.0
+    CNY: 699.0
+- tier: 78
+  prices:
+    TWD: 999.0
+    HKD: 259.0
+    JPY: 4780.0
+    USD: 29.95
+    CNY: 199.0
+- tier: 79
+  prices:
+    TWD: 999.0
+    HKD: 259.0
+    JPY: 3980.0
+    USD: 29.95
+    CNY: 199.0
+- tier: 80
+  prices:
+    TWD: 999.0
+    HKD: 249.0
+    USD: 34.95
+    JPY: 3880.0
+    CNY: 199.0
+- tier: 81
+  prices:
+    TWD: 1000.0
+    HKD: 259.0
+    JPY: 3980.0
+    USD: 32.95
+    CNY: 199.0
+- tier: 82
+  prices:
+    TWD: 1099.0
+    HKD: 289.0
+    USD: 33.95
+    JPY: 5480.0
+    CNY: 219.0
+- tier: 83
+  prices:
+    TWD: 1108.0
+    HKD: 289.0
+    USD: 36.95
+    JPY: 4080.0
+    CNY: 219.0
+- tier: 84
+  prices:
+    TWD: 1238.0
+    HKD: 326.0
+    USD: 40.95
+    JPY: 4580.0
+    CNY: 249.0
+- tier: 2
+  prices:
+    TWD: 3.0
+    HKD: 0.9
+    USD: 0.095
+    JPY: 8.0
+    CNY: 1.0
+- tier: 12
+  prices:
+    TWD: 100.0
+    HKD: 29.0
+    USD: 2.95
+    JPY: 400.0
+    CNY: 19.0
+- tier: 21
+  prices:
+    USD: 5.99
+    HKD: 35.0
+    TWD: 175.0
+    JPY: 530.0
+    CNY: 35.0
+- tier: 38
+  prices:
+    USD: 11.0
+    HKD: 85.0
+    TWD: 358.0
+    JPY: 1347.0
+    CNY: 70.0
+- tier: 42
+  prices:
+    TWD: 449.0
+    HKD: 119.0
+    USD: 14.95
+    JPY: 1880.0
+    CNY: 89.0
+- tier: 44
+  prices:
+    USD: 15.0
+    HKD: 120.0
+    TWD: 455.0
+    JPY: 1690.0
+    CNY: 90.0
+- tier: 49
+  prices:
+    USD: 15.2
+    HKD: 118.0
+    TWD: 511.0
+    JPY: 1782.0
+    CNY: 100.0
+- tier: 63
+  prices:
+    TWD: 699.0
+    HKD: 179.0
+    JPY: 3150.0
+    USD: 22.95
+    CNY: 139.0
+- tier: 64
+  prices:
+    TWD: 700.0
+    HKD: 179.0
+    USD: 22.95
+    JPY: 3150.0
+    CNY: 149.0
+- tier: 65
+  prices:
+    TWD: 750.0
+    HKD: 189.0
+    USD: 24.95
+    JPY: 3180.0
+    CNY: 155.0
+- tier: 66
+  prices:
+    TWD: 775.0
+    HKD: 199.0
+    USD: 25.95
+    JPY: 3200.0
+    CNY: 155.0
+- tier: 67
+  prices:
+    TWD: 784.0
+    HKD: 209.0
+    USD: 25.95
+    JPY: 3280.0
+    CNY: 155.0
+- tier: 68
+  prices:
+    TWD: 799.0
+    HKD: 209.0
+    JPY: 3280.0
+    USD: 25.95
+    CNY: 159.0
+- tier: 69
+  prices:
+    TWD: 800.0
+    HKD: 209.0
+    USD: 26.95
+    JPY: 3300.0
+    CNY: 159.0
+- tier: 70
+  prices:
+    TWD: 870.0
+    HKD: 229.0
+    USD: 28.95
+    JPY: 3350.0
+    CNY: 179.0
+- tier: 71
+  prices:
+    TWD: 888.0
+    HKD: 229.0
+    USD: 29.95
+    JPY: 3380.0
+    CNY: 179.0
+- tier: 85
+  prices:
+    TWD: 1279.0
+    HKD: 329.0
+    USD: 42.95
+    JPY: 4880.0
+    CNY: 255.0
+- tier: 86
+  prices:
+    TWD: 1299.0
+    HKD: 339.0
+    JPY: 5480.0
+    USD: 41.95
+    CNY: 259.0
+- tier: 87
+  prices:
+    TWD: 1499.0
+    HKD: 379.0
+    USD: 49.95
+    JPY: 5380.0
+    CNY: 299.0
+- tier: 88
+  prices:
+    TWD: 1518.0
+    HKD: 399.0
+    USD: 49.95
+    JPY: 5580.0
+    CNY: 309.0
+- tier: 89
+  prices:
+    TWD: 1547.0
+    HKD: 399.0
+    USD: 51.95
+    JPY: 5680.0
+    CNY: 309.0
+- tier: 103
+  prices:
+    TWD: 4044.0
+    HKD: 1064.0
+    USD: 134.8
+    JPY: 14980.0
+    CNY: 799.0
+- tier: 104
+  prices:
+    TWD: 4490.0
+    HKD: 1190.0
+    USD: 149.5
+    JPY: 18800.0
+    CNY: 899.0
+- tier: 11
+  prices:
+    USD: 2.85
+    HKD: 29.0
+    TWD: 98.0
+    JPY: 346.0
+    CNY: 18.0
+- tier: 20
+  prices:
+    USD: 4.7
+    HKD: 36.0
+    TWD: 154.0
+    JPY: 578.0
+    CNY: 30.0
+- tier: 74
+  prices:
+    TWD: 899.0
+    HKD: 229.0
+    USD: 29.95
+    JPY: 3480.0
+    CNY: 179.0
+- tier: 73
+  prices:
+    TWD: 898.0
+    HKD: 229.0
+    USD: 29.95
+    JPY: 3400.0
+    CNY: 179.0

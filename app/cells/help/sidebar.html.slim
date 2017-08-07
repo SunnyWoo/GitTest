@@ -1,0 +1,19 @@
+.item-title = t('question.help')
+.help
+  ul
+    li
+      .help-list = link_to t('question.li5'), order_status_orders_path
+    li
+      .help-list = link_to t('question.li1'), questions_path
+      .article-lists
+        - @question_categories.each do |question_category|
+          / = link_to "#{question_category.name} (#{question_category.questions.size})", "#"
+          = link_to questions_path(anchor: question_category.name.gsub(' ', '_')) do
+            span = question_category.name
+            span.q-size.hide = "(#{question_category.questions.size})"
+    li
+      .help-list = link_to t('question.li2'), support_path
+    li
+      .help-list = link_to t('question.li3'), privacy_path
+    li
+      .help-list = link_to t('question.li4'), terms_path

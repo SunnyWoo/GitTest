@@ -1,0 +1,28 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 訂單編號
+      th 列印編號
+      th 產品類型
+      th 狀態
+      th 折扣码
+      th 商品单价
+      th 订单总价
+      th 留言
+      th 出貨方式
+      th 暂存区编号
+  tbody
+    - orders.each do |order|
+      - print_items = order.print_items
+      - print_items.each_with_index do |print_item, index|
+        tr
+          td = render_order_shipper(order)
+          td = print_item.timestamp_no
+          td = print_item.product_name
+          td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+          td = render_coupon_info(order.embedded_coupon)
+          td = render_item_price(print_item.order_item.itemable, currency_code: order.currency)
+          td = render_order_price(order)
+          td = order.notes.map(&:message).join(',')
+          td = order.render_shipping_way_with_color
+          td = print_item.temp_shelf_serial

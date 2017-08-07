@@ -1,0 +1,19 @@
+- admin_title t('preview_composers.select_type.page_title')
+
+.row
+  .col-xs-3.center
+    = link_to new_admin_product_model_preview_composer_path(@model, type: 'Simple') do
+      = image_tag 'admin/preview_composers/simple.jpg'
+      h2 = t('preview_composers.select_type.simple')
+  .col-xs-3.center
+    = link_to new_admin_product_model_preview_composer_path(@model, type: 'FrontBack') do
+      = image_tag 'admin/preview_composers/front_back.jpg'
+      h2 = t('preview_composers.select_type.front_back')
+  .col-xs-3.center
+    = link_to new_admin_product_model_preview_composer_path(@model, type: 'VerticalDisplace') do
+      = image_tag 'admin/preview_composers/vertical_displace.jpg'
+      h2 = t('preview_composers.select_type.vertical_displace')
+  .col-xs-3.center
+    = link_to new_admin_product_model_preview_composer_path(@model, type: 'Fixed') do
+      = image_tag 'admin/preview_composers/fixed.jpg'
+      h2 = t('preview_composers.select_type.fixed')

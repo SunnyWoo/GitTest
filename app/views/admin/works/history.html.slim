@@ -1,0 +1,7 @@
+- admin_title t('works.history.page_title'), subtitle: t('works.history.crumb.work', id: @work.id)
+
+= will_paginate @versions
+
+= render 'admin/shared/paper_trail_list'
+
+= will_paginate @versions

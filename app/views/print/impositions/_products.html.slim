@@ -1,0 +1,25 @@
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th 是否上架
+      th 產品
+      th 拼版資訊
+      th 操作
+  tbody
+    - products.each do |model|
+      tr
+        td = display_true_or_false_icon(model.available)
+        td = model.name
+        td = print_imposition_info(model.imposition)
+        td
+          - if model.imposition
+            = link_to '編輯', edit_print_product_model_imposition_path(model), class: 'btn btn-sm'
+            - if model.imposition.sample.present? && policy(Imposition).download?
+              = link_to '下載樣本', model.imposition.sample.url, class: 'btn btn-sm', target: '_blank'
+            - else
+              = link_to '樣本製作中...', '#', class: 'btn btn-sm disabled'
+            = link_to '刪除', print_product_model_imposition_path(model), class: 'btn btn-sm btn-danger', data: {method: 'delete', confirm: '你確定要刪除嗎?'}
+            - if policy(Imposition).versions?
+              = link_to_versions(model.imposition.becomes(Imposition), class: 'btn btn-sm')
+          - else
+            = link_to '建立', new_print_product_model_imposition_path(model), class: 'btn btn-sm'

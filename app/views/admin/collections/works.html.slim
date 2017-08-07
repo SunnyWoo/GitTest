@@ -1,0 +1,39 @@
+- breadcrumb :admin_collection_works, @collection.name
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('collections.index.thead.name')
+            th zh-CN
+            th zh-TW
+            th zh-HK
+            th en
+            th ja
+            th= t('collections.index.thead.operation')
+        tbody
+          tr
+            td= @collection.name
+            td= @collection.text_zh_cn
+            td= @collection.text_zh_tw
+            td= @collection.text_zh_hk
+            td= @collection.text_en
+            td= @collection.text_ja
+            td
+              .btn-group
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, @collection]),
+                    class: 'btn btn-info'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-head
+    ul.nav.nav-tabs
+      li class=('active' if @active == 'works')
+        = link_to works_admin_collection_path do
+          span = t('collections.works.list')
+      li class=('active' if @active == 'tags')
+        = link_to tags_admin_collection_path do
+          span = t('collections.works.add')
+  .widget-body
+    =render @active, collection: @collection, works: @works, tags: @tags

@@ -1,0 +1,24 @@
+en:
+  page:
+    order_status:
+      notice: To check the status of your order, please enter your email address and the order ID and we will send you an email containing your order history from within the last 30 days.
+    order_results:
+      success: 'Success'
+      success_wording: 'Thanks for shopping with us.If you select EXPRESS shipping you will be able to receive your product within 7-10 business day.. With STANDARD shipping your will be able to receive your product within 10-12 business days.'
+      success_sub_wording: 'Success! We have your order!'
+      success_wording_mobile_1: 'Thanks for shopping with us.'
+      success_wording_mobile_2: 'If you select EXPRESS shipping you will be able to receive your product within 7-10 business day.'
+      success_wording_mobile_3: 'With STANDARD shipping your will be able to receive your product within 10-12 business days.'
+      fail: 'Sorry!'
+      fail_wording: 'Sorry, we can’t process your payment right now, so please try again. Please try using other payment method or contact us for support.'
+      waiting: 'Waiting'
+      waiting_wording_1: 'Thanks for shopping with us! You have selected [ %{payment} ].'
+      waiting_wording_2: 'If you select EXPRESS shipping you will be able to receive your product within 7-10 business days after payment. With STANDARD shipping your will be able to receive your product within 10-12 business days after payment.'
+      order_id: 'Order ID  %{id}'
+      order_no: 'Order Number'
+      sent_to: 'We’ve sent a copy of your receipt to: '
+      btn: 'Order History'
+      fail_btn: 'Check Out'
+      bank_id: 'Bank Id: '
+      bank_account: 'Payment Account: '
+      pay_account: "Payment Account: "

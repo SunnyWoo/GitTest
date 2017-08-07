@@ -1,0 +1,17 @@
+span.label {
+  padding-top: 4px;
+}
+
+.edit_promotion {
+  .promotion-container-fixed {
+    position: fixed;
+    z-index: 9999;
+    top: 60px;
+  }
+  .promotion-container-body {
+    overflow-y: scroll;
+  }
+}
+
+.ml-sm { margin-left: 12px; }
+.mr-sm { margin-right: 12px; }

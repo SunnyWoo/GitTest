@@ -1,0 +1,282 @@
+/*
+  *= require normalize
+  *= require_self
+*/
+@import 'compass/css3/border-radius';
+
+#home.content {
+  padding: 0;
+  .promotion {
+    width: 100%;
+    background-color: #00C694;
+    position: relative;
+    height: 493px;
+  }
+  #promotion-header {
+    background: image-url('img_prelaunchmain_phone.png') no-repeat;
+    height: 500px;
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    top: -6px;
+    .promotion-slogan {
+      margin-left: 530px;
+      padding-top: 90px;
+      margin-bottom: 40px;
+    }
+    .download-apps {
+      margin-left: 530px;
+      margin-top: 40px;
+      img.android {
+        margin-left: 10px;
+      }
+      span {
+        display: block;
+        color: white;
+        font-family: 'Helvetica';
+        margin-top: 10px;
+      }
+    }
+    // .download-apps.en {
+    //   margin-top: 66px;
+    // }
+    h2 {
+      color: white;
+      font-size: 52px;
+      margin: 5px 0;
+    }
+    p {
+      margin-top: 50px;
+      color: white;
+      font-size: 22px;
+    }
+    .promotion-sub-words {
+      margin-left: 530px;
+      ul {
+        list-style: disc outside;
+        margin-left: 30px;
+        li {
+          color: #FFF;
+          font-size: 20px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+  .wrap {
+    section.about {
+      background: image-url('bg_line.png') center top no-repeat;
+    }
+    section.form {
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 0 60px;
+      padding-top: 60px;
+      width: 1100px;
+      margin-bottom: 60px;
+      background: image-url('bg_line.png') center bottom no-repeat;
+      h1 {
+        color: #4da684;
+        font-size: 52px;
+        margin: 0 0 20px;
+      }
+      p {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+      .input-group {
+        position: relative;
+        display: table;
+        border-collapse: separate;
+        width: 50%;
+        margin: 0 auto;
+      }
+      form#new_marketing {
+        margin-top: 60px;
+      }
+      input#marketing_email {
+        height: 54px;
+        padding: 6px 12px;
+        font-size: 22px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+        display: table-cell;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        &:focus {
+          border-color: #66afe9;
+          outline: 0;
+          -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        }
+      }
+      input#marketing_email.has-error {
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        padding-left: 30px;
+      }
+      .error-icon {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        display: block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        color: #a94442;
+        z-index: 999;
+        font-size: 2em;
+      }
+      .error-message {
+        color: #a94442;
+        margin-top: 15px;
+      }
+
+      .input-group-btn {
+        position: relative;
+        font-size: 0;
+        white-space: nowrap;
+        width: 1%;
+        vertical-align: middle;
+        display: table-cell;
+        .btn {
+          height: 54px;
+          display: inline-block;
+          margin-bottom: 0;
+          font-weight: 400;
+          text-align: center;
+          vertical-align: middle;
+          cursor: pointer;
+          background-image: none;
+          border: 1px solid transparent;
+          white-space: nowrap;
+          padding: 6px 42px;
+          font-size: 24px;
+          line-height: 1.42857143;
+          border-radius: 4px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          color: #333;
+          background-color: #F3F3F3;
+          border-color: #ccc;
+          position: relative;
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+          margin-left: -1px;
+        }
+      }
+    }
+    .anouncement {
+      font-size: 16px;
+      color: #999999;
+      width: 50%;
+      margin: 0 auto;
+      text-align: left;
+      margin-top: 53px;
+      ol { margin-bottom: 0; }
+    }
+    .two-columns {
+      text-align: center;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+      background: image-url('bg_line.png') center bottom no-repeat;
+    }
+    .left, .right {
+      width: 50%;
+      float: left;
+      h2 {
+        font-size: 32px;
+        color: #333333;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+      }
+      span {
+        display: block;
+        margin: 0 auto;
+        width: 380px;
+        color: #333333;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+    .coupon-code {
+      margin: 8px 0;
+      input {
+        width: 520px;
+        padding: 15px 10px;
+        margin-top: 15px;
+        font-size: 20px;
+        color: #455055;
+        border: 1px solid #e1e1e1;
+        text-align: center;
+        @include border-radius(5px);
+      }
+    }
+  }
+}
+
+.success-box, .error-box {
+  a.fancy-close {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-image: image-url('btn_prelaunchmain_popup_close_pressed.png');
+    top: 15px;
+    right: 15px;
+  }
+  min-height: 181px;
+  .message {
+    padding-top: 70px;
+  }
+  text-align: center;
+  background-image: image-url('bg_prelaunchmain_popup.png');
+  font-size: 22px;
+  span { padding-left: 15px; }
+}
+
+.success-box {
+  color: #66cc99;
+}
+
+.error-box {
+  color: #cc0000;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color:    #666666;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color:    #666666;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color:    #666666;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-family: 'Helvetica';
+  font-weight: lighter;
+  color:    #666666;
+}

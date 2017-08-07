@@ -1,0 +1,478 @@
+en:
+  country:
+    Australia: 'Australia'
+    Canada: 'Canada'
+    China: 'China'
+    France: 'France'
+    Germany: 'Germany'
+    HongKong: 'Hong Kong'
+    Japan: 'Japan'
+    Macao: 'Macao'
+    Malaysia: 'Malaysia'
+    NewZealand: 'New Zealand'
+    Singapore: 'Singapore'
+    SouthKorea: 'South Korea'
+    Taiwan: 'Taiwan'
+    UnitedKingdom: 'United Kingdom'
+    UnitedStates: 'United States'
+  activerecord:
+    errors:
+      models:
+        announcement:
+          attributes:
+            default:
+              at_least_one: 'There should be at least one default announcement in database'
+    models:
+      user: User
+      order: Order
+      billing_profile: Billing Profile
+      order_item: Order Item
+      work: Work
+      layer: Layer
+      shipping_info: Shipping Info
+      announcement: Announcement
+    attributes:
+      user:
+        id: 'ID'
+        email: 'Email'
+        sign_in_count: Sign in count
+        current_sign_in_at: Current sign in at
+        last_sign_in_at: Last sign in at
+        current_sign_in_ip: Current sign in ip
+        last_sign_in_ip: Last sign in ip
+        created_at: Created At
+        auth_token: Auth Token
+        role: 'Role(normal, designer, guest)'
+        login: 'Email/Phone'
+        password: 'Password'
+      order:
+        order_no: Order No
+        user: User
+        aasm_state: Order State
+        created_at: Create At
+        price: Price
+        currency: Currency
+        payment_type: Payment Type
+        bank: 'Bank'
+        bank_code: 'Bank code'
+        bank_account: 'Bank Account'
+        pay_account: 'Pay Account'
+        pay_expired: 'Expired at'
+        payment_id: 'PayPal Payment ID'
+        payment_nuandao_b2b: 'Nuandao B2B'
+        payment_taobao_b2c: 'TaoBao B2C'
+        payment_tianmao_b2c: 'TianMao B2C'
+        payment_paypal: PayPal
+        "payment_neweb/atm": 'ATM 轉帳'
+        "payment_neweb_atm": 'ATM 轉帳'
+        "payment_neweb/mmk": 超商繳費
+        "payment_neweb_mmk": 超商繳費
+        "payment_neweb/alipay": Alipay
+        "payment_neweb_alipay": Alipay
+        "payment_neweb_mpp": Credit Card
+        payment_cash_on_delivery: 'Cash on Delivery'
+        payment_stripe: Credit Card  #非台灣地區的Credit Card是由Stripe負責，台灣是藍星
+        payment_pingpp_alipay: 'Ping++ Alipay'
+        payment_pingpp_alipay_wap: 'Ping++ Alipay'
+        payment_pingpp_wx: 'Ping++ WeChat'
+        payment_pingpp_upacp: 'Ping++ Union Mobile Pay'
+        payment_pingpp_upacp_wap: 'Ping++ Union Mobile Pay'
+        payment_pingpp_bfb: 'Ping++ Baidu Wallet'
+        payment_pingpp_alipay_qr: 'Ping++ Alipay Qr'
+        payment_redeem: 'Redeem'
+        packaging_state:
+          package_ongoing: 'Not Packaged'
+          part_packaged: 'Part Packaged'
+          all_packaged: 'All Packaged'
+        shipping_state:
+          shipping_ongoing: 'Not Shipping'
+          part_shipping: 'Part Shipping'
+          all_shipping: 'All Shipping'
+
+      billing_profile: &attributes_billing_profile
+        id: 'ID'
+        address: Address
+        city: City
+        name: Name
+        phone: Mobile
+        state: State / Province
+        zip_code: Zip Code
+        country: Region
+        address_name: Address Name
+        email: Email address
+        shipping_way_standard: STANDARD (10-15 business day)
+        shipping_way_express: EXPRESS (7-10 business day)
+        shipping_way_cash_on_delivery: 貨到付款
+      address_info:
+        <<: *attributes_billing_profile
+      order_item:
+        quantity: Quantity
+        itemable_id: Item Id
+      work:
+        work_type:
+          is_private: Private
+          is_public: Public
+          redeem: Redeem Work
+        description: Description
+        model: Model
+        cover_image: Cover Image
+        finished: Finished
+        order_image: Order Image
+        feature: Feature
+      design:
+        material: "Upload"
+        user: "Designer"
+        name: "Name"
+        description: "Description"
+      print_item:
+        aasm_state:
+          pending: Pending
+          uploading: Uploading
+          printed: Printed
+          sublimated: Sublimated
+          onboard: Onboard
+      collection:
+        name: Name
+      print_history:
+        print_type: RePrint Type
+        reason: RePrint Reason
+      product_category:
+        tag_ids: Tag
+      product_model:
+        tag_ids: Tag
+      promotion:
+        name: Name
+        description: Description
+        type: Type
+        targets: Target
+        rule: Rule
+        begins_at: Begin_at
+        ends_at: End_at
+        aasm_state:
+          pending: Pending
+          ready: Ready
+          started: Started
+          ended: Ended
+          stopped: Stopped
+        change_price_event:
+          aasm_state/pending: Pending
+          aasm_state/processing: Processing
+          aasm_state/completed: Completed
+          aasm_state/failed: Failed
+  ransack:
+    asc: "ASC"
+    desc: "DESC"
+    predicates:
+      cont: "Contain"
+      not_cont: "Not Contain"
+      start: "Start with"
+      end: "End with"
+      gt: "Greater than"
+      gteq: "Greater or equal to"
+      lt: "Less than"
+      lteq: "Less or equal to"
+      eq: "Equal"
+      matches: "Matches"
+      true: "Be True"
+      false: "Be False"
+      present: 'Should not be empty!'
+      null: 'Null'
+  work:
+    work_type:
+      is_private: Private
+      is_public: Public
+  order:
+    state:
+      pending: Pending
+      waiting_for_payment: Pending
+      paid: Paid
+      canceled: Canceled
+      packaged: Packaged
+      shipping: Shipping
+      refunded: Refunded
+      part_refunded: PartRefunded
+    work_state:
+      ongoing: OnGoing
+      working: Working
+      finish: Finish
+    invoice_state:
+      invoice_not_upload: Invoice Not Upload
+      invoice_ready_upload: Invoice Ready Upload
+      invoice_uploading: Invoice Uploading
+      invoice_upload_error: Invoice Upload Error
+      invoice_uploaded: Invoice Uploaded
+      invoice_finish: Invoice Finish
+      invoice_free: Invoice Free
+    payment:
+      nuandao_b2b: Nuandao
+      paypal: PayPal
+      cash_on_delivery: Cash On Delivery
+    show:
+      work_product: Work/Product
+      quantty_price: Quantity x Special price
+      quantty_original_price: Quantity x Price
+      total: Special Price Total
+      original_total: Price Total
+      item_discount: Discount
+      total: "Total"
+      delivery: "Delivery"
+      work_state: "Work State"
+      deliver_local: "Local"
+      deliver_shanghai: "Shanghai"
+      deliver_taiwan: Taiwan
+  adjustment:
+    description:
+      admin:
+        manual: 'Customer Service'
+      default:
+        apply: 'In Promotion'
+        fallback: 'Promotion Had Ended'
+        manual: 'Customer Service'
+        supply: 'Promotion Started'
+      promotion:
+        apply: 'In Promotion'
+        fallback: 'Promotion Had Ended'
+        supply: 'Promotion Started'
+  share:
+    facebook_fan_page: https://www.facebook.com/hicommandp
+  delivery:
+    made_from_taiwan: 'Made in Taiwan'
+    made_from_shanghai: Made in Shanghai
+    made_from_factory: "Made in %{factory_name}"
+  not_found_error: "Not found"
+  brand:
+    name: commandp
+  redeem:
+    title: 'Event'
+    start_redeem: 'Start'
+    input_code: 'Please input code'
+    verify: 'Verify'
+    verify_failed: 'Redeem Code error, Please try again!'
+    event_description: 'Description'
+    print: 'Pirnt'
+    success: 'Success!'
+    noted: 'Noted'
+    shipping_info:
+      title: 'Create Shipping Info'
+      info: 'Shipping Info'
+      name: 'Name'
+      phone: 'Phone'
+      phone_placeholder: '186 0000 0000'
+      state_placeholder: 'State'
+      email: 'Email'
+      country: 'Country'
+      state: 'State'
+      address: 'Addrss'
+      zip: 'ZIP Code'
+      confirm: 'Confirm'
+    editor:
+      redeem_button: 'Next'
+  about:
+    title: Custom iPhone Cases, Skins, Personalized Gifts, and more
+    description: commandp is an app letting you make phone photos into iPhone cases, custom stickers, photo books and hundreds of products in 30 secs.
+    page-title: Print Your Mind!
+    page-description: Thanks for visiting us! Come look under the hood and
+    page-description-emphase: "see what makes %{style}commandp%{style_close} tick."
+    page-description-emphase-2: "Via %{style}commandp%{style_close} App，30 seconds to complete，3 days to be available"
+    about: About Us
+    about-content-1: The growing collection picture of perfect moments in your smartphone is great for sharing on your favorite social networks but what if you wanted something more? commandp is a service that combines traditional print and customizations letting you easily transform cards, phone cases, or stickers into your personal canvas.
+    about-content-2: You just snapped a perfect photo of your friends, baby, or niece and want a lasting memory or turn it into the perfect gift?
+    about-content-3: Be creative and we’ll print it for you.
+    our-story: Our Story
+    our-story-content: The inspiration for commandp came from the print shortcut “⌘P” on the keyboard. It’s akin to the experience we provide; quick and convenient. We want to take the hassle out of print and give you the easiest way to be your creative self.
+    our-mission: Our Mission
+    our-mission-content: Our goal is to bring printing to the masses. We’ve concentrated the complicated technology and high prices of print into a fun experience so that anyone can enjoy affordable yet high quality print technology from the comfort of their smartphones.
+    our-product: Our Product
+    our-product-content-1: Our products are your products. We believe that the best user experience is to let the user decide what they want! With commandp, that picture perfect moment or your favorite image can become a daily reminder of a fond memory while protecting your smartphone, the perfect Christmas card to show off your new baby to the whole family, or a personalized gift perfect for any occasion.
+    our-product-content-2: Just create and we’ll handle the rest.
+    quick-look: Here is a quick look our work in progress commandp app.
+    job-inquirires: Job Inquiries
+    job-inquirires-content-1: commandp is always looking for talented individuals to join our team.
+    job-inquirires-content-2: Do you have a portfolio with some of your latest work? <br /> If so, send it along!
+    job-inquirires-content-3: Please email to
+    follow-us: Don’t forget to follow us!
+    job-opening: Careers
+  home:
+    title:  commandp | Affordable custom iPhone Cases, iPad Covers, Mugs, EasyCards and Art
+    description: Transform the photos on your favorite  into unique Custom products in 30 seconds with commandp.
+    page-title: commandp
+    page-title-2: prints your creativity!
+    promo-li1: Custom cases made easy
+    promo-li2: Buy beautiful designs from Shop
+    promo-li3: Shipped to your door
+    anounce: 2.24.2014 Lunch
+    download-apps: Android App Coming Soon!
+    coupon-title: NT$180 Coupon Code
+    coupon-description: Grab your early bird special!
+    coupon-description-2: "Create iPhone 6 Cases & Save NT$180 off now!"
+    email-placeholder: "Coupon Code: WELCOME6"
+    submit-btn: Submit
+    li1: Coupon code expires on 26th Oct., 2014.
+    li2: Coupon code only valid for first purchase.
+    li3: Coupon code cannot be transferred or resold.
+    li4: commandp reserves the right to terminate coupon code at anytime without further warning.
+    left-title: Custom Cases
+    left-description: commandp has referenced global leader standards to provide phone cases that fit perfectly and offer a high degree of protection. Aside from your customized design, you’ll barely know it’s there.
+    right-title: Custom Skin
+    right-description: Customize and be different using the specially treated glossy skins with a hardness of 3H and are super simple to apply!
+    sent-success: Successfully Submit! Thanks!
+  question:
+    li1: FAQ
+    li2: Contact Us
+    li3: Privacy Agreement
+    li4: User Agreement
+    li5: Order Status
+    help: Help
+    content1: We’re here to help!
+    content2: Can't find what you're looking for? Contact our customer support team.
+    contact_us: Contact Us
+  simple_form:
+    labels:
+      zendesk_service:
+        username: User name
+        email: E-mail
+        category: Category
+        subject: Subject
+        description: Description
+        attachments: Attachments
+      reception:
+        state: Status
+        serial: Shelve Number
+        description: Description
+      promotion:
+        name: Name
+        description: Description
+        type: Type
+        rule: 規則
+        begins_at: Begins At
+        ends_at: Ends At
+        unlimited: Unlimited Duration
+      rules:
+        condition: Condition Type
+        threshold_id: 'Choose Price'
+        designer_ids: 'Choose Designer'
+        product_model_ids: 'Choose Product Model'
+        product_category_ids: 'Choose Product Category'
+        work_gids: 'Choose Redeem Product'
+        bdevent_id: 'Choose Bdevent'
+        quantity: 'Quantity of Condition'
+      rule_parameters:
+        discount_type: Forumla Type
+        price_tier_id: Price Tier in Formula
+        percentage: Percentage
+    options:
+      reception:
+        state:
+          received_on_temp_shelf: 'Recevied and Qualified'
+          received_only: 'Received Only'
+      rules:
+        condition:
+          threshold: 'Threshold on Order Price'
+          include_designers: 'Assigned Designers'
+          include_product_models: 'Assigned Product Models'
+          include_works: 'Assigned Redeem Works'
+          include_designers_models: 'Assigned Designer and Product Model'
+          include_product_categories: 'Assigned Product Categories'
+          include_bdevent: 'Assigned Bdevent'
+          include_free_shipping_coupon: 'Used a Free Shipping Coupon'
+      rule_parameters:
+        discount_type:
+          fixed: 'Fixed Deduction on Price'
+          percentage: 'Fixed Percentage'
+          pay: 'Fixed Selling Price'
+    hints:
+      zendesk_service:
+        category: Please select the best category for your ticket.
+        description: Please enter the details of your request.
+        attachments: Add file or drop files here
+    placeholders:
+      billing_info: &placeholders_billing_info
+        name: Name
+        email: commandp@gmail.com
+        country: Select region
+        phone: +886 0910 000 123
+      shipping_info:
+        <<: *placeholders_billing_info
+    social_network:
+      title: Connect with a social network
+      qq: QQ
+      weibo: Weibo
+  support:
+    categories:
+      product: Product
+      create_your_own: Create Your Own
+      billing: Billing
+      shipping: Shipping
+      ordering: Ordering
+      artist_information: Artist Information
+  career:
+    title: Join commandp Team | Careers
+    description: "We\'re looking for talented individuals to join the commandp team. We have open roles in our office in Tawian. If you have the passion and vision, please feel free to contact us!"
+  helpers:
+    label:
+      order[shipping_info]:
+        <<: *attributes_billing_profile
+      order[billing_info]:
+        <<: *attributes_billing_profile
+      shipping_info:
+        <<: *attributes_billing_profile
+      billing_info:
+        <<: *attributes_billing_profile
+      address_info:
+        <<: *attributes_billing_profile
+      order_status_form:
+        order_id: Order ID
+    submit:
+      zendesk_form:
+        create: Submit
+  errors:
+    address_info_list: Please select a address.
+    stripe:
+      not_paid: "This charge has not been paid correctly, please check or contact us!"
+    shipping_way_empty: "Shipping way can\'t be nil"
+    order_items_empty: "Order Items can\'t be nil"
+    parameter_invalid: "Invalid parameter %{caused_by}"
+    same_products_in_promotions: "Product %{names} have already been promoted"
+  email:
+    send_coupon:
+      subject: 'Entet commandp coupon code, then you get NT 300 discount'
+  shipping_info:
+    shipping_way:
+      standard: Standard Shipping (10-12 business days)
+      express: Express (7-10 business days)
+      cash_on_delivery: Cash On Delivery
+      global:
+        standard: Standard Shipping (10-12 business days)
+        express: Express (7-10 business days)
+        cash_on_delivery: Cash On Delivery
+      china:
+        standard: Standard
+        express: S.F. Express
+        cash_on_delivery: Cash On Delivery
+  text:
+    free: Free
+  will_paginate:
+    previous_label: "Prev"
+    next_label: "Next"
+    page_gap: "&hellip;"
+  address_btns:
+    add: Add
+    cancel: Cancel
+  notification:
+    status:
+      'true': Sent
+      'false': Unsent
+  wishlist:
+    json:
+      message:
+        can_add: "It can be added!"
+        can_not_add: "It has been added!"
+        not_login: "User does not login yet!"
+  newsletter:
+    state:
+      unsent: Unsent
+      sending: Sending
+      sended: Sended
+    sent: Sent Success
+  questionnaire:
+    join: Join

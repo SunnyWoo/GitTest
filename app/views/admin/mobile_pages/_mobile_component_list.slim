@@ -1,0 +1,31 @@
+= link_to '#create_mobile_component', data: {toggle: 'modal' }, class: 'btn btn-primary btn-sm' do
+  = fa_icon 'plus'
+  = ' 新增元件'
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th
+      th ID
+      th 元件類型
+      th section_title
+      th 順序
+      th 操作
+  tbody.sortable
+    - mobile_page.mobile_components.each do |mobile_component|
+      tr data=({id: mobile_component.id, url: update_position_admin_mobile_page_mobile_component_path(mobile_page, mobile_component)})
+        td
+          span.btn.btn-success.btn-xs
+            = fa_icon 'arrows'
+        td= mobile_component.id
+        td= mobile_component.key
+        td= mobile_component.contents.section_title
+        td= mobile_component.position
+        td
+          = link_to 'Edit',
+                    edit_admin_mobile_page_mobile_component_path(mobile_page, mobile_component),
+                    class: 'btn btn-sm'
+          = link_to 'Destroy',
+                    admin_mobile_page_mobile_component_path(mobile_page, mobile_component),
+                    class: 'btn btn-sm btn-danger', remote: true,
+                    data: { method: 'delete', confirm: 'Are you sure?' }
+

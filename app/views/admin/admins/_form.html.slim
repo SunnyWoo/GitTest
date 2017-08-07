@@ -1,0 +1,6 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.input :email, label: t('admins.attributes.email')
+  = f.input :password, label: t('admins.attributes.password')
+  = f.input :password_confirmation, label: t('admins.attributes.password_confirm')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

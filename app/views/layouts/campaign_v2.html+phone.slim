@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"
+    meta content="pMJfuoCx4SCeUutzlzNdfkNnUmq_rB77szI6VEvyXfo" name="google-site-verification"
+    - render_apple_itunes_app_meta
+
+    = display_meta_tags
+    = canonical_tag
+    = favicon_link_tag 'favicon.png'
+    = render 'shared/commandp_variable'
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+
+    = csrf_meta_tags
+    - if !Rails.env.production?
+      meta content="noindex" name="robot"
+    = javascript_include_tag "https://js.stripe.com/v1/", "application", "data-turbolinks-track" => false
+    = javascript_include_tag "//d17m68fovwmgxj.cloudfront.net/js/appier-track-v1.7.js"
+    = render 'shared/ua'
+    = render 'shared/appier_track'
+    = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
+
+  body class="mobile mobilev2 #{controller_name} #{action_name} locale-#{I18n.locale}"
+
+    .main-container
+      .fixed-top-placeholder
+      #main.main
+        = yield
+        #m-layout_footer
+      footer#m-footer
+        .social.m-social
+          ul
+            li= link_to 'Facebook', "#{t('share.facebook_fan_page')}", class: 'social-icon icons-fb_normal share_fb_feed', target: '_blank'
+            li= link_to 'Twitter', 'https://twitter.com/share', class: 'social-icon icons-twitter_normal twitter-share-button', data: { related: 'twitterdev', count: 'none' }
+            li= link_to 'Instagram', 'https://www.instagram.com/commandptw/', class: 'social-icon icons-instagram_normal', target: '_blank'
+        p.cpoyright
+          | Copyright © 2015, commandp Inc.
+          br
+          | All rights reserved.
+      = render 'shared/google_remarketing'
+      = render 'shared/alexa'
+      = render 'shared/tag_manager' if Region.global?
+
+    = render 'campaign/fixed_top'

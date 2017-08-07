@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    = display_meta_tags
+    = canonical_tag
+    = favicon_link_tag 'favicon.png'
+    = render 'shared/commandp_variable'
+    = stylesheet_link_tag 'editor', media: "all", "data-turbolinks-track" => true
+
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    meta content="pMJfuoCx4SCeUutzlzNdfkNnUmq_rB77szI6VEvyXfo" name="google-site-verification" /
+    - if Region.china?
+      script src='//cdn.bootcss.com/jquery/1.11.1/jquery.min.js'
+    - else
+      script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
+    = csrf_meta_tags
+    - if !Rails.env.production?
+      meta content="noindex" name="robot" /
+
+  body class="#{controller_name} #{action_name} locale-#{I18n.locale}"
+    = render 'shared/page_loading'
+    = render 'shared/search_block'
+    = render 'shared/header'
+
+    .main
+      #overlays
+        = render 'overlays'
+
+      #chooseObj.hide.custom-scrollbar.panel-box
+        = render 'panel_components'
+
+      #linePanel.hide.custom-scrollbar.panel-box
+        = render 'lists_line'
+
+      #shapePanel.hide.custom-scrollbar.panel-box
+        = render 'lists_shape'
+
+      #stickerPanel.hide.custom-scrollbar.panel-box
+        = render 'lists_sticker'
+
+      #texturePanel.hide.custom-scrollbar.panel-box
+        = render 'lists_texture'
+
+      #typographyPanel.hide.custom-scrollbar.panel-box
+        = render 'lists_typography'
+
+      #framePanel.hide.custom-scrollbar.panel-box
+        = render 'lists_frame'
+
+      #setObj.hide.custom-scrollbar
+        = render 'panel_settings'
+
+      = yield
+
+    //modals
+    / = render 'upload_img'
+    = render 'upload_img_from_computer'
+
+  = javascript_include_tag 'editor', "data-turbolinks-track" => true
+  = render 'shared/alexa'

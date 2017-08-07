@@ -1,0 +1,222 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt]
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt]
+
+div
+  .m-announcement style='background-color: #f6f7f2;border-bottom: 1px #e5e5e5 solid;'
+    = @title
+  .camp_margin-top-33
+  - select_class = browser.ios? ? 'campaign-page-select-ios' : 'campaign-page-select'
+  select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+    - { info: '小編期許', product: '買設計', material: '找靈感' }.each do |key, val|
+      option.filter value=(key) = val
+
+  .campaign-page.text-center#info_page
+    div
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Tracy_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | Don't stop.Push Harder.
+        br
+        | Keep going.
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Tracy_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 行銷熟女，34歲 這輩子只想變瘦
+        br
+        br
+        | 目標：2016 徹底達成精實人生!
+        br
+        | 吃的健康，多喝水，多運動，聽好音樂，睡得好。當然平日的敷臉保養也不能少，喔！還有要把牆腳的那堆書讀完。
+    div
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Saier_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | WORK HARD.
+        br
+        | So you can SHOP HARDER.
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Saier_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 行銷小妹，28歲 購物狂
+        br
+        br
+        | 目標：把辛苦工作的成果投資在自己身上吧！
+        br
+        | 這不就是最愛自己的方式嗎？：）2016年有多努力工作就多用力的犒賞自己吧！
+    div
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Sara_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | Laugh. And the world
+        br
+        | will laugh with you.
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Sara_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 行政人員，24歲 愛吃下午茶
+        br
+        br
+        | 目標：HAPPY 2016~
+        br
+        | 揮別過去的不快，保持快樂愉悅的心來迎接2016年，相信自己保持快樂正面的心情，也能帶給身邊朋友快樂正面的能量。
+    div.hide
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Betty_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | Never give up
+        br
+        | on your dreams
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Betty_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 剛入社的小編，23歲 嫩嫩的
+        br
+        br
+        | 目標：抱持著夢想努力工作
+        br
+        | 新的一年要開始了，常常在工作忙碌中忘記自己的夢想，忘記小時候自己想要成為怎樣的大人，希望今年可以抱持著自己的夢想努力地工作！小時候的夢想就是當個有錢人啦～
+    div.hide
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Jean_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | GET OFF+
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Jean_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 物流專員，26歲 很想下班
+        br
+        br
+        | 目標：GET OFF + WHAT 由自己掌握
+        br
+        | GET OFF+上DUTY 讓我下班, 工作不是制約
+        br
+        | GET OFF+上ON 享樂, 時間是自己的
+        br
+        | GET OFF MY BACK 不讓任何事物打擾
+        br
+        | GET OFF THE GROUND 順利開始, 才會順利結束, 不花耗多餘時間
+        br
+        | GET OFF TO A FLYING START 好的開端, 期許新的一年就佔盡優勢
+    div.hide
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Vivian_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | Everything will be better
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Vivian_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 客服，30歲 早上都起不來
+        br
+        br
+        | 目標：2016會更好！
+        br
+        | 無論的2015是開心、感動或悲傷，我們都會往更好的地方邁進，覺得開心時就大聲地笑出來，哭過後品嘗自己最喜歡的甜點，疲累時就安穩的睡一覺吧，事情的發生皆有原因，但是我希望everything will be better，而且我相信著. . . . . .！
+    div.hide
+      .nyresolution_hr
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Kiwi_photo.png'
+      .mobile-v2-title2 style='margin: 30px 0 35px 0;'
+        | Reading is a basic tool
+        br
+        | in the living of a good life.
+      = image_tag 'campaign/2016/nyresolution/mobile/info/Kiwi_portrait.png'
+      .m-musicrun-desc style='margin-top: 25px;'
+        br
+        | 助手小精靈，20歲 半工半讀中
+        br
+        br
+        | 目標：養成讀書的好習慣！
+        br
+        | 2016年的新年期許是希望可以每個月至少讀一本書，閱讀是個好投資，穩賺不賠~多多閱讀有益無害，讓我們大家一起共勉之吧！
+    #nyresolution-see-more style='margin: 20px auto 40px auto;'
+      = image_tag 'campaign/2016/nyresolution/mobile/info/btn_1.png'
+
+    div style='background-color: #f9f6ee; padding: 50px 0;font-weight: bold;font-size: 25px;line-height: 35px;'
+      div
+      | 給自己
+      br
+      | 一個新年期許吧
+      div style='height: 25px;'
+      = link_to '#product', class: 'kv-button-shop-now' do
+        = image_tag 'campaign/2016/nyresolution/mobile/info/btn_2.png'
+
+    div style='margin: 50px auto;font-size: 17px;line-height: 23px;'
+        | 上傳你的新年期許至
+        br
+        | Instagram 並 #IWISHIPRINT
+        br
+        | 既可獲得 150 元購物卷
+        br
+        br
+        span style='font-weight: bold;font-size: 20px;' #IWISHIPRINT
+    = link_to 'https://www.instagram.com/commandptw/', target: :blank do
+      .nyresolution-ig-images
+        - if @ig_images && @ig_images.size > 0
+          - @ig_images.each do |src|
+            = image_tag src
+        - else
+          = image_tag 'campaign/2016/nyresolution/mobile/info/instagram_01.png'
+          = image_tag 'campaign/2016/nyresolution/mobile/info/instagram_02.png'
+          = image_tag 'campaign/2016/nyresolution/mobile/info/instagram_03.png'
+
+  .campaign-page#product_page
+    .products
+      .mobile-v2-title
+        | I Wish. I Print.
+        br
+        | 熱賣商品
+
+      - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+      select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+        - @category_names.each do |key, val|
+          option.filter value=(key) = val
+      .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+      - @category_products.each do |key, val|
+        .filted id=(key)
+          = render partial: 'editor/shared/work_mobilev2',
+                  collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+
+  .campaign-page#material_page
+    .products.happysummer
+      .mobile-v2-title style='font-weight: 400;'
+        | I Wish. I Print.
+        br
+        | 素材下載
+      .text-center.step-block4
+        .step-img = image_tag 'campaign/happysummer/images/icon-1-new.png', alt: @title, width: '60px'
+        .step-title 1. 選擇與下載素材
+        .step-desc 選擇您中意的圖案，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+      .text-center.step-block4
+        .step-img = image_tag 'campaign/happysummer/images/icon-2-new.png', alt: @title, width: '60px'
+        .step-title 2. 載入素材與製作
+        .step-desc 進入我印，並載入下載的素材，開始自己動手設計屬於自己的商品。
+      .text-center.step-block4
+        .step-img = image_tag 'campaign/happysummer/images/icon-3-new.png', alt: @title, width: '60px'
+        .step-title 3. 快速結帳，全球直送
+        .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+      .mobile-v2-title
+        | 選擇素材
+      - @previews.each_with_index do |name, i|
+        - download_url = "https://d2i5hifyddc647.cloudfront.net/campaign/2016/nyresolution/#{name}"
+        .product.material class=('hide' if i >= 5)
+          .product-mobile
+            = image_tag "campaign/2016/nyresolution/download_preview/#{name}", width: 288, heigth: 288, lazy: true
+            .product-desc
+              .product-name-v2
+
+            = link_to download_url, class: 'btn btn-default btn-happysummer', target: '_blank', data: { material: name, platform: 'Mobile' } do
+              | 下載素材
+            = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                  data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create?category",
+                          'ga-event-category' => "Campaign - #{@key} - Mobile",
+                          'ga-event-action' => 'Launch App',
+                          'ga-event-label' => "Create" }
+
+      .page.material
+        #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                      'ga-event-action' => 'click',
+                                                      'ga-event-label' => 'material see more'})
+          | 下一頁
+      .camp_margin-bottom-35

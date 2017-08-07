@@ -1,0 +1,209 @@
+/*
+  *= require normalize
+  *= require_self
+*/
+/* clearfix */
+/* line 10, ../stylesheets/theme.scss */
+.clearfix {
+  zoom: 1; }
+
+/* line 11, ../stylesheets/theme.scss */
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  font-size: 0; }
+
+/* line 13, ../stylesheets/theme.scss */
+body {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  position: relative; }
+
+/* line 17, ../stylesheets/theme.scss */
+.wrap {
+  width: 1100px;
+  margin: 0 auto; }
+
+/* line 22, ../stylesheets/theme.scss */
+.social {
+  width: 90px; }
+  /* line 24, ../stylesheets/theme.scss */
+  .social a {
+    float: left;
+    width: 38px;
+    height: 38px; }
+
+/* line 30, ../stylesheets/theme.scss */
+.footer-social {
+  margin: 0 auto;
+  width: 90px; }
+  /* line 33, ../stylesheets/theme.scss */
+  .footer-social a {
+    float: left;
+    width: 38px;
+    height: 38px; }
+
+/* line 39, ../stylesheets/theme.scss */
+.fb {
+  background: url('/images/web_fb_off.png?1476379220') no-repeat; }
+  /* line 41, ../stylesheets/theme.scss */
+  .fb:hover {
+    background: url('/images/web_fb_on.png?1476379220') no-repeat; }
+
+/* line 45, ../stylesheets/theme.scss */
+.twitter {
+  background: url('/images/web_twi_off.png?1476379220') no-repeat;
+  margin-left: 14px; }
+  /* line 48, ../stylesheets/theme.scss */
+  .twitter:hover {
+    background: url('/images/web_twi_on.png?1476379220') no-repeat; }
+
+/* line 52, ../stylesheets/theme.scss */
+.google {
+  background: url('/images/ico_google.png?1476379220') no-repeat; }
+
+/* line 57, ../stylesheets/theme.scss */
+.content .banner {
+  width: 1100px;
+  margin: 60px auto 0; }
+  /* line 60, ../stylesheets/theme.scss */
+  .content .banner img {
+    width: 352px;
+    margin: 7px; }
+/* line 66, ../stylesheets/theme.scss */
+.content .slogan {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 0 60px;
+  padding-top: 80px;
+  width: 1100px;
+  margin-bottom: 60px;
+  background: url('/images/bg_line.png?1476379220') center bottom no-repeat; }
+  /* line 74, ../stylesheets/theme.scss */
+  .content .slogan h2 {
+    color: #4da684;
+    font-size: 52px;
+    margin: 0 0 37px; }
+  /* line 79, ../stylesheets/theme.scss */
+  .content .slogan p {
+    color: #333;
+    font-size: 32px; }
+/* line 84, ../stylesheets/theme.scss */
+.content .sidebar, .content .main {
+  width: 520px;
+  color: #333;
+  float: left; }
+  /* line 88, ../stylesheets/theme.scss */
+  .content .sidebar h2, .content .main h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 30px;
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px; }
+  /* line 96, ../stylesheets/theme.scss */
+  .content .sidebar p, .content .main p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 20px; }
+  /* line 101, ../stylesheets/theme.scss */
+  .content .sidebar .image, .content .main .image {
+    margin: 0 0 100px;
+    width: 100%; }
+  /* line 105, ../stylesheets/theme.scss */
+  .content .sidebar .grid, .content .main .grid {
+    background-color: #ebebeb;
+    width: 520px;
+    height: 390px; }
+    /* line 109, ../stylesheets/theme.scss */
+    .content .sidebar .grid img, .content .main .grid img {
+      float: left;
+      width: 170px; }
+/* line 115, ../stylesheets/theme.scss */
+.content .main {
+  margin-left: 60px; }
+
+/* line 119, ../stylesheets/theme.scss */
+.about {
+  text-align: center;
+  color: #333;
+  padding: 60px 0 0 0; }
+  /* line 123, ../stylesheets/theme.scss */
+  .about .social {
+    margin: 0 auto; }
+  /* line 126, ../stylesheets/theme.scss */
+  .about h4 {
+    font-size: 32px;
+    font-style: italic;
+    margin: 0 0 40px; }
+  /* line 131, ../stylesheets/theme.scss */
+  .about section {
+    padding: 60px 0;
+    background: url('/images/bg_line.png?1476379220') center top no-repeat; }
+    /* line 134, ../stylesheets/theme.scss */
+    .about section h3 {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0 0 40px; }
+    /* line 139, ../stylesheets/theme.scss */
+    .about section p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 0 20px; }
+      /* line 143, ../stylesheets/theme.scss */
+      .about section p a {
+        color: #4da684;
+        text-decoration: none; }
+
+/* line 150, ../stylesheets/theme.scss */
+.footer {
+  padding: 90px 0 40px 0;
+  text-align: center; }
+  /* line 153, ../stylesheets/theme.scss */
+  .footer .logo {
+    width: 50px;
+    height: 26px;
+    background: url('/images/logo_grey.png?1476379220') no-repeat;
+    margin: 0 auto 20px; }
+  /* line 159, ../stylesheets/theme.scss */
+  .footer p {
+    font-size: 13px;
+    color: #ccc;
+    font-family: 'Helvetica'; }
+  /* line 164, ../stylesheets/theme.scss */
+  .footer a {
+    color: #ccc;
+    text-decoration: underline; }
+    /* line 167, ../stylesheets/theme.scss */
+    .footer a:hover {
+      color: #4da684; }
+  /* line 171, ../stylesheets/theme.scss */
+  .footer .fb-arapper {
+    width: 1100px; }
+
+/* line 176, ../stylesheets/theme.scss */
+.web-font {
+  font-family: 'Raleway', sans-serif; }
+
+/* line 180, ../stylesheets/theme.scss */
+.italic {
+  font-style: italic; }
+
+/* line 181, ../stylesheets/theme.scss */
+.letter-spacing {
+  letter-spacing: 1px; }
+
+/* line 182, ../stylesheets/theme.scss */
+.margin-top {
+  margin-top: 30px; }
+
+/* line 184, ../stylesheets/theme.scss */
+.fb-wrapper {
+  margin-bottom: 60px; }
+
+/* line 188, ../stylesheets/theme.scss */
+.join-us {
+  width: 650px;
+  margin: 0 auto; }

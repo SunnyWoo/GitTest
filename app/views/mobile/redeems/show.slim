@@ -1,0 +1,71 @@
+/ back button
+.top-header
+  .leftnavs
+    .back-icon.simple-back
+      = image_tag('campaign/mobilev2/back.png')
+.container
+  .coupon_desc
+    = image_tag @bdevent.coupon_desc.url
+  #redeem-valid-error-ticker.redeem-ticker.hide
+    | #{I18n.t('redeem.verify_failed')}
+  .bottom-footer data-success='hide'
+    form.redeem-coupon-form
+      .form-group
+        #redeem-code
+          input type='search' name='redeem_code' placeholder=I18n.t('redeem.input_code') id='redeem_input'
+          input type='hidden' name='bdevent_id' id='bdevent_id' value=@bdevent.id
+          .input-group-btn
+            button.redeem-coupon-valide.disabled disabled='disabled'
+              span #{I18n.t('redeem.verify')}
+              = image_tag('mobile/redeem/img_column_loading@3x.png', class: 'loading_image hide')
+
+#show.redeem-works-preview-container
+  .top-header.top-header-static
+    .leftnavs
+      .back-icon.redeem-preview-back
+        = image_tag('campaign/mobilev2/back.png')
+    .logo = @title
+  .scrollable-outer.container
+    - if @bdevent.ticker.present?
+      .redeem-ticker = @bdevent.ticker
+    - kv = @bdevent.kv_images.first
+    - if kv
+      .redeem-kv
+        .redeem-path = link_to I18n.t('redeem.event_description'), '#desc'
+        = image_tag kv.file.url
+
+    .event-list data-background-image=("url('#{@bdevent.background.url}')" if @bdevent.background.url)
+      - @bdevent.bdevent_products.each do |bdevent_product|
+        .event-list-half
+          .event-block
+            = link_to mobile_redeem_works_path(model_key: bdevent_product.product.key,
+                                               access_token: session[:access_token]), method: :post do
+              .event-banner
+                  = image_tag bdevent_product.product_image.try(:url)
+              .event-info
+                .event-title
+                  = bdevent_product.product_title
+                .event-goto
+                  .btn
+                    | #{I18n.t('redeem.print')}
+                    = image_tag 'mobile/redeem/img_exchange_column_half_enter.png'
+
+      - @bdevent.bdevent_works.each do |bdevent_work|
+        - work = bdevent_work.work
+        .event-list-half
+          .event-block
+            = link_to work_mobile_redeems_path(work_gid: work.to_sgid_param, work_title: bdevent_work.work_title) do
+              .event-banner
+                = image_tag bdevent_work.work_image.url
+              .event-info
+                .event-title
+                  = bdevent_work.work_title
+                .event-goto
+                  .btn
+                    | #{I18n.t('redeem.start_redeem')}
+
+    #desc.event-desc
+      .event-desc-title
+        | #{I18n.t('redeem.event_description')}
+      .event-desc-content
+        = @bdevent.desc.html_safe

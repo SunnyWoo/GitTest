@@ -1,0 +1,74 @@
+.content
+  .banner
+    #banner.clearfix
+      = image_tag('banner1.png')
+      = image_tag('banner2.png')
+      = image_tag('banner3.png')
+      = image_tag('banner4.png')
+      = image_tag('banner5.png')
+      = image_tag('banner6.png')
+      = image_tag('banner7.png')
+      = image_tag('banner8.png')
+      = image_tag('banner9.png')
+  .slogan
+    h2 class=("#{font_for_en} italic letter-spacing") = t "about.page-title"
+    p class=("#{font_for_en} italic letter-spacing")
+      = raw t "about.page-description", style: '<span style="color: #4da684">', style_close: '</span>'
+      br= raw t "about.page-description-emphase", style: '<span style="color: #4da684">', style_close: '</span>'
+      = raw t 'about.page-description-emphase-2', style: '<span style="color: #4da684">', style_close: '</span>' if I18n.locale == :'zh-TW'
+  .wrap.clearfix
+    .sidebar
+      h2= edit_translator "about.about"
+      p
+        = edit_translator "about.about-content-1"
+      p
+        = edit_translator "about.about-content-2"
+      p
+        = edit_translator "about.about-content-3"
+      = image_tag('image1.jpg', class: 'image')
+      h2.margin-top= edit_translator "about.our-mission"
+      p style=our_mission_margin
+        = edit_translator "about.our-mission-content"
+      = image_tag('image3.jpg', class: 'image', style: 'margin-bottom: 0;')
+    .main
+      h2.margin-top= edit_translator "about.our-story"
+      p style=our_story_margin
+        = edit_translator "about.our-story-content"
+      = image_tag('image2.jpg', class: 'image')
+      h2.margin-top= edit_translator "about.our-product"
+      p
+        = edit_translator "about.our-product-content-1"
+      p
+        = edit_translator "about.our-product-content-2"
+      p style=("margin-bottom: 23px;")
+        = edit_translator "about.quick-look"
+      .grid.clearfix
+        a.fancybox href=image_url('app_promo_100_01.jpg') rel="gallery"
+          = image_tag('app_thumb_01.jpg', style: 'margin-top: 20px; margin-bottom: 5px;')
+        a.fancybox href=image_url('app_promo_100_02.jpg') rel="gallery"
+          = image_tag('app_thumb_02.jpg', style: 'margin: 5px; margin-top: 20px; margin-bottom: 5px;')
+        a.fancybox href=image_url('app_promo_100_03.jpg') rel="gallery"
+          = image_tag('app_thumb_03.jpg', style: 'margin-top: 20px; margin-bottom: 5px;')
+        a.fancybox href=image_url('app_promo_100_04.jpg') rel="gallery"
+          = image_tag('app_thumb_04.jpg', style: 'margin-bottom: 10px;')
+        a.fancybox href=image_url('app_promo_100_05.jpg') rel="gallery"
+          = image_tag('app_thumb_05.jpg', style: 'margin: 5px; margin-top: 0;')
+        a.fancybox href=image_url('app_promo_100_06.jpg') rel="gallery"
+          = image_tag('app_thumb_06.jpg', style: 'margin-bottom: 10px;')
+.about
+  = render 'shared/facebook_like_box'
+  section.join-us
+    h3 class=font_for_en = t "about.job-inquirires"
+    - if I18n.locale == :en
+      p
+        = t "about.job-inquirires-content-1"
+        br
+          = raw t "about.job-inquirires-content-2"
+      p
+        = link_to t("about.job-opening"), careers_path, class: 'btn-q btn-q-default'
+    - else
+      p
+        = edit_translator "about.job-inquirires-content-1"
+      p
+        = raw t "about.job-inquirires-content-2"
+      = link_to t("about.job-opening"), careers_path, class: 'btn-q btn-q-default'

@@ -1,0 +1,9 @@
+= f.simple_fields_for "mask_#{mask.object_id}".to_sym, mask do |mask|
+  tr
+    td= mask.input :material_name, label: t('work_templates.attributes.material_name')
+    td= mask.input :scale_x, as: :integer, label: t('work_templates.attributes.scale_x')
+    td= mask.input :scale_y, as: :integer, label: t('work_templates.attributes.scale_y')
+    td= mask.input :position_x, as: :integer, label: t('work_templates.attributes.position_x')
+    td= mask.input :position_y, as: :integer, label: t('work_templates.attributes.position_y')
+    td= mask.input :orientation, label: t('work_templates.attributes.orientation')
+    td= link_to "删除", '#', class: "remove_mask_fields"

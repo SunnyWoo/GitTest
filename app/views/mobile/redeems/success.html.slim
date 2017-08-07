@@ -1,0 +1,6 @@
+.container.event-success
+  = image_tag 'mobile/redeem/img_checkout_success.png'
+  .success-wording
+    | #{I18n.t('redeem.success')}
+
+= link_to I18n.t('redeem.noted'), '#exit', class: 'bottom-footer'

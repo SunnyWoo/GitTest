@@ -1,0 +1,163 @@
+zh-CN:
+  store:
+    show:
+      no_work_message: 商品建构中
+    product_template:
+      sidebar_name: '設計模版'
+    layout:
+      sidebar_name: '商店排版設定'
+    design:
+      page_title: '編輯模版設計: %{name}'
+      forms:
+        photo_only: '圖片模版'
+        text_only: '文字模版'
+        text_and_photo: '圖片文字模版'
+    preview:
+      page_title: '预览模版: %{name}'
+      amount: 数量
+      cart: 购物车
+      footer:
+        download: 下载作品
+        cart: 加入购物车
+      tab:
+        desciption: 设计介绍
+        spec: 产品规格
+        information: 商家资讯
+        description_image_title: 规格介绍
+    forms:
+      photo_only:
+        errors:
+          template_image_dimensions: '模版圖片的長寬與商品類型的長寬誤差必須在5pxs以內, 建議大小%{suggest}'
+      text_only:
+        hint:
+          color: '僅接受Hex網頁色彩碼'
+    shared:
+      update_success: '更新成功'
+      create_success: '建立成功'
+    custom_product: 开始印
+    store_product: 商城
+    sorting:
+      newest: 最新
+      price: 价格
+    support:
+      phone: '联系电话：021-54726621'
+      business_time: '周一至周五：10:00 - 19:00'
+
+    editor:
+      errors:
+        reach_text_width_limit: 该文字会超过预定区域
+        upload_image_failed: 作品上传失败
+      select_photo: 选取照片
+      change_text: 更改文字
+      preview: 预览
+      text_input_placeholder: 输入文字
+      quality_text: 印刷品质
+
+    order:
+      next: 下一步
+      order_no: 订单编号
+      billing_info_phone: 订购人手机号码
+      payment: 付款方式
+      pay_price: 支付金额
+      shipping_info_name: 收件人
+      shipping_info_full_address: 收货地址
+      order_subtotal: 总金额
+      discount: 优惠折扣
+      shipping_fee: 运费
+      order_price: 实际金额(含运费)
+      other_order: 查看其他订单
+      enter_again: 请重新输入
+
+    error:
+      order_not_found: 啊! 查无订单!
+    sidebar_menu:
+      download: 下载作品
+      share: 分享
+      search: 订单查询
+      cart: 购物车
+      contact: 联络客服
+
+    share:
+      share_content_placeholder: 说些什么....
+      share_button: 分享
+      share_hint: 分享你的作品到：
+      copy_link: 拷贝连结
+      cancel: 取消
+      lets_make_it_now: 也来做一个！
+      other_works: 看看別人的作品
+      other_templates: 更多样式
+      back_index: 回首页
+
+    download:
+      saveImage: 长按储存图片
+
+    seo:
+      store_title: '%{name}'
+      store_desc: '%{name} | 一站式服务轻松实现你的开店梦，提供个性化商品订制以及商城模式，搭配完整的客服、金流、物流服务，让你的商品＆设计快速销售至全球各地。'
+      contact_us_title: '联系我们'
+      contact_us_desc: '任何关于商品的相关问题，均可与我们联系，我们在此为你提供协助。'
+      share_title: '%{name} 一页分享'
+      share_desc: '%{name} 必定成为目光焦点的完美作品。立即分享获得更多注目，让你的设计成为热门讨论话题。'
+      download_title: '%{name} 一页下载'
+      download_desc: '%{name} 別让完美作品只存在你的记忆中。一件长按立即下载储存。'
+      editor_title: '%{name} 一页客制'
+      editor_desc: '必定成为目光焦点的完美作品。立即分享获得更多注目，让你的设计成为热门讨论话题。'
+      preview_title: '订购预览'
+      preview_desc: '立即预览订购商品详情，一目了然所有细节'
+      order_search_title: '订单查询'
+      order_search_desc: '快速查询你的订单资料及记录，随时掌握订单进度。'
+    index:
+      kv_title: 免费为您搭建个性化页店
+      kv_desc: 将你的创意转变成收益，省心省力
+      kv_btn: 完全免费，立刻开店
+      section_1_title: 将创意无限延伸
+      section_1_desc: 集结你的设计，实现创业梦，创造更多价值。透过噗印提供的开店服务，与全世界分享你的创意与设计，再次享受创业的乐趣。
+      section_1_list:
+        - text: 免费串接DIY编辑器
+        - text: 完整供应链提供-从生产到发货再到售后
+        - text: 无需资金投入，每月结算利润
+      section_2_title: 服務 6 大核心
+      section_2_desc: 实现多样少量客制化生产，无需承担起订量及库存压力，提供便利的DIY编辑器及行销工具，快速开启线上 H5 商城。
+      section_2_list:
+        - title: 独家客制化平台
+          image: store_landing_page/section_2_1.png
+          desc:
+            - item: 客製化影像編輯器技術
+            - item: 提供創意延伸互動設計
+            - item: 隨時上架各式設計版型
+        - title: 专业客服团队
+          image: store_landing_page/section_2_2.png
+          desc:
+            - item: 从售前到售后一条龙支援
+            - item: 随时提供商户技术解答
+        - title: 安全电子支付
+          image: store_landing_page/section_2_3.png
+          desc:
+            - item: 电子支付快捷便利
+            - item: 第三方金流保障买卖安全
+            - item: 多国金流一次串接
+        - title: 领先的客制化生产
+          image: store_landing_page/section_2_4.png
+          desc:
+            - item: 无需起订量
+            - item: 无需打样费
+            - item: 每件都可完全不同
+            - item: 大批量客制化生产
+        - title: 仓存及物流
+          image: store_landing_page/section_2_5.png
+          desc:
+            - item: 无需商户备货存货
+            - item: 统一由噗印仓库代发
+            - item: 承诺时效内发货
+            - item: 与各地物流合作全球送达
+        - title: 销售信息系统
+          image: store_landing_page/section_2_6.png
+          desc:
+            - item: 生产到发货资料一手掌握
+            - item: 即时表单随时追踪
+      section_3_title: 只需三步，立刻开店
+      section_3_desc: 要的只是你的设计，你的想法，你的创意，其他的都由我们来!
+      section_3_1_text: 一键注册，20秒即可完成
+      section_3_2_text: 选择商品
+      section_3_3_text: 创造价值
+      know_more_btn_text: 了解更多

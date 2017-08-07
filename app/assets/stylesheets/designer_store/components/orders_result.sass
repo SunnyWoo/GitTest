@@ -1,0 +1,66 @@
+.orderRow
+  @include rem(height, 50px)
+  @include rem(padding, 0 15px)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background-color: $c-bg-orderRow
+  border-bottom: 1px solid $c-border
+  &:first-of-type
+    border-top: 1px solid $c-border
+.orderRow-item--label
+  @include rem(font-size, $f-size-content)
+  color: $c-text-implicit
+.orderRow-item--highlight
+  color: $c-text-hightlight
+.orderRow-item--highlightTotal
+  color: $c-text-content
+
+.orderRowAddress
+  @include rem(padding, 15px)
+  @include rem(font-size, $f-size-content)
+  background-color: $c-bg-orderRow
+  border-bottom: 1px solid $c-border
+.orderRowAddress-item
+  &:not(:last-of-type)
+    margin-bottom: 5px
+    @include rem(margin-bottom, 5px)
+.orderRowAddress-item--address
+  @include rem(font-size, $f-size-hint)
+  color: $c-text-implicit
+
+.orderRow--intervalGap
+  @include rem(height, 15px)
+  border-bottom: 1px solid $c-border
+
+.orderRowProductInfo
+  @include rem(padding, 15px)
+  @include rem(font-size, $f-size-hint)
+  display: flex
+  background-color: $c-bg-orderRow
+  border-bottom: 1px solid $c-border
+.orderRowProductInfo-item--image
+  @include rem(width, 100px)
+  @include rem(height, 100px)
+  background-color: $c-bg-disabled
+  overflow: hidden
+  .img
+    width: 100%
+.orderRowProductInfo-item--descritpion
+  display: flex
+  @include rem(margin-left, 15px)
+  flex-direction: column
+  justify-content: space-between
+  .list--originalPrice
+    color: $c-text-implicit
+  .list--currentPrice
+    color: $c-text-hightlight
+    @include rem(font-size, $f-size-highlight)
+    font-size: $f-size-highlight
+
+#order-query-success-section
+  @include rem(padding-bottom, 120px)
+
+#button--queryOtherOrder
+  position: fixed
+  bottom: 0

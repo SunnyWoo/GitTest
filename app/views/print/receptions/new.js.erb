@@ -1,0 +1,9 @@
+$('body').append("<%= j render 'modal', form: @form %>");
+$modal = $('#reception_modal');
+$modal.on('click', 'input:radio', function(e){
+  $modal.find('[data-enable]').prop('disabled', true);
+  enable = $(e.currentTarget).val();
+  $modal.find('[data-enable='+enable+']').prop('disabled', false);
+}).on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+}).modal('show');

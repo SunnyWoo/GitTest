@@ -1,0 +1,12 @@
+.modal.fade id='product_code_form'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      = simple_form_for product_code_form, url: admin_product_code_path(product_code_form.id), method: :put, class: 'form-horizontal' do |f|
+        = f.error_notification
+        = f.input :code_type, as: :hidden
+        = f.input :description, as: :text, label: t('channel_codes.description')
+        .form-actions
+          = f.button :submit, class: 'btn btn-primary'

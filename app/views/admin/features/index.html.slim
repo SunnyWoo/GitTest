@@ -1,0 +1,25 @@
+- admin_title t('features.index.page_title')
+
+table.table
+  thead
+    tr
+      th = t('features.index.feature_name')
+      th = t('features.index.enable_for_admin')
+      th = t('features.index.enable_for_user')
+      th = t('features.index.enable_for_factory')
+  tbody
+    - @features.each do |feature|
+      tr
+        td = feature.name
+        td
+          label
+            input.ace.ace-switch.ace-switch-6 type='checkbox' checked=feature.enable_for_admin? data-checkbox-check-url=enable_admin_feature_path(feature.name, for: 'admin') data-checkbox-uncheck-url=disable_admin_feature_path(feature.name, for: 'admin')
+            span.lbl
+        td
+          label
+            input.ace.ace-switch.ace-switch-6 type='checkbox' checked=feature.enable_for_user? data-checkbox-check-url=enable_admin_feature_path(feature.name, for: 'user') data-checkbox-uncheck-url=disable_admin_feature_path(feature.name, for: 'user')
+            span.lbl
+        td
+          label
+            input.ace.ace-switch.ace-switch-6 type='checkbox' checked=feature.enable_for_factory? data-checkbox-check-url=enable_admin_feature_path(feature.name, for: 'factory') data-checkbox-uncheck-url=disable_admin_feature_path(feature.name, for: 'factory')
+            span.lbl

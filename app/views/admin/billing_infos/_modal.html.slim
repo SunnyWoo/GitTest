@@ -1,0 +1,10 @@
+.modal id=id
+  .modal-dialog
+    .modal-content
+      = simple_form_for form, as: :billing_info, url: admin_order_billing_info_path(form.billable, form.profile) do |f|
+        .modal-header
+          h3 Edit Billing Info
+        .modal-body
+          = render "#{form.type}_form", f: f
+        .modal-footer
+          = f.button :submit, '送出', class: 'btn-primary'

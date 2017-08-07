@@ -1,0 +1,444 @@
+/*
+ *
+ *   SKIN 1 - INSPINIA - Responsive Admin Theme
+ *   NAME - Blue light
+ *
+*/
+/* line 15, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .minimalize-styl-2 {
+  margin: 14px 5px 5px 30px; }
+
+/* line 19, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .navbar-top-links li:last-child {
+  margin-right: 30px; }
+
+/* line 23, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1.fixed-nav .minimalize-styl-2 {
+  margin: 14px 5px 5px 15px; }
+
+/* line 27, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .spin-icon {
+  background: #0e9aef !important; }
+
+/* line 31, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav-header {
+  background-color: #0e9aef;
+  background-image: url("patterns/header-profile-skin-1.png"); }
+
+/* line 36, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1.mini-navbar .nav-second-level {
+  background: #3e495f; }
+
+/* line 40, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .breadcrumb {
+  background: transparent; }
+
+/* line 44, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .page-heading {
+  border: none; }
+
+/* line 48, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav > li.active {
+  background: #3a4459; }
+
+/* line 52, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav > li > a {
+  color: #9ea6b9; }
+
+/* line 56, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav > li.active > a {
+  color: #fff; }
+
+/* line 60, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .navbar-minimalize {
+  background: #0e9aef;
+  border-color: #0e9aef; }
+
+/* line 65, ../../../stylesheets/store_backend/inspinia/skins.scss */
+body.skin-1 {
+  background: #3e495f; }
+
+/* line 69, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .navbar-static-top {
+  background: #ffffff; }
+
+/* line 73, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .dashboard-header {
+  background: transparent;
+  border-bottom: none !important;
+  border-top: none;
+  padding: 20px 30px 10px 30px; }
+
+/* line 80, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.fixed-nav.skin-1 .navbar-fixed-top {
+  background: #fff; }
+
+/* line 84, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .wrapper-content {
+  padding: 30px 15px; }
+
+/* line 88, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 #page-wrapper {
+  background: #f4f6fa; }
+
+/* line 92, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .ibox-title, .skin-1 .ibox-content {
+  border-width: 1px; }
+
+/* line 96, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .ibox-content:last-child {
+  border-style: solid solid solid solid; }
+
+/* line 100, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav > li.active {
+  border: none; }
+
+/* line 104, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav-header {
+  padding: 35px 25px 25px 25px; }
+
+/* line 108, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav-header a.dropdown-toggle {
+  color: #fff;
+  margin-top: 10px; }
+
+/* line 113, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav-header a.dropdown-toggle .text-muted {
+  color: #fff;
+  opacity: 0.8; }
+
+/* line 118, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .profile-element {
+  text-align: center; }
+
+/* line 122, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .img-circle {
+  border-radius: 5px; }
+
+/* line 126, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .navbar-default .nav > li > a:hover, .skin-1 .navbar-default .nav > li > a:focus {
+  background: #3a4459;
+  color: #fff; }
+
+/* line 131, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav.nav-tabs > li.active > a {
+  color: #555; }
+
+/* line 135, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-1 .nav.nav-tabs > li.active {
+  background: transparent; }
+
+/*
+ *
+ *   SKIN 2 - INSPINIA - Responsive Admin Theme
+ *   NAME - Inspinia Ultra
+ *
+*/
+/* line 153, ../../../stylesheets/store_backend/inspinia/skins.scss */
+body.skin-2 {
+  color: #565758 !important; }
+
+/* line 157, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .minimalize-styl-2 {
+  margin: 14px 5px 5px 25px; }
+
+/* line 161, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .navbar-top-links li:last-child {
+  margin-right: 25px; }
+
+/* line 165, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .spin-icon {
+  background: #23c6c8 !important; }
+
+/* line 169, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav-header {
+  background-color: #23c6c8;
+  background-image: url("patterns/header-profile-skin-2.png"); }
+
+/* line 174, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2.mini-navbar .nav-second-level {
+  background: #ededed; }
+
+/* line 178, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .breadcrumb {
+  background: transparent; }
+
+/* line 182, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2.fixed-nav .minimalize-styl-2 {
+  margin: 14px 5px 5px 15px; }
+
+/* line 186, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .page-heading {
+  border: none;
+  background: rgba(255, 255, 255, 0.7); }
+
+/* line 191, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav > li.active {
+  background: #e0e0e0; }
+
+/* line 195, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .logo-element {
+  padding: 17px 0; }
+
+/* line 199, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav > li > a, .skin-2 .welcome-message {
+  color: #edf6ff; }
+
+/* line 203, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 #top-search::-moz-placeholder {
+  color: #edf6ff;
+  opacity: 0.5; }
+
+/* line 208, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 #side-menu > li > a, .skin-2 .nav.nav-second-level > li > a {
+  color: #586b7d; }
+
+/* line 212, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav > li.active > a {
+  color: #213a53; }
+
+/* line 216, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2.mini-navbar .nav-header {
+  background: #213a53; }
+
+/* line 220, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .navbar-minimalize {
+  background: #23c6c8;
+  border-color: #23c6c8; }
+
+/* line 225, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .border-bottom {
+  border-bottom: none !important; }
+
+/* line 229, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 #top-search {
+  color: #fff; }
+
+/* line 233, ../../../stylesheets/store_backend/inspinia/skins.scss */
+body.skin-2 #wrapper {
+  background-color: #ededed; }
+
+/* line 237, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .navbar-static-top {
+  background: #213a53; }
+
+/* line 241, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.fixed-nav.skin-2 .navbar-fixed-top {
+  background: #213a53;
+  border-bottom: none !important; }
+
+/* line 246, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav-header {
+  padding: 30px 25px 30px 25px; }
+
+/* line 250, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .dashboard-header {
+  background: rgba(255, 255, 255, 0.4);
+  border-bottom: none !important;
+  border-top: none;
+  padding: 20px 30px 20px 30px; }
+
+/* line 257, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .wrapper-content {
+  padding: 30px 15px; }
+
+/* line 261, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .dashoard-1 .wrapper-content {
+  padding: 0 30px 25px 30px; }
+
+/* line 265, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .ibox-title {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  margin-bottom: 1px; }
+
+/* line 271, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .ibox-content {
+  background: rgba(255, 255, 255, 0.4);
+  border: none !important; }
+
+/* line 276, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 #page-wrapper {
+  background: #f6f6f6;
+  background: -webkit-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
+  background: -o-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
+  background: -ms-radial-gradient(center, ellipse cover, #f6f6f6 20%, #d5d5d5 100%);
+  background: radial-gradient(ellipse at center, #f6f6f6 20%, #d5d5d5 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f6f6f6, endColorstr=#d5d5d5)"; }
+
+/* line 285, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .ibox-title, .skin-2 .ibox-content {
+  border-width: 1px; }
+
+/* line 289, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .ibox-content:last-child {
+  border-style: solid solid solid solid; }
+
+/* line 293, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav > li.active {
+  border: none; }
+
+/* line 297, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav-header a.dropdown-toggle {
+  color: #edf6ff;
+  margin-top: 10px; }
+
+/* line 302, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav-header a.dropdown-toggle .text-muted {
+  color: #edf6ff;
+  opacity: 0.8; }
+
+/* line 307, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .img-circle {
+  border-radius: 10px; }
+
+/* line 311, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav.navbar-top-links > li > a:hover, .skin-2 .nav.navbar-top-links > li > a:focus {
+  background: #1a2d41; }
+
+/* line 315, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .navbar-default .nav > li > a:hover, .skin-2 .navbar-default .nav > li > a:focus {
+  background: #e0e0e0;
+  color: #213a53; }
+
+/* line 320, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav.nav-tabs > li.active > a {
+  color: #555; }
+
+/* line 324, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-2 .nav.nav-tabs > li.active {
+  background: transparent; }
+
+/*
+ *
+ *   SKIN 3 - INSPINIA - Responsive Admin Theme
+ *   NAME - Yellow/purple
+ *
+*/
+/* line 342, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .minimalize-styl-2 {
+  margin: 14px 5px 5px 30px; }
+
+/* line 346, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .navbar-top-links li:last-child {
+  margin-right: 30px; }
+
+/* line 350, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3.fixed-nav .minimalize-styl-2 {
+  margin: 14px 5px 5px 15px; }
+
+/* line 354, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .spin-icon {
+  background: #ecba52 !important; }
+
+/* line 358, ../../../stylesheets/store_backend/inspinia/skins.scss */
+body.boxed-layout.skin-3 #wrapper {
+  background: #3e2c42; }
+
+/* line 362, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav-header {
+  background-color: #ecba52;
+  background-image: url("patterns/header-profile-skin-3.png"); }
+
+/* line 367, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3.mini-navbar .nav-second-level {
+  background: #3e2c42; }
+
+/* line 371, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .breadcrumb {
+  background: transparent; }
+
+/* line 375, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .page-heading {
+  border: none; }
+
+/* line 379, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav > li.active {
+  background: #38283c; }
+
+/* line 383, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.fixed-nav.skin-3 .navbar-fixed-top {
+  background: #fff; }
+
+/* line 387, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav > li > a {
+  color: #948b96; }
+
+/* line 391, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav > li.active > a {
+  color: #fff; }
+
+/* line 395, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .navbar-minimalize {
+  background: #ecba52;
+  border-color: #ecba52; }
+
+/* line 400, ../../../stylesheets/store_backend/inspinia/skins.scss */
+body.skin-3 {
+  background: #3e2c42; }
+
+/* line 404, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .navbar-static-top {
+  background: #ffffff; }
+
+/* line 408, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .dashboard-header {
+  background: transparent;
+  border-bottom: none !important;
+  border-top: none;
+  padding: 20px 30px 10px 30px; }
+
+/* line 415, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .wrapper-content {
+  padding: 30px 15px; }
+
+/* line 419, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 #page-wrapper {
+  background: #f4f6fa; }
+
+/* line 423, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .ibox-title, .skin-3 .ibox-content {
+  border-width: 1px; }
+
+/* line 427, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .ibox-content:last-child {
+  border-style: solid solid solid solid; }
+
+/* line 431, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav > li.active {
+  border: none; }
+
+/* line 435, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav-header {
+  padding: 35px 25px 25px 25px; }
+
+/* line 439, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav-header a.dropdown-toggle {
+  color: #fff;
+  margin-top: 10px; }
+
+/* line 444, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav-header a.dropdown-toggle .text-muted {
+  color: #fff;
+  opacity: 0.8; }
+
+/* line 449, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .profile-element {
+  text-align: center; }
+
+/* line 453, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .img-circle {
+  border-radius: 5px; }
+
+/* line 457, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .navbar-default .nav > li > a:hover, .skin-3 .navbar-default .nav > li > a:focus {
+  background: #38283c;
+  color: #fff; }
+
+/* line 462, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav.nav-tabs > li.active > a {
+  color: #555; }
+
+/* line 466, ../../../stylesheets/store_backend/inspinia/skins.scss */
+.skin-3 .nav.nav-tabs > li.active {
+  background: transparent; }

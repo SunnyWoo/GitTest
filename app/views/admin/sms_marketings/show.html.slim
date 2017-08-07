@@ -1,0 +1,37 @@
+- admin_title t('marketing_sms.index.page_title')
+
+.row
+  .col-md-8
+    = simple_form_for(:marketing_sms, url: send_sms_admin_sms_marketing_path) do |f|
+      = f.label :sms_type, t('marketing_sms.attributes.sms_type')
+      = f.select :sms_type, [['億美', :emay]], {}, style: 'width: 100%'
+      = f.label :send_type, t('marketing_sms.attributes.send_type')
+      = f.select :send_type, [['测试', :test], ['正式', :production]], {}, style: 'width: 100%'
+      .help-block="正式环境预计发送数量: #{@mobile_count}"
+      = f.label :test_phone, t('marketing_sms.attributes.test_phone'), class: 'test_phone'
+      = f.text_area :test_phone, rows: 3, style: 'width: 100%', class:'test_phone', placeholder: '多个手机号码以,分隔'
+      = f.label :content, t('marketing_sms.attributes.content')
+      = f.text_area :content, rows: 3, style: 'width: 100%', maxlength: Mobile::SendMarketingService::MESSAGE_SIZE
+      .help-block 字數限制：#{Mobile::SendMarketingService::MESSAGE_SIZE}字以下
+      = link_to t('marketing_sms.index.preview'), preview_admin_sms_marketing_path, remote: true
+      = f.submit t('marketing_sms.index.submit')
+.row
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= t('marketing_sms.index.thead.created_at')
+            th= t('marketing_sms.index.thead.operator')
+            th= t('marketing_sms.index.thead.send_type')
+            th= t('marketing_sms.index.thead.content')
+            th= t('marketing_sms.index.thead.status')
+        tbody
+          = content_tag_for :tr, @marketing_sms_logs do |msl|
+            td= l msl.created_at, format: :long
+            td= msl.trackable.email
+            td= msl.extra_info['send_type']
+            td= msl.message
+            td= render_send_sms_status(msl.extra_info)
+
+  = will_paginate @marketing_sms_logs

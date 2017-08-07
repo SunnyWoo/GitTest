@@ -1,0 +1,21 @@
+#spec.tab-pane
+  .widget-box.widget-color-blue.ui-sortable-handle
+    .widget-header.header-color-blue
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th = t('product_codes.code')
+              th = t('product_codes.description')
+              th = t('product_codes.category_names')
+              th = t('product_codes.product_model_count')
+              th
+          tbody
+            - @product_specs.each do |spec|
+              tr
+                td= spec.code
+                td= spec.description
+                td= spec.products.map { |product| product.category.try(:name) }.uniq
+                td= spec.products.count
+                td= link_to '修改', edit_admin_product_code_path(spec, code_type: 'spec'), class: 'btn btn-primary btn-mini', remote: true

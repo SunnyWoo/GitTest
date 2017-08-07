@@ -1,0 +1,41 @@
+#ct-popup.popups
+  .popus-container.mobilev2-content
+    .fixed-top-placeholder
+
+    - payment_id_text = @order ? ": #{@order.payment_id}" : ''
+    - money_text = @order ? "（#{render_price(@order.price, currency_code: @order.currency)}）" : ''
+    .cvs-content-block
+      .cvs-content-title 使用第一銀行自動提款機繳款步驟：
+      .cvs-content-p 1. 插入金融卡
+      .cvs-content-p 2. 輸入密碼
+      .cvs-content-p 3. 選擇『繳費用』
+      .cvs-content-p 4. 選擇『其他代收款』
+      .cvs-content-p = "5. 輸入存戶編號（您訂單的轉帳帳號#{payment_id_text}）"
+      .cvs-content-p = "6. 輸入繳款金額#{money_text}"
+      .cvs-content-p 7. 確認輸入資料無誤後，按『確認』鍵
+      .cvs-content-p 8. 完成轉帳
+    .cvs-content-block
+      .cvs-content-title 使用其他銀行自動提款機繳款步驟：
+      .cvs-content-p 1. 插入金融卡
+      .cvs-content-p 2. 輸入密碼
+      .cvs-content-p 3. 選擇『其他服務』
+      .cvs-content-p 4. 選擇『跨行轉賬』
+      .cvs-content-p 5. 輸入銀行代號：007
+      .cvs-content-p = "5. 輸入存戶編號（您訂單的轉帳帳號#{payment_id_text}）"
+      .cvs-content-p = "6. 輸入繳款金額#{money_text}"
+      .cvs-content-p 7. 確認輸入資料無誤後，按『確認』鍵
+      .cvs-content-p 8. 完成轉帳
+
+    br
+    br
+    br
+    br
+
+
+  .mobilev2-top
+    .leftnavs
+      .back-icon.ct-popup-close
+        = image_tag 'campaign/mobilev2/back.png'
+
+
+    | ATM轉帳教學

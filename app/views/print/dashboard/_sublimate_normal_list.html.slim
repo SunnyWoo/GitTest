@@ -1,0 +1,48 @@
+table.table.table-bordered.table-striped.table-hover
+  thead.thin-border-bottom
+    tr
+      th.center
+        label
+          input.ace type="checkbox"
+          span.lbl
+      th
+      th 訂單編號
+      th 列印編號
+      th 產品類型
+      th 出貨方式
+      th 折扣码
+      th 留言
+      th 進入工作站時間
+      th style='width: 100px;' 累計處理時間
+      th 操作
+  tbody
+    - print_items.each do |print_item|
+      - order = print_item.order_item.order
+      tr
+        td.center
+          label
+            input.ace name="order_item[id]" type="checkbox" value="#{print_item.id}" data-model="#{print_item.product_name}"
+            span.lbl
+        td= render_print_item_preview(print_item)
+        td
+          = render_order_shipper(order)
+          br
+          = order.remote_info['order_no']
+        td= render_timestamp_no(print_item)
+        td= print_item.product_name
+        td= print_item.render_shipping_way_with_color
+        td= render_coupon_info(order.coupon)
+        td
+          - unless order.notes.empty?
+            = render 'print/notes/notes', noteable: order, readonly: true
+        td= l print_item.print_at, format: :long
+        td= render_hours_from_target_time print_item.print_at
+        td
+          .btn-group
+            = link_to print_order_item_path(print_item), target: '_blank', class: 'btn sublimate_print_sticker' do
+              = fa_icon 'print'
+            - if policy(PrintItem).download_img?
+              = link_to '下載原圖', print_item.print_image.url, class: 'btn btn-info', target: '_blank'
+            = link_to print_order_item_sublimate_path(print_item), class: 'btn btn-success sublimate_finish', method: :patch, data: { confirm: '確認完成？'} do
+              = fa_icon 'check'
+              | 完成 熱轉印

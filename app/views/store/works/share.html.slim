@@ -1,0 +1,15 @@
+ruby:
+  def showWexinShareMask?
+    in_wexin? || Region.china?
+  end
+
+= image_tag(@work.order_image.url, id: 'image')
+
+#share-area
+  textarea.shareArea-textarea [type="text" placeholder=t('store.share.share_content_placeholder') data-share-content]=@work.share_text
+  button.shareArea-button [data-share-button data-submit-url=store_work_path(@store, @work)]=t('store.share.share_button')
+
+- if showWexinShareMask?
+  = render 'store/shared/wexin_share_mask'
+- else
+  = render 'store/shared/share_mask', share_url: share_store_work_url(@store, @work)

@@ -1,0 +1,7 @@
+zh-TW:
+  activemodel:
+    attributes:
+      admin/change_price_event_form:
+        target_ids: 調價品項
+        price_tier_id: 金額
+        target_type: 調價類別

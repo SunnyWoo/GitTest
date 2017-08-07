@@ -1,0 +1,25 @@
+.page-header
+  h1
+    = link_to '歷史訂單', history_print_orders_path(list: :normal)
+  h3
+    = link_to '简易列表', history_print_orders_path(list: :simple)
+/! /.page-header
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5  歷史訂單
+        .widget-toolbar
+          - if @list == :simple
+            span.badge.badge-danger = render_order_items_quantity(@orders)
+          - else
+            span.badge.badge-danger = @orders.count
+          .widget-toolbar
+            - if @list == :simple
+              = link_to '导出csv', history_print_orders_path(format: :csv, page: @orders.current_page), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          = render_order_history_list(@list, @orders)
+
+= will_paginate @orders

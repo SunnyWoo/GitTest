@@ -1,0 +1,51 @@
+div.required
+  .label.clearfix
+    = s.label :name, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :name, validate: true, class: :validate_with_english, 'data-error-msg': t('errors.input_engish')
+
+div.required
+  .label.clearfix
+    = s.label :email, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :email, validate: true
+
+div.required
+  .label.clearfix
+    = s.label :address, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :address, validate: true, class: :validate_with_english, 'data-error-msg': t('errors.input_engish')
+
+div.required
+  .label.clearfix
+    = s.label :city, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :city, validate: true, class: :validate_with_english, 'data-error-msg': t('errors.input_engish')
+
+div
+  .label.clearfix
+    = s.label :state, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :state
+
+div.required
+  .label.clearfix
+    = s.label :zip_code, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :zip_code, validate: true
+
+div.required
+  .label.clearfix
+    = s.label :country, class: 'pull-left'
+    .error.pull-left
+  #select_address_country.country_code
+    - country_code_attr = s.object.type == 'ShippingInfo' ? 'country_code' : ''
+    = s.select :country_code, BillingProfile.countries_with_country_code, {},
+               { data: { attr: country_code_attr } }
+
+
+div.required
+  .label.clearfix
+    = s.label :phone, class: 'pull-left'
+    .error.pull-left
+  = s.text_field :phone, validate: true

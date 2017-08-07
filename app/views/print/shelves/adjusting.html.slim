@@ -1,0 +1,83 @@
+.page-header
+  h1 盤點調整
+= render 'print/shared/notice_bar'
+
+.row
+  = form_tag adjust_print_shelves_path, method: :put, id: :adjusting_storage do
+    .col-xs-12
+      .widget-box
+        .widget-header
+          h5 倉儲貨架
+          .widget-toolbar
+            - if @storage_lock
+              = link_to '完成盤點', '#', class: 'btn btn-primary', id: :finish_adjust
+              = link_to '取消盤點', finish_adjust_print_shelves_path, class: 'btn btn-primary btn-mini'
+            - else
+              = link_to '发起盤點', start_adjust_print_shelves_path, class: 'btn btn-primary btn-mini'
+        .widget-body
+          .widget-main.no-padding
+            table.table.table-bordered.table-striped
+              thead.thin-border-bottom
+                tr
+                  - %i(serial category_name material_serial material_name quantity).each do |attr|
+                    th = Shelf.human_attribute_name(attr)
+                  th = '盘点数量'
+                  th = '盘点对比'
+              tbody#adjusting_shelf
+                tr
+                  td = text_field_tag 'shelf_serial', nil
+                  td
+                  td = text_field_tag 'material_serial', nil
+                  td
+                  td
+                  td = text_field_tag 'quantity', nil
+                  td = link_to '提交', '#', id: :storage_adjust
+                - @shelves.each do |shelf|
+                  tr.hide
+                    = fields_for 'storage[]', shelf do |f|
+                      td.shelf_serial = shelf.serial
+                      td = shelf.category_name
+                      td.material_serial = shelf.material_serial
+                      td = shelf.material_name
+                      td.original_quantity = shelf.quantity
+                      td.hide = f.text_field :original_quantity
+                      td.quantity = f.text_field :quantity, class: :shelf_quantity
+                      td.result = 0
+                tr
+                  td.text-right.bolder colspan='6' 盘点总比:
+                  td#sum_result.bolder = 0
+
+    .col-xs-12
+      .widget-box
+        .widget-header
+          h5 错误仓储
+        .widget-body
+          .widget-main.no-padding
+            table.table.table-bordered.table-striped
+              thead.thin-border-bottom
+                tr
+                  th 貨架編號
+                  th 商品編號
+                  th 盘点数量
+              tbody.error_shelf
+
+    .col-xs-12
+      .widget-box
+        .widget-header
+          h5 漏盘仓储
+        .widget-body
+          .widget-main.no-padding
+            table.table.table-bordered.table-striped
+              thead.thin-border-bottom
+                tr
+                  th 貨架編號
+                  th 商品編號
+                  th 数量
+              tbody.miss_shelf
+
+      .well
+        .form-inputs
+          .form-group.string
+            label = '備註'
+            = text_field_tag :message, nil, class: 'form-control'
+        = submit_tag '提交', class: 'btn btn-primary'

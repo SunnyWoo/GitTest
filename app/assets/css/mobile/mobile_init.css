@@ -1,0 +1,118 @@
+/* line 3, ../../stylesheets/mobile/mobile_init.css.scss */
+body {
+  background: #F5F5F5; }
+
+/* line 7, ../../stylesheets/mobile/mobile_init.css.scss */
+.fixed-top-placeholder, .top-header {
+  height: 50px; }
+
+/* line 11, ../../stylesheets/mobile/mobile_init.css.scss */
+.font-neue {
+  font-family: "Helvetica Neue";
+  font-weight: 400; }
+
+/* line 16, ../../stylesheets/mobile/mobile_init.css.scss */
+.font-neue-regular, .top-header, .bottom-footer {
+  font-family: "Helvetica Neue";
+  font-weight: 400; }
+
+/* line 21, ../../stylesheets/mobile/mobile_init.css.scss */
+.top-header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  font-size: 17px;
+  color: white;
+  background-color: #4ebd92;
+  line-height: 53px;
+  text-align: center; }
+  /* line 34, ../../stylesheets/mobile/mobile_init.css.scss */
+  .top-header span, .top-header a, .top-header i {
+    color: white; }
+  /* line 37, ../../stylesheets/mobile/mobile_init.css.scss */
+  .top-header .back-icon {
+    padding-top: 6px; }
+  /* line 41, ../../stylesheets/mobile/mobile_init.css.scss */
+  .top-header .logo {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    /* line 46, ../../stylesheets/mobile/mobile_init.css.scss */
+    .top-header .logo img {
+      vertical-align: middle; }
+  /* line 53, ../../stylesheets/mobile/mobile_init.css.scss */
+  .top-header .navs {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    right: 15px;
+    font-size: 20px;
+    line-height: 50px; }
+  /* line 62, ../../stylesheets/mobile/mobile_init.css.scss */
+  .top-header .leftnavs {
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    left: 15px;
+    font-size: 20px;
+    line-height: 50px; }
+
+/* line 72, ../../stylesheets/mobile/mobile_init.css.scss */
+.top-header-static {
+  position: static; }
+
+/* line 76, ../../stylesheets/mobile/mobile_init.css.scss */
+.bottom-footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #4ebd92;
+  font-size: 17px;
+  color: white;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  text-decoration: none; }
+
+/* line 91, ../../stylesheets/mobile/mobile_init.css.scss */
+a {
+  text-decoration: none; }
+
+/* line 95, ../../stylesheets/mobile/mobile_init.css.scss */
+img.loading_image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  -webkit-animation: rot 3s linear infinite;
+  -moz-animation: rot 3s linear infinite;
+  animation: rot 3s linear infinite; }
+
+@-moz-keyframes rot {
+  100% {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes rot {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+@keyframes rot {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/* line 110, ../../stylesheets/mobile/mobile_init.css.scss */
+.disabled {
+  opacity: 0.5; }
+
+/* line 114, ../../stylesheets/mobile/mobile_init.css.scss */
+.opacity_hide {
+  opacity: 0; }
+
+/* line 118, ../../stylesheets/mobile/mobile_init.css.scss */
+.hide {
+  display: none !important; }

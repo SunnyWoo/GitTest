@@ -1,0 +1,7 @@
+.btn.no-border.btn-primary
+  - options = resource.aasm.states.map(&:name)
+  - options_names = options.map do |key| [key, t("aasm_states.#{key}")]  end
+  - source = options_names.to_h
+  pjqueryui-editable.js
+    = "#{label or t('aasm_states_label')} : "
+    = editable resource, :aasm_state, url: url_for([:admin, resource]), type: :select, data: { source: source }

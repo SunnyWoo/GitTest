@@ -1,0 +1,20 @@
+- admin_title I18n.t('store.backend.standardized_works.new.page_title')
+
+= simple_form_for @work_set, url: work_set_store_backend_standardized_works_path, method: :post do |f|
+  = f.association :product, label: t('works.attributes.spec'),
+                  as: :grouped_select,
+                  collection: ProductCategory.available,
+                  group_method: :available_products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id,
+                  include_blank: false
+  = f.input :aasm_state, collection: StandardizedWork.aasm.states_for_select,
+                         include_blank: false,
+                         label: I18n.t('works.index.thead.aasm_state')
+  = f.input :zip, as: :file
+  = f.hint t('store.backend.standardized_works.new.upload_limited')
+  = f.input :build_previews, as: :boolean
+  = f.input :is_build_print_image, as: :boolean, label: 'Build Print Image'
+  .form-actions
+    = f.button :submit

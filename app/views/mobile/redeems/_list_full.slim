@@ -1,0 +1,11 @@
+.event-list-full
+  .event-block
+    = link_to mobile_redeem_path(bdevent) do
+      .event-banner
+          = image_tag bdevent.banner.url
+      .event-info
+        .event-goto
+          = image_tag 'mobile/redeem/img_exchange_column_full_enter.png'
+          end
+        .event-title
+          span = bdevent.title

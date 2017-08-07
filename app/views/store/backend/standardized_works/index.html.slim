@@ -1,0 +1,27 @@
+- admin_title I18n.t('store.backend.standardized_works.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            td= 'ID'
+            td= '圖片'
+            td= 'Model'
+            td= '名稱'
+            td= "價格: #{current_currency_code}"
+            td= '狀態'
+            td= '已購數量'
+            td= '建立時間'
+            td= '操作'
+        tbody
+          - @standardized_works.each do |standardized_work|
+            = render 'list_item', standardized_work: standardized_work
+= will_paginate @standardized_works

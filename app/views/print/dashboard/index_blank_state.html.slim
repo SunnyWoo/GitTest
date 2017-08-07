@@ -1,0 +1,10 @@
+.page-header data-page='dashboard_index'
+  h1 印刷工作站
+
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    = render 'print/shared/check_ftp', ftp_service_status: @ftp_service_status
+
+  .col-xs-12
+    .alert.alert-warning 還未有任何所屬的產品分類，快去請 Admin 去後台設定吧，不然其他地方會爆掉

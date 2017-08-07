@@ -1,0 +1,65 @@
+.page-header
+  h1 倉儲物料紀錄
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 倉儲物料紀錄
+        .widget-toolbar
+          = link_to '物料清单', print_shelf_materials_path, class: 'btn btn-primary btn-mini'
+          = link_to '新增', new_print_shelf_material_path, class: 'btn btn-primary btn-mini'
+          = link_to '補貨', stocking_print_shelf_materials_path, class: 'btn btn-primary btn-mini'
+          = link_to '导出CSV', activities_print_shelf_materials_path(format: :csv), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped style="word-break:break-all"
+            thead.thin-border-bottom
+              tr
+                th 時間
+                - %i(serial name).each do |attr|
+                  th = ShelfMaterial.human_attribute_name(attr)
+                th 操作
+                th 操作者
+                th 操作数量
+                th 操作前数量
+                th 備註
+              tr
+                = search_form_for @q, url: activities_print_shelf_materials_path, id: 'search_shelf_materials_activities' do |f|
+                  = hidden_field_tag :format
+                  th
+                    = f.label :created_at_gteq, '開始時間大於'
+                    br
+                    = search_field_tag 'q[created_at_gteq]', @q.created_at_gteq.try(:strftime, '%Y-%m-%d %H:%M'), size: 15
+                    br
+                    = f.label :created_at_lteq, '開始時間小於'
+                    br
+                    = search_field_tag 'q[created_at_lteq]', @q.created_at_lteq.try(:strftime, '%Y-%m-%d %H:%M'), size: 15
+                  th = f.search_field :trackable_of_ShelfMaterial_type_serial_cont, class: 'col-xs-12'
+                  th = f.search_field :trackable_of_ShelfMaterial_type_name_cont, class: 'col-xs-12'
+                  th = f.select :key_eq, ShelfMaterial::ACTIONS.map { |act| [ShelfMaterial.human_attribute_name("actions.#{act}"), act] }, include_blank: true
+                  th = f.select :user_id_eq, current_factory.factory_members.map { |m| [m.username, m.id] }, include_blank: 'All'
+                  th
+                  th
+                  th
+                    = f.search_field :message_cont
+                    br
+                    = f.button :submit, class: 'submit_shelf_material_activities_form', data: { url: activities_print_shelf_materials_path(format: :html) }
+
+
+            tbody
+              - @activities.each do |activity|
+                - material = activity.trackable
+                tr
+                  td style="white-space:nowrap;" = I18n.l activity.created_at, format: :long
+                  - %i(serial name).each do |attr|
+                    td = material.send(attr)
+                  td = "#{ShelfMaterial.human_attribute_name("actions.#{activity.key}")}"
+                  td = activity.user.username
+                  td style="white-space:nowrap;" = activity.extra_info['quantity']
+                  td style="white-space:nowrap;" = activity.extra_info['old_quantity']
+                  td = activity.message
+
+              tr
+                td.text-right colspan='5' 補貨:
+                td colspan='3' = @activities.inject(0) { |sum, activity| sum + activity.extra_info['quantity'] }

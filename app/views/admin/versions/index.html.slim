@@ -1,0 +1,30 @@
+- admin_title t('.page_title', class_name: @model.class.name, id: @model.id)
+
+= will_paginate @versions, renderer: BootstrapPagination::Rails
+
+table.table.table-condensed.table-striped.table-hover
+  tr
+    th #
+    th = PaperTrail::Version.human_attribute_name(:version_author)
+    th = PaperTrail::Version.human_attribute_name(:event)
+    th = PaperTrail::Version.human_attribute_name(:changeset)
+    th = PaperTrail::Version.human_attribute_name(:created_at)
+  - @versions.each do |version|
+    tr
+      td = version.id
+      td = render_version_author(version)
+      td = version.event
+      td
+        table.table.table-condensed
+          tr
+            th Key
+            th From
+            th To
+          - version.changeset.each do |key, (from, to)|
+            tr
+              td = key
+              td = from
+              td = to
+      td = l(version.created_at)
+
+= will_paginate @versions, renderer: BootstrapPagination::Rails

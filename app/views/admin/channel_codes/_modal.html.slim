@@ -1,0 +1,11 @@
+.modal.fade id='channel_code'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      = simple_form_for channel_code, url: [:admin, channel_code], class: 'form-horizontal' do |f|
+        = f.error_notification
+        = f.input :description, as: :text, label: t('channel_codes.description')
+        .form-actions
+          = f.button :submit, class: 'btn btn-primary'

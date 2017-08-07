@@ -1,0 +1,65 @@
+= will_paginate(@orders) if @page_mode
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 訂單編號
+      th 項目數量
+      th 內容
+      th 出貨方式
+      th 留言
+      th 拼单
+  tbody
+    - orders.each do |order|
+      tr
+        td
+          = render_order_shipper(order)
+          br
+          = order.remote_info['order_no']
+        td= order.print_items_count
+        td
+          table.table.table-bordered
+            thead.thin-border-bottom
+              tr
+                th 型號
+                th 列印編號
+                th 縮圖
+                th 狀態
+                th 進入工作站時間
+                th 累計處理時間
+                th 操作
+            - order.order_items.each do |order_item|
+              - order_item.print_items.each do |print_item|
+                tr
+                  td = print_item.product_name
+                  td = print_item.render_timestamp_no_with_highlight(timestamp_no)
+                  td = render_print_item_preview(print_item)
+                  td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+                  - temp_shelf = print_item.temp_shelf
+                  - if print_item.product_by_other_factory?
+                    td.text-right colspan="3"
+                      - if print_item.shelving?
+                        - if temp_shelf
+                          = temp_shelf.serial
+                          = link_to '修改', edit_print_temp_shelf_path(temp_shelf, print_item_id: print_item.id), remote: true
+                        - else
+                          = link_to '放入暫存區', new_print_temp_shelf_path(print_item_id: print_item.id), remote: true
+                      - else # delivering
+                        = link_to '收貨處理', new_print_print_item_reception_path(print_item), remote: true
+                  - else
+                    td = print_item.local_sublimated_at
+                    td = print_item.after_sublimated_time
+                    td
+                      - if temp_shelf
+                        = temp_shelf.serial
+                        = link_to '修改', edit_print_temp_shelf_path(temp_shelf, print_item_id: print_item.id), remote: true
+                      - elsif print_item.sublimated?
+                        = link_to '放入暫存區', new_print_temp_shelf_path(print_item_id: print_item.id), remote: true
+              td colspan='7'
+                - if order_item.notes.present?
+                  = render 'print/notes/notes', noteable: order_item, readonly: true
+        td= order.render_shipping_way_with_color
+        td
+          - if order.notes.present?
+            = render 'print/notes/notes', noteable: order, readonly: true
+        td = order.render_merge_notice
+= will_paginate(@orders) if @page_mode

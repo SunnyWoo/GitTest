@@ -1,0 +1,10 @@
+- action_url = store_backend_product_template_design_path(template, type: "#{type}_form")
+= simple_form_for template, url: action_url, method: :patch do |f|
+  = f.hidden_field :template_type, value: type
+  .template_image_url style='display:none' = template.template_image.url
+  - suggest = "(#{template.product_width} x #{template.product_height})"
+  - hint = I18n.t('store.forms.photo_only.errors.template_image_dimensions', suggest: suggest)
+  = f.input :template_image, as: :image, hint: hint
+  - if type.match('text')
+    = render 'text_form', f: f
+  = f.submit I18n.t('shared.form_actions.submit'), class: 'btn btn-small btn-primary'

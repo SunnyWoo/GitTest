@@ -1,0 +1,68 @@
+.report-filters {
+  float: left;
+  min-height: 52px;
+}
+
+.report-update{
+  float: right;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.rc-filter-input {
+  float: left;
+  background-color: #2283C5;
+  padding: 10px;
+  min-width: 150px;
+  min-height: 51px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+
+  .rc-select-input {
+    margin-right: 10px;
+  }
+
+  .rc-date-input {
+    padding: 0 10px;
+    width: 155px;
+    height: 30px;
+  }
+
+  .del {
+    background-color: #64a8d6;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-top: 2px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+  }
+}
+
+.report-search-result {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.report-add-filter {
+  margin-right: 10px;
+}
+
+.table-striped > tbody {
+  > tr.total-summary {
+    > td {
+      background-color: #eee;
+      font-weight: bold;
+    }
+    .title {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+- admin_title t('masks.index.page_title')
+- breadcrumb :admin_masks
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= sort_link @search, :material_name, t('masks.index.material')
+            th= t('masks.index.image')
+            th= t('masks.index.operation')
+        tbody
+          - @resources.each do |resource|
+            tr
+              td= resource.material_name
+              td= image_tag(resource.image.url, width: 100)
+              td
+                = link_to t('shared.form_actions.delete'), url_for([:admin, resource]), method: :delete, class: 'btn btn-info'
+
+= will_paginate @resources

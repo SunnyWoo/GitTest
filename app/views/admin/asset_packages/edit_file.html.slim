@@ -1,0 +1,20 @@
+- admin_title t('.page_title')
+h3 注意：
+ol
+  li.text-danger zip 內應有「colorsticker, frame, line, shape, sticker, texture, typography」等資料夾，大小寫及文字需完全相符且不能多一個資料夾也不能少一個資料夾。
+  li.text-danger 小圖 zip 包需要檢查在資料夾中是否每一個檔案都是 's_' 開頭，並且檔名中不可以含有 @2x、@3x 等字，並且一律為 webP 格式。
+  li.text-danger 小圖 zip 包與大圖 zip 包內的所有檔案應該要 1 比 1 相同，意思就是小圖包裡面的所有檔案列出來去掉開頭的 's_' 后應該會跟大圖包的所有檔名一致，不多也不少。
+  li.text-danger zip 包應該打開來就是資料夾列表，不可以再有層級，例如「小圖 > colorsticker」這樣的資料夾是不能接受的。
+
+= button_tag '查看下载地址', data: { toggle: 'modal', target: '.asset_package_download_urls'  }
+= render 'download_info'
+
+= simple_form_for(@form, url: update_file_admin_asset_packages_path, method: :put, class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if @form.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: @form.errors.full_messages
+  .well
+    = f.input :small_package, as: :file, label: t('asset_packages.edit.small_package')
+    = f.input :large_package, as: :file, label: t('asset_packages.edit.large_package')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

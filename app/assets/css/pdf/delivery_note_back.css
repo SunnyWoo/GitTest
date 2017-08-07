@@ -1,0 +1,88 @@
+/* line 2, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .title {
+  color: #575757;
+  border-top: 0.3mm solid #575757;
+  border-bottom: 0.3mm solid #575757;
+  text-align: center;
+  padding-top: 3mm;
+  padding-bottom: 3mm;
+  font-weight: bold; }
+/* line 12, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .contact {
+  margin-top: 6mm; }
+/* line 16, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .blockquote {
+  border-left: 1mm solid #eeeeee; }
+/* line 21, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .head .head_label {
+  text-align: right; }
+/* line 25, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .head .notice {
+  color: #575757;
+  margin: 6mm 3mm 5mm 3mm; }
+/* line 30, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .head div {
+  margin-bottom: 2mm; }
+/* line 36, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .content table {
+  width: 90%;
+  text-align: center;
+  margin: 5mm 5% auto; }
+  /* line 41, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .content table thead {
+    border: 0.3mm solid #000; }
+  /* line 45, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .content table th, .delivery_note_back .content table td {
+    padding: 2mm 1mm;
+    text-align: center; }
+  /* line 50, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .content table td {
+    border: 0.3mm solid #000; }
+    /* line 53, ../../stylesheets/pdf/delivery_note_back.css.scss */
+    .delivery_note_back .content table td span {
+      width: 3mm;
+      height: 3mm;
+      border: 0.3mm solid #000;
+      display: -webkit-inline-box;
+      display: inline-box;
+      margin-top: 3mm;
+      margin: 0 1mm 0 5mm; }
+/* line 66, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .footer {
+  border-top: 0.3mm solid #575757; }
+  /* line 69, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .footer .qrcode_list .qrcode {
+    margin-left: 11.5mm; }
+  /* line 73, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .footer .qrcode_list .android {
+    margin-left: 8.5mm; }
+    /* line 75, ../../stylesheets/pdf/delivery_note_back.css.scss */
+    .delivery_note_back .footer .qrcode_list .android img {
+      margin-left: 3mm; }
+    /* line 78, ../../stylesheets/pdf/delivery_note_back.css.scss */
+    .delivery_note_back .footer .qrcode_list .android div {
+      width: 23.5mm; }
+/* line 85, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .footer.china {
+  margin-top: 20mm; }
+  /* line 87, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .footer.china .qrcode_list {
+    margin-top: 15mm; }
+/* line 91, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .footer.global {
+  font-size: 2mm;
+  margin-top: 15mm; }
+  /* line 94, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .footer.global .qrcode_list {
+    margin-top: 10mm; }
+/* line 99, ../../stylesheets/pdf/delivery_note_back.css.scss */
+.delivery_note_back .qrcode {
+  float: left; }
+  /* line 101, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .qrcode img {
+    width: 16mm;
+    height: 16mm; }
+  /* line 105, ../../stylesheets/pdf/delivery_note_back.css.scss */
+  .delivery_note_back .qrcode div {
+    width: 16mm;
+    text-align: center; }

@@ -1,0 +1,25 @@
+td= home_slide.id
+td
+  p= home_slide.title
+  p= home_slide.title2
+  p= home_slide.title3
+  p= home_slide.content1
+  p= home_slide.content2
+  p= home_slide.content3
+td= home_slide.link
+td= home_slide.template
+td= home_slide.set
+td
+  - if home_slide.background.present?
+  = link_to home_slide.background_url(:s1600), class: 'popup-image', rel: 'group' do
+    = image_tag home_slide.background_url(:s1600)
+td
+  - if home_slide.slide.present?
+    = link_to home_slide.slide.url(:s1600), class: 'popup-image', rel: 'group' do
+      = image_tag home_slide.slide.url(:s1600)
+td= render_yes_or_no(home_slide.is_enabled)
+td= l home_slide.created_at
+td= home_slide.priority
+td
+  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, home_slide]), class: 'btn btn-info'
+  = link_to t('shared.form_actions.delete'), url_for([:admin, home_slide]), method: :delete, class: 'btn btn-danger', data: { confirm: t('shared.confirm.delete') }

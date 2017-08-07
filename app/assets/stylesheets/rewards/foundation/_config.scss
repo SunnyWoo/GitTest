@@ -1,0 +1,79 @@
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Palette ----- //
+$black: #000;
+$white: #fff;
+$green: #4FBD93;
+$gray: #BBB;
+$gray-1: #F2F5F7;
+$gray-2: #EEEEEE;
+$blue: #455055;
+$blue-1: #46627C;
+$red: #FF0000;
+
+// ----- Base ----- //
+$c-header-item: $blue-1;
+$c-title: $green;
+$c-normal: $blue;
+$c-error: $red;
+$c-border: $gray;
+$c-border-highlight: $green;
+$c-bg-1: $gray-1;
+$c-bg-radio: $green;
+$c-bg-btn-normal: $green;
+$c-bg-btn-disabled: $gray;
+$c-bg-footer: $blue;
+$c-bg-radio-gray: $gray-2;
+$c-separationLine: $gray;
+
+
+
+// -------------------------------------
+//   font size
+// -------------------------------------
+$fz-xxxl: 38px;
+$fz-xxl: 28px;
+$fz-xl: 24px;
+$fz-l:20px;
+$fz: 16px;
+$fz-m: 14px;
+$fz-s: 12px;
+
+
+// -------------------------------------
+//   lineheight size
+// -------------------------------------
+$lh-xxxl: 38px;
+$lh-xxl: 28px;
+$lh-xl: 24px;
+$lh-l:20px;
+$lh: 16px;
+$lh-s: 12px;
+
+
+// -------------------------------------
+//   size
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Container
+// -------------------------------------
+$w-container: 960px;
+
+
+
+// -------------------------------------
+//   card--vertical
+// -------------------------------------
+$h-card-v: 420px;
+
+
+
+// -------------------------------------
+//   card--horizontal
+// -------------------------------------
+$h-card-h: 240px;

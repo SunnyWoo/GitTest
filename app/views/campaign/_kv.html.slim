@@ -1,0 +1,23 @@
+.owl-carousel
+  - images.each do |kv|
+    .kv_middle
+      = image_tag kv[:bg], class: 'carousel-img', alt: kv[:alt]
+      - kv_lang = locale.match(/zh/) ? kv[:tc] : kv[:en]
+
+      - if kv[:denka_mode]
+        .kv-img.kv-img-denka
+          = image_tag kv_lang, class: 'kv-img', alt: kv[:alt]
+          .kv-denka-column
+            - kv[:left].each do |src|
+              = image_tag src, class: 'kv-denka-row', alt: kv[:alt]
+          .kv-denka-column.kv-denka-column-right
+            - kv[:right].each do |src|
+              = image_tag src, class: 'kv-denka-row', alt: kv[:alt]
+
+      - else
+        - if kv_lang
+          = image_tag kv_lang, class: 'kv-img', alt: kv[:alt]
+
+      - if kv[:button]
+        .kv-button
+          = link_to '', kv[:href], class:'kv-button-shop-now'

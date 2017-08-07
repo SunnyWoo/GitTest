@@ -1,0 +1,28 @@
+doctype mobile
+html
+  head
+    meta charset='utf-8'
+    meta content='width=device-width, initial-scale=1.0' name='viewport'
+
+    = display_meta_tags
+    = canonical_tag
+    = favicon_link_tag 'favicon.png'
+    = stylesheet_link_tag 'mobile', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'mobile', 'data-turbolinks-track' => false
+
+    = csrf_meta_tags
+    - if !Rails.env.production?
+      meta content='noindex' name='robot'
+
+  body class="mobile #{controller_name} #{action_name} locale-#{I18n.locale}"
+    .main-container
+      .fixed-top-placeholder
+      #main.main
+        = yield
+        #m-layout_footer
+
+    header.top-header title=(@title || t('site.name'))
+      .logo
+        = @title || image_tag("campaign/mobilev2/#{I18n.locale}/logo3x.png", alt: t('site.name'), width: 100)
+      .navs
+    = render 'shared/tag_manager' if Region.global?

@@ -1,0 +1,31 @@
+.redeem-works-preview-container.poped
+  .scrollable-outer
+    .scrollable-inner
+      .top-header-placeholder
+      .work-info-block
+        img.work-info-avatar src=(@work.user.avatar.s35.url)
+        .work-info-names
+          span.work-info-name = @work.name
+          br
+          span.work-info-username = @work.user_display_name
+        span.work-info-price = edit_translator('redeem.preview.price')
+
+      img#work-gallery-image src=(@first_image.image.url)
+      .work-desc-block
+        .work-desc-row
+          span.work-desc-row-title = edit_translator('redeem.preview.product_label')
+          span.work-desc-row-text = @work.name
+        .work-desc-row-block
+          .work-desc-row-title = edit_translator('redeem.preview.desc_label')
+          - @previews.each do |preview|
+            img#work-gallery-image src=(preview.image.url)
+          = simple_format @work.product_description
+
+      .bottom-button-placeholder
+
+  = link_to edit_translator('redeem.preview.redeem_button'), check_out_mobile_redeems_path(sgid: @work.to_sgid_param), class: 'bottom-button-green-white'
+
+  .top-header
+    .prev-leftnavs.simple-back
+      = image_tag('campaign/mobilev2/back.png')
+    = image_tag("campaign/mobilev2/#{I18n.locale}/logo3x.png", alt: t('site.name'), width: 100, class: 'redeem-works-logo')

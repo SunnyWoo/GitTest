@@ -1,0 +1,13 @@
+/* line 2, ../../stylesheets/print/orders.css.scss */
+.schedule_type .btn {
+  color: #333 !important;
+  border: 5px solid #fff; }
+/* line 7, ../../stylesheets/print/orders.css.scss */
+.schedule_type .active {
+  border: 5px solid #abbac3; }
+/* line 11, ../../stylesheets/print/orders.css.scss */
+.schedule_type .expedited {
+  background: yellow !important; }
+/* line 14, ../../stylesheets/print/orders.css.scss */
+.schedule_type .urgent {
+  background: red !important; }

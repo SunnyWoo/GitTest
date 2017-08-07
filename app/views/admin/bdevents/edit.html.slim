@@ -1,0 +1,4 @@
+- breadcrumb :edit_admin_bdevents
+- admin_title t('bdevents.edit.page_title_with_type', event_type: @bdevent.event_type)
+
+= render "#{@bdevent.event_type}_form"

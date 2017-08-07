@@ -1,0 +1,6 @@
+- order = OrderItem.find(activity.extra_info[:order_item_id]).order
+div
+  | 訂單編號:#{link_to_admin_order(order)}
+  br 執行重印
+  br Message:
+  pre = activity.message

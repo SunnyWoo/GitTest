@@ -1,0 +1,224 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://tpm.oneapm.com/tpm/agent.do?PROTOCOL_VERSION=1&license_key=&marshal_format=json&method=get_redirect_host
+    body:
+      encoding: UTF-8
+      string: "[]"
+    headers:
+      Content-Encoding:
+      - identity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OneApm-RubyAgent/1.3.4 (ruby 2.2.1 x86_64-darwin14) zlib/1.2.8
+      Content-Type:
+      - application/octet-stream
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 07 Jun 2016 06:22:41 GMT
+      Content-Type:
+      - text/html;charset=UTF-8
+      Content-Length:
+      - '1738'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=F9FE7AD6947F9207429446A8C71B46FF; Path=/; HttpOnly
+      Bluewareguid:
+      - eff547390dd7c237
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFET0NUWVBFIGh0bWw+CjwhLS1baWYgbHQgSUUgN10+ICAgICAgPGh0bWwg
+        Y2xhc3M9Im5vLWpzIGx0LWllOSBsdC1pZTggbHQtaWU3Ij4gPCFbZW5kaWZd
+        LS0+CjwhLS1baWYgSUUgN10+ICAgICAgICAgPGh0bWwgY2xhc3M9Im5vLWpz
+        IGx0LWllOSBsdC1pZTgiPiA8IVtlbmRpZl0tLT4KPCEtLVtpZiBJRSA4XT4g
+        ICAgICAgICA8aHRtbCBjbGFzcz0ibm8tanMgbHQtaWU5Ij4gPCFbZW5kaWZd
+        LS0+CjwhLS1baWYgZ3QgSUUgOF0+PCEtLT4gPGh0bWwgY2xhc3M9Im5vLWpz
+        Ij4gPCEtLTwhW2VuZGlmXS0tPgogICAgPGhlYWQ+CgkJPHRpdGxlPk9uZUFQ
+        TTwvdGl0bGU+CgkJPG1ldGEgY2hhcnNldD0idXRmLTgiPgoJCTxtZXRhIGh0
+        dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9RW11bGF0
+        ZUlFNyI+CgkJPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9IiI+
+        CgkJPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmlj
+        ZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KCQk8IS0tIOWbveS6p+WPjOag
+        uOa1j+iniOWZqOeUqCBzdGFydCAtLT4KCQk8bWV0YSBuYW1lPSJyZW5kZXJl
+        ciIgY29udGVudD0id2Via2l0Ii8+CgkJPCEtLSDlm73kuqflj4zmoLjmtY/o
+        p4jlmajnlKggZW5kIC0tPgoJCTwhLS0gUGxhY2UgZmF2aWNvbi5pY28gYW5k
+        IGFwcGxlLXRvdWNoLWljb24ucG5nIGluIHRoZSByb290IGRpcmVjdG9yeSAt
+        LT4KCQk8bGluayByZWw9InNob3J0Y3V0IGljb24iIHR5cGU9ImltYWdlL3gt
+        aWNvbiIgaHJlZj0ie3sgdXJsX2ZvcignLmZhdmljb24nKSB9fSIvPgoJCTxz
+        dHlsZT4KCQkJaHRtbCxib2R5ewoJCQkJcGFkZGluZzogMHB4OwoJCQkJbWFy
+        Z2luOiAwcHg7CgkJCX0KCQkJLndhcnBwZXJ7CgkJCQl3aWR0aDogOTAwcHg7
+        CgkJCQljbGVhcjogYm90aDsKCQkJCW1hcmdpbjogMjAwcHggYXV0byAwcHgg
+        YXV0bzsKCQkJCXRleHQtYWxpZ246IGNlbnRlcjsKCQkJfQoJCQkubGVmdHsK
+        CQkJCWZsb2F0OiBsZWZ0OwoJCQkJd2lkdGg6IDUyMHB4OwoJCQl9CgkJCS5y
+        aWdodHsKCQkJCWZsb2F0OiBsZWZ0OwoJCQkJd2lkdGg6IDMwMHB4OwoJCQl9
+        CgkJCS5lcnJfdGV4dHsKCQkJCXdpZHRoOiAyMDBweDsKCQkJCWZvbnQtc2l6
+        ZToxMjBweDsKCQkJCWNvbG9yOiNlNWU1ZTU7CgkJCQlmb250LWZhbWlseTpB
+        cmlhbDsKCQkJCWJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjRjFGMUYxOwoJ
+        CQkJbWFyZ2luOjBweCBhdXRvIDBweCBhdXRvOwoJCQkJdGV4dC1hbGlnbjog
+        Y2VudGVyOwoJCQkJcGFkZGluZy10b3A6NjBweDsKCQkJfQoJCQkudGlwX3Rl
+        eHR7CgkJCQlmb250LXNpemU6MjBweDsKCQkJCWNvbG9yOiNlNWU1ZTU7CgkJ
+        CQltYXJnaW46IDIwcHggYXV0bzsKCQkJCXRleHQtYWxpZ246IGNlbnRlcjsK
+        CQkJfQoJCQlhLmFfZHVtcHsKCQkJCWNvbG9yOiMyYTZjOTY7CgkJCQl0ZXh0
+        LWRlY29yYXRpb246IG5vbmU7CgkJCX0KCQkJYS5hX2R1bXA6aG92ZXJ7CgkJ
+        CQl0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsKCQkJfQoJCTwvc3R5bGU+
+        CiAgIAk8L2hlYWQ+CiAgICA8Ym9keT4KICAgIAk8ZGl2IGNsYXNzPSJ3YXJw
+        cGVyIj4KICAgIAkJPGltZyBzcmM9Ii8vb25lYXBtLmNvbS81MHgucG5nIiBi
+        b3JkZXI9IjAiPjxicj4KICAgIAkJPGEgaHJlZj0iaHR0cDovL29uZWFwbS5j
+        b20vIiBjbGFzcz0iYV9kdW1wIj7ov5Tlm57liLDpppbpobU8L2E+CgoJICAg
+        IDwvZGl2PgogICAgPC9ib2R5Pgo8L2h0bWw+Cg==
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 06:22:42 GMT
+- request:
+    method: post
+    uri: https://ATqzAhBOpH7HX6JSJfd0iiLwxV-NY6Q_dkgPJ3vWiZjduwozYhZW6QKTGPdV:ECLwyBDuAXKH2uAy5thfqnJa2SsTtc5S208TWcvLbuK3xfD5r_O3OX8HY4PS@api.sandbox.paypal.com/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 07 Jun 2016 06:22:42 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=632
+      Paypal-Debug-Id:
+      - 3bcb4f046f218
+      - 3bcb4f046f218
+      Correlation-Id:
+      - 3bcb4f046f218
+      X-Paypal-Token-Service:
+      - IAAS
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dplatformapiserv%26TIME%3D845698647%26HTTP_X_PP_AZ_LOCATOR%3D;
+        Expires=Tue, 07 Jun 2016 06:52:42 GMT; domain=.paypal.com; path=/; Secure;
+        HttpOnly
+      Vary:
+      - Authorization
+      Content-Length:
+      - '510'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.*
+        https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks
+        openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2016-06-07T06:22:42ZJAsGSiaPK4SKRcMvo6qvoA55o00pGTpKGpTHWnqzr0o","access_token":"A101.Z-rLb0BJ6qeiNyir7m9Dho3uLafRIzXRemvzsnXd2N1j8VnZLj5QpHRQdmv4CZ2i.00azTrRXTm8eF6R7FzH86WKGYJK","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}'
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 06:22:43 GMT
+- request:
+    method: post
+    uri: https://collector.newrelic.com/agent_listener/14//get_redirect_host?marshal_format=json
+    body:
+      encoding: UTF-8
+      string: "[]"
+    headers:
+      Content-Encoding:
+      - identity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - NewRelic-RubyAgent/3.12.1.298 (ruby 2.2.1 x86_64-darwin14) zlib/1.2.8
+      Content-Type:
+      - application/octet-stream
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '133'
+    body:
+      encoding: UTF-8
+      string: '{"exception":{"message":"Invalid license key, please contact support@newrelic.com","error_type":"NewRelic::Agent::LicenseException"}}'
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 06:22:44 GMT
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"99.90"}}],"redirect_urls":{"return_url":"http://test.host/zh-TW/payment/paypal/callback?order_no=1606072800018US","cancel_url":"http://test.host/zh-TW/cart"}}'
+    headers:
+      X-Paypal-Sandbox-Email-Address:
+      - Platform.sdk.seller@gmail.com
+      Authorization:
+      - Bearer A101.Z-rLb0BJ6qeiNyir7m9Dho3uLafRIzXRemvzsnXd2N1j8VnZLj5QpHRQdmv4CZ2i.00azTrRXTm8eF6R7FzH86WKGYJK
+      Content-Type:
+      - application/json
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Paypal-Request-Id:
+      - 74b1ed49-99b3-4614-b1ff-6436ddc78aa7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 07 Jun 2016 06:22:43 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3002.slc.paypal.com;threadId=312
+      Paypal-Debug-Id:
+      - b8c22fc05487c
+      - b8c22fc05487c
+      Correlation-Id:
+      - b8c22fc05487c
+      Content-Language:
+      - "*"
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D1880%26app%3Dplatformapiserv%26TIME%3D862475863%26HTTP_X_PP_AZ_LOCATOR%3D;
+        Expires=Tue, 07 Jun 2016 06:52:43 GMT; domain=.paypal.com; path=/; Secure;
+        HttpOnly
+      Vary:
+      - Authorization
+      Content-Length:
+      - '637'
+      Connection:
+      - close
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"id":"PAY-1T94303884759811UK5LGQMY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"99.90","currency":"USD"},"related_resources":[]}],"create_time":"2016-06-07T06:22:43Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1T94303884759811UK5LGQMY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-22E76060259902949","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-1T94303884759811UK5LGQMY/execute","rel":"execute","method":"POST"}]}'
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 06:22:44 GMT
+recorded_with: VCR 2.9.3

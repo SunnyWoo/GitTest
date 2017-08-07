@@ -1,0 +1,38 @@
+zh-CN:
+  delivery_note:
+    to: 收货人
+    address: 收货地址
+    order_date: 下单时间
+    shipping_method: 运送方式
+    order_no: 订单编号
+    item_no: 商品编号
+    item_name: 商品名称
+    price: 单价
+    quantity: 数量
+    subtotal: 小计
+    total: 商品金额
+    coupon: 使用优惠
+    shipping_fee: 运费
+    estimated_total: 订单总金额
+    foot_note: 非常感谢您在噗印购物。我们期待您的再次光顾。<br />如您有任何问题，请咨询在线客服！<br />祝您生活愉快^_^
+    team: 噗印团队敬上
+    back_note: 亲爱的顾客，感谢您光顾噗印！您所订购的商品为个性化定制商品，所以若非产品及物流问题，该订单无法享有七天无理由退换货保障，敬请谅解。若您收到的商品有问题，请扫描右方的二维码联系我们的在线客服，我们会在工作时间内，第一时间为您处理。
+    return_address: 退换货地址
+    name: 客户姓名
+    phone: 联系电话
+    return: 退
+    exchange: 换
+    reason: 退换货理由
+    commandp: 噗印
+    website: 官方网站
+    weibo: 官方微博
+    ios: iOS下载
+    android: Android下载
+    back_title1: 退换货/维修说明
+    back_title2: 退换货登记卡
+    return_address_info: 上海市青浦区外青松公路3777弄55号
+    customer_service_type: 客服电话
+    customer_service: 021-54726621
+    shipping_address: 换货收货地址
+    return_product: 退换货商品
+    service_type: 服务类型

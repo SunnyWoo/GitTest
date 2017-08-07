@@ -1,0 +1,13 @@
+= simple_form_for imposition, as: :imposition, url: imposition_form_path(imposition) do |f|
+  = hidden_field_tag :type, 'Vanaheim'
+
+  = f.input :paper_width
+  = f.input :paper_height
+  = f.input :template, input_html: { accept: '.ai' }
+  = f.input :include_order_no_barcode, label: '揀貨單(delivery_order)是否包含barcode', as: :boolean
+
+  p Labels
+  = react_component 'VanaheimLabelsApp', labels: imposition.labels
+
+  = f.button :submit
+  = f.button :button, 'Demo', data: { imposition_demo: print_product_model_demo_impositions_path(@model) }

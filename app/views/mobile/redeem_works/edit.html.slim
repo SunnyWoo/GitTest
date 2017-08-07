@@ -1,0 +1,47 @@
+.redeem-works-editor-container
+  .redeem-works-nav
+    .redeem-works-cancel = edit_translator('redeem.editor.cancel')
+    .redeem-works-preview = edit_translator('redeem.editor.preview')
+  #bd-editor-root(data-host=@editor[:host]
+                  data-work-uuid=@editor[:work_uuid]
+                  data-access-token=@editor[:access_token]
+                  data-product-model=@editor[:product_model])
+
+  input#redeem-works-editor-uploader type='file' accept='image/png,image/jpeg'
+  label.bottom-button-green-white for='redeem-works-editor-uploader' = edit_translator('redeem.editor.change_photo')
+
+
+.redeem-works-preview-container
+  .scrollable-outer
+    .scrollable-inner
+      .top-header-placeholder
+      .work-info-block
+        img.work-info-avatar
+        .work-info-names
+          span.work-info-name
+          br
+          span.work-info-username
+        span.work-info-price = edit_translator('redeem.editor.price')
+
+      img#work-gallery-image
+      .work-desc-block
+        .work-desc-row
+          span.work-desc-row-title = edit_translator('redeem.editor.product_label')
+          span.work-desc-row-text = @work.name
+        .work-desc-row-block
+          .work-desc-row-title = edit_translator('redeem.editor.desc_label')
+          = simple_format @work.product_description
+
+      .bottom-button-placeholder
+
+  = link_to edit_translator('redeem.editor.redeem_button'), check_out_mobile_redeems_path(sgid: @work.to_sgid_param), class: 'bottom-button-green-white'
+
+  .loading-view-background
+    .loading-view-block
+      .loading-view-icon
+        = image_tag('mobile/redeem_works/loading@3x.png', width: 35, height: 35)
+
+  .top-header
+    .prev-leftnavs.redeem-works-preview-back
+      = image_tag('campaign/mobilev2/back.png')
+    = image_tag("campaign/mobilev2/#{I18n.locale}/logo3x.png", alt: t('site.name'), width: 100, class: 'redeem-works-logo')

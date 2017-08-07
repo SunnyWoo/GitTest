@@ -1,0 +1,44 @@
+doctype html
+html lang='zh-TW'
+  head
+    meta charset="utf-8"
+    title Commandp Dashboard
+    meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"
+    - unless Region.china?
+      link href="//fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet"
+    = favicon_link_tag 'favicon.png'
+    = stylesheet_link_tag 'print', media: :all
+    = csrf_meta_tags
+  body class="#{controller_name} #{action_name}"
+    #navbar.navbar.navbar-default
+      #navbar-container.navbar-container
+        .navbar-header.pull-left
+          a.navbar-brand href="#"
+            small
+              | Print Dashboard
+        .navbar-header.pull-right
+          ul.nav.ace-nav
+            li.light-blue
+              a.dropdown-toggle data-toggle="dropdown" href="#"
+                = image_tag('img_fbdefault.png', class: 'nav-user-photo')
+                span.user-info
+                  small Welcome,
+                  = current_factory_member.username
+                i.icon-caret-down
+              ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+                li
+                  = link_to destroy_factory_member_session_path, method: :delete do
+                    i.icon-off
+                    | Logout
+    #main-container.main-container
+      .main-container-inner
+        a#menu-toggler href="#"
+          span.menu-text
+        = render 'print/shared/sidebar'
+        .main-content
+          #breadcrumbs.breadcrumbs
+          .page-content
+            .row
+              .col-xs-12
+                = yield
+    = javascript_include_tag 'print'

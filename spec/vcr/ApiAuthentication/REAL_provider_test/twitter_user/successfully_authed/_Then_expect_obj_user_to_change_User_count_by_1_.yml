@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/account/verify_credentials.json?include_entities=false&skip_status=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - OAuth gem v0.4.7
+      authorization:
+      - OAuth oauth_consumer_key="gkeRF7Pkm4SEKCQRbAF5zOOx0", oauth_nonce="04DyZBfcK1lMtRUfU6J4lJc2mBwAcSytP1KZO1oU",
+        oauth_signature="cJ01kG%2BjkESrb9lMVHGzZIR6Yy4%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1435374872", oauth_token="2204864839-YVZXx113PfQkhajAkMs5LqUmr1syoWRnRZnos2X",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      connection:
+      - close
+      content-disposition:
+      - attachment; filename=json.json
+      content-encoding:
+      - gzip
+      content-length:
+      - '721'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Sat, 27 Jun 2015 03:14:32 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Sat, 27 Jun 2015 03:14:32 GMT
+      pragma:
+      - no-cache
+      server:
+      - tsa_a
+      set-cookie:
+      - lang=zh-tw; Path=/
+      - guest_id=v1%3A143537487270634007; Domain=.twitter.com; Path=/; Expires=Mon,
+        26-Jun-2017 03:14:32 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-connection-hash:
+      - 688cc0c07caed1ddea47d623e8a03944
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '15'
+      x-rate-limit-remaining:
+      - '13'
+      x-rate-limit-reset:
+      - '1435375199'
+      x-response-time:
+      - '21'
+      x-transaction:
+      - 2a6c33b4e44f3e7b
+      x-twitter-response-tags:
+      - BouncerExempt
+      - BouncerCompliant
+      x-xss-protection:
+      - 1; mode=block
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":2204864839,"id_str":"2204864839","name":"commandp.me","screen_name":"hicommandp","location":"","description":"commandp
+        is an app letting you make phone photos into iPhone cases, custom stickers,
+        photo books and hundreds of products in 30 secs.","url":"http:\/\/t.co\/ZEwJGS7aAa","entities":{"url":{"urls":[{"url":"http:\/\/t.co\/ZEwJGS7aAa","expanded_url":"http:\/\/commandp.me","display_url":"commandp.me","indices":[0,22]}]},"description":{"urls":[]}},"protected":false,"followers_count":13,"friends_count":13,"listed_count":0,"created_at":"Wed
+        Nov 20 12:55:03 +0000 2013","favourites_count":0,"utc_offset":null,"time_zone":null,"geo_enabled":false,"verified":false,"statuses_count":2,"lang":"zh-tw","contributors_enabled":false,"is_translator":false,"is_translation_enabled":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/378800000765628425\/1bd9c65300f84da25f31991264b49907_normal.jpeg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/378800000765628425\/1bd9c65300f84da25f31991264b49907_normal.jpeg","profile_banner_url":"https:\/\/pbs.twimg.com\/profile_banners\/2204864839\/1404987528","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"has_extended_profile":false,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false}'
+    http_version: '1.1'
+  recorded_at: Sat, 27 Jun 2015 03:14:34 GMT
+- request:
+    method: get
+    uri: http://pbs.twimg.com/profile_images/378800000765628425/1bd9c65300f84da25f31991264b49907_normal.jpeg
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      accept-ranges:
+      - bytes
+      content-md5:
+      - bpnhRP+Ro8MpbndA2Rtj8w==
+      content-type:
+      - image/jpeg
+      date:
+      - Sat, 27 Jun 2015 03:14:33 GMT
+      etag:
+      - '"bpnhRP+Ro8MpbndA2Rtj8w=="'
+      expires:
+      - Wed, 04 Feb 2015 07:53:02 GMT
+      last-modified:
+      - Sat, 14 Sep 2013 08:38:52 GMT
+      server:
+      - ECS (hhp/9ADD)
+      surrogate-key:
+      - profile_images
+      x-cache:
+      - HIT
+      x-connection-hash:
+      - d5216febc6454f8c26b95c7bc57c52f7
+      x-content-type-options:
+      - nosniff
+      x-response-time:
+      - '27'
+      x-ton-expected-size:
+      - '1285'
+      content-length:
+      - '1285'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        /9j/4AAQSkZJRgABAQAAAQABAAD/4gKgSUNDX1BST0ZJTEUAAQEAAAKQbGNt
+        cwQwAABtbnRyUkdCIFhZWiAH3QALABQADAA7AAthY3NwQVBQTAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkZXNjAAABCAAA
+        ADhjcHJ0AAABQAAAAE53dHB0AAABkAAAABRjaGFkAAABpAAAACxyWFlaAAAB
+        0AAAABRiWFlaAAAB5AAAABRnWFlaAAAB+AAAABRyVFJDAAACDAAAACBnVFJD
+        AAACLAAAACBiVFJDAAACTAAAACBjaHJtAAACbAAAACRtbHVjAAAAAAAAAAEA
+        AAAMZW5VUwAAABwAAAAcAHMAUgBHAEIAIABiAHUAaQBsAHQALQBpAG4AAG1s
+        dWMAAAAAAAAAAQAAAAxlblVTAAAAMgAAABwATgBvACAAYwBvAHAAeQByAGkA
+        ZwBoAHQALAAgAHUAcwBlACAAZgByAGUAZQBsAHkAAAAAWFlaIAAAAAAAAPbW
+        AAEAAAAA0y1zZjMyAAAAAAABDEoAAAXj///zKgAAB5sAAP2H///7ov///aMA
+        AAPYAADAlFhZWiAAAAAAAABvlAAAOO4AAAOQWFlaIAAAAAAAACSdAAAPgwAA
+        tr5YWVogAAAAAAAAYqUAALeQAAAY3nBhcmEAAAAAAAMAAAACZmYAAPKnAAAN
+        WQAAE9AAAApbcGFyYQAAAAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltwYXJh
+        AAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW2Nocm0AAAAAAAMAAAAAo9cA
+        AFR7AABMzQAAmZoAACZmAAAPXP/bAEMABQMEBAQDBQQEBAUFBQYHDAgHBwcH
+        DwsLCQwRDxISEQ8RERMWHBcTFBoVEREYIRgaHR0fHx8TFyIkIh4kHB4fHv/b
+        AEMBBQUFBwYHDggIDh4UERQeHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4e
+        Hh4eHh4eHh4eHh4eHh4eHh4eHh4eHv/AABEIADAAMAMBIgACEQEDEQH/xAAX
+        AAEBAQEAAAAAAAAAAAAAAAAAAQYF/8QAKBAAAQUAAQIFBAMAAAAAAAAAAQAC
+        AwQFEQYxBxIhUWETFBbBJEGh/8QAGwEBAAICAwAAAAAAAAAAAAAAAAEEAgMF
+        Bgf/xAAjEQACAAcAAAcAAAAAAAAAAAAAAQIDBBEhMUETMkJRcZGx/9oADAMB
+        AAIRAxEAPwDSoinK1nk5UURAVFOVUAWm8P8AIo6R07V2rNfNGASR0oX+V05J
+        I7+w/azK1Hh3rUs5+nXtXnZstyuI4LzWeYwuBJ/39KUXKBS3UQ+JrO/h23jf
+        vg17ek+nZJs+BvTOowacZkklMzv4Pp2PPz7rMUsrBxsI6+zXm1TPbkr1YY5f
+        psLWEgvJHvwtY3qnEjmz5vzC1IzOjLLERhcfvjx39e/qs7+UYEXSlKrLkVdG
+        UWrEhrSkt+3a5xLew47EBS7HO1ENJ5oXCmk7YTXp4r37v8OP1jlZtenmbOOJ
+        Y6OlG4tgld5nROaeCOf7CzoXV6l3rO5YhdJDDWr1mfTr1oRwyJvx8rlLE69V
+        xy45rcvX1zOOZCnCqIVycJwqiAIiID//2Q==
+    http_version: '1.1'
+  recorded_at: Sat, 27 Jun 2015 03:14:35 GMT
+recorded_with: VCR 2.9.2

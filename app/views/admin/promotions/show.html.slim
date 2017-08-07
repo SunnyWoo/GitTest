@@ -1,0 +1,85 @@
+- admin_title t('promotions.show.page_title', name: @presenter.promotion.name)
+- breadcrumb :show_admin_promotions, @presenter.promotion.name
+
+.row
+  .col-xs-12
+    div
+      .row
+        .col-sm-8
+          .well.well-sm
+            .pull-right
+              = l(@presenter.promotion.begins_at, format: :long)
+              = " - "
+              - if @presenter.promotion.ends_at.nil?
+                = "無期限"
+              - else
+                = l(@presenter.promotion.ends_at, format: :long)
+            - if @presenter.promotion.started?
+              .inline.middle.blue.bigger-110.mr-sm 活動已開始
+              | &nbsp; &nbsp; &nbsp;
+              - unless @presenter.promotion.ends_at.nil?
+                .inline.middle.no-margin.progress.progress-striped.active.pos-rel data-percent="#{@presenter.promotion.duration_percentage}%" style="width:200px;"
+                  .progress-bar.progress-bar-success style="width:#{@presenter.promotion.duration_percentage}%"
+                span.ml-sm 約 #{@presenter.promotion.ends_at_from_now} 後結束
+            - elsif @presenter.promotion.ended?
+              .inline.middle.blue.bigger-110.mr-sm 活動已結束
+              .inline.middle.no-margin.progress.progress-striped.pos-rel data-percent="100%" style="width:200px;"
+                .progress-bar.progress-bar-info style="width:100%"
+            - else
+              .inline.middle.blue.bigger-110= @presenter.promotion.state
+              span.ml-sm 約 #{@presenter.promotion.begins_at_from_now} 後開始
+          .btn-group
+            - if @presenter.promotion.can_submit?
+              = link_to t('promotions.index.button.submit'), submit_admin_promotion_path(@presenter.promotion),
+                class: 'btn btn-success', data: { method: :put, confirm: t('promotions.messages.confirm') }
+            - if @presenter.promotion.can_update?
+              = link_to t('shared.form_actions.edit'), edit_admin_promotion_path(@presenter.promotion), class: 'btn btn-info', data: { 'no-turbolink': true }
+            - if @presenter.promotion.can_delete?
+              = link_to t('shared.form_actions.delete'), admin_promotion_path(@presenter.promotion),
+                class: 'btn btn-danger', data: { method: :delete, confirm: t('shared.confirm.delete') }
+          hr.hr-dotted
+          .profile-user-info.profile-user-info-striped
+            .profile-info-row
+              .profile-info-name 名稱
+              .profile-info-value
+                = @presenter.promotion.name
+                span class="label label-sm label-#{@presenter.promotion.state_css}" = @presenter.promotion.state
+            .profile-info-row
+              .profile-info-name 優惠類型
+              .profile-info-value= simple_format @presenter.promotion.type_name
+            .profile-info-row
+              .profile-info-name 說明
+              .profile-info-value= simple_format @presenter.promotion.description
+            .profile-info-row
+              .profile-info-name 條件內容
+              .profile-info-value= @presenter.promotion.content.html_safe
+
+          - if @presenter.promotion.item_level?
+            h4.green.smaller.lighter 商品優惠明細
+            table.table.table-bordered.table-hover
+              thead
+                tr
+                  th 商品名稱
+                  th 分類
+                  th 售價
+                  th 優惠價
+              tbody
+                - @presenter.promotables.each do |promotable|
+                  tr
+                    td
+                      .pull-right
+                        span.label.label-light= promotable.scope_name
+                      = promotable.name
+                    td= promotable.category_name
+                    td= render_price_with_tooltip promotable.price, label: 'info'
+                    td= render_price_with_tooltip(promotable.selling_price).html_safe
+        .col-sm-4
+          .widget-box.transparent
+            .widget-header.widget-header-small
+              h4.widget-title.blue.smaller
+                i.ace-icon.fa.fa-rss.orange
+                = t('orders.show.h3_status')
+            .widget-body
+              .widget-main.padding-8
+                #profile-feed-1.profile-feed
+                  = render_activities @presenter.promotion.activities.order('created_at DESC')

@@ -1,0 +1,32 @@
+- admin_title t('reports.index.page_title'), subtitle: t('reports.index.crumb.list')
+
+= react_component 'CmdpAdmin.ReportApp', {search_url: admin_reports_path, update_url: update_report_admin_reports_path}, {id: 'report_app'}
+
+.well
+  form.form.form-inline action="#{admin_reports_path}" method='post'  data-remote='true'
+    .form-group
+      label for='report_type'
+        |&nbsp Type: &nbsp
+      select#report_type.form-control name='report[type]' type='text'
+        option value=''
+        = options_for_marketing_report_type
+    .form-group.for_starts_at_and_ends_at
+      label for='report_starts_at'
+        |&nbsp Starts at: &nbsp
+      input#report_starts_at.form-control name='report[starts_at]' placeholder='開始時間' type='date'
+    .form-group.for_starts_at_and_ends_at
+      label for='report_ends_at'
+        |&nbsp Ends at: &nbsp
+      input#report_ends_at.form-control name='report[ends_at]' placeholder='結束時間' type='date'
+    .form-group.for_year_and_month.hide
+      lable for='report_year'
+        |&nbsp Year: &nbsp
+      input#report_year.form-control name='report[year]' placeholder='年份' type='number' min='2014' max='2099'
+    .form-group.for_year_and_month.hide
+      lable for='report_month'
+        |&nbsp Month: &nbsp
+      input#report_month.form-control name='report[month]' placeholder='月份' type='number' min='1' max='12'
+    input type='hidden' name='authenticity_token' value="#{form_authenticity_token}"
+    .form-group
+      button#markering_report_form_submit.btn.btn-sm.btn-info type='submit'
+        |送出

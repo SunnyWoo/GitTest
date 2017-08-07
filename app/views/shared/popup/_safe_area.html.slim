@@ -1,0 +1,18 @@
+#safe_notice.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-body
+        .item-title.confirm-title
+          = edit_translator('editor.safe_area.title')
+        .content
+          .confirm-text
+            p = edit_translator('editor.safe_area.content_line_1')
+            p = edit_translator('editor.safe_area.content_line_2')
+            p = edit_translator('editor.safe_area.content_line_3')
+          .img
+            = image_tag 'editor/cp_web_safeareaalert_101.jpg'
+          .center-block
+            .btn.btn-cancel.btn-margin data-dismiss='modal'
+              = edit_translator('editor.safe_area.edit')
+            #safe_confirmed.btn.btn-default
+              = edit_translator('editor.safe_area.preview')

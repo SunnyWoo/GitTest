@@ -1,0 +1,73 @@
+.cmdp_container.check_out
+  .grid_6
+    = render_cell :announcement, :announcement
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center= edit_translator('page.cart_check_out.title')
+    .cart_wording= edit_translator('page.cart_check_out.text1')
+    .divider_line
+      = image_tag('editor/divider_line.png')
+
+  .grid_3
+    .check_out_margin_top.check_out_title= edit_translator('page.cart_check_out.shipping_title')
+    - if normal_user_signed_in?
+      = render partial: 'address_info_list', locals: { to: 'order_shipping_info' }
+    - else
+      - obj = AddressInfoForm.new(@order.shipping_info.attributes)
+      = form_for obj, url: cart_index_path, as: :shipping_info, builder: Judge::FormBuilder, html: { class: 'check_out_form' } do |f|
+        = render partial: 'check_out_address_form', locals: { s: f }
+
+
+    .check_out_title_with_margin= edit_translator('page.cart_check_out.billing_title')
+    - if normal_user_signed_in?
+      = render partial: 'address_info_list', locals: { to: 'order_billing_info' }
+    - else
+      .check_out_wording.margin-b30
+        = check_box_tag :same_as_shipping_info
+        | &nbsp;
+        = label_tag :same_as_shipping_info
+      - obj = AddressInfoForm.new(@order.billing_info.attributes)
+      = form_for obj, url: cart_index_path, as: :billing_info, builder: Judge::FormBuilder, html: { class: 'check_out_form' } do |f|
+        = render partial: 'check_out_address_form', locals: { s: f }
+
+    .check_out_title_with_margin= edit_translator('page.cart_check_out.payment_title')
+    ul
+      = form_for @order, url: cart_index_path do |f|
+        - policy_scope(Payment).each do |payment|
+          li.clearfix
+            .pull-left class="#{payment_hide_class(payment, @order)}"
+              = f.radio_button :payment, payment, id: "order_payment_#{payment.tr('/', '_')}", class: 'check_out_radio check_out_update', data: { attr: 'payment' }
+              = f.label "payment_#{payment.tr('/', '_')}".to_sym, class: 'check_out_radio_label'
+            - if payment == 'neweb/mmk'
+              i#mmk_popup.icons-30.icons-info_normal.pull-left
+              = render '/shared/mmk_notice'
+            - if payment == 'neweb/atm'
+              i#atm_popup.icons-30.icons-info_normal.pull-left
+              = render '/shared/atm_notice'
+    .check_out_title_with_margin= edit_translator('page.cart_check_out.delivery_title')
+    ul
+      = form_for @order, url: cart_index_path do |f|
+        - @shipping_way_list.each do |shipping_way, key|
+          - if ['cash_on_delivery'].include?(shipping_way) && @order.shipping_info.shipping_way != 'cash_on_delivery'
+            - hide_class = 'hide'
+          li class="#{hide_class}"
+            - label_name = "shipping_way_#{shipping_way}".to_sym
+            = f.fields_for @order.shipping_info do |s|
+              - disabled_radio = true if @order.shipping_info.shipping_way == 'cash_on_delivery'
+              = s.radio_button :shipping_way, shipping_way, class: 'check_out_radio check_out_update',
+              disabled: disabled_radio, data: { attr: 'shipping_way' }
+              = s.label label_name, class: 'check_out_radio_label'
+    .hide
+      = render 'check_out_form', order: @order
+
+  .grid_3#check_out_summery
+    = render 'check_out_summery'
+
+  .grid_6.margin-top-fixed.text-center
+  .grid_6.margin-top-fixed.text-center
+    - if come_from_china?
+      = link_to edit_translator('page.cart.btns.countinue_shopping'), root_url(host: Settings.host_cn), class: 'btn btn-cancel'
+    - else
+      = link_to edit_translator('page.cart.btns.countinue_shopping'), root_url(host: Settings.host), class: 'btn btn-cancel'
+    = link_to edit_translator('page.cart_check_out.summary'), summary_cart_index_path, class: 'btn btn_cart', id: 'check_out_summary'
+    .margin-top-fixed

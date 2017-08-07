@@ -1,0 +1,52 @@
+// *************************************
+//
+//   button
+//
+// *************************************
+
+.btn {
+  color: $white;
+  @include rem(width, 400px);
+  @include rem(height, 80px);
+  @include rem(line-height, 80px);
+  @include rem(font-size, $fz-xxl);
+  @include rem(border-radius, 4px);
+  @include bp(mobile) {
+    @include rem(width, 165px);
+    @include rem(height, 50px);
+    @include rem(line-height, 50px);
+    @include rem(font-size, $fz-l);
+  }
+}
+
+.btn--s {
+  color: $c-title;
+  @include rem(width, 165px);
+  @include rem(height, 40px);
+  @include rem(font-size, $fz);
+  @include rem(border-radius, 4px);
+  background-color: transparent;
+  border: 1px solid $c-title;
+  @include bp(mobile) {
+    @include rem(width, 165px);
+    @include rem(height, 30px);
+    @include rem(font-size, $fz-m);
+  }
+}
+
+.btn--normal {
+  background-color: $c-bg-btn-normal;
+}
+
+.btn--disabled {
+  background-color: $c-bg-btn-disabled;
+}
+
+.btn--margin {
+  margin-bottom: 30px;
+}
+
+.btn--deletePhoto {
+  display: block;
+  margin: 30px auto;
+}

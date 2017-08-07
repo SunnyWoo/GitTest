@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      accept-encoding:
+      - ''
+      content-length:
+      - '319'
+      user-agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      host:
+      - sns.ap-northeast-1.amazonaws.com
+      x-amz-date:
+      - 20151117T115350Z
+      x-amz-content-sha256:
+      - 14332bebce64a5924c51f81180790ffbd2238727a29f5fd107422f005fd9ec05
+      authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIWNLFSBA7WPEVK7Q/20151117/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=fb757b468a24bb093b12b42584658c285ec7791929c6d1ee48c5336d595b93d1
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      x-amzn-requestid:
+      - f0d13933-b1f3-57c2-a427-77f6a67d9701
+      content-type:
+      - text/xml
+      content-length:
+      - '342'
+      date:
+      - Tue, 17 Nov 2015 11:53:50 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidParameter</Code>
+            <Message>Invalid parameter: EndpointArn Reason: f36d38f6d5f078c922a3536656f5def9 does not start with arn</Message>
+          </Error>
+          <RequestId>f0d13933-b1f3-57c2-a427-77f6a67d9701</RequestId>
+        </ErrorResponse>
+    http_version: '1.1'
+  recorded_at: Tue, 17 Nov 2015 11:53:50 GMT
+recorded_with: VCR 2.9.2

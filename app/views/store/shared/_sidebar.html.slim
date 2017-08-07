@@ -1,0 +1,9 @@
+.sidebar.responsive
+  ul.nav.nav-list
+    - if store_signed_in?
+      = store_sidebar_link t('store.layout.sidebar_name'), edit_store_backend_layout_path, 'list'
+      = store_sidebar_link t('store.product_template.sidebar_name'), store_backend_product_templates_path, 'list'
+      = store_sidebar_link t('store.backend.standardized_works.sidebar_name'), store_backend_standardized_works_path, 'list'
+
+  .sidebar-toggle.sidebar-collapse
+    i.ace-icon.fa.fa-angle-double-left data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"

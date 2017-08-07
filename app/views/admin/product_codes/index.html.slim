@@ -1,0 +1,36 @@
+- admin_title t('product_codes.material_manage')
+
+.row
+  = simple_form_for @new_code, url: admin_product_codes_path, method: :post, class: 'form-horizontal' do |f|
+    = f.error_notification
+    = f.input :code_type, collection: @code_types_collection, include_blank: false, label: t('product_codes.code_type')
+    = f.input :code, label: t('product_codes.code')
+    = f.input :description, as: :text, label: t('product_codes.description')
+    .form-actions
+      = f.submit '新增', class: 'btn btn-primary'
+
+.row
+  .tabbable
+    ul.nav.nav-tabs
+      li.active
+        a data-toggle="tab" href="#category"
+          = fa_icon 'folder', class: 'ace-icon'
+          = t('product_codes.category')
+      li
+        a data-toggle="tab" href="#material"
+          = fa_icon 'certificate', class: 'ace-icon'
+          = t('product_codes.material')
+      li
+        a data-toggle="tab" href="#craft"
+          = fa_icon 'filter', class: 'ace-icon'
+          = t('product_codes.craft')
+      li
+        a data-toggle="tab" href="#spec"
+          = fa_icon 'cog', class: 'ace-icon'
+          = t('product_codes.spec')
+
+    .tab-content
+      = render_cell :product_category_code, :list
+      = render_cell :product_material, :list
+      = render_cell :product_craft, :list
+      = render_cell :product_spec, :list

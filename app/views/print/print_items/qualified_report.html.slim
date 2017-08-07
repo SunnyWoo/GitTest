@@ -1,0 +1,40 @@
+h1 質檢記錄
+= render 'print/shared/notice_bar'
+.well.well-small
+  = form_tag qualified_report_print_print_items_path, class: 'form-horizontal', method: :get do |f|
+    = hidden_field_tag :format, 'html'
+    span 開始時間:
+    = text_field_tag :qualified_at_gteq, params[:qualified_at_gteq], class: 'date_gteq'
+    span ~
+    = text_field_tag :qualified_at_lteq, params[:qualified_at_lteq], class: 'date_lteq'
+    = submit_tag '送出', class: 'btn btn-primary', onclick: "$('#format').val('html')"
+    = submit_tag '匯出質檢記錄', onclick: "$('#format').val('csv')"
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter 質檢記錄
+  .widget-body
+    .widget-main.no-padding
+      - if @report_presenter.present?
+        - report, product_categories = @report_presenter.report, @report_presenter.product_categories
+        table.table.table-bordered.table-striped
+          thead.thin-border-bottom
+            tr
+              th 日期
+              - product_categories.each do |category|
+                th = category.name
+          tbody
+            - (@report_presenter.begin_date..@report_presenter.end_date).each do |date|
+              - date_report = report[date.to_s] || {}
+              tr
+                td = date.to_s
+                - product_categories.each do |category|
+                  td = date_report[category.id]
+            tr
+              td subtotal
+              - product_categories.each do |category|
+                td = @report_presenter.count_by_category(category.id)
+            tr
+              td 總計通過質檢品項
+              td colspan="#{product_categories.count}" = report.values.map(&:values).flatten.sum
+      - if params[:qualified_at_gteq].blank?
+        p 請選擇開始時間

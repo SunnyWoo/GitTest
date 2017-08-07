@@ -1,0 +1,34 @@
+- admin_title t('admins.index.page_title')
+- breadcrumb :admin_admins
+
+= render 'admin/v2/shared/account_groups_nav', resources_name: @resources.name
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+    = fa_icon 'table'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        = sortable_links @search, %W{#{t('admins.index.thead.id')} #{t('admins.index.thead.email')} #{t('admins.index.thead.sign_in_count')} #{t('admins.index.thead.sign_in_at')} #{t('admins.index.thead.last_sign_in_at')} #{t('admins.index.thead.sign_ip')} #{t('admins.index.thead.last_sign_ip')} #{t('admins.index.thead.created_at')} #{t('admins.index.thead.operation')} }
+        = content_tag_for :tr, @resources do |mt|
+          td= mt.id
+          td= mt.email
+          td= mt.sign_in_count
+          td= l mt.current_sign_in_at, format: :long if mt.current_sign_in_at.present?
+          td= l mt.last_sign_in_at, format: :long if mt.last_sign_in_at.present?
+          td= mt.current_sign_in_ip
+          td= mt.last_sign_in_ip
+          td= l mt.created_at, format: :long
+          td
+            = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-minier'
+            - if mt.access_locked?
+              = link_to t('shard.unlock'), unlock_admin_admin_path(mt), method: :patch, class: 'btn btn-minier'
+            = link_to 'Log', log_admin_admin_path(mt), class: 'btn btn-minier'
+/! PAGE CONTENT BEGINS HERE
+/# Alert
+
+= will_paginate @resources

@@ -1,0 +1,293 @@
+@import "compass/css3/transform";
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+
+.bottom-button-placeholder {
+  height: 50px;
+}
+
+.bottom-button-green-white {
+  @extend .bottom-button-placeholder;
+  position: absolute;
+  bottom: 0px;
+  background-color: #4FBD92;
+  width: 100%;
+  color: white;
+  display: block;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+
+  span {
+    color: white;
+  }
+}
+
+.tooltipster-base {
+  position: fixed;
+  z-index: 99;
+}
+
+.redeem-works-editor-container {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background: white;
+  height: 100%;
+  width: 100%;
+  transition: top .5s;
+
+  &.poped {
+    top: 0%;
+  }
+
+  span {
+    color: white;
+  }
+
+  #bd-editor-root {
+    box-sizing: border-box;
+    position: absolute;
+    top: 84px;
+    bottom: 80px;
+    width: 100%;
+  }
+
+  .redeem-works-nav {
+    box-sizing: border-box;
+    // padding-top: 24px;
+    position: absolute;
+    top: 0px;
+    height: 50px;
+    background-color: #455055;
+    width: 100%;
+  }
+
+  .redeem-works-preview {
+    height: 50px;
+    color: white;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+    font-size: 17px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .redeem-works-cancel {
+    @extend .redeem-works-preview;
+    float: left;
+    margin-left: 10px;
+  }
+
+
+  .redeem-works-upload {
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    background-color: #4FBD92;
+    width: 100%;
+    color: white;
+    display: block;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .CE-Quality {
+    span {
+      color: white;
+    }
+  }
+}
+
+.redeem-works-preview-container {
+  position: fixed;
+  left: 100%;
+  top: 0;
+  z-index: 1;
+  background: white;
+  height: 100%;
+  width: 100%;
+  transition: left .3s;
+
+  &.poped {
+    left: 0%;
+  }
+
+  .loading-view-background {
+    background-color: #F2F5F7;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .loading-view-block {
+    @include transform(translateY(-50%) translateX(-50%));
+    position: relative;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    left: 50%;
+  }
+
+  .loading-view-icon {
+    width: 35px;
+    height: 35px;
+    @include transform(rotate(1deg));
+    @include transition-transform(0s);
+    &.animated {
+      @include transform(rotate(144000deg));
+      @include transition-transform(320s linear);
+    }
+  }
+
+  .top-header-placeholder {
+    height: 50px;
+  }
+
+  .work-info-block {
+    height: 60px;
+    box-sizing: border-box;
+    background-color: white;
+    border-bottom: 1px solid #E6E6E6;
+  }
+
+  img#work-gallery-image {
+    width: 100%;
+  }
+
+  .work-desc-block {
+    @extend .work-info-block;
+    height: initial;
+    padding-bottom: 50px;
+  }
+
+  .work-info-item {
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  .work-info-avatar {
+    @extend .work-info-item;
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 36px;
+    width: 36px;
+    border-radius: 18px;
+  }
+
+  .work-info-names {
+    @extend .work-info-item;
+  }
+
+  .work-info-name {
+    @extend .font-neue-regular;
+    font-size: 17px;
+    color: #4FBD92;
+  }
+
+  .work-info-username {
+    @extend .font-neue-regular;
+    font-size: 17px;
+    color: #333;
+  }
+
+  .work-info-price {
+    @extend .work-info-item;
+    @extend .font-neue-regular;
+    font-size: 24px;
+    margin-right: 10px;
+    background-color: white;
+    padding-left: 8px;
+    height: 40px;
+    line-height: 36px;
+    float: right;
+    color: #333;
+
+    span {
+      color: #333;
+    }
+  }
+
+  .work-desc-row {
+    height: 40px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border-bottom: 1px solid #E6E6E6;
+  }
+
+  .work-desc-row-block {
+    @extend .work-desc-row;
+    height: initial;
+    padding-bottom: 12px;
+    p {
+      margin-left: 4px;
+    }
+  }
+
+  .work-desc-row-title {
+    @extend .font-neue-regular;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    color: #333;
+    margin-left: 4px;
+
+    span {
+      color: #333;
+    }
+  }
+
+  .work-desc-row-text {
+    @extend .font-neue-regular;
+    height: 40px;
+    line-height: 40px;
+    font-size: 17px;
+    color: #999;
+    float: right;
+    margin-right: 10px;
+  }
+
+  .scrollable-outer {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .top-header {
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+  }
+
+  .prev-leftnavs {
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+    line-height: 50px;
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .redeem-works-logo {
+    vertical-align: middle;
+  }
+
+  .leftnavs {
+    // top: 15px;
+  }
+}

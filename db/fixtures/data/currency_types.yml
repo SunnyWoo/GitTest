@@ -1,0 +1,16 @@
+---
+- code: USD
+  name: U.S. Dollar
+  rate: 30.0
+- code: HKD
+  name: Hong Kong Dollar
+  rate: 3.8
+- code: TWD
+  name: Taiwan New Dollar
+  rate: 1.0
+- code: JPY
+  name: Japanese Yen
+  rate: 0.27
+- code: CNY
+  name: CNY
+  rate: 5.0

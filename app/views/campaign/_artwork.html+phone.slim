@@ -1,0 +1,26 @@
+- if artworks.present?
+  .bgmen-line-sticker
+    .mobile-v2-title
+      - if wordings.try(:artwork_title).present?
+        = wordings.try(:artwork_title)
+      - else
+        = name
+        br
+        | Artworks
+    - artworks.each do |artwork|
+      - if artwork.is_a?(CampaignImage)
+        .camp_artwork
+          - option = {}
+          - option.merge!({ target: :blank }) if artwork.open_in_new_tab
+          - option.merge!({ class: 'cursor_default' }) unless artwork.link.present?
+          = link_to artwork.link, option do
+            .mobile-v2-title
+              = image_tag artwork.file.url, alt: artwork.desc
+            - if artwork.desc
+              .text-center = artwork.desc
+      - else
+        - artworks.zip(artworks_descriptions).each do |(artwork, description)|
+          .mobile-v2-title
+            = image_tag artwork, alt: description
+          - if description
+            .text-center = description

@@ -1,0 +1,39 @@
+.user_login {
+  .login_form {
+    .captcha, #code {
+      width: 100px;
+    }
+
+    .send-code {
+      min-width: 130px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 1em;
+      background-color: #009afd;
+      margin-left: 10px;
+    }
+  }
+
+  .tab {
+    text-decoration: none;
+  }
+
+  .tab-bg {
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    background-color: #f6f7f2;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .tab-bg.active {
+    background-color: #4fbd92;
+
+    .tab {
+      color: #FFF
+    }
+  }
+}

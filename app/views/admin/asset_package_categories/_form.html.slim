@@ -1,0 +1,15 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if member.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: member.errors.full_messages
+  .well
+    h4.green.smaller.lighter
+      = t('asset_package_categories.index.thead.name')
+    = f.simple_fields_for :translations do |d|
+      .well
+        = d.input :locale, label: false, as: :hidden
+        = d.input :name, as: :string, label: d.object.locale
+    = f.input :available, as: :radio_buttons, label: 'Available?'
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_asset_package_categories_path, class: 'btn btn-info'

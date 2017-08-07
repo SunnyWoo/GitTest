@@ -1,0 +1,46 @@
+- breadcrumb :admin_mobile_pages
+- admin_title 'Moblie Page', subtitle: "Country code: #{@country_code}"
+
+- MobilePage::COUNTRY_CODES.each do |country_code|
+  - active = @country_code == country_code ? 'btn-primary' : ''
+  = link_to country_code, admin_mobile_pages_path(country_code: country_code), class: "btn #{active}"
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new, country_code: @country_code), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th ID
+            th PageType
+            th Key
+            th Title
+            th 活動期間
+            th UpdatedAT
+            th 是否開放
+            th
+        tbody
+          - @mobile_pages.each do |mobile_page|
+            tr
+              td= mobile_page.id
+              td= mobile_page.page_type
+              td= mobile_page.key
+              td= mobile_page.title
+              td
+                = l mobile_page.begin_at, format: :long
+                br ~
+                = l mobile_page.close_at, format: :long
+              td= l mobile_page.updated_at, format: :long
+              td= display_true_or_false_icon(mobile_page.is_enabled)
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mobile_page]), class: 'btn btn-info'
+
+= will_paginate @mobile_pages

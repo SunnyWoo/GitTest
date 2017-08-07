@@ -1,0 +1,26 @@
+- cache_work work do
+  .grid_2
+    .product id='#{work.uuid}'
+      = link_to shop_work_path(work.product, work), class: "product-detail open_deeplink",
+        data: { behavior: 'detail_impression',
+                ga: { name: 'detail', target: "#ga_info_#{work.uuid}"},
+                deeplink_protocol: Settings.deeplink_protocol,
+                deeplink: "shop?user=duncan&workid=#{work.uuid}" } do
+        = image_tag work.order_image.url, width: 310, heigth: 310
+        .product-name
+          = render_work_name_without_model(work)
+        .product-model
+          = work.product_name
+        .mask
+
+      .info.clearfix
+        .author.pull-left
+          = work.user_display_name
+        .price.pull-right
+          = render_item_price(work)
+
+      - if policy(work).destroy?
+        = link_to '', work_path(work.id), class: 'del-work', data: {method: :delete, remote: true, confirm: t('page.work.del_confirm') }
+
+      = link_to '', add_cart_path(work.uuid), class: 'shopping-cart', data: {method: :put, remote: true, behavior: 'add_to_cart', ga: {target: "#ga_info_#{work.uuid}", name: 'add' } }
+    = render 'works/ua_data', work: work

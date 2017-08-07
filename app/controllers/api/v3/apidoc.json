@@ -1,0 +1,11 @@
+{
+  "name": "commandp API V3",
+  "version": "3.0.0",
+  "description": "commandp API V3",
+  "title": "commandp",
+  "url": "https://api-staging.commandp.com",
+  "order": [
+    "Register",
+    "Auth"
+  ]
+}

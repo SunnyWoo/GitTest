@@ -1,0 +1,24 @@
+.cmdp_container.user_login
+  .form.grid_4.prefix_1.suffix_1
+    h1.item-title.contact-title Join commandp today
+    .title-desc.text-center
+      | Create a profile now to follow and discover amazing artists.
+      br
+      | It only takes a few seconds.
+    .dotted-line
+    = render 'users/link_to_social'
+    .dotted-line.after-social-links
+    - if come_from_china?
+      .cmdp_container
+        .nav
+          .tab-bg class=(params[:register_method] == 'mobile' ? '' : 'active')
+            = link_to 'Email', '###email', class: 'tab header-2'
+          .tab-bg class=(params[:register_method] == 'mobile' ? 'active' : '')
+            = link_to 'Mobile', '###mobile', class: 'tab header-2'
+    - if @sign_up_errors.present?
+      .error.margin-top-fixed
+        i.alert
+        = sign_up_errors(@sign_up_errors)
+    = render 'email'
+    - if come_from_china?
+      = render 'mobile'

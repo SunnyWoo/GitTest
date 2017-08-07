@@ -1,0 +1,50 @@
+- breadcrumb :product_models_import
+- admin_title 'Import Product Model'
+
+.well.well-small
+  = form_tag import_admin_product_models_path, method: :post, multipart: true do |f|
+    | Import json file
+    = file_field_tag :import_file
+    br= submit_tag 'Import'
+
+- if @logs.present?
+  h3 Logs
+  pre
+    table.table
+      - @logs.each do |log|
+        tr
+          td
+            - if log.is_a?(String)
+              = log
+            - if log.is_a?(Hash)
+              | Chnages
+              table.table
+                thead
+                  td Column
+                  td Before
+                  td After
+                - log.each do |key, changes|
+                  tr
+                    td = key
+                    td
+                      - if key.match(/_image|watermark/)
+                        = display_image_with_url(changes.first[key]['url']) if changes.first[key]['url'].present?
+                      - elsif changes.first.is_a?(Hash)
+                        table.table
+                          - changes.first.each do |k, v|
+                            tr
+                              td = k
+                              td = v
+                      - else
+                        = changes.first
+                    td
+                      - if key.match(/_image|watermark/)
+                        = display_image_with_url(changes.last[key]['url']) if changes.last[key]['url'].present?
+                      - elsif changes.last.is_a?(Hash)
+                        table.table
+                          - changes.last.each do |k, v|
+                            tr
+                              td = k
+                              td = v
+                      - else
+                        = changes.last

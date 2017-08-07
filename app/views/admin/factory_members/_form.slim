@@ -1,0 +1,10 @@
+= simple_form_for [:admin, factory_member] do |f|
+  = f.input :factory_id, collection: @factory_options
+  = f.input :username
+  = f.input :email
+  - if factory_member.new_record?
+    = f.input :password
+    = f.input :password_confirmation
+
+  .form-actions
+    = f.button :submit

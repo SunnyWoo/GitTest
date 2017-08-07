@@ -1,0 +1,11 @@
+- admin_title t('.page_title', app: @application.name)
+
+= link_to t('shared.form_actions.back'), admin_oauth_apps_path, class: 'btn btn-default'
+
+dl
+  dt Client ID
+  dd = @application.uid
+  dt Client Secret
+  dd = @application.secret
+  dt Scopes
+  dd = @application.scopes

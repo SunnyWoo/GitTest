@@ -1,0 +1,69 @@
+zh-TW:
+  page:
+    title:
+      featured_products: 推薦商品
+      dont_take_our: 看看他們怎麼說
+      you_may_also_like: 你也許會喜歡
+    text:
+      sort: 依排序
+      model: 產品類型
+      category: 分類
+      qty: 數量
+      free_shipping: 全球直送
+      desc: 描述
+      shipping: 運送
+      shipping_desc: '國際運送 10-12 天。若需急件結帳時亦有急件選項可選擇。'
+      new_year:
+        shipping_desc: "國際運送 10-12 工作天。因應中國新年假期，訂單延遲至 2/24 開始寄送。若有急件需求者，可於結帳頁面選擇快速運送，2/24 起優先出貨。"
+      not_support_mobile: '很抱歉，此功能暫不支援手機版頁面'
+      not_support_mobile_ios:
+        - '為提供給您更優質及順暢的購物體驗，'
+        - '請點以下下載iOS APP，'
+        - '或以電腦開啟使用服務。'
+      not_support_mobile_android:
+        - '為提供給您更優質及順暢的購物體驗，'
+        - '請點以下下載android APP，'
+        - '請以電腦開啟此頁繼續動作。'
+      no_product_found: '抱歉! 目前沒有這個類型的產品。'
+    btns:
+      search: 搜尋
+      shopping_cart: 購物車
+      user: 使用者
+      shop: 設計師商店
+      create: 開始印
+      app: iOS APP
+      about_us: 關於我們
+      help: 幫助
+      contact_us: 聯絡我們
+      order_status: 訂單狀態
+      careers: 加入我印
+      add_to_cart: 加入購物車
+      added: 已加入購物車
+      adding: 加入中...
+      removing: 移出中...
+      back_index: 回首頁
+      back_to_home: Back to home
+      redeem: 立即兌換
+    login:
+      title: 加入我們的會員
+      notice: 立即註冊，只需幾秒鐘。
+      connect_to_facebook: "連結至Facebook"
+    support:
+      select_q_class: 請選擇你的問題分類。
+      enter_q_content: 請詳細輸入你的問題內容。
+    preview:
+      rendering: 預覽圖製作中
+  mobile:
+    passwords:
+      successfully_modified: '修改密碼成功'
+      reset_password: '請重新設定密碼'
+      reset: '重置密碼'
+    confirmations:
+      successfully_confirmed: 'Email 驗證成功'
+      confirmation_expired: '點選以下按鈕回到 APP 登入'
+      invalid_token: '點選以下按鈕回到 APP 登入'
+      successfully_send: '請至 Email 收取驗證信'
+      resend: '重新發送'
+    shared:
+      back_to_app: '回到 APP'
+

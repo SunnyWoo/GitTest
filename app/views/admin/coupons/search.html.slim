@@ -1,0 +1,25 @@
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+      | Coupon: 搜尋結果
+
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= t("coupons.search.thead.title")
+            th= t("coupons.search.thead.code")
+            th= t("coupons.search.thead.count")
+            th= t("coupons.search.thead.orders_used")
+        tbody
+          = content_tag_for :tr, @resources do |mt|
+            td= mt.title
+            td= mt.code
+            td= mt.orders.size
+            td
+              - if mt.used?
+                = render "admin/coupons/orders", coupon: mt
+
+= will_paginate @resources

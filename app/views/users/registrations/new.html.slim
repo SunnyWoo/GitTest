@@ -1,0 +1,15 @@
+h1 flash
+= flash[:error] if flash[:error]
+= flash[:notice] if flash[:notice]
+= flash[:alert] if flash[:alert]
+= simple_form_for @sign_up_user, url: account_sign_up_path, method: 'post' do |f|
+  = hidden_field_tag 'way', 'normal'
+
+  .row
+    .col-sm-12
+      = f.input :email, as: :string, label: "電子信箱"
+      = f.input :password, label: "請輸入密碼"
+      = f.input :password_confirmation, label: "請再一次輸入密碼"
+  .row
+    .col-sm-12
+      = f.submit "送出"

@@ -1,0 +1,122 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.association :category, include_blank: false
+  = f.input :key, label: t('product_models.attributes.key')
+  = f.input :slug, label: t('product_models.attributes.slug')
+  = f.input :dir_name, label: t('product_models.attributes.dir_name')
+  = f.input :external_code, label: t('product_models.attributes.external_code')
+  = f.input :enable_white, label: t('product_models.attributes.enable_white')
+  = f.input :auto_imposite, label: t('product_models.attributes.auto_imposite')
+  = f.input :enable_composite_with_horizontal_rotation, label: t('product_models.attributes.enable_composite_with_horizontal_rotation')
+  = f.input :create_order_image_by_cover_image, label: t('product_models.attributes.create_order_image_by_cover_image')
+  = f.input :enable_back_image, label: t('product_models.attributes.enable_back_image')
+  = f.input :material, label: t('product_models.attributes.material')
+  = f.input :weight, label: t('product_models.attributes.weight')
+  .well
+    p = "#{t('product_codes.material_codes.category')}: #{member.category_code}"
+    = f.input :material_id, collection: @materials, label: t('product_codes.material_codes.material'), disabled: member.material_id.present?
+    = f.input :craft_id, collection: @crafts, label: t('product_codes.material_codes.craft'), disabled: member.craft_id.present?
+    = f.input :spec_id, collection: @specs, label: t('product_codes.material_codes.spec'), disabled: member.spec_id.present?
+    p = "#{t('product_codes.material_codes.base_code')}: #{member.product_code}"
+  = f.input :factory_id, label: t('product_models.attributes.factory'), as: :radio_buttons, collection: collection_for_factory_name_with_id
+  table.table
+    thead
+      tr
+        th = t('product_models.edit.locale')
+        th = t('product_models.attributes.name')
+        th = t('product_models.attributes.description')
+        th = t('product_models.attributes.short_name')
+    tbody
+      - I18n.available_locales.each do |locale|
+        tr
+          td = f.label member.localized_attr_name_for(:name, locale)
+            = t("shared.language.#{locale}")
+          td = f.input_field member.localized_attr_name_for(:name, locale)
+          td = f.input_field member.localized_attr_name_for(:description, locale), as: :text
+          td = f.input_field member.localized_attr_name_for(:short_name, locale)
+  .row
+    .col-xs-4
+      = f.association :price_tier, include_blank: member.price_tier.nil?, collection: options_for_price_tier_select, label: t('product_models.attributes.price_tier')
+      - if member.currencies.any?
+        h4= t('product_models.attributes.outdated_price')
+        ul
+          - member.currencies.each do |currency|
+            li = "#{render_price(currency.price, currency_code: currency.code)} (#{currency.code})"
+    .col-xs-4
+      = f.association :customized_special_price_tier, collection: options_for_price_tier_select,
+        include_blank: t('product_models.attributes.customized_special_price_tier_nil'),
+        label: t('product_models.attributes.customized_special_price_tier')
+    .col-xs-4
+      = f.association :profit, collection: options_for_price_tier_select, include_blank: member.profit.nil?, label: t('product_models.attributes.profit')
+
+  = f.label :design_platform, '設計師商品上架平台'
+  = link_to 'Select All', '#', class: 'btn btn-link',
+            data: {column: 'design_platform', select_all: true}
+  = link_to 'Unselect All', '#', class: 'btn btn-link',
+            data: {column: 'design_platform', select_all: false}
+  div
+    - ProductModel.platforms.each do |platform, dummy_value|
+      - checked = member.design_platform[platform]
+      label.default-filter
+        = check_box_tag("product_model[design_platform][#{platform}]", true, checked, class: 'ace')
+        span.lbl = platform
+  br
+  = f.label :customize_platform, '客製化商品上架平台'
+  = link_to 'Select All', '#', class: 'btn btn-link',
+            data: {column: 'customize_platform', select_all: true}
+  = link_to 'Unselect All', '#', class: 'btn btn-link',
+            data: {column: 'customize_platform', select_all: false}
+  div
+    - ProductModel.platforms.each do |platform, dummy_value|
+      - checked = member.customize_platform[platform]
+      label.default-filter
+        = check_box_tag("product_model[customize_platform][#{platform}]", true, checked, class: 'ace')
+        span.lbl = platform
+  br
+  .well
+    = f.label :available do
+      = f.check_box :available, class: 'ace'
+      span.lbl = t('product_models.attributes.added')
+  = f.input :aasm_state, include_blank: false, collection: ProductModel.aasm.states.map(&:name)
+  .well
+    .upload-placeholder-previewer-image
+    = f.input :placeholder_image, input_html: { data: { preview_at: '.upload-placeholder-previewer-image' } }
+
+  h2 Spec
+
+  .row
+    .col-sm-4 = f.input :width, label: t('work_specs.attributes.width')
+    .col-sm-4 = f.input :height, label: t('work_specs.attributes.height')
+    .col-sm-4 = f.input :dpi, label: t('work_specs.attributes.dpi')
+  = f.input :background_image, as: :image, label: t('work_specs.attributes.background_image')
+  = f.input :overlay_image, as: :image, label: t('work_specs.attributes.overlay_image')
+  = f.input :shape, as: :select, collection: WorkSpec::SHAPES, include_blank: false, label: t('work_specs.attributes.shape')
+  = f.input :alignment_points, as: :select, collection: WorkSpec::ALIGNMENT_POINTS, include_blank: false, label: t('work_specs.attributes.alignment_points')
+  = f.input :background_color, as: :select, collection: WorkSpec::BACKGROUND_COLORS, include_blank: false, label: t('work_specs.attributes.background_color')
+  .row
+    .col-sm-3 = f.input :padding_top
+    .col-sm-3 = f.input :padding_right
+    .col-sm-3 = f.input :padding_bottom
+    .col-sm-3 = f.input :padding_left
+
+  .well
+    h5 PS: 設定是否需要拋單上海生產. 如果需要 請填寫上海端產品類型的Product Key
+    = f.input :remote_key
+
+  = f.input :print_image_mask, as: :image
+  = f.input :remove_print_image_mask, as: :boolean
+
+  = f.input :watermark, as: :image
+  = f.input :remove_watermark, as: :boolean
+  = f.input :tag_ids, collection: Tag.all, input_html: { class: 'tag_select2', multiple: true }
+  = f.input :option_type_ids, collection: OptionType.all, input_html: { class: 'tag_select2', multiple: true }
+
+  .well
+    h3 Description Images
+    = link_to_add_fields '增加', f, :description_images
+    #description_images_fields
+      = f.simple_fields_for :description_images do |builder|
+        = render 'description_image_fields', f: builder
+
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

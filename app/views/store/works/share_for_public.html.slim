@@ -1,0 +1,38 @@
+- cache [@store, @work, I18n.locale] do
+  #public-share-page.has-sticky-footer
+    .cover [data-widget-slick]
+      = image_tag @work.order_image.url, class: 'cover-image',
+                  data: { square_cover_image: '' }
+
+    .publicShare-desc
+      .publicShare-desc-content
+        = simple_format(@work.share_text)
+      .publicShare-desc-share
+        = link_to t('store.share.lets_make_it_now'), store_path(@store), class: 'rectButton rectButton--primary'
+      button.publicShare-desc-zoomIcon [data-trigger-show="#mask"]
+
+    / - if @other_works.present?
+    /   .productSection
+    /     .productSection-title=t('store.share.other_works')
+    /     .productSection-gallery
+    /       - @other_works.each do |other_work|
+    /         .productSection-gallery-item
+    /           = other_work.id
+    /           = image_tag other_work.share_preview.try(:image_url)
+
+    - cache [@store, @templates, I18n.locale] do
+      .productSection
+        .productSection-title=t('store.share.other_templates')
+        .productSection-gallery
+          - @templates.each do |template|
+            .productSection-gallery-item
+              = link_to store_path(@store) do
+                = image_tag render_store_template_placeholder_image_url(template)
+
+  .footer
+    .footer-phone = store_support_phone
+    .footer-businessTime = store_support_business_time
+
+  #mask.mask [data-trigger-hide="#mask"]
+    .mask-content
+      = image_tag @work.order_image.url, width: 414

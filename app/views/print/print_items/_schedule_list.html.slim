@@ -1,0 +1,32 @@
+- print_items = schedule_presenter.print_items
+= will_paginate(print_items)
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 列印編號
+      th 列印類型
+      th 訂單編號
+      th 型號
+      th 進入印刷工作站時間
+      th 進入熱轉印工作站
+      th 進入質檢站
+      th 留言
+      th 累計天數
+      th width='10%' 操作
+  tbody
+    - print_items.each do |print_item|
+      tr id="print_item_schedule_#{print_item.id}"
+        td = print_item.timestamp_no
+        td = print_item.print_type_text
+        td = print_item.order_no
+        td = print_item.product_name
+        td = l print_item.prepare_at, format: :long
+        td = l(print_item.print_at, format: :long) if print_item.print_at
+        td = l(print_item.sublimated_at, format: :long) if print_item.sublimated_at
+        td = render 'print/notes/notes', noteable: print_item.order
+        td = print_item.render_days_from_created_at
+        td
+          = print_item.link_to_workspace
+          br
+          = print_item.link_to_disable_schedule
+= will_paginate(print_items)

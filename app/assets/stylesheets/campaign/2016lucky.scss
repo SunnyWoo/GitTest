@@ -1,0 +1,740 @@
+@import "compass/css3/user-interface";
+
+.lucky2016-red {
+  color: #ec4d4d;
+}
+
+.lucky2016-page {
+  margin-bottom: -30px;
+
+  .dropdown{
+    display: inline-block;
+    width: 100%;
+
+    ul {
+      height: 240px;
+      width: 100%;
+      overflow-y: auto;
+    }
+
+    .caret{
+      top: 27px;
+    }
+  }
+
+  .dropdown-shop {
+    border: 1px solid #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    height: 60px;
+    background-color: transparent;
+    &:hover{
+      background-color: transparent;
+    }
+
+    span {
+      color: white;
+    }
+  }
+}
+
+.lucky2016_mobile_title2 {
+  margin-top: 15px;
+  color: white;
+  font-size: 16px;
+  opacity: .7;
+}
+
+.lucky2016_mobile_title3 {
+  margin-top: 12px;
+  color: white;
+  font-size: 24px;
+}
+
+.lucky2016-secret-panel {
+
+  .lucky2016-secret-bg1 {
+    background: image-url('campaign/2016/2016lucky/images/lucky_bg_before.png');
+    background-size: cover;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    text-align: center;
+  }
+
+  .lucky2016-secret-bg2 {
+    background: image-url('campaign/2016/2016lucky/images/lucky_bg_before.png');
+    background-size: cover;
+    height: 640px;
+    text-align: center;
+  }
+
+  .lucky2016-card-icon {
+    background: image-url('campaign/2016/2016lucky/images/img_icon_card.png');
+    background-size: cover;
+    width: 66px;
+    height: 66px;
+    margin: auto;
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  .dropdown-toggle {
+    width: 370px;
+    border-radius: 4px;
+    background: transparent;
+    border-color: white;
+
+    span {
+      color: white;
+    }
+  }
+
+  .divine_head{
+    margin-top: 60px;
+    h1 {
+      font-size: 36px;
+      color: #ffffff;
+      line-height: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #ffffff;
+      margin-top: 20px;
+      opacity: 0.8;
+    }
+  }
+
+  .divine_form {
+    height: 500px;
+    margin: 60px auto;
+    width: 370px;
+
+    .divine_form_item {
+      margin-bottom: 20px;
+    }
+
+    .__lucky_email {
+      width: 370px;
+      border-radius: 4px;
+      background: transparent;
+      border-color: white;
+      color: white;
+      text-align: left;
+      padding-left: 20px;
+      height: 60px;
+      box-sizing: border-box;
+    }
+
+    .__lucky_email:-moz-placeholder {
+      color: white;
+    }
+    .__lucky_email::-moz-placeholder {
+      color: white;
+    }
+    .__lucky_email:-ms-input-placeholder {
+      color: white;
+    }
+    .__lucky_email::-webkit-input-placeholder {
+      color: white;
+    }
+  }
+
+  .divine_cardd {
+    margin-top: 55px;
+    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.lucyky2016-divine-btn {
+  border-radius: 4px;
+  text-align: center;
+  color: #ffffff;
+  background-color: #4f548e;
+  font-size: 20px;
+  margin-top: 60px;
+  margin-bottom: 120px;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  border: 0px solid;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.lucky2016-divine-result {
+
+  .result_panel {
+    padding-top: 60px;
+    text-align: center;
+    width: 611px;
+    margin: 0 auto;
+  }
+
+  .result_panel_m {
+    padding-top: 60px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .result_title {
+    font-size: 28px;
+    color: #4f548e;
+    font-weight: bold;
+  }
+
+  .result_desc {
+    margin-top: 30px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #656a9f;
+  }
+
+  .result_feature_title {
+    font-size: 16px;
+    color: #4f548e;
+    font-weight: bold;
+  }
+
+  .result_advantage_title {
+    margin-top: 45px;
+  }
+
+  .result_advantage_content {
+    margin-top: 20px;
+  }
+
+  .result_shortcoming_title {
+    margin-top: 40px;
+  }
+
+
+  .btn_panel{
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin-right: 20px;
+  }
+
+  .result_btn {
+    border-radius: 4px;
+    color: #4f548e;
+    background: #ffffff;
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+
+    border: 1px solid;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &.reading {
+      margin-top: 80px;
+    }
+
+    &.share {
+      background-color: #4f548e;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 50px;
+      display: inline-block;
+      margin: 40px 10px 80px 10px;
+      cursor: pointer;
+    }
+  }
+
+  .line {
+    height:1px;
+    width:100%;
+    background:#dddde9;
+    overflow:hidden;
+    margin-top: 40px;
+  }
+
+}
+
+.lucky2016-gallery-item {
+  margin-top: 30px;
+}
+
+.lucyky2016-gallery-item-img {
+  float: left;
+  width: 380px;
+  height: 380px;
+  transition: -webkit-filter .5s, filter .5s;
+  -webkit-transition: -webkit-filter .5s, filter .5s;
+  &:hover {
+    -webkit-filter: brightness(80%);
+    filter: brightness(80%);
+  }
+}
+
+.lucyky2016-gallery-item-note {
+  text-align: center;
+  font-size: 20px;
+  background-color: #fff9f9;
+  width: 563px;
+  height: 380px;
+  box-sizing: border-box;
+  display: table;
+  float: left;
+
+  .box {
+    width: 400px;
+    height: 200px;
+    vertical-align: middle;
+    text-align: left;
+    display: table-cell;
+    padding-left: 90px;
+  }
+
+  .title {
+    font-size: 24px;
+    color: #333333;
+  }
+
+  .sub_title {
+    font-size: 16px;
+    color: #f26967;
+    padding-left: 20px;
+  }
+
+  .desc {
+    font-size: 16px;
+    color: #333333;
+    margin-top: 20px;
+    line-height: 24px;
+  }
+}
+
+.lucky2016-divine-about {
+  background-color: #ffffff;
+  height: 480px;
+  border: 0px solid #eeeeee;
+
+  .box {
+    margin: 0 auto; width: 800px;
+
+    .img {
+      float: left;
+      margin-top: 50px;
+      overflow: hidden;
+    }
+
+    .content {
+      float: left;
+      margin-top: 140px;
+      margin-left: 70px;
+
+      .title {
+        font-size: 50px;
+        color: #4f548e;
+      }
+
+      .sub_title {
+        font-size: 20px;
+        color: #4f548e;
+        opacity: 0.8;
+        margin-top: 10px;
+      }
+
+      .download {
+        margin-top: 20px;
+      }
+
+      .download_img {
+        float: left;
+        margin-right: 10px;
+      }
+
+      .download_btn {
+        width: 255px;
+        height: 44px;
+        margin-top: 20px;
+        border: 1px solid #fd9f9e;
+        background-color: #fd9f9e;
+        color: #ffffff;
+        font-weight: bold;
+        border-radius: 4px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.lucky2016-title {
+  margin-top: 67px;
+  font-size: 39px;
+  font-weight: 400;
+  color: #3b65a4;
+}
+
+.lucky2016-title2 {
+  color: #5a76a0;
+}
+
+.lucky2016-divine-about-foot {
+  height: 260px;
+  background-color: #fd9f9e;
+
+
+  .lucky2016-divine-about-foot-items {
+    margin: 0 auto;
+    width: 800px;
+    padding-top: 57px;
+  }
+
+  .lucky2016-divine-about-foot-item {
+    width: 200px;
+    float: left;
+
+    .icon {
+      cursor: pointer;
+    }
+
+    .title {
+      margin-top: 13px;
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    .sub_title {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #ffffff
+    }
+  }
+}
+
+.lucky2016-divine-article {
+  height: 616px;
+  background: #fce8ee;
+
+  .article_box {
+    padding-top: 80px;
+    text-align: center;
+
+    .title {
+      font-size: 30px;
+      color: #4f548e;
+    }
+
+    .items {
+      width: 980px;
+      margin: 50px auto;
+    }
+
+    .item {
+      float: left;
+      margin-right: 20px;
+      width: 300px;
+      height: 300px;
+      position: relative;
+      text-align: left;
+    }
+
+    .article_layer {
+      width: 300px;
+      height: 90px;
+      background-color: #4fbd92;
+      position: absolute;
+      z-index: 100;
+      opacity: 0;
+      bottom: 0px;
+    }
+
+    .article_layer_title {
+      margin: 20px 0px 0px 20px; font-size: 21px; color: #ffffff;
+    }
+
+    .article_layer_link {
+      margin-right: 16px; text-align: right; font-size: 16px; color: #ffffff; margin: 13px 16px 0 0;text-decoration: none;display: block;cursor: pointer;
+    }
+  }
+}
+
+.lucky2016-alert {
+  margin-left: 20px;
+  position: absolute;
+  text-align: left;
+  left: 100%;
+  display: none;
+  width: 100%;
+  color: #ec4d4d;
+  line-height: 60px;
+}
+
+.lucky2016-alert-icon {
+  display: inline-block;
+  background: url(https://d2i5hifyddc647.cloudfront.net/campaign/2016/2016lucky/img_icon_alart.png);
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+.lucky2016-show-alert {
+  position: relative;
+
+  .dropdown, .dropdown-toggle {
+    border-color: #ec4d4d !important;
+  }
+
+  .lucky2016-alert {
+    display: block;
+  }
+}
+
+.lucky2016-mobile {
+  .__lucky_email {
+    text-align: center !important;
+  }
+
+  .divine_form {
+    max-width: 370px;
+    width: 90%;
+  }
+
+  .dropdown-toggle, .dropdown {
+    width: 100% !important;
+  }
+
+  .dropdown .dropdown-shop:hover {
+    background-color: transparent;
+  }
+
+  .lucky2016-alert {
+    position: absolute;
+    bottom: 2px;
+    z-index: 999;
+    height: 30px;
+    font-size: 16px;
+    left: 0px;
+    margin-left: 0px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+    display: none;
+    width: 100%;
+    color: white;
+  }
+
+  .lucky2016-show-alert {
+    .dropdown, .dropdown-toggle {
+      height: 85px !important;
+      text-align: center;
+      border-bottom-width: 30px;
+      border-color: #ec4d4d !important;
+    }
+
+    .lucky2016-alert {
+      display: block;
+    }
+  }
+
+  .result_btn {
+    margin: 10px !important;
+  }
+
+  .lucky2016-divine-article {
+    height: initial;
+
+    .items {
+      width: initial;
+    }
+
+    .item {
+      float: none;
+      margin: auto;
+      margin-bottom: 20px;
+      width: 300px;
+      height: 300px;
+      text-align: left;
+      display: block;
+    }
+  }
+
+  .lucky2016-divine-about-m {
+    .title {
+      text-align: center;
+      padding-top: 16px;
+      font-size: 30px;
+      color: #4f548e;
+    }
+
+    .sub_title {
+      text-align: center;
+      padding-top: 7px;
+      font-size: 18px;
+      color: #4f548e;
+      opacity: .8;
+    }
+
+    .download {
+      text-align: center;
+      padding-top: 18px;
+    }
+
+    .download_img {
+      display: inline-block;
+
+      img {
+        height: 45px;
+        width: 138px;
+      }
+    }
+
+    .download_img:first-child {
+      margin-right: 10px;
+    }
+
+    .download_btn {
+      display: block;
+      width: 288px;
+      height: 50px;
+      margin: 20px auto 0px auto;
+      border: 1px solid #fd9f9e;
+      background-color: #fd9f9e;
+      color: #ffffff;
+      font-weight: bold;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .img {
+      margin-top: 50px;
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .lucky2016-divine-about-foot {
+    height: initial;
+  }
+
+  .lucky2016-divine-about-foot-items {
+    width: initial;
+  }
+
+  .lucky2016-divine-about-foot-item {
+    float: none;
+    margin: auto;
+    padding-bottom: 40px;
+  }
+
+  .lucky2016m-team-bigtitle {
+    text-align: center;
+    font-size: 28px;
+    color: #4f548e;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .lucky2016m-team-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .lucky2016m-team-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #f46864;
+    padding-top: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .lucky2016m-team-desc {
+    line-height: 24px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    padding: 18px 20px 60px 20px;
+  }
+
+  .lucky2016m-team-img {
+    width: 90%;
+    margin: 0px auto 0px auto;
+    max-width: 288px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  #team_page {
+    background-color: #fef9f3;
+  }
+
+  .lucky2016-divine-about-foot {
+    padding-bottom: 40px;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    max-height: 250px;
+    overflow: scroll;
+
+    li {
+      height: 25px;
+      text-align: center;
+    }
+  }
+
+  .divine_form {
+    height: initial;
+  }
+}
+
+.lucky2016m-bg {
+  background-color: #fef9f3;
+}
+
+.lucky2016m-bg.dark {
+  background: image-url('campaign/2016/2016lucky/images/lucky_bg_before.png');
+
+  .category-select {
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.camp_padding-top-33 {
+  padding-top: 33px;
+}
+
+.lucky2016m-short-kv {
+  .slick-list {
+    height: 225px;
+  }
+}
+
+.lucky2016m-resoult {
+  background-color: #fef9f3;
+  margin-top: 40px;
+}
+
+.lucky2016m-link {
+  text-decoration: none;
+}

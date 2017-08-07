@@ -1,0 +1,47 @@
+.orderRow
+  .orderRow-item.orderRow-item--label = edit_translator('store.order.payment')
+  .orderRow-item= t("activerecord.attributes.order.payment_#{@order.payment_method}")
+.orderRow
+  .orderRow-item.orderRow-item--label = edit_translator('store.order.pay_price')
+  .orderRow-item.orderRow-item--highlight = @order.price
+.orderRowAddress
+  .orderRowAddress-item
+    = edit_translator('store.order.shipping_info_name')
+    |：
+  .orderRowAddress-item.orderRowAddress-item--address
+    = edit_translator('store.order.shipping_info_full_address')
+    |：
+    = @order.shipping_info.full_address
+.orderRow--intervalGap
+.orderRow
+  .orderRow-item.orderRow-item--label = @order.order_no
+  .orderRow-item.orderRow-item--highlight = t("order.state.#{@order.aasm_state}")
+
+- @order.order_items.each do |item|
+  - itemable = item.itemable
+  .orderRowProductInfo
+    .orderRowProductInfo-item.orderRowProductInfo-item--image
+      = image_tag(itemable.order_image.thumb.url, class: 'img')
+    .orderRowProductInfo-item.orderRowProductInfo-item--descritpion
+      .orderRowProductInfo-item-name
+        .list = render_work_name_without_model(itemable)
+        .list = itemable.product_name
+      .orderRowProductInfo-item-name
+        - if itemable.has_special_price?
+          .list--originalPrice = render_item_original_price(item, currency_code: @order.currency)
+        .list--currentPrice = render_item_price(item, currency_code: @order.currency)
+
+.orderRow
+  .orderRow-item.orderRow-item--label = edit_translator('store.order.order_subtotal')
+  .orderRow-item = render_price(@order.order_items_total, currency_code: @order.currency)
+.orderRow
+  .orderRow-item.orderRow-item--label = edit_translator('store.order.discount')
+  .orderRow-item = render_price(-@order.discount, currency_code: @order.currency)
+.orderRow
+  .orderRow-item.orderRow-item--label = edit_translator('store.order.shipping_fee')
+  .orderRow-item = render_shipping_price(@order)
+.orderRow
+  .orderRow-item.orderRow-item--label.orderRow-item--highlightTotal = edit_translator('store.order.order_price')
+  .orderRow-item.orderRow-item--highlight = render_order_price(@order)
+.button.button--full.button--filled#button--queryOtherOrder
+  = edit_translator('store.order.other_order')

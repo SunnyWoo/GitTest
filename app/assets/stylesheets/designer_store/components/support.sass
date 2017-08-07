@@ -1,0 +1,60 @@
+// *************************************
+//
+//   Support
+//   -> 顯示客服資訊的元件
+//
+// *************************************
+
+.support
+  display: block
+  width: 100%
+  border-top: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.support-row
+  position: relative
+  display: block
+  width: 100%
+  @include rem(height, 78px)
+  @include rem(line-height, 78px)
+  background-color: $c-bg-white
+  @include rem(font-size, $f-size-content)
+  @include rem(padding-left, 75px)
+
+%support-row-icon
+  content: ''
+  display: inline-block
+  @include rem(width, 30px)
+  @include rem(height, 78px)
+  position: absolute
+  @include rem(left, 30px)
+  top: 0
+  background-repeat: no-repeat
+  background-position: center
+  @include rem(background-size, 30px)
+
+.support-row--phone
+  &:before
+    @extend %support-row-icon
+    background-image: asset-data-url('designer_store/phone@2x.png')
+
+.support-row--businessTime
+  &:before
+    @extend %support-row-icon
+    background-image: asset-data-url('designer_store/clock@2x.png')

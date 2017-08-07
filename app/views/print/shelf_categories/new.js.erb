@@ -1,0 +1,5 @@
+$('body').append("<%= j render 'modal', category: @category %>");
+$('#shelf_category').modal('show');
+$("#shelf_category").on('hidden.bs.modal', function(e) {
+    $(e.target).remove();
+});

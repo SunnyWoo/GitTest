@@ -1,0 +1,8 @@
+h4 = t('asset_package_categories.edit.packages_sort')
+.row
+  .col-md-6
+    #nestable.dd
+      ol.dd-list.sortable
+        - member.packages.order('position ASC').each do |package|
+          li.dd-item data-url="#{update_position_admin_asset_package_path(package)}"
+            .dd-handle = "#{package.name}"

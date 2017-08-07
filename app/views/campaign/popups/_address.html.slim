@@ -1,0 +1,64 @@
+#address-popup.popups
+  .popus-container
+
+    .mobilev2-top
+      .leftnavs
+        .back-icon.address-popup-close
+          = image_tag 'campaign/mobilev2/back.png'
+
+
+      | 建立新地址
+
+
+    .mobilev2-content
+      #address-form-alert-notice
+      .address-form-subtitle.form-title 地址資訊
+
+
+      .form.form-billing
+        .form-group
+          label.control-label
+            span.label-span 名
+            input type='text' placeholder='收件人的名字'
+        .form-group
+          label.control-label
+            span.label-span 姓
+            input type='text' placeholder='收件人的姓氏'
+        .form-group
+          label.control-label
+            span.label-span Email
+            input type='email' placeholder='您的Email'
+
+        .form-group
+          label.control-label
+            span.label-span 地址
+            input type='text' placeholder='收件地址 第一行'
+
+        .form-group
+          label.control-label
+            span.label-span
+            input type='text' placeholder='收件地址 第二行'
+
+        .form-group
+          label.control-label
+            span.label-span 城市
+            input type='text' placeholder='收件地址所在的行政區'
+
+        .form-group
+          label.control-label
+            span.label-span 郵遞區號
+            input type='text' placeholder='收件地址行政區之郵遞區號'
+
+        .form-group
+          label.control-label
+            span.label-span 國家/地區
+            input type='text' placeholder='收件地址所在的國家/地區名稱'
+
+        .form-group.last-form-group
+          label.control-label
+            span.label-span 電話
+            input type='text' placeholder='收件人聯絡電話號碼'
+
+
+    .mobilev2-footer.checkout-popup-open
+      | CHECK_OUT

@@ -1,0 +1,55 @@
+/* line 1, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item {
+  display: inline-block;
+  padding: 5px;
+  margin: 1px; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-1 {
+  background-color: #e72727;
+  font-size: 1.8em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-2 {
+  background-color: #e93535;
+  font-size: 1.7em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-3 {
+  background-color: #ea4343;
+  font-size: 1.6em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-4 {
+  background-color: #ec5151;
+  font-size: 1.5em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-5 {
+  background-color: #ed5e5e;
+  font-size: 1.4em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-6 {
+  background-color: #ef6c6c;
+  font-size: 1.3em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-7 {
+  background-color: #f07a7a;
+  font-size: 1.2em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-8 {
+  background-color: #f28888;
+  font-size: 1.1em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-9 {
+  background-color: #f39595;
+  font-size: 1em; }
+
+/* line 9, ../../../stylesheets/admin/v2/tags.scss */
+.tags-item-10 {
+  background-color: #f5a3a3;
+  font-size: 0.9em; }

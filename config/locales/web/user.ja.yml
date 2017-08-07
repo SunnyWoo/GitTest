@@ -1,0 +1,33 @@
+ja:
+  page:
+    user:
+      item_title: "アカウント"
+      profile: 'マイプロフィール'
+      address: '住所'
+      order_history: '注文履歴'
+      my_gallery: 'マイギャラリー'
+      change_background: '背景トランスフォーム'
+      log_out: ログアウト
+      need_help: '需要協助?'
+      need_help_text: ご注文に関して問題がありますか？
+      btns:
+        save: 変更を保存する
+        edit: 編集
+        delete: 削除
+        add_new_address: 新しい住所を追加する
+        faq: よくあるご質問
+      thead:
+        order_no: 注文ID
+        date: 日付
+        order_st: 注文状態
+        price: 価格
+      profile_attrs:
+        name: "お名前"
+        location: "お住まい"
+        gender: "性別"
+        gender_male: "男性"
+        gender_female: "女性"
+        gender_unspecified: "非公開"
+    work:
+      title: つくる
+      del_confirm: このアイテムを削除します。よろしいですか？

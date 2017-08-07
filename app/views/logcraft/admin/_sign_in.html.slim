@@ -1,0 +1,9 @@
+- admin = activity.trackable
+div
+  = "#{admin.email} 登入成功"
+  br
+  = "IP:  #{activity[:extra_info][:ip]}"
+  br
+  = "OS:  #{activity[:extra_info][:os]}"
+  br
+  = "Browser:   #{activity[:extra_info][:browser]}"

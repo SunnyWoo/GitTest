@@ -1,0 +1,20 @@
+/* line 1, ../../../stylesheets/admin/v2/shame.scss */
+span.label {
+  padding-top: 4px; }
+
+/* line 6, ../../../stylesheets/admin/v2/shame.scss */
+.edit_promotion .promotion-container-fixed {
+  position: fixed;
+  z-index: 9999;
+  top: 60px; }
+/* line 11, ../../../stylesheets/admin/v2/shame.scss */
+.edit_promotion .promotion-container-body {
+  overflow-y: scroll; }
+
+/* line 16, ../../../stylesheets/admin/v2/shame.scss */
+.ml-sm {
+  margin-left: 12px; }
+
+/* line 17, ../../../stylesheets/admin/v2/shame.scss */
+.mr-sm {
+  margin-right: 12px; }

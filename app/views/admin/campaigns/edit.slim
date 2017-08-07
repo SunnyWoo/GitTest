@@ -1,0 +1,48 @@
+- breadcrumb :edit_admin_campaigns
+- admin_title t('campaigns.edit.page_title')
+= render 'form'
+
+br
+hr
+br
+
+.row
+  .col-xs-3
+    = render partial: 'aasm_switch', locals: { resource: @campaign, label: 'V3狀態' }
+
+  - if Region.china?
+    .col-xs-9
+      .well
+        - url = "#{Settings.host}/campaign/#{@campaign.key}"
+        - preview_url = "#{url}/preview"
+        p 這個開關控制V3網站能不能取得這個campaign。
+        p
+          | 發佈位置
+          = link_to url, url
+        p
+          | 準備中預覽位置
+          = link_to preview_url, preview_url
+
+br
+hr
+br
+
+h3 V2開關
+table.table
+  thead
+    tr
+      th = t('features.index.feature_name')
+      th = t('features.index.enable_for_admin')
+      th = t('features.index.enable_for_user')
+  tbody
+    - (@features or []).each do |feature|
+      tr
+        td = feature.name
+        td
+          label
+            input.ace.ace-switch.ace-switch-6 type='checkbox' checked=feature.enable_for_admin? data-checkbox-check-url=enable_admin_feature_path(feature.name, for: 'admin') data-checkbox-uncheck-url=disable_admin_feature_path(feature.name, for: 'admin')
+            span.lbl
+        td
+          label
+            input.ace.ace-switch.ace-switch-6 type='checkbox' checked=feature.enable_for_user? data-checkbox-check-url=enable_admin_feature_path(feature.name, for: 'user') data-checkbox-uncheck-url=disable_admin_feature_path(feature.name, for: 'user')
+            span.lbl

@@ -1,0 +1,73 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 訂單編號
+      th 項目數量
+      th 內容
+      th 留言
+      th 完成度
+      th 折扣码
+      th 订单总价
+      th 出貨方式
+      th 操作
+  tbody
+    - orders.each do |order|
+      tr
+        td
+          = render_order_shipper(order)
+          br
+          = order.remote_info['order_no']
+        td= order.print_items_count
+        td
+          table.table.table-bordered
+            thead.thin-border-bottom
+              tr
+                th 型號
+                th 列印編號
+                th 縮圖
+                th 狀態
+                th 商品单价
+                th 進入工作站時間
+                th style='width: 100px' 累計處理時間
+                th 暂存区编号
+                th style='min-width: 100px'  审核描述
+                th 商品貼紙
+              - order.order_items.each do |order_item|
+                - order_item.unpackaged_print_items.each do |print_item|
+                  tr
+                    td = print_item.product_name
+                    td = render_timestamp_no(print_item)
+                    td = render_print_item_preview(print_item)
+                    td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+                    td = render_item_price(order_item.itemable)
+                    td = print_item.local_sublimated_at
+                    td = print_item.after_sublimated_time
+                    td = print_item.temp_shelf_serial
+                    td = print_item.temp_shelf_description
+                    td = link_to '商品貼紙', print_pdf_product_ticker_path(order_item_id: order_item.id, format: :pdf), class: "btn btn-success", target: '_blank'
+                td colspan='8'
+                  - unless order_item.notes.empty?
+                    = render 'print/notes/notes', noteable: order_item, readonly: true
+        td
+          - unless order.notes.empty?
+            = render 'print/notes/notes', noteable: order, readonly: true
+        td = order.render_progress_bar
+        td= render_coupon_info(order.embedded_coupon)
+        td= render_order_price(order)
+        td= order.render_shipping_way_with_color
+        td
+          .btn-group
+            = link_to print_order_package_path(order), class: "btn btn-success #{order.package_button_state}", method: :put, data: { confirm: '確認完成？'} do
+              = fa_icon 'check'
+              | 打包
+            = link_to '部分打包', print_order_package_parting_path(order), class: "btn btn-success", remote: true
+            - if order.prepare_to_merge?
+              = link_to '拼单', print_order_splice_order_path(order), class: "btn btn-success", remote: true
+            = link_to '出貨單正面', print_pdf_delivery_note_path(id: order.id, format: :pdf), class: "btn btn-success", target: '_blank'
+            = link_to '出貨單背面', render_delivery_note_back_url(order.billing_info_country_code), class: "btn btn-success", target: '_blank'
+            = render 'print/orders/update_invoice', order: order
+
+          - if order.forbid_package?
+            .text-warning.red.inline
+              = fa_icon 'warning'
+              | 訂單未完全熱轉印無法打包。

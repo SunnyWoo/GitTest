@@ -1,0 +1,9 @@
+<% itme_size =  @order.order_items.size %>
+<% if itme_size == 0 %>
+  $("#cart_no_itme").removeClass('hide')
+  $("#cart_have_itme").addClass('hide')
+  $("#cart_order_items").addClass('hide')
+<% end %>
+$('#cart_order_items').html('<%= j = render_singularize(t('page.cart.items', items: itme_size), itme_size) %>');
+$('#cart_itmes').html('<%= j render 'list', locals: { order: @order }%>');
+$('li span.cart-items').html('<%= render_cart_items %>');

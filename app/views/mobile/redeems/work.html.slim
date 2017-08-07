@@ -1,0 +1,26 @@
+.redeem-works-preview-container.poped
+  .top-header.top-header-static
+    .leftnavs
+      .back-icon.simple-back
+        = image_tag('campaign/mobilev2/back.png')
+    .logo
+      = image_tag("campaign/mobilev2/#{I18n.locale}/logo3x.png", alt: t('site.name'), width: 100)
+  .scrollable-outer
+    .scrollable-inner
+      .work-info-block
+        = image_tag @redeem_work.user.avatar.s154.url, class: 'work-info-avatar'
+        .work-info-names
+          span.work-info-name = params[:work_title]
+          br
+          span.work-info-username = @redeem_work.user_display_name
+        span.work-info-price = t('text.free')
+      = image_tag @redeem_work.ordered_previews.first.image.url, id: 'work-gallery-image'
+      .work-desc-block
+        .work-desc-row
+          span.work-desc-row-title = t('page.text.model')
+          span.work-desc-row-text = @redeem_work.product_name
+        .work-desc-row-block
+          .work-desc-row-title = t('page.text.desc')
+          = simple_format @redeem_work.product_description
+    .bottom-placeholder
+  = render_redeem_check_out_link(work_sgid: @redeem_work.to_sgid_param)

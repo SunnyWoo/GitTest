@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/account/verify_credentials.json?include_entities=false&skip_status=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - OAuth gem v0.4.7
+      authorization:
+      - OAuth oauth_consumer_key="gkeRF7Pkm4SEKCQRbAF5zOOx0", oauth_nonce="poEpr8Pi8AYLN98fibQtLBIXcJqWJdlA0cDF0k0f78",
+        oauth_signature="5nUduHs7TK%2FiCKHmNHV2VCFz9a8%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1435374926", oauth_token="2204864839asdasd-YVZXx113PfQkhajAkMs5LqUmr1syoWRnRZnos2X",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      connection:
+      - close
+      content-encoding:
+      - gzip
+      content-length:
+      - '87'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Sat, 27 Jun 2015 03:15:26 GMT
+      server:
+      - tsa_a
+      set-cookie:
+      - guest_id=v1%3A143537492646912711; Domain=.twitter.com; Path=/; Expires=Mon,
+        26-Jun-2017 03:15:26 UTC
+      strict-transport-security:
+      - max-age=631138519
+      x-connection-hash:
+      - 24c0c2e9040a9267fe23248535f82efc
+      x-response-time:
+      - '4'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+    http_version: '1.1'
+  recorded_at: Sat, 27 Jun 2015 03:15:28 GMT
+recorded_with: VCR 2.9.2

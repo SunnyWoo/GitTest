@@ -1,0 +1,77 @@
+#chooseObj, #typographyPanel, #stickerPanel, #shapePanel, #texturePanel, #linePanel, #cropPanel {
+  position: fixed;
+  top: 71px;
+  left: 81px;
+  width: 316px;
+  border-right: 1px solid $line-color;
+  background-color: #FFF;
+  overflow: auto;
+  z-index: 1;
+  .components {
+    @extend .clearfix;
+  }
+  .head {
+    width: 100%;
+    border-bottom: 1px solid $line-color;
+    font-weight: 400;
+    padding: 32px 0;
+    text-align: center;
+  }
+  .obj {
+    position: relative;
+    width: 157px;
+    height: 157px;
+    border-bottom: 1px solid $line-color;
+    @extend .pull-left;
+    cursor: pointer;
+    .mask {
+      @include transition(opacity 0.3s);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 157px;
+      height: 157px;
+      background-color: $main-color;
+      opacity: 0;
+    }
+    &:nth-child(2n-1) {
+      border-right: 1px solid $line-color;
+    }
+    &:hover {
+      .mask {
+        opacity: 0.5;
+      }
+    }
+    .locale-en & {
+      .name {
+        width: 120px;
+        margin: 0 auto;
+      }
+    }
+    .cp-icon {
+      display: block;
+      width: 90px;
+      height: 50px;
+      margin: 30px auto;
+    }
+    .name {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.typography-lists, .sticker-lists, .shape-lists, .texture-lists, .line-lists, .crop-lists {
+  .obj {
+    i > img{
+      display: block;
+      width: 90px;
+      height: 90px;
+      margin: 35px auto;
+    }
+  }
+}
+
+#linePanel .components .obj .name {
+  text-indent: -9999px;
+}

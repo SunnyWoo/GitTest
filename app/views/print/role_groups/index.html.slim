@@ -1,0 +1,35 @@
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 權限群組
+        .widget-toolbar
+          = link_to '新增', new_print_role_group_path
+      .widget-body
+        .widget-main.no-padding
+          = render 'list', role_groups: @role_groups
+
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 = '操作紀錄(最新30筆)'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 操作人員帳號
+                th 異動時間
+                th 異動內容
+              - @activities.each do |activity|
+                tr
+                  td = activity.user.username
+                  td = l activity.created_at, format: :long
+                  td
+                    - if activity.key == 'create'
+                      = "創建權限群組 #{activity.trackable.name}"
+                    - else
+                      = "更新權限群組 #{activity.trackable.name}"
+                      pre = role_group_changed_info(activity)

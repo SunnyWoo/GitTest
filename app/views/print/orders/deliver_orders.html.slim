@@ -1,0 +1,30 @@
+.page-header
+  h1
+    = link_to '出貨工作站', print_ship_path(list: :normal)
+  h3 拋單對應列表
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 待處理項目
+        - if @list == 'simple'
+          .widget-toolbar
+            span.badge.badge-danger = @orders.count
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 列印編號
+                th 中國訂單編號
+                th 台灣訂單編號
+                th 一單一件(台灣訂單)
+            tbody
+              - @orders.each do |order|
+                - print_items = order.print_items
+                - print_items.each do |print_item|
+                  tr
+                    td = print_item.timestamp_no
+                    td = order.order_no
+                    td = order.remote_info['order_no']
+                    td = render_yes_or_no(order.remote_info['single_item'].to_b) if order.remote_info['single_item']

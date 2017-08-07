@@ -1,0 +1,6 @@
+- order = Order.find(activity.extra_info[:order_id]) if activity.extra_info[:order_id]
+p
+  | 更新 訂單發票號碼
+  = " Order:#{link_to_admin_order(order)}".html_safe if order
+  br Message:
+  pre = activity.message

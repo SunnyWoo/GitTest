@@ -1,0 +1,18 @@
+.login_form#email class=(params[:register_method] == 'mobile' ? 'hide' : '')
+  = simple_form_for(@user, as: @user, url: registration_path(@user)) do |f|
+    = hidden_field_tag :register_method, 'email'
+    .form-field
+      = f.input :name, placeholder: 'Johnny Appleseed', autofocus: true, required: true
+    .form-field
+      = f.input :email, as: :string, placeholder: 'hi@commandp.com', required: true
+    .form-field
+      = f.input :password, required: true
+    .form-field
+      = f.input :password_confirmation, required: true
+
+    footer.margin-top-fixed
+      .text-center
+        = f.submit 'Create Profile', class: 'btn btn-default'
+        .sign_up_link
+          | Have an account ?
+          = link_to ' Login', new_session_path(@user)

@@ -1,0 +1,30 @@
+nav.navbar-default.navbar-static-side role="navigation"
+  .sidebar-collapse
+    ul#side-menu.nav.metismenu
+      li.nav-header
+        .profile-element
+          span
+            img alt="image" class="img-circle" src="http://placehold.it/48/f8ac59/ed5565"
+          span.block.m-t-xs
+            strong.font-bold Example user
+      - if Rails.env.development?
+        li [ class=active_if_controller('demos') ]
+          = link_to "#" do
+            i.fa.fa-rocket
+            span.nav-label 開發用展示頁面
+          ul.nav.nav-second-level
+            li = link_to_anchor_if_current '元件展示', { controller: 'demos', action: 'elements' }
+      li
+        = link_to "#" do
+          i.fa.fa-rocket
+          span.nav-label 測試 2
+        ul.nav.nav-second-level
+          li = link_to '測試 1', '#gg'
+          li = link_to '測試 2', '#gg'
+      li
+        = link_to "#" do
+          i.fa.fa-rocket
+          span.nav-label 測試 3
+        ul.nav.nav-second-level
+          li = link_to '測試 3', '#gg'
+          li = link_to '測試 4', '#gg'

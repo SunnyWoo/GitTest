@@ -1,0 +1,197 @@
+/* line 2, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+.yto_express_waybill .content {
+  padding: 1mm; }
+  /* line 5, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .top {
+    height: 110mm; }
+  /* line 8, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .bottom {
+    height: 65mm; }
+  /* line 12, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .header {
+    height: 16mm;
+    padding: 2mm;
+    border-bottom: 1mm solid #3b579d; }
+    /* line 18, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .header .product_info .title {
+      font-size: 14pt;
+      font-weight: bold; }
+    /* line 22, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .header .product_info .price {
+      margin-top: 1mm;
+      font-size: 9pt; }
+    /* line 28, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .header .consignee_branch {
+      width: 60mm;
+      float: left;
+      text-align: center; }
+      /* line 33, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .header .consignee_branch img {
+        height: 10mm;
+        width: 25mm; }
+  /* line 40, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .datou {
+    height: 20mm;
+    text-align: center;
+    font-size: 36pt;
+    font-weight: bold;
+    border-bottom: 1mm dashed #0b0c18; }
+  /* line 48, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .mail_no {
+    height: 17mm;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1mm dashed #0b0c18; }
+    /* line 54, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .mail_no img {
+      height: 12mm;
+      width: 60mm; }
+  /* line 61, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .receipt .receipt_info {
+    font-size: 10pt;
+    border-right: 1mm dashed #0b0c18; }
+    /* line 64, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_info .shipping_info {
+      font-size: 11pt;
+      font-weight: bold;
+      height: 20mm;
+      border-bottom: 1mm dashed #0b0c18; }
+      /* line 69, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receipt .receipt_info .shipping_info .person {
+        width: auto;
+        float: left; }
+      /* line 73, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receipt .receipt_info .shipping_info .message {
+        width: 75mm;
+        text-align: left;
+        float: right; }
+    /* line 79, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_info .billing_info {
+      height: 20mm;
+      border-bottom: 1mm dashed #0b0c18; }
+      /* line 82, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receipt .receipt_info .billing_info .person {
+        width: auto;
+        float: left; }
+      /* line 86, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receipt .receipt_info .billing_info .message {
+        width: 75mm;
+        text-align: left;
+        float: right; }
+    /* line 93, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_info .receipt_message .signature {
+      height: 15mm;
+      margin-left: 5px;
+      border-right: 1mm dashed #0b0c18; }
+    /* line 99, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_info .receipt_message .timing .title {
+      margin-left: -10px; }
+    /* line 102, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_info .receipt_message .timing .time {
+      margin: 10px 0 0 20px;
+      letter-spacing: 1px; }
+  /* line 111, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .receipt .receipt_content {
+    margin-left: -20px;
+    margin-top: 60px;
+    width: auto;
+    text-align: left; }
+    /* line 116, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receipt .receipt_content span {
+      display: block; }
+  /* line 123, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .logo .logo_mail_no {
+    height: 15mm;
+    text-align: center; }
+    /* line 127, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .logo .logo_mail_no img {
+      height: 10mm;
+      width: 60mm; }
+  /* line 134, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .receive {
+    border-bottom: 1mm dashed #0b0c18; }
+    /* line 136, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receive .receive_info {
+      font-size: 10pt;
+      border-right: 1mm dashed #0b0c18; }
+      /* line 139, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receive .receive_info .shipping_info {
+        height: 15mm; }
+        /* line 142, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+        .yto_express_waybill .content .receive .receive_info .shipping_info .person {
+          width: auto;
+          float: left; }
+        /* line 146, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+        .yto_express_waybill .content .receive .receive_info .shipping_info .message {
+          width: 75mm;
+          text-align: left;
+          float: right; }
+      /* line 152, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receive .receive_info .billing_info {
+        height: 15mm;
+        border-bottom: 1mm dashed #0b0c18; }
+        /* line 155, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+        .yto_express_waybill .content .receive .receive_info .billing_info .person {
+          width: auto;
+          float: left; }
+        /* line 159, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+        .yto_express_waybill .content .receive .receive_info .billing_info .message {
+          width: 75mm;
+          text-align: left;
+          float: right; }
+    /* line 167, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .receive .receive_content {
+      margin-left: -20px;
+      margin-top: 30px;
+      width: auto;
+      text-align: left; }
+      /* line 172, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .receive .receive_content span {
+        display: block; }
+  /* line 178, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .detail {
+    border-bottom: 1mm dashed #0b0c18; }
+    /* line 179, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .item_info {
+      height: 20mm;
+      border-right: 1mm dashed #0b0c18; }
+    /* line 185, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .title {
+      font-size: 8pt;
+      width: auto;
+      float: left; }
+    /* line 190, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .items {
+      font-size: 6pt;
+      width: auto;
+      margin: 10px;
+      float: left; }
+      /* line 195, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+      .yto_express_waybill .content .detail .items span {
+        display: block; }
+    /* line 200, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .package_no table {
+      width: 17mm;
+      height: 17mm;
+      border-width: 0;
+      border-style: none;
+      border-color: #0000ff;
+      border-collapse: collapse; }
+    /* line 209, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .package_no td {
+      border-left: solid 2px #000;
+      padding: 0;
+      margin: 0;
+      width: 0px;
+      height: 2px; }
+    /* line 217, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .package_no td.black {
+      border-color: #000; }
+    /* line 220, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+    .yto_express_waybill .content .detail .package_no td.white {
+      border-color: #fff; }
+  /* line 227, ../../stylesheets/pdf/yto_express_waybill.css.scss */
+  .yto_express_waybill .content .footer {
+    height: auto;
+    clear: both;
+    font-size: 9pt; }

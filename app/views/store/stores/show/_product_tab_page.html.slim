@@ -1,0 +1,37 @@
+#shop data-widget='tab-page' data-widget-filtering-and-sorting=true
+  ul.categoryFilter data-widget='filter-category'
+    - @categories.each do |category|
+      li.categoryFilter-item data-filter=(category.key) = category.name
+  .modelFilter.section data-widget='filter-model'
+    .modelFilter-current data-current=true
+      = @products.first.name
+    ul.modelFilter-menu data-menu=true
+      - @products.each do |product|
+        li.modelFilter-menu-item data=({ filter: product.key, category_key: product.category.key })
+          = product.name
+
+  .productSort.section data-widget-sort=true
+    .productSort-time data-sorting-time=true
+      = et('store.sorting.newest')
+    .productSort-price data-sorting-price=true
+      = et('store.sorting.price')
+
+  .productList data-product-list=true
+    - @standardized_works.each do |work|
+      - data = { \
+        product: true, 
+        model: work.product_key, 
+        category: work.category.key, 
+        price: work.prices[current_currency_code], 
+        time: work.created_at.to_i,
+        ec: work.to_ecommerce_tracking\
+      }
+      .productList-item.product [data=data itemscope itemtype="http://schema.org/Product"]
+        = link_to store_product_path(work, store_id: @store) do
+          .product-image
+            = image_webp nil, class: 'isNotLoaded', itemprop: 'image', data: {src: work.try(:order_image).try(:url)}
+          .product-name [itemprop="name"] = work.name
+          .product-price [itemscope itemtype="http://schema.org/AggregateOffer"]
+            .product-price-current [itemprop="lowPrice"] = render_item_price(work)
+            - if work.has_special_price?
+              .product-price-original [itemprop="highPrice"] = render_item_original_price(work)

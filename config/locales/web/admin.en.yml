@@ -1,0 +1,1333 @@
+en:
+  admin:
+    asset_packages:
+      index:
+        page_title: &asset_packages Asset Packages
+    home_blocks:
+      index:
+        page_title: &home_blocks Home Blocks
+    tags:
+      index:
+        page_title: &tags Tags
+    promotions:
+      index:
+        page_title: &promotions Promotions
+    change_price_events:
+      index:
+        page_title: &change_price_events Change Price Event
+    versions:
+      index:
+        page_title: 'Versions of %{class_name}#%{id}'
+    oauth_apps:
+      index:
+        page_title: &oauth_apps OAuth Apps
+      show:
+        page_title: 'OAuth App: %{app}'
+    v2:
+      shared:
+        sidebar:
+          asset_packages: *asset_packages
+          home: Homepage
+          home_blocks: *home_blocks
+          tags: *tags
+          oauth_apps: *oauth_apps
+    search:
+      plz_search: 'Please Search'
+  shared:
+    source: "Source"
+    unknown_source: "Unknown Source"
+    wordings:
+      "yes": "Yes"
+      "no": "No"
+      used: "Used"
+      not_used: "Not Used"
+    welcome: "Welcome"
+    warn: "Warnning"
+    form_actions:
+      operation: "Operation"
+      submit: "Submit"
+      back: "Back"
+      edit: "Edit"
+      new: "New"
+      delete: "Delete"
+      restore: "Restore"
+      history: "History"
+      send_coupon: "Send coupon to all"
+      finish: "Finish"
+      search: "Search"
+      view: "View"
+      refund: "Refund"
+      reset: "Reset"
+      resend: "Resend"
+      open: "Open"
+      send_test: "Send Test Email"
+      reupload: "Reupload"
+      next: "Next"
+      disable: Disable
+      enable: Enable
+      both_ok: Both OK
+      fallback: Fallback
+      apply: Apply
+      manual: Manually Apply
+    language:
+      title: "Switch Language: "
+      en: "U.S.(English)"
+      zh-TW: "Taiwan(Traditional Chinese)"
+      ja: "Japan(Japanese)"
+      zh-CN: 'China(Simplified Chinese)'
+      zh-HK: 'Hong Kong(Simplified Chinese)'
+    confirm:
+      delete: "You sure you want to delete?"
+      restore: "You sure you want to restore?"
+      submit: 'You sure you want to submit'
+    unlock: 'Unlock'
+    search_option: "Search Option"
+    versions: Versions
+  helper:
+    rebuild_print_image_link: "Reproduce"
+    rebuild_order_image_link: "Reproduce"
+    remove_fixed_image: "Remove uploaded file"
+    rebuild_ai_link: "Reproduce"
+  paper_trail:
+    thead:
+      id: "ID"
+      item: "Item"
+      item_id: "Item ID"
+      action: "Action"
+      user: "User"
+      update_at: "Updated at"
+      object: "Object"
+      object_change: "Object Change"
+  site_settings:
+    sidebar_name: "Vision Management"
+    index:
+      page_title: "Site Arguments Management"
+      crumb:
+        list: "list"
+      thead:
+        name: "Name Setting"
+        value: "Value Setting"
+        description: "Description"
+        operation: "Operation"
+    edit:
+      page_title: "Edit: %{key}"
+    create:
+      page_title: "Create Site Arguments"
+    attributes:
+      key: 'Key'
+      value: "Value"
+      description: "Description"
+  account:
+    sidebar_name: User List
+  admins:
+    sidebar_name: "Admin Management"
+    index:
+      page_title: "Admin List"
+      thead:
+        id: "Id"
+        email: "Email"
+        sign_in_count: "Sign in count"
+        sign_in_at: "Current sign in at"
+        last_sign_in_at: "Last sign in at"
+        sign_ip: "Current sign in ip"
+        last_sign_ip: "Last sign in ip"
+        created_at: "Created at"
+        operation: "Operation"
+    new:
+      page_title: "Create a Admin User"
+    edit:
+      page_title: "Edit: %{email}"
+    attributes:
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirmation"
+    errors:
+      password_complexity: 'Password should be composed of [A-Z], [a-z], and [0-9]'
+  users:
+    sidebar_name: "User Management"
+    index:
+      page_title: "User List"
+      thead:
+        id: "Id"
+        email: "Email"
+        role: "Role"
+        avatar: "Avatar"
+        sign_in_count: "Sign in count"
+        last_sign_in_at: "Last sign in at"
+        auth_token: "Auth Token"
+        operation: "Operation"
+    clear_mobile:
+      link: "clear mobile"
+      confirm: "Do you really want to clear the mobile? This user will be unable to login by this mobile"
+      notice: "Clear mobile success"
+    edit:
+      page_title: "Edit: %{email}"
+    show:
+      page_title: "User: %{name}"
+      page_second_title: "Status"
+    attributes:
+      role: "role"
+  designers:
+    sidebar_name: Designer Management
+    index:
+      page_title: Designer Management
+    new:
+      page_title: New Designer
+    edit:
+      page_title: Edit Designer
+  factories:
+    sidebar_name: Factory Management (TODO)
+  activities:
+    sidebar_name: "Activities"
+    index:
+      page_title: "Activities"
+  marketing_sms:
+    sidebar_name: Marketing SMS
+    index:
+      page_title: Marketing SMS
+      submit: Send SMS
+      preview: Preview
+      thead:
+        created_at: Send Time
+        operator: Operator
+        send_type: Send Type
+        content: Content
+        status: Status
+    attributes:
+      sms_type: SMS Type
+      send_type: Send Type
+      test_phone: Test Phone
+      content: Content
+  designs:
+    sidebar_name: "Design Collection"
+    index:
+      page_title: "Design Collection"
+      empty_page_title: "Wow! We have no any desing yet!"
+      empty_third_page_title: "What are you waiting for?"
+      thead:
+        id: "Design ID"
+        cover_img: "Compressed Image"
+        desinger: "Designer"
+        name: "Name"
+        product_type: "Product Type"
+    new_button: "New Design"
+    edit_button: "Edit Project"
+    new:
+      page_title: "New Design"
+    edit:
+      page_title: "Edit Design"
+    measure:
+      text_danger:
+        insufficient_resolution: "Resolution is not insufficient"
+        image: "Image: "
+        device: "Device: "
+  works:
+    sidebar_name: "Work Collection"
+    attributes:
+      name: "Name"
+      description: "Description"
+      spec: "Specification"
+      print_image: "Work Image"
+      work_type: "Work Type"
+      feature: "Featured"
+      user: "User"
+    index:
+      page_title: "Work Collection"
+      search:
+        search_work: Search work
+        expand: Expand...
+      thead:
+        id: "ID"
+        cover_image: "Compressed Image"
+        print_image: "Print Image"
+        order_image: "Order Image"
+        email: "Email"
+        user: User
+        name: "Name"
+        description: "Description"
+        model: "Model"
+        special_price: "S.Price"
+        status: "Status"
+        feature: "Feature"
+        featured: "Featured"
+        impressions_count: IC
+        product_code: Product Code
+        layer: "Layer"
+        archive_state: Archive state
+        operation: "Operation"
+        aasm_state: "Status"
+    archive_state:
+      none: Not yet archived
+      fresh: Fresh
+      stale: Stale
+    new:
+      page_title: "New Work"
+    show:
+      page_title:
+        layer_list: "%{name} Layer List"
+        status: "Status"
+    history:
+      page_title: "Work Collection"
+      crumb:
+        work_list: "Work List"
+        work: "Work Id: %{id} History"
+    edit:
+      page_title:
+        edit: "Edit: %{name}"
+        preview: "Work Preview"
+      change_product_notice: SKU cannot be changed! If you need a new SKU please create another work with correct product model.
+    crop:
+      page_title: "Cut Range"
+      forth_page_title: "Preview (Just for reference)"
+  standardized_works:
+    index:
+      page_title: Standardized Work Collection
+    new:
+      page_title: New Standardized Work
+    edit:
+      page_title: Edit Standardized Work
+
+  work_sets:
+    sidebar_name: Batch Upload
+    index:
+      page_title: Batch Uploads
+      upload: Upload
+      upload_limit: The limit of file size is 50MB.
+  archived_works:
+    sidebar_name: Archived Works
+    show:
+      recopy: Recopy Layers
+  fees:
+    sidebar_name: "Fees Management"
+    index:
+      page_title: "Types of management fees"
+      thead:
+        name: "Name"
+        description: "Description"
+        created_at: "Created_at"
+    new:
+      page_title: "New Exchange Rate"
+    edit:
+      page_title: "Edit: %{name}"
+    attributes:
+      name: "Name"
+      description: "Description"
+      price: "Price"
+  impositions:
+    index:
+      page_title: Imposition settings
+    new:
+      page_title: 'Create imposition settings for %{model}'
+    edit:
+      page_title: 'Edit imposition settings for %{model}'
+  orders:
+    sidebar_name: "Order"
+    sidebar_name_list: "Order List"
+    sidebar_name_approve: "Order Approval"
+    sidebar_name_approve_invoice: "Invoice Approval"
+    sidebar_name_deliver_list: 'Deliver List'
+    index:
+      page_title: "Order"
+      crumb:
+        list: "Order List"
+      fifth_page_title: "Order Search"
+      placeholder:
+        search_input: "starting typing to search（include order no., phone no., ship id, email, coupon code and coupon name）"
+      sort_order: "Way to order:"
+      link_to_add: "Add a search option"
+      thead:
+        id: "Id"
+        cover_img: "Compressed Image"
+        order_no: "Order No."
+        order_state: "Order Status"
+        production_state: "Production State"
+        order_created_at: "Created Date"
+        tel: "Tel."
+        order_amount_nt: "Total Amt. "
+        order_amount: "Total Amount of Order"
+        currency: "Currency"
+        ship: "Shipping ML"
+        ship_code: "Ship Id"
+        destination: "Destination"
+        operation: "Operation"
+        platform: "Platform"
+        flags: 'Flags'
+    show:
+      risk_tip: 'Potential Risk'
+      risk_country: 'Shipping Country Was not same IP Country'
+      page_title: "Order"
+      crumb:
+        order_list: "Order List"
+        view_order: "View Order No: %{order_no}"
+      h3_order:
+        title: "Order /%{order_no}"
+        crumb:
+          created_at: "Order Created_at : %{date}"
+      h3_fee:
+        title: "Fee Calculation"
+        thead:
+          currency: "Currency"
+          items_fee: "Items Amount"
+          discount: "Discount"
+          ship_fee: "Shipping Fee"
+          order_amount: "Total Amount of Order"
+          order_amount_nt: "Total Amount of Order"
+      h3_order_info:
+        title: "Order Information"
+        thead:
+          uid: "User ID"
+          order_state: "Order State"
+          production_state: "Production State"
+          ship_code: "Ship Code"
+          customer_service: "Customer Service ID"
+          payment_gateway: "Payment Gateway"
+          payment_id: "Payment ID"
+          operation: "Operation"
+        get_sale: "Get Sale ID"
+      h3_item:
+        title: "Item Information"
+        thead:
+          item: "Item ID"
+          work: "Work ID"
+          item_name: "Item Name"
+          item_model: "Item Type"
+          production: "Production State"
+          amount: "Amount"
+          currency: "Currency"
+          price: "Price"
+          sub_total: "Subtotal Amount"
+          operation: "Operation"
+      h3_discount:
+        title: "Discount Information"
+        thead:
+          discount: "Discount Type"
+          coupon: "Coupon ID"
+          discount_amount: "Discount Amount"
+          currency: "Currency"
+          note: "Note"
+      h3_ship:
+        title: "Ship Information"
+        thead:
+          ship_gateway: "Shipping Way/Shipping Companies"
+          ship_fee: "Shipping Fee"
+          currency: "Currency"
+          ship_code: "Ship Code"
+          inquiry: "Inquiry"
+          shipping_way: "Shipping Way"
+        link_to_oversea: "International Package Inquiry"
+        link_to_domestic: "Domestic Package Inquiry"
+      h3_address:
+        title: "Address Information"
+        thead:
+          type: "Type"
+          addressee: "Addressee"
+          mail: "Email"
+          address: "Address"
+          tel: "Telephone"
+          operation: "Operation"
+      h3_refund:
+        title: "Refund"
+        thead:
+          date: "Refund Date"
+          currency: "Currency"
+          price: "Price"
+          amount: "Amount"
+          note: "Note"
+          refund_no: "Refund ID"
+        link_to_refund: "Create refund"
+        error_messages:
+          price_after_refund_less_than_zero: "Refund total is more then order total."
+          price_after_refund_equals_zero: "This charge can no more refund, becasue the price after refund is zero...!"
+          refund_amount_is_zero: "Refund amount can not be zero!"
+          not_allowed: "This order is not allowed for refund yet!"
+      h3_invoice:
+        title: "Invoice"
+        thead:
+          invoice_state: "Invoice Status"
+          invoice_number: "Invoice Number"
+          invoice_memo: 'Memo'
+        link_to_refund: "Create refund"
+      h3_status: "Status"
+      flags:
+        internal_transfer: 'Internal Transfer'
+        external_transfer: 'External Transfer'
+        combined_shipping: 'Combined Shipping'
+      exec_refund: "Refund"
+      create_refund_record: "Create Refund Record"
+      h3_viewable: 'Order Viewable: %{flag}'
+      h3_locked_or_not: 'Order Price Locked?: %{flag} '
+      unlock: 'Unlock'
+    toolbar:
+      resend: Resend Receipts
+      resend_confirm: Are you sure need to resend receipt?
+      notice: "Resend Receipts And Download Email"
+      update_email_hint: Change Email
+    adjustment_creation:
+      title: 'Manually Creation of Adjustment'
+      button: 'Create an Adjustment'
+      create_succcess: 'Create Success'
+      create_fail: 'Create Fail'
+    history:
+      page_title: "Order"
+      crumb_order_list: "Order List"
+      crumb_order_history: "Order History No: %{order_no}"
+    approve:
+      page_title: "Order"
+      crumb:
+        check_order: "Order Approval"
+      thead:
+        id: "ID"
+        cover_img: "Compressed Image"
+        order_no: "Order Number"
+        aasm_state: "Order State"
+        production_state: "Production State"
+        created_at: "Created at"
+        created_source: "Order Created Source"
+        approval_state: "Approval State"
+        operation: "Operation"
+        memo: "Memorandum"
+        billing_info: "Billing Info"
+        shipping_info: "Shipping Info"
+      link_to_approve: "Approved"
+      approve_confirm: "Please confirm again, the picture! Determined by the order?"
+    approve_invoice:
+      invoice_state_eq: "Invoice State eq"
+    _refund:
+      h3_refund: "Paypal Refund"
+      currency: "Currency: %{order_currency}"
+      input_price:
+        label: "Refund Amount"
+        hint: "Type refund amount"
+        confirm: "You sure you want a refund?"
+    _order:
+      confirm: "Are you sure you want to force the change order status?"
+      btn_update_order: "Change Order Status"
+  currency_types:
+    sidebar_name: "Currency Type"
+    index:
+      page_title: "Currency Species List"
+      thead:
+        name: "Name"
+        shorthand: "Shorthand"
+        exchange_rate_nt: "TWD Currency Conversion"
+        description: "Description"
+        created_at: "Created at"
+    new:
+      page_title: "New Currency"
+    edit:
+      page_title: "Edit: %{name}"
+    attributes:
+      name: "Currency Name"
+      code: "Currency Code"
+      rate: "TWD Currency Conversion"
+      description: "Description"
+  product_models:
+    sidebar_name: "Product Type"
+    index:
+      page_title: "Product Type List"
+      thead:
+        category: "Category"
+        name: "Product Name"
+        description: "Description"
+        suffix: "Suffix"
+        added: "Added"
+        created_at: "Created at"
+        option: "Operation"
+        placeholder: 'Choose Product Image'
+        material: "material"
+        weight: "weight"
+      preview_composers: Manage Preview Composers
+      variants: Variants
+    _work_specs:
+      thead:
+        name: "Editer Key"
+        description: "Description"
+        width: "Width(mm)"
+        height: "Height(mm)"
+        dpi: "Resolution(DPI)"
+        operation: "Operation"
+        background_image: 'Background Image'
+        cover_image: 'Cover Image'
+      link_to_add: "Create New Preview Image"
+    new:
+      page_title: "New Type"
+    edit:
+      page_title: "Edit: %{name}"
+    sort:
+      page_title: Select Device Position
+      sub_title: (drag-and-drop reordering)
+    attributes:
+      enable_white: 'Enable White Layer'
+      category_id: "Category ID"
+      key: "Product Key"
+      dir_name: The Manufacturers' Name
+      name: "Type Name"
+      suffix: "Suffix Ex: Cases"
+      description: "Description"
+      added: "Added"
+      short_name: "Short Name"
+      factory: "Factory"
+      slug: 'Slug'
+      price_tier: 'Product Price'
+      outdated_price: 'Outdated Price(Ignore)'
+      material: "material"
+      weight: "weight"
+      auto_imposite: Auto imposite
+      currency:
+        price: "Price"
+      external_code: 'External provider code'
+      enable_composite_with_horizontal_rotation: 'Join mirror image downside the print_image'
+      create_order_image_by_cover_image: 'Use cover_image to be order_image. (Only for Work and ArchivedWork now)'
+      enable_back_image: 'Genrate Back Image(Only for easycard_smartcards at Shanghai)'
+      profit: 'Profit'
+    error_messages:
+      factory_ids: "At least one factory to be chosen"
+  products:
+    sidebar_name: 'Product List (NEW)'
+    index:
+      page_title: "Product List"
+      new_category: 'New Category'
+      new_model: 'New Model'
+    new:
+      page_title: 'New Product Category'
+    show:
+      locale: Locale
+      name: Name
+  preview_composers:
+    index:
+      page_title: "Preview Composers of %{model}"
+      samples: Show Samples
+      sample_notes: Samples will be redraw after its previews composer updates.
+      thead:
+        id: ID
+        type: Type
+        key: Key
+        available: Available
+        operation: Operation
+    select_type:
+      page_title: Select the Type of Preview Composer
+      front_back: Single Cover/Simple
+      front_back: Front/Back
+      vertical_displace: Side/Vertical Displace
+      fixed: Fixed
+    new:
+      page_title: Create Preview Composer
+    edit:
+      page_title: Edit Preview Composer
+    form:
+      use_outer_size: 'NOTE: You should provides outer size for every dimensions to build images correctly.'
+    new_button: New
+    rebuild_button: Refresh
+    rebuild_button_warning: All recent work previews will be clear and rebuild after click "OK". The preview url may be broken while building previews. Are you sure?
+    attributes:
+      available: Available
+      background: Background
+      background_width: Width(px)
+      background_height: Height(px)
+      case: Case
+      mask: Mask
+      mask_left: Mask Left
+      mask_top: Mast Top
+      mask_height: Mask Height
+      mask_width: Mask Width
+  preview_samples:
+    index:
+      page_title: Samples
+      no_samples: There are no samples at this moment.
+  coupons:
+    sidebar_name: "Coupon"
+    index:
+      search:
+        thead:
+          title: "Coupon Name"
+          code: "Coupon Code"
+      page_title: "Coupon List"
+      thead:
+        name: "Name"
+        coupon_code: "Coupon Code"
+        use_state: "Use State"
+        expires_at: "Expires"
+        is_event: "Event Used"
+        operation: "Operation"
+    new:
+      page_title: "New Coupon"
+    edit:
+      page_title: "Edit: %{name}"
+    attributes:
+      title: "Coupon Name"
+      code: "Coupon Code, which can be left blank, the system will automatically generate"
+      expires_at: "Expiration time (the default is to establish count one year)"
+      event: "Activity using Coupon Code, this Coupon can be reused"
+      currency:
+        price: "Price"
+    show:
+      link_to_list: "Coupon List"
+      crumb_code: "Coupon Code: %{code}"
+      table:
+        thead:
+          name: "Name"
+          currency: "Currency"
+          price: "Price"
+    search:
+      thead:
+        title: "Coupon Name"
+        code: "Coupon Code"
+        count: "Used Count"
+        orders_used: "Orders Used"
+        order_no: "Order No"
+        created_at: "Created at"
+        view: "View"
+  emails:
+    sidebar_name: "Preview Email"
+    index:
+      page_title: "Preview Email"
+      crumb:
+        send_test: "Send Test E-mail"
+      form_tag:
+        item:
+          label: "Test Item"
+          tips: "You can multi-select different styles"
+  questions:
+    sidebar_name: "Q&A"
+    list: "Question List"
+    index:
+      page_title: "Q&A Management"
+      crumb:
+        list: "Question List"
+      thead:
+        id: "ID"
+        category: "Question Category"
+        question: "Question"
+        ans: "Answer"
+        operation: "Operation"
+    new:
+      page_title: "New Question"
+    edit:
+      page_title: "Edit: %{question}"
+    attributes:
+      category: "Question Category"
+      question: "Question"
+      ans: "Answer"
+  question_categories:
+    sidebar_name: "Question Category"
+    index:
+      page_title: "Q&A Management"
+      crumb:
+        list: "Question Category List"
+      thead:
+        id: "ID"
+        name: "Name"
+        operation: "Operation"
+    new:
+      page_title: "New Question Category"
+    edit:
+      page_title: "Edit: %{name}"
+    attributes:
+      name: "Question"
+  reports:
+    sidebar_name: "Report"
+    index:
+      page_title: "Report"
+      crumb:
+        list: "Report List"
+      search_attributes:
+        start_at: "Start at"
+        end_at: "End at"
+        price: "Order Amount"
+        platform: "Platform"
+        country: "Region"
+      link_to_update: "Update report"
+      thead:
+        date: "Date"
+        items: "Item Amount"
+        orders: "Total Orders"
+        users: "Purchase User Number"
+        sub_count: "Subtotal Total Amount"
+        total_discount: "Total Discount"
+        total_ship: "Total Shipping Fee"
+        total_order_amount: "Total Amount of Orders"
+        avg_order_amount: "Average Order Amount"
+        avg_user_amount: "Average User Amount"
+    report_type:
+      designer_items_sell_list: 'Designer Items Sell List'
+      order_items_sell_list: 'Order Items Sell List'
+      product_model_sell_list: 'Product Model Sell List'
+  home_slides:
+    sidebar_name: "Home Slides"
+    index:
+      page_title: "Home Slides"
+      crumb:
+        list: "Home Slides List"
+      search_option: "Search Option"
+      search_attributes:
+        enabled: "Is Viewable?"
+        set: "Set"
+      thead:
+        id: "ID"
+        title: "Title"
+        link: "Link"
+        template: "Template"
+        slide: "Forground Slide"
+        background: "Background Slide"
+        enabled: "Is Viewable?"
+        created_at: "Created at"
+        priority: "Priority"
+        operation: "Operation"
+        set: "Set"
+    new:
+      page_title: "New Slide"
+    edit:
+      page_title: "Edit Slide"
+    attributes:
+      set: "Set"
+      link: "Link - Need to include Http: //"
+      slide: "Photo - Upload Photos recommended size (1020 x 500)"
+      enabled: "Is Viewable?"
+  home_products:
+    sidebar_name: Home Products
+  messages:
+    sidebar_name: "Message/Email"
+    index:
+      page_title: "Message/Email"
+      email_contains: 'Email contains...'
+  features:
+    sidebar_name: "Features"
+    index:
+      page_title: "Features"
+      feature_name: Name
+      enable_for_admin: "Enable for Admin?"
+      enable_for_user: "Enable for User?"
+      enable_for_factory: "Enable for Factory?"
+  banners:
+    sidebar_name: Banners
+    index:
+      page_title: Banners
+    errors:
+      either_url_or_deeplink: "Url and Deeplink can not be provided at the same time!"
+  announcements:
+    index:
+      page_title: Announcement
+  price_tiers:
+    sidebar_name: Price Tiers
+  notifications:
+    sidebar_name: Publish Notification
+    publish: Publish
+    notice:
+      publish: Successfully joined the publish scheduling
+      confirm: Publish Notification?
+    errors:
+      device_type_error: "DeviceType can't be null or must in (%{type})"
+    report: Publish Notification Report
+  devices:
+    sidebar_name: Device list
+  mobile_uis:
+    sidebar_name: Mobile UI
+    index:
+      page_title: Mobile UI
+    edit:
+      page_title: Edit Mobile UI
+    new:
+      page_title: New Mobile UI
+  home_links:
+    sidebar_name: Home Link
+    index:
+      page_title: Home Link
+    edit:
+      page_title: Edit Home Link
+    new:
+      page_title: New Home Link
+  newsletter_subscriptions:
+    sidebar_name: Subscription newsletter list
+  newsletters:
+    sidebar_name: Newsletter
+    new:
+      page_title: New Newsletter
+    edit:
+      page_title: Edit Newsletter
+    show:
+      page_title: Show Newsletter
+  auto_coupons:
+    index:
+      page_title: Coupon Auto Approve
+  campaigns:
+    sidebar_name: Camapign
+    index:
+      page_title: Camapign list
+    new:
+      page_title: New Camapign
+    edit:
+      page_title: Edit Camapign
+      aasm_states_label: V3 State
+  work_specs:
+    attributes:
+      name: Spec Name
+      width: Width(mm)
+      height: Height(mm)
+      dpi: Resolution(DPI)
+      background_image: Background Image
+      overlay_image: Cover Image
+      shape: Shape
+      alignment_points: Alignment Points
+      background_color: Background Color
+      enable_white: 'Enable White Layer'
+      dir_name: The Manufacturers' Name
+      description: "Description"
+      auto_imposite: Auto imposite
+      enable_composite_with_horizontal_rotation: 'Join mirror image downside the print_image'
+      create_order_image_by_cover_image: 'Use cover_image to be order_image. (Only for Work and ArchivedWork now)'
+      enable_back_image: 'Genrate Back Image(Only for easycard_smartcards at Shanghai)'
+  asset_package_categories:
+    index:
+      page_title: Asset Package Categories
+      thead:
+        packages_total: 'Asset Pacakges Count'
+        downloads_total: 'Total Downloads'
+        status: 'Status'
+        operation: 'Operation'
+      status:
+        available: 'Available'
+        unavailable: 'Unavailable'
+    edit:
+      page_title: 'Edit Asset Package Category %{name}'
+      packages_sort: 'Asset Package Sort'
+    new:
+      page_title: 'New Asset Package Category'
+  cp_resources:
+    sidebar_name: Commandp Resource
+    edit:
+      page_title: Edit Commandp Resource V%{version}
+      small_package: Small Commandp Resource
+      large_package: Large Commandp Resource
+    new:
+      page_title: New Commandp Resource
+  bdevents:
+    sidebar_name: Bdevent
+    index:
+      page_title: Bdevent list
+    new:
+      page_title: New Bdevent
+    edit:
+      page_title: Edit Bdevent
+  masks:
+    sidebar_name: 'Mask'
+    index:
+      page_title: 'Masks'
+      material: 'Material'
+      image: 'Image'
+      operation: 'Operation'
+    new:
+      page_title: 'New Mask'
+    attributes:
+      material_name: 'Material Name'
+  work_templates:
+    manage: 'manage work template'
+    sidebar_name: 'Work Template'
+    operation: 'Operation'
+    index:
+      page_title: 'Work Template'
+      aasm_state: 'State'
+      overlay_image: 'Overlay Image'
+      background_image: 'Background Image'
+      masks: 'Masks'
+    new:
+      page_title: 'New Template'
+    edit:
+      page_title: 'Edit Template'
+    attributes:
+      aasm_state: 'State'
+      overlay_image: 'Overlay Image'
+      background_image: 'Background Image'
+      masks: 'Masks'
+      material_name: 'Material Name'
+      scale_x: 'Scale X'
+      scale_y: 'Scale Y'
+      position_x: 'Position X'
+      position_y: 'Position Y'
+      orientation: 'Orientation'
+  aasm_states_label: AASM states
+  aasm_states:
+    is_published: Published
+    is_preparing: Preparing
+    is_closed: Closed
+  header_links:
+    sidebar_name: "Header Link"
+    edit:
+      page_title: "Edit Header Link"
+    index:
+      page_title: "Header Link"
+    new:
+      page_title: "New Header Link"
+  coupon_notices:
+    sidebar_name: "Coupon Notice"
+    show:
+      page_title: "Coupon Notice"
+    edit:
+      page_title: "Edit Coupon Notice"
+    index:
+      page_title: "Coupon Notice"
+      coupon: "Coupon"
+      notice: "Notice"
+      available: "Available"
+      platform: "Mobile/Email"
+      region: "China/Global"
+    new:
+      page_title: "New Coupon Notice"
+    preview:
+      page_title: "Coupon Notice Preview"
+  collections:
+    sidebar_name: Collection
+    index:
+      page_title: Collection
+      thead:
+        name: Name
+        operation: Operation
+        work_amount: Work Amount
+    works_button: Works
+    new:
+      page_title: New Collection
+    edit:
+      page_title: EditCollection
+    works:
+      list: Work List
+      add: Add Tag
+      search_options:
+        designer: Designer
+        product_model: Product Model
+        work_name: Work Name
+        tag: Tag
+        work_image: Image
+    add_button: Add Work
+    remove_button: Remove Work
+    add_success: Add Tag To Collection Success!
+    remove_success: Remove Tag To Collection Success!
+  tags:
+    index:
+      page_title: Tag
+      thead:
+        name: name
+        operation: Operation
+        work_amount: Work Amount
+        sort: Sort
+    works_button: Works
+    new:
+      page_title: New Tag
+    edit:
+      page_title: Edit Tag
+    all_works: Search Work
+    works:
+      list: Work List
+      add: Add Work
+      search_options:
+        designer: Designer
+        product_model: Product Model
+        work_name: Work Name
+        tag: Tag
+        work_image: Image
+      apply_button: Apply Tag
+      remove_button: Remove Tag
+      apply_success: Apply Tag Success!
+      remove_success: Remove Tag Success!
+      works_button: Works
+  product_codes:
+    export:
+      name: Export Product Code
+      type: Export Type
+      export_all: Export All
+      export_by_time: Export By Time
+      time_gteq: Time More Than
+      time_lteq: Time Less Than
+      submit: Submit
+    material_codes:
+      category: category code
+      material: material code
+      craft: craft code
+      spec: speec code
+      base_code: product base code
+    sidebar_name: product code
+    material_code_manage: material code manage
+    work_code_manage: work code manage
+    category_code: category code
+    category: category
+    material: material
+    craft: craft
+    spec: spec
+    code_type: code type
+    code: type code
+    description: type description
+    category_names: 'Category Names'
+    product_model_count: product model count
+  channel_codes:
+    manage: channel code mannage
+    code: channel code
+    description: channel description
+  deliver_order:
+    order_no: 'Order No'
+    deliver_no: 'Deliver No'
+    image: 'Images'
+    created_at: 'Created At'
+    delivered_at: 'Delivered At'
+    shipped_at: 'Shipped At'
+    aasm_state: 'AASM State'
+    updated_at: 'Updated At'
+    deliver_failed: 'Deliver Failed List'
+    index:
+      page_title: 'Deliver List'
+  recommend_sorts:
+    sidebar_name: Recommend Sort
+    index:
+      page_title: Recommend Sort
+      thead:
+        design_platform: Design Platform
+        sort: Sort
+        operation: Operation
+    edit:
+      page_title: Edit Recommend Sort
+    sort_options:
+      new: New
+      popular: Hot
+      price_asc: Price (Low to High)
+      price_desc: Price (High to Low)
+      random: Random
+  import_orders:
+    sidebar_name: 'Import Orders'
+    index:
+      page_title: 'Import Orders'
+      platform_code: 'Platform Code'
+      order_no: 'Order No'
+      message: 'Message'
+      failed_retry: 'Failed Retry'
+      failed:
+        message:
+          work_not_found_errror: 'Work Not Found Error'
+          order_existed_error: 'Order Existed Error'
+          guanyi_not_found_rrror: 'Guanyi Not Found Error'
+          guanyi_error: 'Guanyi Error'
+  promotions:
+    sidebar_name: 'Promotion'
+    for_product_category:
+      description: 'Multiple product categories with unified formula to calculate promotion price'
+    for_product_model:
+      description: 'Multiple product models with unified formula to calculate promotion price'
+    for_itemable_price:
+      description: 'Config different promotion price for each items'
+    for_shipping_fee:
+      description: 'Config one rule for the order with shipping fee in free'
+    index:
+      page_title: Event
+      thead:
+        name: Name
+        type: Type
+        operation: Operation
+        aasm_state: Status
+        begin_at: Begin At
+        ends_at: End At
+        info: Info
+        descritpion: Description
+      button:
+        submit: Submit
+    messages:
+      confirm: Do you really want to submit ?
+      submit_success: Submit success!
+      submit_fail: Submit fail!
+      fallback_success: Fallback Success!
+      manual_success: Apply Success!
+      fallback_fail: Sorry, we can't fallback this order
+      manual_fail: Sorry, we can't apply this order
+      unlimited_duration: Unlimited Duration
+    new:
+      page_title: New Event
+    edit:
+      page_title: Edit Event
+    show:
+      page_title: View %{name}
+    type_options:
+      Promotion::ForProductCategory: ProductCategory
+      Promotion::ForProductModel: ProductModel
+      Promotion::ForStandardizedWork: StandardizedWork
+      Promotion::ForOrderPrice: OrderPrice
+    status_options:
+      selected: Selected
+      none_selected: None Selected
+    rule_options:
+      simple_discount: Simple Discount
+      shipping_fee_discount: Shipping Fee Discount
+    attributes:
+      name: Name
+      description: Description
+      type: Type
+      aasm_state: Status
+      targets: Target
+      rule: Rule
+      begins_at: Begin At
+      ends_at: End at
+      rule_price_tier: Price
+      rule_threshold_price_tier: Threshold Price
+      free_shipping: Free Shipping
+    rule_discount_type_text:
+      fixed: Discount
+      percentage: Discount
+      pay: Pay
+    promotable_scope:
+      standardized_work: 'Designer Work'
+      product_model: 'All Products belong to the Category'
+      product_category: 'All Produts belong to the Product Model'
+    works:
+      apply: Apply
+      remove: Remove
+      search_options:
+        category: ProductCategory
+        designer: Designer
+        product_model: ProductModel
+        work_name: Work Name
+        tag: Tag
+        work_image: Work Image
+        status: Status
+    content:
+      for_shipping_fee: "Free shipping for the order conformed <em>%{rules}</em>"
+      for_itemable_price: "Provided favor price on each product of <em>%{promotables}</em>"
+      unified_discount: "Provided discount by <em>%{discount}</em> on product of <em>%{promotables}</em>"
+      unset: 'Unset'
+    rule:
+      condition:
+        threshold: 'When order price exceed %{price}'
+        include_designers: 'Included item provided by specified designers'
+        include_product_models: 'Included item of specified Product Model'
+        include_works: 'Included specified redeem product'
+        include_designers_models: 'Included item of specified designer and product model'
+        include_product_categories: 'Included item of specified Product Category'
+        include_bdevent: 'Within specified BD Event'
+        include_free_shipping_coupon: 'Using Coupon with favor of free shipping'
+  discount_formula:
+    percentage:
+      humanize: "Apply %{percentage} Off Discount"
+    fixed:
+      humanize: "Price with %{binded_price} Off"
+    pay:
+      humanize: "Priced as %{binded_price}"
+  change_price_events:
+    index:
+      page_title: ChangePriceEvent
+      thead:
+        operation: Operation
+        target_type: TargetType
+        created_at: Date
+        operator: Operator
+        items: Items
+        price: Price
+        status: Status
+      button:
+        submit: Submit
+        rerun: Rerun
+        log: Change Log
+    new:
+      page_title: New ChangePriceEvent
+    target_type:
+      StandardizedWorkPrice: StandardizedWork Price
+      ProductPrice: Product Model Price
+      ProductCustomizedPrice: Product Model Customized Price
+    works:
+      search_options:
+        category: ProductCategory
+        designer: Designer
+        product_model: ProductModel
+        work_name: Work Name
+        tag: Tag
+        work_image: Work Image
+        status: Status
+  change_price_histories:
+    index:
+      page_title: Change Price Histories
+      thead:
+        original_price: Original Price
+        target_price: Target Price
+        changeable: Item
+  purchase_categories:
+    sidebar_name: 'Purchase Category'
+    index:
+      page_title: 'Purchase Category List'
+      purchase_categort: 'Purchase Category'
+      price_tier: 'Price Tier'
+      product_type: 'Product Type'
+      purchase_count: 'Purchase Count'
+      purchase_price: 'Purchase Price'
+    new:
+      page_title: 'New Purchase Category'
+    edit:
+      page_title: 'Edit Purchase Category'
+  purchase:
+    sidebar_name: 'Purchase'
+  durations:
+    sidebar_name: 'Duration'
+    index:
+      page_title: 'Duration'
+      duration: 'Duration'
+      category_name: 'Category Name'
+      product_type: 'Product Type'
+      price_tier: 'Price Tier'
+      b2c_count: 'B2C Count'
+      purchase_price: 'Purchase Price'
+  adjustments:
+    attributes:
+      source_name: Source Name
+      adjustable: Adjust Object
+      event: Event
+      target: Target
+      value: Value
+      quantity: Quantity
+      description: Description
+      created_at: Created_at
+  dashboard:
+      sidebar_name: 'Dashboard'
+      watching_order: 'Watching Order'
+  b2b_orders:
+    sidebar_name: 'B2b Order'
+    sticker:
+      sidebar_name: 'B2b Sticker'
+      page_title: 'B2b Sticker'
+  stores:
+    sidebar_name: 'Store Account Management'
+    index:
+      page_title: 'Store List'
+    new:
+      page_title: 'New Store'
+    edit:
+      page_title: 'Edit Store'
+  daily_reports:
+    sidebar_name: 'Daily Report'
+    page_title: 'Daily Report List'
+    order_sticker:
+      page_title: 'Order Sticker Usage'
+      interval: 'Interval: %{starts_at} ~ %{ends_at}'
+      products: 'Products: %{product_keys}'
+  option_types:
+    sidebar_name: 'Option Type'
+    product:
+      attributes:
+        name: 'Name'
+        key: 'Key'
+    attributes:
+      name: Name
+      presentation: Presentation
+    index:
+      page_title: 'Option Type List'
+    new:
+      page_title: 'New Option Type'
+    edit:
+      page_title: 'Edit Option Type: %{name}'
+    show:
+      page_title: "Option Type: %{name} "
+  variants:
+    index:
+      page_title: "%{product} variants"
+      options: 'Options'
+    new:
+      page_title: "New %{product} variants"
+    edit:
+      page_title: "Edit %{product} Variant"
+  rewards:
+    sidebar_name: 'Reward'
+    page_title: 'Reward List'
+    new:
+      page_title: 'New Reward'
+    edit:
+      page_title: 'Edit Rewrad'

@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weixin.qq.com/sns/userinfo?access_token=error_token&openid=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.0
+      date:
+      - Wed, 12 Aug 2015 05:30:41 GMT
+      content-type:
+      - text/plain
+      content-length:
+      - '110'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"errcode":40001,"errmsg":"req id: dUfaNA0441ns64, invalid credential,
+        access_token is invalid or not latest"}'
+    http_version: '1.1'
+  recorded_at: Wed, 12 Aug 2015 05:30:41 GMT
+recorded_with: VCR 2.9.2

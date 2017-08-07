@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: commandp_development
+  pool: 5
+  username: commandp
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: commandp_test
+  pool: 5
+  username: commandp
+  password:
+  host: localhost

@@ -1,0 +1,18 @@
+- cache_work work do
+  .grid_2
+    .product id='#{work.uuid}'
+      = link_to shop_work_path(work.product, work), class: "product-detail",
+        data: { behavior: 'detail_impression',
+                ga: { name: 'detail', target: "#ga_info_#{work.uuid}"}} do
+        = image_tag work.order_image.url, width: 310, heigth: 310
+        .product-name
+          = render_work_name_without_model(work)
+        .product-model
+          = work.product_name
+        .mask
+
+      .info.clearfix
+        .author
+          = work.user_display_name
+        = link_to t('page.btns.redeem'), new_redeem_path(gid: work.to_sgid.to_s), class: 'redeem', rel: 'nofollow'
+    = render 'works/ua_data', work: work

@@ -1,0 +1,166 @@
+---
+case:
+- locale: zh-TW
+  name: "白底光面硬壳"
+- locale: zh-CN
+  name: "白底光面硬壳"
+- locale: zh-HK
+  name: "白底光面硬壳"
+- locale: en
+  name: "白底光面硬壳"
+- locale: ja
+  name: "白底光面硬壳"
+glass_case:
+- locale: zh-TW
+  name: "透明硬壳"
+- locale: zh-CN
+  name: "透明硬壳"
+- locale: zh-HK
+  name: "透明硬壳"
+- locale: en
+  name: "透明硬壳"
+- locale: ja
+  name: "透明硬壳"
+clock:
+- locale: en
+  name: Clocks
+- locale: zh-TW
+  name: "掛鐘"
+- locale: zh-CN
+  name: "挂钟"
+- locale: zh-HK
+  name: "掛鐘"
+- locale: ja
+  name: "壁掛け時計"
+cover:
+- locale: en
+  name: Covers
+- locale: zh-TW
+  name: "保護套"
+- locale: zh-CN
+  name: "保护套"
+- locale: zh-HK
+  name: Covers
+- locale: ja
+  name: "カバー"
+mug:
+- locale: en
+  name: Mugs
+- locale: zh-TW
+  name: "馬克杯"
+- locale: zh-CN
+  name: "马克杯"
+- locale: zh-HK
+  name: "馬克杯"
+- locale: ja
+  name: "マグカップ"
+smartcard:
+- locale: en
+  name: Smart Cards
+- locale: zh-TW
+  name: "智慧晶片卡"
+- locale: zh-CN
+  name: "智能卡"
+- locale: zh-HK
+  name: "智慧晶片卡"
+- locale: ja
+  name: "スマートカード"
+sticker:
+- locale: en
+  name: Sticker
+- locale: zh-CN
+  name: "贴纸"
+- locale: ja
+  name: "ステッカー"
+- locale: zh-TW
+  name: "贴纸"
+- locale: zh-HK
+  name: "贴纸"
+canvas:
+- locale: zh-CN
+  name: "无框画"
+- locale: zh-TW
+  name: "无框画"
+- locale: zh-HK
+  name: "无框画"
+- locale: en
+  name: "无框画"
+- locale: ja
+  name: "无框画"
+usb:
+- locale: zh-CN
+  name: U盘
+- locale: zh-TW
+  name: U盘
+- locale: zh-HK
+  name: U盘
+- locale: en
+  name: U盘
+- locale: ja
+  name: U盘
+powerbank:
+- locale: zh-CN
+  name: "充电宝"
+- locale: zh-TW
+  name: "充电宝"
+- locale: zh-HK
+  name: "充电宝"
+- locale: en
+  name: "充电宝"
+- locale: ja
+  name: "充电宝"
+glass_case_tpu:
+- locale: zh-CN
+  name: "透明软壳"
+- locale: zh-TW
+  name: "透明软壳"
+- locale: zh-HK
+  name: "透明软壳"
+- locale: en
+  name: "透明软壳"
+- locale: ja
+  name: "透明软壳"
+matte_case:
+- locale: zh-TW
+  name: "白底磨砂硬壳"
+- locale: en
+  name: "白底磨砂硬壳"
+- locale: zh-CN
+  name: "白底磨砂硬壳"
+- locale: zh-HK
+  name: "白底磨砂硬壳"
+- locale: ja
+  name: "白底磨砂硬壳"
+tshirt:
+- locale: zh-TW
+  name: T恤
+- locale: en
+  name: T恤
+- locale: zh-CN
+  name: T恤
+- locale: zh-HK
+  name: T恤
+- locale: ja
+  name: T恤
+pillow:
+- locale: zh-TW
+  name: "抱枕"
+- locale: en
+  name: "抱枕"
+- locale: zh-CN
+  name: "抱枕"
+- locale: zh-HK
+  name: "抱枕"
+- locale: ja
+  name: "抱枕"
+bookjacket:
+- locale: zh-TW
+  name: "布书笔记本"
+- locale: en
+  name: "布书笔记本"
+- locale: zh-CN
+  name: "布书笔记本"
+- locale: zh-HK
+  name: "布书笔记本"
+- locale: ja
+  name: "布书笔记本"

@@ -1,0 +1,16 @@
+- breadcrumb :admin_bdevents
+- admin_title t('bdevents.index.page_title_with_type', event_type: @event_type)
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .form-input
+    = label_tag 'bdevent_flex_select', '活動列表坑位設定: '
+    = select_tag 'flex', options_for_select(Bdevent::FLEX_TYPES, Bdevent.flex),
+                 id: 'bdevent_flex_select', data: { url: update_flex_admin_bdevents_url }
+    = link_to '預覽兌換列表', mobile_redeems_path(access_token: @access_token), target: :blank
+  .widget-header
+    .btn-group
+      = link_to '線上活動', admin_bdevents_path(event_type: 'event'), class: 'btn btn-white', disabled: @event_type == 'event'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new, event_type: @event_type), class: 'btn btn-info'
+  = render "#{@event_type}_list" if Bdevent::EVENT_TYPES.include?(@event_type)

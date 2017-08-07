@@ -1,0 +1,36 @@
+- admin_title t('preview_composers.index.page_title', model: @model.name)
+
+= link_to new_admin_product_model_preview_composer_path(@model), class: 'btn btn-app btn-primary no-radius' do
+  = fa_icon 'edit', class: 'ace-icon bigger-230'
+  |
+  = t('preview_composers.new_button')
+= link_to rebuild_admin_product_model_preview_composers_path(@model), class: 'btn btn-app btn-danger no-radius', data: {confirm: t('preview_composers.rebuild_button_warning'), disable_on_submit: true, remote: true, method: 'post'} do
+  = fa_icon 'undo', class: 'ace-icon bigger-230'
+  = t('preview_composers.rebuild_button')
+
+table.table.preview-composer-sorter
+  thead
+    tr
+      th
+      th = t('preview_composers.index.thead.id')
+      th = t('preview_composers.index.thead.type')
+      th = t('preview_composers.index.thead.key')
+      th = t('preview_composers.index.thead.available')
+      th = t('preview_composers.index.thead.samples')
+      th = t('preview_composers.index.thead.operations')
+  tbody
+    - @preview_composers.each do |pc|
+      tr data-url=admin_product_model_preview_composer_path(@model, pc)
+        td: .btn.btn-sm.preview-composer-sorter-handle = fa_icon 'arrows-v'
+        td = pc.id
+        td = pc.type.demodulize
+        td = pc.key
+        td = pc.available
+        td
+          - pc.samples.each do |sample|
+            = image_tag(sample.result.thumb.url)
+        td
+          .btn-group
+            = link_to t('shared.form_actions.edit'), edit_admin_product_model_preview_composer_path(@model, pc), class: 'btn'
+
+p = t('preview_composers.index.sample_notes')

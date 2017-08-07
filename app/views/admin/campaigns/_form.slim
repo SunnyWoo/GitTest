@@ -1,0 +1,41 @@
+= simple_form_for(@campaign, url: [:admin, @campaign], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.input :name, hints: false
+  = f.input :key, hints: false
+  = f.input :title, hints: false
+  = f.input :desc, hints: false
+  = f.input :designer_username, hints: false
+  = f.input :about_designer, hints: false
+  .row
+    = f.simple_fields_for(CampaignWordings.new(f.object.wordings)) do |cf|
+      - Campaign::WORDING_KEYS.each do |key, type|
+        .col-xs-4 = cf.input key, as: type, html5: true, hints: false
+
+  .row
+    .col-xs-4
+      = f.label :artworks_class, 'Artwork 樣式：'
+      = f.select :artworks_class, Campaign::ARTWORK_CLASS
+
+  .row
+  .row
+    = f.nested_fields_for :campaign_images, wrapper_options: { class: 'col-xs-3' } do |c|
+      .well
+        = c.input :campaign_id, as: :hidden, hints: false
+        label.control-label KEY：
+        = c.select :key, CampaignImage::KEY_LIST, hints: false
+        br
+        = link_to c.object.file.url, title: c.object.key do
+          = image_tag c.object.file.thumb.url
+        = c.input :file, hints: false
+        = c.input :desc, hints: false
+        - hide_class = (c.object.new_record? || c.object.key != 'artwork') ? 'hide' : ''
+        .campaign-image-for-artwork class=hide_class
+          = c.input :link
+          = c.input :open_in_new_tab, as: :boolean, hints: false
+        = c.remove_nested_fields_link '刪除', data: { confirm: 'Are you sure?' }
+    .col-xs-3
+      .well
+        = f.add_nested_fields_link :campaign_images, '增加圖片'
+
+
+  = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

@@ -1,0 +1,313 @@
+ja:
+  country:
+    Australia: 'オーストラリア'
+    Canada: 'カナダ'
+    China: '中国'
+    France: 'フランス'
+    Germany: 'ドイツ'
+    HongKong: '香港'
+    Japan: '日本'
+    Macao: 'マカオ'
+    Malaysia: 'マレーシア'
+    NewZealand: 'ニュージーランド'
+    Singapore: 'シンガポール'
+    SouthKorea: '韓国'
+    Taiwan: '台湾'
+    UnitedKingdom: 'イギリス'
+    UnitedStates: 'アメリカ'
+  activerecord:
+    errors:
+      models:
+        announcement:
+          attributes:
+            default:
+              at_least_one: 'There should be at least one default announcement in database'
+    models:
+      user: ユーザー
+      order: 注文
+      billing_profile: 課金アーカイブ
+      order_item: 注文アイテム
+      work: 作品
+      layer: 層
+      shipping_info: 運送資訊
+      announcement:
+    attributes:
+      user:
+        id: 'ID'
+        email: 'Eメールアドレス'
+        sign_in_count: 'ログイン回数'
+        current_sign_in_at: '最近のログイン時間'
+        last_sign_in_at: '前回のログイン時間'
+        current_sign_in_ip: '最近のログインIP'
+        last_sign_in_ip: '前回のログインIP'
+        created_at: 'アカウント登録時間'
+        auth_token: 'ログインコード'
+        role: 'ステータス(normal, designer, guest)'
+      order:
+        order_no: '注文コード'
+        user: 'ユーザー'
+        aasm_state: '注文状況'
+        created_at: '作成時間'
+        price: '注文金額'
+        currency: '通貨'
+        payment_type: '支払い方法'
+        bank: '銀行'
+        bank_code: '銀行コード'
+        bank_account: '銀行アカウント'
+        pay_account: '支払いコード'
+        pay_expired: '支払い期限'
+        payment_id: 'PayPal支払いID'
+        payment_paypal: 'PayPal'
+        "payment_neweb/atm": 'ATM振込'
+        "payment_neweb_atm": 'ATM振込'
+        "payment_neweb/mmk": 'コンビニ支払い'
+        "payment_neweb_mmk": 'コンビニ支払い'
+        "payment_neweb/alipay": '支付寶'
+        "payment_neweb_alipay": '支付寶'
+        "payment_neweb_mpp": 'クレジットカード決済'
+        payment_cash_on_delivery: '着払い'
+        payment_stripe: 'クレジットカード決済'
+
+      billing_profile: &attributes_billing_profile
+        id: 'ID'
+        address: '番地'
+        city: '市町村'
+        name: '名前'
+        phone: '携帯電話番号'
+        state: '都道府県'
+        zip_code: '郵便番号'
+        country: '地域'
+        address_name: '宛名'
+        email: Eメールアドレス
+        shipping_way_standard: 通常配送
+        shipping_way_express: お急ぎ便
+        shipping_way_cash_on_delivery: 代金引換
+      address_info:
+        <<: *attributes_billing_profile
+      order_item:
+        quantity: '数量'
+        itemable_id: '作品ID'
+      work:
+        work_type:
+          is_private: 個人
+          is_public: 公開
+          redeem: 兌換商品
+        description: 作品説明
+        model: 製品タイプ
+
+
+
+        finished: 完成しました
+        feature: おすすめ商品
+      design:
+        material: デザインを送信する
+        user: デザイナーを選ぶ
+        name: デザイン名称
+        description: デザインについて
+      print_item:
+        aasm_state:
+          pending: アップロードなし
+          uploading: アップロード
+          printed: 完全アップロード
+          sublimated: 已熱轉印
+          onboard: パッケージ化された
+  ransack:
+    asc: "古=>新"
+    desc: "新=>古"
+    predicates:
+      cont: "含む"
+      not_cont: "含まれない"
+      start: "最初は"
+      end: "終わりは"
+      gt: ">"
+      gteq: "≧"
+      lt: "<"
+      lteq: "≦"
+      eq: "イコール"
+      matches: "似ている"
+      true: "結果はtrueです"
+      false: "結果はfalseです"
+      present: 'null以外の値'
+      null: 'null'
+  work:
+    work_type:
+      is_private: 個人
+      is_public: 公開
+  order:
+    state:
+      pending: 未払い
+      waiting_for_payment: 支払い待ち
+      paid: 支払済み
+      canceled: 取り消し
+      packaged: パッケージ
+      shipping: 運送中
+      refunded: 払い戻し
+      part_refunded: 部分返品
+    work_state:
+      ongoing: 準備中
+      working: 生產中
+      finish: 完成
+
+
+
+
+
+
+
+
+    payment:
+      paypal: PayPal
+      cash_on_delivery: 代金引換
+  share:
+    facebook_fan_page: https://www.facebook.com/commandpjp
+  not_found_error: "見つかりません"
+  brand:
+    name: "コマプリ"
+  redeem:
+    title: 'イベント'
+    start_redeem: ''
+    shipping_info: ''
+    editor:
+      redeem_button: '次の'
+  about:
+    title: "30秒でお気に入りの写真がセンスあふれるオリジナル商品に"
+    description: "コマプリは、お気に入りの写真をiPhoneケースやステッカー、アルバムなどセンスあふれるオリジナル商品して、5日でお届けします。"
+    page-title: 'あなたのアイデアをプリントしよう！'
+    page-description: "%{style}コマプリへようこそ。%{style_close}私達についてご説明します。"
+    page-description-emphase: 'スマートフォンケース・個性的なシール・ハガキ・テーブルカレンダーやアルバム等各種商品'
+    page-description-emphase-2: "%{style}コマプリ%{style_close}Appを使うだけ、たった30秒で作成し、3日でお届け！"
+    about: コマプリについて
+    about-content-1: 'スマートフォンで撮影した沢山の素敵な瞬間。その写真を、お気に入りのソーシャルネットワークでシェアする事も素晴らしいですが、もっと楽しい事をしてみませんか？コマプリは印刷技術とインターネットを組み合わせたサービスです。スマートフォンケースやカードやステッカー等をあなたのキャンバスにして、あなたのオリジナルデザインを実現します。'
+    about-content-2: '家族や友人、ペットのお気に入りの写真を、あなたのアイデア次第で、思い出の品や素敵なギフトにする事ができます。'
+    about-content-3: 'さあ、あなたのアイデアをプリントしよう！'
+    our-story: 'コマプリの由来'
+    our-story-content: 'コマプリの名前の由来は、キーボードの印刷用ショートカット “⌘P”（コマンド＋プリント）から来ています。“⌘P”で簡単に印刷が出来るように、私達は迅速かつ便利なサービスを提供します。印刷の難しい部分は私たちに任せて、自由な発想で素敵なプリント体験をお楽しみください。'
+    our-mission: 'ミッション'
+    our-mission-content: '私たちは、プリント体験をもっと身近なものにしたいと思っています。複雑な技術や高いコストを必要とする印刷が、シンプルで楽しい体験に変わります。手元のスマートフォンだけで快適に、リーズナブルに、誰でも素敵なプリント体験を楽しむ事ができます。'
+    our-product: '製品について'
+    our-product-content-1: '私たちの製品は、あなたのアイデアで出来ています。コマプリを使って、あなたの思うがままにアイデアを形にしてみてください。'
+    our-product-content-2: 'お気に入りの写真からオリジナルのスマートフォンケース、グリーティングカードや目的別の贈り物など、様々なオリジナルアイテムを作ることができます。'
+    quick-look: '今すぐコマプリのアプリをダウンロードして、はじめましょう！'
+    job-inquirires: '求人のお問い合わせ'
+    job-inquirires-content-1: 'コマプリは、私達のチームに参加いただける優秀な人材を随時募集しています。'
+    job-inquirires-content-2: 'ポートフォリオや職務経歴書をお持ちでしたら、一緒に送ってください。'
+    job-inquirires-content-3: '履歴書をこちらまで送ってください'
+    follow-us: '気に入って頂けましたか？ぜひ評価をお願いします'
+    job-opening: '採用情報'
+  home:
+    title: コマプリ－お気に入りの写真をiPhoneケース、スマホケース、マグカップ、iPadカバー、台湾悠遊カード(EasyCard)などのオリジナルアイテムに！
+    description: スマホに保存した写真を様々なオリジナルアイテムにカスタマイズできます！iPhoneケースをはじめ、Samsung携帯用ケース、マグカップ、iPadカバー、台湾の悠遊カード(EasyCard)、そして壁掛け時計のようなインテリアまで、多種多様なデザインアイテムをわずかの30秒でカスタマイズ。出来上がったデザインはコマプリでプリントし、10～12日でお手元にお届けします。どこでも送料無料。自分だけのオリジナルアイテムを作るのは勿論、誕生日プレゼントや記念品やギフトにもピッタリです。
+    page-title: 'コマプリはたったの30秒'
+    page-title-2: '完成獨一無二的手機殼'
+    promo-li1: 'あなたのスマートフォンケースをすぐにカスタマイズ'
+    promo-li2: '有名デザイナーがデザインしたスマートフォンケースを購入'
+    promo-li3: '送料無料・10日以内であなたのお手元に'
+    anounce: '2014.2.24　公式リリース'
+    download-apps: 'iOSとAndroidアプリがもうすぐ登場！'
+    coupon-title: 'NT$180分のクーポンコード'
+    coupon-description: "%{style}コマプリ%{style_close} アプリ、最終オンラインまでカウントダウン！"
+    coupon-description-2: 'iPhone6ケースの作成なら、NT$180割引き！'
+    email-placeholder: 'クーポンコード：WELCOME6'
+    submit-btn: '入力'
+    li1: クーポンコードの有効期限は2014年10月26日です。
+    li2: クーポンコードは一回のみご使用いただけます。
+    li3: クーポンコードの譲渡及び転売は禁止されています。
+    li4: コマプリはクーポンコードの割引時間や内容を変更する権利があります。
+    left-title: 'スマートフォンケース'
+    left-description: 'コマプリは完璧なフィット感、耐衝撃性に優れ、存在を感じさせないほどの超軽量、超薄型の世界品質のスマートフォンケースを作ります。'
+    right-title: 'スマートフォン液晶保護シート'
+    right-description: '硬度3Hの液晶保護シートは、特殊技術により簡単に貼ることができる、他には無い特別な液晶保護シートです。'
+    sent-success: '送信成功しました！ありがとうございます'
+  question:
+    li1: よくあるご質問
+    li2: お問い合わせ
+    li3: プライバシーポリシー
+    li4: 利用規約
+    li5: 注文検索
+    help: ヘルプ
+    content1: 私たちがお手伝いします！
+    content2: 解決方法が見つかりませんか？すぐにお問い合わせください。
+    contact_us: お問い合わせ
+  simple_form:
+    labels:
+      zendesk_service:
+        username: 名前
+        email: Eメールアドレス
+        category: カテゴリー
+        subject: 件名
+        description: お問い合わせ内容
+        attachments: ファイルを添付する
+    hints:
+      zendesk_service:
+        category: 最適なカテゴリーを選んでください
+        description: 最適なカテゴリーを選んでください
+        attachments: ここからファイルを添付してください。
+    placeholders:
+      billing_info: &placeholders_billing_info
+        name: 名前
+        email: commandp@gmail.com
+        country: 地域を選ぶ
+        phone: ＋81 09 1000 0123
+      shipping_info:
+        <<: *placeholders_billing_info
+  support:
+    categories:
+      product: 製品について
+      create_your_own: オリジナルアイテムの作成について
+      billing: お支払いについて
+      shipping: 配送について
+      ordering: ご注文について
+      artist_information: アーティスト情報について
+  career:
+    title: 人材募集｜Careers
+    description: commandp Inc.では、私達のチームに参加いただける優秀な人材を募集しています。私達は台湾にオフィスを構えています。情熱とビジョンをお持ちの方は、是非ご応募ください！
+  helpers:
+    label:
+      order[shipping_info]:
+        <<: *attributes_billing_profile
+      order[billing_info]:
+        <<: *attributes_billing_profile
+      shipping_info:
+        <<: *attributes_billing_profile
+      billing_info:
+        <<: *attributes_billing_profile
+      address_info:
+        <<: *attributes_billing_profile
+      order_status_form:
+        order_id: 注文ID
+    submit:
+      zendesk_form:
+        create: 送信する
+  errors:
+    address_info_list: 住所を新しく追加する又は選んでください
+    stripe:
+      not_paid: "この支払いは正しく行われていない、確認するか、お問い合わせください!"
+    shipping_way_empty: "Shipping way can\'t be nil"
+    order_items_empty: "Order Items can\'t be nil"
+    parameter_invalid: "Invalid parameter %{caused_by}"
+    same_products_in_promotions: "Product %{names} have already been promoted"
+  email:
+    send_coupon:
+      subject: コマプリクーポンコードを入力すると、カスタムスマートフォンケースがNT$300割引になります！
+  shipping_info:
+    shipping_way:
+      standard: 通常配送
+      express: お急ぎ便
+      cash_on_delivery: 代金引換
+      global:
+        standard: 通常配送
+        express: お急ぎ便
+        cash_on_delivery: 代金引換
+      china:
+        standard: 通常配送
+        express: お急ぎ便
+        cash_on_delivery: 代金引換
+  text:
+    free: 無料
+  will_paginate:
+    previous_label: 戻る
+    next_label: 次へ
+    page_gap: "&hellip;"
+  address_btns:
+    add: 登録する
+    cancel: キャンセル

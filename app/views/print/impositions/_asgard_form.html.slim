@@ -1,0 +1,73 @@
+= simple_form_for imposition, as: :imposition, url: imposition_form_path(imposition) do |f|
+  = hidden_field_tag :type, 'Asgard'
+
+  .row
+    .col-sm-12
+      = f.input :paper_width
+      = f.input :paper_height
+      = f.input :rotate
+      = link_to 'Preview Template PDF', f.object.file.url, target: '_blank' if f.object.file.present?
+      = f.input :file, label: 'PDF Template', as: :file
+      = f.input :flop, label: '水平翻轉', as: :boolean
+      = f.input :flip, label: '垂直翻轉', as: :boolean
+      = f.input :include_order_no_barcode, label: '揀貨單(delivery_order)是否包含barcode', as: :boolean
+      p 注: 逆時針旋轉, 單位為度
+
+    .col-sm-6
+      fieldset.imposition-editor-positions
+        legend positions
+
+        - imposition.positions.each do |position|
+          .row
+            .col-sm-10
+              = f.fields_for 'positions[]', position do |g|
+                = g.label :x, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :x, class: 'form-control'
+                = g.label :y, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :y, class: 'form-control'
+            .col-sm-2
+              button.btn.btn-danger.btn-xs.imposition-editor-remove-position X
+
+        .imposition-position-template
+          .row
+            .col-sm-10
+              = f.fields_for 'positions[]', Point.new do |g|
+                = g.label :x, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :x, class: 'form-control'
+                = g.label :y, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :y, class: 'form-control'
+            .col-sm-2
+              button.btn.btn-danger.btn-xs.imposition-editor-remove-position X
+
+      button.btn.imposition-editor-add-position Add
+
+    .col-sm-6
+      fieldset.imposition-editor-predrill-points
+        legend predrill points
+
+        - imposition.predrill_points.each do |predrill_point|
+          .row
+            .col-sm-10
+              = f.fields_for 'predrill_points[]', predrill_point do |g|
+                = g.label :x, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :x, class: 'form-control'
+                = g.label :y, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :y, class: 'form-control'
+            .col-sm-2
+              button.btn.btn-danger.btn-xs.imposition-editor-remove-predrill-point X
+
+        .imposition-predrill-point-template
+          .row
+            .col-sm-10
+              = f.fields_for 'predrill_points[]', Point.new do |g|
+                = g.label :x, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :x, class: 'form-control'
+                = g.label :y, class: 'col-sm-1 control-label no-padding-right'
+                .col-sm-5 = g.input_field :y, class: 'form-control'
+            .col-sm-2
+              button.btn.btn-danger.btn-xs.imposition-editor-remove-predrill-point X
+
+      button.btn.imposition-editor-add-predrill-point Add
+
+    .col-sm-12
+      = f.button :submit

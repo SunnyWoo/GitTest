@@ -1,0 +1,55 @@
+.well
+  = simple_form_for @search, url: works_admin_collection_path(collection), method: 'get', html: { class: 'search-work-form' } do |f|
+    .row
+      .col-md-3
+        = f.input :user_of_Designer_type_display_name_cont, required: false, label: t('collections.works.search_options.designer')
+      .col-md-3
+        = f.input :product_id_eq, label: t('collections.works.search_options.product_model'),
+                  as: :grouped_select,
+                  collection: ProductCategory.all,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .col-md-3
+        = f.input :name_cont, required: false, label: t('collections.works.search_options.work_name')
+      .col-md-3
+        = f.input :tags_name_cont, required: false, label: t('collections.works.search_options.tag')
+      .col-md-12
+        = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+.widget-head
+  ul.nav.nav-tabs
+    li class=('active' if @work_type == 'StandardizedWork')
+      = link_to works_admin_collection_path(collection, work_type: 'StandardizedWork') do
+        span StandardizedWork
+    li class=('active' if @work_type == 'Work')
+      = link_to works_admin_collection_path(collection, work_type: 'Work') do
+        span  Work
+.widget-main.no-padding
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th= t('collections.works.search_options.work_image')
+        th= t('collections.works.search_options.work_name')
+        th= t('collections.works.search_options.designer')
+        th= t('collections.works.search_options.product_model')
+        th= t('collections.works.search_options.tag')
+        th= t('tags.index.thead.sort')
+    tbody
+      - works.each do |work|
+        tr
+          td= display_print_image(work)
+          td= work.name
+          td= work.user_display_name
+          td= work.product_name
+          td= work.tag_names
+          td
+            - position = work.collection_works.find_by(collection_id: collection.id).try(:position)
+            = position
+            - if position.present?
+              = link_to 'Remove',
+                work_position_admin_collection_path(collection, work_id: work.id, work_type: work.class.to_s),
+                method: :delete, class: 'btn btn-warning pull-right', data: { confirm: 'Are you sure ?'}
+            = link_to 'Set',
+              work_position_admin_collection_path(collection, work_id: work.id, work_type: work.class.to_s),
+              remote: true, class: 'btn btn-default pull-right'

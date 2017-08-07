@@ -1,0 +1,3 @@
+= text_field_tag :invoice_number, order.invoice_number, placeholder: '請輸入發票號碼'
+br
+= button_tag '更新發票', class: :update_invoice_submit, 'data-url': print_order_update_invoice_path(order)

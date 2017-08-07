@@ -1,0 +1,29 @@
+.errors.hide id="#{to}_address_info_error"
+  = edit_translator('errors.address_info_list')
+ul.address_info_list
+  - last_use_address_info_id = last_use_address_info_id(to)
+  - current_user.address_infos.each_with_index do |address, index|
+    li
+      - label_name = "order_#{to}_address".to_sym
+      - select_address_info = check_select_address_info(last_use_address_info_id, address)
+      = radio_button_tag(label_name, address.id, select_address_info, class: 'select_address check_out_radio', data: { to: to })
+      = label_tag("#{label_name}_#{address.id}", address.address_name, class: 'check_out_radio_label')
+
+      .pull-right
+        = link_to edit_address_info_path(address), data: {remote: true}
+          i.edit
+
+        = link_to address_info_path(address), method: :delete
+          i.del
+
+      .hide.address_info_block id="address_info_block_#{address.id}"
+        = render 'address_info', obj: address
+      .hide id="address_info_form_#{address.id}"
+        = render 'address_infos/edit', address_info: address, r: check_out_cart_index_path
+  li
+    - id = "#{to}_new_address_info_form"
+    /= image_tag 'editor/add.png'
+    /= image_tag 'editor/add-hover.png'
+    span#address_info_add
+      = link_to t('page.cart_check_out.add_address'), new_address_info_path(id: id), data: {remote: true}
+    div id="#{id}"

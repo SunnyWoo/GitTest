@@ -1,0 +1,61 @@
+- admin_title t('standardized_works.index.page_title')
+- breadcrumb :admin_standardized_works
+
+= render 'admin/works/nav', active: 'works'
+
+.well.well-small
+  h2
+    = t('works.index.search.search_work')
+    button.btn.btn-sm data-show-detail='.search-work-form' = t('works.index.search.expand')
+  = simple_form_for @search, url: admin_standardized_works_path, method: 'get', html: { class: 'search-work-form hide' } do |f|
+    .row
+      .span3
+        = f.input :slug_or_uuid_cont, required: false
+      .span3
+        = f.input :name_cont, required: false
+      .span3
+        = f.input :model_id_eq, label: t('works.attributes.model'),
+                  as: :grouped_select,
+                  collection: ProductCategory.all,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id,
+                  required: false
+      .span3
+        = f.input :user_id_eq, label: 'Designer', collection: Designer.all.pluck(:display_name, :id), required: false
+      .span3
+        = f.button :submit, t('shared.form_actions.submit')
+
+= render 'admin/works/work_nav'
+= will_paginate @works
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          = sortable_links @search, %W( \
+            id \
+            #{t('works.index.thead.print_image')} \
+            #{t('works.index.thead.order_image')} \
+            #{t('works.index.thead.user')} \
+            #{t('works.index.thead.name')} \
+            #{t('works.index.thead.model')} \
+            #{t('works.index.thead.special_price')} \
+            aasm_state \
+            #{t('works.index.thead.featured')} \
+            #{t('works.index.thead.archive_state')} \
+            #{t('works.index.thead.product_code')} \
+            #{t('works.index.thead.operation')}), klass: StandardizedWork
+        tbody
+          - @works.each do |work|
+            = render 'list_item', work: work
+
+= will_paginate @works

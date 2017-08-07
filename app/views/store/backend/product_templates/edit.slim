@@ -1,0 +1,3 @@
+- admin_title "編輯設計模版: #{@template.name}"
+= simple_form_for @template, url: store_backend_product_template_path(@template), method: :put do |f|
+  = render 'form', f: f

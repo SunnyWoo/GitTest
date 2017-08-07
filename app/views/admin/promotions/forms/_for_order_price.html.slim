@@ -1,0 +1,9 @@
+- form = for_order_price
+= simple_form_for([:admin, form], class: 'form-horizontal') do |f|
+  .row data-role='promotion-form' data-type="for_product_category"
+    .col-sm-6
+      .alert.alert-info 暫不支援此種優惠類型
+      = render 'admin/promotions/forms/shared_fields', f: f
+      .form-actions
+        = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+        = link_to t('shared.form_actions.back'), admin_promotions_path, class: 'btn btn-info'

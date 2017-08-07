@@ -1,0 +1,60 @@
+ja:
+  work:
+    new:
+      choose_product: アイテムを選択
+      your_image: "あなたのお気に入り写真をここに"
+  editor:
+    add_overlay: レイヤーを追加
+    photo: 写真
+    background_color: 背景色
+    shapes: シェイプ
+    lines: ライン
+    stickers: ステッカー
+    textures: 模様
+    typography: イラスト文字
+    text: テキスト
+    crop: 形狀切割
+    preview: プレビュー
+    print_quality: 写真の解像度
+    # upload_photo:
+    #     title: 上傳照片
+    #     content: 為了讓成品有高解析度的品質，請確保你的照片符合以下要求
+    #     li1: 圖片尺寸至少要 2000px (圖片最大為 6mb)
+    #     li2: 圖片顏色必須是 RGB 格式
+    #     li3: 圖片格式必須是 JPG 或是 PNG
+    #     li4: 你必須要是圖片的原創者
+    #     select_image: 選擇照片
+    #     next: 次へ
+    preview_items:
+      text_input: "テキスト編集"
+      font: "フォント"
+      scale: "サイズ"
+      rotation: "反転"
+      transparency: "透明度"
+      color: "色"
+      text_alignment: "テキスト配置"
+      delete: "削除"
+      reflect: "中央揃え"
+      alignment: "配置"
+    delete:
+      title: "レイヤーを削除しますか？"
+      confirm_message: "本当にこのデザインを削除しますか？"
+      continue: "削除"
+      cancel: "取消"
+    safe_area:
+      title: ご注意ください
+      content_line_1: "画像が印刷範囲をカバーしていないようです。"
+      content_line_2: "画像を点線範囲全てに入るようにしてください。"
+      content_line_3: "デザインはケース側面にも含まれます。"
+      edit: "編集に戻る"
+      preview: "構わず次へ"
+    saving: "アーカイブ..."
+  my_design:
+    save_for_later: "編集を保存する"
+    back_to_edit: "再編集"
+    shop: "ショップ"
+    description: "商品詳細"
+    shipping: "配送"
+    shipping_message: "通常配送:10-12日。お急ぎ便も選択することができます。"
+
+

@@ -1,0 +1,133 @@
+.cart-lists {
+  width: 100%;
+  margin-top: 30px;
+  thead, thead tr, thead th {
+    background-color: $word-color;
+  }
+  thead td {
+    padding: 0 20px;
+    line-height: 30px;
+    color: #FFF;
+    font-weight: 200;
+    span {
+      color: #FFF;
+    }
+  }
+  tbody {
+    tr {
+      border-bottom: 1px solid $line-color;
+      &:last-child {
+        border-bottom: 0px
+      }
+    }
+    td {
+      padding: 45px 20px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .del {
+    width: 5%;
+    .icons-profile_delete_normal {
+      display: block;
+      width: 30px;
+      height: 30px;
+      text-indent: -9999px;
+      cursor: pointer;
+      &:hover {
+        @extend .icons-profile_delete_hover;
+      }
+    }
+  }
+  .summary {
+    @extend .clearfix;
+    padding: 20px 0;
+  }
+  #coupon_code {
+    width: 320px;
+    padding: 15px;
+    border: 1px solid $line-color;
+    &:disabled {
+      background-color: $line-color;
+      border: 1px solid shade($line-color, 10%);
+    }
+  }
+  .sub-total {
+    margin-top: 12px;
+    span {
+      margin-right: 10px;
+      font-size: 1.5em;
+      color: $main-color;
+    }
+  }
+  .coupon-code {
+    margin-top: 12px;
+    span {
+      margin-right: 10px;
+      font-size: 1em;
+    }
+  }
+  .coupon_error {
+    @extend .msg-error;
+  }
+  .coupon_notice {
+    @extend .msg-notice;
+  }
+  .coupon_box {
+    margin-top: 12px;
+  }
+}
+
+.cart-product-name {
+  @extend .label-4;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.cart_wording {
+  text-align: center;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.divider_line {
+  margin: 64px 0px 64px 0px;
+}
+
+.btn_cart {
+  @extend .btn-default;
+  margin-left: 26px;
+  text-decoration: none;
+}
+
+.btn_cart_gray {
+  @extend .btn-gray;
+  margin-left: 26px;
+  text-decoration: none;
+}
+
+table {
+  .item {
+    width: 15%;
+  }
+  .item-name {
+    width: 30%;
+    line-height: 1.4em;
+    a:hover *{
+      color: $main-color;
+    }
+  }
+  .price {
+    width: 15%;
+    text-align: center;
+  }
+  .qty {
+    width: 15%;
+    text-align: center;
+  }
+  .total {
+    width: 15%;
+    text-align: right;
+  }
+}

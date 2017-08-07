@@ -1,0 +1,21 @@
+.page-header
+  h1 返架
+= render 'print/shared/notice_bar'
+= simple_form_for @storage, url: restore_print_shelves_path(@storage),
+                  method: :put,
+                  html: {id: 'restore', class: 'form-horizontal'} do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :shelf_serial, input_html: {id: :shelf_serial, class: :serial}, label: t('storage.shelf_serial')
+    .form-inputs
+      = f.input :material_serial, input_html: {id: :material_serial, class: :serial}, label: t('storage.material_serial')
+    .form-inputs
+      = f.input :shelf_name, input_html: {id: :shelf_name, disabled: true}, label: t('storage.shelf_name')
+    .form-inputs
+      = f.input :material_name, input_html: {id: :material_name, disabled: true}, label: t('storage.material_name')
+    .form-inputs
+      = f.input :quantity, input_html: {id: :storage_quantity}, label: t('storage.quantity')
+    .form-inputs
+      = f.input :message, label: t('storage.message')
+    .form-actions
+      = f.button :submit, '返架', class: 'btn btn-primary'

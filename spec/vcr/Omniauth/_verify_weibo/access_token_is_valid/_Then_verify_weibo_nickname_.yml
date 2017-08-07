@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/account/get_uid.json?access_token=2.002m9X_EMucQmCc31f256a089RjSzD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.6.1
+      date:
+      - Fri, 07 Aug 2015 09:34:55 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      api-server-ip:
+      - 10.75.5.67
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"uid":3953257165}'
+    http_version: '1.1'
+  recorded_at: Fri, 07 Aug 2015 09:34:55 GMT
+- request:
+    method: get
+    uri: https://api.weibo.com/2/users/show.json?access_token=2.002m9X_EMucQmCc31f256a089RjSzD&uid=3953257165
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.6.1
+      date:
+      - Fri, 07 Aug 2015 09:34:56 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      api-server-ip:
+      - 10.75.5.61
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6Mzk1MzI1NzE2NSwiaWRzdHIiOiIzOTUzMjU3MTY1IiwiY2xhc3Mi
+        OjEsInNjcmVlbl9uYW1lIjoi6ICB5LiJXzE0ODc0IiwibmFtZSI6IuiAgeS4
+        iV8xNDg3NCIsInByb3ZpbmNlIjoiMzEiLCJjaXR5IjoiNyIsImxvY2F0aW9u
+        Ijoi5LiK5rW3IOaZrumZgOWMuiIsImRlc2NyaXB0aW9uIjoiIiwidXJsIjoi
+        IiwicHJvZmlsZV9pbWFnZV91cmwiOiJodHRwOi8vdHAyLnNpbmFpbWcuY24v
+        Mzk1MzI1NzE2NS81MC8wLzEiLCJwcm9maWxlX3VybCI6InUvMzk1MzI1NzE2
+        NSIsImRvbWFpbiI6IiIsIndlaWhhbyI6IiIsImdlbmRlciI6Im0iLCJmb2xs
+        b3dlcnNfY291bnQiOjYsImZyaWVuZHNfY291bnQiOjEyLCJwYWdlZnJpZW5k
+        c19jb3VudCI6MCwic3RhdHVzZXNfY291bnQiOjQ1LCJmYXZvdXJpdGVzX2Nv
+        dW50IjowLCJjcmVhdGVkX2F0IjoiV2VkIERlYyAyNSAxMzoyMTo0NCArMDgw
+        MCAyMDEzIiwiZm9sbG93aW5nIjpmYWxzZSwiYWxsb3dfYWxsX2FjdF9tc2ci
+        OmZhbHNlLCJnZW9fZW5hYmxlZCI6dHJ1ZSwidmVyaWZpZWQiOmZhbHNlLCJ2
+        ZXJpZmllZF90eXBlIjotMSwicmVtYXJrIjoiIiwic3RhdHVzIjp7ImNyZWF0
+        ZWRfYXQiOiJNb24gQXVnIDAzIDE1OjM1OjE5ICswODAwIDIwMTUiLCJpZCI6
+        Mzg3MTc3ODE5NzUzMzg4NCwibWlkIjoiMzg3MTc3ODE5NzUzMzg4NCIsImlk
+        c3RyIjoiMzg3MTc3ODE5NzUzMzg4NCIsInRleHQiOiJTZWVkIE1lIGh0dHA6
+        Ly90LmNuL1JMbDdIdVQgIiwic291cmNlX2FsbG93Y2xpY2siOjAsInNvdXJj
+        ZV90eXBlIjoxLCJzb3VyY2UiOiI8YSBocmVmPVwiaHR0cDovL2FwcC53ZWli
+        by5jb20vdC9mZWVkL2NVY0kxQVwiIHJlbD1cIm5vZm9sbG93XCI+5YiG5Lqr
+        5oyJ6ZKuPC9hPiIsImZhdm9yaXRlZCI6ZmFsc2UsInRydW5jYXRlZCI6ZmFs
+        c2UsImluX3JlcGx5X3RvX3N0YXR1c19pZCI6IiIsImluX3JlcGx5X3RvX3Vz
+        ZXJfaWQiOiIiLCJpbl9yZXBseV90b19zY3JlZW5fbmFtZSI6IiIsInBpY191
+        cmxzIjpbXSwiZ2VvIjpudWxsLCJyZXBvc3RzX2NvdW50IjowLCJjb21tZW50
+        c19jb3VudCI6MCwiYXR0aXR1ZGVzX2NvdW50IjowLCJtbGV2ZWwiOjAsInZp
+        c2libGUiOnsidHlwZSI6MCwibGlzdF9pZCI6MH0sImRhcndpbl90YWdzIjpb
+        XX0sInB0eXBlIjowLCJhbGxvd19hbGxfY29tbWVudCI6dHJ1ZSwiYXZhdGFy
+        X2xhcmdlIjoiaHR0cDovL3RwMi5zaW5haW1nLmNuLzM5NTMyNTcxNjUvMTgw
+        LzAvMSIsImF2YXRhcl9oZCI6Imh0dHA6Ly90cDIuc2luYWltZy5jbi8zOTUz
+        MjU3MTY1LzE4MC8wLzEiLCJ2ZXJpZmllZF9yZWFzb24iOiIiLCJ2ZXJpZmll
+        ZF90cmFkZSI6IiIsInZlcmlmaWVkX3JlYXNvbl91cmwiOiIiLCJ2ZXJpZmll
+        ZF9zb3VyY2UiOiIiLCJ2ZXJpZmllZF9zb3VyY2VfdXJsIjoiIiwiZm9sbG93
+        X21lIjpmYWxzZSwib25saW5lX3N0YXR1cyI6MCwiYmlfZm9sbG93ZXJzX2Nv
+        dW50IjoyLCJsYW5nIjoiemgtY24iLCJzdGFyIjowLCJtYnR5cGUiOjAsIm1i
+        cmFuayI6MCwiYmxvY2tfd29yZCI6MCwiYmxvY2tfYXBwIjowLCJjcmVkaXRf
+        c2NvcmUiOjgwLCJ1cmFuayI6MH0=
+    http_version: '1.1'
+  recorded_at: Fri, 07 Aug 2015 09:34:55 GMT
+recorded_with: VCR 2.9.2

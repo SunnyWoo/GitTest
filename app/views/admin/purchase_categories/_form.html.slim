@@ -1,0 +1,13 @@
+= simple_form_for [:admin, category] do |f|
+  = f.input :name
+
+  h3 = t('purchase_categories.index.price_tier')
+  = link_to_add_fields "增加", f, :price_tiers
+  #price_tiers_fields
+    = f.simple_fields_for :price_tiers do |builder|
+      = render 'price_tier_fields', f: builder
+
+  h3 = t('purchase_categories.index.product_type')
+  = f.input :product_ids, collection: ProductModel.pluck(:name, :id), input_html: { class: 'tag_select2', multiple: true }, label: false
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

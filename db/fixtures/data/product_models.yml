@@ -1,0 +1,124 @@
+---
+mug:
+- key: mugs
+  name: Mugs
+  short_name: Mugs
+  description: Your favorite photo or funniest saying is a great way to start the
+    day. Use our white mug to showcase your creativity. It has a large handle that’s
+    easy to hold and comes in 11oz sizes. Dishwasher and microwave safe, these cool
+    coffee mugs will be your new favorite way to consume hot or cold beverages. Makes
+    a great gift!
+  available: true
+clock:
+- key: wood_white_clocks
+  name: Wall Clocks / WOOD
+  short_name: Wall Clocks / WOOD
+  description: It's time to show off your favorite art, photos, and text with a custom
+    round wall clock from commandp. This wall clock is vibrantly printed with HD process
+    to ensure the highest quality display of any content. Order this custom round
+    wall clock for your walls or give to friends and family as a gift for a timeless
+    treasure. Available in natural wood, our 318mm diameter unique Wall Clocks feature
+    a high-impact plexiglass crystal face and a backside hook for easy hanging. Clock
+    sits 48mm deep and requires 1 AA battery (not included).
+  available: true
+cover:
+- key: ipad_air2_covers
+  name: iPad Air 2 Covers
+  short_name: iPad Air 2 Covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    2 a custom cover fit. The multifunctional design folds into multiple stand positions
+    for hands-free heroics. Pair your cuztomized cover with a matching case and you’ll
+    really save the day-and your device!
+  available: true
+- key: ipad_air_covers
+  name: iPad Air Covers
+  short_name: iPad Air Covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    and mini with a custom cover fit. The multifunctional design folds into multiple
+    stand positions for hands-free heroics. Pair your cuztomized cover with a matching
+    case and you’ll really save the day-and your device!
+  available: true
+- key: ipad_mini_covers
+  name: iPad mini covers
+  short_name: iPad mini covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    and mini with a custom cover fit. The multifunctional design folds into multiple
+    stand positions for hands-free heroics. Pair your cuztomized cover with a matching
+    case and you’ll really save the day-and your device!
+  available: true
+case:
+- key: samsung_note3_cases
+  name: Samsung Note 3 Cases
+  short_name: Samsung Note 3 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: samsung_s5_cases
+  name: Samsung S5 Cases
+  short_name: Samsung S5 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: samsung_s4_cases
+  name: Samsung S4 Cases
+  short_name: Samsung S4 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: ipad_mini_cases
+  name: iPad mini Cases
+  short_name: iPad mini Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: iphone_6_cases
+  name: iPhone 6 Cases
+  short_name: iPhone 6 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: iphone_5_cases
+  name: iPhone 5s/5 Cases
+  short_name: iPhone 5s/5 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: iphone_4_cases
+  name: iPhone 4s/4 Cases
+  short_name: iPhone 4s/4 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+- key: iphone_6plus_cases
+  name: iPhone 6 Plus Cases
+  short_name: iPhone 6 Plus Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+  available: true
+smartcard:
+- key: easycard_smartcards
+  name: Taiwan EasyCards
+  short_name: Taiwan EasyCards
+  description: Customize your EasyCards with images that reflect what’s important
+    to you. You can customize your card by putting one of your own photos right on
+    your card or add overlays from our graphic library. Make a statement with an image
+    that covers most of your card, or feature a smaller personal photo of yourself
+    in the top left corner. The choice is yours. Customize your EasyCards to reflect
+    your personality. It's fun, easy, and Worldwide Free Shipping.
+  available: true

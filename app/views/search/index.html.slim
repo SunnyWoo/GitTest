@@ -1,0 +1,49 @@
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+
+.cmdp_container.shop-content
+  - if @works.count > 0
+    .grid_6
+      .item-title.margin-top-fixed.text-center= "Search “#{@query}”"
+      = hidden_field_tag 'q[name_cont]', @query
+    .grid_2.filters
+      .filter-block
+        .horizontal
+          .sub-title = edit_translator('page.text.sort')
+          .content
+            .dropdown.dropdown-small#sort_products
+              button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+                span.val
+                  | New
+                span.caret
+              ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+                li role="product_models"
+                  .i role="menuitem" tabindex="-1" data-value=''
+                    = link_to 'New', url_for(params.merge(sort: 'new'))
+                li role="product_models"
+                  .i role="menuitem" tabindex="-1" data-value=''
+                    = link_to 'Random', url_for(params.merge(sort: 'random'))
+                li role="product_models"
+                  .i role="menuitem" tabindex="-1" data-value=''
+                    = link_to 'Popular', url_for(params.merge(sort: 'popular'))
+
+    = render 'select_model', model: @model
+
+    .products
+      = render partial: 'editor/shared/work', collection: @works
+
+    .grid_6
+      .center-block.search_pagination
+        = will_paginate(@works, inner_window: 1)
+      .margin-top-fixed
+  - else
+    .grid_6
+      .item-title.margin-top-fixed.text-center.dotted-line= "Search “#{@query}”"
+      = hidden_field_tag 'q[name_cont]', @query
+    .grid_6
+      .nomore-result.text-center
+        | Your search "#{@query}" did not match any products.
+      .margin-top-fixed.text-center
+        = link_to t('page.cart.btns.shop'), root_path, class: 'btn btn-default'
+      .margin-top-fixed

@@ -1,0 +1,9 @@
+<% id = "question_modal" %>
+$('body').append('<%= j render 'question_modal', id: id %>');
+$('#<%= id %>').modal('show');
+$('#<%= id %>').on('submit', function(e) {
+  $('#<%= id %>').modal('hide');
+});
+$('#<%= id %>').on('click', '#questionnaire_link', function(e){
+  $('#<%= id %>').modal('hide');
+})

@@ -1,0 +1,25 @@
+h1 The Future
+
+.row
+  .col-md-4
+    h2 掛載一個普通的 React 元件
+
+    = mount_react_app 'Time'
+
+  .col-md-4
+    h2 給它點 props
+
+    = mount_react_app 'Time', style: { color: 'red' }
+
+  .col-md-4
+    h2 掛載數個 Redux App, 有自己獨立的 store
+
+    = mount_react_app 'Counter', nil, ['counter']
+    = mount_react_app 'Counter', nil, ['counter']
+    = mount_react_app 'Counter', nil, ['counter']
+
+.row
+  .col-md-4
+    h2 AttachmentInput
+
+    = mount_react_app 'AttachmentInput'

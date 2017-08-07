@@ -1,0 +1,35 @@
+doctype 5
+html lang='zh-TW'
+  head
+    meta charset='utf-8'
+    meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'
+    title ⌘P Dashboard #{@admin_title}
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.png'
+    = stylesheet_link_tag 'admin_v2', 'data-turbolinks-track' => true
+    = javascript_include_tag 'admin_v2', 'data-turbolinks-track' => true
+    - unless come_from_china?
+      script src="https://maps.googleapis.com/maps/api/js?v=3.exp"
+    = include_webpack_assets 'application'
+  body.no-skin
+    javascript:
+      window.I18n.defaultLocale = "#{I18n.default_locale}";
+      window.I18n.locale = "#{I18n.locale}";
+      window.I18n.fallbacks = true;
+    = render 'admin/v2/shared/navbar'
+    .main-container
+      = render 'admin/v2/shared/sidebar'
+      .main-content
+        .breadcrumbs
+          == breadcrumbs style: :bootstrap, autoroot: false
+          .pull-right = render 'admin/shared/change_locale'
+        .page-content
+          .row
+            .col-xs-12
+              .page-header
+                h1
+                  = @admin_title
+                  - if @admin_subtitle
+                    small = @admin_subtitle
+              = render 'admin/shared/notice_bar'
+              = yield

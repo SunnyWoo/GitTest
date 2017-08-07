@@ -1,0 +1,20 @@
+- @url = @url ? "#{@url}?confirmation_token=#{@token}" : confirmation_url(@user, confirmation_token: @token)
+- i18n_key = 'devise.mailer.confirmation_instructions'
+= image_tag @banner if @banner
+.paragraph1
+  = t("#{i18n_key}.text1", username: @user.username)
+  br
+  br
+  = t("#{i18n_key}.text2", username: @user.username, sitename: I18n.t('site.name'), email: @email)
+  br
+  br
+  - if t("#{i18n_key}.text3").present?
+    = link_to t("#{i18n_key}.text3"), @url
+    br
+    br
+  - link = link_to(t("#{i18n_key}.confirm_link_name"), @url)
+  = t("#{i18n_key}.text4", confirm_link: link).html_safe
+  br
+  br
+  - if I18n.locale.match(/zh/)
+    div style='text-align: right;' = t('devise.mailer.team', sitename: I18n.t('site.name'))

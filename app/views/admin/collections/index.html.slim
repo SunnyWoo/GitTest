@@ -1,0 +1,38 @@
+- admin_title t('collections.index.page_title')
+- breadcrumb :admin_collections
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('collections.index.thead.name')
+            th zh-CN
+            th zh-TW
+            th zh-HK
+            th en
+            th ja
+            th= t('collections.index.thead.operation')
+        tbody
+          - @resources.each do |collection|
+            tr
+              td= collection.name
+              td= collection.text_zh_cn
+              td= collection.text_zh_tw
+              td= collection.text_zh_hk
+              td= collection.text_en
+              td= collection.text_ja
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, collection]), class: 'btn btn-info'
+                  = link_to t('collections.works_button'), url_for([:works, :admin, collection]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), admin_collection_path(collection),
+                    class: 'btn btn-danger', data: { method: :delete,
+                    confirm: t('shared.confirm.delete') }

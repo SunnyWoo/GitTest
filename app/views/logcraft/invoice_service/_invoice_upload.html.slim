@@ -1,0 +1,3 @@
+- admin = Admin.find(activity.extra_info[:admin_id]) if activity.extra_info[:admin_id]
+p
+  | #{logcraft_keyword(admin.email)} 將 訂單資訊上傳到金財通FTP

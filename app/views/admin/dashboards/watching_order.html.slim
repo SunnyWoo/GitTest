@@ -1,0 +1,39 @@
+- admin_title t('dashboard.watching_order')
+
+= render 'admin/dashboards/nav', active: 'watching_order', orders_count: @orders.total_entries
+
+.row
+  .col-sm-12.widget-container-span.ui-sortable.no-padding
+    - @orders.each do |order|
+      .widget-box
+        .widget-header
+          .row
+            .col-sm-4
+              h4 = order.order_no
+            .widget-toolbar
+              - if order.nuandao_b2b?
+                span class="label label-success arrowed arrowed-right" = t('order.payment.nuandao_b2b')
+              span class="label label-warning" from #{order.platform}
+              span class="label label-info" = t("order.state.#{order.aasm_state}")
+              span class="label label-success" = l order.created_at, format: :long
+              input.ace.ace-switch.ace-switch-6 type='checkbox' checked=order.invoice_required? data-checkbox-check-url=invoice_required_admin_order_path(order) data-checkbox-uncheck-url=cancel_invoice_admin_order_path(order)
+              span.lbl 发票
+              input.ace.ace-switch.ace-switch-6 type='checkbox' checked=order.watching? data-checkbox-check-url=watch_admin_order_path(order) data-checkbox-uncheck-url=unwatch_admin_order_path(order)
+              span.lbl 关注
+        .widget-body
+          .row
+            .col-sm-6
+              .well
+                p = order.user.username
+                p = order.user.email if order.user.normal?
+                p = order.shipping_info.try(:full_address)
+                p = "客户留言: #{order.message}"
+            .col-sm-6
+              = render 'admin/notes/notes', noteable: order
+          .row
+            .col-sm-12
+              .well
+                - order.order_items.map { |item| item.itemable_order_image.try(:thumb).try(:url) }.each do |image|
+                  img.lazy data-original="#{image}"
+
+= will_paginate @orders

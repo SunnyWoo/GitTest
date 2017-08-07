@@ -1,0 +1,69 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh-TW:
+  devise:
+    confirmations:
+      confirmed: "你的帳號已認證完成。現在已登入。"
+      send_instructions: "你的 email 信箱將在幾分鐘內收到認證信。"
+      send_paranoid_instructions: "如果你的 email 信箱已在我們資料庫，你的 email 信箱將在幾分鐘內收到認證信。"
+    failure:
+      already_authenticated: "你已經登入。"
+      inactive: "你的帳號尚未認證。"
+      invalid: "無效的 email 或密碼。"
+      invalid_token: "無效的認證資料。"
+      locked: "你的帳號已被鎖住。"
+      not_found_in_database: "無效的 email 或密碼。"
+      timeout: "你上次的登入已超時，請重新登入。"
+      unauthenticated: "在繼續之前，你需要先登入或註冊。"
+      unconfirmed: "在繼續之前，你需要先認證你的帳號。"
+    mailer:
+      team: "%{sitename} 團隊敬上"
+      confirmation_instructions:
+        subject: "%{sitename} - 請驗證您的電子郵件地址"
+        text1: "你就快完成了"
+        text2: "%{username} 你好，歡迎使用 %{sitename} 。在開始之前，我們需要快速驗證你的電子郵件地址。請按一下以下的連結，並使用你剛剛註冊的帳號登入：%{email}"
+        text3: '驗證您的電子郵件'
+        text4: '一旦驗證您的電子郵件之後，即可開始使用我們的服務，很高興有您的加入。'
+      reset_password_instructions:
+        subject: "你已要求重設你的 %{sitename} 登入密碼"
+        hello: "你好 %{username}"
+        text1: '我們收到您重設commandp密碼的申請，請點擊以下連結修改你的密碼。'
+        text2: '重設密碼'
+        text3: '如果您並沒有申請密碼重設服務，請忽略此來信'
+      unlock_instructions:
+        subject: "解鎖帳號說明"
+    omniauth_callbacks:
+      failure: "因為 %{reason}，我們無法認證你的 %{kind} 資料。"
+      success: "你的  %{kind} 帳號已成功認證。."
+    passwords:
+      no_token: "若你不是由重設密碼郵件引導而來，你將無法讀取此頁。若你是由重設密碼郵件引導而來，請確認你使用完整網址連結。"
+      send_instructions: "你的 email 信箱將在幾分鐘內收到密碼重設信件。"
+      send_paranoid_instructions: "如果你的 email 信箱已在我們資料庫，你的 email 信箱將在幾分鐘內收到重設密碼郵件。"
+      updated: "你的密碼已變更成功。現在已登入。"
+      updated_not_active: "你的密碼已變更成功。"
+    registrations:
+      destroyed: "再見! 你的帳號已成功被刪除。我們希望能很快再見到你。"
+      signed_up: "歡迎! 你已成功註冊。"
+      signed_up_but_inactive: "你已成功註冊。但在你的帳號未啟用前，我們無法將你登入。"
+      signed_up_but_locked: "你已成功註冊。但你的帳號被鎖住了，我們無法將你登入。"
+      signed_up_but_unconfirmed: "我們已將認證連結寄至你的信箱，請至信箱開啟該連結啟用你的帳號。"
+      update_needs_confirmation: "你已成功更新你的帳號，但我們需要認證你新登錄的 email 信箱。請至你的新信箱開啟認證連結。"
+      updated: "你已成功更新你的帳號。"
+    sessions:
+      confirmation_notice: '請先驗證你的email'
+      signed_in: "你已成功登入。"
+      signed_out: "你已成功登出。"
+    unlocks:
+      send_instructions: "你的 email 信箱將在幾分鐘內收到帳號解鎖說明。"
+      send_paranoid_instructions: "如果我們有你的帳號，你的 email 信箱將在幾分鐘內收到帳號解鎖說明。"
+      unlocked: "你的帳號已成功被解鎖，請登入繼續購物。"
+  errors:
+    messages:
+      already_confirmed: "已成功認證，請登入。"
+      confirmation_period_expired: "需要  %{period} 確認，請發送新的需求"
+      expired: "已失效，請發送新的需求"
+      not_found: "找不到"
+      not_locked: "沒有被鎖住"
+      not_saved:
+        one: "1個錯誤禁止了  %{resource} 被儲存"
+        other: "%{count} 個錯誤禁止了  %{resource} 被儲存"

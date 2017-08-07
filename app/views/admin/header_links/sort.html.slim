@@ -1,0 +1,13 @@
+- admin_title t('header_links.index.page_title')
+
+.row
+  .col-md-6
+    #nestable.dd
+      ol.dd-list.sortable
+        - @header_links.each do |header_link|
+          li.dd-item data-url='#{update_position_admin_header_link_path(header_link)}' data-parent_id='#{header_link.id}'
+            .dd-handle.btn-yellow = header_link.title
+            ol.dd-list.sortable
+              - header_link.children.each do |child|
+                li.dd-item data-url='#{update_position_admin_header_link_path(child)}'
+                  .dd-handle = "#{child.title} (#{child.link_type})"

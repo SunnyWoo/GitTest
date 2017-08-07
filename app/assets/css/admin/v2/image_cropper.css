@@ -1,0 +1,19 @@
+/* line 1, ../../../stylesheets/admin/v2/image_cropper.scss */
+.image-cropper-container {
+  margin: 10px 50px; }
+
+/* line 5, ../../../stylesheets/admin/v2/image_cropper.scss */
+.image-cropper {
+  overflow: hidden;
+  cursor: pointer; }
+
+/* line 10, ../../../stylesheets/admin/v2/image_cropper.scss */
+.image-cropper-editor {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; }

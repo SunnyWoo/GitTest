@@ -1,0 +1,26 @@
+.navbar.navbar-default.navbar-fixed-top
+  .navbar-container
+    button.navbar-toggle.menu-toggler.pull-left
+      span.sr-only Toggle sidebar
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+
+    .navbar-header.pull-left
+      = link_to admin_root_path, class: 'navbar-brand' do
+        small ⌘P Dashboard (#{Region.region} #{Rails.env} #{GIT_VERSION[0, 8]})
+
+    .navbar-buttons.navbar-header.pull-right role='navigation'
+      ul.nav.ace-nav
+        li.light-blue
+          a.dropdown-toggle href='#' data-toggle='dropdown'
+            = image_tag 'img_fbdefault.png', class: 'nav-user-photo'
+            span.user-info
+              small Welcome,
+              =' current_admin_username
+              = fa_icon 'caret-down', class: 'ace-icon'
+
+          ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+            li = link_to destroy_admin_session_path, method: :delete do
+              = fa_icon 'power-off', class: 'ace-icon'
+              | Logout

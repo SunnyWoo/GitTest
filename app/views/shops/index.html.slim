@@ -1,0 +1,48 @@
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+
+.cmdp_container.shop-content
+  .grid_6
+    .item-title.margin-top-fixed.text-center
+      = @title
+
+  .grid_2.filters
+    .filter-block
+      .horizontal
+        .sub-title = edit_translator('page.text.sort')
+        .content
+          .dropdown#sort_products
+            button#sort_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+              span.val
+                = @sort
+              span.caret
+            ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'New', url_for(params.merge(sort: 'new'))
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'Random', url_for(params.merge(sort: 'random'))
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=''
+                  = link_to 'Popular', url_for(params.merge(sort: 'popular'))
+
+  - hide_model =  @models.length > 2 && !@category.all?
+  = render 'shops/select_category', category: @category, model: @model, hide_model: hide_model
+  - if hide_model
+    = render 'shops/select_model', category: @category, model: @model, models: @models
+
+    .margin-top-fixed
+
+  .products
+    - if @works.length > 0
+      = render partial: 'editor/shared/work', collection: @works
+    - else
+      .empty-result
+        = edit_translator('page.text.no_product_found')
+
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(@works, inner_window: 1)
+    .margin-top-fixed

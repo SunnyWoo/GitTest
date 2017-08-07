@@ -1,0 +1,68 @@
+#public-share-page
+  width: 100%
+  margin-bottom: 40px
+
+  .publicShare-cover
+    width: 100%
+    font-size: 0
+
+  .publicShare-desc
+    position: relative
+    display: block
+    @include rem(padding, 15px 15px 30px 15px)
+    border-bottom: 1px solid $c-border
+    background-color: $c-bg-white
+
+  .publicShare-desc-content
+    @include rem(margin-bottom, 30px)
+    @include rem(padding-right, 40px)
+    @include rem(font-size, $f-size-content)
+    @include rem(line-height, 25px)
+
+  .publicShare-desc-zoomIcon
+    position: absolute
+    @include rem(top, 15px)
+    @include rem(right, 15px)
+    @include rem(width, 20px)
+    @include rem(height, 20px)
+    display: block
+    background-color: transparent
+    background-image: asset-data-url('designer_store/zoom.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+
+  .publicShare-desc-share
+    display: block
+    text-align: center
+
+  .productSection
+    @include rem(min-height, 200px)
+    @include rem(margin-top, 15px)
+    @include rem(margin-bottom, 15px)
+    @include rem(padding-top, 9px)
+    @include rem(padding-bottom, 30px)
+    text-align: center
+    border-top: 1px solid $c-border
+    border-bottom: 1px solid $c-border
+    background-color: $c-bg-white
+
+  .productSection-title
+    @include rem(height, 40px)
+    text-align: center
+    font-size: $f-size-content
+    @include rem(line-height, 40px)
+
+  .productSection-gallery
+    display: flex
+    @include rem(margin-right, 6px)
+    @include rem(margin-left, 6px)
+    flex-wrap: wrap
+
+  .productSection-gallery-item
+    width: 50%
+    @include rem(padding-left, 6px)
+    @include rem(padding-right, 6px)
+
+    img
+      max-width: 100%

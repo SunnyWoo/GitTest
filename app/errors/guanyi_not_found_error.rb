@@ -1,0 +1,2 @@
+class GuanyiNotFoundError < GuanyiError
+end

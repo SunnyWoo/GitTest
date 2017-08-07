@@ -1,0 +1,36 @@
+.well
+  = simple_form_for @search, url: tags_admin_collection_path(collection), method: 'get', html: { class: 'search-work-form' } do |f|
+    .row
+      .col-md-3
+        = f.input :name_cont, required: false, label: t('tags.index.thead.name')
+      .col-md-12
+        = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+.widget-main.no-padding
+  = form_tag add_tag_admin_collection_path(collection) do
+    = submit_tag t('collections.add_button'), class: 'btn btn-success pull-left'
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th= check_box_tag :all
+          th= t('tags.index.thead.name')
+          th zh-CN
+          th zh-TW
+          th zh-HK
+          th en
+          th ja
+          th= t('collections.index.thead.operation')
+      tbody
+        - tags.each do |tag|
+          - included_tag = collection.tag_ids.include?(tag.id)
+          tr
+            td= check_box_tag('tag_ids[]', tag.id) unless included_tag
+            td= tag.name
+            td= tag.text_zh_cn
+            td= tag.text_zh_tw
+            td= tag.text_zh_hk
+            td= tag.text_en
+            td= tag.text_ja
+            td
+              - if included_tag
+                = link_to t('collections.remove_button'), remove_tag_admin_collection_path(collection, tag_id: tag.id),
+                  class: 'btn btn-warning', method: :delete, data: { confirm: 'Are you sure?' }

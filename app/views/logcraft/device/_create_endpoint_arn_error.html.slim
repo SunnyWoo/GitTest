@@ -1,0 +1,7 @@
+- device = activity.trackable
+- user_link = link_to_user(device.user) if device.user
+div
+  | #{user_link} 的 Device 建立 endpoint_arn 失敗
+  br Message:
+  pre
+    = activity.message

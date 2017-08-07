@@ -1,0 +1,157 @@
+- currency = @order.currency
+.paragraph1
+.title.paragraph1.c-margin
+  = image_tag('email/nl_text_orderstatus.png')
+
+.paragraph1.c-margin
+  p
+    = t('email.order.share.hello', username: @user.username)
+  p
+    = t('email.order.receipt_with_status.content_1')
+    span.highlight= t('email.order.share.order_id', order_no: @order.order_no)
+    = t('email.order.receipt_with_status.content_2')
+
+.paragraph1.c-margin
+  table.address
+    tr
+      td
+        .adr-title
+          = t('email.order.receipt.shopping_address')
+        .name
+          = @shipping_info.name
+        .adr
+          = "#{@shipping_info.address}"
+          br/
+          = "#{@shipping_info.city_state}"
+          br/
+          = "#{@shipping_info.zip_code} #{@shipping_info.country}"
+          br/
+          = @shipping_info.phone
+      td
+        .adr-title
+          = t('email.order.receipt.billing_address')
+        .name
+          = @billing_info.name
+        .adr
+          = "#{@billing_info.address}"
+          br/
+          = "#{@billing_info.city_state}"
+          br/
+          = "#{@billing_info.zip_code} #{@billing_info.country}"
+          br/
+          = @billing_info.phone
+
+.paragraph1
+  p.sub-title.c-margin
+    = image_tag('email/nl_text_summary.png')
+  p.notice.c-margin
+    - shipping_way = BillingProfile.shipping_ways[@shipping_info.shipping_way]
+    - shipping_way = t("email.order.share.shipping_way.#{Region.region}")[shipping_way]
+    - payment = t('email.order.share.payment')[@order.payment.to_sym]
+    = t('email.order.receipt.content_4',payment: payment, currency: currency, shipping_way: shipping_way  )
+  .orders-info
+    table
+      tbody
+        tr
+          th.spacing &nbsp;
+          th.items
+            = t('email.order.receipt.items2')
+          th.description
+          th.status
+            = t('email.order.receipt.order_status')
+          th.price
+            = t('email.order.receipt.price')
+          th.qty
+            = t('email.order.receipt.qty')
+          th.total
+            = t('email.order.receipt.total')
+          th.spacing &nbsp;
+        - @order.order_items.each do |order_item|
+          - itemable = order_item.itemable
+          tr
+            td.spacing
+            td.items2
+              = image_tag(order_item.itemable_order_image.try(:url))
+            td.description
+              .i = itemable.name
+              .i = itemable.product.friendly_name
+            td.status
+              = t("order.state.#{@order.aasm_state}")
+            td.price
+              = render_item_price(order_item, currency_code: currency)
+            td.qty
+              = order_item.quantity
+            td.total
+              = render_item_price_with_quantity(order_item, currency_code: currency)
+            td.spacing
+        tr
+          td.line colspan='7'
+        tr.subtotal
+          td colspan='3'
+          td.description
+            = t('email.order.receipt.subtotal')
+          td colspan='2'
+          td.total
+            = render_price(@order.order_items_total, currency_code: currency)
+          td
+        tr.summary
+          td colspan='3'
+          td.description
+            = t('email.order.receipt.shipping')
+          td colspan='2'
+          td.total
+            span.symbol $
+            = @order.shipping_price
+          td
+        - if @shipping_info.cash_on_delivery?
+          tr.summary
+            td colspan='3'
+            td.description 貨到付款
+            td colspan='2'
+            td.total
+              = render_price(@order.shipping_price, currency_code: 'TWD')
+            td
+        - if @order.coupon
+          tr.summary
+            td colspan='3'
+            td.description
+              = t('email.order.receipt.discount')
+            td colspan='2'
+            td.total
+              | -
+              = render_price(@order.coupon_price, currency_code: currency)
+            td
+        tr
+          td colspan='3'
+          td.total-title
+            = t('email.order.receipt.total')
+          td colspan='2'
+          td.total-final
+            = render_price(@order.price, currency_code: currency)
+          td
+        - if @order.shipping_info.cash_on_delivery?
+          tr
+            td colspan='3'
+            td.description.blue colspan='3'
+              | (貨到付款以台幣收費)
+            td.total.blue
+              = number_to_currency(@order.render_twd_price, locale: 'zh-TW')
+            td
+        tr
+          td.line colspan='7'
+
+.paragraph1.c-margin
+  p.sub-title
+    = image_tag('email/nl_text_orderdetail.png')
+  p
+    = render "order_mailer/order_pay/#{@order.payment}"
+
+.paragraph1.c-margin
+  p.sub-title
+    = image_tag('email/nl_text_needhelp.png')
+  p
+    = t('email.order.receipt.content_6')
+    = link_to t('email.order.share.mail'), "mailto:#{t('email.order.share.mail')}"
+    = t('email.order.receipt.or')
+    = link_to 'Facebook', t('email.marketing.facebook_page')
+    | &nbsp;.

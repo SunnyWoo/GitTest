@@ -1,0 +1,17 @@
+- admin_title t('works.edit.page_title.edit', name: @work.name), subtitle: @work.product_name
+- breadcrumb :edit_admin_archived_work, @work
+
+= render 'admin/works/images', work: @work
+
+= simple_form_for [:admin, @work] do |f|
+  = f.input :fixed_image, as: :image
+
+  .form-actions
+    = f.button :submit
+
+.row
+  .col-md-6
+    .page-header
+      h2 = t('works.show.page_title.status')
+
+    = render_activities @work.activities.from_old_to_new

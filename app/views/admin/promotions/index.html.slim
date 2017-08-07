@@ -1,0 +1,54 @@
+- admin_title t('.page_title')
+- breadcrumb :admin_promotions
+
+
+= simple_form_for @search, url: admin_promotions_path, method: :get, html: { class: 'form-inline' } do |f|
+  = f.input :type_eq, label: false, include_blank: '依類型篩選', collection: Admin::PromotionForm.type_options, required: false
+  = f.input :aasm_state_eq, label: false, include_blank: '依狀態篩選', collection: Promotion.aasm.states.each_with_index.map { |s, i| [s.human_name, i] }, required: false
+  = f.button :submit, t('shared.form_actions.submit'), class: 'btn btn-info btn-sm'
+
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success', data: { 'no-turbolink': true }
+  .widget-body
+    = will_paginate @promotions
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th width='200' = t('promotions.index.thead.name')
+            th width='80'= t('promotions.index.thead.aasm_state')
+            th width='100'= t('promotions.index.thead.begin_at')
+            th width='100'= t('promotions.index.thead.ends_at')
+            th= t('promotions.index.thead.info')
+            th width='200'= t('promotions.index.thead.operation')
+        tbody
+          - @promotions.each do |promotion|
+            tr
+              td
+                = link_to promotion.name, admin_promotion_path(promotion)
+                br
+                span.label.label-light= promotion.type_name
+                br
+                = simple_format promotion.description
+              td
+                span class="label label-sm label-#{promotion.state_css}" = promotion.state
+              td= promotion.begins_at_from_now
+              td= promotion.ends_at_from_now
+              td.promotion-content= promotion.content.html_safe
+              td
+                .btn-group
+                  - if promotion.can_submit?
+                    = link_to t('promotions.index.button.submit'), submit_admin_promotion_path(promotion),
+                      class: 'btn btn-success', data: { method: :put, confirm: t('promotions.messages.confirm') }
+                  - if promotion.can_update?
+                    = link_to t('shared.form_actions.edit'), edit_admin_promotion_path(promotion), class: 'btn btn-info', data: { 'no-turbolink': true }
+                  - if promotion.can_delete?
+                    = link_to t('shared.form_actions.delete'), admin_promotion_path(promotion),
+                      class: 'btn btn-danger', data: { method: :delete, confirm: t('shared.confirm.delete') }
+    = will_paginate @promotions

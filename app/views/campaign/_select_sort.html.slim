@@ -1,0 +1,19 @@
+.grid_2.filters
+  .filter-block
+    .horizontal
+      .sub-title = edit_translator('page.text.sort')
+      .content
+        .dropdown.dropdown-small#sort_products
+          button#sort_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+            span.val = params[:sort] or 'New'
+            span.caret
+          ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+            li role="product_models"
+              .i role="menuitem" tabindex="-1" data-value=''
+                = link_to 'New', url_for(params.merge(sort: 'new'))
+            li role="product_models"
+              .i role="menuitem" tabindex="-1" data-value=''
+                = link_to 'Random', url_for(params.merge(sort: 'random'))
+            li role="product_models"
+              .i role="menuitem" tabindex="-1" data-value=''
+                = link_to 'Popular', url_for(params.merge(sort: 'popular'))

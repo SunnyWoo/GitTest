@@ -1,0 +1,50 @@
+- admin_title t('works.index.page_title')
+- breadcrumb :admin_archived_works
+
+= render 'admin/works/nav', active: 'works'
+= render 'admin/works/work_nav'
+
+= will_paginate @works
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead.thin-border-bottom
+          tr
+            th ID
+            th User
+            th Model
+            th Cover Image
+            th Print Image
+            th Preview
+            th Layers
+            th Product Code
+            th Operations
+        tbody
+            - @works.each_with_index do |work, index|
+              - cache_work work do
+                tr
+                  td = work.id
+                  td = link_to_user(work.user)
+                  td = work.product_name
+                  td = display_cover_image(work)
+                  td
+                    = display_print_image(work)
+                    div = rebuild_print_image_link(work)
+                  td
+                    = display_order_image(work)
+                    div = rebuild_order_image_link(work)
+                  td = link_to work.layers.size, admin_archived_work_path(work)
+                  td = work.product_code
+                  td
+                    = link_to t('shared.form_actions.view'), admin_archived_work_path(work), class: 'btn btn-sm'
+                    = link_to t('shared.form_actions.edit'), edit_admin_archived_work_path(work), class: 'btn btn-sm'
+                    button.btn.btn-sm.disabled 歷史
+                    button.btn.btn-sm.btn-danger.disabled 不給你刪除
+
+= will_paginate @works

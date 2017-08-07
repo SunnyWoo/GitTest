@@ -1,0 +1,105 @@
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+
+.cmdp_container.details
+  .grid_3.detail-imgs
+    .show-box
+      .rendering
+        = image_tag 'editor/rendering_image.png'
+        #preview_counter
+        #floatingCirclesG
+          #frotateG_01.f_circleG
+          #frotateG_02.f_circleG
+          #frotateG_03.f_circleG
+          #frotateG_04.f_circleG
+          #frotateG_05.f_circleG
+          #frotateG_06.f_circleG
+          #frotateG_07.f_circleG
+          #frotateG_08.f_circleG
+        .wording = edit_translator('page.preview.rendering')
+
+    .thumb-list
+      ul
+
+  .grid_3.detail-info class=('has-special-price' if @work.product.customized_special_price?)
+    .info-head.block.clearfix
+      .left.pull-left
+        = image_tag @work.user_avatar.url(:s154), class: 'author-img'
+
+      .right.pull-left
+        h1.product-name
+          = render_string_with_br(truncate(@work.name, length: 46), 23)
+        .author-name= @work.user_display_name
+    .qty.block.horizontal
+      .sub-title= edit_translator('page.text.qty')
+      .content
+        .dropdown.dropdown-small
+          button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+            span.val 1
+            span.caret
+          ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+            - 10.times do |i|
+              li role="item_qty"
+                .i role="menuitem" tabindex="-1" data-value="#{i+1}" #{i+1}
+    .model.block.horizontal
+      .sub-title= edit_translator('page.text.model')
+      .content
+        .dropdown
+          button#model_dropdown.disabled.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+            = @work.product_name
+    .price.block
+      .fee.fee-price
+        = render_product_price(@work.product)
+      .fee.fee-special-price
+        = render_item_price(@work)
+      .notice
+        = edit_translator('page.text.free_shipping')
+    .btns.block
+      = link_to edit_translator('page.btns.add_to_cart'), add_cart_path(@work.uuid), class: 'btn btn-default btn-margin-small add_to_cart', title: t('page.btns.add_to_cart'), data: {method: :put}, disabled: true
+      - if normal_user_signed_in?
+        = link_to edit_translator('my_design.save_for_later'), work_finish_path(@work), class: 'btn btn-cancel', id: 'work_save_for_later', disabled: true
+      - else
+        = link_to edit_translator('my_design.save_for_later'), '#', class: 'btn btn-cancel', id: 'login_popup'
+        = render '/shared/popup/login_popup'
+      / .share-link
+      /   = render 'editor/shared/social_links'
+    .share.hide
+      .fb-link
+    .func-links.block.clearfix
+      .back-to-edit.pull-left
+        = link_to edit_work_path(@work) do
+          i.preview-img_icon_backtoedit_normal
+          span = edit_translator('my_design.back_to_edit')
+      .go-to-shop.pull-left
+        = link_to shop_index_path do
+          i.preview-img_icon_shop_normal
+          span = edit_translator('my_design.shop')
+    .description.block
+      .sub-title = edit_translator('my_design.description')
+      .content.simple-format
+        = simple_format @work.product_description
+    .shipping.block
+      .sub-title = edit_translator('my_design.shipping')
+      .content.simple-format
+        = edit_translator('my_design.shipping_message')
+    / .tags.block
+    /   .sub-title Tags
+    /   ul
+    /     -5.times do
+    /       li.tag
+    /         = link_to 'iphone', '#'
+    /         | ,
+    /       li.tag
+    /         = link_to 'case', '#'
+    /         | ,
+
+#preview_data.hide(data-layers-path=work_layers_path(@work)
+                   data-cover-image-path=work_cover_image_path(@work)
+                   data-work-name=@work.name
+                   data-model-name=@work.product_name
+                   data-model-key=@work.product_key
+                   data-model-width=(@work.product.dpi_width)
+                   data-model-height=(@work.product.dpi_height))
+
+= render '/shared/popup/alert_popup'

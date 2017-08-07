@@ -1,0 +1,407 @@
+---
+mugs:
+- locale: en
+  name: Mugs
+  short_name: Mugs
+  description: Your favorite photo or funniest saying is a great way to start the
+    day. Use our white mug to showcase your creativity. It has a large handle that’s
+    easy to hold and comes in 11oz sizes. Dishwasher and microwave safe, these cool
+    coffee mugs will be your new favorite way to consume hot or cold beverages. Makes
+    a great gift!
+- locale: ja
+  name: "マグカップ"
+  short_name: "マグカップ"
+  description: "大切な人や家族や友達との記念カップを作りたいなら今すぐお気に入りの写真に自分のアイデアを加えて送信。コマプリがお手伝いします。\r\n\r\n-
+    皿洗い機または電子レンジでもお使いできます\r\n\r\nサイズ：高さ98mm,直径82mm（取っ手含まず）"
+- locale: zh-TW
+  name: "馬克杯"
+  short_name: "馬克杯"
+  description: "發揮創意，打造屬於你或你們的馬克杯。\r\n想要擁有自己獨有設計的杯款，或與另一半、家人、朋友們成對的紀念對杯，\r\n現在上傳最愛的圖片加上你的創意，專屬你們的紀念
+    commandp 我印 幫你印！\r\n\r\n- 熱昇華壓燙技術，色彩鮮明持久\r\n- 可使用於洗碗機及微波爐\r\n\r\n材質：陶瓷\r\n尺寸：高
+    95mm，直徑 75mm (不含手把)"
+- locale: zh-CN
+  name: "马克杯"
+  short_name: "马克杯"
+  description: "发挥创意，打造属于你或你们的马克杯。\r\n想要拥有自己独有设计的杯款，或与另一半、家人、朋友们成对的纪念对杯，\r\n现在上传最爱的图片加上你的创意，专属你们的纪念commandp
+    我印帮你印！\r\n\r\n\r\n・日本高画质写真技术，色彩鲜艳持久\r\n・可使用于洗碗机及微波炉\r\n\r\n尺寸：高 98mm，直径 82mm (不含手把)"
+- locale: zh-HK
+  name: "馬克杯"
+  short_name: "馬克杯"
+  description: "發揮創意，打造屬於你或你們的馬克杯。\r\n想要擁有自己獨有設計的杯款，或與另一半、家人、朋友們成對的紀念對杯，\r\n現在上傳最愛的圖片加上你的創意，專屬你們的紀念
+    commandp 我印 幫你印！\r\n\r\n- 熱昇華壓燙技術，色彩鮮明持久\r\n- 可使用於洗碗機及微波爐\r\n\r\n材質：陶瓷\r\n尺寸：高
+    95mm，直徑 75mm (不含手把)"
+wood_white_clocks:
+- locale: en
+  name: Wall Clocks / WOOD
+  short_name: Wall Clocks / WOOD
+  description: It's time to show off your favorite art, photos, and text with a custom
+    round wall clock from commandp. This wall clock is vibrantly printed with HD process
+    to ensure the highest quality display of any content. Order this custom round
+    wall clock for your walls or give to friends and family as a gift for a timeless
+    treasure. Available in natural wood, our 318mm diameter unique Wall Clocks feature
+    a high-impact plexiglass crystal face and a backside hook for easy hanging. Clock
+    sits 48mm deep and requires 1 AA battery (not included).
+- locale: zh-TW
+  name: "掛鐘"
+  short_name: "掛鐘"
+  description: "幫你的家與辦公空間增添質感及溫暖元素！\r\n經典圓形掛鐘，加上你最愛的設計，讓生活更加品味。\r\n\r\n- 雷達機心完全靜音\r\n-
+    日本高畫質寫真技術\r\n- 質感木框搭配白指針\r\n- Made In Taiwan\r\n\r\n尺寸：318mm，厚度：48mm\r\n電源：3 號電池
+    1 顆\r\n材質：玻璃面、木框"
+- locale: zh-CN
+  name: "挂钟"
+  short_name: "挂钟"
+  description: "帮你的家与办公空间增添质感及温暖元素！\r\n经典圆形挂钟，加上你最爱的设计，让生活更加品味。\r\n\r\n・雷达机心完全静音\r\n・日本高画质写真技术\r\n・质感木框搭配白指针\r\n・Made
+    In Taiwan\r\n\r\n尺寸：318mm，厚度：48mm\r\n电源：3 号电池 1 颗\r\n材质：玻璃面、木框"
+- locale: zh-HK
+  name: "掛鐘"
+  short_name: "掛鐘"
+  description: "幫你的家與辦公空間增添質感及溫暖元素！\r\n經典圓形掛鐘，加上你最愛的設計，讓生活更加品味。\r\n\r\n- 雷達機心完全靜音\r\n-
+    日本高畫質寫真技術\r\n- 質感木框搭配白指針\r\n- Made In Taiwan\r\n\r\n尺寸：318mm，厚度：48mm\r\n電源：3 號電池
+    1 顆\r\n材質：玻璃面、木框"
+- locale: ja
+  name: "壁掛け時計"
+  short_name: "壁掛け時計"
+  description: "お家やオフィスにあなただけのオリジナリティを。古典的な円形掛け時計に自分のお好みのデザインを加えよう。\r\n\r\nサイズ：318mm,
+    厚さ：48mm\r\n電源：単３電池１個\r\n材料：ガラス、木枠"
+ipad_air2_covers:
+- locale: en
+  name: iPad Air 2 Covers
+  short_name: iPad Air 2 Covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    2 a custom cover fit. The multifunctional design folds into multiple stand positions
+    for hands-free heroics. Pair your cuztomized cover with a matching case and you’ll
+    really save the day-and your device!
+- locale: zh-TW
+  name: iPad Air 2 保護套
+  short_name: iPad Air 2 保護套
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air 2\t\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS\r\n\r\n圖片僅供參考，顏色會因螢幕有所差異"
+- locale: zh-CN
+  name: iPad Air 2 保护套
+  short_name: iPad Air 2 保护套
+  description: "设计你独一无二的 iPad Smart Cover！\r\n只要上传你最喜欢的图片、文字、或设计，让commandp 我印帮你客制，专利的数位彩绘技术让你的设计保有质感，鲜艳、持久、不掉色。\r\n\r\n-
+    最先进高画质double UV coating 数位彩绘技术\r\n- 防污与多角度止滑设计\r\n- 最新改良可立式结构，不易倾倒\r\n- 具睡眠省电磁力装置\r\n\r\n符合型号：iPad
+    Air 2\r\n外皮材质：PU 人造皮革\r\n内壳材质：ABS\r\n\r\n图片仅供参考，颜色会因萤幕有所差异"
+- locale: zh-HK
+  name: iPad Air 2 保護套
+  short_name: iPad Air 2 保護套
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air 2\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS"
+- locale: ja
+  name: iPad Air 2 カバー
+  short_name: iPad Air 2 カバー
+  description: "あなただけのiPadカバーをデザインしよう！ 自分のお気に入り写真や文字・デザインを送信するだけ！コマプリの特許を持つデジタル印刷技術であなたのデザインの質感を鮮やかに長持ちさせます。\r\n\r\n対象機種：iPad
+    Air 2"
+ipad_air_covers:
+- locale: en
+  name: iPad Air Covers
+  short_name: iPad Air Covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    and mini with a custom cover fit. The multifunctional design folds into multiple
+    stand positions for hands-free heroics. Pair your cuztomized cover with a matching
+    case and you’ll really save the day-and your device!
+- locale: zh-TW
+  name: iPad Air 保護套
+  short_name: iPad Air
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air、iPad mini 1 2 3 gen\t\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS"
+- locale: ja
+  name: iPad Air
+  short_name: iPad Air
+  description: "あなただけのiPadカバーをデザインしよう！\r\n自分のお気に入り写真や文字・デザインを送信するだけ！コマプリの特許を持つデジタル印刷技術であなたのデザインの質感を鮮やかに長持ちさせます。\r\n\r\n対象機種：iPad
+    Air、iPad mini1 2 3 gen\t"
+- locale: zh-CN
+  name: iPad Air 保护套
+  short_name: iPad Air
+  description: "设计你独一无二的 iPad Smart Cover！\r\n只要上传你最喜欢的图片、文字、或设计，让commandp 我印帮你客制，专利的数位彩绘技术让你的设计保有质感，鲜艳、持久、不掉色。\r\n\r\n-
+    最先进高画质double UV coating 数位彩绘技术\r\n- 防污与多角度止滑设计\r\n- 最新改良可立式结构，不易倾倒\r\n- 具睡眠省电磁力装置\r\n\r\n符合型号：iPad
+    Air、iPad mini 1 2 3 gen\r\n外皮材质：PU 人造皮革\r\n内壳材质：ABS"
+- locale: zh-HK
+  name: iPad Air 保護套
+  short_name: iPad Air
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air、iPad mini 1 2 3 gen\t\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS"
+ipad_mini_covers:
+- locale: en
+  name: iPad mini covers
+  short_name: iPad mini covers
+  description: A boring, blah gadget case is like kryptonite. Protect your iPad Air
+    and mini with a custom cover fit. The multifunctional design folds into multiple
+    stand positions for hands-free heroics. Pair your cuztomized cover with a matching
+    case and you’ll really save the day-and your device!
+- locale: zh-TW
+  name: iPad mini 保護套
+  short_name: iPad mini
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air、iPad mini 1 2 3 gen\t\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS"
+- locale: zh-CN
+  name: iPad mini 保护套
+  short_name: iPad mini
+  description: "设计你独一无二的 iPad Smart Cover！\r\n只要上传你最喜欢的图片、文字、或设计，让commandp 我印帮你客制，专利的数位彩绘技术让你的设计保有质感，鲜艳、持久、不掉色。\r\n\r\n-
+    最先进高画质double UV coating 数位彩绘技术\r\n- 防污与多角度止滑设计\r\n- 最新改良可立式结构，不易倾倒\r\n- 具睡眠省电磁力装置\r\n\r\n符合型号：iPad
+    Air、iPad mini 1 2 3 gen\r\n外皮材质：PU 人造皮革\r\n内壳材质：ABS"
+- locale: zh-HK
+  name: iPad mini 保護套
+  short_name: iPad mini
+  description: "設計你獨一無二的 iPad Smart Cover！\r\n只要上傳你最喜歡的圖片、文字、或設計，讓 commandp 我印 幫你客製，專利的數位彩繪技術讓你的設計保有質感，鮮豔、持久、不掉色。\r\n\r\n-
+    最先進高畫質 Double UV Coating 數位彩繪技術\r\n- 防污與多角度止滑設計\r\n- 最新改良可立式結構，不易傾倒\r\n- 具睡眠省電磁力裝置\r\n\r\n符合型號：iPad
+    Air、iPad mini 1 2 3 gen\t\r\n外皮材質：PU 人造皮革\r\n內殼材質：ABS"
+- locale: ja
+  name: iPad mini
+  short_name: iPad mini
+  description: "あなただけのiPadカバーをデザインしよう！\r\n自分のお気に入り写真や文字・デザインを送信するだけ！コマプリの特許を持つデジタル印刷技術であなたのデザインの質感を鮮やかに長持ちさせます。\r\n\r\n対象機種：iPad
+    Air、iPad mini1 2 3 gen\t"
+samsung_note3_cases:
+- locale: en
+  name: Samsung Note 3 Cases
+  short_name: Samsung Note 3 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: ja
+  name: Samsung Note 3 スマホケース
+  short_name: Samsung Note 3
+  description: "上質な光沢、完璧なフィット感。\\r\\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \\r\\n高性能の曲面印刷
+    \ で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+- locale: zh-TW
+  name: Samsung Note 3 手機殼
+  short_name: Samsung Note 3
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: Samsung Note 3 手机壳
+  short_name: Samsung Note 3
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: Samsung Note 3 手機殼
+  short_name: Samsung Note 3
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+samsung_s5_cases:
+- locale: en
+  name: Samsung S5 Cases
+  short_name: Samsung S5 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: Samsung S5 手機殼
+  short_name: 
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: Samsung S5 手机壳
+  short_name: Samsung S5
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: Samsung S5 手機殼
+  short_name: Samsung S5
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: Samsung S5 スマホケース
+  short_name: Samsung S5
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+samsung_s4_cases:
+- locale: en
+  name: Samsung S4 Cases
+  short_name: Samsung S4 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: Samsung S4 手機殼
+  short_name: Samsung S4
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: Samsung S4 手机壳
+  short_name: Samsung S4
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: Samsung S4 手機殼
+  short_name: Samsung S4
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: Samsung S4 スマホケース
+  short_name: Samsung S4
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+ipad_mini_cases:
+- locale: en
+  name: iPad mini Cases
+  short_name: iPad mini Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: iPad mini 保護殼
+  short_name: iPad mini
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的 iPad\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n-
+    100% 密合你的 iPad\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: iPad mini 保护壳
+  short_name: iPad mini
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的 iPad\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100
+    ％密合你的 iPad \r\n- 热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: iPad mini 保護殼
+  short_name: iPad mini
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的 iPad\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n-
+    100% 密合你的 iPad\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: iPad mini 保護殼
+  short_name: iPad mini
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+iphone_6_cases:
+- locale: en
+  name: iPhone 6 Cases
+  short_name: iPhone 6 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: iPhone 6 手機殼
+  short_name: iPhone 6
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: iPhone 6 手机壳
+  short_name: iPhone 6
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: iPhone 6 手機殼
+  short_name: iPhone 6
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: iPhone 6 スマホケース
+  short_name: iPhone 6
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+iphone_5_cases:
+- locale: en
+  name: iPhone 5s/5 Cases
+  short_name: iPhone 5s/5 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: iPhone 5s/5 手機殼
+  short_name: iPhone 5s/5
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: iPhone 5s/5 手机壳
+  short_name: iPhone 5s/5
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: iPhone 5s/5 手機殼
+  short_name: iPhone 5s/5
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: iPhone 5s/5 スマホケース
+  short_name: iPhone 5s/5
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+iphone_4_cases:
+- locale: en
+  name: iPhone 4s/4 Cases
+  short_name: iPhone 4s/4 Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: iPhone 4s/4 手機殼
+  short_name: iPhone 4s/4
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: iPhone 4s/4 手机壳
+  short_name: iPhone 4s/4
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: iPhone 4s/4 手機殼
+  short_name: iPhone 4s/4
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: iPhone 4s/4 スマホケース
+  short_name: iPhone 4s/4
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+iphone_6plus_cases:
+- locale: en
+  name: iPhone 6 Plus Cases
+  short_name: iPhone 6 Plus Cases
+  description: Protect your phone with a one-piece, impact resistant hard shell case
+    featuring an extremely slim profile. The lay-flat feature protects the front of
+    your device by extending the bezel above the screen. Sleek and lightweight, this
+    case is the perfect way to share your custom style with the world.
+- locale: zh-TW
+  name: iPhone 6 Plus 手機殼
+  short_name: iPhone 6 Plus
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: zh-CN
+  name: iPhone 6 Plus 手机壳
+  short_name: iPhone 6 Plus
+  description: "- 一体成型高温塑膜\r\n- PVC硬壳保护你的手机\r\n- 超轻12.5克\r\n- 超薄0.7毫米\r\n- 100 ％密合你的手机\r\n-
+    热转印特殊防刮抗磨塑料"
+- locale: zh-HK
+  name: iPhone 6 Plus 手機殼
+  short_name: iPhone 6 Plus
+  description: "- 一體成型高溫塑膜\r\n- PVC硬殼保護你的手機\r\n- 超輕 12.5 g\r\n- 超薄 0.7 mm\r\n- 100%
+    密合你的手機\r\n- 熱轉印特殊防刮抗磨塑料"
+- locale: ja
+  name: iPhone 6 Plus 手機殼
+  short_name: iPhone 6 Plus
+  description: "上質な光沢、完璧なフィット感。\r\n超軽量、超薄型で耐衝撃性に優れた最高品質のハードケース。  \r\n高性能の曲面印刷で、ケースの側面までお好きなデザインをプリントして、世界に一つだけのオリジナルケースを作る事ができます。"
+easycard_smartcards:
+- locale: en
+  name: Taiwan EasyCards
+  short_name: Taiwan EasyCards
+  description: Customize your EasyCards with images that reflect what’s important
+    to you. You can customize your card by putting one of your own photos right on
+    your card or add overlays from our graphic library. Make a statement with an image
+    that covers most of your card, or feature a smaller personal photo of yourself
+    in the top left corner. The choice is yours. Customize your EasyCards to reflect
+    your personality. It's fun, easy, and Worldwide Free Shipping.
+- locale: zh-TW
+  name: "悠遊卡"
+  short_name: "悠遊卡"
+  description: "屬於自己的主題自己創造！\r\n想要一張與眾不同的悠遊卡再也不是難事。\r\n不用排隊，省去等待，只要上傳你最愛的圖片、文字、或設計就能輕鬆設計自己的悠遊卡。\r\n\r\n-
+    客製化悠遊享有與一般悠遊卡同等功能及優惠。\r\n- 售價內含新台幣 100 元押金。"
+- locale: zh-CN
+  name: "悠游卡"
+  short_name: "悠遊卡"
+  description: "属于自己的主题自己创造！\r\n想要一张与众不同的悠游卡再也不是难事。\r\n不用排队，省去等待，只要上传你最爱的图片、文字、或设计就能轻松设计自己的悠游卡。\r\n\r\n-
+    客制化悠游享有与一般悠游卡同等功能及优惠\r\n- 售价内含新台 100 元押金。"
+- locale: zh-HK
+  name: "悠遊卡"
+  short_name: "悠遊卡"
+  description: "屬於自己的主題自己創造！\r\n想要一張與眾不同的悠遊卡再也不是難事。\r\n不用排隊，省去等待，只要上傳你最愛的圖片、文字、或設計就能輕鬆設計自己的悠遊卡。\r\n\r\n-
+    客製化悠遊享有與一般悠遊卡同等功能及優惠。\r\n- 售價內含新台幣 100 元押金。"
+- locale: ja
+  name: EasyCards
+  short_name: EasyCards
+  description: "※こちらの商品は台湾でのみ使用可能です。\r\nみんなとは違ったEasyCards（台湾交通カード悠游卡）を簡単に手に入れよう。お気に入りの写真や文字、デザインを送信するだけ！簡単に自分デザインのEasy
+    Cardsができます。コマプリの高い印刷技術でシールではなく、直接印刷した商品のお届けが可能です。誕生日プレゼントなどのプレゼントに最適です。\r\n\r\n表面：全面全てのカスタマイズが可能です。\r\n裏面：裏面にはカード番号など使用に必要なものがあるためカスタマイズできません。\r\nサイズ：85.7mm
+    x 54mm x 0.86mm\r\n\r\n・カスタムされたカードは一般のEasy Cardsと同じ機能です（デポジットは含まず、初期の利用金額は0元です）\r\n・10〜12
+    営業日で全国無料でお届けできます。"

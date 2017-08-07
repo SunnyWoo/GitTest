@@ -1,0 +1,15 @@
+.modal.fade id="position_form_#{work.id}"
+  .modal-dialog
+    .modal-content
+      = form_tag work_position_admin_collection_path(collection, work_id: work.id), method: :put
+        = hidden_field_tag :work_type, work.class.to_s
+        .modal-header
+          button class="close" data-dismiss="modal" aria-label="Close"
+            span aria-hidden="true" &times;
+        .modal-body.row
+          .col-md-3 = t('tags.index.thead.sort')
+          .col-md-9
+            = select_tag :position, options_for_select((1..20).to_a, work.collection_works.find_by_collection_id(collection.id).try(:position)),
+              include_blank: true, class: 'form-control'
+        .modal-footer
+          = submit_tag 'Submit', class: 'btn btn-success form-control'

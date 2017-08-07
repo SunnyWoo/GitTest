@@ -1,0 +1,9 @@
+- url = application.new_record? ? admin_oauth_apps_path : admin_oauth_app_path(application)
+
+= simple_form_for application, url: url do |f|
+  = f.input :name
+  = f.input :redirect_uri
+  p Native redirect URI: <code>urn:ietf:wg:oauth:2.0:oob</code>
+  = f.input :scopes
+  p Possible values: public, touch_user
+  = f.button :submit

@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content="width=device-width" name="viewport"
+    meta content="pMJfuoCx4SCeUutzlzNdfkNnUmq_rB77szI6VEvyXfo" name="google-site-verification"
+    - render_apple_itunes_app_meta
+
+    = display_meta_tags
+    = canonical_tag
+    = favicon_link_tag 'favicon.png'
+    = render 'shared/commandp_variable'
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+
+    = csrf_meta_tags
+    - if !Rails.env.production?
+      meta content="noindex" name="robot"
+    = javascript_include_tag "https://js.stripe.com/v1/", "application", "data-turbolinks-track" => false
+    - if locale == :'zh-CN'
+      = render 'shared/baidu_tongji'
+    - else
+      = render 'shared/ua'
+    = tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY
+
+  body class="#{controller_name} #{action_name} locale-#{I18n.locale}"
+    = render 'shared/search_block'
+    = render 'shared/header'
+    #main.main
+      = yield
+      #layout_footer
+    footer#footer
+      .cmdp_container
+        .grid_6
+          / = simple_form_for NewsletterSubscription.new do |f|
+          /   = f.input :email
+          /   = f.submit 'sub'
+          ul.f-nav
+            li = link_to edit_translator('page.btns.app'), 'http://bit.ly/1nMC8yU'
+            li = link_to edit_translator('page.btns.about_us'), about_path
+            li = link_to edit_translator('page.btns.contact_us'), support_path
+            li = link_to edit_translator('page.btns.help'), questions_path
+            li = link_to edit_translator('page.btns.order_status'), order_status_orders_path
+            li = link_to edit_translator('page.btns.careers'), careers_path
+
+          ul.f-lang-nav
+            li = link_to 'English', url_for(params.merge(locale: 'en'))
+            li = link_to '繁體中文', url_for(params.merge(locale: 'zh-TW'))
+            li = link_to '简体中文', url_for(params.merge(locale: 'zh-CN'))
+            li = link_to '日本語', url_for(params.merge(locale: 'ja'))
+
+          = render 'editor/shared/social_links'
+
+          p
+            | Use of this Web site constitutes acceptance of the
+            = link_to 'TERMS OF USE', '/service_terms'
+            | Copyright © #{Time.now.year}, commandp Inc. All rights reserved.
+    = render 'shared/page_loading'
+    = render 'shared/google_remarketing' if locale != :'zh-CN'
+    = render 'shared/alexa'
+    = render 'shared/tag_manager' if Region.global?

@@ -1,0 +1,26 @@
+.event-detial
+  .event-detial-inner-blocks
+    .event-title 活動名稱
+    .event-desc.highlightspan BG MEN 商品，首賣加贈 LINE 貼圖！
+    p.event-desc
+    p.event-desc
+    .event-title 活動方式
+    p.event-desc 活動期間內凡購買 BG MEN 設計師商品，可憑購買訂單編號獲贈一組 BG MEN LINE 貼圖。
+    .event-title 贈獎方式
+    p.event-desc
+      | 5/25 ~ 6/25 用戶加入 BG MEN
+      a.highlightspan LINE ID : bg_men
+      | 並提供：
+    p.event-desc 一、包含任一款 BG MEN 商品購買完成之訂單編號。
+    p.event-desc 二、訂購者 Email
+    p.event-desc 核對完成後即可獲贈一組 BG MEN LINE 貼圖（若已購買過貼圖或是無法領取貼圖者，我印將以其他優惠方式代替）。
+
+  .p12
+  = link_to 'BG MEN 官方帳號', 'http://line.me/ti/p/ZcJohnA4xl', class:'mobile-v2-line-btn'
+
+  - if failure
+    .p12
+    = link_to '再試一次', campaign_path(:BGMEN ,{targetids: 'cart-popup,checkout-popup'}), class:'mobilev2-footer-normal'
+  - else
+    .p12
+    = link_to '回到 BG MEN 首頁', campaign_path(:BGMEN), class:'mobilev2-footer-normal'

@@ -1,0 +1,21 @@
+td = layer.id
+td = layer.orientation
+td = "[#{layer.scale_x || 0}, #{layer.scale_y || 0}]"
+td = layer.color
+td = layer.transparent
+td = layer.font_name
+td = layer.font_text
+td = layer_image_tag(layer)
+td = layer_filtered_image_tag(layer)
+td = layer.material_name
+td = layer.layer_type
+td = "[#{layer.position_x || 0}, #{layer.position_y || 0}]"
+td = "[#{layer.text_spacing_x || 0}, #{layer.text_spacing_y || 0}]"
+td = layer.text_alignment
+td = layer.position
+td = layer.filter
+td
+  - if layer.disabled?
+    = enable_layer_button(layer)
+  - else
+    = disable_layer_button(layer)

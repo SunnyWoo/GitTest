@@ -1,0 +1,9 @@
+/ back button
+.top-header
+  .leftnavs
+    .back-icon
+      = link_to image_tag('campaign/mobilev2/back.png'), '#exit'
+
+.container
+  .event-list
+    = render partial: "list_#{Bdevent.flex}", collection: @bdevetns, as: :bdevent

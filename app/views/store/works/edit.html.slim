@@ -1,0 +1,18 @@
+#commandp-editor
+
+#text-hint = et('store.editor.errors.reach_text_width_limit')
+#upload-failed = et('store.editor.errors.upload_image_failed')
+
+.editorOption.fob [data-widget-editor-option-bar]
+  label.editorOption-btn [data-photo-uploader-btn for='photo-uploader']
+    = et('store.editor.select_photo')
+    input#photo-uploader.dn [data-photo-uploader type='file' accept='image/*']
+  button.editorOption-btn [data-change-text]
+    = et('store.editor.change_text')
+  a.editorOption-btn.editorOption-btn--highlight [data-priview-work href=(store_work_preview_path(@work, store_id: @store))]
+    = et('store.editor.preview')
+  .editorOption-mask [data-disabled-mask]
+
+.editorText.fob [data-widget-editor-text-bar]
+  input.editorText-input [data-text-input type='text' placeholder=t('store.editor.text_input_placeholder')]
+  button.editorText-btn [data-text-confirm]

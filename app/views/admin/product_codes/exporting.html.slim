@@ -1,0 +1,16 @@
+- admin_title t('product_codes.export.name')
+
+.row
+  = form_tag export_admin_product_codes_path(format: :xlsx), html: {class: 'form-horizontal'} do
+    .form-group
+      = label_tag :export_type, "#{t('product_codes.export.type')} : "
+      = select_tag :export_type, options_for_select({ t('product_codes.export.export_all') => 'all', t('product_codes.export.export_by_time')=> 'time' }, 'all')
+    #time_export_type.hide
+      .form-group
+        = label_tag :created_at_gteq, "#{t('product_codes.export.time_gteq')} : "
+        = text_field_tag 'q[created_at_gteq]'
+      .form-group
+        = label_tag :created_at_lteq, "#{t('product_codes.export.time_lteq')} : "
+        = text_field_tag 'q[created_at_lteq]'
+    .form-actions
+      = submit_tag "#{t('product_codes.export.submit')}", class: 'btn btn-primary'

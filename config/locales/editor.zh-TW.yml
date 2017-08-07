@@ -1,0 +1,62 @@
+zh-TW:
+  work:
+    new:
+      choose_product: 選擇客製化產品
+      your_image: Your Image Here
+
+  editor:
+    add_overlay: 增加圖層
+    photo: 照片
+    background_color: 背景顏色
+    shapes: 形狀
+    lines: 線條
+    stickers: 貼紙
+    textures: 紋路
+    typography: 圖形文字
+    text: 文字
+    crop: 形狀切割
+    preview: 預覽
+    print_quality: 印刷品質
+    upload_photo:
+        title: 上傳照片
+        content: 為了讓成品有高解析度的品質，請確保你的照片符合以下要求
+        li1: 圖片尺寸至少要 2000px (圖片最大為 6mb)
+        li2: 圖片顏色必須是 RGB 格式
+        li3: 圖片格式必須是 JPG 或是 PNG
+        li4: 你必須要是圖片的原創者
+        select_image: 選擇照片
+        next: 下一步
+    preview_items:
+      text_input: "輸入文字"
+      font: "字型"
+      scale: "縮放"
+      rotation: "旋轉"
+      transparency: "透明度"
+      color: "顏色"
+      text_alignment: "文字對齊"
+      delete: "刪除"
+      reflect: "映射"
+      alignment: "對齊"
+    delete:
+      title: "刪除圖層"
+      confirm_message: "確定要刪除此圖層？"
+      continue: "確定"
+      cancel: "取消"
+    safe_area:
+      title: 未填滿警告
+      content_line_1: "您的作品未填滿虛線範圍。"
+      content_line_2: "請回到編輯作品填滿虛線範圍，確保產品側邊已被填滿。"
+      content_line_3: "否則產品將會有未填滿情況發生。"
+      edit: "編輯狀態"
+      preview: "預覽圖"
+    saving: "存檔中..."
+
+  my_design:
+    save_for_later: "儲存作品"
+    back_to_edit: "修改"
+    shop: "設計師商店"
+    description: "商品敘述"
+    shipping: "運送"
+    shipping_message: "國際運送 10-12 天。若需急件結帳時亦有急件選項可選擇。"
+
+

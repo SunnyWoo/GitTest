@@ -1,0 +1,34 @@
+header.header {
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  @include bp(mobile) {
+    @include rem(height, 60px);
+    background-color: $c-title;
+    justify-content: center;
+  }
+}
+
+.header-item {
+  padding: 22px;
+  @include bp(mobile) {
+    padding: 0;
+    display: none;
+  }
+}
+
+.header-item-logo {
+  width: 140px;
+  height: 40px;
+  padding-left: 0;
+}
+
+.m-header-logo {
+  display: none;
+  @include bp(mobile) {
+    display: inline-block;
+    @include rem(width, 96px);
+  }
+}

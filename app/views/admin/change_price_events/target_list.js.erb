@@ -1,0 +1,7 @@
+<% if @target_type == 'StandardizedWorkPrice' %>
+  $('.change_price_target_list').html("<%= j render('works', form: @form) %>")
+<% else %>
+  $('.change_price_target_list').html("<%= j render('product_models', form: @form) %>")
+<% end %>
+$('#change_price_event_target_type').val('<%= @target_type %>');
+$('.change_price_target_list .submit_btn').attr('disabled', false)

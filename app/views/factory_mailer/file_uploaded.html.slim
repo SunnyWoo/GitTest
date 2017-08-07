@@ -1,0 +1,8 @@
+div style='padding: 20px'
+  p = "Hi! #{@factory.name}"
+  p = "#{@batch_flow.number} 批次生產的檔案已經上傳完成，請儘速至以下連結下載"
+
+  ul style='padding-left: 20px;'
+    - @batch_flow.attachments.each do |attachment|
+      li = link_to "下載#{attachment.title}", attachment.file.url, target: '_blank'
+  p = Time.zone.now

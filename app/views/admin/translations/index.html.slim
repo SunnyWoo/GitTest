@@ -1,0 +1,25 @@
+br
+= edit_translator('teddybear')
+br
+= edit_translator('test.bear')
+br
+= t('teddybear')
+br
+= t('test.bear')
+br
+h2 Add Translation
+= form_tag admin_translations_path
+  p
+    = label_tag :locale_form
+    br
+    = text_field_tag :locale_form
+  p
+    = label_tag :key
+    br
+    = text_field_tag :key
+  p
+    = label_tag :value
+    br
+    = text_field_tag :value
+  p
+    = submit_tag "Submit", class: "btn btn-primary bit-small"

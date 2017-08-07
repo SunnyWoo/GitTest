@@ -1,0 +1,18 @@
+.page-header
+  h1 補貨
+= render 'print/shared/notice_bar'
+
+= simple_form_for @shelf_material, url: stock_print_shelf_materials_path, method: :put, html: {class: 'form-horizontal', id: :material_form } do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :serial, input_html: { 'data-find-material' => true }
+    .form-inputs
+      = f.input :name, disabled: true
+    .form-inputs
+      = f.input :quantity
+    .form-inputs
+      .form-group.string
+        label = '備註'
+        = text_field_tag :message, nil, class: 'form-control'
+    .form-actions
+      = f.button :submit, '補貨', class: 'btn btn-primary'

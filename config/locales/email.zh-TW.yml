@@ -1,0 +1,110 @@
+zh-TW:
+  email:
+    send_coupon:
+      zh_line_1: 我印 iOS 版 app 已經在 App Store 上線囉！
+      zh_line_2: 這是您的新台幣 300 元優惠代碼
+      zh_list_1: 此優惠代碼折抵金額為新台幣 300 元 / 美金 10 元。
+      zh_list_2: 此優惠代碼的使用期限為即日起至 2015 年 5 月 1 日。
+      zh_list_3: 此優惠代碼僅能折抵第一次消費使用。
+      zh_list_4: 禁止優惠代碼轉讓或販售行為。
+      zh_list_5: 我印有權保留變更、終止本優惠代碼折扣時間、內容之權利。
+      zh_line_3: 印出你的隨心所欲！
+    marketing:
+      subject: 感謝您登記索取我印App 300元新台幣Coupon
+      title: 感謝您登記索取Coupon，當我印上線時會優先通知您
+      content_1: 我印App近日將會於Apple Store上線，上線前將會另行透過Email發出300元新台幣折扣碼，這組折扣碼將可不限金額用於任何我印App的消費中。
+      android: Android版本也將會在7月上線，敬請期待！
+      content_2: 請加入我印facebook粉絲頁，追蹤最新消息與優惠
+      content_3: 我印國際中文官方網站
+      facebook_page: https://www.facebook.com/commandpzh
+      website: https://commandp.com/zh-TW
+    order:
+      share:
+        hello: '你好 %{username},'
+        shipping_way:
+          global:
+            - 標準運送
+            - 快速運送
+            - 貨到付款
+          china:
+            - 標準運送
+            - 順豐運送
+            - 貨到付款
+        order_id: '訂單編號: %{order_no} '
+        payment:
+          paypal: PayPal
+          cash_on_delivery: 貨到付款
+          stripe: 信用卡支付
+          "neweb/atm": 'ATM 轉帳'
+          "neweb/mmk": '超商繳費'
+          "neweb/alipay": '支付寶'
+        mail: "hitw@commandp.com"
+      receipt_with_status:
+        subject: 你的我印訂單狀態
+        content_1: "你的我印訂單送來了！"
+        content_2: "你選擇的物流方式是標準運送，將會在付款後  10-15 天收到你的商品（假日除外）。"
+      receipt:
+        subject: '你的我印訂單明細'
+        content_1: '你的我印訂單送來了！'
+        content_2: ' 你選擇的物流方式是標準運送，將會在付款後  10-15 天收到你的商品（假日除外）。'
+        shopping_address: 運送地址
+        billing_address: 帳單地址
+        content_4: "你的付款方式為%{payment}，運送方式為%{shipping_way}"
+        items: 你的商品
+        items2: 商品
+        price: 售價
+        qty: 數量
+        qty2: 數量
+        total: 總金額
+        subtotal: 小計
+        shipping: 運費
+        promo_code: 優惠代碼
+        discount: 折扣
+        content_5: 你的手機桌布將會於訂單生效後透過 email 寄送，一般來說不會超過 1 個工作日。
+        content_6: 如果你對上述資訊有任何疑問，或是對我印有任何指教，歡迎隨時來信至
+        or: ' 或 '
+        訂單狀態: Order Status
+        free: '免費'
+      store_receipt:
+        subject: "%{name} 訂單明細"
+        content_1: "你的 %{name}訂單送來了！"
+        content_2: ' 你將會在 10-12 天內收到你的商品（假日除外）。'
+      download:
+        subject: '專屬於你的手機桌布'
+        content_1: '這是此訂單所附贈的手機桌布 '
+        content_2: '用瀏覽器下載你的手機桌布並且儲存至你的手機當中。依照你的手機設定桌布即可完成，搭配我印為你特製的手機殼，獨一無二就是這麼簡單。'
+      ship:
+        subject: '該行動了!'
+        content_1: '快！你的 commandp 我印'
+        content_2: ' 已經寄出'
+        content_3: '今天 '
+        content_4: ' 透過 %{shipping_way}.'
+        content_5: '你會收到包裝完好無缺的商品 '
+        content_6: ' 4-6 個工作天'
+        content_7: '. 請查看你的 email 中  %{shipping_way} 的郵件編號，你應該在短時間內會收到商品。'
+        content_8: '如果你有任何問題，歡迎隨時與我們聯繫。 '
+        or: ' 或 '
+        content_9: 謝謝你的訂購!
+        content_10: commandp 我印 客服
+      conflict:
+        subject: '訂單付款金額不一致警告'
+        create_log: '系統已寄出信件通知客服人員!'
+        content: "訂單 %{order_no} 金額與付款金額不一致，請去commnadp後台查看！"
+      payment_remind:
+        subject: '付款提醒'
+    notification:
+      notify_download:
+        subject: '你的桌布'
+    user:
+      reset_password:
+        subject: '您已要求重設您的 commandp  登入密碼'
+        link: '重設密碼'
+        sentence_1: "我們收到您重設commandp密碼的申請，請點擊以下連結修改你的密碼。"
+        sentence_2: '如果您並沒有申請密碼重設服務，請忽略此來信'
+      send_welcome:
+        subject: '歡迎你成為 %{sitename} 的用戶'
+        text1: '歡迎，很高興你能加入我們'
+        text2: "我印讓你輕鬆製作與購買各種充滿設計感的手機殼、無框畫、掛鐘與束口袋等各種商品，透過我印的 App僅需30 秒就可以完成高品質的個性化商品！"
+        text3: "印出你的隨心所欲！"
+      send_coupon:
+        subject: '%{sitename}新用戶優惠碼'

@@ -1,0 +1,5 @@
+- activities.group_by { |activity| activity.created_at.to_date }.each do |date, slice|
+  h3 = time_tag date
+  div
+    - slice.each do |activity|
+      = render_activity(activity)

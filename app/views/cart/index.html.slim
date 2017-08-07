@@ -1,0 +1,43 @@
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center= edit_translator('page.cart.title')
+    - if @order.order_items.size > 0
+      .text-center#cart_order_items
+        - itme_size = @order.order_items.size
+        = render_singularize(t('page.cart.items', items: itme_size), itme_size)
+  .grid_6
+    div#cart_have_itme class="#{render_hide_class(@order.order_items.size == 0)}"
+      table.cart-lists
+        thead
+          tr
+            td.item = edit_translator('page.cart.thead.td1')
+            td.item-name
+            td.price = edit_translator('page.cart.thead.td3')
+            td.special_price = edit_translator('page.cart.thead.td6')
+            td.multi
+            td.qty = edit_translator('page.cart.thead.td4')
+            td.total = edit_translator('page.cart.thead.td5')
+            td.del
+        tbody id='cart_itmes'
+          = render 'list', locals: { order: @order }
+      .margin-top-fixed.text-center
+        - if come_from_china?
+          = link_to edit_translator('page.cart.btns.countinue_shopping'), root_url(host: Settings.host_cn), class: 'btn btn-cancel btn-margin'
+        - else
+          = link_to edit_translator('page.cart.btns.countinue_shopping'), root_url(host: Settings.host), class: 'btn btn-cancel btn-margin'
+        = link_to edit_translator('page.cart.btns.check_out'), check_out_cart_index_path, class: 'btn btn-default', id: 'ua_cart'
+    div#cart_no_itme class="#{render_hide_class(@order.order_items.size > 0)}"
+      .cart_wording= edit_translator('page.cart.text1')
+      .divider_line
+        = image_tag('editor/divider_line.png')
+      .cart_wording
+        span = edit_translator('page.cart.text2')
+        span = edit_translator('page.cart.text3')
+      .margin-top-fixed.text-center
+        = link_to edit_translator('page.cart.btns.shop'), root_path, class: 'btn btn-default'
+        /= link_to t('page.cart.btns.create'), new_work_path, class: 'btn btn-default'
+
+    .margin-top-fixed

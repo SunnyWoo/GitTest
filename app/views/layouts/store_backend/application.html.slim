@@ -1,0 +1,24 @@
+doctype 5
+html lang='zh-TW'
+  head
+    meta charset='utf-8'
+    meta content='width=device-width, initial-scale=1.0' name='viewport'
+    title ⌘P 夜店後台
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.png'
+    = stylesheet_link_tag 'store_backend/application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'store_backend/application', 'data-turbolinks-track' => true
+  body
+    #wrapper
+      = render 'layouts/store_backend/navigation'
+      #page-wrapper.gray-bg
+        / -- Top Navigation Bar --
+        = render 'layouts/store_backend/topnavbar'
+        = render 'layouts/store_backend/page_head'
+
+        .wrapper-content
+          / -- Main view --
+          = yield
+
+        / -- Footer --
+        = render 'layouts/store_backend/footer'

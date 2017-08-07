@@ -1,0 +1,105 @@
+.options
+  // Text
+  #set_text.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.text_input')
+      .value.pull-right
+    .group.g-1
+      .form
+        input#input-text
+        button#update-text.btn.btn-editor
+          i.edittools-check
+  // Font
+  #set_font.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.font')
+      .value.pull-right
+    .group.g-1
+      .form
+        .font-current data-class-name='font-abel'
+          | Abel
+  .font-lists style='display:none'
+    - editor_fonts.each do |font|
+      .item
+        .font_sample class=font.class_name data-lib=font.class_name
+          = font.name
+  // Scale
+  #set_scale.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.scale')
+      .symbol-normal.pull-right
+        | %
+      .value.pull-right data-val='sl-scale'
+    .slider
+      input type='text' class='sl-scale'
+  // Rotation
+  #set_rotation.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.rotation')
+      .symbol-rotate.pull-right
+        | °
+      .value.pull-right data-val='sl-rotation'
+    .slider
+      input type='text' class='sl-rotation'
+  // Transparency
+  #set_transparency.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.transparency')
+      .symbol-normal.pull-right
+        | %
+      .value.pull-right data-val='sl-transparency'
+    .slider
+      input type='text' class='sl-transparency'
+  // Color
+  #set_color.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.color')
+      .value.pull-right
+    .color-groups.clearfix
+      - 10.times do
+        .color.pull-left data-val='#1b676b'
+    .group.g-1
+      #color.form
+        input type='text' class='color-picker'
+  // Alignment
+  #set_alignment.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.alignment')
+      .value.pull-right
+    .group.g-2
+      i.edittools-center_h_normal.center-h
+      i.edittools-center_v_normal.center-v
+  // Reflect
+  #set_reflect.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.reflect')
+      .value.pull-right
+    .group.g-2
+      i.edittools-reflect_v_normal.flip-y
+      i.edittools-reflect_h_normal.flip-x
+  // Text Alignment
+  #set_text_alignment.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.text_alignment')
+      .value.pull-right
+    .group.g-3
+      i.edittools-alignleft_normal.text-align-left
+      i.edittools-aligncenter_normal.text-align-center
+      i.edittools-alignright_normal.text-align-right
+  // Delete
+  #set_del.item
+    .clearfix
+      .name.pull-left
+        = edit_translator('editor.preview_items.delete')
+      .value.pull-right
+    .group.g-1
+      i.edittools-delete_normal.delete-obj

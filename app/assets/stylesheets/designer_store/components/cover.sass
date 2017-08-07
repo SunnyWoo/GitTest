@@ -1,0 +1,39 @@
+// *************************************
+//
+//   Cover
+//   -> 商店首頁的 cover image slider
+//
+// *************************************
+
+.cover
+  display: block
+  width: 100%
+  @include rem(min-height, 200px)
+  overflow-y: hidden
+  background-color: $c-bg-disabled
+  user-select: none
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+.cover--loading
+  background-repeat: no-repeat
+  background-position: center
+  @include rem(background-size, 30px)
+  background-image: asset-url('designer_store/loading-bg-d8d8d8.gif')
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.cover-image
+  width: 100%
+  user-select: none

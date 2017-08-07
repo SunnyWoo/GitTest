@@ -1,0 +1,9 @@
+- work = activity.trackable
+div
+  ' 修改 Work #{link_to_admin_work work}.
+  - if activity.extra_info[:version_id]
+    - version = work.versions.find(activity.extra_info[:version_id])
+    btn.btn.btn-xs.btn-mini data-show-detail="##{dom_id(version, :detail)}" 顯示詳細
+    ul.hide id=dom_id(version, :detail)
+      - version.changeset.each do |k, v|
+        li #{k} : #{v[0]} => #{v[1]}

@@ -1,0 +1,33 @@
+= render 'reprint_form', print_item: print_item
+- print_histories = print_item.print_histories
+- count = print_histories.count
+- print_histories.order(created_at: :desc).each_with_index do |print_history, index|
+  tr
+    - if show_order_no
+      td= print_item.order_item.order.order_no
+    - if index == 0
+      td rowspan="#{count}" = print_item.order_item.itemable.product_code
+      td rowspan="#{count}" = render_print_item_preview(print_item)
+      td rowspan="#{count}" = print_item.product_name
+      td rowspan="#{count}"
+        - unless print_item.order_item.notes.empty?
+          = render 'print/notes/notes', noteable: print_item.order_item, readonly: true
+    - if print_item.order_item.delivered?
+      td = render_made_from(print_item.order_item)
+      td = print_item.order_item.deliver_complete? ? '完成' : '未完成'
+    - else
+      td = render_timestamp_no(print_item, print_history)
+      td = print_history.print_type_text
+    td = l(print_history.prepare_at, format: :long) if print_history.prepare_at
+    td = l(print_history.print_at, format: :long) if print_history.print_at
+    td = l(print_history.sublimated_at, format: :long) if print_history.sublimated_at
+    td = l(print_history.qualified_at, format: :long) if print_history.qualified_at
+    td = l(print_history.onboard_at, format: :long) if print_history.onboard_at
+    td = l(print_history.shipped_at, format: :long) if print_history.shipped_at
+    td = print_item.temp_shelf_description
+    td = print_history.reason
+    - if index == 0 && (!print_item.order_item.delivered? || print_item.external_production?)
+      td rowspan="#{count}"
+        .btn-group
+          = link_to '重印', '###',class: 'btn btn-danger reprint', data: { print_item_id: print_item.id }
+          = link_to '列印商品貼紙', print_pdf_product_ticker_path(order_item_id: print_item.order_item.id, format: :pdf), class: "btn btn-success", target: '_blank'

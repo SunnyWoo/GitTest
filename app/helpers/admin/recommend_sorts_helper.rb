@@ -1,0 +1,2 @@
+module Admin::RecommendSortsHelper
+end

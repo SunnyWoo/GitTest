@@ -1,0 +1,74 @@
+.page-header
+  h1  倉儲物料
+= render 'print/shared/notice_bar'
+
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 = "物料編號: #{@shelf_material.serial}"
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                - %i(image serial name quantity safe_minimum_quantity scrapped_quantity).each do |attr|
+                  th = ShelfMaterial.human_attribute_name(attr)
+            tbody
+              tr
+                td = image_tag @shelf_material.image.url, width: 100
+                - %i(serial name quantity safe_minimum_quantity scrapped_quantity).each do |attr|
+                  td = @shelf_material.send(attr)
+
+
+.row
+  .col-xs-6
+    .widget-box
+      .widget-header
+        h5 = '存储货架'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 货价编号
+                th 货架名称
+                th 数量
+              - @shelves.each do |shelf|
+                tr
+                  td = shelf.serial
+                  td = shelf.serial_name
+                  td = shelf.quantity
+
+              tr
+                td.align-right colspan="2" = '货架数总计:'
+                td.red.bolder = @shelves.sum(&:quantity)
+              tr
+                td.align-right colspan="2" = '物料数结余:'
+                td.red.bolder = @shelf_material.available_quantity
+
+.row
+  .col-xs-6
+    .widget-box
+      .widget-header
+        h5 = '操作紀錄'
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 時間
+                th 操作
+                th 操作前数量
+                th 操作数量
+                th 操作者
+                th 備註
+              - @shelf_material.activities.order('created_at DESC').each do |activity|
+                tr
+                  td = I18n.l activity.created_at, format: :long
+                  td = "#{ShelfMaterial.human_attribute_name("actions.#{activity.key}")}"
+                  td = activity.extra_info['old_quantity']
+                  td = activity.extra_info['quantity']
+                  td = activity.user.username
+                  td = activity.message
+

@@ -1,0 +1,13 @@
+@include keyframes(fadeInMask) {
+  0% {opacity: 0;}
+  100% {opacity: 0.7;}
+}
+
+@mixin fadeInMask($duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(fadeInMask);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

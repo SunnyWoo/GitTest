@@ -1,0 +1,14 @@
+---
+:checks_remove:
+- :jshint
+:checks_add:
+- :tabs
+- :nb_space
+- :whitespace
+- :merge_conflict
+- :debugger
+- :pry
+- :local
+- :console_log
+- :migration
+- :rubocop

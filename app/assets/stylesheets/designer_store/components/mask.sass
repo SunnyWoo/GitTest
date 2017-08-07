@@ -1,0 +1,51 @@
+.mask
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  display: none
+  background-color: rgba($black, .8)
+  z-index: 1
+
+.mask-content
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  text-align: center
+  color: $white
+
+.mask-content--wexin
+  top: 0
+  right: 0
+  transform: none
+  z-index: $z-index-mask-wexin
+
+  &:after
+    position: absolute
+    @include rem(top, 110px)
+    @include rem(right, 134px)
+    @include rem(width, 131px)
+    display: inline-block
+    content: attr(content)
+    text-align: left
+    @include rem(font-size, 16px)
+    line-height: 1.2
+
+  &:before
+    position: absolute
+    top: 0
+    @include rem(right, 16px)
+    display: block
+    @include rem(width, 118px)
+    @include rem(height, 118px)
+    content: ''
+    transform: rotate(48deg)
+    background-image: asset-data-url('designer_store/long_arrow.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: contain
+
+#wexin-mask
+  z-index: 99

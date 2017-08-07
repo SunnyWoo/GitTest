@@ -1,0 +1,95 @@
+- admin_title t('work_sets.index.page_title')
+- breadcrumb :admin_work_sets
+
+= render 'admin/works/nav', active: 'work_sets'
+
+= will_paginate @work_sets
+
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th Id
+      th Designer
+      th Model/Spec
+      th Filename
+      th Entries
+      th WorkIds
+      th Uploaded at
+      th Operations
+  tbody
+    - @work_sets.each do |work_set|
+      tr
+        td = work_set.id
+        td = work_set.designer.display_name
+        td = work_set.product_name
+        td = work_set.zip_filename
+        td
+          ul
+            - work_set.zip_entry_filenames.each do |filename|
+              li = filename
+        td
+          ul
+            - work_set.work_ids.each do |work_id|
+              li = work_id
+        td = l(work_set.created_at)
+        td
+          = link_to "#{t('shared.form_actions.view')}@Work", admin_works_path(q: { id_in: work_set.work_ids }), class: 'btn btn-sm'
+          = link_to "#{t('shared.form_actions.view')}@StandardizedWork", admin_standardized_works_path(q: { id_in: work_set.work_ids }), class: 'btn btn-sm'
+
+= will_paginate @work_sets
+
+.tabbable
+  ul#myTab.nav.nav-tabs
+    li.active
+      a data-toggle="tab" href="#upload_work"
+        = "#{t('work_sets.index.upload')} Work"
+    li
+      a data-toggle="tab" href="#upload_standardized_work"
+        = "#{t('work_sets.index.upload')} StandardizedWork"
+  .tab-content
+    #upload_work.tab-pane.active
+      h2 = "#{t('work_sets.index.upload')} Work"
+      = simple_form_for @work_set_before, url: [:admin, @work_set_before] do |f|
+        = f.input :designer_id, as: :select, include_blank: false, collection: render_collection_for_designers
+        = f.hidden_field :designer_type, value: 'Designer'
+        = f.input :model_id, label: t('works.attributes.spec'),
+                             as: :grouped_select,
+                             collection: ProductCategory.all,
+                             group_method: :products,
+                             group_label_method: :name,
+                             label_method: :name,
+                             value_method: :id,
+                             include_blank: false
+        = f.input :work_type, collection: Work::WORK_TYPES, include_blank: false
+        = f.input :zip, as: :file
+        = f.hint t('work_sets.index.upload_limit')
+        .form-actions
+          = f.button :submit
+
+    #upload_standardized_work.tab-pane
+      h2 = "#{t('work_sets.index.upload')} StandardizedWork"
+      = simple_form_for @work_set, url: [:admin, @work_set] do |f|
+        = f.input :designer_id, as: :select, include_blank: false, collection: render_collection_for_designers
+        = f.hidden_field :designer_type, value: 'Designer'
+        = f.input :model_id, label: t('works.attributes.spec'),
+                             as: :grouped_select,
+                             collection: ProductCategory.all,
+                             group_method: :products,
+                             group_label_method: :name,
+                             label_method: :name,
+                             value_method: :id,
+                             include_blank: false
+        = f.input :aasm_state, collection: StandardizedWork.aasm.states_for_select,
+                               include_blank: false,
+                               label: I18n.t('works.index.thead.aasm_state')
+        = f.input :zip, as: :file
+        = f.hint t('work_sets.index.upload_limit')
+        = f.input :build_previews, as: :boolean
+        = f.input :is_build_print_image, as: :boolean, label: 'Build Print Image'
+        .form-actions
+          = f.button :submit
+
+
+
+
+

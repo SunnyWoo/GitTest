@@ -1,0 +1,5 @@
+- order = activity.trackable
+- shipping_way = activity.extra_info[:shipping_way]
+- ship_code = activity.extra_info[:ship_code]
+div #{link_to_admin_order(order)} 出貨了 - (#{logcraft_keyword(shipping_way)}).
+div 包裹號碼: #{logcraft_keyword ship_code}

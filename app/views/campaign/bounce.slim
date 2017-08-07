@@ -1,0 +1,75 @@
+.owl-carousel
+  .kv_middle
+    = image_tag 'campaign/bounce/web_kv/bounce_bg.png', class: 'carousel-img', alt: 'BOUNCE x commandp'
+    - if !!locale.match(/zh/)
+      = image_tag 'campaign/bounce/web_kv/bounce_cn.png', class: 'kv-img', alt: 'BOUNCE x commandp'
+    - else
+      = image_tag 'campaign/bounce/web_kv/bounce_en.png', class: 'kv-img', alt: 'BOUNCE x commandp'
+
+.camp_announcement 我印 X 塗鴉藝術家 BOUNCE，讓藝術無所不在！
+
+.cmdp_container
+
+  .grid_6.margin-top-fixed
+    .item-title.margin-top-fixed.text-center.camp_margin-bottom-35
+        | BOUNCE 獨家設計款
+
+  .web-bgmen-selectmodel-margin
+    .grid_2
+     .web-bgmen-placeholder
+    = render 'select_models', model: @model, ga_category: 'Campaign - BOUNCE - Web', work_models: @work_models
+
+  .margin-top-fixed
+  .products.campaign_works data-ga-category='Campaign - BOUNCE - Web'
+    - if @works.length > 0
+      = render partial: 'editor/shared/work', collection: @works
+    - else
+      .empty-result
+        = edit_translator('page.text.no_product_found')
+
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(@works, inner_window: 1)
+    .margin-top-fixed
+
+.about-duncan
+  .cmdp_container
+    .grid_6
+      .item-title.camp_margin-top-25.text-center.color-fixed
+        | About BOUNCE
+
+    .grid_6.text-center
+      = image_tag 'campaign/bounce/web_bounce_100_kw_01.jpg', alt: 'BOUNCE x commandp'
+    .grid_6
+      .wording
+        p
+          | BOUNCE 創造了一隻屬於他的兔子，他的塗鴉也有個屬於他的故事，
+          br
+          | 更讓這個城市添加了點故事性。
+        p
+          | 跳脫自己的背景傳統藝術，發現內心最原始的細胞，叛逆又有趣的塗鴉創作動力。
+          br
+          | 曾擔任台北國際藝術村駐村藝術家、並受邀多場國際品牌合作與展覽、活動現場
+          br
+          | 表演，參加過無數國內外的展覽，於 2011年將塗鴉藝術帶進台北當代美藝術館
+          br
+          | ”未末 2013 ” 展覽中，並讓塗鴉藝術進入藝術平台市場。
+        P
+          | 在 2013 年初，BOUNCE 於法國與瑞士舉辦自己首度的創作個展，也是台灣第一位
+          br
+          | 將塗鴉藝術帶到國際藝術平台的藝術家。至今除了塗鴉藝術創作外，也參與不少部電影
+          br
+          | 與廣告、音樂錄影帶的分鏡腳本繪製、美術製作，也是一位視覺傳達設計師，擔任過許
+          br
+          | 多品牌的設計師與品牌代言藝術家。
+      .camp_margin-top-33
+
+
+.cmdp_container
+  .grid_6
+    .item-title.camp_margin-top-55.text-center.camp_margin-bottom-35
+      | BOUNCE Artworks
+  .grid_6
+    = image_tag 'campaign/bounce/web_bounce_100_kw_02.jpg', alt: 'BOUNCE x commandp'
+    .camp_margin-top-87
+

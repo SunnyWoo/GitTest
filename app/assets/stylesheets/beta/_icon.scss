@@ -1,0 +1,72 @@
+i.edit {
+  @extend .edittools-edit_normal;
+  display: inline-block;
+  margin-top: -5px;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    @extend .edittools-edit_hover;
+  }
+}
+
+i.avatar-edit {
+  @extend .icons-img_pics_edit_normal;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+i.del {
+  @extend .icons-profile_delete_normal;
+  display: inline-block;
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  &:hover {
+    @extend .icons-profile_delete_hover;
+  }
+}
+
+i.add {
+  @extend .icons-faq_icon_open_normal;
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  margin-top: -6px;
+  &:hover {
+    @extend .icons-faq_icon_open_pressed;
+  }
+}
+
+i.cancel {
+  @extend .icons-cancel_normal;
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  &:hover {
+    @extend .icons-cancel_hover;
+  }
+}
+
+i.alert {
+  @extend .icons-img_alert_icon;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+}
+
+i.mail {
+  @extend .icons-img_mail_icon;
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+}
+
+i.enter {
+  @extend .icons-img_exchange_column_half_enter;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}

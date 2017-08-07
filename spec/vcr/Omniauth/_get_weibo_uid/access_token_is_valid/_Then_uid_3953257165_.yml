@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.weibo.com/2/account/get_uid.json?access_token=2.002m9X_EMucQmCc31f256a089RjSzD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.6.1
+      date:
+      - Fri, 07 Aug 2015 09:36:55 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      api-server-ip:
+      - 10.75.5.96
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    body:
+      encoding: ASCII-8BIT
+      string: '{"uid":3953257165}'
+    http_version: '1.1'
+  recorded_at: Fri, 07 Aug 2015 09:36:55 GMT
+recorded_with: VCR 2.9.2

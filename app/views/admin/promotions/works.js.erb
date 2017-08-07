@@ -1,0 +1,3 @@
+$('.search-works-container').html("<%= escape_javascript(render 'works_search', works: @works) %>");
+$('.search-work-form input[type=submit]').prop('disabled', false);
+$.promotionForm.inactiveAddButtons();

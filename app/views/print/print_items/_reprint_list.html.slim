@@ -1,0 +1,38 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 序號
+      th 縮圖
+      th 訂單編號
+      th 印刷序號
+      th 列印編號
+      th 工作站狀態
+      th 重印類別
+      th 產品分類
+      th 產品類型
+      th 重印時間
+      th style='width: 100px' 累計處理時間
+      th 操作人員帳號
+      th 原因說明
+  tbody
+    - locale = Region.china? ? :'zh-CN' : :'zh-TW'
+    - print_items.each_with_index do |pi, index|
+      - print_history = pi.print_histories.order(created_at: :desc).first
+      - order_item = pi.order_item
+      - order = order_item.order
+      - product = product_models.find { |p| p.id == order_item.itemable.model_id }
+      - category = product.category
+      tr
+        td = render_delayed_item_index(print_items, index)
+        td = render_print_item_preview(pi)
+        td = order.order_no
+        td = pi.id
+        td = print_history.timestamp_no
+        td = t("activerecord.attributes.print_item.aasm_state.#{pi.aasm_state}")
+        td = print_history.print_type_text
+        td = category.name(locale)
+        td = product.name(locale)
+        td = l print_history.created_at, format: :long
+        td = render_hours_from_target_time print_history.prepare_at
+        td = print_history.create_log.try(:user).try(:email)
+        td = print_history.reason

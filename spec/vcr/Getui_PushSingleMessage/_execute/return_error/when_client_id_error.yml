@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      accept-encoding:
+      - ''
+      content-length:
+      - '319'
+      user-agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      host:
+      - sns.ap-northeast-1.amazonaws.com
+      x-amz-date:
+      - 20151117T115328Z
+      x-amz-content-sha256:
+      - 6055bbcf5704bd80cc95e71db60e0a545402d9714df9cbf69c14840ea26667f7
+      authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIAIWNLFSBA7WPEVK7Q/20151117/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=803b2b8aa13eae30cea4a7e02682bda51b6619fb5ba8309ea8f9fa594f91c2e3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      x-amzn-requestid:
+      - 73294d0b-d49e-5393-b499-03cec3e6ef2e
+      content-type:
+      - text/xml
+      content-length:
+      - '342'
+      date:
+      - Tue, 17 Nov 2015 11:53:27 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidParameter</Code>
+            <Message>Invalid parameter: EndpointArn Reason: dab65419cd1d4663d1cd49041ff17f55 does not start with arn</Message>
+          </Error>
+          <RequestId>73294d0b-d49e-5393-b499-03cec3e6ef2e</RequestId>
+        </ErrorResponse>
+    http_version: '1.1'
+  recorded_at: Tue, 17 Nov 2015 11:53:28 GMT
+- request:
+    method: post
+    uri: http://sdk.open.api.igexin.com/apiex.htm
+    body:
+      encoding: UTF-8
+      string: '{"action":"pushMessageToSingleAction","appkey":"b5kyqrTozD7oQ0hohcfM7","clientData":"CgASC3B1c2htZXNzYWdlGgAiFWI1a3lxclRvekQ3b1EwaG9oY2ZNNyoVdUpabE9kelpHejVIb3QyUGJsS2ZQMgA6CAoAEgAiAi0xQgcIARAAGJBOQh4IkE4QARiaTqIGAKoGALIGBFRlc3TABgHIBgHQBgFCCAiaThAAGK5OQhkIrk4QAxhk4ggA6ggGCgASABoA8AgA+AhkQgQIZBAH","transmissionContent":"","isOffline":true,"offlineExpireTime":43200000,"appId":"uJZlOdzZGz5Hot2PblKfP","clientId":"29e986e4ccecd26961b7e8ff99c47c55","type":2,"pushType":"NotifyMsg","version":"3.0.0.0"}'
+    headers:
+      content-type:
+      - application/json
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-language:
+      - en-US
+      content-type:
+      - text/html;charset=UTF-8
+      content-encoding:
+      - gzip
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":"TokenMD5NoUsers"}'
+    http_version: '1.1'
+  recorded_at: Tue, 17 Nov 2015 11:53:31 GMT
+recorded_with: VCR 2.9.2

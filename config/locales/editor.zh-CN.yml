@@ -1,0 +1,60 @@
+zh-CN:
+  work:
+    new:
+      choose_product: 选择客制化产品
+      your_image: Your Image Here
+  editor:
+    add_overlay: 增加图层
+    photo: 照片
+    background_color: 背景颜色
+    shapes: 形状
+    lines: 线条
+    stickers: 贴纸
+    textures: 纹路
+    typography: 图形文字
+    text: 文字
+    crop: 形状切割
+    preview: 预览
+    print_quality: 印刷品质
+    upload_photo:
+        title: 上传照片
+        content: 为了让成品有高解析度的品质，请确保你的照片符合以下要求
+        li1: 图片尺寸至少要2000px (图片最大为6mb)
+        li2: 图片颜色必须是 RGB 格式
+        li3: 图片格式必须是 JPG 或是 PNG
+        li4: 你必须要是图片的原创者
+        select_image: 选择照片
+        next: 下一步
+    preview_items:
+      text_input: "输入文字"
+      font: "字型"
+      scale: "缩放"
+      rotation: "旋转"
+      transparency: "透明度"
+      color: "颜色"
+      text_alignment: "文字对齐"
+      delete: "删除"
+      reflect: "映射"
+      alignment: "对齐"
+    delete:
+      title: "删除图层"
+      confirm_message: "确定要删除此图层？"
+      continue: "确定"
+      cancel: "取消"
+    safe_area:
+      title: 未填满警告
+      content_line_1: "您的作品未填满虚线范围。"
+      content_line_2: "请回到编辑作品填满虚线范围，确保产品侧边已被填满。"
+      content_line_3: "否则产品将会有未填满情况发生。"
+      edit: "编辑状态"
+      preview: "预览图"
+    saving: "儲存中..."
+  my_design:
+    save_for_later: "储存作品"
+    back_to_edit: "修改"
+    shop: "设计师商店"
+    description: "商品叙述"
+    shipping: "运送"
+    shipping_message: "国际运送 10-12 天。若需急件结帐时亦有急件选项可选择。"
+
+

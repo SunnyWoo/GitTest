@@ -1,0 +1,34 @@
+- breadcrumb :admin_tag_works, @tag.name
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('tags.index.thead.name')
+            th= t('tags.index.thead.work_amount')
+            th zh-CN
+            th zh-TW
+            th zh-HK
+            th en
+            th ja
+            th= t('tags.index.thead.operation')
+        tbody
+          tr
+            td= @tag.name
+            td= @tag.work_taggings.count
+            td= @tag.text_zh_cn
+            td= @tag.text_zh_tw
+            td= @tag.text_zh_hk
+            td= @tag.text_en
+            td= @tag.text_ja
+            td
+              .btn-group
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, @tag]),
+                    class: 'btn btn-info'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-head
+  .widget-body
+    = render 'works', taggings: @tag_taggings

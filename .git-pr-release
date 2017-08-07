@@ -1,0 +1,3 @@
+[pr-release]
+  template = utils/pr-release-template.html.erb
+  labels = "release"

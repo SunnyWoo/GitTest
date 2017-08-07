@@ -1,0 +1,79 @@
+.page-header
+  h2 = t('works.edit.page_title.preview')
+
+table.table.table-bordered
+  thead
+    tr
+      td
+        = Work.human_attribute_name(:cover_image)
+        div 此為使用者從手機上製作好的參考圖, 聖旨.
+        b.red 永遠不會受到你上傳的影響.
+      td
+        = Work.human_attribute_name(:print_image)
+        div 此為由 server 製作, 即將要送往工廠列印用的圖.
+        b.red 你可以另外上傳並覆蓋它.
+      td
+        | 白墨用圖
+        div 此為由 server 製作的白墨用圖
+        b.red 當 Print Image 製作完成後會自動製作
+      td
+        = Work.human_attribute_name(:order_image)
+        div 就是訂單用縮圖.
+        b.red 一開始會由客戶上傳預覽圖製作, 待送印用圖完成後, 會使用送印用圖重新製作.
+  tbody
+    tr
+      td
+        = display_cover_image(work)
+      td
+        = display_print_image(work)
+        div
+          = rebuild_print_image_link(work)
+          = remove_fixed_image_link(work)
+        table.table.table-bordered
+          thead
+            tr
+              td
+              td PrintImage size
+              td Need Size (DPI)
+              td Hints
+          tbody
+            tr
+              - pw = work.print_image.width
+              - sw = work.product_dpi_width.round
+              td Width(寬)
+              td
+                = pw
+                = render_warning('PrintImage 還未產生') if pw.to_i == 0
+              td = sw
+              td = render_print_image_warning(sw, pw)
+            tr
+              - ph = work.print_image.height
+              - sh = work.product_dpi_height.round
+              td Height(高)
+              td
+                = ph
+                = render_warning('PrintImage 還未產生') if ph.to_i == 0
+              td = sh
+              td = render_print_image_warning(sh, ph)
+
+            tr
+              td Model
+              td colspan='3' = work.product_name
+      td
+        - if work.product.enable_white?
+          = display_white_image(work)
+        - else
+          ' #{work.product_name} 並沒有開啟白墨選項，你可以從#{link_to('這裡', edit_admin_product_model_path(work.product), target: '_blank')}打開它
+      td
+        = display_order_image(work)
+        div = rebuild_order_image_link(work)
+
+    tr
+      td colspan=3
+        - if work.ai.blank? || work.pdf.blank?
+          ' 本<del>座</del>作目前沒有 AI/PDF.
+          = rebuild_ai_link(work)
+        - else
+          =' link_to '下載 AI', work.ai.url, target: '_blank'
+          =' link_to '下載 PDF', work.pdf.url, target: '_blank'
+          = rebuild_ai_link(work)

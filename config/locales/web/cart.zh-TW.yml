@@ -1,0 +1,61 @@
+zh-TW:
+  page:
+    cart:
+      title: '你的購物車'
+      items: '%{items} 樣商品'
+      thead:
+        td1: 購買商品
+        td2: 姓名
+        td3: 售價
+        td4: 數量
+        td5: 總金額
+        td6: 特價
+      btns:
+        countinue_shopping: 繼續逛逛
+        check_out: 立刻結帳
+        verify: 驗證
+        delete: 刪除
+        shop: 設計師商店
+        create: 建立
+      span:
+        coupon: '優惠代碼:'
+        subtotal: '小計:'
+        discount: '折扣金額'
+      text1: 全球直送
+      text2: '你沒有購物商品!'
+      text3: 逛逛設計師商店.
+    cart_check_out:
+      title: 結帳
+      text1: 全球直送
+      shipping_title: 運送資訊
+      add_address: 新增地址
+      billing_title: 帳單資訊
+      payment_title: 訂單資訊
+      delivery_title: 運送方式
+      track_code: 查詢代碼
+      summary: 結帳明細
+      summary_alias: 結帳明細
+      thead:
+        redeem_item: 兌換商品
+        td1: 你的商品
+        td2: 數量
+        td3: 售價
+        td4: 特價
+      subtotal: 商品金額
+      shipping_cost: 運費
+      coupon_code: 優惠代碼
+      coupon_code_placehoder: 輸入優惠代碼
+      coupon_valid:
+        success: 兌換成功
+        fail: 兌換失敗
+      total: 訂單總金額
+      free: 免費
+      payment: 付款方式
+      btns:
+        summary: 購物明細
+        redeem: 確認兌換
+      notification:
+        new_year: "因應中國新年假期，訂單延遲至 2/24 開始寄送。選擇快速運送者，將優先出貨。"
+    back_to_check_out:
+      btn: '回結帳頁'
+

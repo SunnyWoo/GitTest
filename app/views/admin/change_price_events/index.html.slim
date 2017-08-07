@@ -1,0 +1,41 @@
+- admin_title t('.page_title')
+- breadcrumb :admin_change_price_events
+
+= render 'admin/works/nav', active: 'change_price_events'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    = will_paginate @change_price_events
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= t('change_price_events.index.thead.target_type')
+            th= t('change_price_events.index.thead.operator')
+            th= t('change_price_events.index.thead.created_at')
+            th= t('change_price_events.index.thead.items')
+            th= t('change_price_events.index.thead.status')
+        tbody
+          - @change_price_events.each do |event|
+            tr
+              td= human_target_type event.target_type
+              td= event.operator.source_name
+              td= l event.created_at, format: :long
+              td= event.change_price_histories.count
+              td
+                = event.aasm.human_state
+                -if event.failed?
+                  br
+                  = link_to t('change_price_events.index.button.rerun'), rerun_admin_change_price_event_path(event),
+                    class: 'btn btn-Warnning', method: :put
+                -if event.completed?
+                  br
+                  = link_to t('change_price_events.index.button.log'), histories_admin_change_price_event_path(event),
+                    class: 'btn btn-Warnning'
+    = will_paginate @change_price_events

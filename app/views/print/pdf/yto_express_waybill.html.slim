@@ -1,0 +1,108 @@
+.content
+  .top
+    .header
+      .row
+        .col-xs-4
+          .product_info
+            .title 代收货款
+            .price
+              span 金额:
+              span &nbsp;&nbsp;¥&nbsp;
+              span = "#{@package.subtotal}元"
+        .col-xs-8
+          .consignee_branch
+            - if @consignee_branch
+              img src="data:image/png;base64,#{Base64.encode64(@consignee_branch_code)}"
+              .consignee_branch_code=@consignee_branch
+
+    .datou
+      p = @yto_express['short_address']
+
+    .mail_no
+      img src="data:image/png;base64,#{Base64.encode64(@mail_no_barcode)}"
+      .consignee_branch_code=@mail_no
+
+    .receipt
+      .row
+        .col-xs-11
+          .receipt_info
+            .shipping_info
+              .person
+                span 收件人:
+              .message
+                span = "#{@package.shipping_info_name} #{@package.shipping_info_phone}"
+                br
+                span = @package.shipping_info.full_address
+            .billing_info
+              .person
+                span 寄件人:
+              .message
+                span 优印仓储 021-54726621
+                br
+                span 上海市,青浦区 外青松公路3777弄55号
+            .receipt_message
+              .row
+                .col-xs-6
+                  .signature
+                    p 收件人/代收人:
+                .col-xs-6
+                  .timing
+                    .title 签收时间:
+                    .time 年 月 日
+        .col-xs-1
+          .receipt_content
+            span 签
+            span 收
+            span 联
+
+  .bottom
+    .logo
+      .row
+        .col-xs-5
+        .col-xs-7
+          .logo_mail_no
+            img src="data:image/png;base64,#{Base64.encode64(@mail_no_barcode)}"
+            .consignee_branch_code=@mail_no
+
+    .receive
+      .row
+        .col-xs-11
+          .receive_info
+            .billing_info
+              .person
+                span 寄件人:
+              .message
+                span 优印仓储 021-54726621
+                br
+                span 上海市,青浦区 外青松公路3777弄55号
+            .shipping_info
+              .person
+                span 收件人:
+              .message
+                span = "#{@package.shipping_info_name} #{@package.shipping_info_phone}"
+                br
+                span = @package.shipping_info.full_address
+        .col-xs-1
+          .receive_content
+            span 收
+            span 件
+            span 联
+
+    .detail
+      .row
+        .item_info.col-xs-8
+          .title 订单详情:
+          .items
+            - @package.order_items.each do |order_item|
+              span = order_item.itemable.name
+        .package_no.col-xs-4
+          = raw @package_no_qr.as_html
+
+    .footer
+      .row
+        .col-xs-3
+          span 代收货款
+        .col-xs-9
+          span 金额:
+          span &nbsp;
+          span = "#{@package.subtotal}元 (#{number_to_capital_zh(@package.subtotal)})"

@@ -1,0 +1,7 @@
+= simple_form_for [:admin, reward] do |f|
+  = f.input :order_no
+  = f.input :coupon_code
+  = f.input :avatar, as: :image
+  = f.input :cover, as: :image
+  .form-actions
+    = f.button :submit

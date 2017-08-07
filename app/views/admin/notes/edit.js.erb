@@ -1,0 +1,9 @@
+<% id = dom_id(@note, :edit) %>
+$('body').append('<%= j render 'edit', id: id, note: @note %>');
+$('#<%= id %>').modal('show');
+$('#edit_note').on('submit', function(e) {
+  $('#<%= id %>').modal('hide');
+});
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

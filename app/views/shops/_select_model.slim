@@ -1,0 +1,16 @@
+.grid_2.filters
+  .filter-block
+    .horizontal
+      .sub-title = edit_translator('page.text.model')
+      .content
+        .dropdown
+          button#model_dropdown.dropdown-toggle.dropdown-shop data-toggle="dropdown" type="button"
+            span.val
+              = model.friendly_name
+            span.caret
+          ul.dropdown-menu aria-labelledby="model_dropdown" role="menu"
+            - models.each do |model|
+              li role="product_models"
+                .i role="menuitem" tabindex="-1" data-value=model.slug
+                  = link_to model.friendly_name, shop_path(model.slug, category: category.key)
+  .margin-top-fixed

@@ -1,0 +1,17 @@
+- work = activity.trackable
+- mobile_page = MobilePage.find(activity.extra_info['mobile_page_id'])
+- price_tier = PriceTier.find(activity.extra_info['price_tier_id'])
+div
+  'Campaign 活動更新 Work #{link_to_admin_work work} price_tier_id.
+  br
+  | MobilePage：
+  = link_to "#{mobile_page.title}", edit_admin_mobile_page_path(mobile_page), target: :blank
+  br
+  | PageType：#{mobile_page.page_type}
+  br
+  | 時間：#{mobile_page.begin_at} ~ #{mobile_page.close_at}
+  br
+  | PriceTierID：#{activity.extra_info['price_tier_id']}
+  pre
+    = price_tier.prices.to_json
+

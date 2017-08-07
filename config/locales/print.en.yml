@@ -1,0 +1,33 @@
+en:
+  print:
+    batch_flow:
+      attachment:
+        title:
+          all: 'Al'
+          image: 'Printing Image Files'
+          document: 'Document and Worksheets'
+      notification:
+        subject: '%{factory_name} %{number_with_source} Purchase Notification from Commandp'
+      summary_table:
+        header:
+          batch_number: 'Batch Number'
+          deadline: 'Expected Delivery Date'
+          location: 'Location'
+          item_number: 'Item Number'
+          order_number: 'Order Number'
+          product_name: 'Product Name'
+          quantity: 'Qt.'
+          shipping_number: 'Shipping Number'
+          stat_title: 'Product Stats'
+          stat_product: 'Product Name'
+          stat_quantity: 'Quantity'
+          note: 'Note'
+        filename: '%{source}%{batch_number}_SummaryTable'
+        is_reprint: 'Reprinted Item'
+      worksheet:
+        field:
+          batch_number: 'Batch Number'
+          item_number: 'Item Number'
+          order_number: 'Order Number'
+          product_name: 'Product'
+        filename: '%{source}%{batch_number}_%{product_name} worksheet'

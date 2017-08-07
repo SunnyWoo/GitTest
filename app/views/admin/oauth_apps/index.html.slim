@@ -1,0 +1,29 @@
+- admin_title t('.page_title')
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table
+        thead
+          tr
+            th Name
+            th Redirect URI
+            th Scopes
+            th
+
+        tbody
+          - @applications.each do |app|
+            tr
+              td = link_to app.name, admin_oauth_app_path(app)
+              td = app.redirect_uri
+              td = app.scopes
+              td
+                = link_to t('shared.form_actions.edit'), edit_admin_oauth_app_path(app), class: 'btn btn-default'
+                = link_to t('shared.form_actions.delete'), admin_oauth_app_path(app), class: 'btn btn-danger', data: { method: 'delete', confirm: 'Are you sure?' }

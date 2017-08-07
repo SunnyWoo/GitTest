@@ -1,0 +1,13 @@
+- admin_title t('recommend_sorts.edit.page_title', name: member.design_platform)
+- breadcrumb :edit_admin_recommend_sorts
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if member.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: member.errors.full_messages
+  .well
+    h4.green.smaller.lighter
+    = f.input :design_platform, disabled: true
+    = f.input :sort, collection: I18n.t('recommend_sorts.sort_options').invert
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('shared.form_actions.back'), admin_recommend_sorts_path, class: 'btn btn-info'

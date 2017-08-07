@@ -1,0 +1,16 @@
+body.works_controller.edit_action
+  #commandp-editor
+    display: block
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+
+  #text-hint, #upload-failed
+    position: fixed
+    display: none
+    width: 100%
+    @include rem(bottom, 60px)
+    color: $c-text-hightlight
+    @include rem(font-size, $f-size-hint)
+    text-align: center

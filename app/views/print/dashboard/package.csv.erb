@@ -1,0 +1,21 @@
+<%- headers = %w(訂單編號 列印編號 產品類型 狀態 折扣码 商品单价 订单总价 留言 出貨方式 暂存区编号) %>
+<% data = CSV.generate do |csv| %>
+          <% csv << headers %>
+          <% @orders.each do |order| %>
+              <% coupon_info = order.embedded_coupon.present? ? "#{order.embedded_coupon.title} - #{order.embedded_coupon.code}" : '' %>
+              <% message = order.notes.map(&:message).join(',') %>
+              <% order.print_items.each do |print_item| %>
+                  <% csv << [order.order_no,
+                             print_item.timestamp_no,
+                             print_item.product_name,
+                             I18n.t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}"),
+                             coupon_info,
+                             render_item_price(print_item.order_item.itemable, currency_code: order.currency),
+                             render_order_price(order),
+                             message,
+                             render_shipping_way(order.shipping_info.shipping_way),
+                             print_item.temp_shelf_serial] %>
+              <% end %>
+          <% end %>
+<%- end %>
+<%= mark_csv_data(data).html_safe %>

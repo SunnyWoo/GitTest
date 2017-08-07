@@ -1,0 +1,22 @@
+- admin_title t('products.index.page_title')
+
+.row
+  .col-sm-2
+    .widget-box.widget-color-blue2
+      .widget-header
+        h4.widget-title.lighter.smaller = t('products.index.select_product')
+      .widget-body
+        ul#product-tree.filetree
+          - @categories.each do |category, products|
+            li
+              span.folder = link_to category.key, admin_product_category_path(category), remote: true
+              ul
+                - products.each do |model|
+                  li
+                    span.file = model.name
+
+          li
+            span.file = link_to t('products.index.new_category'), new_admin_product_category_path, remote: true
+
+  .col-sm-10 data-products-content=true
+    | ...

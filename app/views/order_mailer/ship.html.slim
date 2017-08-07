@@ -1,0 +1,30 @@
+.paragraph1
+
+.title.paragraph1.c-margin
+  = image_tag('email/nl_text_itsgotime.png')
+
+.paragraph1.c-margin
+  p
+    = t('email.order.share.hello', username: @user.username)
+  p
+    = t('email.order.ship.content_1')
+    span.highlight= t('email.order.share.order_id', order_no: @order.order_no)
+    = t('email.order.ship.content_2')
+    br/
+    = t('email.order.ship.content_3')
+    span.highlight= @today
+    - shipping_way = BillingProfile.shipping_ways[@shipping_info.shipping_way]
+    - shipping_way = t("email.order.share.shipping_way.#{Region.region}")[shipping_way]
+    = t('email.order.ship.content_4', shipping_way: shipping_way)
+  p
+    = t('email.order.ship.content_5')
+    span.highlight= t('email.order.ship.content_6')
+    = t('email.order.ship.content_7', shipping_way: shipping_way)
+  p
+    = t('email.order.ship.content_8')
+    = link_to 'email', 'mailto:hi@commandp.me'
+    = t('email.order.ship.or')
+    = link_to 'Facebook page', t('email.marketing.facebook_page')
+    | .
+  p= t('email.order.ship.content_9')
+  p= t('email.order.ship.content_10')

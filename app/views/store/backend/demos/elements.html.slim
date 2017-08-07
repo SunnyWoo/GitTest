@@ -1,0 +1,37 @@
+- breadcrumb :store_backend_demos_elements
+
+= panel title: '設定頁面標題與麵包屑' do
+  p
+    | 麵包屑使用 gem 'gretel'，可以到 <code>config/breadcrumbs</code> 進行設定，除了麵包屑之外，標題也會一併使用設定的值
+
+= panel title: '加入 Panel 元件' do
+  p  可以使用 <code>panel</code> 這個 helper mehtod 產生元件
+
+  h4 範例:
+
+  h5 產生一個 panel
+  pre
+    | = panel do
+        內文內文內文內文內文內文內文內文
+
+  hr
+
+  h5 加上標題
+  pre
+    | = panel title: '標題' do
+        內文內文內文內文內文內文內文內文
+
+  hr
+
+  h5 加上 html 的屬性
+  pre
+    | = panel title: '標題', class: 'bg-grey text-danger', data: { foo: 'bar' } do
+        內文內文內文內文內文內文內文內文
+
+  hr
+
+  h5 標題使用 HTML 字串
+  p 如果使用這個方式，<code>title_html</code> 並不會被 escape html 字符，請小心使用
+  pre
+    | = panel title_html: #{"'<button>用按鈕當標題\</button>'"} do
+        內文內文內文內文內文內文內文內文

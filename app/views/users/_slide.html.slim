@@ -1,0 +1,28 @@
+- if normal_user_signed_in?
+  .item-title = edit_translator("page.user.item_title")
+  .help
+    ul
+      li
+        .help-list = link_to edit_translator('page.user.profile'), profile_users_path
+      li
+        .help-list = link_to edit_translator('page.user.address'), address_users_path
+      li
+        .help-list = link_to edit_translator('page.user.order_history'), order_history_users_path
+        - if ['order','order_history'].include?(action_name)
+          #order_history_list
+            - current_user.orders.order('created_at desc').each do |order|
+              span= link_to order.order_no, order_users_path(order.order_no)
+
+      li
+        .help-list = link_to edit_translator('page.user.log_out'), destroy_user_session_path, method: :delete
+- else
+  .item-title = edit_translator("page.user.item_title")
+  .help
+    ul
+      li
+        #login_popup.help-list = link_to edit_translator('page.user.profile'), new_user_session_path
+      li
+        #login_popup.help-list = link_to edit_translator('page.user.address'), new_user_session_path
+      li
+        #login_popup.help-list = link_to edit_translator('page.user.order_history'), new_user_session_path
+    = render '/shared/popup/login_popup'

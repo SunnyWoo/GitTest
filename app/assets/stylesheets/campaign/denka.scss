@@ -1,0 +1,288 @@
+.denka-block {
+  background: image-url('campaign/denka/images/info_bg.png') #edf3f7 no-repeat bottom;
+  background-size: contain;
+  padding-bottom: 120px;
+  img.bg {
+    width: 100%;
+    min-width: 1000px;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 55px;
+  }
+
+  .desc{
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 13px;
+    color: #333;
+    margin-bottom: 55px;
+  }
+
+  .cmdp_container {
+    margin-bottom: 0px;
+  }
+
+  .popup-gallery {
+    a {
+      outline: 0;
+    }
+  }
+}
+
+.denka-title {
+  margin-top: 67px;
+  font-size: 39px;
+  font-weight: 400;
+  color: #333;
+}
+
+.denka-gallery {
+  font-size: 0px;
+  margin-top: 60px;
+  border-top: 1px solid #e0e8f0;
+  padding-top: 85px;
+}
+
+.denka-gallery-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+img.denka-gallery-item {
+  transition: -webkit-filter .5s, filter .5s;
+  -webkit-transition: -webkit-filter .5s, filter .5s;
+}
+
+img.denka-gallery-item:hover {
+  -webkit-filter: brightness(80%);
+  filter: brightness(80%);
+}
+
+.denka-gallery-note {
+  width: 480px;
+  height: 460px;
+  box-sizing: border-box;
+  padding: 45px;
+  background: white;
+
+  &::before{
+   content:'';
+   width:0;
+   height:100%;
+   display:inline-block;
+   position:relative;
+   vertical-align:middle;
+ }
+}
+
+.denka-gallery-note-text {
+  vertical-align: middle;
+  text-align: left;
+  display: inline-block;
+
+  .title {
+    font-weight: bold;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 34px;
+  }
+
+  .title-red {
+    color: #df3331;
+  }
+
+  .title-red2 {
+    color: #780e32;
+  }
+
+  .title-blue {
+    color: #0c2e6e
+  }
+
+  .title-purple {
+    color: #69124d
+  }
+
+  .title-green {
+    color: #03c892
+  }
+
+  .title-cyan {
+    color: #02b8d7
+  }
+
+  .subtitle {
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    font-size: 18px;
+    line-height: 26px;
+    color: #333;
+
+    &::before{
+      content: '';
+      display: inline-block;
+      transform: translateY(-6px);
+      margin-right: 6px;
+      width: 16px;
+      border-bottom: 1px solid #333;
+    }
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 13px;
+    color: #333;
+  }
+}
+
+.denka-block2 {
+  padding-top: 56px;
+  background-color: #f1f5f6;
+  text-align: center;
+  margin-bottom: -33px;
+}
+
+#back_top {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+}
+
+.campaign-denka-bg#team_page {
+  // background: image-url('campaign/denka/images/info_bg2.png') no-repeat top;
+  // background-size: contain;
+  background: -webkit-linear-gradient(top, #d8e0e8, white);
+  background-size: 3000px 360px;
+  background-repeat: no-repeat;
+}
+.denka-block3 {
+
+  background: image-url('campaign/denka/images/info_bg2-2.png') no-repeat bottom;
+  background-size: contain;
+  .denka-team {
+    .grid_3 {
+      width: 260px;
+      margin: 0px 90px 10px 0px;
+    }
+    .grid_3:last-child {
+      margin-right: 0px;
+    }
+    .name {
+      margin: 50px 0 15px 0;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    .info {
+      padding: 0px;
+      font-size: 16px;
+      line-height: 24px;
+      height: 120px;
+    }
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-top: 55px;
+  }
+
+  .desc{
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 13px;
+    color: #333;
+    margin-bottom: 55px;
+  }
+
+  .denka-video {
+    margin: 60px 0 300px 0 ;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+// mobile view
+.m-denka-block1 {
+  background-color: #000;
+  padding-bottom: 100px;
+
+  .cosplay {
+    margin-top: 40px;
+    img {
+      display: inherit;
+      margin: 0px auto;
+      width: 90%;
+    }
+  }
+  .title {
+    color: #FFF;
+    font-size: 24px;
+    margin: 40px 0 15px 0;
+    text-align: left;
+    padding: 0 45px;
+    .cosplay-role {
+      float: right;
+      font-size: 18px;
+      color: #FFF;
+    }
+  }
+  .desc {
+    color: #FFF;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 45px;
+    text-align: justify;
+  }
+}
+
+.m-denka-hr {
+  width: 90%;
+  margin: 40px auto;
+  margin-bottom: 0px;
+  border-bottom: 1px solid rgba(204,204,204,0.4);;
+}
+
+.m-denka-block2 {
+  .mobile-v2-title {
+    font-weight: 400;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 40px 0 15px 0;
+    padding: 0 45px;
+  }
+  .desc {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 15px;
+  }
+  .denka-video {
+    margin: 40px 0 80px 0 ;
+  }
+  .avatar {
+    margin-bottom: 60px;
+  }
+  .name {
+    margin-bottom: 25px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .m-info {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .m-denka-hr {
+    margin: 35px auto;
+  }
+}

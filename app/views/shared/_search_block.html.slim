@@ -1,0 +1,10 @@
+#search_block itemscope='' itemtype='http://schema.org/WebSite'
+  meta itemprop='url' content='https://commandp.com'
+  #search_input
+    = form_tag(search_path, method: 'GET', itemprop: 'potentialAction',
+      itemscope: '', itemtype: 'http://schema.org/SearchAction') do
+      .input-group
+        meta content="https://commandp.com/search?query={query}" itemprop="target"
+        = text_field_tag 'query', nil, placeholder: "#{t('page.btns.search')}", class: 'search', id: 'search', itemprop: 'query-input'
+        span.input-group-btn
+          i.cancel

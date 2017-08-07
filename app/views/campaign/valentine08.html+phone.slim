@@ -1,0 +1,102 @@
+- cache [I18n.locale, @key]
+  .owl-carousel
+    .kv_middle
+      = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy:true
+      - kv_lagn = locale.match(/zh/) ? :tc : :en
+      - @kv_mobile_images[kv_lagn].each do |src|
+        = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy:true
+  #video.m-announcement = @title
+  .m-hr
+  .mobile-v2-title
+    | 愛揪是要黏一起！
+    br
+    | 全商品放閃 7 折優惠！
+
+  .event-detial.happysummer
+    .event-detial-inner-block
+      .event-title
+        | 活動優惠碼：
+        span.highlightspan LOVEINTIME
+      .event-title
+        p 優惠折扣：
+        p 指定商品 7 折優惠及限定快速到貨服務。
+      .event-title
+        p 優惠品項：
+        p 手機保護殼、馬克杯、悠遊卡。
+      .event-title
+        p 優惠期間：
+        p 2015/08/10 - 2015/08/16
+
+      .event-title 活動說明
+      p.event-desc 活動期間內，凡使用折扣碼 LOVEINTIME 訂購成功並完成付款程序之訂單，均可享結帳商品 7 折優惠以及免運限時快送 8/20 前保證到貨服務。（本活動限時快送運送範圍僅限台灣地區，無框畫、保護套、掛鐘商品不適用此優惠）
+      #create
+
+  .products.happysummer
+    .mobile-v2-title
+      | 七夕情人節客製化禮物教學
+
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-1.png', alt: @title
+      .step-title 1. 選擇設計樣式並下載
+      .step-desc 先選擇想要製作的產品，再挑選喜歡的圖案樣式，點選下載後儲存素材於你的電腦或是手機相簿內。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-2.png', alt: @title
+      .step-title 2. 製作客製化放閃禮物
+      .step-desc 點選『開始印』功能，選擇想製作的禮物，再上傳剛才下載的圖檔至編輯器內，發揮創意動手設計。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-3.png', alt: @title
+      .step-title 3. 立即結帳，全球直送
+      .step-desc 完成製作後，點選預覽確認，多種結帳方式任你選擇
+
+    .mobile-v2-title
+      | 選擇素材
+
+    - select_class = browser.ios? ? 'material-select-ios' : 'material-select'
+    select.select_material class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @work_categories.each do |category_id, obj|
+        - obj[:models].each do |model|
+          option.filter selected=('selected' if model.key == @default_model.key) value=(model.key) data=({category_key: model.category.key}) = model.name
+
+    .hide#material_span data=({key: @default_model.key, category_key: @default_category.key })
+
+    - @materials.each_with_index do |material, i|
+      .product.material class=('hide' if i >= 5)
+        .product-mobile
+          = image_tag "campaign/valentine08/material_thumb/#{material}.jpg", width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+              = material.split('_').map(&:classify).join(' ')
+          = link_to '#', class: 'btn btn-default btn-happysummer material_download', download: :material_download,
+                         target: '_blank', data: { material: material, platform: 'Mobile' } do
+            | 下載樣式
+          br
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create?category=#{@default_category.key}",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+    .page.material
+      #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                    'ga-event-action' => 'click',
+                                                    'ga-event-label' => 'material see more'})
+        | 下一頁
+
+  .mobile-v2-title style='margin-top: 50px;line-height: 50px;'
+    | Share on
+    br
+    | Social Media
+
+    .mobile-v2-fb-btn.ga-event data-ga-event-category="Campaign - #{@key} - Mobile" data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url(@share_img)) data-facebook-link=(campaign_url(id: @key)) data-facebook-caption=(@title) 分享到 Facebook
+
+  = link_to '分享到 Line', "http://line.naver.jp/R/msg/text/#{@title} #{campaign_url(id: @key)}", {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>"Campaign - #{@key} - Mobile", 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+  .app-promotion
+    .title
+      | 請下載 我印 App
+    = link_to 'http://bit.ly/1nMC8yU' do
+      = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+    = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+      = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+  #campaing_inof.hidden data=({key: @key})

@@ -1,0 +1,14 @@
+.row data-role='promotion-form' data-type='creation'
+  .col-sm-6
+    = simple_form_for([:admin, creation], class: 'form-horizontal') do |f|
+      = f.input :type, collection: f.object.type_options,
+            as: :select, include_blank: false, label: t('promotions.attributes.type')
+      = render 'admin/promotions/forms/shared_fields', f: f
+      .form-actions
+        = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+        = link_to t('shared.form_actions.back'), :back, class: 'btn btn-info'
+  .col-sm-6
+    - Admin::PromotionForm::TYPES.each do |name|
+      div data-toggle='type' data-type=name
+        h4.green.smaller.lighter= t(name, scope: 'promotions.type_options')
+        = t('description', scope: "promotions.#{name}")

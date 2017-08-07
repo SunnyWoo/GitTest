@@ -1,0 +1,16 @@
+= simple_form_for preview_composer, as: :preview_composer, url: preview_composer_form_path(preview_composer) do |f|
+  = hidden_field_tag :type, 'Fixed'
+  .alert.alert-info = t('preview_composers.form.use_outer_size')
+  .row
+    .col-sm-12
+      = field_set_tag :common
+        = f.input :key
+        = f.input :available, as: :select, include_blank: false
+    .col-sm-12
+      = field_set_tag :image
+        - if preview_composer.image.uploader.present?
+          = image_tag preview_composer.image.uploader.url, class: 'dashed-border transparent-grid'
+        = f.input :image_file, as: :image
+    .col-sm-12
+      .form-actions
+        = f.button :submit, class: 'btn-primary'

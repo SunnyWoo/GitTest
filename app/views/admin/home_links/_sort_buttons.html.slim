@@ -1,0 +1,12 @@
+= link_to sort_url.call(:move_to_top), method: :put, class: 'btn btn-mini'
+  i.icon-chevron-up
+  |置左
+= link_to sort_url.call(:move_higher), method: :put, class: 'btn btn-mini'
+  i.icon-arrow-up
+  |左移
+= link_to sort_url.call(:move_lower), method: :put, class: 'btn btn-mini'
+  i.icon-arrow-down
+  |右移
+= link_to sort_url.call(:move_to_bottom), method: :put, class: 'btn btn-mini'
+  i.icon-chevron-down
+  |置右

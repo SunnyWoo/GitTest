@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"99.90"}}],"redirect_urls":{"cancel_url":"https://app.com/callback"}}'
+    headers:
+      X-Paypal-Sandbox-Email-Address:
+      - Platform.sdk.seller@gmail.com
+      Authorization:
+      - Bearer A101.K3dQvlYsHdq0AkPGhTlXVBkHOz80V3-zOGpCmptCtKhvfLPCSYvjEgAd2dnszGL0.tVEaAnWg0G64ml7vHZFjFXHUArG
+      Content-Type:
+      - application/json
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Paypal-Request-Id:
+      - ca2a8d37-bbb0-49ed-968c-5335817fcbe0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 10 Dec 2015 03:52:25 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=2307
+      Paypal-Debug-Id:
+      - f8e0e9b1e0615
+      - f8e0e9b1e0615
+      Content-Length:
+      - '0'
+      Vary:
+      - Authorization
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D4193675350;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:52:26 GMT
+- request:
+    method: post
+    uri: https://ATqzAhBOpH7HX6JSJfd0iiLwxV-NY6Q_dkgPJ3vWiZjduwozYhZW6QKTGPdV:ECLwyBDuAXKH2uAy5thfqnJa2SsTtc5S208TWcvLbuK3xfD5r_O3OX8HY4PS@api.sandbox.paypal.com/v1/oauth2/token
+    body:
+      encoding: UTF-8
+      string: grant_type=client_credentials
+    headers:
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 10 Dec 2015 03:52:27 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=317
+      Paypal-Debug-Id:
+      - 2d966eee5cc8
+      - 2d966eee5cc8
+      Correlation-Id:
+      - 2d966eee5cc8
+      X-Paypal-Token-Service:
+      - IAAS
+      Content-Length:
+      - '510'
+      Vary:
+      - Authorization
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D4227229782;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"scope":"https://uri.paypal.com/services/subscriptions https://api.paypal.com/v1/payments/.*
+        https://api.paypal.com/v1/vault/credit-card https://uri.paypal.com/services/applications/webhooks
+        openid https://api.paypal.com/v1/vault/credit-card/.*","nonce":"2015-12-10T03:15:27Z3CI284iSNl3PlMeO3-KbagaAstqQL2YNs7Z0hRQxw5A","access_token":"A101.5GjtqIgTz3ERrowwRAhg_TxfP8--mGFlzrtF5S5cgfoANUigyX_qarJiNZwpQGuK.dMU1KCAv3V3hF5QhxYwD4tHMl0m","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30180}'
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:52:27 GMT
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"99.90"}}],"redirect_urls":{"cancel_url":"https://app.com/callback"}}'
+    headers:
+      X-Paypal-Sandbox-Email-Address:
+      - Platform.sdk.seller@gmail.com
+      Authorization:
+      - Bearer A101.5GjtqIgTz3ERrowwRAhg_TxfP8--mGFlzrtF5S5cgfoANUigyX_qarJiNZwpQGuK.dMU1KCAv3V3hF5QhxYwD4tHMl0m
+      Content-Type:
+      - application/json
+      User-Agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.2.1p85-x86_64-darwin14)
+      Paypal-Request-Id:
+      - ca2a8d37-bbb0-49ed-968c-5335817fcbe0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Thu, 10 Dec 2015 03:52:28 GMT
+      Server:
+      - Apache
+      Proxy-Server-Info:
+      - host=slcsbplatformapiserv3002.slc.paypal.com;threadId=351
+      Paypal-Debug-Id:
+      - 889a982b2df89
+      - 889a982b2df89
+      Correlation-Id:
+      - 889a982b2df89
+      Content-Language:
+      - "*"
+      Content-Length:
+      - '302'
+      Vary:
+      - Authorization
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+      - X-PP-SILOVER=name%3DSANDBOX3.API.1%26silo_version%3D880%26app%3Dplatformapiserv%26TIME%3D4244006998;
+        domain=.paypal.com; path=/; Secure; HttpOnly
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"name":"VALIDATION_ERROR","details":[{"field":"redirect_urls.return_url","issue":"This
+        field required when payment_method is ''paypal''"}],"message":"Invalid request
+        - see details","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"889a982b2df89"}'
+    http_version: 
+  recorded_at: Thu, 10 Dec 2015 03:52:28 GMT
+recorded_with: VCR 2.9.3

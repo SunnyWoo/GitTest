@@ -1,0 +1,60 @@
+zh-CN:
+  page:
+    cart:
+      title: '你的购物车'
+      items: '%{items} 项商品'
+      thead:
+        td1: 购买商品
+        td2: 姓名
+        td3: 售价
+        td4: 数量
+        td5: 总金额
+        td6: 折扣价
+      btns:
+        countinue_shopping: 继续逛逛
+        check_out: 立即购买
+        verify: 验证
+        delete: 刪除
+        shop: 商店
+        create: 建立
+      span:
+        coupon: '折扣代码:'
+        subtotal: '小计:'
+        discount: '折扣金额'
+      text1: 全球直送
+      text2: '你没有购买商品!'
+      text3: 逛逛设计师商店
+    cart_check_out:
+      title: 立即购买
+      text1: 全球直送
+      shipping_title: 运送信息
+      add_address: 新增地址
+      billing_title: 付款信息
+      payment_title: 订单细节
+      delivery_title: 运送方式
+      track_code: 查询代码
+      summary: 订单明细
+      summary_alias: 订单明细
+      thead:
+        redeem_item: 兑换商品
+        td1: 你的商品
+        td2: 数量
+        td3: 售价
+        td4: 折扣价
+      subtotal: 商品金额
+      shipping_cost: 运费
+      coupon_code: 折扣代码
+      coupon_code_placehoder: 输入优惠代码
+      coupon_valid:
+        success: 兑换成功
+        fail: 兑换失败
+      total: 订单总金额
+      free: 免费
+      payment: 付款方式
+      btns:
+        summary: 订单明细
+        redeem: 确认兑换
+      notification:
+        new_year: "因应中国新年假期，订单延迟至2/24 开始寄送。选择快速运送者，将优先出货。"
+    back_to_check_out:
+      btn: '回结账页'

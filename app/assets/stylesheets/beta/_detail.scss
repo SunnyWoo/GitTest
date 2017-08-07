@@ -1,0 +1,122 @@
+.details {
+  margin-top: 45px;
+  a {
+    text-decoration: none;
+  }
+  .thumb-list {
+    text-align: center;
+    margin-top: 40px;
+    ul {
+      @extend .clearfix;
+      margin: 0 auto;
+      max-width: 480px;
+    }
+    li {
+      display: inline-block;
+      margin-right: 16px;
+      width: 100px;
+      height: 100px;
+      border: 2px solid $line-color;
+      cursor: pointer;
+      &:hover {
+        border-color: $main-color;
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+      img.thumb {
+        height: 100px;
+        margin: 0 auto;
+      }
+    }
+    .show-on {
+      border: 2px solid $main-color;
+    }
+  }
+  .detail-info {
+    .info-head {
+      margin-top: 15px;
+    }
+    .left {
+      width: 110px;
+    }
+    .right {
+      width: 370px;
+    }
+    .block {
+      margin-bottom: 30px;
+    }
+    .content {
+      line-height: 1.4em;
+    }
+    .author-img {
+      width: 90px;
+      height: 90px;
+      @include border-radius(50%);
+    }
+    .product-name {
+      @extend .label-4;
+      line-height: 1.5;
+      margin-top: 5px;
+    }
+    .author-name {
+      margin-top: 6px;
+    }
+    .model {
+
+    }
+    .qty {
+
+    }
+    .price {
+      & > .fee {
+        @extend .label-4;
+        display: inline-block;
+        font-weight: 500;
+        margin-right: 20px;
+      }
+      .notice {
+        display: inline-block;
+        margin-top: 6px;
+      }
+    }
+    .share-link {
+      width: 160px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 25px;
+    }
+    .tags ul {
+      @extend .clearfix;
+      li {
+        @extend .pull-left;
+        margin-right: 8px;
+        margin-bottom: 6px;
+      }
+    }
+  }
+  .sub-title {
+    @extend .label-1;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+
+.horizontal {
+  @include inline-block;
+
+  .sub-title {
+    @include inline-block;
+    margin-bottom: 0px;
+    margin-right: 16px;
+    line-height: 45px;
+    width: 80px;
+  }
+  .content {
+    @include inline-block;
+  }
+}
+
+.center-block.using-inline-block {
+  text-align: center;
+}

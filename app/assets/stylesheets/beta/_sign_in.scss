@@ -1,0 +1,62 @@
+.user_login {
+  .title-desc {
+    margin: -10px 0 55px 0;
+  }
+  .after-social-links {
+    margin-top: -40px
+  }
+  .login_form {
+    margin-top: 60px;
+    .forget_password {
+      color: $main-color;
+      font-size: 18px;
+      line-height: 24px;
+      margin: 10px 0;
+      text-decoration: none;
+      &:hover {
+        color: $sub-words-color;
+      }
+    }
+    .sign_up_link {
+      color: $sub-words-color;
+      margin: 60px 0;
+      font-size: 18px;
+      a {
+        color: $main-color;
+        text-decoration: none;
+        &:hover {
+          color: $sub-words-color;
+        }
+      }
+    }
+    .remember-me-label {
+      color: $sub-words-color;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+    .forget_desc {
+      @extend .sign_up_link;
+      margin-top: 20px;
+    }
+    .forget_btn {
+      margin-top: 100px;
+    }
+
+  }
+  .error {
+    i {
+      margin: 10px 0 0 20px;
+    }
+    width: 100%;
+    display: inline-flex;
+    background-color: #f6f7f2;
+    text-align: left;
+    line-height: 60px;
+    color: red;
+    margin-bottom: 10px;
+  }
+  .notice {
+    @extend .error;
+    color: $main-color;
+  }
+}

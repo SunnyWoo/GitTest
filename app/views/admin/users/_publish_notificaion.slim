@@ -1,0 +1,14 @@
+.modal.fade id='publish_notification_#{user.id}'
+  .modal-dialog
+    .modal-content
+      = simple_form_for UserNotificationForm.new, url: publish_notification_admin_user_path(user), method: :post do |f|
+        .modal-header
+          a.close href="#" data-dismiss="modal"  ×
+          h3 = t('notifications.sidebar_name')
+        .modal-body.center
+          = f.label :device_id, 'Select Device'
+          = f.select :device_id, user.devices.available.map{|d| ["#{d.id}/#{d.device_type}/#{d.os_version}/#{d.created_at}", d.id]}
+          = f.input :message, as: :text, maxlength: 100, input_html: { class: 'limited autosize' }
+        .modal-footer
+          a.close.btn href="#" data-dismiss="modal" cancel
+          = f.button :submit, t('notifications.publish'), data: { confirm: t('notifications.notice.confirm'), disable_on_submit: true }

@@ -1,0 +1,61 @@
+- admin_title t('deliver_order.index.page_title')
+- breadcrumb :deliver_list
+
+.widget-box.widget-color-blue data-no-turbolink=="true"
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      = link_to '抛单失败', deliver_failed_admin_deliver_orders_path, class: 'btn btn-primary btn-mini'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th = t('deliver_order.order_no')
+            th = t('deliver_order.deliver_no')
+            th width='20%' = t('deliver_order.image')
+            th = sort_link @q, :created_at, t('deliver_order.created_at')
+            th = sort_link @q, :delivered_at, t('deliver_order.delivered_at')
+            th = sort_link @q, :shipped_at, t('deliver_order.shipped_at')
+            th = sort_link @q, :aasm_state, t('deliver_order.aasm_state')
+            th = sort_link @q, :updated_at, t('deliver_order.updated_at')
+            th = t('admins.index.thead.operation')
+          tr
+            = search_form_for @q, url: admin_deliver_orders_path do |f|
+              th = f.search_field :order_no_eq
+              th = f.search_field :remote_no_eq
+              th
+              th
+                = f.label :created_at_gteq
+                = f.search_field :created_at_gteq
+                = f.label :created_at_lteq
+                = f.search_field :created_at_lteq
+              th
+                = f.label :delivered_at_gteq
+                = f.search_field :delivered_at_gteq, class: :datetimepicker
+                = f.label :delivered_at_lteq
+                = f.search_field :delivered_at_lteq, class: :datetimepicker
+              th
+              th
+              th
+              th = f.submit 'Search'
+        tbody
+          = content_tag_for :tr, @orders do |order|
+            td = link_to order.order_no, admin_order_path(order)
+            td = order.remote_info['order_no']
+            td
+              - order.order_items.map { |item| item.itemable_order_image.try(:thumb).try(:url) }.each do |image|
+                img.lazy data-original="#{image}"
+            td = l order.created_at, format: :long
+            td = l order.delivered_at, format: :long
+            td = l order.shipped_at, format: :long if order.shipped_at
+            td
+              = t("order.state.#{order.aasm_state}")
+              |
+              = t("order.state.#{order.remote_aasm_state}")
+            td = l order.updated_at, format: :long
+            td
+              = link_to '更新', admin_order_update_remote_info_path(order), method: :patch, class: 'btn btn-primary btn-mini'
+
+= will_paginate @orders

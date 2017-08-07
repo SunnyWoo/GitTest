@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment
+    body:
+      encoding: UTF-8
+      string: '{"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"99.90"}}],"redirect_urls":{"return_url":"http://test.host/zh-TW/payment/paypal/callback?order_no=151C000202TW","cancel_url":"http://test.host/zh-TW/cart"}}'
+    headers:
+      x-paypal-sandbox-email-address:
+      - Platform.sdk.seller@gmail.com
+      authorization:
+      - Bearer A015BPFOAxVou1f0ZPhqRSDLE7KnxyX4Q8CAJghH1k3IPxE
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      paypal-request-id:
+      - bf8f8042-b5c3-42b4-970f-913805f64dfe
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=2803
+      paypal-debug-id:
+      - c41bc15b82662
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=1278&TopLevelTxnStartTime=14adcbba02a&Host=slcsbpaymentsplatformserv3001.slc.paypal.com&pid=16916
+      content-language:
+      - "*"
+      date:
+      - Mon, 12 Jan 2015 06:01:31 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '742'
+    body:
+      encoding: UTF-8
+      string: '{"id":"PAY-18223225VC036940VKSZWGOY","create_time":"2015-01-12T06:01:31Z","update_time":"2015-01-12T06:01:31Z","state":"created","intent":"sale","payer":{"payment_method":"paypal","payer_info":{"shipping_address":{}}},"transactions":[{"amount":{"total":"99.90","currency":"USD","details":{"subtotal":"99.90"}},"related_resources":[]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-42A31724G3475560D","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY/execute","rel":"execute","method":"POST"}]}'
+    http_version: '1.1'
+  recorded_at: Mon, 12 Jan 2015 06:01:31 GMT
+- request:
+    method: get
+    uri: https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      x-paypal-sandbox-email-address:
+      - Platform.sdk.seller@gmail.com
+      authorization:
+      - Bearer A015BPFOAxVou1f0ZPhqRSDLE7KnxyX4Q8CAJghH1k3IPxE
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbplatformapiserv3002.slc.paypal.com;threadId=82129
+      paypal-debug-id:
+      - bc4706fb8c194
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=1278&TopLevelTxnStartTime=14adcbba7dc&Host=slcsbpaymentsplatformserv3001.slc.paypal.com&pid=16916
+      content-language:
+      - "*"
+      date:
+      - Mon, 12 Jan 2015 06:01:33 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '742'
+    body:
+      encoding: UTF-8
+      string: '{"id":"PAY-18223225VC036940VKSZWGOY","create_time":"2015-01-12T06:01:31Z","update_time":"2015-01-12T06:01:31Z","state":"created","intent":"sale","payer":{"payment_method":"paypal","payer_info":{"shipping_address":{}}},"transactions":[{"amount":{"total":"99.90","currency":"USD","details":{"subtotal":"99.90"}},"related_resources":[]}],"links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-42A31724G3475560D","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY/execute","rel":"execute","method":"POST"}]}'
+    http_version: '1.1'
+  recorded_at: Mon, 12 Jan 2015 06:01:33 GMT
+- request:
+    method: post
+    uri: https://api.sandbox.paypal.com/v1/payments/payment/PAY-18223225VC036940VKSZWGOY/execute
+    body:
+      encoding: UTF-8
+      string: '{"payer_id":"0"}'
+    headers:
+      x-paypal-sandbox-email-address:
+      - Platform.sdk.seller@gmail.com
+      authorization:
+      - Bearer A015BPFOAxVou1f0ZPhqRSDLE7KnxyX4Q8CAJghH1k3IPxE
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      paypal-request-id:
+      - a8e2acf9-2aa0-48f2-97c9-fd02bc574e4b
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=101480
+      paypal-debug-id:
+      - e163bf74816d5
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=1111&TopLevelTxnStartTime=14adcbbaf5b&Host=slcsbpaymentsplatformserv3002.slc.paypal.com&pid=12904
+      content-language:
+      - "*"
+      date:
+      - Mon, 12 Jan 2015 06:01:35 GMT
+      connection:
+      - close
+      - close
+      content-type:
+      - application/json
+      content-length:
+      - '181'
+    body:
+      encoding: UTF-8
+      string: '{"name":"INVALID_PAYER_ID","message":"Payer ID is invalid","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#INVALID_PAYER_ID","debug_id":"e163bf74816d5"}'
+    http_version: '1.1'
+  recorded_at: Mon, 12 Jan 2015 06:01:35 GMT
+recorded_with: VCR 2.9.2

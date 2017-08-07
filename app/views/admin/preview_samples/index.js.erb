@@ -1,0 +1,9 @@
+<% id = 'samples_modal' %>
+
+$('body').append('<%= j render 'index', id: id, samples: @preview_samples %>');
+
+$('#<%= id %>').modal('show');
+
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

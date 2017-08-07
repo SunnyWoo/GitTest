@@ -1,0 +1,13 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  - if action_name == 'new'
+    = select_tag 'currency_type_select', options_for_select(CurrencyType.available_types), data: { behavior: 'currency-select' }
+    = f.input :name, label: t('currency_types.attributes.name')
+    = f.input :code, label: t('currency_types.attributes.code')
+  - else
+    = f.input :name, label: t('currency_types.attributes.name'), disabled: true
+    = f.input :code, label: t('currency_types.attributes.code'), disabled: true
+  = f.input :rate, label: t('currency_types.attributes.rate')
+  = f.input :precision, label: t('currency_types.attributes.precision')
+  = f.input :description, label: t('currency_types.attributes.description')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

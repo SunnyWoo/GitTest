@@ -1,0 +1,7 @@
+<% if @sf_result['error'].present? %>
+  alert("<%= @sf_result['error'] %>")
+<% elsif @sf_result['mailno'].present? %>
+  $('#print_ship_form_logistics_supplier_id', $('#sf_pdf_<%= @package.id %>').parents('form')).val("<%= @logistics_supplier.id %>");
+  $('#print_ship_form_ship_code', $('#sf_pdf_<%= @package.id %>').parents('form')).val("<%= @sf_result['mailno'] %>");
+  $('#sf_pdf_<%= @package.id %>').removeClass('hide').prev('a').hide();
+<% end %>

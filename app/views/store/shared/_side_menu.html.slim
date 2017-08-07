@@ -1,0 +1,36 @@
+- menu ||= ['cart', 'contact']
+- share_target ||= ''
+- china_live800_url = 'https://v1.live800.com/live800/chatClient/chatbox.jsp?jid=2471045427&companyID=526455&configID=42223&codeType=custom'
+- showShareMask = in_wexin? || Region.china?
+
+.sidebarMenu.rightBottom [data-fixed-bottom-right]
+  .sidebarMenu-option
+    button.sidebarMenu-option-item.sidebarMenu-option-item--goToTop.hidden
+    button.sidebarMenu-option-item.sidebarMenu-option-item--info
+  .sidebarMenu-tooltip.info.hidden
+    - if menu.include? 'download'
+      = link_to t('store.sidebar_menu.download'), download_path, class: 'info-item info-item--download'
+
+    - if menu.include? 'share'
+      - if showShareMask
+        button class='info-item info-item--share' data-trigger-show='#wexin-mask'
+          =t('store.sidebar_menu.share')
+      - else
+        - if share_target =~ /^[\.\#]/
+          .info-item.info-item--download[data-trigger-show=share_target]
+            =t('store.sidebar_menu.share')
+        - else
+          = link_to t('store.sidebar_menu.share'), share_target, class: 'info-item info-item--download'
+
+    - if menu.include? 'search'
+      = link_to t('store.sidebar_menu.search'), store_orders_search_path, class: 'info-item info-item--search'
+
+    - if menu.include? 'cart'
+      = link_to t('store.sidebar_menu.cart'), store_cart_path(store), class: 'info-item info-item--cart'
+
+    - if menu.include? 'contact'
+      - contact_link = Region.china? ? china_live800_url : store_support_path
+      = link_to t('store.sidebar_menu.contact'), contact_link, class: 'info-item info-item--contact'
+
+- if showShareMask
+  = render 'store/shared/wexin_share_mask'

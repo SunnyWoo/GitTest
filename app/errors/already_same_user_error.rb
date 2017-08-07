@@ -1,0 +1,2 @@
+class AlreadySameUserError < ApplicationError
+end

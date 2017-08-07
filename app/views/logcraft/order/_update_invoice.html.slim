@@ -1,0 +1,15 @@
+- order = activity.trackable
+- invoice_number = activity.extra_info[:invoice_number]
+- invoice_memo = activity.extra_info[:invoice_memo]
+div #{link_to_admin_order(order)} 更新發票資訊 發票號碼：#{invoice_number}
+
+- if activity.extra_info[:invoice_state_change]
+  - before, after = activity.extra_info[:invoice_state_change]
+  div 發票狀態從 #{logcraft_keyword before} 變成 #{logcraft_keyword after}
+
+pre
+  div 備註：
+  - if invoice_memo && invoice_memo.split('|').size == 14
+    = render_invoice_memo(invoice_memo).html_safe
+  - else
+    = invoice_memo

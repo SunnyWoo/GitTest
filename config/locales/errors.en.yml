@@ -1,0 +1,77 @@
+en:
+  errors:
+    work_not_found_error: 'The product is currently unavailable.  Please check again later. Thank You!'
+    record_invalid: 'Record invalid.'
+    authentication_failed: 'Authentication failed. Please re-login again.'
+    missing_token: 'You must be logged in to do this.'
+    cannot_use_coupon: 'You cannot use this coupon because condition is not satisfied.'
+    record_not_found: 'Record not found'
+    invalid_coupon: 'Cannot use the coupon code.'
+    work_not_finish_error: Work is not yet finished
+    record_not_found: Record not found
+    payment_time_out: 'Payment %{payment} time out.'
+    payment_price_conflict: "Order price do not conform to the third party provides"
+    payment_invalid: 'Payment invalid, please check with us'
+    invalid_mobile_code: 'Mobile verification code failed'
+    mobile_registered: 'The phone is registered'
+    mobile_unregistered: 'The phone is not registered'
+    send_mobile_code_fail: 'send code failed'
+    payment_type_error: 'Order payment must be either neweb/atm and neweb/mmk'
+    payment_state_error: 'Order state must be waiting_for_payment'
+    invalid_publish_at_lt_starts_at: PublishAt Can't Greater then StartsAt
+    invalid_starts_at_lt_end_at: StartsAt Can't Greater then EndsAt
+    service_type: 'It must work like a Service Object, where an execute behavior needed!'
+    no_sms_provider: "SMS provider %{provider} is missing!"
+    page_type_homepage_only_once: 'homepage Only choose once.'
+    invalid_begin_at_lt_close_at: "Can't Greater then Colse At"
+    invalid_work_gids: 'Please choose a work at least'
+    input_engish: 'Input English letters only'
+    invalid_login_info: 'Invalid Email, Mobile, or Password'
+    batch_flow_invalid_product_model_not_match_factory: 'Invalid ProudctModel not match factory'
+    currency_exchange_error: Currency Exchange Error
+    invalid_currency: Invalid Currency
+    # api
+    client_required: Missing client_id or client_secret
+    invalid_client: Invalid client_id or client_secret
+    # v1
+    token_required: 'Missing params: auth_token'
+    invalid_token: 'Token invalid'
+    invalid_user_agent: 'Please make sure your request has a User-Agent header that commandp needs.'
+    not_implemented: 'Not Implemented.'
+    invalid_express_code: 'Please assign correct Express Code'
+
+    # v2
+    invalid_password_input: "Incorrect Password Input!"
+    email_already_exists: "Email has already been used!"
+    invalie_params_oauth: "Invalid OAuth paramaters!"
+    oauth_provider_missing: "OAuth provider %{provider} is missing!"
+
+    # v3
+    current_user_required: 'Current User Required, Please Log in'
+    invalid_address_error: "Invalid Address Code (%{seg}: %{value})"
+    invalid_url: 'Invalid Url'
+    invalid_mobile_error: 'Invalid Mobile Number'
+    coupon_message_format: 'Coupon Message Format Error, It must contains a string template for coupon_code.'
+    email_unuconfrmed: 'Please confirmed you email first'
+    destroy_order_state_error: 'Can not destroy non-shipping order!'
+    already_verified: 'already verified'
+    too_many_request: 'Verified too many times, Please Verifying later'
+    repay_payment_blacklist: '%{payment} is not allowed for repay'
+    over_payment_deadline: 'Order had been canceled cause of payment deadline'
+    payment_state_transition: "Event 'pay' cannot transition from '%{state}'"
+    order_has_paid: 'Order has paid already'
+    directory_missing: 'Directory: %{dir} does not exist!'
+    order_record_not_found: 'The system is busy, please try again or contact the customer services.'
+    order_cancel_invalid: 'Your order can not be cancelled, please try refreshing the page.'
+    order_price_expiration_error: 'Order amount has been changed, please re-confirm billing.'
+    pricing:
+      shipping_fee:
+        address_unavailable: 'Cannot calculate shipping without completed address.'
+        unavailable: 'Order Missing shipping fee.'
+    mobile_number_error: 'Your shipping info email address is invalid, Please check again.'
+
+    service_object:
+      invalid_marketing_report_type: "Invalid Marketing Report Type: %{type}"
+    package_filename_error: "The following filename does not correct: %{filenames}"
+    package_filepath_error: "The following path does not correct: %{filepath}"
+    package_dirs_error: "The following dir does not correct: %{dirs}"

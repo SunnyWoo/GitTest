@@ -1,0 +1,21 @@
+en:
+  site:
+    name: commandp
+  terms:
+    title: commandp | User Agreement
+    description: COMMANDP CAN CHANGE THIS AGREEMENT AT ANY TIME BY POSTING AN UPDATED USER AGREEMENT ON THIS SITE AND COMMANDP MAY SEND REGISTERED USERS AN EMAIL NOTICE OF THE CHANGES.
+  privacy:
+    title: commandp | Privacy Policy
+    description: 'At commandp Inc. ("commandp"), we are committed to protecting your privacy. We have created this privacy policy to make sure you know what information we collect and how we use it.'
+  shop:
+    title: commandp | Shop
+    description: Shop amazing custom products with artwork you choose with prices you'll love. 100% satisfaction guaranteed.
+  questions:
+    title: commandp | FAQs
+    description: Help · Order Status · Our Products · About Us · Contact Us · User Agreement · Privacy Policy
+  order_status:
+    title: Order Status
+    description: "Help · Order Status · Our Products · About Us · Contact Us · User Agreement · Privacy Policy. To check the status of your order, please enter your email address and order number."
+  search:
+    title: "commandp | %{search}"
+    description: "Browse through commandp huge selection of case designs for the newest %{search}, all ready to be customized with your text, photos or designs. %{search} Products from commandp - Choose your favorite design from a variety of custom %{search}!"

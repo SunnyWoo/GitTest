@@ -1,0 +1,9 @@
+- if flash[:notice]
+  | Gritter.regular_msg("#{flash[:notice]}");
+  | $('#create_mobile_component').modal('hide');
+  | $('#mobile_component_list').html("#{ j render 'admin/mobile_pages/mobile_component_list', mobile_page: @mobile_page }");
+  | $('#create_mobile_component').html("#{ j render 'admin/mobile_pages/modal_create_mobile_component', mobile_page: @mobile_page }");
+  | Sortable.start('.sortable')
+
+- if flash[:error]
+  | Gritter.error_msg("#{flash[:error]}");

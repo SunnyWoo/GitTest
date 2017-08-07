@@ -1,0 +1,26 @@
+- admin_title t('questions.index.page_title'), subtitle: t('questions.index.crumb.list')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      = render 'admin/shared/change_locale'
+    .widget-toolbar.no-border
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-info btn-sm'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= sort_link @search, :id, t('questions.index.thead.id')
+            th= sort_link @search, :question_category_id, t('question.index.thead.category')
+            th= t('questions.index.thead.question')
+            th= t('questions.index.thead.ans')
+            th= t('questions.index.thead.operation')
+        tbody
+          = content_tag_for :tr, @resources do |mt|
+              = render mt
+
+= will_paginate @resources

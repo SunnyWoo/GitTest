@@ -1,0 +1,76 @@
+.owl-carousel
+  .kv_middle
+    = image_tag 'campaign/bounce/mobile_kv/bounce_bg.png', class: 'carousel-img', lazy:true
+    - if !!locale.match(/zh/)
+      = image_tag 'campaign/bounce/mobile_kv/bounce_cn.png', class: 'kv-img', lazy:true
+    - else
+      = image_tag 'campaign/bounce/mobile_kv/bounce_en.png', class: 'kv-img', lazy:true
+.m-announcement 我印 X 塗鴉藝術家 BOUNCE，讓藝術無所不在！
+.m-hr
+.products
+
+  .mobile-v2-title
+    | BOUNCE
+    br
+    | 精選商品
+
+  - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+  select class=(select_class) data-category='Campaign - BOUNCE - Mobile'
+    - @category_names.each do |key, val|
+      option.filter value=(key) = val
+  .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+  - @category_products.each do |key, val|
+    .filted id=(key)
+      = render partial: 'editor/shared/work_mobilev2',
+              collection: val, as: 'work', locals: { category: 'Campaign - BOUNCE - Mobile' }
+
+.about-bgmen
+  .item-title.text-center.color-fixed
+    | About Bounce
+  = image_tag 'campaign/bounce/web_bounce_mobile_100_kw_01.jpg', alt: 'BOUNCE x commandp'
+  .m-wording
+    p
+      | BOUNCE 創造了一隻屬於他的兔子，他的塗鴉也有個屬於他的故事，更讓這個城市添加了點故事性。跳脫自己的背景傳統藝術，發現內心最原始的細胞，叛逆又有趣的塗鴉創作動力。
+    p
+      | 曾擔任台北國際藝術村駐村藝術家、並受邀多場國際品牌合作與展覽、活動現場表演，參加過無數國內外的展覽，於 2011 年將塗鴉藝術帶進台北當代美藝術館 ”未末 2013 ” 展覽中，
+    p
+      | 並讓塗鴉藝術進入藝術平台市場，就在 2013 年初，BOUNCE 於法國與瑞士舉辦自己首度的創作個展，也是台灣第一位將塗鴉藝術帶到國際藝術平台的藝術家。
+    p
+      | 至今除了塗鴉藝術創作外，也參與不少部電影與廣告、音樂錄影帶的分鏡腳本繪製、美術製作，也是一位視覺傳達設計師，擔任過許多品牌的設計師與品牌代言藝術家。
+
+.mobile-v2-title
+  | Share on
+  br
+  | Social Media
+
+  .mobile-v2-fb-btn.ga-event data-ga-event-category='Campaign - BOUNCE - Mobile' data-ga-event-action='Share' data-ga-event-label='Facebook' data-facebook-image=(image_url('campaign/bounce/bounce_post.jpg')) data-facebook-link=(campaign_url(id: 'bounce')) data-facebook-caption='我印 X 塗鴉藝術家 BOUNCE，讓藝術無所不在！' 分享到 Facebook
+
+= link_to '分享到 Line', "http://line.naver.jp/R/msg/text/我印 X 塗鴉藝術家 BOUNCE，讓藝術無所不在！ #{campaign_url(id: 'bounce')}", {class:'mobile-v2-line-btn ga-event', 'data-ga-event-category'=>'Campaign - BOUNCE - Mobile', 'data-ga-event-action'=> 'Share', 'data-ga-event-label' => 'Line'}
+
+.bgmen-line-sticker
+  .mobile-v2-title
+    | Bounce’s
+    br
+    | Famous
+    br
+    | Artworks
+
+  .mobile-v2-title
+    = image_tag 'campaign/bounce/web_bounce_mobile_100_kw_02.jpg', alt: 'BOUNCE x commandp'
+  .mobile-v2-title
+    = image_tag 'campaign/bounce/web_bounce_mobile_100_kw_03.jpg', alt: 'BOUNCE x commandp'
+  .mobile-v2-title
+    = image_tag 'campaign/bounce/web_bounce_mobile_100_kw_04.jpg', alt: 'BOUNCE x commandp'
+  .mobile-v2-title
+    = image_tag 'campaign/bounce/web_bounce_mobile_100_kw_05.jpg', alt: 'BOUNCE x commandp'
+
+.app-promotion
+  .title
+    | 購買 BOUNCE 系列商品
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'

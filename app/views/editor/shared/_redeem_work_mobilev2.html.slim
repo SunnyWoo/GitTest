@@ -1,0 +1,20 @@
+- cache [I18n.locale, current_currency_code, work.product, work] do
+
+  .product id='#{work.uuid}' data-category-key='#{work.product_key}'
+    .product-mobile
+      = image_tag work.order_image.mobile.url, width: 288, heigth: 288, lazy: true
+      .product-desc
+        .product-name-v2
+          = render_work_name_without_model(work)
+        .product-model-v2
+          = work.product_name
+
+        .info-v2.clearfix
+          .author-v2.pull-left
+            = work.user_display_name
+
+      div.btn.btn-default.btn-mobile-cart
+        = link_to edit_translator('page.btns.redeem'), new_redeem_path(gid: work.to_sgid.to_s)
+
+    = render 'works/ua_data', work: work
+

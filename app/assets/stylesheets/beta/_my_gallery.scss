@@ -1,0 +1,44 @@
+.my-gallery-kv {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  overflow: hidden;
+  background: #EEE center top scroll no-repeat;
+  .avatar > img {
+    width: 150px;
+    margin: 120px 0 30px;
+    @include border-radius(75px);
+  }
+  .user-name {
+    color: #FFF;
+    font-size: 2.375em;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 10px;
+    @include single-text-shadow;
+  }
+  .count-items {
+    color: #FFF;
+    @include single-text-shadow;
+  }
+}
+
+#user_background {
+  position: absolute;
+  top: 450px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background: transparent image_url('icons/img_pics_edit_normal.png') 0 0 scroll no-repeat;
+  cursor: pointer;
+}
+
+#upload_progress {
+  position: absolute;
+  top: 438px;
+  right: 20px;
+  width: 30px;
+  font-size: 0.8em;
+  @include transition(opacity 1.5s);
+  opacity: 0;
+}

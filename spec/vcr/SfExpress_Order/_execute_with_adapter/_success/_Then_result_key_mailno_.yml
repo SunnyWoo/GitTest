@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://218.17.248.244:11080/bsp-oisp/sfexpressService
+    body:
+      encoding: US-ASCII
+      string: xml=%3CRequest%20service%3D%22OrderService%22%20lang%3D%22zh-TW%22%3E%3CHead%3EWYWLKJ%3C%2FHead%3E%3CBody%3E%3COrder%20orderid%3D%221605115100000US%22%20mailno%3D%22%22%20express_type%3D%221%22%20j_company%3D%22%E6%88%91%E5%8D%B0%E7%B6%B2%E8%B7%AF%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%22%20j_contact%3D%22%E6%88%91%E5%8D%B0%E7%B6%B2%E8%B7%AF%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%22%20j_tel%3D%22886-02-2753-3555%22%20j_address%3D%22%E5%8F%B0%E5%8C%97%E5%B8%82%E6%9D%BE%E5%B1%B1%E5%8D%80%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF%E4%BA%94%E6%AE%B516%E8%99%9F3%E6%A8%93%22%20j_post_code%3D%22105%22%20j_shippercode%3D%22886%22%20d_company%3D%22%22%20d_contact%3D%22Kasey%20King%20DDS%22%20d_tel%3D%220910123456%22%20d_address%3D%22United%20States%20South%20Rebeka%20783%20Neoma%20ParkwaysApt.%20569%22%20d_post_code%3D%2209010%22%20d_province%3D%22%22%20d_city%3D%22South%20Rebeka%22%20pay_method%3D%221%22%20parcel_quantity%3D%221%22%20declared_value%3D%2299.9%22%20declared_value_currency%3D%22NTD%22%20custid%3D%228888888888%22%3E%3CCargo%20name%3D%22ProductModelName12%20*%201%22%20currency%3D%22NTD%22%20count%3D%221%22%20unit%3D%22%E4%B8%AA%22%20weight%3D%220.363%22%20source_area%3D%22%E4%B8%AD%E5%9B%BD%22%3E%3C%2FCargo%3E%3C%2FOrder%3E%3C%2FBody%3E%3C%2FRequest%3E&verifyCode=HHRaZlZ6%2FaVpLQCUjVOGdQ%3D%3D%0A
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '1380'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - Apache-Coyote/1.1
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Wed, 11 May 2016 05:54:57 GMT
+      Set-Cookie:
+      - BSP_CNSZ22_JBOSS_OISP=BSP_CNSZ22_JBOSS_OISP_84_179_8080; Path=/
+      Connection:
+      - Keep-alive
+      Via:
+      - 1.1 ID-0002262062176300 uproxy-2
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><Response service="OrderService"><Head>OK</Head><Body><OrderResponse
+        filter_result="2" mailno="444503820539" origincode="886" orderid="1605115100000US"/></Body></Response>
+    http_version: 
+  recorded_at: Wed, 11 May 2016 05:55:02 GMT
+recorded_with: VCR 2.9.3

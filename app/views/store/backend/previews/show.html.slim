@@ -1,0 +1,6 @@
+- admin_title I18n.t('store.preview.page_title', name: @template.name)
+
+= 'Pending..'
+
+.well
+  = link_to I18n.t('shared.form_actions.next'), edit_store_backend_product_template_status_path(@template), class: 'btn btn-small btn-primary'

@@ -1,0 +1,72 @@
+- form = for_itemable_price
+.row data-role='promotion-form' data-type="for_itemable_price"
+  .col-sm-6
+    = simple_form_for([:admin, form], class: 'form-horizontal') do |f|
+      = render 'admin/promotions/forms/shared_fields', f: f
+      .promotion-container
+        .widget-box
+          .widget-header
+            h4.widget-title 已設定的項目
+          .widget-body
+            .widget-main
+              p 請從右方加入要調價的目標
+              div.promotion-container-body data-container='references'
+                - price_tier_options = options_for_price_tier_select
+                - f.object.references.each do |ref|
+                  = f.simple_fields_for :promotion_references, ref, index: ref.promotable.to_gid_param do |rf|
+                    = render 'admin/promotion_references/field', f: rf, price_tier_options: price_tier_options
+        .form-actions
+          = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+          = link_to t('shared.form_actions.back'), admin_promotions_path, class: 'btn btn-info'
+  .col-sm-6
+    h4.green.smaller.lighter 選擇調價目標
+    #accordion.panel-group aria-multiselectable="true" role="tablist" data-container='candidates'
+      .panel.panel-default
+        #headingOne.panel-heading role="tab"
+          h4.panel-title
+            a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button"
+              | 從產品或分類選擇
+        #collapseOne.panel-collapse.collapse.in aria-labelledby="headingOne" role="tabpanel"
+          .panel-body
+            - form.categories.each do |category|
+              div data-role='product_category'
+                .clearfix
+                  = link_to(new_admin_promotion_reference_path(current_promotion, gid: category.to_gid_param), class: 'btn btn-minier', remote: true, data: { promotable: 'product_category', action: 'add', gid: category.to_gid_param }) do
+                    i.fa.fa-plus
+                  = category.name
+                ul.list-unstyled
+                  - category.products.each do |product|
+                    li.clearfix data-role='product_model'
+                      .pull-right= link_to 'Add', new_admin_promotion_reference_path(current_promotion, gid: product.to_gid_param), remote: true, class: 'btn btn-info btn-minier', data: { promotable: 'product_model', action: 'add', gid: product.to_gid_param }
+                      = product.name
+      .panel.panel-default
+        #headingTwo.panel-heading role="tab"
+          h4.panel-title
+            a.collapsed aria-controls="collapseTwo" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button"
+              | 選擇標準化商品
+        #collapseTwo.panel-collapse.collapse aria-labelledby="headingTwo" role="tabpanel"
+          .panel-body
+            = simple_form_for(form.ransack, as: :search, url: works_admin_promotion_path(form.promotion), method: 'get', remote: true, html: { class: 'search-work-form' }) do |f|
+              .row
+                .col-md-4
+                  = f.input :product_category_id_eq, collection: form.categories, label: t('promotions.works.search_options.category')
+                .col-md-4
+                  = f.input :product_id_eq, label: t('promotions.works.search_options.product_model'),
+                            as: :grouped_select,
+                            collection: form.categories,
+                            group_method: :products,
+                            group_label_method: :name,
+                            label_method: :name,
+                            value_method: :id
+                .col-md-4
+                  = f.input :user_of_Designer_type_display_name_cont, required: false, label: t('promotions.works.search_options.designer')
+              .row
+                .col-md-4
+                  = f.input :name_cont, required: false, label: t('promotions.works.search_options.work_name')
+                .col-md-4
+                  = f.input :tags_name_cont, required: false, label: t('promotions.works.search_options.tag')
+                .col-md-4
+                  = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+              .row
+                .col-md-12
+                  .search-works-container

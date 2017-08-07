@@ -1,0 +1,24 @@
+.my-gallery-kv style='background-image: url(#{current_user.background.url});'
+  #user_background title="#{t('page.user.change_background')}"
+  #upload_progress
+  .hide
+    input#upload_background name='user_background' type='file'
+  .avatar = image_tag current_user.avatar.url(:s154), alt: 'User avatar'
+  .user-name
+    = current_user.username[0..19]
+  .count-items
+    = @works.count
+    = [0,1].include?(@works.count) ? ' Design' : ' Designs'
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+  .grid_6
+    .item-title.margin-top-fixed.text-center
+      = edit_translator('page.user.my_gallery')
+  .products
+    = render_cell :default_product, :product
+    = render partial: 'editor/shared/work', collection: @works
+  .grid_6
+    .center-block.search_pagination
+      = will_paginate(@works, inner_window: 1)
+    .margin-top-fixed

@@ -1,0 +1,13 @@
+- obj = AddressInfoForm.new(address_info.attributes)
+- url = address_info_path(address_info)
+.address-form= form_for obj, as: :address_info, url: url, builder: Judge::FormBuilder, method: :put, html: { class: 'check_out_form' } do |f|
+  = hidden_field_tag :redirect_to, r
+  div.required
+    .label.clearfix
+      = f.label :address_name, class: 'pull-left'
+      .error.pull-left
+    = f.text_field :address_name, validate: true
+  = render 'cart/check_out_address_form',  s: f
+  .margin-top-fixed.text-center
+    = button_tag 'Cancel', id: "cancel_#{address_info.id}", class: 'btn btn-cancel'
+    = f.submit 'Update', class: 'btn_address_info'

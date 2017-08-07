@@ -1,0 +1,8 @@
+/* line 1, ../../../stylesheets/admin/v2/magnific-popup.css.scss */
+.mfp-container {
+  background-color: yellowgreen; }
+
+/* line 4, ../../../stylesheets/admin/v2/magnific-popup.css.scss */
+.mfp-figure:after {
+  box-shadow: 0 0 0px transparent;
+  background-image: url('/images/transparent-grid.png?1476379220'); }

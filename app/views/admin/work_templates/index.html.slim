@@ -1,0 +1,48 @@
+- admin_title t('work_templates.index.page_title')
+- breadcrumb :admin_work_templates, @work_spec
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= t('work_templates.index.aasm_state')
+            th= t('work_templates.index.overlay_image')
+            th= t('work_templates.index.background_image')
+            th= t('work_templates.index.masks')
+            th= t('work_templates.operation')
+        tbody
+          - @work_templates.each do |work_template|
+            tr
+              td= work_template.aasm_state
+              td= image_tag(work_template.overlay_image.url, width: 100)
+              td= image_tag(work_template.background_image.url, width: 100)
+              td
+                table.table.table-striped.table-bordered.table-hover
+                  thead
+                    tr
+                      th material name
+                      th scale_x
+                      th scale_y
+                      th position_x
+                      th position_y
+                      th orientation
+                  tbody
+                    - work_template.masks.each do |mask|
+                      tr
+                        td= mask.material_name
+                        td= mask.scale_x
+                        td= mask.scale_y
+                        td= mask.position_x
+                        td= mask.position_y
+                        td= mask.orientation
+
+              td
+                = link_to t('shared.form_actions.edit'), edit_admin_product_model_work_spec_work_template_path(@product_model, @work_spec, work_template), class: 'btn btn-info'
+                = link_to t('shared.form_actions.delete'), admin_product_model_work_spec_work_template_path(@product_model, @work_spec, work_template), method: :delete, class: 'btn btn-info'

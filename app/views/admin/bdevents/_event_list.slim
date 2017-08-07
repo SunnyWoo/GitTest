@@ -1,0 +1,43 @@
+.widget-body
+  .widget-main.no-padding
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th ID
+          th Banner
+          th Redeem Works
+          th Redeem Products
+          th Title
+          th Start/End
+          th Enabled
+          th Priority
+          th Operation
+      tbody
+        - @bdevents.each do |bdevent|
+          tr
+            td
+              = bdevent.id
+              br
+              = display_true_or_false_icon(bdevent.available?)
+            td= image_tag bdevent.banner.thumb.url
+            td style="width: 400px"
+              = render partial: 'work', collection: bdevent.bdevent_works
+            td style="width: 400px"
+              = bdevent.products.pluck(:name).join(', ')
+            td= bdevent.title
+            td
+              | Start at：
+              = l bdevent.starts_at, format: :long
+              br
+              br
+              | End at：
+              = l bdevent.ends_at, format: :long
+            td= display_true_or_false_icon(bdevent.is_enabled)
+            td= bdevent.priority
+            td
+              .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, bdevent]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), url_for([:admin, bdevent]), class: 'btn btn-danger', data: { method: 'delete', confirm: 'Are you sure?' }
+                  = link_to '預覽', mobile_redeem_path(bdevent), class: 'btn', target: :blank
+
+= will_paginate @bdevents

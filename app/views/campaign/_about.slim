@@ -1,0 +1,18 @@
+.about-duncan
+  .cmdp_container
+    .grid_6
+      .item-title.camp_margin-top-25.text-center.color-fixed.camp-fontweight-400
+        = "About #{name}"
+
+    .grid_6.text-center.camp_avatar_cover
+      div = image_tag 'campaign/about_cover.png'
+      = image_tag about_img, alt: name, class: 'camp_avatar'
+      = image_tag sign_img, alt: name, class: 'camp_sign' if sign_img
+
+    .grid_6.camp_margin-top-33
+      .wording
+        p
+          - about_wording.split(/\n/).each do |wording|
+            = wording
+            br
+      .camp_margin-top-33

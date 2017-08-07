@@ -1,0 +1,6 @@
+$('body').append("<%= j render 'preview' %>");
+$('#preview_sms_modal .content').html($('#marketing_sms_content').val());
+$('#preview_sms_modal').modal('show');
+$('#preview_sms_modal').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

@@ -1,0 +1,45 @@
+- admin_title t('stores.index.page_title')
+- breadcrumb :admin_stores
+
+= render 'admin/v2/shared/account_groups_nav', resources_name: @resources.name
+
+= will_paginate @resources
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Id
+              th Name
+              th Email
+              th Contact Emails
+              th SignIn Count
+              th Current SignIn At
+              th Last SignIn At
+              th Current SignIn IP
+              th Last SignIn IP
+              th Operations
+          tbody
+            - @resources.each do |store|
+              tr
+                th = store.id
+                th = store.name
+                th = store.email
+                th = store.contact_emails
+                td = store.sign_in_count
+                td = l store.current_sign_in_at, format: :long if store.current_sign_in_at.present?
+                td = l store.last_sign_in_at, format: :long if store.last_sign_in_at.present?
+                td = store.current_sign_in_ip
+                td = store.last_sign_in_ip
+                th = link_to t('shared.form_actions.edit'), edit_admin_store_path(store), class: 'btn btn-sm'
+
+= will_paginate @resources

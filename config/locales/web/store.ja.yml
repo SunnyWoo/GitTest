@@ -1,0 +1,179 @@
+ja:
+  store:
+    show:
+      no_work_message: 商品建構中
+    product_template:
+      sidebar_name: '設計模版'
+    layout:
+      sidebar_name: '商店排版設定'
+    design:
+      page_title: '編輯模版設計: %{name}'
+      forms:
+        photo_only: '圖片模版'
+        text_only: '文字模版'
+        text_and_photo: '圖片文字模版'
+    preview:
+      page_title: '預覽模版: %{name}'
+      amount: 數量
+      cart: 購物車
+      footer:
+        download: 下載作品
+        cart: 加入購物車
+      tab:
+        desciption: 設計介紹
+        spec: 產品規格
+        information: 商家資訊
+        description_image_title: 規格介紹
+    status:
+      page_title: '編輯模版狀態: %{name}'
+    forms:
+      photo_only:
+        errors:
+          template_image_dimensions: '模版圖片的長寬與商品類型的長寬誤差必須在5pxs以內, 建議大小%{suggest}'
+      text_only:
+        hint:
+          color: '僅接受Hex網頁色彩碼'
+    shared:
+      update_success: '更新成功'
+      create_success: '建立成功'
+    custom_product: 開始印
+    store_product: 商城
+    sorting:
+      newest: 最新
+      price: 價格
+    support:
+      phone: 聯繫客服：+886 225472789
+      business_time: 週一至週五：10:00 - 19:00
+
+    attributes:
+      image:
+        kv:
+          dimension_error: '圖片的長寬與商品類型的長寬誤差必須為: 1242x600'
+
+    editor:
+      errors:
+        reach_text_width_limit: 該文字會超過預定區域
+        upload_image_failed: 作品上傳失敗
+      select_photo: 選取照片
+      change_text: 更改文字
+      preview: 預覽
+      text_input_placeholder: 輸入文字
+      quality_text: 印刷品質
+
+    order:
+      next: 下一步
+      order_no: 訂單編號
+      billing_info_phone: 訂購人手機號碼
+      payment: 付款方式
+      pay_price: 支付金額
+      shipping_info_name: 收件人
+      shipping_info_full_address: 收貨地址
+      order_subtotal: 總金額
+      discount: 優惠折扣
+      shipping_fee: 運費
+      order_price: 實際金額(含運費)
+      other_order: 查看其他訂單
+      enter_again: 請重新輸入
+
+    error:
+      order_not_found: 啊! 查無訂單!
+    backend:
+      standardized_works:
+        sidebar_name: '一般商品'
+        index:
+          page_title: '一般商品列表'
+        new:
+          page_title: '批次上傳建立一般商品'
+          upload_limited: '檔案大小限制50MB'
+        edit:
+          page_title: '編輯一般商品: %{name}'
+          print_image_notification: 'PrintImage版本要等到資料送出並完後才會更新顯示'
+      preview_composers:
+        page_title: '編輯預覽合成器'
+    sidebar_menu:
+      download: 下載作品
+      share: 分享
+      search: 訂單查詢
+      cart: 購物車
+      contact: 聯絡客服
+
+    share:
+      share_content_placeholder: 說些什麼....
+      share_button: 分享
+      share_hint: 分享你的作品到：
+      copy_link: 拷貝連結
+      cancel: 取消
+      lets_make_it_now: 也來做一個！
+      other_works: 看看別人的作品
+      other_templates: 更多樣式
+      back_index: 回首頁
+
+    download:
+      saveImage: 長按儲存圖片
+
+    seo:
+      store_title: '%{name}'
+      store_desc: '%{name} | 一站式服務輕鬆實現你的開店夢，提供個人化商品訂製以及商城模式，搭配完整的客服、金流、物流服務，讓你的商品＆設計快速銷售至全球各地。'
+      contact_us_title: '聯繫我們'
+      contact_us_desc: '任何關於商品的相關問題，均可與我們聯繫。我們在此為你提供協助。'
+      share_title: '%{name} ㄧ頁分享'
+      share_desc: '%{name} 必定成為焦點目光的完美作品。即刻分享，獲得更多注目，讓你的設計成為熱門討論話題。'
+      download_title: '%{name} 一頁下載'
+      download_desc: '%{name} 別讓完美作品只存在你的記憶中。一鍵長按立即下載儲存。'
+      editor_title: '%{name} 一頁客製'
+      editor_desc: '提供多樣化的設計版型，讓你快速客製想要的商品，兼具美感與效率的一頁客製，30 秒立即製作完成。'
+      preview_title: '%{name} 訂購預覽'
+      preview_desc: '立即預覽訂購商品詳情，一目了然所有細節。'
+      order_search_title: '訂單查詢'
+      order_search_desc: '快速查詢你的訂單資料及紀錄，隨時掌握訂單進度。'
+    index:
+      kv_title: 我印頁店，一夜致富
+      kv_desc: 將你的創意轉變成源源不絕的收益
+      kv_btn: 立即洽詢
+      section_1_title: 將創意無限延伸
+      section_1_desc: 集結你的設計，實現創業夢，創造更多價值。透過我印提供的頁店服務，與全世界分享你的創意點子，再次享受創作的樂趣。
+      section_1_list:
+        - text: 免串接客製化編輯器
+        - text: 完整供應鏈管理
+        - text: 自由發揮設計創意
+      section_2_title: 服務 6 大核心
+      section_2_desc: 實現多樣少量客製化生產能力，無需承擔庫存壓力，提供便利行銷工具，快速開啟線上網頁商城。
+      section_2_list:
+        - title: 專屬商城
+          image: store_landing_page/section_2_1.png
+          desc:
+            - item: 客製化影像編輯器技術
+            - item: 提供創意延伸互動設計
+            - item: 隨時上架各式設計版型
+        - title: 專業客服支援
+          image: store_landing_page/section_2_2.png
+          desc:
+            - item: 提供消費者完整售後服務
+            - item: 提供店家即時技術支援
+        - title: 安全電子支付
+          image: store_landing_page/section_2_3.png
+          desc:
+            - item: 電子支付快速便利
+            - item: 第三方金流保障買賣安全
+            - item: 多國金流一次串接免煩惱
+        - title: 工廠按單生產
+          image: store_landing_page/section_2_4.png
+          desc:
+            - item: 按單生產免庫存
+            - item: 多樣少量高品質
+        - title: 全球物流寄送
+          image: store_landing_page/section_2_5.png
+          desc:
+            - item: 與國際物流快遞合作
+            - item: 全球各地皆可送
+        - title: 銷售追蹤系統
+          image: store_landing_page/section_2_6.png
+          desc:
+            - item: 從生產到出貨一手掌握
+            - item: 即時報表隨時追蹤不漏單
+      section_3_title: 立即開始 3 步驟
+      section_3_desc: 提供所有品牌、用戶，便利的行銷渠道及客製化影像編輯軟體等功能，您只需要一鍵註冊，就能立即開啟收益的大門。
+      section_3_1_text: 一鍵註冊
+      section_3_2_text: 上傳創意
+      section_3_3_text: 創造價值
+      know_more_btn_text: 了解更多

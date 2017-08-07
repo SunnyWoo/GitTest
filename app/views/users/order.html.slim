@@ -1,0 +1,96 @@
+.cmdp_container
+  .grid_6
+    /= render_cell :announcement, :announcement
+    .margin-top-fixed
+
+  #sidebar.grid_2
+    = render 'slide'
+
+  article#article.grid_4
+    .item-title= @order.order_no
+    table.order_info.info-box
+      thead
+        tr
+          td colspan='2' width='50%' = edit_translator('page.cart.thead.td1')
+          td.align-center width='20%' = edit_translator('page.cart.thead.td3')
+          td.align-center width='6%' = edit_translator('page.cart.thead.td4')
+          td.align-right width='24%' = edit_translator('page.cart.thead.td5')
+      tbody
+        - @order.order_items.each do |item|
+          - itemable = item.itemable
+          tr
+            td = link_to_web_work(itemable, image_tag(itemable.order_image.thumb.url))
+            td.item-work-name = link_to_web_work(itemable, render_work_name_with_device(itemable))
+            td.align-center
+              - if @order.redeem?
+                = render_payment_redeem
+              - else
+                = render_item_price(item, currency_code: @order.currency)
+            td.align-center = item.quantity
+            td.align-right
+              - if @order.redeem?
+                = render_payment_redeem
+              - else
+                = render_item_price_with_quantity(item, currency_code: @order.currency)
+      tfoot
+        tr
+          td colspan='2'
+          td colspan='2'= edit_translator('page.cart_check_out.subtotal')
+          td
+            - if @order.redeem?
+              = render_payment_redeem
+            - else
+              = render_price(@order.order_items_total, currency_code: @order.currency)
+        tr
+          td colspan='2'
+          td colspan='2'= edit_translator('page.cart_check_out.shipping_cost')
+          td = render_shipping_price(@order)
+        - if @order.coupon
+          tr
+            td colspan='2'
+            td colspan='2'= edit_translator('page.cart_check_out.coupon_code')
+            td = render_price(-@order.discount, currency_code: @order.currency)
+        tr.sub-total
+          td colspan='2'
+          td colspan='2'
+            span= edit_translator('page.cart_check_out.total')
+          td
+            span= render_subtotal(@order)
+    .info-box
+      .item-title= t('page.cart_check_out.payment_title')
+      - if @order.payment.in?(Order::PAYMENTS_CHINA)
+        = render "users/order_pay/pingpp"
+      - else
+        = render "users/order_pay/#{@order.payment}"
+
+    - if @order.ship_code
+      .info-box
+        .item-title= edit_translator('page.cart_check_out.track_code')
+        .info_block
+          = @order.ship_code
+
+    .info-box
+      .item-title= edit_translator('page.cart_check_out.shipping_title')
+      .info_block
+        = render partial: 'cart/address_info', locals: { obj: @order.shipping_info }
+
+    .info-box
+      .item-title= edit_translator('page.cart_check_out.billing_title')
+      .info_block
+        = render partial: 'cart/address_info', locals: { obj: @order.billing_info }
+
+    .info-box
+      .item-title= edit_translator('page.cart_check_out.delivery_title')
+      .info_block
+        - shipping_way = @order.shipping_info_shipping_way
+        = t("activerecord.attributes.address_info.shipping_way_#{shipping_way}")
+
+    .info-box
+      .item-title= edit_translator('page.user.need_help')
+      .info_block= edit_translator('page.user.need_help_text')
+
+    .margin-top-fixed
+
+    = link_to edit_translator('page.user.btns.faq'), questions_path, class: 'btn btn-default btn-margin'
+    = render_repayment(@order)
+    .margin-top-fixed

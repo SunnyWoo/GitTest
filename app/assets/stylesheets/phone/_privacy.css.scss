@@ -1,0 +1,22 @@
+.privacy-page {
+  line-height: 1.2;
+  section {
+    margin-bottom: 1em
+  }
+  li {
+    list-style: disc;
+    margin: 1em 0 1em 2em;
+  }
+  a{
+    color: $main-color;
+  }
+}
+
+.privacy-page {
+  p, h1 {
+    margin: 1em 0;
+  }
+  h1 {
+    font-weight: bold;
+  }
+}

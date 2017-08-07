@@ -1,0 +1,68 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+zh-CN:
+  devise:
+    confirmations:
+      confirmed: "你的帐号已认证完成。现在已登入。"
+      send_instructions: "你的email 信箱将在几分钟内收到认证信。"
+      send_paranoid_instructions: "如果你的email 信箱已在我们资料库，你的email 信箱将在几分钟内收到认证信。"
+    failure:
+      already_authenticated: "你已經登入。"
+      inactive: "你的帐号尚未认证。"
+      invalid: "无效的 email 或密码。"
+      invalid_token: "无效的认证资料。"
+      locked: "你的帐号已被锁住。"
+      not_found_in_database: "无效的 email 或密码。"
+      timeout: "你上次的登入已超时，请重新登入。"
+      unauthenticated: "在继续之前，你需要先登入或注册。"
+      unconfirmed: "在继续之前，你需要先认证你的帐号。"
+    mailer:
+      team: "%{sitename} 团队敬上"
+      confirmation_instructions:
+        subject: "%{sitename} - 请验证你的邮箱地址"
+        text1: "还差一步你就可以完成注册！"
+        text2: "%{username} 你好，欢迎使用 %{sitename} 。在开始之前，我们需要验证你的邮箱。请单击以下的链接，并使用你刚刚注册的账号登录：%{email}"
+        text3: '验证你的邮箱'
+        text4: '一旦成功验证你的邮箱之后，即可开始使用我们的服务，很高兴你的加入。'
+      reset_password_instructions:
+        subject: "重新设置 %{sitename} 登录密码"
+        hello: "你好 %{username}"
+        text1: '我们收到您重置密码的申请，请点击以下链接修改您的密码'
+        text2: '重设密码'
+        text3: '如果您并没有申请密码重置服务，请忽略此来信'
+      unlock_instructions:
+        subject: "解锁帐号说明"
+    omniauth_callbacks:
+      failure: "因为%{reason}，我们无法认证你的%{kind} 资料。"
+      success: "你的 %{kind} 帐号已成功认证。"
+    passwords:
+      no_token: "若你不是由重设密码邮件引导而来，你将无法读取此页。若你是由重设密码邮件引导而来，请确认你使用完整网址连结。"
+      send_instructions: "你的email 将在几分钟内收到密码重设信件。"
+      send_paranoid_instructions: "如果你的email 信箱已在我们资料库，你的email 信箱将在几分钟内收到重设密码邮件。"
+      updated: "你的密码已变更成功。现在已登入。"
+      updated_not_active: "你的密码已变更成功。"
+    registrations:
+      destroyed: "再见! 你的帐号已成功被移除。希望能很快再见到你。"
+      signed_up: "欢迎! 你已成功注册。"
+      signed_up_but_inactive: "你已成功注册。但在你的帐号未启用前，我们无法将你登入。"
+      signed_up_but_locked: "你已成功注册。但你的帐号被锁住了，我们无法将你登入。"
+      signed_up_but_unconfirmed: "我们已将认证连结寄至你的信箱，请至信箱开启该连结启用你的帐号。"
+      update_needs_confirmation: "你已成功更新你的帐号，但我们需要认证你新登录的email 信箱。请至你的新信箱开启认证连结。"
+      updated: "你已成功更新你的帐号。"
+    sessions:
+      signed_in: "你已成功登入。"
+      signed_out: "你已成功登出。"
+    unlocks:
+      send_instructions: "你的email 信箱将在几分钟内收到帐号解锁说明。"
+      send_paranoid_instructions: "如果我们有你的帐号，你的email 信箱将在几分钟内收到帐号解锁说明。"
+      unlocked: "你的帐号已成功被解锁，请登入继续购物。"
+  errors:
+    messages:
+      already_confirmed: "已成功认证，请登入。"
+      confirmation_period_expired: "需要 %{period} 确认，请发送新的需求"
+      expired: "已失效，请发送新的需求"
+      not_found: "找不到"
+      not_locked: "没有被锁住"
+      not_saved:
+        one: "1个错误禁止了 %{resource} 被储存"
+        other: "%{count} 个错误禁止了%{resource} 被储存"

@@ -1,0 +1,11 @@
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th Date
+      th Message
+      th Note BY
+      - unless defined?(readonly)
+        th
+          = link_to t('shared.form_actions.new'), new_print_order_note_path(noteable), class: 'btn btn-xs btn-primary', data: { remote: true }
+  tbody#order_notes_table data-id="#{noteable.id}"
+    = render partial: 'print/notes/note', collection: noteable.notes, locals: {readonly: defined?(readonly) && readonly}

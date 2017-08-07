@@ -1,0 +1,21 @@
+= simple_form_for(@work_template, url: [:admin, @product_model, @work_spec, @work_template], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.label :aasm_state, t('work_templates.attributes.aasm_state')
+  = f.select :aasm_state, WorkTemplate.aasm.states.map(&:name)
+  .well
+    .upload-overlay-image
+    = f.input :overlay_image, as: :image, input_html: { data: { preview_at: '.upload-overlay-image' } }
+  .well
+    .upload-background-image
+    = f.input :background_image, as: :image, input_html: {data: {preview_at: '.upload-background-image'}}
+
+  = link_to_add_mask_fields 'add mask', 'masks_fields', WorkTemplateMask, f
+  table.table.table-striped.table-bordered.table-hover
+    tbody
+      - if f.object.masks
+        - f.object.masks.each do |mask|
+          = f.simple_fields_for :masks do |builder|
+            = render 'masks_fields', f: builder, mask: mask
+
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

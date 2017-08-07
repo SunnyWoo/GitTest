@@ -1,0 +1,44 @@
+- cache [@store, @templates, @standardized_works, I18n.locale] do
+  = render 'store/shared/header', menu: %w(share cart), share_target: '#share-mask', store: @store
+  .has-sticky-footer.ptfh
+    .cover data-widget-slick=true
+      - @store.kv.each do |k|
+        = image_webp(k.image , class: 'cover-image')
+
+    - if ticker = @store.ticker.first
+      .marquee.section
+        =ticker.content
+
+    .switcher.section data-widget='tab' data-selected=(@store.tap_settings['default'])
+      - if @templates.present? && @standardized_works.present?
+        .switcher-option.section
+          a.switcher-option-item data-widget='tab-option' href='#create'
+            = render_store_tap_name(@store.tap_settings.create_name,
+                                    et('store.custom_product'))
+
+          a.switcher-option-item data-widget='tab-option' href='#shop'
+            = render_store_tap_name(@store.tap_settings.shop_name,
+                                    et('store.store_product'))
+
+      - if @templates.present? || @standardized_works.present?
+        .switcher-content.section
+          - if @templates.present?
+            = render 'store/stores/show/template_tab_page', \
+              categories: @templates_categories, \
+              product_models: @templates_products, \
+              templates: @templates
+
+          - if @standardized_works.present?
+            = render 'store/stores/show/product_tab_page', \
+              categories: @categories, \
+              product_models: @products, \
+              works: @standardized_works
+      - else
+        .switcher-content.switcher-content--empty.section
+          = I18n.t('store.show.no_work_message')
+
+  = render 'store/shared/share_mask', share_url: store_url(@store)
+
+  .footer
+    .footer-phone = store_support_phone
+    .footer-businessTime = store_support_business_time

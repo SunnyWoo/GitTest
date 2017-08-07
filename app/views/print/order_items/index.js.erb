@@ -1,0 +1,3 @@
+$('[data-behavior~=model-<%= @model.id %>-items-count]').text("<%= @print_items.count %>");
+$("#model-<%= @model.id %>-section").html("<%= j render('print_items', print_items: @print_items) %>");
+Poller.poll("<%= print_order_items_path %>", "<%= @model.id %>");

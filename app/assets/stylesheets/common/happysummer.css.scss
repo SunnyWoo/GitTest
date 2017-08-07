@@ -1,0 +1,310 @@
+$v2-button-color: #4fbd92;
+.happysummer{
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #cccccc;
+    margin: 50px auto;
+    width: 990px;
+  }
+
+  .hr-block{
+    background-color: #F1F5F8;
+    text-align: center;
+  }
+
+  .hr-block2{
+    background-color: #F1F5F8;
+    margin: 30px 0 25px 0;
+    padding: 50px 0;
+  }
+
+  .happysummer-nav {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-bottom: 40px;
+    line-height: 60px;
+    height: 60px;
+    font-size: 16px;
+  }
+  .main-nav, .sub-nav {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  }
+
+  ul.main-nav {
+    margin-left: 20px;
+    img.line {
+      margin: 0 0 -3px 20px;
+    }
+
+    li.sub-nav:hover {
+      background: #F2F2F2;
+      border: 1px solid #CCCCCC;
+      padding-right: 20px;
+      ul {
+        display: block;
+      }
+      img.line {
+        display: none;
+      }
+    }
+
+    li.sub-nav {
+      border-top: 1px solid #FFF;
+      border-left: 1px solid #FFF;
+      position: relative;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left !important;
+      padding-left: 20px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      ul {
+        margin-top: -2px;
+        display: none;
+        left: -1px;
+        z-index: 999;
+        position: absolute;
+        background: #FFFFFF;
+        border: 1px solid #cccccc;
+        white-space: nowrap;
+        li {
+          clear: both;
+          float: none;
+          position: none;
+          background: none;
+          border-bottom: 1px solid #cccccc;
+          height: 50px;
+          a {
+            padding: 0 20px;
+            text-align: left;
+            line-height: 50px;
+          }
+        }
+        li:hover {
+          a {
+            color: #4FBD92;
+          }
+        }
+        li:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  ul.main-nav > :last-child{
+    background: none;
+  }
+
+
+  img.down-arrow{
+    padding-left: 10px;
+    margin: -3px;
+  }
+
+  .material {
+    img {
+      margin-bottom: 30px;
+    }
+
+    .mask {
+      margin-bottom: 30px;
+      background-color: #516a84;
+    }
+
+    .material_download_icon {
+      position: absolute;
+      top: 120px;
+      right: 107px;
+      opacity: 0;
+      color: white;
+      text-align: center;
+      img {
+        width: 32px;
+        height: 41px;
+        background-color: transparent;
+      }
+    }
+
+    .product-desc {
+      text-align: center;
+    }
+  }
+
+  .material:hover {
+    .material_download_icon{
+      opacity: 1;
+    }
+  }
+
+  .summer_video {
+    margin: 60px 0;
+  }
+
+  .create_desc {
+    margin-top: 30px;
+  }
+
+  .step-block {
+    text-align: left;
+    width: 400px;
+    margin: auto;
+    font-size: 16px;
+    .step-title {
+      font-weight: bold;
+      margin: 45px 0 15px 0;
+      .highlightspan {
+        color: $v2-button-color;
+      }
+      .desc {
+        font-family: Helvetica, Arial, Verdana, sans-serif;
+        font-weight: 100;
+      }
+    }
+    .step-desc {
+      font-family: Helvetica, Arial, Verdana, sans-serif;
+      color: #455055;
+      font-weight: 100;
+      margin-bottom: 65px;
+      line-height: 20px;
+    }
+    p {
+      line-height: 22px;
+    }
+  }
+
+  .step-block2 {
+    margin: initial;
+  }
+
+  .step-block3 {
+    margin: initial;
+    margin-left: 25px;
+    font-size: 16px;
+    .grid_2 {
+      margin: 0;
+    }
+    .grid_2:first-child {
+      margin-left: 15px;
+    }
+    .step-img {
+      float: left;
+      margin: 0 20px;
+      height: 130px
+    }
+    .step-title {
+      color: #333333;
+      font-weight: bold;
+      margin-bottom: 13px;
+      margin-left: 35px;
+    }
+    .step-desc {
+      margin: 0 35px 0 0;
+      color: #333333;
+      font-weight: 100;
+      line-height: 22px;
+    }
+  }
+  .step-block4 {
+    .step-img {
+      margin: 30px 0 16px 0;
+    }
+    .step-title {
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      color: #333333;
+      font-size: 16px;
+      font-weight: 100;
+      line-height: 20px;
+      width: 210px;
+      margin: auto;
+    }
+  }
+}
+
+.mobilev2 {
+  .happysummer{
+    .page-button, .material-page-button {
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      border-radius: 5px;
+      font-size: 20px;
+      font-size: 20px;
+      opacity: 1 !important;
+      background-color: $v2-button-color;
+      line-height: 50px !important;
+      height: 50px !important;
+      width: 50%;
+      margin-left: 80px;
+    }
+
+    .material-select-ios {
+      background: white;
+      color: #333;
+      height: 50px;
+      line-height: 50px;
+      width: 290px;
+      display: block;
+      margin: 0 auto 30px auto;
+      font-size: 16px;
+      text-align: center;
+      text-indent: 15px;
+    }
+
+    .material-select {
+      background: transparent;
+      border: 1px solid #333;
+      color: #333;
+      height: 50px;
+      line-height: 50px;
+      width: 290px;
+      display: block;
+      margin: 0 auto 30px auto;
+      font-size: 16px;
+      text-align: center;
+      text-indent: 15px;
+    }
+
+    .btn-happysummer {
+      display: block;
+      border-radius: 5px;
+      font-size: 20px;
+      opacity: 1 !important;
+      background-color: $v2-button-color;
+      line-height: 50px !important;
+      height: 50px !important;
+      width: initial !important;
+    }
+
+    .summer_create {
+      margin-top: 20px;
+      color: white;
+    }
+
+    .event-title {
+      p {
+        line-height: 24px;
+      }
+    }
+
+  }
+}
+

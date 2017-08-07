@@ -1,0 +1,33 @@
+= simple_form_for [:admin, coupon_notice] do |f|
+  .well
+    = f.input :coupon_id, include_blank: false, collection: Coupon.root
+    = f.label :available do
+      = f.check_box :available, class: 'ace'
+      span.lbl = t('coupon_notices.index.available')
+  .well
+    = f.input :notice, as: :text
+
+  = f.label :platform, 'Mobile/Email'
+  = link_to 'Select All', '#', class: 'btn btn-link',
+    data: {column: 'platform', select_all: true}
+  = link_to 'Unselect All', '#', class: 'btn btn-link',
+    data: {column: 'platform', select_all: false}
+  div
+    - member.platform.each do |platform, checked|
+      label.default-filter
+        = check_box_tag("coupon_notice[platform][#{platform}]", true, checked, class: 'ace')
+        span.lbl = platform
+
+  = f.label :region, 'China/Global'
+  = link_to 'Select All', '#', class: 'btn btn-link',
+    data: {column: 'region', select_all: true}
+  = link_to 'Unselect All', '#', class: 'btn btn-link',
+    data: {column: 'region', select_all: false}
+  div
+    - member.region.each do |region, checked|
+      label.default-filter
+        = check_box_tag("coupon_notice[region][#{region}]", true, checked, class: 'ace')
+        span.lbl = region
+
+  .form-actions
+    = f.button :submit

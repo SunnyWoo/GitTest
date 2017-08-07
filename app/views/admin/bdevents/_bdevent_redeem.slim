@@ -1,0 +1,23 @@
+- link = link_to('show', '#', class: 'target_bdevent_redeem', data: { id: bdevent.id })
+
+- if bdevent_redeem.children_count == 0
+  div #{bdevent_redeem.code} / 使用次數上限: #{bdevent_redeem.usage_count_limit}
+  div
+    | 使用次數：#{bdevent_redeem.usage_count} / #{link}
+
+  - if bdevent_redeem.orders.size > 0
+    ul.bdevent_redeems.hide data-id=bdevent_redeem.bdevent_id
+      - bdevent_redeem.orders.each do |order|
+        li = link_to(order.order_no, admin_order_path(order), target: '_blank')
+- else
+  div usage_count_limit: #{bdevent_redeem.children_count}
+  div
+    | 使用次數：#{bdevent_redeem.usage_count} / #{link}
+  - if bdevent_redeem.children.size > 0
+    ul.bdevent_redeems.hide data-id=bdevent_redeem.bdevent_id
+      - bdevent_redeem.children.each do |children|
+        - content = [children.code, children.used?.to_s]
+        - if children.used?
+          - order = children.orders.first
+          - content << link_to(order.order_no, admin_order_path(order), target: '_blank')
+        li = content.join(' / ').html_safe

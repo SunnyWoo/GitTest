@@ -1,0 +1,6 @@
+tr
+  td = f.text_field :name
+  td = f.text_field :presentation
+  td
+    = f.hidden_field :_destroy
+    = link_to "删除", '#', class: "btn btn-sm remove_fields", data: { closest: 'tr' }

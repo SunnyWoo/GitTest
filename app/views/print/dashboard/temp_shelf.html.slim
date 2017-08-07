@@ -1,0 +1,22 @@
+.page-header
+  h1
+    = link_to '質檢區', print_temp_shelves_path(list: :normal)
+  h3
+    = link_to '簡易列表', print_temp_shelves_path(list: :simple)
+= render 'print/shared/notice_bar'
+form.form-search
+  input#timestamp_no_input.input-medium.search-query type="text" name="timestamp_no" value="#{params[:timestamp_no]}" placeholder="列印編號,訂單編號,交通卡編碼" style="width: 720px;"
+    button#temp_shelf_order_search.btn.btn-sm.btn-primary type="submit"  Search
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 暫存區項目
+        .widget-toolbar
+          span.badge.badge-danger= @orders_count
+        - if @list == 'simple'
+          .widget-toolbar
+            = link_to '导出csv', print_temp_shelves_path(list: :simple, format: :csv), target: '_blank'
+      .widget-body
+        .widget-main.no-padding
+          = render_temp_shelf_list(@list, @orders, params[:timestamp_no])

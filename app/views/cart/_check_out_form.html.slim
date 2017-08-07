@@ -1,0 +1,11 @@
+= form_for order, url: cart_index_path, html: { id: 'check_out' } do |f|
+  | shipping_info
+  = f.fields_for order.shipping_info do |s|
+    = render partial: 'cart/check_out_address_form', locals: { s: s }
+    = s.label :shipping_way
+    = s.text_field :shipping_way
+  br billing_info
+  = f.fields_for order.billing_info do |s|
+    = render partial: 'cart/check_out_address_form', locals: { s: s }
+  = f.label :payment
+  = f.text_field :payment

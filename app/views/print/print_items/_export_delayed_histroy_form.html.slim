@@ -1,0 +1,17 @@
+.modal.fade id='export_delayed_histroy_form'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      = form_tag delayed_history_print_print_items_path(format: :csv),
+                 class: 'form-horizontal', method: :get do |f|
+        .modal-header
+          h3 匯出遲到歷史記錄
+        .modal-body
+          span 訂單審核日期:
+          = text_field_tag :created_at_gteq, nil, class: 'datetimepicker'
+          span ~
+          = text_field_tag :created_at_lteq, nil, class: 'datetimepicker'
+        .modal-footer
+          = submit_tag '送出', class: 'btn btn-primary'

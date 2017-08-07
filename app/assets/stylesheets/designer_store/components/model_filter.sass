@@ -1,0 +1,85 @@
+// *************************************
+//
+//   Model Filter
+//   -> Product model 的過濾器
+//
+// *************************************
+
+$modelFilter-row-height: 50px
+
+%modelFilter-row
+  @include rem(height, $modelFilter-row-height)
+  @include rem(line-height, $modelFilter-row-height)
+  @include rem(font-size, $f-size-content)
+  @include rem(padding, 0 16px)
+
+.modelFilter
+  position: relative
+  display: block
+  background-color: $c-bg-white
+  cursor: pointer
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+.modelFilter.is-open
+  .modelFilter-current:after
+    transform: rotate(180deg)
+  .modelFilter-menu
+    display: block
+    z-index: 1
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- current ----- //
+
+.modelFilter-current
+  @extend %modelFilter-row
+
+  position: relative
+  color: $c-text-content
+  font-weight: $f-weight-normal
+  border-top: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    @include rem(top, 17px)
+    @include rem(right, 15px)
+    @include rem(width, 16px)
+    @include rem(height, 16px)
+    background-image: asset-data-url('designer_store/arrow_down.png')
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+
+// ----- menu ----- //
+
+.modelFilter-menu
+  position: absolute
+  display: none
+  @include rem(top, $modelFilter-row-height)
+  width: 100%
+  background-color: $c-bg-white
+  @include rem(max-height, 170px)
+  overflow-y: auto
+  border-bottom: 1px solid $c-border
+
+.modelFilter-menu-item
+  @extend %modelFilter-row
+
+  color: $c-text-implicit
+  list-style: none

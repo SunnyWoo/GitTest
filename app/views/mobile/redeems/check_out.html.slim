@@ -1,0 +1,26 @@
+.top-header
+  .leftnavs
+    .back-icon.simple-back
+      = image_tag('campaign/mobilev2/back.png')
+
+.container
+  .redeem-check-out
+    | #{I18n.t('redeem.shipping_info.info')}
+  = simple_form_for @shipping_info, url: mobile_redeems_path, method: :post, html: { id: 'redeem-shipping-info' } do |f|
+    input name='work_gid' id='shipping_info_work_gid' type='hidden' value=@work_gid
+    = f.input :name, label: I18n.t('redeem.shipping_info.name'), placeholder: false
+    = f.input :phone, label: I18n.t('redeem.shipping_info.phone'), placeholder: I18n.t('redeem.shipping_info.phone_placeholder')
+    = f.input :email, label: I18n.t('redeem.shipping_info.email')
+    .form-group
+      label for='redeem-shipping_info-country-code'
+        | #{I18n.t('redeem.shipping_info.country')}
+      select name='shipping_info[country_code]' id='redeem-shipping_info-country-code'
+        = options_for_select(BillingProfile.countries_with_country_code, selected: 'TW')
+    = f.input :state, label: I18n.t('redeem.shipping_info.state'), placeholder: I18n.t('redeem.shipping_info.state_placeholder')
+    = f.input :address, label: I18n.t('redeem.shipping_info.address'), as: :string
+    = f.input :zip_code, label: I18n.t('redeem.shipping_info.zip'), wrap_html: {class: 'last'}
+    .bottom-placeholder
+    div
+      a.footer-like.disabled.loading-view-icon disabled='disabled'
+        span #{I18n.t('redeem.shipping_info.confirm')}
+        = image_tag 'mobile/redeem/img_column_loading@3x.png', class: 'loading_image hide'

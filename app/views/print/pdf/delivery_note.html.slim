@@ -1,0 +1,61 @@
+.content
+  .row
+    .col-xs-2
+      .logo
+        - logo_img = Region.china? ? 'logo_pdf.jpg' : 'logo_black_tw.jpg'
+        = wicked_pdf_image_tag logo_img
+    .col-xs-10.head
+      .col-xs-4.head_label = t('delivery_note.to')
+      .col-xs-8.blockquote
+        = @order.shipping_info_name
+      .col-xs-4.head_label = t('delivery_note.address')
+      .col-xs-8.blockquote
+        = @order.shipping_info.full_address
+      .col-xs-4.head_label = t('delivery_note.order_date')
+      .col-xs-8.blockquote
+        = I18n.l @order.created_at.to_date, format: :long
+      .col-xs-4.head_label = t('delivery_note.shipping_method')
+      .col-xs-8.blockquote
+        = render_shipping_way(@order.shipping_info.shipping_way)
+      .col-xs-4.head_label = t('delivery_note.order_no')
+      .col-xs-8.blockquote
+        = @order.order_no
+  .col-xs-12.list
+    table
+      thead
+        tr
+          th width='60%' = t('delivery_note.item_name')
+          th width='10%' = t('delivery_note.price')
+          th width='10%' = t('delivery_note.quantity')
+          th = t('delivery_note.subtotal')
+        tr
+      - auto_paging_delivery_note(@order_items).each do |order_item|
+        - if order_item.present?
+          - price = order_item.price_in_currency(@order.currency)
+          tr
+            td = "#{order_item.itemable_name} #{order_item.itemable_product.name}"
+            td = render_item_price(order_item, currency_code: @order.currency)
+            td = order_item.quantity
+            td = render_item_price_with_quantity(order_item, currency_code: @order.currency)
+        - else
+          tr
+            td
+              br &nbsp;
+            td
+            td
+            td
+
+  .row.count
+    .row
+      .col-xs-10.title = t('delivery_note.total')
+      .col-xs-2 = render_price(@order.subtotal, currency_code: @order.currency)
+    .row
+      .col-xs-10.title = t('delivery_note.coupon')
+      .col-xs-2 = render_price(@order.discount, currency_code: @order.currency)
+    .row
+      - shipping_fee = @order.shipping_fee.to_f - @order.shipping_fee_discount.to_f
+      .col-xs-10.title = t('delivery_note.shipping_fee')
+      .col-xs-2 = render_price(shipping_fee, currency_code: @order.currency)
+    .row.order_count
+      .col-xs-10.title = t('delivery_note.estimated_total')
+      .col-xs-2 = render_price(@order.price, currency_code: @order.currency)

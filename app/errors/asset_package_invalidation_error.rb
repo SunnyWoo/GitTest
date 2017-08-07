@@ -1,0 +1,2 @@
+class AssetPackageInvalidationError < ApplicationError
+end

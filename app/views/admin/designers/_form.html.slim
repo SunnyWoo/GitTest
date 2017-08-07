@@ -1,0 +1,13 @@
+= simple_form_for [:admin, designer] do |f|
+  = f.input :username
+  = f.input :email
+  - if designer.new_record?
+    = f.input :password
+    = f.input :password_confirmation
+  = f.input :display_name
+  .upload-previewer
+  = f.input :avatar, input_html: { data: { preview_at: '.upload-previewer' } }
+  = f.input :description
+
+  .form-actions
+    = f.button :submit

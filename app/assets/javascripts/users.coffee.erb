@@ -1,0 +1,38 @@
+$(document).ready ->
+
+  $(document).on 'click', '#user_avatar', ->
+    $('#upload_avatar').fileupload
+      url: '/en/users/upload_avatar'
+      dataType: 'json'
+      done: (e, data) ->
+        if data.result.status == 'ok'
+          console.log data.result.url
+          console.log data.result.url.s154
+          console.log data.result.url.s35
+
+          $('#user_avatar img').attr('src', data.result.url.s154)
+          $('.profile-btn img').attr('src', data.result.url.s35)
+    $('#upload_avatar').click()
+
+  $(document).on 'click', '#user_background', ->
+    $('#upload_background').fileupload
+      url: '/en/user_backgrounds/update'
+      dataType: 'json'
+      progressall: (e, data) ->
+        progress = parseInt(data.loaded / data.total * 100, 10) - 2;
+        $('#upload_progress').text(progress + '%').css( 'opacity', 1)
+        $('#user_background').css( 'opacity', 0.3)
+      done: (e, data) ->
+        if data.result.status == 'ok'
+          bgUrl = 'background-image: url(' + data.result.url.normal + ')';
+          $('.my-gallery-kv').attr('style', bgUrl)
+          $('#user_background').css( 'opacity', 1)
+          $('#upload_progress').css( 'opacity', 0)
+    $('#upload_background').click()
+
+
+  $(document).on 'click', '.show_order_items', ->
+    show = $(this).data('show')
+    console.log show
+    $("##{show}").toggle 100 , ->
+      $(this).removeClass('hide')

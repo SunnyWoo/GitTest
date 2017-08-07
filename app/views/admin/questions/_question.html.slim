@@ -1,0 +1,7 @@
+td= question.id
+td= question.question_category.name
+td= question.question
+td= question.answer.html_safe
+td
+  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, question]), class: 'btn btn-info'
+  = link_to t('shared.form_actions.delete'), url_for([:admin, question]), method: :delete, class: 'btn btn-danger', data: { confirm: t('shared.confirm.delete') }

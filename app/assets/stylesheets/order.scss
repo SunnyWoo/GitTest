@@ -1,0 +1,134 @@
+/*
+ *= require font-awesome
+ */
+@import 'compass/reset';
+@import 'compass/utilities/general/clearfix';
+
+body {
+  text-align: center;
+  color: #8B8B8B;
+  font-family: 'Helvetica', sans-serif;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.logo {
+  @include clearfix;
+  position: relative;
+}
+.logo img {
+  display: block;
+  margin: 0 auto;
+}
+div.cash_on_delivery {
+  position: absolute;
+  background: #f7f7f7;
+  padding: 20px;
+  top: 10px;
+  right: 10px;
+}
+
+h1.order_id {
+  font-size: 42px;
+  font-weight: 200;
+  text-align: center;
+}
+
+.order-head {
+  margin-bottom: 30px;
+  small {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+  }
+}
+
+.left, .right {
+  float: left;
+  width: 40%;
+  text-align: left;
+  h2 {
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  p.name {
+    font-size: 15px;
+    color: #666;
+    font-weight: bold;
+  }
+  p.order-id {
+    margin-top: 15px;
+    font-size: 15px;
+    color: #8B8B8B;
+  }
+  p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 24px;
+  }
+}
+
+.left {
+  margin-left: 105px;
+}
+
+.right {
+  margin-left: 45px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.order_item {
+  float: left;
+  width: 50%;
+  margin-top: 70px;
+  .image {
+    & > img {
+      width: 160px;
+    }
+  }
+  .check, .order_item_info {
+    float: left;
+    margin-right: 30px;
+  }
+  .check {
+    border: 2px solid #8d8d8d;
+    width: 60px;
+    height: 60px;
+    margin-left: 60px;
+  }
+  .order_item_info p {
+    line-height: 22px;
+    font-weight: 200;
+  }
+  p.model {
+    font-weight: 400;
+  }
+  .qr-code {
+    float: left;
+    & > img {
+      width: 60px;
+    }
+  }
+}
+
+@media print {
+  a:link:after, a:visited:after {
+    content: "";
+  }
+}
+
+.print {
+  .logo {
+    img {
+      width: 70px;
+    }
+  }
+}

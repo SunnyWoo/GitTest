@@ -1,0 +1,12 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.input :name, label: t('fees.attributes.name')
+  = f.input :description, label: t('fees.attributes.description')
+  = f.simple_fields_for(:currencies) do |c|
+    .well
+      = c.input :name, as: :hidden
+      = c.input :code, as: :hidden
+      label.control-label
+        = c.object.name
+      = c.input :price, label: t('fees.attributes.price')
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

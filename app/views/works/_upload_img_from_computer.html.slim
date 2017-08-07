@@ -1,0 +1,30 @@
+#upload_from_computer.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .close data-dismiss='modal'
+          i.popup-icon_cancel_normal
+      .modal-body
+        .item-title.text-center = edit_translator('editor.upload_photo.title')
+        .img-notice
+          p = edit_translator('editor.upload_photo.content')
+          ul
+            li = edit_translator('editor.upload_photo.li1')
+            li = edit_translator('editor.upload_photo.li2')
+            li = edit_translator('editor.upload_photo.li3')
+            li = edit_translator('editor.upload_photo.li4')
+
+        input#upload_img.hide type='file' accept='image/*'
+        #img_previews.hide
+          .file-data
+            img#preview_img
+          .file-name
+            div
+              span
+          .file-check
+
+        .btn-center
+          .btn.btn-default.fileinput-button
+            span = edit_translator('editor.upload_photo.select_image')
+          .btn.btn-default.image-ready.hide
+            span = edit_translator('editor.upload_photo.next')

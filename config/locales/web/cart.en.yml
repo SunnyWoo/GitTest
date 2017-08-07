@@ -1,0 +1,60 @@
+en:
+  page:
+    cart:
+      title: 'Your Shopping Cart'
+      items: '%{items} items'
+      thead:
+        td1: Your Items
+        td2: Name
+        td3: Price
+        td4: Quantity
+        td5: Total
+        td6: Special Price
+      btns:
+        countinue_shopping: Continue Shopping
+        check_out: Check Out
+        verify: Verify
+        delete: Delete
+        shop: Shop
+        create: Create
+      span:
+        coupon: 'Coupon Code:'
+        subtotal: 'Subtotal:'
+        discount: 'Discount'
+      text1: Worldwide Shipping
+      text2: 'Your have no Items! '
+      text3: Take a look at Shop.
+    cart_check_out:
+      title: Check Out
+      text1: Worldwide Shipping
+      shipping_title: Shipping information
+      add_address: Add New Address
+      billing_title: Billing information
+      payment_title: Order Detail
+      delivery_title: Delivery Type
+      track_code: Track Code
+      summary: Summary
+      summary_alias: Summary
+      thead:
+        redeem_item: Redeem Items
+        td1: Your Items
+        td2: QTY.
+        td3: Price
+        td4: Special Price
+      subtotal: Subtotal
+      shipping_cost: Shipping Cost
+      coupon_code: Coupon Code
+      coupon_code_placehoder: Enter your coupon code here
+      coupon_valid:
+        success: Success
+        fail: Fail
+      total: Total
+      free: Free
+      payment: Payment Method
+      btns:
+        summary: 'Summary'
+        redeem: Redeem
+      notification:
+        new_year: "Due to Chinese new year holidays, all shipment will be sent out on the 2/24.Express shipping packages will be prioritize to shipped out on the 2/24 first. Sorry for the inconvenience."
+    back_to_check_out:
+      btn: 'Back to Check Out'

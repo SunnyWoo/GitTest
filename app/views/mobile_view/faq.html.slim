@@ -1,0 +1,15 @@
+.cmdp_container
+  article#article.faq-page
+    - @question_categories.each do |question_category|
+      section id=question_category.name.gsub(' ', '_')
+        h1.item-title
+          span = "#{question_category.name}"
+          span.q-size.hide = "(#{question_category.questions.size})"
+
+        ul
+          - question_category.questions.each do |question|
+            li
+              h2 = question.question
+              .content = question.answer.html_safe
+
+    .margin-top-fixed

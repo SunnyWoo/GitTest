@@ -1,0 +1,41 @@
+#package_parting.modal.fade role="dialog"
+  .modal-dialog.modal-lg style="width: 80%;"
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+        span 出貨方式：
+        = render_shipping_way_with_color(order.shipping_info.shipping_way)
+      .modal-body
+        = simple_form_for [:print, Package.new], html: {class: 'form-horizontal'} do |f|
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th
+                th 列印编号
+                th 型号
+                th 缩图
+                th 状态
+                th 进入工作站时间
+                th 累计处理时间
+                th 暂存区编号
+                th style='min-width: 100px'  审核描述
+                th 商品贴纸
+            tbody
+                - order.print_items.each do |print_item|
+                  tr
+                    td
+                      = f.fields_for 'print_items[]', print_item do |p|
+                        = p.check_box :id, {checked: false, disabled: !print_item.may_toboard? }, print_item.id, nil
+                    td = print_item.timestamp_no
+                    td = print_item.product.name
+                    td = render_print_item_preview(print_item)
+                    td = t("activerecord.attributes.print_item.aasm_state.#{print_item.aasm_state}")
+                    td = l(print_item.sublimated_at, format: :long) if print_item.sublimated_at
+                    td = render_hours_from_target_time(print_item.sublimated_at)
+                    td = print_item.temp_shelf_serial
+                    td = print_item.temp_shelf_description
+                    td = link_to '商品貼紙', print_pdf_product_ticker_path(order_item_id: print_item.order_item.id, format: :pdf), class: "btn btn-success", target: '_blank'
+          .modal-footer.text-right
+            = link_to '列印部分打包出货单正面', '#' , class: "btn btn-success", id: :package_delivery_note, data: { href: print_pdf_package_delivery_note_path }
+            = f.button :submit, '完成部分打包', class: 'btn btn-primary'

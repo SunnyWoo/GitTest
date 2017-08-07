@@ -1,0 +1,24 @@
+doctype mobile
+html
+  head
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1'
+    = display_meta_tags
+    meta(property='og:title' content='我印頁店')
+    meta(property='og:description' content='一站式服務輕鬆實現你的開店夢，提供個人化商品訂製以及商城模式，搭配完整的客服、金流、物流服務，讓你的商品＆設計快速銷售至全球各地。')
+    meta[property='og:image' content=asset_url('assets/store_landing_page/share_img.png')]
+    meta(name="twitter:card" content="summary_large_image")
+    meta(name="twitter:site" content="@commandp")
+    meta(name="twitter:creator" content="@commandp")
+    meta(name="twitter:title" content="我印頁店")
+    meta(name="twitter:description" content="一站式服務輕鬆實現你的開店夢，提供個人化商品訂製以及商城模式，搭配完整的客服、金流、物流服務，讓你的商品＆設計快速銷售至全球各地")
+    meta[name="twitter:image" content=asset_url('assets/store_landing_page/share_img.png')]
+    = csrf_meta_tags
+    = stylesheet_link_tag 'store_landing_page', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'store_landing_page', 'data-turbolinks-track': true
+
+  body class="#{controller_name}_controller #{action_name}_action"
+    / = Gon::Base.render_data camel_case: true, camel_depth: :recursive, namespace: 'jsPageData'
+    = yield
+    = render 'shared/gtm', gtm_id: 'GTM-NWDWWL' if Region.global?
+    = render 'shared/gtm', gtm_id: 'GTM-PMB2PZ' if Region.china?

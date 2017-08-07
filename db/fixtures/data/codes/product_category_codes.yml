@@ -1,0 +1,31 @@
+---
+- code: CA
+  description: "手機殼"
+- code: MU
+  description: "馬克杯"
+- code: ST
+  description: "貼紙"
+- code: CN
+  description: "無框畫"
+- code: US
+  description: USB
+- code: PB
+  description: Powerbank
+- code: NB
+  description: note book
+- code: SC
+  description: smart card
+- code: CO
+  description: cover
+- code: CL
+  description: clock
+- code: BP
+  description: backpack
+- code: BG
+  description: "包包"
+- code: TS
+  description: T 恤
+- code: BZ
+  description: "抱枕"
+- code: BJ
+  description: "布書筆記本"

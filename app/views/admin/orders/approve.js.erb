@@ -1,0 +1,8 @@
+<% if @message.present? %>
+  Gritter.regular_msg("<%= @message %>");
+  $(".btn[href*='admin/orders/<%= @order.id %>/approve']").attr('disabled', 'disabled');
+<% end %>
+
+<% if @error_message.present? %>
+  Gritter.error_msg("<%= @error_message %>");
+<% end %>

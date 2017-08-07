@@ -1,0 +1,32 @@
+= simple_form_for(@bdevent, url: [:admin, @bdevent], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - starts_at = f.object.starts_at ? f.object.starts_at.strftime("%F %H:%M") : nil
+  - ends_at = f.object.ends_at ? f.object.ends_at.strftime("%F %H:%M") : nil
+  .row
+    .col-xs-3
+      = f.input :starts_at, as: :string, hints: false, input_html: { class: 'datetimepicker', value: starts_at }
+    .col-xs-3
+      = f.input :ends_at, as: :string, hints: false, input_html: { class: 'datetimepicker', value: ends_at }
+  .row
+    .col-xs-3
+      = f.input :is_enabled, label: "Enabled?", hints: false
+  table.table id='bdevent_form'
+    thead
+      td 顯示語系
+      td 活動標題
+      td Coming Image
+    = f.simple_fields_for :translations do |d|
+      - is_required = (d.object.locale.to_s == 'zh-TW') ? true : false
+      tr
+        td
+          = d.object.locale
+          = d.input :locale, as: :hidden, hints: false
+        td = d.input :title, label: false, required: is_required, hints: false
+        td
+          = link_to d.object.coming_soon_image.url, title: d.object.locale, class: 'popup-image' do
+            = image_tag d.object.coming_soon_image.url, width: 200 if d.object.coming_soon_image.url
+          = d.input :coming_soon_image, label: false, hints: false
+
+  .form-actions
+    = f.input :event_type, as: :hidden, hints: false
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

@@ -1,0 +1,49 @@
+.cmdp_container
+  .grid_6
+    /= render_cell :announcement, :announcement
+    .margin-top-fixed
+
+  #sidebar.grid_2
+    = render 'slide'
+
+  article#article.grid_4
+    .item-title= edit_translator('page.user.profile')
+    - if user_signed_in?
+
+      #user_avatar
+        #mask
+          #edit.hide
+            i.avatar-edit
+        = image_tag current_user.avatar.url(:s154), alt: 'User avatar'
+
+      .hide
+        input#upload_avatar name='user_avatar' type='file'
+
+      .profile_form
+        = form_for current_user, id: 'new_request' do |f|
+          .form-box
+            div.text_field
+              .label= f.label :name, edit_translator("page.user.profile_attrs.name")
+              .error
+              = f.text_field :name, maxlength: '20'
+
+            div.text_field
+              .label= f.label :location, edit_translator("page.user.profile_attrs.location")
+              .error
+              = f.text_field :location
+
+            / TODO: 需要實作 email 修改
+            div.text_field
+              .label= f.label :email
+              .error
+              = f.text_field :email
+
+          .info-box
+            .item-title = edit_translator("page.user.profile_attrs.gender")
+            .gender_radio.clearfix
+              = f.collection_radio_buttons :gender, User.genders.map{ |k,v| [k,render_gender_values[v]] }, :first, :last
+
+          .margin-top-fixed
+          = f.submit t('page.user.btns.save'), class: 'btn btn-default'
+
+    .margin-top-fixed

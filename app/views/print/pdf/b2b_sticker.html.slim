@@ -1,0 +1,46 @@
+css:
+  @font-face {
+    font-family: 'Microsoft Jhenghei';
+    src: asset-data-url('Microsoft-Jhenghei.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: 'Microsoft Jhenghei';
+  }
+
+.content
+  .header
+    .row
+      .col-xs-2
+        .logo
+          = wicked_pdf_image_tag Region.china? ? 'logo_pdf.jpg' : 'logo_black_tw.jpg'
+  .product_cont
+    .row
+      .col-xs-8
+        .product_img
+          - if @image_path.present?
+            - base64_image = Base64.encode64(File.open(@image_path).read)
+            - if base64_image
+              img src="data:image/png;base64,#{base64_image}"
+        .work_name = "#{I18n.t('pdf.ticker.work_type')} - #{@name}"
+        .info
+          table
+            - @message.each do |key, value|
+              tr
+                td #{key}: &nbsp;
+                td = value
+      .col-xs-4.list.text-right
+        .qrcode
+          - if Region.china?
+            = wicked_pdf_image_tag 'qrcode/weixin_service_black.png'
+            .desc = I18n.t('pdf.ticker.weixin_service')
+          - else
+            = wicked_pdf_image_tag 'qrcode/facebook_black.jpg'
+            .desc = I18n.t('pdf.ticker.facebook_fans')
+  .footer
+    .row
+      .col-xs-7.text-left
+        .company.name = I18n.t("company.#{Region.region}.name")
+      .col-xs-5.text-right
+        .company.website = I18n.t("company.#{Region.region}.website")

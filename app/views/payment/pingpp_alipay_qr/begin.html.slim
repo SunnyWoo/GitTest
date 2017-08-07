@@ -1,0 +1,18 @@
+.cmdp_container
+
+  .grid_6
+    .item-title.margin-top-fixed.text-center
+      = edit_translator("activerecord.attributes.order.payment_#{@order.payment_method}")
+    .cart_wording = edit_translator('page.cart_check_out.text1')
+      .divider_line
+        = image_tag('editor/divider_line.png')
+  .grid_6
+    .divider_line
+    .cart_wording
+      = "订单号: #{@order.order_no}"
+      = hidden_field_tag :order_id, @order.id
+      = hidden_field_tag :order_no, @order.order_no
+    .cart_wording
+      = "价格: #{@order.price}"
+    .qrcode#pingpp_alipay_qrcode
+      = raw @qrcode.as_html

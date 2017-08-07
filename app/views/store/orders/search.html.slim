@@ -1,0 +1,19 @@
+= render 'store/shared/header'
+
+#order-search-form-section.ptfh
+  = form_for Order.new, url: store_orders_search_result_path, remote: true,
+    method: :post, html: { id: 'orders-search-form', class: nil } do |f|
+    = f.text_field :billing_info_phone, placeholder: t('store.order.billing_info_phone')
+    = f.text_field :order_no, placeholder: t('store.order.order_no')
+    .button.button--full.button--filled#button--queryOrder.fob
+      = f.submit t('store.order.next'), class: 'button button--full button--filled'
+
+#order-search-result
+
+#search-mask.mask.hide
+  .mask-content
+    p = t('store.error.order_not_found')
+    .button.button--orderSearchFailure
+      = t('store.order.enter_again')
+
+/ = render 'store/shared/side_menu', menu: %w(contact)

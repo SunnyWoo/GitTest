@@ -1,0 +1,43 @@
+- admin_title t('mobile_uis.index.page_title')
+
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar.no-border
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-info btn-sm'
+  .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th Id
+              th Image
+              th Tile
+              th Template
+              th Start at
+              th End at
+              th Priority
+              th Enabled
+              th Default
+              th Operation
+          tbody
+            - @resources.each do |resource|
+              tr
+                td = resource.id
+                td = image_tag resource.image.url
+                td = resource.title
+                td = resource.template
+                td = resource.start_at
+                td = resource.end_at
+                td = resource.priority
+                td = resource.is_enabled
+                td = resource.default
+                td
+                  .btn-group
+                    = link_to t('shared.form_actions.edit'), edit_admin_mobile_ui_path(resource), class: 'btn btn-sm'
+                    = link_to t('shared.form_actions.delete'), admin_mobile_ui_path(resource), class: 'btn btn-sm', data: { method: 'delete', confirm: 'Are you sure?' }
+
+= will_paginate @resources

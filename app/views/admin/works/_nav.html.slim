@@ -1,0 +1,21 @@
+ul.nav.nav-tabs
+  li class=('active' if active == 'works')
+    = link_to admin_works_path(q: { work_type_eq: 0 }) do
+      => fa_icon 'flask', class: 'ace-icon'
+      span = t('works.sidebar_name')
+  li class=('active' if active == 'work_sets')
+    = link_to admin_work_sets_path do
+      => fa_icon 'flask', class: 'ace-icon'
+      span = t('work_sets.sidebar_name')
+  li class=('active' if active == 'tags')
+    = link_to admin_tags_path do
+      => fa_icon 'tags', class: 'ace-icon'
+      span = t('admin.v2.shared.sidebar.tags')
+  li class=('active' if active == 'promotions')
+    = link_to admin_promotions_path do
+      => fa_icon 'tags', class: 'ace-icon'
+      span = t('admin.v2.shared.sidebar.promotions')
+  li class=('active' if active == 'change_price_events')
+    = link_to admin_change_price_events_path do
+      => fa_icon 'tags', class: 'ace-icon'
+      span = t('admin.v2.shared.sidebar.change_price_events')

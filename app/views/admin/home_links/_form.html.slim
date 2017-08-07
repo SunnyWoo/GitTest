@@ -1,0 +1,15 @@
+= simple_form_for [:admin, home_link] do |f|
+  .well
+    = f.input :href
+  .well
+    h4.green.smaller.lighter
+      | Name (en is required)
+    = f.simple_fields_for :translations do |d|
+      .well
+        = d.input :locale, label: false, as: :hidden
+        - is_required = d.object.locale == :en ? true : false
+        = d.input :name, as: :string, label: d.object.locale, required: is_required
+  .row
+    .col-xs-12
+      .form-actions
+        = f.button :submit

@@ -1,0 +1,25 @@
+.terms-page, .privacy-page {
+  h1 {
+    font-weight: 400;
+    line-height: 28px;
+  }
+  p {
+    font-size: 13px;
+    color: #666;
+    line-height: 22px;
+    margin-bottom: 20px;
+    a {
+      color: #666;
+      text-decoration: underline;
+    }
+  }
+  ul {
+    list-style: disc outside;
+    padding-left: 40px;
+    li {
+      font-size: 13px;
+      line-height: 22px;
+      margin-bottom: 12px;
+    }
+  }
+}

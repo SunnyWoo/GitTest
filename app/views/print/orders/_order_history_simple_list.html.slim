@@ -1,0 +1,24 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 訂單編號
+      th 商品類型
+      th 商品单价
+      th 订单总价
+      th 下單時間
+      th 出貨時間
+      th 發票號碼
+      th 快递单号
+  tbody
+    - orders.each do |order|
+      - order.print_items.each do |print_item|
+        - order_item = print_item.order_item
+        tr
+          td = order.order_no
+          td = order_item.itemable.product_name
+          td = render_item_price(order_item.itemable)
+          td = render_order_price(order)
+          td = l order.created_at, format: :long
+          td = l print_item.shipped_at, format: :long if print_item.shipped_at
+          td = order.invoice_number || '空'
+          td = print_item.package.try(:ship_code)

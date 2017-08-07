@@ -1,0 +1,131 @@
+- admin_title t('orders.approve.page_title'), subtitle: t('orders.sidebar_name_approve_invoice')
+
+.pull-right
+  = link_to '發票動態列表', approve_invoice_activities_admin_orders_path, class: 'btn btn-sm'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = t('orders.index.fifth_page_title')
+      | （只搜尋已經 shipping 的訂單）
+  .widget-body
+    .widget-main
+      .row
+        .col-xs-12
+          = search_form_for @search, url: approve_invoice_admin_orders_path, id: 'order_approve_invoice', method: :get do |f|
+            .row
+              .col-xs-3
+                = f.label :created_at_gteq
+                = f.search_field :created_at_gteq
+              .col-xs-3
+                = f.label :created_at_lteq
+                = f.search_field :created_at_lteq
+            = f.label :payment_in
+            .col-xs-12
+              - Order.should_invoice_payments.each do |payment|
+                .col-xs-3
+                  .checkbox
+                    label
+                      - is_check = params[:q][:payment_in] ? params[:q][:payment_in].include?(payment) : false
+                      = check_box_tag('q[payment_in][]', payment, is_check, class: 'ace')
+                      span.lbl = "#{t("activerecord.attributes.order.payment_#{payment}")} (#{payment})"
+            br
+            = f.label :shipping_info_country_code_in
+            .col-xs-12
+              - BillingProfile.countries_with_country_code.each do |name, code|
+                .col-xs-2
+                  .checkbox
+                    label
+                      - is_check = params[:q][:shipping_info_country_code_in] ? params[:q][:shipping_info_country_code_in].include?(code) : false
+                      = check_box_tag('q[shipping_info_country_code_in][]', code, is_check, class: 'ace')
+                      span.lbl = name
+              br
+              span#should_rate.btn.btn-sm 應稅
+              span#not_should_rate.btn.btn-sm 零稅率
+              span#cancel_rate.btn.btn-sm 取消
+            br
+            = f.label :invoice_state_eq, t('orders.approve_invoice.invoice_state_eq')
+            .col-xs-12
+              - Order.invoice_states.map.each_slice(4) do |states|
+                - states.each do |state|
+                  .col-xs-2
+                    .checkbox
+                      label
+                        - is_check = params[:q][:invoice_state_in] ? params[:q][:invoice_state_in].include?(state[1].to_s) : false
+                        = check_box_tag('q[invoice_state_in][]', state[1], is_check, class: 'ace')
+                        span.lbl = t("order.invoice_state.#{state[0]}")
+            br
+            = f.label :order_no_or_ship_code_cont
+            = f.search_field :order_no_or_ship_code_cont
+            = f.submit t('shared.form_actions.search'), class: 'btn btn-primary btn-sm', name: 'search'
+
+.table-header
+  | Total :
+  '&nbsp;
+  span.badge.badge-important
+    = @resources.total_entries
+  .widget-toolbar.pull-right
+    - if @search.invoice_state_in.include?(Order.invoice_states['invoice_not_upload'])
+      button.btn.btn-xs.btn-success data-rel='tooltip' title='加入開立發票' id='ready_all_invoice' data-url='#{batch_update_admin_orders_path}' data-state='invoice_ready_upload'
+        i.icon-plus.bigger-120
+        | 加入開立發票
+      button.btn.btn-xs.btn-danger data-rel='tooltip' title='免開發票' id='free_all_invoice' data-url='#{batch_update_admin_orders_path}' data-state='invoice_free'
+        i.icon-trash.bigger-120
+        | 免開發票
+    - if @search.invoice_state_in.include?(Order.invoice_states['invoice_ready_upload'])
+      = link_to '訂單資訊上傳到金財通FTP', invoice_upload_admin_orders_path, method: :patch, data: {confirm: '確定上傳？'},
+        class: 'btn btn-xs btn-danger'
+    = link_to '手動更新發票資訊', invouce_check_admin_orders_path, method: :patch, data: {confirm: '確定更新？'},
+      class: 'btn btn-xs btn-danger'
+table#sample-table-1.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th.center
+        label
+          input.ace type="checkbox" /
+          span.lbl
+      th= sort_link @search, :id, 'ID'
+      th= sort_link @search, :created_at, '訂單日期'
+      th= t('orders.approve.thead.order_no')
+      th= sort_link @search, :payment, '付款方式'
+      th= sort_link @search, :price, '金額'
+      th 發票資訊
+      th width='150px'
+        = t('orders.approve.thead.shipping_info')
+      th width='160px'
+        = t('orders.approve.thead.memo')
+      th= t('orders.approve.thead.operation')
+  tbody
+    - @resources.each do |order|
+      tr.order_tr data-id="#{order.id}"
+        td.center
+          label
+            input.ace.order type="checkbox" value="#{order.id}"
+            span.lbl
+        td= order.id
+        td= l order.created_at, format: :long
+        td
+          = link_to order.order_no, admin_order_path(order)
+          br
+          span.badge.badge-success = "OrderStatus：#{order.aasm_state}"
+          - if order.shipping?
+            span.badge.badge-success = "ShipCode：#{order.ship_code}"
+        td= order.payment
+        td= render_price(order.render_twd_price, currency_code: order.currency)
+        td
+          span.badge.badge-yellow = "發票稅率：#{order.rate_type_name}"
+          br
+          span.badge.badge-success = "發票狀態：#{t("order.invoice_state.#{order.invoice_state}")}"
+          br
+          span.badge.badge-yellow = "發票號碼：#{order.invoice_number}"
+        td= render 'admin/billing_infos/address_info',order: order, address_info: order.shipping_info
+        td= render 'admin/notes/notes', noteable: order
+        td
+          button.btn.btn-mini.btn-success data-rel='tooltip' title='加入開立發票' id='ready_invoice' data-state='invoice_ready_upload' data-id='#{order.id}' data-url='#{admin_order_path(order)}'
+            = fa_icon 'check'
+          = link_to edit_polymorphic_path([:admin, order]), class: 'btn btn-info btn-mini', data: { remote: true, rel: 'tooltip' }, title: '手開發票' do
+            = fa_icon 'edit'
+          button.btn.btn-mini.btn-danger data-rel='tooltip' title='免開發票' id='free_invoice' data-state='invoice_free' data-id='#{order.id}' data-url='#{admin_order_path(order)}'
+            = fa_icon 'thumbs-down'
+
+= will_paginate @resources

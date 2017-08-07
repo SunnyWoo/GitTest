@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      accept-encoding:
+      - ''
+      content-length:
+      - '319'
+      user-agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      host:
+      - sns.ap-northeast-1.amazonaws.com
+      x-amz-date:
+      - 20151209T060024Z
+      x-amz-content-sha256:
+      - 151b79e042fa45e12077ab38d25eba0a068b6b51f25b70817603d26a9fa6070e
+      authorization:
+      - AWS4-HMAC-SHA256 Credential=blah/20151209/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=c7ac30c64772ef9dfb077454f5625405de86a6c64178bb156a678bd33d06a076
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      x-amzn-requestid:
+      - a29c5693-91ab-5156-bdbc-18725415a839
+      content-type:
+      - text/xml
+      content-length:
+      - '305'
+      date:
+      - Wed, 09 Dec 2015 06:00:30 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidClientTokenId</Code>
+            <Message>The security token included in the request is invalid.</Message>
+          </Error>
+          <RequestId>a29c5693-91ab-5156-bdbc-18725415a839</RequestId>
+        </ErrorResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:00:30 GMT
+- request:
+    method: post
+    uri: https://sns.ap-northeast-1.amazonaws.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded; charset=utf-8
+      accept-encoding:
+      - ''
+      content-length:
+      - '319'
+      user-agent:
+      - aws-sdk-ruby/1.57.0 ruby/2.2.1 x86_64-darwin14
+      host:
+      - sns.ap-northeast-1.amazonaws.com
+      x-amz-date:
+      - 20151209T060030Z
+      x-amz-content-sha256:
+      - d0ce432982af01923d61557ceb4b5a37a8b58256be8b181cad5b073788f1906d
+      authorization:
+      - AWS4-HMAC-SHA256 Credential=blah/20151209/ap-northeast-1/sns/aws4_request,
+        SignedHeaders=content-length;content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=1aa90234a3c543dde1279f4882f35cbafa0d1e9d316be888c568438fc97932bd
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      x-amzn-requestid:
+      - 78c698d0-bc23-55cd-b9a2-d631799cbe43
+      content-type:
+      - text/xml
+      content-length:
+      - '305'
+      date:
+      - Wed, 09 Dec 2015 06:00:30 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <ErrorResponse xmlns="http://sns.amazonaws.com/doc/2010-03-31/">
+          <Error>
+            <Type>Sender</Type>
+            <Code>InvalidClientTokenId</Code>
+            <Message>The security token included in the request is invalid.</Message>
+          </Error>
+          <RequestId>78c698d0-bc23-55cd-b9a2-d631799cbe43</RequestId>
+        </ErrorResponse>
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:00:31 GMT
+- request:
+    method: post
+    uri: http://sdk.open.api.igexin.com/apiex.htm
+    body:
+      encoding: UTF-8
+      string: '{"action":"apnGetContentIdAction","appId":"3T7v1hEqgyAYDwXWwu8gN2","appkey":"XIT32K8Ekx9QNYZa2xDxp8","PI":"WABiMXsiYXBzIjp7ImFsZXJ0IjoiVGVzdCIsInNvdW5kIjoiIiwiZGVlcGxpbmsiOiIifX0=","version":"3.0.0.0"}'
+    headers:
+      content-type:
+      - application/json
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-language:
+      - en-US
+      content-type:
+      - text/html;charset=UTF-8
+      content-encoding:
+      - gzip
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":"ok","contentId":"OSAPNL-1209_pjhmQbZtjr8QpEcd9qU8D8"}'
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:00:31 GMT
+- request:
+    method: post
+    uri: http://sdk.open.api.igexin.com/apiex.htm
+    body:
+      encoding: UTF-8
+      string: '{"action":"apnPushToListAction","appId":"3T7v1hEqgyAYDwXWwu8gN2","appkey":"XIT32K8Ekx9QNYZa2xDxp8","DTL":"47c231ec2b69c3924c3171cd31c9aae1","contentId":"OSAPNL-1209_pjhmQbZtjr8QpEcd9qU8D8","needDetails":true,"version":"3.0.0.0"}'
+    headers:
+      content-type:
+      - application/json
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      content-language:
+      - en-US
+      content-type:
+      - text/html;charset=UTF-8
+      content-encoding:
+      - gzip
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: '{"result":"OtherError"}'
+    http_version: '1.1'
+  recorded_at: Wed, 09 Dec 2015 06:00:31 GMT
+recorded_with: VCR 2.9.3

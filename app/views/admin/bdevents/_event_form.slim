@@ -1,0 +1,97 @@
+= simple_form_for(@bdevent, url: [:admin, @bdevent], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - starts_at = f.object.starts_at ? f.object.starts_at.strftime("%F %H:%M") : nil
+  - ends_at = f.object.ends_at ? f.object.ends_at.strftime("%F %H:%M") : nil
+  .row
+    .col-xs-3
+      = f.input :starts_at, as: :string, hints: false, input_html: { class: 'datetimepicker', value: starts_at }
+    .col-xs-3
+      = f.input :ends_at, as: :string, hints: false, input_html: { class: 'datetimepicker', value: ends_at }
+
+  table.table.table-striped id='bdevent_form'
+    thead
+      td 顯示語系
+      td
+    = f.simple_fields_for :translations do |d|
+      - is_required = (d.object.locale.to_s == 'zh-TW') ? true : false
+      tr
+        td rowspan='2'
+          = d.object.locale
+          = d.input :locale, as: :hidden, hints: false
+      tr
+        td colspan='3'
+          = d.label :title, '活動標題'
+          = d.input :title, label: false, required: is_required, hints: false
+          hr
+          = d.label :coupon_desc, 'Coupon 說明圖片 (1242*1845px)'
+          div
+            = link_to d.object.coupon_desc.url, title: d.object.locale, class: 'popup-image' do
+              = image_tag d.object.coupon_desc.url, width: 200 if d.object.coupon_desc.url
+            = d.input :coupon_desc, label: false, hints: false
+          hr
+          = d.label :banner, 'Campaign Image (主頁Banner 1242*540px)'
+          div
+            = link_to d.object.banner.url, title: d.object.locale, class: 'popup-image' do
+              = image_tag d.object.banner.url, width: 200 if d.object.banner.url
+            = d.input :banner, label: false, hints: false
+          hr
+          = f.label :bdevent_images, 'Campaign Image (KV 1242*450px)'
+          div id=("#{d.object.locale}_images")
+            = f.nested_fields_for :bdevent_images do |c|
+              div class=('remove' if c.object.locale.to_s != d.object.locale.to_s)
+                = c.input :bdevent_id, as: :hidden, hints: false
+                = c.input :locale, as: :hidden, hints: false
+                = link_to c.object.file.url, title: c.object.locale, class: 'popup-image' do
+                  = image_tag c.object.file.url, width: 200 if c.object.file.url
+                = c.input :file, hints: false
+          hr
+          = d.input :ticker
+          hr
+          = d.label :desc, '活動說明'
+          = d.text_area :desc, label: false, hints: false, class: 'tinymce', rows: 10
+  hr
+    = f.nested_fields_for :bdevent_works do |field|
+      .row
+        .well
+          = field.hidden_field :bdevent_id
+          = field.hidden_field :work_type, value: 'Work'
+          = field.select :work_id, [[field.object.work_name, field.object.work_id]], {}, class: 'bdevent_works_select'
+          = field.input :title
+          = field.input :position
+          = link_to field.object.image.url, class: 'popup-image' do
+            = image_tag field.object.image.url, width: 200 if field.object.image.url
+          = field.input :image, as: :file
+          = field.remove_nested_fields_link '刪除', class: 'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' }
+    .row
+      .well
+        = f.add_nested_fields_link :bdevent_works, '增加作品', class: 'btn btn-xs btn-primary add_nested_bdevent_products'
+
+  hr
+    = f.nested_fields_for :bdevent_products do |field|
+      .row
+        .well
+          = field.hidden_field :bdevent_id
+          = field.input :product_id, as: :select, collection: collection_for_product_model
+          = field.input :title
+          = field.input :position
+          = link_to field.object.image.url, class: 'popup-image' do
+            = image_tag field.object.image.url, width: 200 if field.object.image.url
+          = field.input :image, as: :file
+          = field.remove_nested_fields_link '刪除', class: 'btn btn-xs btn-danger', data: { confirm: 'Are you sure?' }
+    .row
+      .well
+        = f.add_nested_fields_link :bdevent_products, '增加產品', class: 'btn btn-xs btn-primary'
+  hr
+  .row
+    .col-xs-3
+      = f.input :is_enabled, label: 'Enabled?', hints: false
+  .row
+    .col-xs-3
+      = f.input :priority, collection: 1..10, include_blank: false, hints: false
+  .row
+    .col-xs-3
+      = f.input :background, as: :image, include_blank: false, hints: false
+
+  .form-actions
+    = f.input :event_type, as: :hidden, hints: false
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

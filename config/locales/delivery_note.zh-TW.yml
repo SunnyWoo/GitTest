@@ -1,0 +1,38 @@
+zh-TW:
+  delivery_note:
+    to: 收件人
+    address: 收件地址
+    order_date: 訂單成立日期
+    shipping_method: 運送方式
+    order_no: 訂單編號
+    item_no: 商品編號
+    item_name: 商品名稱
+    price: 單價
+    quantity: 數量
+    subtotal: 小計
+    total: 商品金額
+    coupon: 優惠折扣
+    shipping_fee: 運費
+    estimated_total: 訂單總金額
+    foot_note: 非常感謝你在 commandp.com 購物，我們期待你再次光臨。<br />如你有任何問題，歡迎隨時聯繫客服，謝謝！<br />祝 你有個美好的一天 ^_^
+    team: commandp 團隊敬上
+    back_note: 親愛的顧客，感謝你選擇commandp的商品！你所訂購的商品為客製化產品，所以若非為生產品質有瑕疵，該筆訂單是無法享有七天無理由退貨保障，敬請見諒。若收到的商品有問題，請你保持商品完整，直接來信描述問題並且傳送瑕疵的圖片至客服信箱hi@commandp.com或使用右方的二維碼立即與客服聯繫，我們會盡速為你回覆(不含假日)。
+    return_address: 退換貨地址
+    name: 客户姓名
+    phone: 聯絡電話
+    return: 退
+    exchange: 換
+    reason: 原因说明
+    commandp: commandp
+    website: 官方網站
+    weibo: 官方微博
+    ios: iOS下載
+    android: Android下載
+    back_title1: 退換貨/維修說明
+    back_title2: 退換貨登記卡
+    return_address_info: 台北市松山區南京東路五段 16 號 3 樓
+    customer_service_type: 客服信箱
+    customer_service: hi@commandp.com
+    shipping_address: 收件地址
+    return_product: 退換貨商品
+    service_type: 服務類型

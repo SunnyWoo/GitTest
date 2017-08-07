@@ -1,0 +1,7 @@
+- layer = activity.trackable
+- work = Work.find(activity.extra_info[:work_id])
+- if layer
+  div 新增 Layer ID:#{activity.trackable_id} 到 work #{link_to_admin_work work}.
+- else
+  div
+    strike 新增 Layer ID:#{activity.trackable_id} 到 work #{link_to_admin_work work}. #已刪除

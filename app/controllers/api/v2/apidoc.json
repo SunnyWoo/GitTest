@@ -1,0 +1,30 @@
+{
+  "name": "commandp API V2",
+  "version": "2.0.0",
+  "description": "commandp API V2",
+  "title": "commandp",
+  "url": "https://api-staging.commandp.com",
+  "order": [
+    "Register",
+    "Login",
+    "Logout",
+    "Mobile",
+    "GetMobileCode",
+    "VerifyMobileCode",
+    "User",
+    "GetUser",
+    "BindUserMobile",
+    "AdminUsers",
+    "AdminCreateUser",
+    "AdminShowUser",
+    "AdminUpdateUser",
+    "AdminDeleteUser",
+    "AdminOmniauths",
+    "AdminShowOmniauth",
+    "AdminDeleteOmniauth"
+  ],
+  "header": {
+    "title": "API V2 使用須知",
+    "filename": "header.md"
+  }
+}

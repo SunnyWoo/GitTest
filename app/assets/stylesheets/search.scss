@@ -1,0 +1,68 @@
+#search_block {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  z-index: 99;
+  input {
+    margin-bottom: 0;
+  }
+  #search_input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1020px;
+    background-color: #fff;
+    input {
+      margin-top: 13px;
+      width: 968px;
+      background: no-repeat scroll 7px 7px;
+    }
+    .input-group {
+      display: inline-table;
+      vertical-align: middle;
+    }
+    .input-group-btn {
+      display: table-cell;
+      position: relative;
+      top: 10px;
+      left: -60px;
+    }
+  }
+}
+
+body.search.index, body.shops.index {
+  .center-block {
+    display: table;
+  }
+}
+
+.dropdown {
+  a {
+    text-decoration: none;
+  }
+}
+
+#search {
+  width: 606px;
+  height: 40px;
+  border: 1px solid $line-color;
+  font-size: 1em;
+  padding: 0 25px;
+  color: $word-color;
+  @include border-radius(40px);
+  @include placeholder {
+    color: $sub-words-color;
+  }
+}
+
+i.cancel {
+  @extend .icons-cancel_normal;
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  cursor: pointer;
+  &:hover {
+    @extend .icons-cancel_hover;
+  }
+}

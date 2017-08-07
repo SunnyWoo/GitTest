@@ -1,0 +1,39 @@
+- breadcrumb :admin_preview_coupon_notices
+- admin_title t('coupon_notices.preview.page_title')
+
+
+h1 China
+.row
+  .col-xs-6
+    h2 Email
+    .well
+      - @china_notices.email_available.each do |notice|
+        p = notice.render_notice
+
+  .col-xs-6
+    h2 Mobile(每条简讯 发送一条短信)
+    .well
+      - @china_notices.mobile_available.each do |notice|
+        p = notice.render_notice
+
+h1 Global
+.row
+  .col-xs-6
+    h2 Email
+    .well
+      - @global_notices.email_available.each do |notice|
+        p = notice.render_notice
+
+  .col-xs-6
+    h2 Mobile
+    .well
+      - @global_notices.mobile_available.each do |notice|
+        p = notice.render_notice
+
+
+.row
+  .col-xs-12
+    h1 说明
+    .well
+      p 简讯内容的格式案例: 感谢您注册为噗印会员，您的专属5元优惠码%{coupon_code}，下单立减5元。噗印中国官网上线，全场包邮大促！
+      p %{coupon_code} 会被转换成优惠券碼

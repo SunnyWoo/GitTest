@@ -1,0 +1,50 @@
+$special-price-color: #47aa83;
+
+.has-special-price {
+  .price-original-price {
+    margin-bottom: 10px;
+    margin-top: -26px;
+    text-decoration: line-through;
+    color: #ccc;
+  }
+
+  .price-special-price {
+    display: block;
+    color: $special-price-color;
+  }
+}
+
+.price-special-price {
+  display: none;
+}
+
+.has-special-price {
+  .fee-price {
+    font-size: 18px !important;
+    text-decoration: line-through;
+    color: #ccc !important;
+  }
+
+  .fee-special-price {
+    color: $special-price-color !important;
+    vertical-align: bottom;
+    margin-right: 30px !important;
+    display: inline-block !important;
+  }
+}
+
+.has-special-price {
+  .cartlist-price {
+    font-size: 18px !important;
+    color: #ccc !important;
+  }
+
+  .list-special-price {
+    color: $special-price-color !important;
+    margin-right: 30px !important;
+  }
+}
+
+.fee-special-price {
+  display: none !important;
+}

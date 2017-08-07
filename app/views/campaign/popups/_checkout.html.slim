@@ -1,0 +1,178 @@
+#checkout-popup.popups
+  .popus-container
+
+
+
+    .mobilev2-content
+
+
+      #address-form-alert-notice
+      .address-form-subtitle.form-title 地址資訊
+
+
+      form.form#address-form
+        .form-group#truename
+          label.control-label
+            span.label-span 姓名
+            input disabled='disabled' type='text' placeholder='收件人的姓名'
+            .form-control-warn
+
+        .form-group#email
+          label.control-label
+            span.label-span Email
+            input disabled='disabled' type='email' placeholder='聯絡 Email'
+            .form-control-warn
+
+        .form-group#state
+          label.control-label
+            span.label-span 國家
+            select disabled='disabled'
+              option selected=true value="TW" Taiwan
+              option value="AU" Australia
+              option value="CA" Canada
+              option value="CN" China
+              option value="FR" France
+              option value="DE" Germany
+              option value="HK" Hong Kong
+              option value="JP" Japan
+              option value="MO" Macao
+              option value="MY" Malaysia
+              option value="NZ" New Zealand
+              option value="SG" Singapore
+              option value="KR" South Korea
+              option value="GB" United Kingdom
+              option value="US" United States
+            .form-control-warn
+
+        .form-group#zipcode
+          label.control-label
+            span.label-span 郵遞區號
+            input disabled='disabled' type='text' placeholder='收件地址郵遞區號'
+            .form-control-warn
+
+        .form-group#address1
+          label.control-label
+            span.label-span 地址
+            input disabled='disabled' type='text' placeholder='收件地址'
+            .form-control-warn
+
+        .form-group.last-form-group#phone
+          label.control-label
+            span.label-span 電話
+            input disabled='disabled' type='text' placeholder='收件人聯絡電話'
+            .form-control-warn
+
+      .payment-subtitle 付款方式
+      .form
+
+        .form-group
+          label.control-label
+            span.label-span-long PayPal
+            input.radiobox-input.payment-radio-box type='radio' name='payment'  value='paypal'
+            span.radiobox-icon
+
+        .form-group
+          label.control-label
+            span.label-span-long 信用卡
+            input.radiobox-input.payment-radio-box type='radio' name='payment'  value='stripe'
+            span.radiobox-icon
+
+        .form-group
+          label.control-label
+            span.label-span-long 貨到付款
+            input.radiobox-input.payment-radio-box type='radio' name='payment' value='cash_on_delivery'
+            span.radiobox-icon
+
+        .form-group
+          label.control-label
+            span.label-span-long 超商繳費
+            input.radiobox-input.payment-radio-box type='radio' name='payment' value='neweb/mmk'
+            span.radiobox-icon
+
+        .form-group
+          label.control-label
+            span.label-span-long ＡＴＭ轉賬
+            input.radiobox-input.payment-radio-box type='radio' name='payment' value='neweb/atm'
+            span.radiobox-icon
+
+        .form-group.last-form-group
+          label.control-label
+            span.label-span-long 支付寶
+            input.radiobox-input.payment-radio-box type='radio' name='payment' value='neweb/alipay'
+            span.radiobox-icon
+
+
+
+
+      .shipping-subtitle 寄送方式
+      .form
+
+        .form-group.not-show-cod
+          label.control-label
+            span.label-span-mid  標準（１０－１２天）
+            span.shipping-way-fee = render_shipping_way_fee('standard')
+            input.radiobox-input.shipping-radio-box type='radio' name='shipping_info_shipping_way' value='standard'
+            span.radiobox-icon
+
+        .form-group.last-form-group.not-show-cod
+          label.control-label
+            span.label-span-mid  快速（７－１０天）
+            span.shipping-way-fee = render_shipping_way_fee('express')
+            input.radiobox-input.shipping-radio-box type='radio' name='shipping_info_shipping_way' value='express'
+            span.radiobox-icon
+
+        .form-group.last-form-group.show-cod
+          label.control-label
+            span.label-span-mid  貨到付款
+            span.shipping-way-fee = render_shipping_way_fee('cash_on_delivery')
+            input.radiobox-input.shipping-radio-box type='radio' name='shipping_info_shipping_way' value='cash_on_delivery'
+            span.radiobox-icon
+
+      .coupon-subtitle
+        | 折價券
+        span#coupon_ok.success.hide = '*兌換成功'
+        span#coupon_bad.fail.hide  = '*兌換失敗'
+      .form
+        .coupon-group-block
+          input.coupon-group#coupon_code type='text' name='coupon' placeholder='請輸入折價券編號'
+          input.coupon-submit type='submit' data-waitingbg=(image_url('campaign/mobilev2/waiting.gif'))
+
+
+      .summary-title 金額
+      .summary-block
+        .summary-list
+          .summary-item
+            .summary-key 小計
+            .summary-value#subtotal
+
+          .summary-item
+            .summary-key 運費
+            .summary-value#shipping_fee
+
+          .summary-item
+            .summary-key 貨到付款
+            .summary-value#is_cash_on_deliviry 是
+
+          .summary-item.last-summary-item
+            .summary-key 折價券
+            .summary-value#discount
+
+        .grand-total-item
+          .grand-total-key 總金額
+          .grand-total-value#grandtotal
+
+        .mask#summary-mask
+
+
+
+
+      .mobilev2-footer#checkout_but 確認無誤，送出
+
+
+  .mobilev2-top
+    .leftnavs
+      .back-icon.checkout-popup-close
+        = image_tag 'campaign/mobilev2/back.png'
+
+
+    | 確認訂單資訊

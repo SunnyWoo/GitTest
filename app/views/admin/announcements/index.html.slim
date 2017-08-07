@@ -1,0 +1,35 @@
+- admin_title t('announcements.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th= sort_link(@search, :id, t('announcements.index.thead.id'))
+            th= sort_link(@search, :message, t('announcements.attributes.message'))
+            th= sort_link(@search, :starts_at, t('announcements.index.thead.starts_at'))
+            th= sort_link(@search, :ends_at, t('announcements.index.thead.ends_at'))
+            th= sort_link(@search, :default, t('announcements.index.thead.default'))
+            th= sort_link(@search, :created_at, t('announcements.index.thead.created_at'))
+            th= t('announcements.index.thead.operation')
+        tbody
+          - @announcements.each do |mt|
+            tr
+              td= mt.id
+              td= auto_link(mt.message)
+              td= l mt.starts_at, format: :long
+              td= l mt.ends_at, format: :long
+              td= mt.default
+              td= l mt.created_at, format: :long
+              td
+                .btn-group
+                    = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, mt]), class: 'btn btn-info'
+
+= will_paginate @announcements

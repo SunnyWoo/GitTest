@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://218.17.248.244:11080/bsp-oisp/sfexpressService
+    body:
+      encoding: US-ASCII
+      string: xml=%3CRequest%20service%3D%22ScopeService%22%20lang%3D%22zh-TW%22%3E%3CHead%3EWYWLKJ%3C%2FHead%3E%3CBody%3E%3CScope%20custid%3D%228860425469%22%3E%3C%2FScope%3E%3C%2FBody%3E%3C%2FRequest%3E&verifyCode=g8CCbnPRTrkRsisgQlMmKw%3D%3D%0A
+    headers:
+      accept:
+      - "*/*; q=0.5, application/xml"
+      accept-encoding:
+      - gzip, deflate
+      content-length:
+      - '233'
+      content-type:
+      - application/x-www-form-urlencoded
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache
+      content-type:
+      - text/xml;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Wed, 28 Oct 2015 06:30:59 GMT
+      set-cookie:
+      - BSP_CNSZ22_JBOSS_OISP=BSP_CNSZ22_JBOSS_OISP_84_178_8080; Path=/
+      connection:
+      - Keep-alive
+      via:
+      - 1.1 ID-0002262062176300 uproxy-5
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><Response service="ScopeServiceResponse"><Head>OK</Head><Body><Scope><Service
+        name="INSURE" value="20000"/></Scope></Body></Response>
+    http_version: '1.1'
+  recorded_at: Wed, 28 Oct 2015 06:31:06 GMT
+recorded_with: VCR 2.9.2

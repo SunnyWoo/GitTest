@@ -1,0 +1,11 @@
+- if f.object.errors.size > 0
+  = render 'admin/shared/form_error_notification', errors: f.object.errors.full_messages
+.row
+  .col-sm-8
+    = f.input :name
+    = f.input :description, as: :text
+  .col-sm-4
+    = f.input :begins_at, as: :date_time_picker
+    = f.input :ends_at do
+      = f.input_field :ends_at, as: :date_time_picker, data: { input: 'ends_at' }
+      = f.input_field :unlimited, as: :boolean, inline_label: t('simple_form.labels.promotion.unlimited'), data: { input: 'unlimited' }

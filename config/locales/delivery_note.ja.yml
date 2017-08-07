@@ -1,0 +1,38 @@
+ja:
+  delivery_note:
+    to: お客様名
+    address: ご請求先住所
+    order_date: ご注文日
+    shipping_method: 出荷方法
+    order_no: 注文番号
+    item_no: 商品番号
+    item_name: 商品名
+    price: 単価
+    quantity: 数量
+    subtotal: 小計
+    total: 商品の合計
+    coupon: クーポン
+    shipping_fee: 配送料
+    estimated_total: 総合計
+    foot_note: この度は、コマプリをご利用いただき誠にありがとうございました。
+    team: commandp team
+    back_note: お客様へこの度はコマプリの商品をご購入いただき誠にありがとうございました。返品交換につきまして、商品に傷がある場合、7 日以内にサポートまでご連絡下さい。その際、商品の写真を撮影いただだきメールでお送り下さい。hijp@commandp.com<QRコードからもアクセスが可能です>サポートより折り返しご連絡をさせていただきます。
+    return_address: 返品アドレス
+    name: お客様名
+    phone: 電話番号
+    return: 返品
+    exchange: 交換
+    reason: 理由
+    commandp: commandp
+    website: オフィシャルWEBサイト
+    weibo: オフィシャルブログ
+    ios: iOS ダウンロード
+    android: Android ダウンロード
+    back_title1: 返品/修理説明
+    back_title2: 返品登録書
+    return_address_info: 3F., No.16, Sec. 5, Nanjing E. Rd., Songshan Dist., Taipei City 10597, Taiwan (R.O.C.)
+    customer_service_type: カスタマーサービス
+    customer_service: hijp@commandp.com
+    shipping_address: 配送アドレス
+    return_product: 返品商品
+    service_type: 要求サービスタイプ

@@ -1,0 +1,76 @@
+.summary {
+  a {
+    text-decoration: none;
+  }
+  strong {
+    font-weight: normal;
+  }
+  table {
+    width: 100%;
+    margin-top: 30px;
+    thead, thead tr, thead th {
+      background-color: $word-color;
+    }
+    thead td {
+      padding: 0 20px;
+      line-height: 30px;
+      color: #FFF;
+      font-weight: 200;
+      span {
+        color: #FFF;
+      }
+    }
+    tbody {
+      td {
+        padding: 20px 0px 20px 0px;
+        img {
+          margin: 20px 10px 20px 20px;
+        }
+        .itme {
+          margin: 25px;
+          width: 300px;
+        }
+      }
+      tr {
+        border-bottom: 1px solid $line-color;
+      }
+      td:last-child {
+        text-align: right;
+        padding-right: 20px;
+      }
+    }
+    tfoot {
+      td {
+        text-align: right;
+        padding-right: 30px;
+        padding-top: 20px;
+      }
+      td:last-child {
+        padding-right: 20px;
+      }
+    }
+
+    .sub-total {
+      height: 50px;
+      span {
+        font-size: 1.5em;
+        color: $main-color;
+      }
+    }
+  }
+
+  .info_block {
+    margin: 10px 0px 20px 0px;
+    width: 360px;
+    line-height: 1.5em;
+    strong {
+      font-weight: 700;
+    }
+  }
+  .error-notice {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 30px;
+    @extend .msg-error;
+  }
+}

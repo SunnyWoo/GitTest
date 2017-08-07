@@ -1,0 +1,8 @@
+- china_live800_url = 'https://v1.live800.com/live800/chatClient/chatbox.jsp?jid=2471045427&companyID=526455&configID=42223&codeType=custom'
+- contact_link = Region.china? ? china_live800_url : store_support_path
+
+.burgerMenu#burger-menu
+  .burgerMenu-item
+    = link_to t('store.sidebar_menu.search'), store_orders_search_path, class: 'burgerMenu-item-link burgerMenu-item-link--search'
+  .burgerMenu-item
+    = link_to t('store.sidebar_menu.contact'), contact_link, class: 'burgerMenu-item-link burgerMenu-item-link--contact'

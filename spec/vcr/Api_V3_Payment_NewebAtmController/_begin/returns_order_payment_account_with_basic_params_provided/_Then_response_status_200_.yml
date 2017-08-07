@@ -1,0 +1,30 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://testmaple2.neweb.com.tw/CashSystemFrontEnd/Payment
+    body:
+      encoding: UTF-8
+      string: merchantnumber=459807&ordernumber=1511178100013US&amount=99&paymenttype=ATM&paytitle=commandp%20%E6%88%91%E5%8D%B0%E5%95%86%E5%93%81&paymemo=&bankid=007&duedate=20151122&payname=&payphone=&returnvalue=1&hash=9cd64fab662c348c515590904730cec7&nexturl=&mobile=0
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 17 Nov 2015 07:40:23 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      content-length:
+      - '149'
+      connection:
+      - close
+      content-type:
+      - text/plain; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: rc=0&bankid=007&virtualaccount=7999911220004830&amount=99&merchantnumber=459807&ordernumber=1511178100013US&checksum=24d0a69f0928fc05d61d5545f6ee5a83
+    http_version: '1.1'
+  recorded_at: Tue, 17 Nov 2015 07:40:22 GMT
+recorded_with: VCR 2.9.2

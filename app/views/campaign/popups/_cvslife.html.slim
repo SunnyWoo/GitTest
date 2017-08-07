@@ -1,0 +1,36 @@
+#cvslife-popup.popups
+  .popus-container.mobilev2-content
+
+    .fixed-top-placeholder
+
+    - payment_id_text = @order ? ": #{@order.payment_id}" : ''
+    - money_text = @order ? "（#{render_price(@order.price, currency_code: @order.currency)}）" : ''
+    .cvs-content-block
+      .cvs-content-title 萊爾富 Life - ET
+      .cvs-content-p 選擇【繳費 ‧ 代收】
+      .cvs-content-p 選擇【網路交易】
+      .cvs-content-p 選擇【藍星科技 ezpay】
+      .cvs-content-p 選擇【賬單查繳】
+      .cvs-content-p 輸入 16 位繳款編號
+      br
+      .cvs-content-p 注意事項
+      .cvs-content-pbig 繳費單於列印後 3 小時內有效。若逾時未繳，請重新列印繳費單。
+      .cvs-content-pbig 請勿於同一筆賬單列印多張繳費單重複繳款。
+      .cvs-content-pbig 請記錄 16 位數繳款編號，至便利商店列印出繳費單到櫃檯繳費。
+
+
+    br
+    br
+    br
+    br
+
+
+
+
+  .mobilev2-top
+    .leftnavs
+      .back-icon.cvslife-popup-close
+        = image_tag 'campaign/mobilev2/back.png'
+
+
+    | 超商繳費教學

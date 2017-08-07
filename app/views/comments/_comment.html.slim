@@ -1,0 +1,12 @@
+.row
+  .clearfix
+    - if comment.is_admin?
+      = link_to 'Admin', 'javascript:;', class: 'light'
+    - else
+      .title
+        = comment.email
+      .date
+        = time_ago_in_words(comment.created_at)
+        |  ago
+  p
+    = simple_format(comment.content)

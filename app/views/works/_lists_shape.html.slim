@@ -1,0 +1,14 @@
+.shape-lists
+  .head
+    .prev-step data-target='#shapePanel'
+      i.overlays-img_addlayer_icon_back_normal
+    = t('editor.shapes')
+    .close-panel
+      i.overlays-img_addlayer_icon_cancel_normal
+  .components
+    - editor_shape_list.each do |hash|
+      - file, name = hash.values_at(:file, :name)
+      .obj data-type='obj' data-prop='shape' data-obj=file data-obj-name=name
+        i = image_tag("editor/shape_186px/#{name}.png")
+        / .name = name
+        .mask

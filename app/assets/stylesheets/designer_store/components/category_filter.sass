@@ -1,0 +1,61 @@
+// *************************************
+//
+//   Category Filter
+//   -> 商品類別（如：手機硬殼、無框畫、毛巾）的過濾器
+//
+// *************************************
+
+$categoryFilter-height: 50px
+
+.categoryFilter
+  overflow-x: scroll
+  overflow-y: hidden
+  @include rem(height, $categoryFilter-height)
+  @include rem(padding-right, 5px)
+  @include rem(padding-left, 5px)
+  white-space: nowrap
+  border-top: 1px solid $c-border
+  background-color: $c-bg-white
+  @include rem(font-size, $f-size-content)
+  @include rem(line-height, $categoryFilter-height)
+
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.categoryFilter-item
+  position: relative
+  display: inline-block
+  overflow: hidden
+  margin: 0 10px
+  color: $c-text-placeholder
+  cursor: pointer
+
+.categoryFilter-item.is-active
+  color: $c-text-content
+
+  &:after
+    position: absolute
+    content: ''
+    bottom: 0
+    left: 0
+    right: 0
+    @include rem(height, 5px)
+    width: 100%
+    background-color: $c-primary

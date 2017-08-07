@@ -1,0 +1,69 @@
+.page-header
+  h1 Settings
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    div
+      #user-profile-3.user-profile.row
+        .col-sm-offset-1.col-sm-10
+          = form_for @factory, url: print_factory_path(@factory) do |f|
+            .tabbable
+              ul.nav.nav-tabs.padding-16
+                li.active
+                  a data-toggle="tab" href="#edit-basic"
+                    i.green.icon-edit.bigger-125
+                    | Basic Info
+                li
+                  a data-toggle="tab" href="#edit-settings"
+                    i.purple.icon-cog.bigger-125
+                    | Settings
+              .tab-content.profile-edit-tab-content
+
+                #edit-basic.tab-pane.in.active
+                  h4.header.blue.bolder.smaller General
+                  .row
+                    .col-xs-12.col-sm-8
+                      .form-group
+                        label.col-sm-4.control-label.no-padding-right for="form-field-code"  Code
+                        .col-sm-4
+                          = f.text_field :code, class: 'col-xs-8 col-sm-10'
+                      .space-8
+                    .col-xs-12.col-sm-8
+                      .form-group
+                        label.col-sm-4.control-label.no-padding-right for="form-field-name"  Name
+                        .col-sm-4
+                          = f.text_field :name, class: 'col-xs-8 col-sm-10'
+
+                #edit-settings.tab-pane
+                  h4.header.blue.bolder.smaller FTP
+                  = f.fields_for(:ftp_gateway, include_id: false) do |ff|
+                    .row
+                      .col-xs-12.col-sm-8
+                        .form-group
+                          label.col-sm-4.control-label.no-padding-right for="form-field-username"  Url
+                          .col-sm-8
+                            = ff.text_field :url, class: 'col-xs-12 col-sm-10'
+                        .space-8
+                      .col-xs-12.col-sm-8
+                        .form-group
+                          label.col-sm-4.control-label.no-padding-right for="form-field-username"  Port
+                          .col-sm-8
+                            = ff.text_field :port, class: 'col-xs-12 col-sm-10'
+                        .space-8
+                      .col-xs-12.col-sm-8
+                        .form-group
+                          label.col-sm-4.control-label.no-padding-right for="form-field-username"  Username
+                          .col-sm-8
+                            = ff.text_field :username, class: 'col-xs-12 col-sm-10'
+                        .space-8
+                      .col-xs-12.col-sm-8
+                        .form-group
+                          label.col-sm-4.control-label.no-padding-right for="form-field-username"  Password
+                          .col-sm-8
+                            = ff.password_field :password, class: 'col-xs-12 col-sm-10'
+
+            .clearfix.form-actions
+              .col-md-offset-3.col-md-9
+                = f.submit 'Submit', class: 'btn btn-info'
+                | &nbsp; &nbsp;
+                = f.submit "Reset", type: 'reset', class: 'btn'

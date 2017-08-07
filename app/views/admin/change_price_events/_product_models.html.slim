@@ -1,0 +1,14 @@
+= simple_form_for(form, url: admin_change_price_events_path, as: :change_price_event, html: { class: 'form-inline' }, remote: true) do |f|
+  .widget-main.no-padding.target_list
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th= check_box_tag :all
+          th= t('change_price_events.works.search_options.product_model')
+      tbody
+        - form.product_models.each do |product_model|
+          tr
+            td= check_box_tag('change_price_event[target_ids][]', product_model.id)
+            td= product_model.name
+  .event_form
+    = render 'form', f: f

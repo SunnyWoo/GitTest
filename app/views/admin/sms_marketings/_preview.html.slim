@@ -1,0 +1,10 @@
+.modal.fade id='preview_sms_modal'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      .modal-body
+        = "【#{Mobile::SendMarketingService::COMPANY}】亲爱的用户，"
+        span.content
+        = "回复TD退订"

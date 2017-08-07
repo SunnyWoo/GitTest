@@ -1,0 +1,31 @@
+- admin_title t('deliver_order.deliver_failed')
+
+.widget-box.widget-color-blue data-no-turbolink=="true"
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th ID
+            th 订单
+            th 状态
+            th = t('admins.index.thead.operation')
+          tr
+            = search_form_for @q, url: deliver_failed_admin_deliver_orders_path do |f|
+              th = f.search_field :order_order_no_eq
+              th = f.select :aasm_state_eq, DeliverErrorCollection.aasm.states_for_select, include_blank: true
+              th = f.submit 'Search'
+        tbody
+          - @error_collections.each do |error|
+            tr
+              td = error.id
+              td = link_to error.order.order_no, admin_order_path(error.order)
+              td = error.aasm_state
+              td
+                = link_to '手动修复', edit_admin_archived_work_path(error.workable),  class: 'btn btn-info' if error.workable_type =~ /^ArchivedWork$/
+                = link_to '自动修复', repair_images_admin_deliver_orders_path(error_id: error.id),  method: :put, class: 'btn btn-info'
+
+= will_paginate @error_collections

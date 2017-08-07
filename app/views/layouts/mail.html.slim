@@ -1,0 +1,47 @@
+html
+  head
+    = stylesheet_link_tag 'order_mail', media: :all
+
+  body style=("margin: 0; padding: 0;")
+    table#outside cellpadding="0" cellspacing="0" width="100%"
+      tr
+        td align="center" valign="top"
+          table#container align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+            tr
+              td align="center"
+                .cannot-read
+                  / | If you cannot read this email, please click <a href=''>here</a>.
+            tr
+              td#header
+                = image_tag('cp_logo.png')
+            tr
+              td#body
+                = yield
+
+            tr
+              td align="center"
+                .paragraph1.c-margin
+                  = image_tag('email/img_newsletter_line.png')
+            tr
+              td#footer align="center"
+                .paragraph1.c-margin
+                  h1.custom-margin1
+                    = image_tag('email/nl_text_printyourmind.png', alt: 'Print Your Mind!')
+                  - if Region.global?
+                    p
+                      = link_to image_tag('email/newsletter_fb_on.png'), t('share.facebook_fan_page'), only_path: false
+                      = link_to image_tag('email/newsletter_twi_on.png'), 'https://twitter.com/hicommandp', only_path: false
+                      / = link_to image_tag('email/newsletter_g_on.png'), 'https://www.google.com/#', only_path: false
+
+            tr
+              td align="center"
+                #copyright
+                  .padding
+                  p Use of this Web site constitutes acceptance of the TERMS OF USE
+                  p Copyright © 2014, commandp Inc. All rights reserved.
+                  .padding
+      tr
+        td align="center" valign="top"
+          table#margin-bottom align="center" border="0" cellpadding="0" cellspacing="0" width="600"
+            tr
+              td height="100"

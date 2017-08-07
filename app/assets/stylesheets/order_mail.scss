@@ -1,0 +1,266 @@
+html, body, div, span, applet, object, iframe,
+p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+}
+a {
+  color: #4fbd92;
+}
+.commandp_green {
+  color: #4fbd92;
+}
+/* clearfix */
+.clearfix{zoom:1;}
+.clearfix:after{content:'.';display:block;clear:both;visibility:hidden;height:0;font-size:0;}
+
+.cannot-read {
+  line-height: 70px;
+	height: 70px;
+  color: #455054;
+  background-color: #ececec;
+}
+#outside {
+  > tr > td {
+    background-color: #ececec;
+  }
+}
+#container {
+  td {
+    background-color: #FFF;
+  }
+}
+#header {
+  background-color: #fff;
+  padding: 15px 0 13px 40px;
+}
+#header2 {
+  background-color: #4fbd92;
+  padding: 15px 0 13px 40px;
+}
+.highlight {
+  color: #0072bc;
+  font-weight: bold;
+}
+.paragraph1 {
+	margin-bottom: 70px;
+}
+.c-margin {
+	margin-left: 35px;
+	margin-right: 35px;
+}
+.custom-margin1 {
+	margin-bottom: 16px;
+}
+#body {
+  font-size: 15px;
+  p {
+    color: #333333;
+    margin-bottom: 26px;
+    line-height: 24px;
+  }
+	ol {
+		padding-left: 20px;
+		margin-bottom: 26px;
+		li {
+			line-height: 24px;
+		}
+	}
+	.link {
+		width: 100%;
+		margin-bottom: 26px;
+	}
+	.center {
+		text-align: center;
+	}
+  .title {
+    width: 530px;
+    color: #4fbd92;
+    font-size: 55px;
+    font-style: italic;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+  }
+  .cover-img {
+    text-align: center;
+		padding: 10px 0;
+		img {
+			min-height: 550px;
+			max-height: 550px;
+      max-width: 530px;
+			height: 550px;
+		}
+  }
+	.item-info {
+		.name, .device {
+			display: block;
+			width: 100%;
+			text-align: center;
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+		.name > span {
+			font-weight: bold;
+			margin-right: 5px;
+		}
+	}
+  .download {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .address {
+    width: 530px;
+    td {
+      width: 50%;
+    }
+    .adr-title {
+      margin: 10px 0;
+    }
+    .name {
+      font-weight: bold;
+    }
+    .name, .adr {
+      line-height: 18px;
+    }
+  }
+  .notice {
+    margin-bottom: 30px;
+  }
+  .orders-info {
+    margin-bottom: 40px;
+    tbody {
+      th {
+        padding: 8px 6px;
+        background-color: #455054;
+        color: #ffffff;
+        font-weight: normal;
+      }
+      tr {
+        th, td {
+          padding: 8px 6px;
+          vertical-align: middle;
+          line-height: 22px;
+        }
+      }
+      .symbol {
+        font-size: 0.2em;
+        color: #777;
+      }
+      .summary {
+        td {
+          padding: 2px 6px;
+        }
+      }
+      .line {
+        border-bottom: 1px solid #c8c8c8;
+      }
+      .blue {
+        color: #0072bc;
+      }
+      .total-title, .total-final {
+        color: #0072bc;
+        font-size: 22px;
+        padding-top: 22px;
+        .symbol {
+          font-size: 0.5em;
+          color: #0072bc;
+          vertical-align: top;
+        }
+      }
+      .total-final {
+        text-align: right;
+      }
+    }
+    .spacing {
+      width: 35px;
+    }
+    .items {
+      width: 130px;
+      text-align: center;
+      img {
+        max-width: 120px;
+      }
+    }
+    .items2 {
+      width: 130px;
+      text-align: center;
+			img {
+				max-width: 100px;
+			}
+    }
+    .description {
+      width: 170px;
+      text-align: left;
+			.i {
+				line-height: 22px;
+			}
+    }
+    .price {
+      width: 80px;
+      text-align: left;
+    }
+    .qty {
+      width: 60px;
+      text-align: center;
+    }
+    .total {
+      width: 90px;
+      text-align: right;
+    }
+  }
+}
+#footer {
+  h1 {
+    font-size: 38px;
+    font-style: italic;
+    font-family: Helvetica, sans-serif;
+    color: #333;
+  }
+	a {
+		margin-right: 10px;
+	}
+}
+#copyright {
+  background-color: #f7f7f7;
+  color: #999;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 13px;
+  p {
+    line-height: 20px;
+  }
+  .padding {
+    height: 22px;
+  }
+}
+#margin-bottom {
+  background-color: #ececec;
+}
+.red {
+  color: red;
+}
+
+img.store_kv {
+  width: 100%;
+}
+

@@ -1,0 +1,9 @@
+= f.input :name
+= f.input :delivery_at, as: :string, input_html: { class: 'datetimepicker'}
+= f.input :subject
+= f.label :filter
+= f.select :filter, @mailing_list_options, { include_blank: false },
+           { multiple: true, style: 'width: 100%', data: {tags: "true"} }
+= f.label :content
+= f.text_area :content, class: 'tinymce', rows: 15
+= f.submit

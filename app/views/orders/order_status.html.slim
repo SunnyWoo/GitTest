@@ -1,0 +1,36 @@
+.cmdp_container
+  .grid_4.prefix_2
+    .margin-top-fixed
+
+.cmdp_container
+  #sidebar.grid_2
+    = render_cell :help, :sidebar, @question_categories
+
+  article#article.grid_4
+    h1.item-title
+      = t('question.li5')
+    p.notice
+      = t('page.order_status.notice')
+    p.form
+      = form_for OrderStatusForm.new, url: check_order_status_orders_path,
+      builder: Judge::FormBuilder, method: :get, html: { class: 'order-status-form' } do |f|
+        div.required
+          .form-field
+            .label.clearfix
+              = f.label :email, class: 'pull-left'
+              .error.pull-left
+            = f.text_field :email, validate: true
+        div.required
+          .form-field
+            .label.clearfix
+              = f.label :order_id, class: 'pull-left'
+              .error.pull-left
+            = f.text_field :order_id, validate: true
+        .margin-top-fixed
+        = f.submit 'Search for My Order', class: 'btn btn-default'
+        .response
+          .notice
+            = flash[:notice] if flash[:notice]
+          .error
+            = flash[:error] if flash[:error]
+    .margin-top-fixed

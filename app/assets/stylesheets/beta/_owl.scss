@@ -1,0 +1,242 @@
+/*
+ * 	Default theme - Owl Carousel CSS File
+ */
+
+$color-base:			#4fbd92;
+$color-white:			#FFF;
+$color-gray:			#D6D6D6;
+
+//nav
+
+$nav-color: 			$color-white;
+$nav-color-hover:		$color-white;
+$nav-font-size: 		14px;
+$nav-rounded: 			3px;
+$nav-margin: 			5px 6px;
+$nav-padding: 			4px 7px;
+$nav-background: 		$color-white;
+$nav-background-hover:	$color-base;
+$nav-disabled-opacity: 	0.5;
+
+//dots
+
+$dot-width:				10px;
+$dot-height:			10px;
+$dot-rounded:			30px;
+$dot-margin: 			5px;
+$dot-background:		$color-white;
+$dot-background-active:	$color-base;
+
+
+@mixin transition($prop, $time, $easing){
+  -webkit-transition: $prop $time $easing;
+  -moz-transition: $prop $time $easing;
+  -ms-transition: $prop $time $easing;
+  -o-transition: $prop $time $easing;
+  transition: $prop $time $easing;
+}
+
+@mixin rounded($value){
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+@mixin transform($prop){
+  -webkit-transition: $prop;
+  -moz-transition: $prop;
+  -ms-transition: $prop;
+  -o-transition: $prop;
+  transition: $prop;
+}
+
+/*
+ *  Core Owl Carousel CSS File
+ */
+.owl-carousel {
+  display: none;
+  width: 100%;
+  height: 500px;
+  -webkit-tap-highlight-color: transparent;
+  /* position relative and z-index fix webkit rendering fonts issue */
+  position: relative;
+  z-index: 1;
+
+  .owl-stage {
+    position: relative;
+    -ms-touch-action: pan-Y;
+  }
+
+  .owl-stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+
+  .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    /* fix for flashing background */
+    -webkit-transform: translate3d(0px, 0px, 0px);
+
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .owl-controls .owl-nav .owl-prev,
+  .owl-controls .owl-nav .owl-next,
+  .owl-controls .owl-dot {
+    cursor: pointer;
+    cursor: hand;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &.owl-loaded {
+    display: block;
+  }
+
+  &.owl-loading {
+    opacity: 0;
+    display: block;
+  }
+
+  &.owl-hidden {
+    opacity: 0;
+  }
+
+  .owl-refresh .owl-item {
+    display: none;
+  }
+
+  .owl-item {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .owl-item img {
+    display: block;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+  }
+  &.owl-text-select-on .owl-item {
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+  }
+
+  .owl-grab {
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -o-grab;
+    cursor: -ms-grab;
+    cursor: grab;
+  }
+
+  .owl-rtl {
+    direction: rtl;
+  }
+
+  .owl-rtl .owl-item {
+    float: right;
+  }
+
+}
+
+/* No Js */
+.no-js .owl-carousel {
+  display: block;
+}
+
+.owl-theme {
+  // controls container
+  .owl-controls {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  // Styling Next and Prev buttons
+  .owl-controls {
+    position: relative;
+    .owl-nav {
+      [class*='owl-'] {
+        // color: $nav-color;
+        // font-size: $nav-font-size;
+        // margin: $nav-margin;
+        // padding: $nav-padding;
+        // background: $nav-background;
+        // display: inline-block;
+        // cursor: pointer;
+        // @include rounded($nav-rounded);
+        //
+        // &:hover {
+        //   background: $nav-background-hover;
+        //   color:$nav-color-hover;
+        //   text-decoration: none;
+        //   }
+        position: absolute;
+        top: -265px;
+        width: 33px;
+        height: 55px;
+        text-indent: -9999px;
+        opacity: 0.5;
+      }
+      .owl-prev {
+        left: 20px;
+        @extend .icons-arrows_left;
+      }
+      .owl-next {
+        right: 20px;
+        @extend .icons-arrows_right;
+      }
+      .disabled {
+        opacity: $nav-disabled-opacity;
+        cursor: default;
+      }
+    }
+  }
+
+  // Styling dots
+  .owl-dots {
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        width: $dot-width;
+        height: $dot-height;
+        margin: $dot-margin;
+        background: $dot-background;
+        display: block;
+        -webkit-backface-visibility: visible;
+        @include transition(opacity, 200ms, ease);
+        @include rounded($dot-rounded);
+      }
+
+      &.active,
+      &:hover {
+        span {
+          background: $dot-background-active;
+        }
+      }
+    }
+  }
+}

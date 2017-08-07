@@ -1,0 +1,17 @@
+- if works.total_pages > 1
+  .alert.alert-warning
+    = "超過 #{works.per_page} 個符合的搜尋結果，建議您增加條件以縮小範圍"
+table.table
+  thead
+    tr
+      th= check_box_tag :all
+      th= t('promotions.works.search_options.category')
+      th= t('promotions.works.search_options.work_image')
+      th= t('promotions.works.search_options.work_name')
+      th= t('promotions.works.search_options.designer')
+      th= t('promotions.works.search_options.product_model')
+      th= t('promotions.works.search_options.tag')
+      th= link_to 'Add All Selected', '#', data: { action: 'bulk' }
+  tbody
+    = render partial: 'work', collection: works
+= will_paginate works, renderer: PaginationHelper::RemoteLinkRenderer

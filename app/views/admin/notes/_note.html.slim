@@ -1,0 +1,10 @@
+tr id="tr_note_#{note.id}"
+  td= l note.created_at, format: :long
+  td
+    = auto_link_with_nl2br(note.message)
+  td= note.user_name
+  td
+    - if current_admin == note.user
+      = link_to 'Edit', edit_polymorphic_path([:admin, note.noteable, note]), class: 'btn btn-info btn-xs', data: { remote: true }
+      /= link_to 'Del', admin_order_note_path(note.noteable, note), method: :delete,
+        class: 'btn btn-danger btn-sm', data: { remote: true, confirm: 'Delete?' }

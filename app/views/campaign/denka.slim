@@ -1,0 +1,244 @@
+= render partial: 'kv', locals: {images: @kv_images, locale: locale}
+
+.campaign-nav.campaign-nav-red.text-center
+  ul
+    li
+      a href="#info" 活動介紹
+    li
+      a href="#product" 熱賣商品
+    li
+      a href="#team" 幕後團隊
+
+.campaign-page#info_page
+  .denka-block.denka-bg.text-center
+    .cmdp_container
+      .grid_6.margin-top-fixed
+        .item-title.denka-title
+          | 重金邀請時尚團隊打造性感周荀
+        .title
+          | 我印 X DenKa
+        .desc
+          | 我印首次與百變精靈 DenKa 合作，
+          br
+          | 想要讓大家看到不一樣的迪士尼故事經典角色，
+          br
+          | 打破大家對童話故事的既有印象，
+          br
+          | 邀請到時尚攝影師-陳書海，
+          br
+          | 與時尚團隊打造跟以往不同新的 DenKa，
+          br
+          | 用時尚的角度詮釋這五位迪士尼經典角色，
+          br
+          | 現在就跟我們一起進入童話故事裡吧！
+
+      .grid_6.campaign-inpage-nav style='margin-top'
+        .round-item
+          = image_tag 'campaign/denka/btn1.png', class: 'campaign-inpage-nav-item', alt: 'DenKa 小紅帽', data: {target: 'denka-cosplay1'}
+        .round-item
+          = image_tag 'campaign/denka/btn2.png', class: 'campaign-inpage-nav-item', alt: 'DenKa 黑魔女', data: {target: 'denka-cosplay2'}
+        .round-item
+          = image_tag 'campaign/denka/btn3.png', class: 'campaign-inpage-nav-item', alt: 'DenKa 茉莉', data: {target: 'denka-cosplay3'}
+        .round-item
+          = image_tag 'campaign/denka/btn4.png', class: 'campaign-inpage-nav-item', alt: 'DenKa 美人魚', data: {target: 'denka-cosplay4'}
+        .round-item
+          = image_tag 'campaign/denka/btn5.png', class: 'campaign-inpage-nav-item', alt: 'DenKa 愛麗絲', data: {target: 'denka-cosplay5'}
+
+    .cmdp_container.denka-gallery
+      .cmdp_container
+        .popup-gallery
+          .grid_3#denka-cosplay1
+            = link_to image_path('campaign/denka/display/cosplay1-1.png') do
+              = image_tag 'campaign/denka/cosplay1-1.png', class: 'denka-gallery-item'
+            .denka-gallery-note.denka-gallery-item
+              .denka-gallery-note-text
+                .title.title-red
+                  | LITTLE RED
+                  br
+                  | RIDING HOOD
+                  .subtitle 小紅帽
+                p.desc 除了以前童話故事中小紅帽孝順又勇敢的個性，也加上了現代女性的獨立自主，打破傳統對女性柔弱的形象，表現出更有魅力與魄力的小紅帽。
+          .grid_3
+            = link_to image_path('campaign/denka/display/cosplay1-2.png') do
+              = image_tag 'campaign/denka/cosplay1-2.png', class: 'denka-gallery-item'
+          .hide
+            = link_to image_path('campaign/denka/display/cosplay1-3.png') do
+              = image_tag 'campaign/denka/display/cosplay1-3.png', class: 'denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay1-4.png') do
+              = image_tag 'campaign/denka/display/cosplay1-4.png', class: 'denka-gallery-item'
+
+        .popup-gallery
+          .grid_6#denka-cosplay2
+            = link_to image_path('campaign/denka/display/cosplay2-4.png') do
+              = image_tag 'campaign/denka/cosplay2-4.png', class: 'denka-gallery-item'
+          .grid_3
+            = link_to image_path('campaign/denka/display/cosplay2-2.png') do
+              = image_tag 'campaign/denka/cosplay2-1.png', class: 'denka-gallery-item'
+          .hide
+            = link_to image_path('campaign/denka/display/cosplay2-3.png') do
+              = image_tag 'campaign/denka/display/cosplay2-3.png', class: 'denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay2-1.png') do
+              = image_tag 'campaign/denka/cosplay2-2.png', class: 'denka-gallery-item'
+        .grid_3
+          .denka-gallery-note.denka-gallery-item
+            .denka-gallery-note-text
+              .title.title-blue
+                | MALEFICENT
+                .subtitle 黑魔女
+              p.desc 由經典迪士尼故事改編黑魔女，表現出性感又不失帥氣的模樣，表面冷酷但私底下卻有一顆柔軟的心，要表現出失去翅膀難過與想要復仇的心情，表現出善良之心的黑魔女。
+
+        .grid_3#denka-cosplay3
+          .denka-gallery-note.denka-gallery-item
+            .denka-gallery-note-text
+              .title.title-green
+                | MOLI PRINCESS
+                .subtitle 茉莉公主
+              p.desc 在迪士尼裡面最神秘的公主，很少人詮釋過這個角色，這個角色需要帶點神秘，展現出自信追尋夢想，由周荀表現出神秘又勇敢做自己的茉莉公主。
+        .popup-gallery
+          .grid_3
+            = link_to image_path('campaign/denka/display/cosplay3-1.png') do
+              = image_tag 'campaign/denka/cosplay3-1.png', class: 'denka-gallery-item'
+          .grid_6
+            = link_to image_path('campaign/denka/display/cosplay3-4.png') do
+              = image_tag 'campaign/denka/cosplay3-4.png', class: 'denka-gallery-item'
+          .hide
+            = link_to image_path('campaign/denka/display/cosplay3-3.png') do
+              = image_tag 'campaign/denka/display/cosplay3-3.png', class: 'denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay3-2.png') do
+              = image_tag 'campaign/denka/cosplay3-2.png', class: 'denka-gallery-item'
+        .popup-gallery
+          .grid_3#denka-cosplay4
+            = link_to image_path('campaign/denka/display/cosplay4-3.png') do
+              = image_tag 'campaign/denka/cosplay4-3.png', class: 'denka-gallery-item'
+          .grid_3
+            = link_to image_path('campaign/denka/display/cosplay4-2.png') do
+              = image_tag 'campaign/denka/cosplay4-2.png', class: 'denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay4-1.png') do
+              = image_tag 'campaign/denka/display/cosplay4-1.png', class: 'hide denka-gallery-item'
+            .denka-gallery-note.denka-gallery-item
+              .denka-gallery-note-text
+                .title.title-purple
+                  | THE LITTLE
+                  br
+                  | MERMAID
+                  .subtitle 美人魚
+                p.desc 每個女孩心中都想成為漂亮的美人魚，利用特殊的服裝讓 DenKa 身上有閃閃發光的感覺，表現出美人魚對人類世界的好奇，與對愛情的奮不顧身。
+
+        .grid_3#denka-cosplay5
+          .denka-gallery-note.denka-gallery-item
+            .denka-gallery-note-text
+              .title.title-cyan
+                | ALICE
+                br
+                | IN WONDERLAND
+                .subtitle 愛麗絲
+              p.desc 愛麗絲擁有著豐富想像力，與天真無邪的俏皮，這次的妝容利用粉紅色的眼影，讓 DenKa 呈現的愛麗絲更有夢幻俏皮的感覺，表現出年輕女生對新鮮事物的好奇心。
+        .popup-gallery
+          .grid_3
+            = link_to image_path('campaign/denka/display/cosplay5-1.png') do
+              = image_tag 'campaign/denka/cosplay5-1.png', class: 'denka-gallery-item'
+          .grid_6
+            = link_to image_path('campaign/denka/display/cosplay5-3.png') do
+              = image_tag 'campaign/denka/cosplay5-3.png', class: 'denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay5-2.png') do
+              = image_tag 'campaign/denka/cosplay5-2.png', class: 'hide denka-gallery-item'
+            = link_to image_path('campaign/denka/display/cosplay5-4.png') do
+              = image_tag 'campaign/denka/cosplay5-4.png', class: 'hide denka-gallery-item'
+
+    #back_top = image_tag 'campaign/denka/images/back_top.png'
+
+  .denka-block2
+    = link_to '#product', class: 'campaign_change_page' do
+      = image_tag 'campaign/denka/denka_buy.png'
+
+.campaign-page.campaign-denka-bg#team_page style='margin-bottom: -90px;'
+  .denka-block3.denka-bg.text-center
+    .cmdp_container style='margin-top: 0px;'
+      .grid_6.margin-top-fixed
+        .item-title.denka-title 幕後時尚團隊介紹
+    .cmdp_container.text-center.denka-team
+      .grid_3.denka-team-info
+        = link_to 'http://www.oceanchenstudio.com/', target: '_blank' do
+          .avatar = image_tag 'campaign/denka/team1.png'
+          .name 陳書海 Ocean Chen
+          .info
+            | 專業攝影師暨攝影藝術家，
+            br
+            | 17 年專業攝影結合設計背景專長，
+            br
+            | 攝影技巧與後製手法深富創意與細膩
+            br
+            | 感。獲得許多國際知名企業、品牌、
+            br
+            | 媒體與名人指定拍攝。
+      .grid_3.denka-team-info
+        = link_to 'http://fashionmaker.net/g/main.php', target: '_blank' do
+          .avatar = image_tag 'campaign/denka/team2.png'
+          .name 林維悌老師
+          .info
+            | 無論是目錄走秀，
+            br
+            | 無論是雜誌或是廣告，
+            br
+            | 都是能穩定達成預期計劃的
+            br
+            | 工作夥伴，受到許多時尚編輯
+            br
+            | 們喜愛的厲害角色。
+      .grid_3.denka-team-info
+        = link_to 'http://www.winniehuangstyling.com/', target: '_blank' do
+          .avatar = image_tag 'campaign/denka/team3.png'
+          .name Winnie Huang
+          .info
+            | 舊金山藝術大學 Fashion
+            br
+            | Journalism/Styling 畢業。
+            br
+            | 後赴紐時尚媒體龍頭 Condé Nast International 實習，曾擔任影后
+            br
+            | 卡麥隆狄亞電影宣傳造型助理。
+    .cmdp_container
+      .grid_6.margin-top-fixed
+        .item-title.denka-title style='margin-top: 20px;'
+          | 我印 X DenKa 超強華麗變身幕後花絮
+        .title
+          | 我印 X DenKa
+        .desc
+          | 想知道 DenKa 在拍攝時發生什麼有趣的事嗎？
+          br
+          | 那你就一定要看這次的貼身 20 小時跟拍，
+          br
+          | 到底有沒有拍到一些意想不到的鏡頭呢？
+          br
+          | 快點一起來看看吧！
+        .denka-video
+          iframe width='793' height='447' src='https://www.youtube.com/embed/87tJUdUCHpk?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+
+.campaign-page.campaign-denka-bg#product_page
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.margin-top-fixed.text-center.camp_margin-bottom-35.camp-fontweight-400
+        = "#{@name} 熱賣商品"
+
+    .web-bgmen-selectmodel-margin
+      .grid_2
+       .web-bgmen-placeholder
+      - params.merge!(anchor: 'product')
+      = render 'select_models', model: @model, ga_category: "Campaign - #{@key} - Web", work_models: @work_models
+
+    .margin-top-fixed
+    .products.campaign_works data-ga-category=("Campaign - #{@key} - Web")
+      - if @works.length > 0
+        = render partial: 'editor/shared/work', collection: @works
+      - else
+        .empty-result
+          = edit_translator('page.text.no_product_found')
+
+    .grid_6
+      .center-block.search_pagination
+        = will_paginate(@works, inner_window: 1)
+      .margin-top-fixed
+
+
+#campaing_inof.hidden data=({key: @key})

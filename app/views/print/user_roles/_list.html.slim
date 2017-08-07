@@ -1,0 +1,14 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      - %i(username role_groups enabled last_sign_in_at).each do |attr|
+        th = FactoryMember.human_attribute_name(attr)
+      th 操作
+  tbody
+    - factory_members.each do |member|
+      tr
+        td = member.username
+        td = role_group_names(member)
+        td = member.enabled? ? t('factory_member.enabled') : t('factory_member.disabled')
+        td = l(member.last_sign_in_at, format: :long) if member.last_sign_in_at
+        td = link_to '编辑', edit_print_user_role_path(member)

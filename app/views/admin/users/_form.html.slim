@@ -1,0 +1,7 @@
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+  = f.error_notification
+  = f.input :role, label: t('users.attributes.role'), collection: User::ROLE_TYPES, include_blank: false
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'
+    = link_to t('users.clear_mobile.link'), clear_mobile_admin_user_path(member),method: :post, 'data-confirm': t('users.clear_mobile.confirm'), class: 'btn btn-danger'
+

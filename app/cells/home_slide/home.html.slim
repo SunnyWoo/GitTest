@@ -1,0 +1,26 @@
+.owl-carousel
+  - @home_slides.reverse.each do |hs|
+  	div class="#{hs.template}"
+      - if hs.link.present?
+        = link_to hs.link do
+          .title-list
+            div= hs.title
+            div= hs.title2
+            div= hs.title3
+          .content-text
+            div= hs.content1
+            div= hs.content2
+            div= hs.content3
+          = image_tag hs.background.url, class: 'carousel-img'
+          = image_tag hs.slide.url, class: 'kv-img'
+      - else
+        .title-list
+          div= hs.title
+          div= hs.title2
+          div= hs.title3
+        .content-text
+          div= hs.content1
+          div= hs.content2
+          div= hs.content3
+        = image_tag hs.background.url, class: 'carousel-img'
+        = image_tag hs.slide.url, class: 'kv-img'

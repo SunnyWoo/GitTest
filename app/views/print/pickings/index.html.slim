@@ -1,0 +1,39 @@
+.page-header
+  h1  揀貨對應
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    span.btn.btn-primary ProductModel:
+    .btn-group
+      button.btn.btn-primary.drop.down-toggle data-toggle="dropdown" type="button"
+        = @product_model.name
+        span.icon-caret-down.icon-on-right
+      ul.dropdown-menu.dropdown-default
+        - @product_models.each do |models|
+          li
+            = link_to print_pickings_path(model_id: models.id) do
+              = "#{models.name}"
+
+  .col-xs-12
+    = simple_form_for @product_model, url: print_picking_path(@product_model.id), html: {class: 'form-horizontal'} do |f|
+      .widget-box
+        .widget-header
+          h5 = @product_model.name
+          .widget-toolbar
+            = link_to_add_fields "增加", f, :picking_materials
+          .widget-toolbar
+            span.badge.badge-danger = render_picking_materials_count(@product_model)
+        .widget-body
+          .widget-main.no-padding
+            table.table.table-bordered.table-striped
+              thead.thin-border-bottom
+                tr
+                  th 包材
+                  th 数量
+                  th 操作
+              tbody
+                = f.simple_fields_for :picking_materials do |builder|
+                  = render 'picking_material_fields', f: builder
+
+        .form-actions
+          = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

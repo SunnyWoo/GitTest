@@ -1,0 +1,49 @@
+.cmdp_container
+  .grid_6
+    /= render_cell :announcement, :announcement
+    .margin-top-fixed
+
+  #sidebar.grid_2
+    = render 'slide'
+
+  article#article.grid_4
+    .item-title= edit_translator('page.user.order_history')
+    table
+      thead
+        tr
+          td= edit_translator('page.user.thead.order_no')
+          td.align-center= edit_translator('page.user.thead.date')
+          td.align-center= edit_translator('page.user.thead.order_st')
+          td.align-right= edit_translator('page.user.thead.price')
+      tbody
+        - @orders.each do |order|
+          tr class="#{render_order_status_color(order.aasm_state)}"
+            td
+              = link_to order_users_path(order.order_no)
+                = order.order_no
+            td.align-center
+              = link_to order_users_path(order.order_no)
+                = I18n.l order.created_at, format: :short
+            td.align-center
+              = link_to order_users_path(order.order_no)
+                = t("order.state.#{order.aasm_state}")
+            td.align-right
+              = link_to order_users_path(order.order_no)
+                = render_order_price(order)
+          tr.hide id="order_#{order.id}"
+            td colspan="5"
+              table.order_info.info-box
+                thead
+                  tr
+                    td = t('page.cart.thead.td1')
+                    td
+                    td.align-center = t('page.cart.thead.td4')
+                    td.align-right = t('page.cart.thead.td5')
+                tbody
+                  - order.order_items.each do |item|
+                    - itemable = item.itemable
+                    tr
+                      td = image_tag itemable.order_image.thumb.url
+                      td = link_to itemable.name, shop_work_path(itemable.product, itemable)
+                      td.align-center = item.quantity
+                      td.align-right = render_item_price(item, currency_code: order.currency)

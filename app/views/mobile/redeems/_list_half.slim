@@ -1,0 +1,12 @@
+.event-list-half
+  .event-block
+    = link_to mobile_redeem_path(bdevent) do
+      .event-banner
+        = image_tag bdevent.banner.url
+      .event-info
+        .event-title
+          = bdevent.title
+        .event-goto
+          .btn
+            | #{I18n.t('redeem.start_redeem')}
+            = image_tag 'mobile/redeem/img_exchange_column_half_enter.png'

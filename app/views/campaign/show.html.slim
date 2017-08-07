@@ -1,0 +1,52 @@
+- @campaign_cache_key = [:campaign, @campaign, @works, I18n.locale, current_currency_code, params[:page], params[:m]]
+- cache @campaign_cache_key, expires_in: 1.hours do
+  .owl-carousel
+    .kv_middle
+      = image_tag @kv_images[:bg], class: 'carousel-img', alt: @kv_images[:alt]
+      - kv_lagn = locale.match(/zh/) ? :tc : :en
+      - @kv_images[kv_lagn].each do |src|
+        = image_tag src, class: 'kv-img', alt: @kv_images[:alt]
+
+  .camp_announcement = @title
+
+  = render 'gift', wordings: @wordings if @wordings.try(:gift_title).present?
+
+  - if @wordings.try(:artwork_first).to_b
+    = render 'artwork', name: @name,
+                        wordings: @wordings,
+                        artworks: @artworks,
+                        artworks_class: @artworks_class,
+                        artworks_descriptions: @artworks_descriptions
+  - else
+    - if !@wordings.try(:hide_product).to_b
+      = render 'products', campaign: @campaign,
+                           works: @works,
+                           model: @model,
+                           name: @name,
+                           key: @key,
+                           work_models: @work_models
+
+  - if @about_img.present?
+    = render 'about', name: @name,
+                      sign_img: @sign_img,
+                      about_img: @about_img,
+                      about_wording: @about_wording
+
+  - if !@wordings.try(:artwork_first).to_b
+    = render 'artwork', name: @name,
+                        wordings: @wordings,
+                        artworks: @artworks,
+                        artworks_class: @artworks_class,
+                        artworks_descriptions: @artworks_descriptions
+  - else
+    - if !@wordings.try(:hide_product).to_b
+      = render 'products', campaign: @campaign,
+                           works: @works,
+                           model: @model,
+                           name: @name,
+                           key: @key,
+                           work_models: @work_models
+
+  - if @wordings.try(:show_instagram).to_b
+    = render 'instagram', wordings: @wordings,
+                          ig_images: @ig_images

@@ -1,0 +1,9 @@
+- i18n_key = 'email.user.send_welcome'
+= image_tag @banner if @banner
+.paragraph1
+  h2 = t("#{i18n_key}.text1")
+  - if I18n.locale.match(/zh/)
+    = t("#{i18n_key}.text3")
+    br
+    br
+  = t("#{i18n_key}.text2")

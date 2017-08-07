@@ -1,0 +1,2 @@
+class SfExpressError < ApplicationError
+end

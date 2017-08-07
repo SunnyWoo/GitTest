@@ -1,0 +1,14 @@
+#= require jquery
+#= require jquery_ujs
+#= require turbolinks
+#= require plugins/slick/slick.js
+#= require plugins/jquery-unveil.js
+#= require designer_store/vendors/modernizr.js
+#= require designer_store/vendors/editor.js
+#= require designer_store/vendors/fastclick.js
+#= require designer_store/vendors/qrcode.js
+##= require designer_store/vendors/jquery.viewport.js
+#= require_tree ./designer_store/polyfills
+#= require_tree ./designer_store/modules
+#= require_tree ./designer_store/pages
+#= require_self

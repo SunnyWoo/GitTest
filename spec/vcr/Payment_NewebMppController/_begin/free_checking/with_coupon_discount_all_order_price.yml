@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://tpm.oneapm.com/tpm/agent.do?PROTOCOL_VERSION=1&license_key=&marshal_format=json&method=get_redirect_host
+    body:
+      encoding: UTF-8
+      string: "[]"
+    headers:
+      Content-Encoding:
+      - identity
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - OneApm-RubyAgent/1.3.4 (ruby 2.2.1 x86_64-darwin14) zlib/1.2.8
+      Content-Type:
+      - application/octet-stream
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 07 Jun 2016 06:24:48 GMT
+      Content-Type:
+      - text/html;charset=UTF-8
+      Content-Length:
+      - '1738'
+      Connection:
+      - close
+      Set-Cookie:
+      - JSESSIONID=208D849702D1B6493D3333DF1C0172CF; Path=/; HttpOnly
+      Bluewareguid:
+      - f57920de754c442f
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFET0NUWVBFIGh0bWw+CjwhLS1baWYgbHQgSUUgN10+ICAgICAgPGh0bWwg
+        Y2xhc3M9Im5vLWpzIGx0LWllOSBsdC1pZTggbHQtaWU3Ij4gPCFbZW5kaWZd
+        LS0+CjwhLS1baWYgSUUgN10+ICAgICAgICAgPGh0bWwgY2xhc3M9Im5vLWpz
+        IGx0LWllOSBsdC1pZTgiPiA8IVtlbmRpZl0tLT4KPCEtLVtpZiBJRSA4XT4g
+        ICAgICAgICA8aHRtbCBjbGFzcz0ibm8tanMgbHQtaWU5Ij4gPCFbZW5kaWZd
+        LS0+CjwhLS1baWYgZ3QgSUUgOF0+PCEtLT4gPGh0bWwgY2xhc3M9Im5vLWpz
+        Ij4gPCEtLTwhW2VuZGlmXS0tPgogICAgPGhlYWQ+CgkJPHRpdGxlPk9uZUFQ
+        TTwvdGl0bGU+CgkJPG1ldGEgY2hhcnNldD0idXRmLTgiPgoJCTxtZXRhIGh0
+        dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9RW11bGF0
+        ZUlFNyI+CgkJPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9IiI+
+        CgkJPG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmlj
+        ZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xIj4KCQk8IS0tIOWbveS6p+WPjOag
+        uOa1j+iniOWZqOeUqCBzdGFydCAtLT4KCQk8bWV0YSBuYW1lPSJyZW5kZXJl
+        ciIgY29udGVudD0id2Via2l0Ii8+CgkJPCEtLSDlm73kuqflj4zmoLjmtY/o
+        p4jlmajnlKggZW5kIC0tPgoJCTwhLS0gUGxhY2UgZmF2aWNvbi5pY28gYW5k
+        IGFwcGxlLXRvdWNoLWljb24ucG5nIGluIHRoZSByb290IGRpcmVjdG9yeSAt
+        LT4KCQk8bGluayByZWw9InNob3J0Y3V0IGljb24iIHR5cGU9ImltYWdlL3gt
+        aWNvbiIgaHJlZj0ie3sgdXJsX2ZvcignLmZhdmljb24nKSB9fSIvPgoJCTxz
+        dHlsZT4KCQkJaHRtbCxib2R5ewoJCQkJcGFkZGluZzogMHB4OwoJCQkJbWFy
+        Z2luOiAwcHg7CgkJCX0KCQkJLndhcnBwZXJ7CgkJCQl3aWR0aDogOTAwcHg7
+        CgkJCQljbGVhcjogYm90aDsKCQkJCW1hcmdpbjogMjAwcHggYXV0byAwcHgg
+        YXV0bzsKCQkJCXRleHQtYWxpZ246IGNlbnRlcjsKCQkJfQoJCQkubGVmdHsK
+        CQkJCWZsb2F0OiBsZWZ0OwoJCQkJd2lkdGg6IDUyMHB4OwoJCQl9CgkJCS5y
+        aWdodHsKCQkJCWZsb2F0OiBsZWZ0OwoJCQkJd2lkdGg6IDMwMHB4OwoJCQl9
+        CgkJCS5lcnJfdGV4dHsKCQkJCXdpZHRoOiAyMDBweDsKCQkJCWZvbnQtc2l6
+        ZToxMjBweDsKCQkJCWNvbG9yOiNlNWU1ZTU7CgkJCQlmb250LWZhbWlseTpB
+        cmlhbDsKCQkJCWJvcmRlci1ib3R0b206IDJweCBzb2xpZCAjRjFGMUYxOwoJ
+        CQkJbWFyZ2luOjBweCBhdXRvIDBweCBhdXRvOwoJCQkJdGV4dC1hbGlnbjog
+        Y2VudGVyOwoJCQkJcGFkZGluZy10b3A6NjBweDsKCQkJfQoJCQkudGlwX3Rl
+        eHR7CgkJCQlmb250LXNpemU6MjBweDsKCQkJCWNvbG9yOiNlNWU1ZTU7CgkJ
+        CQltYXJnaW46IDIwcHggYXV0bzsKCQkJCXRleHQtYWxpZ246IGNlbnRlcjsK
+        CQkJfQoJCQlhLmFfZHVtcHsKCQkJCWNvbG9yOiMyYTZjOTY7CgkJCQl0ZXh0
+        LWRlY29yYXRpb246IG5vbmU7CgkJCX0KCQkJYS5hX2R1bXA6aG92ZXJ7CgkJ
+        CQl0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsKCQkJfQoJCTwvc3R5bGU+
+        CiAgIAk8L2hlYWQ+CiAgICA8Ym9keT4KICAgIAk8ZGl2IGNsYXNzPSJ3YXJw
+        cGVyIj4KICAgIAkJPGltZyBzcmM9Ii8vb25lYXBtLmNvbS81MHgucG5nIiBi
+        b3JkZXI9IjAiPjxicj4KICAgIAkJPGEgaHJlZj0iaHR0cDovL29uZWFwbS5j
+        b20vIiBjbGFzcz0iYV9kdW1wIj7ov5Tlm57liLDpppbpobU8L2E+CgoJICAg
+        IDwvZGl2PgogICAgPC9ib2R5Pgo8L2h0bWw+Cg==
+    http_version: 
+  recorded_at: Tue, 07 Jun 2016 06:24:49 GMT
+recorded_with: VCR 2.9.3

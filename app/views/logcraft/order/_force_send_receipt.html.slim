@@ -1,0 +1,5 @@
+- order = activity.trackable
+- change_email = activity.extra_info[:change_email]
+div 要求重新寄出 #{link_to_admin_order(order)} 的相關信件.
+- if change_email.present?
+  div 並更改Email：#{change_email}

@@ -1,0 +1,7 @@
+- breadcrumb :new_admin_newsletters
+- admin_title t('newsletters.new.page_title')
+
+.row
+  .col-md-8
+    = simple_form_for(@newsletter, url: [:admin, @newsletter]) do |f|
+      = render 'form', f: f

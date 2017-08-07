@@ -1,0 +1,15 @@
+$('body').append("<%= j render 'modal', order: @order %>");
+$('#package_parting').modal('show');
+$('#package_parting').on('hidden.bs.modal', function (e) {
+    $(e.target).remove();
+});
+
+$('#package_delivery_note').on('click', function () {
+    if ($('#new_package').find('input:checkbox:checked').length < 1) {
+        Gritter.error_msg('请选择...')
+    } else {
+        var pdf_href = $(this).data('href');
+        var serialize_data = $(this).parents().find('#new_package').serialize();
+        window.open(pdf_href + ".pdf?&" + serialize_data);
+    }
+});

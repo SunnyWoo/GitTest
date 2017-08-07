@@ -1,0 +1,11 @@
+- admin_title 'Price Tiers'
+
+ul.nav.nav-tabs
+  li = link_to admin_currency_types_path do
+    =' fa_icon 'dollar', class: 'ace-icon'
+    span = t('currency_types.sidebar_name')
+  li.active = link_to admin_price_tiers_path do
+    =' fa_icon 'table', class: 'ace-icon'
+    span = t('price_tiers.sidebar_name')
+
+= react_component 'CPA.PriceTiers.App', priceTiers: @price_tiers, currencies: @currencies, url: admin_price_tiers_path

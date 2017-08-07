@@ -1,0 +1,32 @@
+- breadcrumb :cp_resources
+- admin_title t('cp_resources.sidebar_name')
+
+.row
+  = link_to new_admin_cp_resource_path do
+    button.btn.btn-app.btn-primary
+      = fa_icon 'cloud-upload', class: 'bigger-200'
+      br
+      | Upload
+.row
+  table.table
+    thead
+      th ID
+      th Version
+      th State
+      th PublishAt
+      th CreatedAt
+      th
+    tbody
+      - @cp_resources.each do |r|
+        tr
+          td = r.id
+          td = r.version
+          td = r.aasm_state
+          td = r.publish_at
+          td = r.created_at
+          td
+            = link_to 'Show', admin_cp_resource_path(r), class: 'btn'
+            - report_path = order_sticker_admin_daily_report_path(starts_at: r.publish_at.try(:to_date),
+                                                                  ends_at: r.ends_at.to_date)
+            = link_to 'Report', report_path, class: 'btn'
+            / = link_to 'Edit', edit_admin_cp_resource_path(r), class: 'btn'

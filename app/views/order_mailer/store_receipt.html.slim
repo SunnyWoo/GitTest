@@ -1,0 +1,136 @@
+- currency = @order.currency
+
+.paragraph1.
+  = image_tag(@store.components.find_by(key: 'kv').image.url, class: 'store_kv')
+.title.paragraph1.c-margin
+  = image_tag('email/nl_text_yourreceipt.png')
+
+.paragraph1.c-margin
+  p
+    = t('email.order.share.hello', username: 'Guest')
+  p
+    = t('email.order.store_receipt.content_1', name: @store.name)
+    span.highlight= t('email.order.share.order_id', order_no: @order.order_no)
+    = t('email.order.store_receipt.content_2')
+
+.paragraph1.c-margin
+  table.address
+    tr
+      td
+        .adr-title
+          = t('email.order.receipt.shopping_address')
+        .name
+          = @shipping_info.name
+        .adr
+          = "#{@shipping_info.address}"
+          br/
+          = "#{@shipping_info.city_state}"
+          br/
+          = "#{@shipping_info.zip_code} #{@shipping_info.country}"
+          br/
+          = @shipping_info.phone
+
+.paragraph1
+  p.sub-title.c-margin
+    = image_tag('email/nl_text_summary.png')
+  p.notice.c-margin
+    - shipping_way = BillingProfile.shipping_ways[@shipping_info.shipping_way]
+    - shipping_way = t("email.order.share.shipping_way.#{Region.region}")[shipping_way]
+    - payment = t('email.order.share.payment')[@order.payment.to_sym]
+    = t('email.order.receipt.content_4',payment: payment, currency: currency, shipping_way: shipping_way  )
+  .orders-info
+    table
+      tbody
+        tr
+          th.spacing &nbsp;
+          th.items
+            = t('email.order.receipt.items')
+          th.description
+          th.price
+            = t('email.order.receipt.price')
+          th.qty
+            = t('email.order.receipt.qty')
+          th.total
+            = t('email.order.receipt.subtotal')
+          th.spacing &nbsp;
+        - @order.order_items.each do |order_item|
+          - itemable = order_item.itemable
+          tr
+            td.spacing
+            td.items
+              = image_tag(order_item.itemable_order_image.url)
+            td.description
+              .i = itemable.name
+              .i = itemable.product.friendly_name
+            td.price
+              - if @order.payment == 'redeem'
+                = t('email.order.receipt.free')
+              - else
+                = render_item_price(order_item, currency_code: currency)
+            td.qty
+              = order_item.quantity
+            td.total
+              - if @order.payment == 'redeem'
+                = t('email.order.receipt.free')
+              - else
+                = render_item_price_with_quantity(order_item, currency_code: currency)
+            td.spacing
+        - if @shipping_info.express?
+          tr.summary
+            td colspan='2'
+            td.description
+              = t('email.order.receipt.shipping')
+            td colspan='2'
+            td.total
+              = render_price(@order.shipping_price, currency_code: currency)
+            td
+        - if @shipping_info.cash_on_delivery?
+          tr.summary
+            td colspan='2'
+            td.description 貨到付款
+            td colspan='2'
+            td.total
+              = render_price(@order.shipping_price, currency_code: 'TWD')
+            td
+        - if @order.coupon || @order.payment == 'redeem'
+          tr.summary
+            td colspan='2'
+            td.description
+              = t('email.order.receipt.promo_code')
+            td colspan='2'
+            td.total
+              - if @order.payment == 'redeem'
+                = t('email.order.receipt.free')
+              - else
+                = render_price(-@order.discount, currency_code: currency)
+            td
+        tr.summary
+          td colspan='2'
+          td.description
+            = t('page.cart_check_out.shipping_cost')
+          td colspan='2'
+          td.total = render_shipping_price(@order)
+        tr
+          td.line colspan='7'
+
+        tr
+          td colspan='2'
+          td.total-title
+            = t('email.order.receipt.total')
+          td
+          td.total-final  colspan='2'
+            - if @order.payment == 'redeem'
+              = t('email.order.receipt.free')
+            - else
+              = render_order_price(@order)
+          td
+        - if @order.shipping_info.cash_on_delivery?
+          tr
+            td colspan='2'
+            td.total-title colspan='2'
+              | (貨到付款以台幣收費)
+            td.total-final  colspan='2'
+              = render_price(@order.render_twd_price, currency_code: 'TWD')
+            td
+        tr
+          td.line colspan='7'

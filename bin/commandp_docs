@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+include FileUtils
+root = File.expand_path('../../', __FILE__)
+cd "#{root}/app/controllers/api/v2"
+system("apidoc -o #{root}/doc/apiv2doc")
+
+cd "#{root}/app/controllers/api/v3"
+system("apidoc -o #{root}/doc/apiv3doc")

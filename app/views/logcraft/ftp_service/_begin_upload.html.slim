@@ -1,0 +1,6 @@
+p
+  | 開始檔案上傳
+  br File : #{activity.extra_info[:file]}
+  | File Size : #{number_to_human_size(activity.extra_info[:file_size])}
+  br Message:
+  pre = activity.message

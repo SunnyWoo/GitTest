@@ -1,0 +1,99 @@
+/* 960 Grid System ~ Core CSS.
+ * *
+ * Licensed under GPL and MIT. */
+
+// But most compass users prefer to construct semantic layouts like so (two column layout with header and footer):
+
+$ninesixty-columns: 6;
+$ninesixty-grid-width: 1020px;
+$ninesixty-gutter-width: 30px;
+
+// Color settings
+$main-color: #4FBD92;
+$tnd-color: #455055;
+$line-color: #E1E1E1;
+$word-color: $tnd-color;
+$grey-out: #CCC;
+$sub-words-color: #999;
+$li-word-color: $sub-words-color;
+$bg-gray-color: #F6F7F2;
+
+// RWD settings
+$screen-sm-min: 768px;
+$screen-md-min: 1020px;
+$screen-lg-min: 1200px;
+$screen-xlg-min: 1400px;
+
+@include sticky-footer(380px, "#main", "#layout_footer", "#footer");
+
+// The following generates the default grids provided by the css version of 960.gs
+.cmdp_container {
+  @include grid-system($ninesixty-columns);
+}
+
+$icons-spacing: 12px;
+@import "icons/*.png";
+@include all-icons-sprites;
+
+$socials-spacing: 12px;
+@import "socials/*.png";
+@include all-socials-sprites;
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+*, body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $word-color;
+}
+
+.cmdp_container {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+#sidebar {
+  margin-bottom: 60px;
+}
+
+.icon-30 {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+
+// Placeholder color
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    $sub-words-color;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $sub-words-color;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $sub-words-color;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    $sub-words-color;
+}
+
+a,button,input,optgroup,select,textarea {
+  -webkit-tap-highlight-color:rgba(0,0,0,0); /* 去掉 a、input 和 button 點擊時的藍色外邊框和灰色半透明背景 */
+}
+
+a, img {
+  -webkit-touch-callout: none; /* 禁止長按鏈接與圖片彈出選單 */
+}
+
+body {
+  -webkit-overflow-scrolling: touch; /* 讓觸控 scroll 事件更順暢 */
+}

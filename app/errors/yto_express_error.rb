@@ -1,0 +1,2 @@
+class YtoExpressError < ApplicationError
+end

@@ -1,0 +1,9 @@
+header.mobilev2-top.fixed title=(t('site.name'))
+  .logov2
+    = image_tag "campaign/mobilev2/#{I18n.locale}/logo3x.png", alt: t('site.name'), width: 100
+  .navs
+    .cart-popup-open
+      = link_to render_cart_index_url(@app_hash) do
+        span.cart-icon
+          i.fa.fa-shopping-cart
+        #cart-count = 0

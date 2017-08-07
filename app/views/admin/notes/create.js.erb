@@ -1,0 +1,1 @@
+$("tbody#order_notes_table[data-id='<%= @note.noteable_id %>']").append('<%= j render 'note', note: @note, readonly: false %>');

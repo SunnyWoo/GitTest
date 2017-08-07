@@ -1,0 +1,32 @@
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th= t('product_models._work_specs.thead.name')
+      th= t('product_models._work_specs.thead.description')
+      th= t('product_models._work_specs.thead.width')
+      th= t('product_models._work_specs.thead.height')
+      th= t('product_models._work_specs.thead.dpi')
+      th= t('product_models._work_specs.thead.background_image')
+      th= t('product_models._work_specs.thead.cover_image')
+      th= t('product_models._work_specs.thead.operation')
+  tbody
+    - model.specs.each do |spec|
+      tr
+        td = spec.name
+        td = spec.description
+        td = spec.width
+        td = spec.height
+        td = spec.dpi
+        td
+          = link_to image_tag(spec.background_image.url, width: '100px'), spec.background_image.url, class: 'popup-image' , title: 'Web Alpha Mask'
+        td
+          = link_to image_tag(spec.overlay_image.url, width: '100px'), spec.overlay_image.url, class: 'popup-image' , title: 'Web Editor Background'
+        td
+          .btn-group
+            = link_to t('shared.form_actions.edit'), edit_admin_product_model_work_spec_path(model, spec), class: 'btn btn-info'
+            = link_to t('product_models.index.preview_composers'), admin_product_model_work_spec_preview_composers_path(model, spec), class: 'btn btn-info'
+            = link_to t('work_templates.manage'), admin_product_model_work_spec_work_templates_path(model, spec), class: 'btn btn-info'
+            = link_to_versions(spec, class: 'btn btn-info')
+
+.btn-group
+  = link_to t('product_models._work_specs.link_to_add'), new_admin_product_model_work_spec_path(model), class: 'btn btn-success'

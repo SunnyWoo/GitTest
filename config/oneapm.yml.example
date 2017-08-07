@@ -1,0 +1,21 @@
+common: &default_settings
+  license_key: 'xxxxx'
+  app_name: 'Commandp - API'
+
+production:
+  <<: *default_settings
+  monitor_mode: true
+
+development:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: Commandp - API (Development)
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+staging:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: Commandp - API (Staging)

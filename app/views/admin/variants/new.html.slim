@@ -1,0 +1,4 @@
+- breadcrumb :new_variant, @product
+- admin_title t('variants.new.page_title', product: @product.name)
+
+= render 'form', product: @product, variant: @variant

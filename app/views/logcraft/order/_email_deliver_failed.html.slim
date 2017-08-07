@@ -1,0 +1,6 @@
+- order = activity.trackable
+- recipient = activity.extra_info[:recipient]
+- subject = activity.extra_info[:subject]
+- event = activity.extra_info[:event]
+- error_message = activity.extra_info[:error_messages]
+div #{link_to_admin_order(order)} 發送至 #{recipient} 的信 #{subject} 寄送失敗了，事件為: #{event}，失敗訊息為: #{error_message}

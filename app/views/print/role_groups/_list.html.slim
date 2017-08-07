@@ -1,0 +1,21 @@
+table.table.table-bordered.table-striped
+  thead.thin-border-bottom
+    tr
+      th 群組識別名稱
+      th = link_to '帳號管理權限', edit_print_role_path(Role.find_by_name('帳號管理權限'))
+      th = link_to '作業歷程操作', edit_print_role_path(Role.find_by_name('作業歷程操作'))
+      th = link_to '拼版設定', edit_print_role_path(Role.find_by_name('拼版設定'))
+      th = link_to '商品生產', edit_print_role_path(Role.find_by_name('商品生產'))
+      th = link_to '貨架管理', edit_print_role_path(Role.find_by_name('貨架管理'))
+      th 操作
+  tbody
+    - role_groups.each do |role_group|
+      tr
+        td = role_group.name
+        td = disabled_role(role_group, '帳號管理權限')
+        td = disabled_role(role_group, '作業歷程操作')
+        td = disabled_role(role_group, '拼版設定')
+        td = disabled_role(role_group, '商品生產')
+        td = disabled_role(role_group, '貨架管理')
+        td
+          = link_to '编辑', edit_print_role_group_path(role_group)

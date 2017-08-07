@@ -1,0 +1,29 @@
+- breadcrumb :option_types
+- admin_title t('option_types.index.page_title')
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table
+        thead
+          tr
+            th = t('option_types.attributes.name')
+            th = t('option_types.attributes.presentation')
+            th = t('shared.form_actions.operation')
+
+        tbody
+          - @option_types.each do |option_type|
+            tr
+              td = option_type.name
+              td = option_type.presentation
+              td
+                = link_to t('shared.form_actions.view'), admin_option_type_path(option_type), class: 'btn btn-sm'
+                = link_to t('shared.form_actions.edit'), edit_admin_option_type_path(option_type), class: 'btn btn-sm'
+                = link_to t('shared.form_actions.delete'), admin_option_type_path(option_type), class: 'btn btn-sm', data: { method: 'delete', confirm: 'Are you sure?' }

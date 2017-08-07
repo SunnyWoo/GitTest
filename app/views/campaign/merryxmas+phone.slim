@@ -1,0 +1,142 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy: true
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy: true
+.m-announcement style='background-color: #f6f7f2;border-bottom: 1px #e5e5e5 solid;'
+  = @title
+.camp_margin-top-33
+- select_class = browser.ios? ? 'campaign-page-select-ios' : 'campaign-page-select'
+select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+  - { info: '活動介紹', create: '素材下載', product: '熱賣商品', event: '活動花絮' }.each do |key, val|
+    option.filter value=(key) = val
+
+.campaign-page#info_page
+  .mobile-v2-title style='font-weight: 400;'
+    | 我印造夢計畫活動介紹
+  .text-center
+    .m-musicrun-desc style='font-weight: bold;'
+      | 這次活動邀請了 19 位藝人，布魯斯，蔡昌憲，林敬倫，官鴻，郭源元，陳零九，小八，Gentleman，鍾欣怡，昆凌，梁以辰，Ruby，林慧蓉，劉薰愛，蔡淑臻，成語蕎 一起參與這次的造夢計畫，用他們的創作幫助偏鄉的小朋友實現他們的夢想，也邀請你和我印一起讓夢想發芽。
+  .m-merryxmas-block2
+    .mobile-v2-title style='font-weight: 400;color:#FFF;margin: 40px auto;padding-top:40px;'
+      | 我印邀請你一起
+      br
+      | 讓夢想發芽
+    iframe width='90%' height='242' src='https://www.youtube.com/embed/4SsE_sNMg5A?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+  .mobile-v2-title style='font-weight: 400;'
+    | 我印造夢計畫活動介紹
+  .text-center
+    .m-musicrun-desc style='font-weight: bold;'
+      | 台灣有許多偏鄉國小正面臨著併校與廢校的危機，學校對部落而言是精神的象徵，除了教育功能之外，也是部落文化與知識的傳承。如果部落的小學沒了，會繼而使家長攜幼兒向外遷移的惡性循環，部落文化將難以傳承。
+      br
+      br
+      | 為了將部落的文化被保存下來，您可以下載藝人的愛心畫作，製作出獨一無二的聖誕節禮物，送禮物也可以幫助小朋友們，一起過一個有意義溫暖的聖誕節。
+      br
+      br
+      | 我印將捐贈12月至1月扣除成本全數捐給花蓮港口國小，希望可以幫助解決國小修繕的現況，也能幫助國小後續的經營，透過造夢計畫可以讓社會大眾對於偏鄉國小所面臨的危機有更多的了解。
+
+
+.campaign-page#create_page
+  .products.happysummer
+    .mobile-v2-title style='font-weight: 400;'
+      | LET'S GO PICNIC
+      br
+      | 素材下載
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-1-new.png', alt: @title, width: '60px'
+      .step-title 1. 選擇載體與下載素材
+      .step-desc 選擇您中意的產品載體，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-2-new.png', alt: @title, width: '60px'
+      .step-title 2. 載入素材與製作
+      .step-desc 選擇您中意的產品載體，並載入下載的素材，開始自己動手設計屬於自己的商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-3-new.png', alt: @title, width: '60px'
+      .step-title 3. 快速結帳，全球直送
+      .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+    .mobile-v2-title
+      | 選擇素材
+    - (1..17).each do |i|
+      - material = i.to_s.rjust(2, '0')
+      - download_url = image_path("campaign/merryxmas/material/#{material}.jpg")
+      .product.material class=('hide' if i >= 5)
+        .product-mobile
+          = image_tag "campaign/merryxmas/material/#{material}_display.jpg", width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+
+          = link_to download_url, class: 'btn btn-default btn-happysummer', target: '_blank', data: { material: material, platform: 'Mobile' } do
+            | 下載素材
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create?category",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+    .page.material
+      #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                    'ga-event-action' => 'click',
+                                                    'ga-event-label' => 'material see more'})
+        | 下一頁
+    .camp_margin-bottom-35
+
+.campaign-page#product_page
+  .products
+    .mobile-v2-title
+      | 造夢計畫
+      br
+      | 熱賣商品
+
+    - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+    select class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @category_names.each do |key, val|
+        option.filter value=(key) = val
+    .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+    - @category_products.each do |key, val|
+      .filted id=(key)
+        = render partial: 'editor/shared/work_mobilev2',
+                collection: val, as: 'work', locals: { category: "Campaign - #{@key} - Mobile" }
+
+
+.campaign-page#event_page
+  .mobile-v2-title style='font-weight: 400; margin-top: 60px;'
+    | 造夢計畫-下
+  .text-center style='margin-bottom: 100px;'
+    .m-musicrun-desc style='font-weight: bold;'
+      | 我印」第二次造訪了花蓮港口國小，這次帶著小小的心意來和孩子們一起渡過不一樣的聖誕節。透過這次活動能讓更多人了解偏鄉國小面臨的危機。希望大家能用行動一起幫助港口國小，讓孩子們勇於追夢，讓夢想茁壯發芽。
+      br
+    iframe width='90%' height='242' src='https://www.youtube.com/embed/qNQnoAqKvjo?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+  div style='border-top: 1px #cfd0d1 solid;width: 90%;margin: auto;'
+
+  .mobile-v2-title style='font-weight: 400; margin-top: 60px;'
+    | 看更多活動花絮照吧
+  .text-center style='margin-bottom: 30px;'
+    .m-musicrun-desc style='font-weight: bold;'
+      | 我們跟小朋友一起吃聖誕大餐，跟去部落跟阿公學做漁網的照片都在這裡唷！
+
+  .products.happysummer
+    - @photos.each_with_index do |photo|
+      .product.material
+        .product-mobile
+          = link_to "https://d2i5hifyddc647.cloudfront.net/campaign/2015/xmas/+b/#{photo}", target: '_blank' do
+              = image_tag "https://d2i5hifyddc647.cloudfront.net/campaign/2015/xmas/#{photo}", lazy: true
+
+    .mobile_pagination
+      = will_paginate @photos, inner_window: 1, param_name: 'photo_page', params: { anchor: 'event' }, page_links: false
+
+    .camp_margin-bottom-35
+
+.app-promotion
+  .title
+    = "購買 造夢計畫 系列商品"
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+
+#campaing_inof.hidden data=({key: @key})

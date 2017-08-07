@@ -1,0 +1,52 @@
+- admin_title t('header_links.index.page_title')
+
+- if flash[:error]
+  = render 'admin/shared/form_error_notification', errors: flash[:error]
+
+= render 'admin/home/nav', active: 'header_links'
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar.no-border
+      .btn-group
+        = link_to 'sort', url_for(action: :sort), class: 'btn btn-info btn-sm'
+        = link_to '增加', url_for(action: :new), class: 'btn btn-info btn-sm'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th = "ID"
+            th = "Title"
+            th = "Href"
+            th = "Blank"
+            th = "Dropdown"
+            th = "AutoGenerateProduct"
+            th = "Position"
+            th = "Columns"
+            th = "links"
+            th = "Action"
+
+        tbody
+          - @resources.each do |resource|
+            tr
+              td = resource.id
+              td = resource.title
+              td = resource.href
+              td = resource.blank
+              td = resource.dropdown
+              td = resource.auto_generate_product
+              td = resource.position
+              td = resource.children.rows.size
+              td = resource.children.size
+
+              td
+                = link_to 'links', url_for([:rows, :admin, resource]), class: 'btn btn-info'
+                = link_to 'New links', url_for(action: :new, parent_id: resource.id), class: 'btn btn-info'
+                = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, resource]), class: 'btn btn-info'
+                = link_to t('shared.form_actions.delete'), url_for([:admin, resource]), method: :delete,
+                          class: 'btn btn-danger', data: {confirm: t('shared.confirm.delete')}
+
+= will_paginate @resources

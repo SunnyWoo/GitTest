@@ -1,0 +1,8 @@
+td= home_link.id
+td= home_link.href
+td= home_link.name
+td= home_link.position
+td= render_sort_buttons{ |sort| sort_admin_home_link_path(home_link, sort: sort) }
+td
+  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, home_link]), class: 'btn btn-info'
+  = link_to t('shared.form_actions.delete'), url_for([:admin, home_link]), method: :delete, class: 'btn btn-danger', data: { confirm: t('shared.confirm.delete') }

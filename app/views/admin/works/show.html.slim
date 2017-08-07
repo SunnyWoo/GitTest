@@ -1,0 +1,40 @@
+- admin_title "##{@resource.id} #{@resource.name}", subtitle: link_to_product(@resource.product)
+- breadcrumb :admin_work, @resource
+
+= render 'images', work: @resource
+
+.page-header
+  h2 = t('works.show.page_title.layer_list', name: @resource.name)
+
+= render 'layers', work: @resource
+
+.page-header
+  h2 = t('works.show.page_title.preview_list', name: @resource.name)
+
+= render 'previews', work: @resource
+
+.page-header
+  h2 = t('works.show.page_title.secret_buttons')
+
+= link_to t('works.show.page_title.refresh'), refresh_admin_work_path(@resource), data: {method: 'post', remote: true, disable_on_submit: true}, class: 'btn'
+
+.row
+  .col-md-6
+    .page-header
+      h2 Note
+    = render 'admin/notes/notes', noteable: @resource
+  .col-md-6
+    .page-header
+      h2 = t('works.show.page_title.status')
+
+    = render_activities @resource.activities.includes(:trackable, :user).from_old_to_new
+
+.page-header
+  h2 Work info
+table.table.table-striped.table-bordered.table-hover
+  tr
+    td UUID
+    td= @resource.uuid
+  tr
+    td= t('shared.source')
+    td= @resource.application.blank? ? t('shared.unknown_source') : @resource.application.name

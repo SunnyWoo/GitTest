@@ -1,0 +1,42 @@
+h1.item-title.contact-title Oops!
+
+.center-word
+  = t('page.text.not_support_mobile')
+
+#hr_line
+- if devise_is(request.user_agent) == 'iPhone'
+  .margin-top-fixed.text-center
+    .text-block
+      - if current_country_code == 'TW' && Time.zone.today < '2015-10-01'.to_date
+        p 開始印功能需搭配下載手機 app 使用，為提供給您更優質及順暢的購物體驗，請點以下連結下載 iOS app 以使用服務。
+        br
+        p 下載後使用 app 結賬輸入折扣碼：SUMMER
+        p 即可在享 8 折優惠！
+        br
+        p 感謝您的支持
+      - else
+        - t('page.text.not_support_mobile_ios').each do |line|
+          p = line
+    .center-btn.download_ios_app
+      = link_to 'http://bit.ly/1nMC8yU' do
+        = image_tag('buttons/btn_download_ios.png')
+
+- if devise_is(request.user_agent) == 'Android'
+  .margin-top-fixed.text-center
+    .text-block
+      - if current_country_code == 'TW' && Time.zone.today < '2015-10-01'.to_date
+        p 開始印功能需搭配下載手機 app 使用，為提供給您更優質及順暢的購物體驗，請點以下連結下載 android app 以使用服務。
+        br
+        p 下載後使用 app 結賬輸入折扣碼：SUMMER
+        p 即可在享 8 折優惠！
+        br
+        p 感謝您的支持
+      - else
+        - t('page.text.not_support_mobile_android').each do |line|
+          p = line
+    .center-btn.download_ios_android
+      = link_to 'http://bit.ly/commandpPlay' do
+        = image_tag('buttons/btn_download_googleplay.png')
+
+.center-btn
+  = link_to t('page.btns.back_index'), root_path, class: 'btn btn-default'

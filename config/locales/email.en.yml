@@ -1,0 +1,113 @@
+en:
+  email:
+    send_coupon:
+      en_line_1: commandp iOS app is online! You can download it from your App Store now!
+      en_line_2: Here is your NTD$ 300 coupon code
+      en_list_1: Coupon code saves NTD$ 300 / USD$ 10.
+      en_list_2: "Coupon code expires on 1th May, 2015."
+      en_list_3: Coupon code only valid for first purchase.
+      en_list_4: Coupon code cannot be transferred or resold.
+      en_list_5: commandp reserves the right to terminate coupon code at anytime without further warning.
+      en_line_3: commandp prints your creativity!
+    marketing:
+      subject: Thank you for subscribing commandp. Here is your 300NT coupon code!
+      title: Thank you for requesting a coupon, you will be notified immediately when commandp comes online.
+      content_1: The commandp App will soon be launching on the Apple App Store. On launch day, we will e-mail a NT$ $300 coupon code that can be used for  all commandp products.
+      android: The Android version will be launching in July, so stay tuned!
+      content_2: Don't forget to follow us on Facebook to get the latest news and promotion!
+      content_3: Officail Website
+      facebook_page: https://www.facebook.com/hicommandp
+      website: http://commandp.com/en
+    order:
+      share:
+        hello: 'Hello %{username},'
+        shipping_way:
+          global:
+            - Standard Mail Service
+            - Express Mail Service
+            - Cash On Delivery
+          china:
+            - Standard
+            - S.F. Express
+            - Cash On Delivery
+        order_id: 'Order ID: %{order_no} '
+        payment:
+          paypal: PayPal
+          cash_on_delivery: Cash On Delivery
+          stripe: Credit Card
+          "neweb/atm": 'ATM 轉帳'
+          "neweb/mmk": '超商繳費'
+          "neweb/alipay": "Alipay"
+        mail: "hi@commandp.com"
+      receipt_with_status:
+        subject: Your commandp Order Status
+        content_1: "We got your order! Here is your commandp "
+        content_2: "With STANDARD shipping you will be able to receive your product within 10-15 business days after payment."
+      receipt:
+        subject: 'Your Receipt'
+        new_year:
+          content_1: "Thank you for your order! "
+          content_2: "Due to Chinese new year holidays, our shipping process will be closed from 2/13 to 2/23.  Express shipping packages will be prioritize to shipped out on the 2/24 first. Sorry for the inconvenience."
+        content_1: 'We got your order! Here is your commandp '
+        content_2: " With STANDARD shipping you will be able to receive your product within 10-15 business days."
+        shopping_address: SHIPPING ADDRESS
+        billing_address: BILLING ADDRESS
+        content_4: 'Your paid with %{payment} in %{currency}. Shipping with %{shipping_way}.'
+        items: Your Items
+        items2: Items
+        price: Price
+        qty: Quantity
+        qty2: QTY.
+        total: Total
+        subtotal: Subtotal
+        shipping: Shipping
+        promo_code: Promo Code
+        discount: Discount
+        content_5: We will email your wallpaper when your order enters production - usually within one business day.
+        content_6: 'If you need assistance we’ve got options for you. You can either send us a note to '
+        or: ' or '
+        order_status: Order Status
+        free: 'Free'
+      store_receipt:
+        subject: "Order confirmation for %{name} "
+        content_1: "We got your order! Here is your %{name}"
+        content_2: " with STANDARD shipping you will be able to receive your product within 10-15 business days."
+      download:
+        subject: 'Your Wallpaper'
+        content_1: 'Here is the wallpaper for you. '
+        content_2: 'Click or tap the image below to open the wallpaper file in your browser. From there, tap & hold the image and save it to your device. Once saved, follow your devices instructions for setting it as a wallpaper.'
+      ship:
+        subject: 'It’s go time!'
+        content_1: 'Hurry! Your commandp '
+        content_2: ' was shipped out'
+        content_3: 'today '
+        content_4: ' via %{shipping_way}.'
+        content_5: 'You should receicve it safe and sound within '
+        content_6: ' 4-6 business days'
+        content_7: '. Look out for an email from %{shipping_way} with your order tracking information. It should arrive shortly.'
+        content_8: 'If you have any questions, please feel to get in touch by '
+        or: ' or '
+        content_9: Thanks for your order!
+        content_10: commandp Support
+      conflict:
+        subject: 'Order payment conflict warning'
+        create_log: 'System has sent the mail to customer service group'
+        content: "Price of order %{order_no} is inconsistent with payment price, please check in commandp admin!"
+      payment_remind:
+        subject: 'Payment Remind'
+    notification:
+      notify_download:
+        subject: 'Your Wallpaper'
+    user:
+      reset_password:
+        subject: 'commandp password reset service'
+        link: 'Modify your password'
+        sentence_1: "We have received your application for commandp password resetting, please click on the following link to modify your password."
+        sentence_2: 'If you did not request a password reset service, please ignore this email'
+      send_welcome:
+        subject: 'Welcome to %{sitename}'
+        text1: 'Thank you for joining commandp!'
+        text2: "Commandp gives you the power to make your own style. Add your own text, graphics, designs or photos, or choose from our enormous marketplace of designs. Have your unique phone cases, canvas, drawstring bags in just 30 seconds!"
+        text3: 'Print Your Mind!'
+      send_coupon:
+        subject: '%{sitename} new user discount code'

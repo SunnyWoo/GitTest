@@ -1,0 +1,31 @@
+= simple_form_for [:admin, header_link] do |f|
+  .well
+    = f.hidden_field :parent_id
+    = f.input :row, label: 'Columns'
+    = f.input :href
+    = f.input :position
+    = f.input :link_type, include_blank: true, collection: HeaderLink.aasm.states.map(&:name)
+    = f.input :spec_id
+    = f.input :blank
+    = f.input :dropdown
+    = f.input :auto_generate_product
+
+  .well
+    h4.green.smaller.lighter Title (en is required)
+    .row
+      = f.simple_fields_for :translations do |d|
+        .col-xs-2
+          = d.input :locale, label: false, as: :hidden
+          - is_required = d.object.locale == :en ? true : false
+          = d.input :title, as: :string, label: d.object.locale, required: is_required
+
+  h3 Tags
+  = link_to_add_fields "增加", f, :tags, with_translations: true
+  #tags_fields
+    = f.simple_fields_for :tags do |builder|
+      = render 'tag_fields', f: builder
+
+  .row
+    .col-xs-12
+      .form-actions
+        = f.button :submit

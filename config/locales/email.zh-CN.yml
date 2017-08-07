@@ -1,0 +1,104 @@
+zh-CN:
+  email:
+    send_coupon:
+      zh_line_1: 噗印iOS 版app 已经在App Store 上线啰！
+      zh_line_2: 这是您的 RMB 60 元折价代码
+      zh_list_1: 此折价代码折抵金额为 RMB 60 元/ 美金10 元。
+      zh_list_2: 此折价代码的使用期限为即日起至2015 年5 月1 日。
+      zh_list_3: 此折价代码仅能折抵第一次消费使用。
+      zh_list_4: 禁止折价代码转让或贩售行为。
+      zh_list_5: 噗印有权保留变更、终止本折价代码折扣时间、内容之权利。
+      zh_line_3: 印出你的随心所欲！
+    marketing:
+      subject: 感谢您登记索取 RMB 60 元折价代码
+      title: 感谢您登记索取折价代码，当噗印上线时会优先通知您
+      content_1: 噗印App近日将会于Apple Store上线，上线前将会另行透过Email发出 RMB 60 元折扣码，这组折扣码将可不限金额用于任何噗印App的消费中。
+      android: 安卓版本也将会在7月上线，敬请期待！
+      content_2: 请加入噗印facebook粉丝页，追踪最新消息与优惠
+      content_3: 噗印国际中文官方网站
+      facebook_page: https://www.facebook.com/commandpzh
+      website: https://commandp.com/zh-CN
+    order:
+      share:
+        hello: '你好 %{username},'
+        shipping_way:
+          global:
+            - 标准运送
+            - 快速运送
+            - 货到付款
+          china:
+            - 标准配送
+            - 顺丰配送
+            - 货到付款
+        order_id: '订单编号: %{order_no} '
+        payment:
+          paypal: PayPal
+          cash_on_delivery: 货到付款
+          stripe: 信用卡支付
+          "neweb/atm": 'ATM 转账'
+          "neweb/mmk": '超商缴费'
+          "neweb/alipay": '支付宝'
+        mail: "CSCN@commandp.com"
+      receipt_with_status:
+        subject: 你的噗印订单状态
+        content_1: '你的噗印订单送来了！'
+        content_2: '你选择的物流方式是标准运送，将会在付款后10-15 天收到你的商品（假日除外）。'
+      receipt:
+        subject: '你的噗印订单明细'
+        content_1: '你的噗印订单送来了！'
+        content_2: '你选择的物流方式是标准运送，将会在付款后10-15 天收到你的商品（假日除外）。'
+        shopping_address: 运送地址
+        billing_address: 帐单地址
+        content_4: "你的付款方式为%{payment}，运送方式为%{shipping_way}"
+        items: 你的商品
+        items2: 商品
+        price: 售价
+        qty: 数量
+        qty2: 数量
+        total: 总金额
+        subtotal: 小计
+        shipping: 运费
+        promo_code: 优惠代码
+        discount: 折扣
+        content_5: 你的手机桌布将会于订单生效后透过email 寄送，一般来说不会超过1 个工作日。
+        content_6: 如果你对上述资讯有任何疑问，或是对噗印有任何指教，欢迎随时来信至
+        or: ' 或 '
+        訂單狀態: 订单状态
+      download:
+        subject: '专属于你的手机桌布'
+        content_1: '这是此订单所附赠的手机桌布 '
+        content_2: '用浏览器下载你的手机桌布并且储存至你的手机当中。依照你的手机设定桌布即可完成，搭配噗印为你特制的手机壳，独一无二就是这么简单。'
+      ship:
+        subject: '该行动了!'
+        content_1: '快！你的 commandp 噗印'
+        content_2: ' 已经寄出'
+        content_3: '今天 '
+        content_4: ' 透过 %{shipping_way}.'
+        content_5: '你会收到包装完好且精美的商品 '
+        content_6: ' 4-6 个工作天'
+        content_7: '. 请查看你的email 中%{shipping_way} 的邮件编号，你应该在短时间内会收到商品。'
+        content_8: '如果你有任何问题，欢迎随时与我们联系。 '
+        or: ' 或 '
+        content_9: 谢谢你的订购!
+        content_10: commandp 噗印 客服
+    notification:
+      notify_download:
+        subject: '你的桌布'
+    user:
+      reset_password:
+        subject: '重新设置commandp登录密码'
+        link: '重设密码'
+        sentence_1: "我们收到您重置密码的申请，请点击以下链接修改您的密码"
+        sentence_2: '如果您并没有申请密码重置服务，请忽略此来信'
+      confirmation:
+        subject: '验证邮箱'
+        link: '验证邮箱'
+        sentence_1: "请点击以下链进行邮箱验证"
+        sentence_2: '如果您并没有注册，请忽略此来信'
+      send_welcome:
+        subject: '歡迎你成為 %{sitename} 的用戶'
+        text1: '欢迎加入噗印！'
+        text2: "噗印，千方百计让你玩转照片，用照片印出美妙的时光。你可以将宝宝缺门牙的傻笑、另一半摔倒的糗样、朋友被整的愤怒、45°角的自拍或其他anything，印成手机壳、iPad壳、马克杯、无框画……好吧，无论你想印成什么，我们尽量奉上!"
+        text3: '印出你的随心所欲！'
+      send_coupon:
+        subject: '%{sitename}新用户优惠码'

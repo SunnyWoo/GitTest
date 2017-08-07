@@ -1,0 +1,52 @@
+【Commandp Service】 <%= ENV.fetch('COMMAND_API_VERSION', "<Version>") %> Released at <%= DateTime.now.strftime("%Y年%m月%d日") %>
+
+建立時間：<%= Time.now %>
+
+## 檢查確認
+
+請檢查一下 Global 及 China 部署 Staging 是否有問題
+
+## PR 檢查列表
+
+<% pull_requests.each do |pr| -%>
+  <%=  pr.to_checklist_item %>
+<% end -%>
+
+## 如果真的可以的話就 merge 吧
+
+![](http://i.imgur.com/VFEBGTE.jpg)
+
+## 合併後
+
+#### 打 Tag
+
+```
+git checkout master && git pull
+git tag $COMMAND_API_VERSION && git push --tag
+```
+
+#### 寫 Release 文件
+
+GitHub Release Doc : https://github.com/commandp/commandp-service/releases/edit/<%= ENV.fetch('COMMAND_API_VERSION', "<Version>") %>
+
+
+#### 確認 application.yml.ci 有沒有修改過
+
+有修改的話要記得去加 ENV
+
+```
+git diff $CURRTNT_VERSION $COMMAND_API_VERSION config/application.yml.ci
+```
+
+## Deploy
+
+- [ ] [AWS Deploy](https://console.aws.amazon.com/opsworks/home?region=us-east-1#/stack/017b6682-f5ae-4a29-ac3a-3d4f3efea1ee/deployments)
+- [ ] [China Deploy](http://ci.commandp.com.cn:8080/job/deploy_to_production_api/)
+- [ ] 台灣 MacMini `bundle install && cap production deploy`
+- [ ] 台灣 MacMini 重開 sidekiq adobe worker `cd ~/deploy/production/current && RAILS_ENV=production bundle exec sidekiq -q adobe -q print_images -c 1`
+- [ ] 上海 MacMini `REGION=china cap production_china deploy`
+- [ ] 上海 MacMini 重開 sidekiq adobe worker `cd ~/deploy/production/current && RAILS_ENV=production REGION=china bundle exec sidekiq -q adobe -q print_images -c 1`
+
+
+> 參考 Deploy 文件：https://github.com/commandp/commandp-service/wiki/commandp%20service%20deploy%20%E6%B5%81%E7%A8%8B%20(API)
+

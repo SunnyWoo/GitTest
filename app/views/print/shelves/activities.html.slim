@@ -1,0 +1,71 @@
+.page-header
+  h1 倉儲貨架紀錄
+= render 'print/shared/notice_bar'
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 倉儲貨架紀錄
+        .widget-toolbar
+          = link_to '倉儲貨架', print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '揀貨對應', print_pickings_path, class: 'btn btn-primary btn-mini'
+          = link_to '新增貨架', new_print_shelf_path, class: 'btn btn-primary btn-mini'
+          = link_to '上架', stocking_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '取貨', changing_print_shelves_path(changing_action: 'ship'), class: 'btn btn-primary btn-mini'
+          = link_to '反架', restoring_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '移貨', moving_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '盤點調整', adjusting_print_shelves_path, class: 'btn btn-primary btn-mini'
+          = link_to '調撥', changing_print_shelves_path(changing_action: 'allocate'), class: 'btn btn-primary btn-mini'
+          = link_to '导出CSV', '###', class: 'submit_shelf_activities_form', data: { url: activities_print_shelves_path(format: :csv) }
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped style="word-break:break-all"
+            thead.thin-border-bottom
+              tr
+                th 時間
+                - %i(serial serial_name section name).each do |attr|
+                  th = Shelf.human_attribute_name(attr)
+                th 操作者
+                th 操作
+                th 操作前数量
+                th 操作数量
+                th 備註
+              tr
+                = search_form_for @q, url: activities_print_shelves_path, id: 'search_shelf_activities' do |f|
+                  = hidden_field_tag :format
+                  th
+                    = f.label :created_at_gteq, '開始時間大於'
+                    br
+                    = search_field_tag 'q[created_at_gteq]', @q.created_at_gteq.try(:strftime, '%Y-%m-%d %H:%M'), size: 15
+                    br
+                    = f.label :created_at_lteq, '開始時間小於'
+                    br
+                    = search_field_tag 'q[created_at_lteq]', @q.created_at_lteq.try(:strftime, '%Y-%m-%d %H:%M'), size: 15
+                  th = f.search_field :trackable_of_Shelf_type_serial_cont
+                  th = f.search_field :trackable_of_Shelf_type_category_name_cont
+                  th = f.search_field :trackable_of_Shelf_type_material_serial_cont
+                  th = f.search_field :trackable_of_Shelf_type_material_name_cont
+                  th = f.select :user_id_eq, current_factory.factory_members.map { |m| [m.username, m.id] }, include_blank: true
+                  th = f.select :key_eq, Shelf::ACTIONS.map { |act| [Shelf.human_attribute_name("actions.#{act}"), act] }, include_blank: true
+                  th
+                  th
+                  th
+                    = f.search_field :message_cont
+                    br
+                    = f.button :submit, class: 'submit_shelf_activities_form', data: { url: activities_print_shelves_path(format: :html) }
+
+            tbody
+              - @activities.each do |activity|
+                - shelf = activity.trackable
+                tr
+                  td style="white-space:nowrap;"  = I18n.l activity.created_at, format: :long
+                  - %i(serial category_name material_serial material_name).each do |attr|
+                    td = shelf.send(attr)
+                  td = activity.user.username
+                  td = "#{Shelf.human_attribute_name("actions.#{activity.key}")}"
+                  td style="white-space:nowrap;" = activity.extra_info['old_quantity']
+                  td style="white-space:nowrap;" = activity.extra_info['quantity']
+                  td = activity.message
+              tr
+                td.text-right colspan='7' = @q.key_eq.present? ? "#{Shelf.human_attribute_name("actions.#{@q.key_eq}")}:" : 'ALL'
+                td colspan='3' = @activities.inject(0) { |sum, activity| sum + activity.extra_info['quantity'] }

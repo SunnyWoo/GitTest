@@ -1,0 +1,17 @@
+<% order_items = order.order_items.map do |order_item|
+                  itemable = order_item.itemable
+                  { 'skuId': itemable.uuid,
+                    'skuName': itemable.name,
+                    'category': itemable.category_key,
+                    'Price': order_item.price_in_currency(order.currency),
+                    'Quantity': order_item.quantity }
+                end
+%>
+<script type="text/javascript">
+  _hmt.push(['_trackOrder', {
+    "orderId": "<%= j order.order_no %>",
+    "orderTotal": <%= j order.price.to_s %>,
+    "item": <%= order_items.to_json.html_safe %>,
+    }
+  ]);
+</script>

@@ -1,0 +1,34 @@
+#create data-widget='tab-page' data-widget-filtering-and-sorting=true
+  ul.categoryFilter data-widget='filter-category'
+    - categories.each do |category|
+      li.categoryFilter-item data-filter=(category.key) = category.name
+  .modelFilter.section data-widget='filter-model'
+    .modelFilter-current data-current=true
+      = product_models.first.name
+    ul.modelFilter-menu data-menu=true
+      - product_models.each do |product|
+        li.modelFilter-menu-item data=({ filter: product.key, category_key: product.category.key })
+          = product.name
+
+  .productList data-product-list=true
+    - @templates.each do |template|
+      - product = template.product
+      - data = { \
+        product: true,
+        model: product.key,
+        category: product.category.key,
+        price: product.prices[current_currency_code],
+        time: template.created_at.to_i,
+        ec: template.to_ecommerce_tracking \
+      }
+      .productList-item.product data=(data)
+        = link_to store_works_path(store_id: @store, template_id: template.id), data: { method: :post }, rel: :nofollow do
+          .product-image
+            = image_tag nil, class: 'isNotLoaded', data: {src: render_store_template_placeholder_image_url(template)}
+          .product-name = template.name
+          .product-price
+            -if template.has_special_price?
+              .product-price-current = render_price(template.special_price(current_currency_code))
+              .product-price-original [itemprop="highPrice"] = render_price(template.price(current_currency_code))
+            - else
+              .product-price-current = render_price(template.price(current_currency_code))

@@ -1,0 +1,30 @@
+- admin_title t('channel_codes.manage')
+- breadcrumb :admin_channel_codes
+
+.row
+  = simple_form_for @channel_code, url: admin_channel_codes_path, method: :post, class: 'form-horizontal' do |f|
+    = f.error_notification
+    = f.input :code, label: t('channel_codes.code')
+    = f.input :description, as: :text, label: t('channel_codes.description')
+    .form-actions
+      = f.submit '新增', class: 'btn btn-primary'
+
+.row
+  .widget-box.widget-color-blue.ui-sortable-handle
+    .widget-header.header-color-blue
+      h5.widget-title.bigger.lighter
+        = fa_icon 'table', class: 'ace-icon'
+    .widget-body
+      .widget-main.no-padding
+        table.table.table-striped.table-bordered.table-hover
+          thead
+            tr
+              th = t('channel_codes.code')
+              th = t('channel_codes.description')
+              th
+          tbody
+            - @channel_codes.each do |channel_code|
+              tr
+                td= channel_code.code
+                td= channel_code.description
+                td= link_to '修改', edit_admin_channel_code_path(channel_code), class: 'btn btn-primary btn-mini', remote: true

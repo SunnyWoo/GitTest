@@ -1,0 +1,31 @@
+= render_cell :home_slide, :home, set: 'create'
+
+.cmdp_container
+  .grid_6
+    = render_cell :announcement, :announcement
+
+.cmdp_container.details
+  h1.item-title.text-center
+    = edit_translator('work.new.choose_product')
+
+  - @categories.each do |category|
+    - if staff_available?
+      - products = category.products.staff_available.customizable_on('website')
+    - else
+      - products = category.products.available.customizable_on('website')
+
+    - products.order_by('website').each do |product|
+      .grid_2
+        .product.choose-device class=('has-special-price' if product.customized_special_price?)
+          = link_to works_path(model_id: product.id), data: { method: :post }, rel: :nofollow do
+            = image_tag get_model_image_url(product), width: 310, heigth: 310
+            .product-name = product.name
+            .mask
+
+          .info.clearfix
+            .author.pull-left
+              = edit_translator('work.new.your_image')
+
+            .price.pull-right
+              .price-original-price = render_product_price(product)
+              .price-special-price = render_product_customized_special_price(product)

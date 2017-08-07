@@ -1,0 +1,154 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy: true
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy: true
+.m-announcement style='background-color: #f6f7f2;border-bottom: 1px #e5e5e5 solid;'
+  = @title
+.camp_margin-top-33
+- select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+select id='m-campaign-select' class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+  - { info: '活動介紹', create: '客製素材', artwork: '公益塗鴉', photos: '活動攝影' }.each do |key, val|
+    option.filter value=(key) = val
+
+.campaign-page#info_page
+  .mobile-v2-title style='font-weight: 400;'
+    | 我印免費送你去
+    br
+    | MUSIC RUN
+    br
+    | 現場感受熱力
+  .m-musicrun-block
+    .mobile-v2-title.title style='font-weight: 200; font-family: inherit;'
+      | 9/8 ~ 9/13
+    .desc.text-center
+      | 消費不限金額即可獲得抽獎資格
+      br
+      | 共 10 組（20名）名額
+    .mobile-v2-title.title  style='font-weight: 200; font-family: inherit;'
+      | 9/14
+    .desc.text-center
+      | 我印 facebook 粉絲團
+      br
+      | 公布中獎名單一人中獎兩人同歡 !
+      br
+      | 快來我印印出你的專屬 style !
+
+    .musicrun-vidoe
+      iframe width='90%' height='242' src='https://www.youtube.com/embed/sWc9scfrNro?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen='true'
+
+  .m-musicrun-block-2
+    .mobile-v2-title.title  style='font-weight: 400;'
+      | MUSIC RUN
+      br
+      | 活動介紹
+    .desc.text-center
+      | 這是一場不限時間，不帶比賽性質 5 公里趣味路跑。不常跑步或不運動的粉絲，也可散步、跳舞、慢跑，跟朋友們一起享受這 5 公里的音樂饗宴，The Music Run™ by KOKO 每公里都有不同音樂型態與主題曲目清單由你和所有跑者在官方網站上透過音樂平台 Spotify 投票一起決定！在這場充滿音樂的路跑過程中，你的聽覺將被超過 100 支的專業演唱會規格喇叭無死角的 360 度環繞。你與朋友們將沉浸在喜愛的音樂世界裡，開心地跑步、瘋狂地跳舞、大聲地唱著歌、每一步都想要拍照留下美好的回憶，就這樣快樂的跑向最終的大型音樂派對！快加入音樂跑者的行列。The Music Run™ by KOKO 已經在亞洲與世界許多城市掀起一股風潮，台灣首站-台北站，請您一定不要錯過！
+      br
+      br
+      | 日期：2015 年 9 月 19 日 星期六
+      br
+      br
+      | 地點：大台北都會公園－蘆洲微風運河
+      = image_tag 'campaign/musicrun/images/sponsor.png', class: 'sponsor-img', lazy: true, alt: '我印 X Music Run™ sponsor'
+  .mobile-v2-title style='font-weight: 400;'
+    | 我印 X
+    br
+    | THE MUSIC RUN
+  .m-musicrun-desc
+    | 活動當天先到我印帳篷趣味小遊戲幫你暖暖身，起跑後可別錯過我印精心策劃的螢光塗鴉送愛心活動！跑步沒手自拍嗎？別怕別怕，我印幫你準備好了沿途看到我印攝影師別忘了秀出你最活力的笑容讓我印幫你記錄每一刻！
+  = image_tag 'campaign/musicrun/images/m-map.png', class: 'm-musicrun-map', lazy: true, alt: '我印 X Music Run™ sponsor'
+
+.campaign-page#create_page
+  .products.happysummer
+    .mobile-v2-title style='font-weight: 400;'
+      | MUSIC RUN
+      br
+      | 素材下載
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-1-new.png', alt: @title, width: '60px'
+      .step-title 1. 選擇載體與下載素材
+      .step-desc 選擇您中意的產品載體，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-2-new.png', alt: @title, width: '60px'
+      .step-title 2. 載入素材與製作
+      .step-desc 選擇您中意的產品載體，並載入下載的素材，開始自己動手設計屬於自己的商品。
+    .text-center.step-block4
+      .step-img = image_tag 'campaign/happysummer/images/icon-3-new.png', alt: @title, width: '60px'
+      .step-title 3. 快速結帳，全球直送
+      .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+    .mobile-v2-title
+      | 選擇素材
+    - select_class = browser.ios? ? 'material-select-ios' : 'material-select'
+    select.select_material class=(select_class) data-category=("Campaign - #{@key} - Mobile")
+      - @work_categories.each do |category_id, obj|
+        - obj[:models].each do |model|
+          option.filter selected=('selected' if model.key == @default_model.key) value=(model.key) data=({category_key: model.category.key}) = model.name
+    .hide#material_span data=({key: @default_model.key, category_key: @default_category.key })
+    - @materials.each_with_index do |material, i|
+      .product.material class=('hide' if i >= 3)
+        .product-mobile
+          = image_tag "campaign/musicrun/material/thumb/#{material}.jpg", width: 288, heigth: 288, lazy: true
+          .product-desc
+            .product-name-v2
+              = material.split('_').map(&:classify).join(' ')
+          = link_to '#', class: 'btn btn-default btn-happysummer material_download', download: :material_download,
+                         target: '_blank', data: { material: material, platform: 'Mobile' } do
+            | 下載樣式
+          br
+          = link_to '開始印', '#', class: 'btn btn-happysummer summer_create open_deeplink ga-event',
+                data: { deeplink_protocol: Settings.deeplink_protocol, deeplink: "create?category=#{@default_category.key}",
+                        'ga-event-category' => "Campaign - #{@key} - Mobile",
+                        'ga-event-action' => 'Launch App',
+                        'ga-event-label' => "Create" }
+
+    .page.material
+      #product.material-page-button.ga-event data=({'ga-event-category' => "Campaign - #{@key} - Mobile",
+                                                    'ga-event-action' => 'click',
+                                                    'ga-event-label' => 'material see more'})
+        | 下一頁
+    .camp_margin-bottom-35
+
+.campaign-page#artwork_page
+  .mobile-v2-title
+    | 揮灑創意分享愛
+    br
+    | 心公益塗鴉畫作下載
+  .m-musicrun-block
+    .m-musicrun-desc.happysummer
+      | 活動當天我們將會於帳篷內設立創作區，歡迎各位熱情的跑者一起來發揮你的創意活動結束後別忘了回來官網欣賞成品，亦可下載圖檔製作成紀念商品帶回家！而且扣除成本後收益將全數捐給家扶基金會幫助弱勢孩童喔！把自己的熱情活力向外傳染給更多人吧！
+      = image_tag 'campaign/musicrun/images/graffiti_thumb.jpg', class: 'artwork lazy', alt: @title
+      = link_to 'Download', image_path('campaign/musicrun/images/graffiti.jpg'), class: 'btn btn-default btn-mobile-cart', target: '_blank'
+.campaign-page#photos_page
+  .mobile-v2-title
+    | 找找自己在哪裡
+  .m-musicrun-desc.happysummer
+    | 因活動主辦發送之活動Ｔ並無標記背號，因此無法使用背號搜尋功能，不便之處敬請見諒。
+
+  .products.happysummer
+    - @photos.each_with_index do |photo|
+      .product.material
+        .product-mobile
+          = link_to "https://d2i5hifyddc647.cloudfront.net/campaign/2015/musicrun/photos/#{photo}", class: 'product-detail', target: '_blank' do
+            = image_tag "https://d2i5hifyddc647.cloudfront.net/campaign/2015/musicrun/photos/thumb/#{photo}", lazy: true
+
+
+    .mobile_pagination
+      = will_paginate @photos, inner_window: 1, param_name: 'photo_page', params: { anchor: 'photos' }, page_links: false
+
+    .camp_margin-bottom-35
+
+
+.app-promotion
+  .title
+    = "購買 #{@name} 系列商品"
+    br
+    | 請下載 我印 App
+  = link_to 'http://bit.ly/1nMC8yU' do
+    = image_tag 'campaign/mobile/img_download_ios@2x.png', class: 'promo-img'
+  = link_to 'https://play.google.com/store/apps/details?id=com.commandp.me' do
+
+    = image_tag 'campaign/mobile/img_download_android@2x.png', class: 'promo-img'
+
+#campaing_inof.hidden data=({key: @key})

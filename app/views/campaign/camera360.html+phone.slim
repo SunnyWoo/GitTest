@@ -1,0 +1,26 @@
+.owl-carousel.lucky2016m-short-kv.lucky2016m-kv-go-info
+  .kv_middle
+    = image_tag @kv_mobile_images[:bg], class: 'carousel-img', alt: @kv_mobile_images[:alt], lazy: true
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_mobile_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_mobile_images[:alt], lazy: true
+
+.m-announcement = @title
+
+.camera360-page
+  .camera360-gift-label 活动名称
+  .camera360-gift-name = @gift["gift_name"]
+  .camera360-gift-label 参与方式
+  .camera360-gift-desc = @gift["gift_desc"].html_safe
+  .camera360-gift-label = @gift["gift_plean_title"]
+  p.camera360-gift-mode = @gift["gift_mode"].html_safe
+
+- ios_url = @gift['download_ios_url']
+- android_url = @gift['download_android_url']
+
+a href=(ios_url) target="_blank"
+  = image_tag  @gift["download_ios_image_url"], class: 'camera360-download', alt: '下载IOS APP', lazy: true
+
+a href=(android_url) target="_blank"
+  = image_tag  @gift["download_android_image_url"], class: 'camera360-download', alt: '下载Android APP', lazy: true
+

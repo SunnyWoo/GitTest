@@ -1,0 +1,335 @@
+.event-list {
+  padding: 3px 2px 1px 2px;
+  overflow: auto;
+}
+
+.event-list-full {
+  margin: 0 10px;
+  padding-top: 10px;
+  .event-banner img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  .event-block {
+    .event-info {
+      background-color: #FFFFFF;
+      padding: 10px;
+      line-height: 20px;
+    }
+    .event-goto {
+      float: right;
+      img {
+        width: 20px;
+      }
+    }
+  }
+}
+
+.event-list-half {
+  float: left;
+  margin:0;
+  width: 50%;
+  min-width: 152px;
+  .event-block {
+    margin: 3px;
+    .event-banner {
+      text-align: center;
+      overflow: hidden;
+      margin-bottom: -2px;
+      img{
+        width: 100%;
+        border-radius: 2px 2px 0 0;
+      }
+    }
+    .event-info {
+      background-color: #FFFFFF;
+      padding: 10px;
+      border-radius: 0 0 3px 3px;
+      height: 90px;
+    }
+    .event-title {
+      height: 40px;
+      line-height: 20px;
+      overflow: hidden;
+    }
+    .event-goto {
+      margin-top: 10px;
+      text-align: center;
+      img {
+        width: 20px;
+        vertical-align: middle;
+        margin-left: 5px;
+        margin-bottom: 2px;
+      }
+      .btn {
+        text-decoration: none;
+        background-color: #4FBD92;
+        color: #FFF;
+        padding: 0;
+        line-height: 40px;
+        height: 40px;
+        width: 100%;
+        font-size: 1em;
+        border-radius: 3px;
+        min-width: 110px;
+        span {
+          color: #FFF;
+        }
+        &:hover {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+.redeem-ticker {
+  text-align: center;
+  line-height: 30px;
+  background-color: #455055;
+  color: #FFF;
+}
+
+.redeem-kv {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  img {
+    width: 100%;
+  }
+}
+.redeem-path {
+  padding-top: 5px;
+  position: absolute;
+  right: 10px;
+  background: image-url('mobile/redeem/path.png') top no-repeat;;
+  height: 56px;
+  width: 40px;
+  a {
+    color: #FFF;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+.event-desc {
+  padding-bottom: 10px;
+  .event-desc-title {
+    padding-left: 12px;
+    color: #4FBD92;
+    font-size: 17px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: #e6e6e6 1px solid;
+  }
+  .event-desc-content {
+    padding: 12px;
+    color: #999999;
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+.event-success {
+  margin-top: 50%;
+  text-align : center;
+  .success-wording {
+    color: #999;
+  }
+}
+
+.redeem-check-out {
+  background-color: #F5F5F5;
+  color: #999;
+  height: 50px;
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  font-size: 17px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  padding-left: 10px
+}
+
+#redeem-valid-error-ticker {
+  background-color: #516A84;
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+}
+
+.redeem-coupon-form {
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+
+  .form-group {
+    border-bottom: 1px solid #ccc;
+    .input-group-btn {
+      position: relative;
+      white-space: nowrap;
+      padding-left: 10px;
+    }
+  }
+
+  #redeem-code {
+    background-color: #F6F7FB;
+    display: inline-block;
+    width: 100%;
+    input {
+      font-size: 21px;
+      border-width: 0px;
+      float: left;
+      padding: 0 0 0 10px;
+      -webkit-appearance: none;
+      border-radius: 0px;
+      border-right: 0;
+      height: 60px;
+      margin: 5px 0 5px 5px;
+      width: 75%;
+    }
+
+    input.redeem-valid-error {
+      border: red 1px solid;
+    }
+
+    button.redeem-valid-error {
+      background-color: red;
+    }
+
+    #redeem_input::-webkit-search-cancel-button{
+      position:relative;
+      right:20px;
+    }
+    .redeem-valid-success {
+      background: #4ebd92 image-url('mobile/redeem/btn_success_logo.png') no-repeat center center;
+    }
+  }
+
+  button.redeem-coupon-valide {
+    text-decoration: none;
+    font-size: 21px;
+    height: 70px;
+    color: white;
+    float: right;
+    width: 23%;
+    text-align: center;
+    background-color: #4ebd92;
+    border-style: none;
+    padding-bottom: 2px;
+    position: relative;
+    span {
+      color: #FFF;
+    }
+  }
+
+  .disabled {
+    opacity: 0.5;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #ccc;
+  }
+
+  ::-moz-placeholder {
+    color: #ccc;
+  }
+}
+
+#redeem-shipping-info {
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+  .form-group {
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .form-valid-error {
+    border-color: red;
+    span {
+      color: red;
+      line-height: 50px;
+      position: absolute;
+      right: 20px;
+    }
+  }
+
+  label {
+    font-family: "Helvetica Neue";
+    font-weight: 200;
+    font-size: 17px;
+    color: #999;
+    float: left;
+    width: 20%;
+    height: 100%;
+    padding-left: 10px;
+    line-height: 50px;
+    letter-spacing: 0.8px;
+    text-align: left;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  input, select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    -webkit-border-radius: 0;
+    background-color: white;
+    font-family: "Helvetica Neue";
+    font-weight: 200;
+    font-size: 17px;
+    line-height: 50px;
+    letter-spacing: 0.8px;
+    float: right;
+    width: 75%;
+    height: 100%;
+    padding: 0px;
+    text-align: left;
+    border-width: 0px;
+    display: inline-block;
+  }
+
+  .shipping-info-valid-error {
+    border: 1px solid red;
+  }
+
+  ::-webkit-input-placeholder {
+    color: #ccc;
+  }
+
+  ::-moz-placeholder {
+    color: #ccc;
+  }
+}
+
+.footer-like, .footer-button {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #4ebd92;
+  font-size: 17px;
+  font-family: "Helvetica Neue";
+  font-weight: 200;
+  color: white;
+  line-height:  50px;
+  text-align: center;
+  text-decoration: none;
+  border-style: none;
+  span {
+    color: #FFF;
+  }
+}
+
+.coupon_desc {
+  img {
+    width: 100%;
+  }
+}
+
+.mobile.redeems {
+  .bottom-placeholder {
+    height: 50px;
+  }
+}

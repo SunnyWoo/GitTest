@@ -1,0 +1,18 @@
+.translations-input {
+  td {
+    padding: 0 !important;
+  }
+
+  input, textarea {
+    padding: 8px;
+    border: 0;
+    width: 100%;
+  }
+}
+
+.translations-input-vertical {
+  label, input, textarea {
+    display: block;
+    width: 100%;
+  }
+}

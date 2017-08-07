@@ -1,0 +1,33 @@
+zh-TW:
+  print:
+    batch_flow:
+      attachment:
+        title:
+          all: '所有檔案'
+          image: '印刷圖片檔案'
+          document: '總表文件與工單檔案'
+      notification:
+        subject: '%{factory_name} %{number_with_source} 工單下載通知 from Commandp'
+      summary_table:
+        header:
+          batch_number: '批號'
+          deadline: '預計到貨日'
+          item_number: '單品號'
+          location: '出貨地'
+          order_number: '訂單號'
+          product_name: '產品名稱'
+          quantity: '數量'
+          shipping_number: '託運單號'
+          stat_title: '商品數量計算'
+          stat_product: '產品名稱'
+          stat_quantity: '數量'
+          note: '備註'
+        filename: '%{source}%{batch_number}_總表'
+        is_reprint: '重印商品'
+      worksheet:
+        field:
+          batch_number: '批號'
+          item_number: '單品號'
+          order_number: '訂單號'
+          product_name: '規格'
+        filename: '%{source}%{batch_number}_%{product_name}工單'

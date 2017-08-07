@@ -1,0 +1,37 @@
+- breadcrumb :admin_coupon_notices
+- admin_title t('coupon_notices.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to '预览简讯', preview_admin_coupon_notices_path, class: 'btn btn-success'
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th = sort_link(@search, :coupon_id, t('coupon_notices.index.coupon'))
+            th = t('coupon_notices.index.notice')
+            th = sort_link(@search, :available, t('coupon_notices.index.available'))
+            th = t('coupon_notices.index.platform')
+            th = t('coupon_notices.index.region')
+            th = t('shared.form_actions.operation')
+        tbody
+          - @resources.each do |coupon_notice|
+            tr
+              td= coupon_notice.coupon.title
+              td= coupon_notice.notice
+              td= render_yes_or_no(coupon_notice.available?)
+              td= render_yes_or_no(coupon_notice.platform.mobile) + "/" + render_yes_or_no(coupon_notice.platform.email)
+              td= render_yes_or_no(coupon_notice.region.china) + "/" + render_yes_or_no(coupon_notice.region.global)
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, coupon_notice]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), url_for([:admin, coupon_notice]), class: 'btn btn-danger', data: { method: :delete, confirm: t('shared.confirm.delete') }
+
+
+= will_paginate @resources

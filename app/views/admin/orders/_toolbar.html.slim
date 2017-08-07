@@ -1,0 +1,3 @@
+.btn-toolbar
+  .btn-group
+    = link_to t('orders.toolbar.resend'), admin_order_receipt_path(order), class: 'btn', data: { remote: true, method: 'post', confirm: t('orders.toolbar.resend_confirm'), disable_on_submit: true }

@@ -1,0 +1,21 @@
+ul.nav.nav-tabs
+  li class=('active' if active == 'home_products')
+    = link_to admin_home_products_path do
+      => fa_icon 'table', class: 'ace-icon'
+      span = t('home_products.sidebar_name')
+  li class=('active' if active == 'home_slides')
+    = link_to admin_home_slides_path do
+      => fa_icon 'exchange', class: 'ace-icon'
+      span = t('home_slides.sidebar_name')
+  li class=('active' if active == 'home_links')
+    = link_to admin_home_links_path do
+      => fa_icon 'link', class: 'ace-icon'
+      span = t('home_links.sidebar_name')
+  li class=('active' if active == 'home_blocks')
+    = link_to admin_home_blocks_path do
+      => fa_icon 'server', class: 'ace-icon'
+      span = t('admin.v2.shared.sidebar.home_blocks')
+  li class=('active' if active == 'header_links')
+    = link_to admin_header_links_path do
+      => fa_icon 'link', class: 'ace-icon'
+      span = t('header_links.sidebar_name')

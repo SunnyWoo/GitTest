@@ -1,0 +1,9 @@
+<% id = dom_id(@order, :edit_order_ship) %>
+$('body').append('<%= j render 'edit_ship', id: id, order: @order %>');
+$('#<%= id %>').modal('show');
+$('#<%= id %>').on('submit', function(e) {
+  $('#<%= id %>').modal('hide');
+});
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

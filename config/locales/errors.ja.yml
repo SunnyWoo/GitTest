@@ -1,0 +1,9 @@
+ja:
+  errors:
+    payment_time_out: '%{payment}の接続に問題があります。他のお支払い方法か、時間をおいて再度お試し頂けますでしょうか。'
+    work_not_found_error: 'この商品は現在購入することができません。後ほどお試しください。'
+    invalid_address_error: "間違ったアドレスコード (%{seg}: %{value})"
+    pricing:
+      shipping_fee:
+        address_unavailable: '完全なアドレスは、出荷を計算することは不可能ではありません'
+        unavailable: '出荷情報が欠落して注文します'

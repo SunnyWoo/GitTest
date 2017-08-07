@@ -1,0 +1,27 @@
+---
+- code: B
+  description: black
+- code: W
+  description: white
+- code: T
+  description: "透明"
+- code: J
+  description: "金屬"
+- code: Q
+  description: "全彩"
+- code: D
+  description: "單聯畫"
+- code: M
+  description: "多聯畫"
+- code: F
+  description: "菲林壳"
+- code: H
+  description: "韩国壳"
+- code: G
+  description: "国产壳"
+- code: O
+  description: "木色"
+- code: N
+  description: "咖啡色"
+- code: C
+  description: cream

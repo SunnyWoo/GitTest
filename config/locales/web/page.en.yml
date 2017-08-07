@@ -1,0 +1,68 @@
+en:
+  page:
+    title:
+      featured_products: Featured Products
+      dont_take_our: Don’t take our words for it. Take theirs!
+      you_may_also_like: You May Also Like
+    text:
+      sort: Sort
+      model: Model
+      category: Category
+      qty: Quantity
+      free_shipping: Worldwide Shipping
+      desc: Description
+      shipping: Shipping
+      shipping_desc: '10-12 days for International. Expedited shipping is also available upon checkout.'
+      new_year:
+        shipping_desc: "International Shipping 10-12 business days. Due to Chinese new year holidays, all shipment will be sent out on the 2/24.Express shipping packages will be prioritize to shipped out on the 2/24 first. "
+      not_support_mobile: 'We are sorry. This function does not support on mobile page.'
+      not_support_mobile_ios:
+        - 'For a better user experience.'
+        - 'Please click and download the iOS App below,'
+        - 'or open the page on the computer.'
+      not_support_mobile_android:
+        - 'For a better user experience.'
+        - 'Please click and download the android App App below,'
+        - 'or open the page on the computer.'
+      no_product_found: Sorry! There is no product found.
+    btns:
+      search: Search
+      shopping_cart: Shopping cart
+      user: User
+      shop: SHOP
+      create: CREATE
+      app: iOS APP
+      about_us: ABOUT US
+      help: HELP
+      contact_us: CONTACT US
+      order_status: ORDER STATUS
+      careers: CAREERS
+      add_to_cart: Add to Cart
+      added: Added
+      adding: Adding...
+      removing: Removing...
+      back_index: Back to Home
+      redeem: Redeem
+    login:
+      title: Join our community <br> of art lovers
+      notice: Create a profile now to follow and discover amazing artists. It only takes a few seconds.
+      connect_to_facebook: "Connect With Facebook"
+    support:
+      select_q_class: Please select the best category for your ticket.
+      enter_q_content: Please enter the details of your request.
+    preview:
+      rendering: Creating Preview Image.
+  mobile:
+    passwords:
+      successfully_modified: 'Password reset success'
+      reset_password: 'Please reset your password.'
+      reset: 'Reset Password'
+    confirmations:
+      successfully_confirmed: 'Email verification success'
+      confirmation_expired: 'Verify Email link has expired'
+      invalid_token: 'Click here to return to APP'
+      successfully_send: 'Please receive verifiy email in your inbox'
+      resend: 'Resend'
+    shared:
+      back_to_app: 'Back to APP'
+

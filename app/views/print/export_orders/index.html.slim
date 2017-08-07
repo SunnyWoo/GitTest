@@ -1,0 +1,19 @@
+.page-header
+  h1 订单导出
+.row
+  .col-xs-12
+    .widget-box
+      .widget-header
+        h5 订单导出
+      .widget-body
+        .widget-main.no-padding
+          table.table.table-bordered.table-striped
+            thead.thin-border-bottom
+              tr
+                th 文件
+            tbody
+              - @export_orders.each do |export_order|
+                tr
+                  td = link_to export_order.file.filename, export_order.file.url
+
+= will_paginate @export_orders

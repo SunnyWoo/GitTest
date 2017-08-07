@@ -1,0 +1,30 @@
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th = 'ID'
+            th = 'Order no'
+            th = 'Coupon Code'
+            th = 'Phone'
+            th = 'Created at'
+            th = 'Operation'
+        tbody
+          - @resources.each do |resource|
+            tr
+              td = resource.id
+              td = resource.order_no
+              td = resource.coupon_code
+              td = resource.phone
+              td = resource.created_at
+              td
+                .btn-group
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, resource]), class: 'btn btn-info'
+= will_paginate @resources

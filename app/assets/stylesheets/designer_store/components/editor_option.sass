@@ -1,0 +1,63 @@
+// *************************************
+//
+//   Editor Option
+//   -> 編輯器的操作選項
+//
+// *************************************
+
+.editorOption
+  position: relative
+  display: flex
+  width: 100%
+  color: $c-text-content
+  background-color: $c-bg-white
+  @include rem(font-size, $f-size-content)
+  justify-content: center
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+.is-disabled
+  .editorOption-mask
+    display: block
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.editorOption-btn
+  padding: 0
+  cursor: pointer
+  text-align: center
+  text-decoration: none
+  border-top: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+  background-color: $c-bg-white
+  @include rem(line-height, 50px)
+  flex: 1
+
+  &:not(:first-child)
+    border-left: 1px solid $c-border
+
+.editorOption-btn--highlight
+  color: $white
+  border-top: none
+  border-bottom: none
+  background-color: $c-primary
+
+.editorOption-mask
+  position: absolute
+  display: none
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: rgba($black, .5)

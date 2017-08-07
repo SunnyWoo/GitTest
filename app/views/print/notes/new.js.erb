@@ -1,0 +1,9 @@
+<% id = 'new_note_modal' %>
+$('body').append('<%= j render 'new', id: id, note: @note %>');
+$('#<%= id %>').modal('show');
+$('#new_note').on('submit', function(e) {
+  $('#<%= id %>').modal('hide');
+});
+$('#<%= id %>').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

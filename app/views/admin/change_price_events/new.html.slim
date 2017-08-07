@@ -1,0 +1,11 @@
+- admin_title t('.page_title')
+- breadcrumb :new_admin_change_price_events
+
+= render 'admin/works/nav', active: 'change_price_events'
+.well
+  = label_tag t('change_price_events.index.thead.target_type')
+  = select_tag :change_price_type, options_for_select(@form.target_type_options),
+    data: { url: target_list_admin_change_price_events_path }
+.widget-main.no-padding
+  .change_price_target_list
+    = render 'works', form: @form

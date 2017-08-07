@@ -1,0 +1,23 @@
+- admin_title t('site_settings.index.page_title'), subtitle: t('site_settings.index.crumb.list')
+- breadcrumb :admin_site_settings
+
+= link_to '新增', new_admin_site_setting_path, class: 'btn btn-samll btn-primary'
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar.no-border
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= sort_link @search, :key, t('site_settings.index.thead.name')
+            th= sort_link @search, :value, t('site_settings.index.thead.value')
+            th= t('site_settings.index.thead.description')
+            th= t('site_settings.index.thead.operation')
+        tbody
+          = content_tag_for :tr, @resources do |mt|
+            = render mt
+
+= will_paginate @resources

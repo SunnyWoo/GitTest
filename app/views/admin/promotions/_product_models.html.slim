@@ -1,0 +1,19 @@
+- promotion = promotion_form.promotion
+- product_models = promotion_form.product_models
+- content_for :references_list do
+  = hidden_field_tag :promotable_type, 'ProductModel'
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th= check_box_tag :all
+        th= t('promotions.works.search_options.product_model')
+        th= t('promotions.index.thead.status')
+    tbody
+      - product_models.each do |product_model|
+        tr
+          td= check_box_tag('promotable_ids[]', product_model.id)
+          td= product_model.name
+          td= promotion_form.promotable_status(product_model)
+
+.widget-main.no-padding
+  = render 'change_promotion_references_form', promotion_form: promotion_form, content: content_for(:references_list)

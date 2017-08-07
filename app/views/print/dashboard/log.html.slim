@@ -1,0 +1,6 @@
+.page-header
+  h1 = t('activities.index.page_title')
+
+= will_paginate @activities
+= render_activities @activities
+= will_paginate @activities

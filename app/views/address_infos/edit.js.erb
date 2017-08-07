@@ -1,0 +1,19 @@
+$("#address_info_block_<%= @address_info.id %>").hide();
+<%
+  if @page == 'profile'
+  edit_form = j render 'edit', address_info: @address_info, r: address_users_path
+%>
+
+  $("#address_info_form_<%= @address_info.id %>").html('<%= edit_form %>').show();
+
+<% else %>
+
+  $("#address_info_form_<%= @address_info.id %>").removeClass('hide').show();
+
+<% end %>
+
+$('#cancel_<%= @address_info.id %>').on('click', function(e) {
+  $("#address_info_block_<%= @address_info.id %>").show();
+  $("#address_info_form_<%= @address_info.id %>").hide();
+  return false;
+});

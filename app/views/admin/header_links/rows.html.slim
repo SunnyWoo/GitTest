@@ -1,0 +1,35 @@
+table.table.table-striped.table-bordered.table-hover
+  thead
+    tr
+      th Row
+      th ID
+      th Type
+      th Title
+      th Href
+      th Blank
+      th Spec Id
+      th Tags
+      th Position
+      th Action
+  tbody
+    - @columns.each do |column|
+      tr
+        td = column.row
+        td = column.id
+        td = column.link_type
+        td = column.title
+        td = column.href
+        td = column.blank
+        td = column.spec_id
+        td
+          - column.tags.each do |tag|
+            = "title: #{tag.title}"
+            br
+            = "style: #{tag.style}"
+            hr
+
+        td = column.position
+        td
+          = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, column]), class: 'btn btn-info'
+          = link_to t('shared.form_actions.delete'), url_for([:admin, column]), method: :delete,
+                    class: 'btn btn-danger', data: {confirm: t('shared.confirm.delete')}

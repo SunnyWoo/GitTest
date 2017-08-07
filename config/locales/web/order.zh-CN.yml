@@ -1,0 +1,24 @@
+zh-CN:
+  page:
+    order_status:
+      notice: 若要确认你的订单状态，请输入你的email 信箱以及订购帐号，我们会将你过去30 天内的订购资讯email 给你。
+    order_results:
+      success: '成功'
+      success_wording: '谢谢你的订购！如果你选择的物流方式是快速运送，你将会在 7-10 天內收到你的商品；如果你选择的物流方式是标准运送，你将会在 7-12 天內收到你的商品（假日除外）。'
+      success_sub_wording: '成功！我们已收到你的订单。'
+      success_wording_mobile_1: '谢谢你的订购！'
+      success_wording_mobile_2: '如果你选择的物流方式是快速运送，你将会在 7-10 天內收到你的商品；'
+      success_wording_mobile_3: '如果你选择的物流方式是标准运送，你将会在 7-12 天內收到你的商品（假日除外）。'
+      fail: '抱歉!'
+      fail_wording: '抱歉，我们现在无法完成你的付款，请再试一次。请尝试其他付款方式或联络commandp 我印客服。'
+      waiting: '请稍等'
+      waiting_wording_1: '谢谢你的订购！你已选择 [ %{payment} ]付款。'
+      waiting_wording_2: '如果你选择的物流方式是快速运送，你将会在付款后7-10 天收到你的商品；如果你选择的物流方式是标准运送，你将会在付款后10-12 天收到你的商品（假日除外）。'
+      order_id: '订单编号 %{id}'
+      order_no: '订单编号'
+      sent_to: '我们已将你的收据寄到:'
+      btn: '订单纪录'
+      fail_btn: '立刻结账'
+      bank_id: '银行代码: '
+      bank_account: '付款帐户: '
+      pay_account: "缴费代码: "

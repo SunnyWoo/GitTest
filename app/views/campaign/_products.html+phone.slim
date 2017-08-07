@@ -1,0 +1,20 @@
+.products
+  .mobile-v2-title
+    = name
+    br
+    | 精選商品
+
+  - select_class = browser.ios? ? 'category-select-ios' : 'category-select'
+  select class=(select_class) data-category=("Campaign - #{key} - Mobile")
+    - category_names.each do |k, val|
+      option.filter value=(k) = val
+  .cvs-helps-title = '*商品加入購物車後，可於購物車中調整數量'
+  - category_products.each do |k, works|
+    .filted id=(k)
+      - works.each do |work|
+        - if work.redeem?
+          = render partial: 'editor/shared/redeem_work_mobilev2',
+                   locals: { category: "Campaign - #{key} - Mobile", work: work }
+        - else
+          = render partial: 'editor/shared/work_mobilev2',
+                   locals: { category: "Campaign - #{key} - Mobile", work: work }

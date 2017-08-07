@@ -1,0 +1,39 @@
+zh-CN:
+  errors:
+    work_not_found_error: '此商品目前无法购买，请稍候重试。'
+    payment_time_out: '目前 %{payment} 支付连线超时，请更换支付方式，或稍后再试。'
+    invalid_mobile_error: '无效的手机号码'
+    email_already_exists: "该邮箱已被使用!"
+    invalid_mobile_code: '手机验证码错误'
+    mobile_registered: '该手机已注册'
+    mobile_unregistered: '该手机未注册'
+    send_mobile_code_fail: '发送失败'
+    invalid_password_input: "密码输入错误!"
+    authentication_failed: "验证失败. 请重新登录."
+    email_unuconfrmed: '请先确认您的 E-mail'
+    already_verified: '已经验证过该邮箱'
+    too_many_request: '验证次数过多,请稍后再进行验证'
+    invalid_address_error: "错误的地址代码（%{seg}: %{value}）"
+    invalid_designer_ids: '请选择设计师'
+    invalid_product_model_ids: '请选择商品类型'
+    invalid_work_gids: '请选择作品'
+    input_engish: '请输入英文'
+    invalid_express_code: '请指定正确的快递'
+    invalid_login_info: '帐号或密码错误'
+    record_not_found: '找不到资料'
+    order_record_not_found: '系統繁忙中，请重新尝试或联系客服'
+    order_cancel_invalid: '订单无法取消，请刷新页面并重新尝试'
+    order_price_expiration_error: '订单金额已被变更，请重新确认结帐'
+    currency_exchange_error: 货币交换错误
+    # api
+    client_required: 缺少必要的參數 client_id 或 client_secret
+    invalid_client: 找不到合法的 client_id 或 client_secret
+    pricing:
+      shipping_fee:
+        address_unavailable: '地址未完整填写无法计算运费'
+        unavailable: '订单缺少运费资讯'
+    mobile_number_error: '你所填写的手机号码有误，请再次确认'
+    invalid_currency: '使用的货币不正确'
+    package_filename_error: "下列文件名称不符合: %{filenames}"
+    package_filepath_error: "下列文件不符合: %{filepath}"
+    package_dirs_error: "下列目录不符合: %{dirs}"

@@ -1,0 +1,9 @@
+- admin_title t('standardized_works.edit.page_title')
+- breadcrumb :edit_admin_standardized_work
+
+= render_admin_standardized_work_build_previews_button(@work)
+= render_admin_standardized_work_build_print_image_button(@work)
+= render_admin_standardized_state_button(@work)
+= render_create_archived_standardized_work_button(@work)
+hr
+= render_standardized_work_editor(@work)

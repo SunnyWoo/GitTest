@@ -1,0 +1,207 @@
+.owl-carousel
+  .kv_middle
+    = image_tag @kv_images[:bg], class: 'carousel-img', alt: @kv_images[:alt]
+    - kv_lagn = locale.match(/zh/) ? :tc : :en
+    - @kv_images[kv_lagn].each do |src|
+      = image_tag src, class: 'kv-img', alt: @kv_images[:alt]
+
+.campaign-nav.text-center
+  ul
+    li
+      a href="#info" 活動介紹
+    li
+      a href="#create" 客製素材
+    li
+      a href="#product" 熱賣商品
+
+.campaign-page#info_page
+  .picnic-block.text-center
+    .cmdp_container
+      .grid_6.margin-top-fixed
+        .item-title.margin-top-fixed.camp_margin-bottom-35 style='font-weight: 400;'
+          = "#{@name} 活動介紹"
+        .title
+          | 擁抱夏天的尾巴，那就趣野餐吧！
+        .title
+          | 趣好康 1
+        .desc.camp_margin-bottom-35
+          | 於 10/4「妞新聞 不然，趣野餐」活動現場
+          br
+          | 下載我印 APP+ 按我印 FB 讚，就可免費讓插畫家繪製插畫，
+          br
+          | 並獲得 150 元我印折價卷！
+          br
+          br
+        .title
+          | 趣好康 2
+        .desc
+          | 於 9/17-10/4 活動期間凡購買趣野餐相關商品單筆滿 899元，
+          br
+          | 10/4「妞新聞 不然，趣野餐」活動當天，
+          br
+          | 可以免費讓插畫家繪製插畫並免費製作成馬克杯乙個（價值 499元）
+          br
+          br
+          | 活動日期：2015 年 10 月 4 日 星期日
+          br
+          br
+          | 活動地點：華山園區
+    = image_tag 'campaign/picnic/images/bg.png', alt: @name, class: 'bg'
+
+  .picnic-block-2
+    .cmdp_container
+      .grid_6.margin-top-fixed
+        .item-title.margin-top-fixed.text-center.camp_margin-bottom-35 style='font-weight: 400;'
+          = "#{@name} 插畫家介紹"
+      .grid_6.text-center style='margin: auto;'
+        .grid_3
+          = link_to 'https://www.facebook.com/eyetuface', target: '_blank' do
+            = image_tag 'campaign/picnic/images/designer.png', alt: '陳遴而 Liner Chen'
+          .desc
+            | 陳遴而 Liner Chen
+            br
+            br
+            | Hi！ Say cheese！
+            br
+            | 喜歡創作、喜歡畫畫的我們！
+            br
+            | 做自己喜歡做的事、做令人開心的事。
+            br
+            | 當初一個想畫畫的衝動，
+            br
+            | 實現了我們分享創意的好點子。
+            br
+            | 一雙好鞋、幾支畫筆，再來一顆微笑太陽，
+            br
+            | EYE TÜ FACE 歡樂每一個人。
+        .grid_3
+          = link_to 'https://www.facebook.com/peachdayisagoodday', target: '_blank' do
+            = image_tag 'campaign/picnic/images/designer-2.png', alt: '蘇姵嘉 Peggy'
+          .desc
+            | 蘇姵嘉 Peggy
+            br
+            br
+            | P each day is a good day
+            br
+            | 每一天都是好的一天，
+            br
+            | 期許每一天都能是特別的一天。
+            br
+            | 每一天都能認識新的自己，
+            br
+            | 每一天都過得更美妙一點，
+            br
+            | 每一天都更加期待每一天。
+
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.margin-top-fixed.text-center style="margin: 33px 0 43px 0;font-weight: 400;"
+        | 我印 X LET’S GO PICNIC
+      .musicrun-map-desc.text-center
+        | 10/4 星期日快來找我們吧！下載我印 APP 並按我印粉絲團讚，
+        br
+        | 可以免費讓兩位插畫家幫你畫畫，並把畫作做成商品唷！
+        br
+        | 9/17-10/4 活動期間凡購買趣野餐相關商品單筆滿 899 元，
+        br
+        | 還可以免費獲得一個杯子唷！
+
+      = image_tag 'campaign/picnic/images/map.png', class: 'map-img lazy', alt: "我印 X #{@name}"
+      div style="margin-bottom: 15px;"
+
+.campaign-page#create_page
+  .cmdp_container.happysummer style='margin-top: 62px;'
+    .grid_6
+      #material_download_title.item-title.text-center style='margin-bottom: 55px;font-weight: 400;'
+        = "#{@name} 素材下載"
+    .grid_6
+      .cmdp_container.step-block3 style='margin-bottom: 55px;'
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-1.png', alt: @title, width: 50, height: 50
+          .step-title 1. 選擇載體與下載素材
+          .step-desc 選擇您中意的產品載體，並下載喜歡的素材，開始自己動手設計屬於自己商品。
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-2.png', alt: @title, width: 50, height: 50
+          .step-title 2. 載入素材與製作
+          .step-desc 選擇您中意的產品載體，並載入下載的素材，開始自己動手設計屬於自己的商品。
+        .grid_2
+          .step-img = image_tag 'campaign/happysummer/images/icon-3.png', alt: @title, width: 50, height: 50
+          .step-title 3. 快速結帳，全球直送
+          .step-desc 多種結帳方式，讓你輕鬆與快速拿到你專屬設計的商品。
+    hr
+
+    .grid_6
+      .item-title.text-center style='margin: -15px 0 10px 0;'
+        #material_span data=({key: @default_model.key})
+          = @default_model.name
+
+    .grid_6.text-center style='margin-bottom: -15px;'
+      .happysummer-nav
+        = edit_translator('page.text.model')
+        | :
+      ul.main-nav.happysummer-nav
+        - @work_categories.each do |key, obj|
+          li.sub-nav
+            - if obj[:models].size == 1
+              - model = obj[:models].first
+              = link_to '#', class: 'select_material', data: { key: model.key } do
+                = model.name
+                = image_tag 'campaign/happysummer/images/line.png', class: 'line'
+            - else
+              span
+                = obj[:category].name
+                = image_tag 'campaign/happysummer/images/down-arrow.png', class: 'down-arrow'
+                = image_tag 'campaign/happysummer/images/line.png', class: 'line'
+
+            - if obj[:models].size > 1
+              ul.sub-nav-ul
+                - obj[:models].each do |model|
+                  li = link_to model.name, '#', class: 'select_material', data: { key: model.key }
+
+    .margin-top-fixed
+    .products.campaign_works
+      - @materials.each do |material|
+        .grid_2
+          .product.material
+            = link_to '#', class: 'product-detail material_download', download: :material_download, target: '_blank',
+                                                                      data: { material: material, platform: 'Web' } do
+              = image_tag "campaign/picnic/material/thumb/#{material}.jpg", width: 310, heigth: 310
+              .mask
+              = link_to '#download', class: 'material_download_icon material_download', download: :material_download, target: '_blank', data: { material: material, platform: 'Web' } do
+                = image_tag 'campaign/happysummer/images/download.png'
+                br
+                | 點此開啟素材
+  .happysummer style='margin-bottom: -55px;'
+    .hr-block2
+      .text-center.camp_margin-top-10
+        = link_to new_work_path, title: t('page.btns.create') do
+          = image_tag 'campaign/happysummer/images/create.png'
+        .create_desc 下載完素材後，只要一鍵，即可立即製作與發揮你的創意。
+
+.campaign-page#product_page
+  .cmdp_container
+    .grid_6.margin-top-fixed
+      .item-title.margin-top-fixed.text-center.camp_margin-bottom-35.camp-fontweight-400
+        = "#{@name} 熱賣商品"
+
+    .web-bgmen-selectmodel-margin
+      .grid_2
+       .web-bgmen-placeholder
+      - params.merge!(anchor: 'product')
+      = render 'select_models', model: @model, ga_category: "Campaign - #{@key} - Web", work_models: @work_models
+
+    .margin-top-fixed
+    .products.campaign_works data-ga-category=("Campaign - #{@key} - Web")
+      - if @works.length > 0
+        = render partial: 'editor/shared/work', collection: @works
+      - else
+        .empty-result
+          = edit_translator('page.text.no_product_found')
+
+    .grid_6
+      .center-block.search_pagination
+        = will_paginate(@works, inner_window: 1)
+      .margin-top-fixed
+
+
+#campaing_inof.hidden data=({key: @key})

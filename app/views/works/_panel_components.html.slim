@@ -1,0 +1,47 @@
+.panel
+  .head
+    = edit_translator('editor.add_overlay')
+    .close-panel
+      i.overlays-img_addlayer_icon_cancel_normal
+  .components
+    .obj data-type='popup'
+      i.cp-icon.overlays-img_icon_photo_normal
+      .name = edit_translator('editor.photo')
+      .mask
+    .obj data-type='text' data-prop='text'
+      i.cp-icon.overlays-img_icon_text_normal
+      .name = edit_translator('editor.text')
+      .mask
+    .obj data-type='list' data-target='#typographyPanel'
+      i.cp-icon.overlays-img_icon_typography_normal
+      .name = edit_translator('editor.typography')
+      .mask
+    .obj data-type='list' data-target='#linePanel'
+      i.cp-icon.overlays-img_icon_lines_normal
+      .name = edit_translator('editor.lines')
+      .mask
+    .obj data-type='list' data-target='#shapePanel'
+      i.cp-icon.overlays-img_icon_shapes_normal
+      .name = edit_translator('editor.shapes')
+      .mask
+    / .obj data-type='list' data-target='#cropPanel'
+    /   i.overlays-img_icon_crops_normal
+    /   .name Crops
+    /   .mask
+    .obj data-type='list' data-target='#texturePanel'
+      i.cp-icon.overlays-img_icon_textures_normal
+      .name = edit_translator('editor.textures')
+      .mask
+    .obj data-type='list' data-target='#stickerPanel'
+      i.cp-icon.overlays-img_icon_stickers_normal
+      .name = edit_translator('editor.stickers')
+      .mask
+    .obj data-type='list' data-target='#framePanel'
+      i.cp-icon.overlays-img_icon_frame_normal
+      .name = edit_translator('editor.frames')
+      .mask
+    .obj data-type='bg' data-prop='background_color'
+      i.cp-icon.overlays-img_icon_color_normal
+      .name
+        = raw edit_translator('editor.background_color')
+      .mask

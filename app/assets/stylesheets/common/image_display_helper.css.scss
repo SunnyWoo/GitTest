@@ -1,0 +1,22 @@
+.transparent-grid {
+  background-image: image-url('transparent-grid.png');
+}
+
+.transparent-grid-dark {
+  background-color: black;
+}
+
+.dashed-border {
+  border: 1px dashed darkgray;
+}
+
+.upload-previewer, .upload-previewer img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.pdf-logo-uploader-previewer {
+  max-width: 100px;
+  max-height: 120px;
+  text-align: center;
+}

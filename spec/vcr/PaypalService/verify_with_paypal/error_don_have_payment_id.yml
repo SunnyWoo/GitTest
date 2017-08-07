@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.sandbox.paypal.com/v1/payments/payment/PAY-46W38094FH7689133KPXSBHQ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      x-paypal-sandbox-email-address:
+      - Platform.sdk.seller@gmail.com
+      authorization:
+      - Bearer A0158NkWeZqhii19TzUWq0ytZc8kR-DLww5-uPp5Ekp1NVo
+      content-type:
+      - application/json
+      user-agent:
+      - PayPalSDK/rest-sdk-ruby 0.7.0 (paypal-sdk-core 0.3.0; ruby 2.1.2p95-x86_64-darwin13.0)
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      proxy_server_info:
+      - host=slcsbplatformapiserv3001.slc.paypal.com;threadId=424785
+      paypal-debug-id:
+      - 7d8538dcbee1a
+      server_info:
+      - paymentsplatformserv:v1.payments.payment&CalThreadId=251032&TopLevelTxnStartTime=14b14c50b78&Host=slcsbpaymentsplatformserv3002.slc.paypal.com&pid=12904
+      content-language:
+      - "*"
+      date:
+      - Fri, 23 Jan 2015 03:10:32 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '207'
+    body:
+      encoding: UTF-8
+      string: '{"name":"INVALID_RESOURCE_ID","message":"The requested resource ID
+        was not found","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#INVALID_RESOURCE_ID","debug_id":"7d8538dcbee1a"}'
+    http_version: '1.1'
+  recorded_at: Fri, 23 Jan 2015 03:10:33 GMT
+recorded_with: VCR 2.9.2

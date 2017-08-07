@@ -1,0 +1,25 @@
+= simple_form_for(@announcement, url: [:admin, @announcement], class: 'form-horizontal') do |f|
+  = f.error_notification
+  - if @announcement.errors.size > 0
+    = render 'admin/shared/form_error_notification', errors: @announcement.errors.full_messages
+  - starts_at = f.object.starts_at ? f.object.starts_at.strftime("%F %H:%M") : nil
+  - ends_at = f.object.ends_at ? f.object.ends_at.strftime("%F %H:%M") : nil
+  = f.input :starts_at, as: :string, input_html: { class: 'datetimepicker', value: starts_at }
+  = f.input :ends_at, as: :string, input_html: { class: 'datetimepicker', value: ends_at }
+  table.table
+    thead
+      tr
+        th = t('product_models.edit.locale')
+        th = @announcement.class.human_attribute_name(:message)
+    tbody
+      - I18n.available_locales.each do |locale|
+        tr
+          td = f.label @announcement.localized_attr_name_for(:message, locale)
+            = locale
+          td = f.input_field @announcement.localized_attr_name_for(:message, locale)
+  .well
+    = f.label :default do
+      = f.check_box :default, class: 'ace'
+      span.lbl = @announcement.class.human_attribute_name(:default)
+  .form-actions
+    = f.submit t('shared.form_actions.submit'), class: 'btn btn-primary'

@@ -1,0 +1,8 @@
+#works-download-page
+  .cover
+    img.cover-image [src= @work.share_preview.try(:image_url)]
+
+  .worksDownload-hint
+    | &#8593;
+    = t('store.download.saveImage')
+    = '長按儲存圖片'

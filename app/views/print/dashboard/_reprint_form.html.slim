@@ -1,0 +1,15 @@
+.modal.fade id='reprint_form_#{print_item.id}'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      = simple_form_for PrintHistory.new, url: print_print_item_reprint_path(print_item.id),
+        method: :patch, html: { novalidate: false } do |f|
+        .modal-header
+          h3 重印
+        .modal-body
+          = f.input :print_type, label: '重印類別', collection: render_print_type_options, include_blank: false
+          = f.input :reason, label: '原因說明', as: :text, required: true
+        .modal-footer
+          = submit_tag '送出', class: 'btn btn-primary'

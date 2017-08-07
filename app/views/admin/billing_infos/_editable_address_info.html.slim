@@ -1,0 +1,29 @@
+- url = url_for([:admin, order, address_info])
+= address_info.class.name
+br
+| Name：
+= editable address_info, :name, url: url
+br
+| Email：
+= editable address_info, :email, url: url
+br
+| Address：
+= editable address_info, :address, url: url, type: :textarea
+br
+| City：
+= editable address_info, :city, url: url
+br
+| State：
+= editable address_info, :state, url: url
+br
+| Zip code：
+= editable address_info, :zip_code, url: url
+br
+| Country：
+= editable address_info, :country, url: url, type: :select, data: { source: BillingProfile.countries }
+br
+| Mobile：
+= editable address_info, :phone, url: url
+br
+| Address：
+span class="editable editable-click" data-model="billing_info" data-name="phone" data-placeholder="Mobile" data-type="text" data-url="/en/admin/orders/62/billing_infos/132" data-value="+886936326324" title="Address"

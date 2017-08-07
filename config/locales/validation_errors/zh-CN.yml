@@ -1,0 +1,23 @@
+zh-CN:
+  errors:
+    messages:
+      child_event_coupon: '需设定为 1 因为数量大于 1'
+      invalid_percentage_coupon: '需要在 0 和 1 之间因为 discount type 为 percentage'
+      invalid_threshold_coupon: '金额设定不能为空'
+      invalid_usage_count_limit: '需要大于或等于 usage count'
+      invalid_begin_at: '开始时间要从未来开始'
+      invalid_expired_at: '结束时间要在未来结束'
+      invalid_expired_at_on_update: 'Coupon期限为到期前一天与已经到期，不允许修改'
+      invalid_designer_ids: '謮选择设计师'
+      invalid_product_model_ids: '请选择商品类型'
+      invalid_product_category_ids: '请选择商品类别'
+      invalid_work_gids: '请选择作品'
+      invalid_coupon_rules: '不合法的优惠码规则'
+      invalid_coupon_rules_quantity: '数量需大于 0'
+      coupon_condition_is_disabled: '优惠码已停用'
+      coupon_condition_is_not_satisfied: '优惠码条件未满足'
+      print_items_do_not_be_created_correctly: 'PrintItem 数字不合其 OrderItem 所需'
+      image:
+        equal_to: "%{length} 必须等于 %{count} 像素"
+        greater_than_or_equal_to: "%{length} 必须大于 %{count} 像素"
+        less_than_or_equal_to: "%{length} 必须小于 %{count} 像素"

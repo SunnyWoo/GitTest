@@ -1,0 +1,7 @@
+ul.nav.nav-tabs
+  li class=('active' if active == 'delayed')
+    = link_to delayed_print_print_items_path do
+      span 遲到訂單
+  li class=('active' if active == 'reprint')
+    = link_to reprint_list_print_print_items_path do
+      span 重印記錄

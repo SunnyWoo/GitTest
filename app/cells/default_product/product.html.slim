@@ -1,0 +1,12 @@
+.grid_2
+  .product.choose-device.home-slide-show
+    = link_to new_work_path do
+      = image_tag 'home/cases_sjiphone6_chooseproduct.jpg', class: 'img-slide-list', style: 'opacity: 1'
+      - @img_files.each do |img|
+        = image_tag %r{app/assets/images/(.*)}.match(img)[1].gsub('/home/default_product', ''), class: 'img-slide-list'
+      .mask
+    .product-name
+      = t('page.work.title')
+    .info.clearfix
+      .author.pull-left
+        | Your Image Here

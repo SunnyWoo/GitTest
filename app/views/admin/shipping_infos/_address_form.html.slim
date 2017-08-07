@@ -1,0 +1,22 @@
+- change_country_url = change_country_code_admin_order_shipping_info_path(f.object, order_id: f.object.billable.id)
+= f.input :name
+= f.input :country_code, as: :select,
+          label: 'Country',
+          collection: BillingProfile.countries_with_country_code,
+          input_html: { onchange: "$(this).parents('form').attr({'method': 'get', 'data-remote': true, 'action': '#{change_country_url}'}).submit()" }
+- if f.object.with_province?
+  = f.input :province_id, as: :select, collection: f.object.province_options, input_html: { class: 'select2' }
+- else
+  = f.input :state
+
+- if f.object.support_city_option?
+  = f.input :city, as: :select, collection: f.object.city_options, input_html: { class: 'select2' }
+- else
+  = f.input :city
+
+- if f.object.with_district?
+  = f.input :dist_code, as: :select, collection: f.object.district_options, input_html: { class: 'select2' }
+
+= f.input :address
+= f.input :zip_code
+

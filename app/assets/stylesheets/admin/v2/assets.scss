@@ -1,0 +1,16 @@
+.assets-preview-container {
+  width: 320px;
+
+  .assets-image {
+    max-width: 100%;
+  }
+}
+
+.assets-image {
+  max-width: 100px;
+}
+
+.assets-sort {
+  float: right;
+  width: auto;
+}

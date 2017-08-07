@@ -1,0 +1,14 @@
+#login_notice.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+	.modal-dialog
+		.modal-content
+			.modal-header
+				.close data-dismiss='modal'
+					i.icons-30.icons-cancel_normal
+			.modal-body
+				.item-title.order-notice-title
+					= raw t('page.login.title')
+				.content
+					p= t('page.login.notice')
+					= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-facebook'
+						i.icons-img_icon_facebook_hover
+						= t('page.login.connect_to_facebook')

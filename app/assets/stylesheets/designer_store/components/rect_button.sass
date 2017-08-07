@@ -1,0 +1,36 @@
+// *************************************
+//
+//   Rect Button
+//   -> inline block 系的 button，
+//      目前已知被用在分享頁面
+//
+// *************************************
+
+.rectButton
+  display: inline-block
+  border-radius: 2px
+  @include rem(line-height, 55px)
+  @include rem(height, 55px)
+  @include rem(padding, 0 37px)
+  color: $c-text-content
+  border: 1px solid $c-border
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+.rectButton--primary
+  background-color: $c-primary
+  color: $c-text-white
+  border: none
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------

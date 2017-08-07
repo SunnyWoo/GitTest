@@ -1,0 +1,38 @@
+// *************************************
+//
+//   Burger menu item
+//   -> 漢堡選單中的項目
+//
+// *************************************
+
+.burgerMenu
+  display: none
+  z-index: $z-index-burger-menu
+
+.burgerMenu-item
+  @include rem(padding-left, 20px)
+  @include rem(padding-right, 20px)
+  @include rem(height, 50px)
+  @include rem(line-height, 50px)
+  color: $c-text-content
+  background-color: $c-bg-white
+  @include rem(background-size, 20px)
+  border-bottom: 1px solid $c-border
+
+.burgerMenu-item-link
+  background-position: left
+  background-repeat: no-repeat
+  background-size: inherit
+  width: 100%
+  display: inline-block
+  text-decoration: none
+  @include rem(padding-left, 30px)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+.burgerMenu-item-link--search
+  background-image: asset_data_url('designer_store/menu_search.png')
+
+.burgerMenu-item-link--contact
+  background-image: asset_data_url('designer_store/menu_contact.png')

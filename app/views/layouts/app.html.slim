@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta content='noindex' name='robot'
+    meta content='width=device-width, initial-scale=1.0' name='viewport'
+    / meta content='pMJfuoCx4SCeUutzlzNdfkNnUmq_rB77szI6VEvyXfo' name='google-site-verification'
+    / meta content='app-id=898632563' name='apple-itunes-app'
+    / = display_meta_tags
+    / = canonical_tag
+    / = favicon_link_tag 'favicon.png'
+    = csrf_meta_tags
+    = stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'app', 'data-turbolinks-track': false
+    = render 'shared/ua'
+
+  body class="#{controller_name} #{action_name} locale-#{I18n.locale}"
+    #main.main
+      #fix-header
+      = yield
+
+    header.app-top
+      = @header_title

@@ -1,0 +1,111 @@
+---
+products:
+  waterpackage_350ml:
+    coupon_code: 'HIGHSCROE1'
+  waterpackage_350ml_6pcs:
+    coupon_code: 'HIGHSCROE6'
+layers:
+  - layer_type: 'photo'
+    scale_x: 0.498142194328398
+    scale_y: 0.498142194328398
+    color: '0x000000'
+    transparent: 1.0
+    position_x: 3.82629336687251
+    position_y: 1.27349742224726
+    position: 1
+    remote_filtered_image_url: 'https://cp-to-qiniu-prod.b0.upaiyun.com/uploads/archived_layer/filtered_image/61905/b58ec69e-74b8-4bae-9d0f-ebbaa7ce53eb.png?v=1463132491'
+text_groups:
+  - key: 'name'
+    layers:
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -251.98437597
+        position_y: -201.212592715064
+        text_alignment: Left
+        position: 2
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -251.98437597
+        position_y: -152.819690669669
+        text_alignment: Left
+        position: 3
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -251.98437597
+        position_y: -103.153291202026
+        text_alignment: Left
+        position: 4
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -251.98437597
+        position_y: -53.486891734384
+        text_alignment: Left
+        position: 5
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -251.98437597
+        position_y: -3.82049226674178
+        text_alignment: Left
+        position: 6
+  - key: 'school_name'
+    layers:
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -335.5506231
+        position_y: -202.486090137311
+        text_alignment: Left
+        position: 7
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -335.5506231
+        position_y: -152.819690669669
+        text_alignment: Left
+        position: 8
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -335.5506231
+        position_y: -103.153291202026
+        text_alignment: Left
+        position: 9
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -335.5506231
+        position_y: -52.2133943121368
+        text_alignment: Left
+        position: 10
+      - scale_x: 0.08048539408
+        scale_y: 0.08048539408
+        color: '0x000000'
+        transparent: 1.0
+        font_name: "MFLiHei_Noncommercial-Regular"
+        position_x: -335.5506231
+        position_y: -2.54699484449452
+        text_alignment: Left
+        position: 11

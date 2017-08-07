@@ -1,0 +1,78 @@
+css:
+  @font-face {
+    font-family: 'Microsoft Jhenghei';
+    src: asset-data-url('Microsoft-Jhenghei.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+   font-family: 'Microsoft Jhenghei';
+  }
+
+.content
+  .header
+    .row
+      .col-xs-2
+        .logo
+          = render_product_ticker_logo(@order)
+  .product_cont
+    .row
+      .col-xs-8
+        .product_img
+          - base64_image = render_order_item_image_with_base64(@order_item)
+          - if base64_image
+            img src="data:image/png;base64,#{base64_image}"
+        - if @order_item.itemable.is_public?
+          .work_name = render_order_itemable_name(@order_item.itemable)
+        - else
+          .work_name = "#{I18n.t('pdf.ticker.work_type')} - #{render_order_itemable_name(@order_item.itemable)}"
+        .info
+          table
+            tr
+              td  #{I18n.t('pdf.ticker.catrgory')}: &nbsp;
+              td  = @model.category.name
+            tr
+            tr
+              td #{I18n.t('pdf.ticker.model')}: &nbsp;
+              td  = @model.name
+            tr
+            tr
+              td   #{I18n.t('pdf.ticker.material')}: &nbsp;
+              td  = @model.material
+            tr
+            tr
+              td  #{I18n.t('pdf.ticker.weight')}: &nbsp;
+              td  = render_product_weight(@model)
+            tr
+            tr
+              td  #{I18n.t('pdf.ticker.location')}: &nbsp;
+              td
+                - if Region.china?
+                  = I18n.t('factory.china.location')
+                - else
+                  = I18n.t('factory.global.location')
+            tr
+      .col-xs-4.list.text-right
+        - unless @order.nuandao_b2b?
+          .qrcode
+            - if Region.china?
+              = wicked_pdf_image_tag 'qrcode/weixin_service_black.png'
+              .desc = I18n.t('pdf.ticker.weixin_service')
+            - else
+              = wicked_pdf_image_tag 'qrcode/facebook_black.jpg'
+              .desc = I18n.t('pdf.ticker.facebook_fans')
+
+        .qrcode
+          = qrcode_as_html(@order.order_no)
+          .desc = I18n.t('pdf.ticker.order_qrcode')
+
+        - if @order.nuandao_b2b?
+          .qrcode
+            = wicked_pdf_image_tag 'qrcode/nuandao_website.png'
+            .desc = I18n.t('pdf.ticker.nuandao_website')
+  .footer
+    .row
+      .col-xs-7.text-left
+        .company.name = I18n.t("company.#{render_company_type(@order)}.name")
+      .col-xs-5.text-right
+        .company.website = I18n.t("company.#{render_company_type(@order)}.website")

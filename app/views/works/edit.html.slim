@@ -1,0 +1,40 @@
+#drawing(data-layers-path=work_layers_path(@work)
+         data-work-id=@work.id
+         data-work-name=@work.name
+         data-model-key=@work.product_key
+         data-model-name=@work.product_name
+         data-model-width=(@work.product.dpi_width)
+         data-model-height=(@work.product.dpi_height)
+         data-model-background= (@work.product.overlay_image.url || editor_model_background_path(@work))
+         data-model-background-color= (@work.product.background_color)
+         data-model-init-shape= (@work.product.background_image.url || editor_model_init_shape_path(@work))
+         data-model-shap=@work.product.shape)
+  canvas id="draw"
+
+#tmp_data
+  canvas id="tmp_png"
+
+#work_info
+  #work_name.clearfix(data-work-path=work_path(@work))
+    .work-name.pull-left
+    i.edittools-img_icon_backtoedit_normal.pull-left
+  .model-name
+  .print-quality.hide
+    = edit_translator('editor.print_quality')
+    span.quality
+
+#add_overlay
+  i.default-img_icon_addlayer_default_normal
+
+#preview
+  .btn.editor-btn-preview
+    .normal
+      = edit_translator('editor.preview')
+    .saving.hide
+      = t('editor.saving')
+  .spin.hide
+
+#debug.hide
+
+= render 'shared/popup/confirm'
+= render 'shared/popup/safe_area'

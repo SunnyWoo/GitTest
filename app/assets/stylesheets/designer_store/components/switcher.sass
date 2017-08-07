@@ -1,0 +1,61 @@
+// *************************************
+//
+//   Switcher
+//   -> 其實就是一個長得特別大的可切換 Tab，當 active 會變主要顏色
+//
+// *************************************
+$switcher-height: 62px
+
+.switcher
+  display: block
+  color: $c-text-content
+  @include rem(font-size, $f-size-content)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+.switcher-option
+  position: relative
+  display: flex
+  @include rem(height, $switcher-height)
+  background-color: $c-bg-white
+  justify-content: space-between
+
+.switcher-option-item, a.switcher-option-item
+  text-align: center
+  text-decoration: none
+  color: $c-text-content
+  @include rem(line-height, $switcher-height)
+  @include rem(border-top, 1px solid $c-border)
+  @include rem(border-bottom, 1px solid $c-border)
+  flex: 1
+
+  &:not(:first-child)
+    @include rem(border-left, 1px solid $c-border)
+
+.switcher-option-item.is-active
+  color: $c-text-white
+  background-color: $c-primary
+  border-top: none
+  border-bottom: none
+
+.switcher-content
+  display: block
+
+.switcher-content--empty
+  display: block
+  text-align: center
+  color: $c-text-implicit
+  padding: 60px 0

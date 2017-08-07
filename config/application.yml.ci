@@ -1,0 +1,253 @@
+test: &default
+  commandp_tax_id: 24556485
+  Facebook_app_id: '744653145591547'
+  Facebook_secret: 'a0db52541015d5d5ebbd6d0c2a7fddb9'
+  LD_LIBRARY_PATH: '/lib'
+  Secret_key_base: '123'
+  Domain: 'commandp.dev'
+  graphic_library_path: 'vendor/graphic_library/'
+  output_path: 'print_works/'
+  icc_profile_path: 'vendor/color_profiles/'
+  google_translate_api_key: 'AIzaSyBmnFKaDXyZaqTuZZSjJUEyquLoH5A45A4'
+  SMS:
+    sms_get:
+      url: 'http://sms-get.com/api_send.php'
+      username: ''
+      password: ''
+    sms_king:
+      url: 'http://202.39.48.216/kotsmsapi-1.php'
+      multiple_pass_url: 'http://202.39.48.216/kotsmsapi-2.php'
+      username: ''
+      password: ''
+  ua:
+    id: 'UA-46125726-2'
+    domain: 'commandp.dev'
+  Redis:
+    url: redis://localhost:6379/1
+    host: 'localhost'
+    port: '6379'
+    db: 1
+  SMTP:
+    host: "smtp.mailgun.org"
+    login: "postmaster@commandp.me"
+    password: "blah-o9n1"
+    api_key: "key-3dmux9y88eyi5yeyl39tkriyp2ap1-u3"
+    public_api_key: "pubkey-88nc54q3n8jdkkf70spsloglxf45rmw7"
+  Qiniu:
+    access_key_id: 'xxxx'
+    secret_access_key: 'xxxx'
+    bucket: 'xxxx'
+    cdn_host: 'http://qiniu.clouddn.com'
+  AWS:
+    s3:
+      access_key_id: 'blah'
+      secret_access_key: 'blah'
+      region: 'ap-northeast-1'
+      bucket: 'commandp-production'
+    sns:
+      access_key_id: 'blah'
+      secret_access_key: 'blah'
+      region: 'ap-northeast-1'
+      anr:
+        iOS: 'arn:aws:sns:xxxx'
+        Android: 'arn:aws:sns:xxxx'
+      topic_arn: 'arn:aws:sns:xxxx'
+  Print:
+    username: 'commandp'
+    password: 'commandp'
+  Staging:
+    username: 'commandp'
+    password: 'commandp'
+  FTP:
+    url: 'ftp.com.tw'
+    port: 21
+    username: 'ppp'
+    password: 'kkk'
+  Zendesk:
+    url: 'https://commandp1409029583.zendesk.com/api/v2'
+    token: 'Id0CxoutQ8HIR84pQicXjEgCCbKlI7qQa3y7hpXi'
+    username: 'dev@commandp.me'
+    password: 'and0yac9'
+    ja_agent_id: 424125905
+  neweb:
+    hostname: testmaple2.neweb.com.tw
+    merchantnumber: 459807
+    code: abcd1234
+  neweb_mpp:
+    hostname: testmaple2.neweb.com.tw
+    merchantnumber: 760346
+    code: abcd1234
+    r_code: abcd1234
+  dropbox:
+    app_key: 6xtmnawkva9psiq
+    app_secret: hgnigsaltbk2qmy
+  stripe:
+    secret_key: sk_test_6XD2YnoC8OnhGiXGGRjMECbL
+    public_key: pk_test_MRkxnTQqp3dz4fIi4Fcm2dgO
+  bpscm:
+    url: '61.57.227.80'
+    port: 21
+    username: 'xxxx'
+    password: 'xxxx'
+  host: 'http://commandp.dev'
+  host_cn: 'https://commandp.com.cn'
+  GCM:
+    api_key: 'xxxxxxx'
+  payment_timeout: 20
+  elasticsearch:
+    - 'localhost:9200'
+  deeplink_protocol: 'commandp-staging'
+  mailgun:
+    api_key: 'key-3dmux9y88eyi5yeyl39tkriyp2ap1-u3'
+    domain: 'sandbox31739.mailgun.org'
+    mailing_list:
+      all: 'commandp_test-all@sandbox31739.mailgun.org'
+      user: 'commandp_test-user@sandbox31739.mailgun.org'
+      subscription: 'commandp_test-subscription@sandbox31739.mailgun.org'
+      bought: 'commandp_test-bought@sandbox31739.mailgun.org'
+      test: 'commandp_test-test@sandbox31739.mailgun.org'
+      customer_service: 'customer_service_dev@sandbox31739.mailgun.org'
+  send_cloud:
+    api_user: 'zhusan_test_KoiPRB'
+    api_key: 'KWwVnbkGBnerzGAM'
+    domain: '9qhCGBvkA8azYiWlU3VOYAWvXtqlIcJD.sendcloud.org'
+  twitter:
+    api_key: "gkeRF7Pkm4SEKCQRbAF5zOOx0"
+    secret: "fryf1rCpT1rldZ7Y1suTDA8CFm9FgKZ5AsKgFmggTqSBVCyFvT"
+  weibo:
+    api_key: "3190558569"
+    secret: "d3cddb68823e2cf7b4cb419d0ba1de15"
+  google:
+    app_id: "811032067780-qcutasouds3pr2n3surhm6gd9b6pl65j.apps.googleusercontent.com"
+    secret: "AIzaSyCaVIjkEcHHNNzKuBQSIS9oZ8rGx4QBUIs"
+    calendar:
+      client_id: ''
+      client_secret: ''
+      calendar_id: ''
+      refresh_token: ''
+  qq:
+    app_id: "101238358"
+    app_key: "60c84f23b048c9f77ab8e99d13840dc5"
+  wechat:
+    app_id: "wx1f5ae99c98424604"
+    app_secret: "ea300cc53caf61e092ddf33e69085493"
+  baidu:
+    tongji: 0c48aa2e2ccd5bb237d7f034677c9144
+  amap:
+    api_key: 3f6ef3309bb2d4d322ae4f610202a3c7
+  pingpp:
+    api_key: "sk_test_yfHmj5iL0eLSW1ernDuvTGiL"
+    api_id: 'app_u9ujT414KeXTLaLO'
+  yunpian:
+    api_key: "79fca3d3c47b21f1119df73000427d1c"
+    coupon_api_key: "7da9de4e6daf55b05d37dfd974d9a6dc"
+  emay:
+    captcha:
+      cdkey: "6SDK-EMY-6688-JEQLL"
+      password: ""
+    marketing:
+      cdkey: "6SDK-EMY-6688-JDWNQ"
+      password: ""
+  action_controller:
+    asset_host: 'http://commandp.dev'
+  action_mailer:
+    asset_host: 'http://commandp.dev'
+    default_url_options: 'http://commandp.dev'
+  optimize: false
+  getui:
+    app_id: '3T7v1hEqgyAYDwXWwu8gN2'
+    app_key: 'XIT32K8Ekx9QNYZa2xDxp8'
+    app_secret: 'LNSyrJjBikAoHc1gFENHV1'
+    master_secret: 'kXvWa9B40M7PgrbCLE2nO3'
+  rollbar:
+    access_token: 'c69e71d301784244bf2a54e276cf4ed2'
+  InfluxDB:
+    host: ''
+    port: 8086
+    db_name: 'mydb'
+    username: 'root'
+    password: 'root'
+  sf_express:
+    code: 'WYWLKJ'
+    checkword: 'C8l3fdh42rPVwK8M'
+    url: 'http://218.17.248.244:11080/bsp-oisp/sfexpressService'
+    custid: 8888888888
+    j_tel: '886-02-2753-3555'
+    j_contact: 'Saier Wang'
+  deliver_order:
+    coupon_code: 'COMMANDPTW'
+    wetsite: 'https://api-staging.commandp.com.cn'
+    website: 'https://api-staging.commandp.com.cn'
+    client_id: 'f813fb59fadc8cf699e230554314cc9d3f4d2a0d11d6419d39f35f31a0b14e72'
+    client_secret: '6817a8300bf323ef6a1290d167946d4e0ff85fe8f0ad190b708429af8347559b'
+    qiniu:
+      bucket: ''
+      bucket_domain: ''
+      access_key_id: ''
+      secret_access_key: ''
+  guanyi:
+    appkey: 'apikey'
+    sessionkey: 'sessionkey'
+    secret: 'secret'
+  SiteSettings:
+    Global:
+      iOSRNBundleURL: 'http://rn-bundle-staging.commandp.com/global/main.jsbundle'
+      AndroidRNBundleURL: 'http://rn-bundle-staging.commandp.com/global/main.jsbundle'
+    CN:
+      iOSRNBundleURL: 'http://rn-bundle-staging.commandp.com.cn/china/main.jsbundle'
+      AndroidRNBundleURL: 'http://rn-bundle-staging.commandp.com.cn/china/main.jsbundle'
+  gtm:
+    id: 'GTM-P8QGCC'
+  nuandao_b2b:
+    order_confirm_url: 'http://test1.nuandao.com/commandp/orderConfirm'
+    order_shipping_url: 'http://test1.nuandao.com/commandp/orderShipping'
+  yonyou:
+    app_key: 'opadef4a423cb622c51'
+    app_secret: '33b338e75a0440a3bb0d66a75285990d'
+    from_account: 'commandp'
+    to_account: 'test_commandp'
+  api_host: 'http://commandp.dev'
+  b2b_sticker_url: 'https://api.commandp.com.cn/print/pdf/b2b_sticker.pdf'
+  asset_package:
+    qiniu:
+      access_key_id: 'aWtMOlR4a40Vh4mLPfs2z8g9MK3fBfvvcdGU_E-R'
+      secret_access_key: 'e-VWLZMm8gvkzWxRbls5CWEUVTC6IMQrTQWVTLom'
+      bucket: 'zs-test'
+      cdn_host: 'http://7bv83q.com1.z0.glb.clouddn.com'
+    aws_s3:
+      access_key_id: 'blah'
+      secret_access_key: 'blah'
+      region: 'ap-northeast-1'
+      bucket: 'commandp-production'
+      cdn_host: 'cdn_host'
+      distribution_id: 'distribution_id'
+  yto_express:
+    url: 'http://58.32.246.71:8000/CommonOrderModeBPlusServlet.action'
+    client_id: 'K10101010'
+    key: '123456'
+
+  b2b2c:
+    ecommerce_tracking_ga_id:
+
+development:
+  <<: *default
+  Redis:
+    url: redis://localhost:6379/0
+    db: 0
+  action_controller:
+    asset_host: 'http://commandp.dev'
+  action_mailer:
+    asset_host: 'http://commandp.dev'
+    default_url_options: 'http://commandp.dev'
+  deliver_order:
+    coupon_code: 'COMMANDPTW'
+    wetsite: ''
+    website: ''
+    client_id: ''
+    client_secret: ''
+    qiniu:
+      bucket: ''
+      bucket_domain: ''
+      access_key_id: ''
+      secret_access_key: ''
+  b2b_sticker_url: 'http://localhost:3000/print/pdf/b2b_sticker.pdf'

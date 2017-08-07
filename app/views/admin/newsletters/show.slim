@@ -1,0 +1,33 @@
+- breadcrumb :admin_newsletter
+- admin_title "##{@newsletter.id} #{t('newsletters.show.page_title')}"
+
+- if @newsletter.unsent?
+  = link_to 'Edit', edit_admin_newsletter_path(@newsletter), class: 'btn btn-sm btn-primary'
+  = link_to 'Send' , send_mail_admin_newsletter_path(@newsletter),
+    class: 'btn btn-sm btn-pink', data: { method: 'patch', confirm: 'Are you sure?' }
+
+.row
+  .col-md-6
+    table.table.table-striped.table-bordered.table-hover
+      tr
+        td Name
+        td = @newsletter.name
+      tr
+        td Subject
+        td = @newsletter.subject
+      tr
+        td Content
+        td = link_to 'Preview' , rails_email_preview.rep_email_url('mailgun_mailer_preview-send_message', id: @newsletter.id), class: 'btn btn-sm', target: '_blank'
+      tr
+        td Delivery_at
+        td = @newsletter.delivery_at
+      tr
+        td UserGroup
+        td = render_user_group(@newsletter)
+      tr
+        td Created_at
+        td = @newsletter.created_at
+.row
+  .col-sm-6
+    h3 = t('orders.show.h3_status')
+    = render_activities @newsletter.activities

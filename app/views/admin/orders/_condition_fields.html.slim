@@ -1,0 +1,8 @@
+.form-inline.field
+  = f.attribute_fields do |a|
+    = a.attribute_select associations: [:billing_info, :order_items, :user]
+  = f.predicate_select
+  = f.value_fields do |v|
+    = v.text_field :value
+  | &nbsp;
+  = link_to t('shared.form_actions.delete'), '#', class: "remove_fields btn btn-danger btn-mini"

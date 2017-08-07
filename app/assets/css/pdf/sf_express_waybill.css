@@ -1,0 +1,296 @@
+@font-face {
+  font-family: 'simhei';
+  src: font_path("simhei.ttf"); }
+/* line 8, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+.sf_express_waybill {
+  font-family: "simhei", sans-serif; }
+  /* line 10, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+  .sf_express_waybill .content {
+    padding: 2mm;
+    border: 1px solid #000; }
+    /* line 14, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .logo {
+      border: 1px solid #000;
+      height: 14mm;
+      padding-left: 2mm;
+      padding-right: 2mm; }
+      /* line 20, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .logo .logo_image {
+        height: 10mm;
+        float: left;
+        padding-top: 2mm; }
+      /* line 25, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .logo .notice {
+        width: 20mm;
+        margin: auto 5mm;
+        float: left;
+        font-size: 24pt;
+        font-family: arial;
+        padding-top: 2mm; }
+      /* line 33, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .logo .land-logo {
+        font-size: 24pt;
+        float: left;
+        line-height: 40pt; }
+      /* line 38, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .logo .phone_image {
+        padding-top: 3mm;
+        float: right;
+        height: 12mm; }
+    /* line 45, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .barcode-info {
+      height: 19mm;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000; }
+      /* line 51, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .barcode-info .sf-mailno-barcode {
+        width: 60mm;
+        float: left;
+        text-align: center; }
+        /* line 56, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .barcode-info .sf-mailno-barcode img {
+          height: 12mm;
+          width: 45mm;
+          padding-top: 1mm; }
+        /* line 61, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .barcode-info .sf-mailno-barcode .mailno {
+          text-align: center;
+          font-family: arial;
+          font-size: 10pt; }
+      /* line 67, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .barcode-info .business-type {
+        float: left;
+        width: 28mm;
+        height: 19mm;
+        border-left: 1px solid #000;
+        text-align: center; }
+        /* line 74, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .barcode-info .business-type .name {
+          font-size: 12pt;
+          padding-top: 1mm; }
+        /* line 78, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .barcode-info .business-type .destination {
+          font-size: 6pt;
+          text-align: left; }
+        /* line 82, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .barcode-info .business-type .destination-code {
+          font-size: 24pt;
+          font-family: arial;
+          line-height: 22pt; }
+    /* line 89, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .recipient {
+      height: 17mm;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000;
+      padding-top: 2mm; }
+      /* line 96, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .recipient .title {
+        width: 15mm;
+        float: left;
+        margin-right: 3mm; }
+        /* line 101, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .recipient .title div {
+          padding-left: 1mm;
+          font-size: 14pt; }
+      /* line 106, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .recipient .address {
+        float: left;
+        font-size: 8pt;
+        line-height: 10pt; }
+        /* line 111, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .recipient .address .city {
+          font-size: 14pt;
+          line-height: 16pt; }
+      /* line 116, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .recipient .print-time {
+        padding-top: 11mm;
+        text-align: right;
+        font-size: 7pt; }
+    /* line 122, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .bill {
+      height: 21mm;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000; }
+      /* line 128, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .bill .detail {
+        border-right: 1px solid #000;
+        width: 60mm;
+        height: 21mm;
+        font-size: 7pt;
+        position: absolute;
+        float: left; }
+        /* line 136, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .bill .detail div {
+          margin-left: 2mm;
+          margin-top: 1mm; }
+        /* line 141, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .bill .detail .foot-title {
+          font-size: 10pt;
+          font-weight: bold;
+          position: absolute;
+          right: 1mm;
+          bottom: 1mm;
+          text-align: right; }
+      /* line 150, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .bill .amount {
+        float: right;
+        width: 29mm;
+        text-align: center; }
+        /* line 154, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .bill .amount .collection {
+          margin-top: 1mm;
+          border-bottom: 1px solid #000;
+          height: 11mm;
+          font-size: 11pt; }
+          /* line 159, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+          .sf_express_waybill .content .bill .amount .collection span {
+            font-size: 12pt; }
+        /* line 163, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .bill .amount .ship {
+          font-size: 10pt;
+          margin-top: 2mm; }
+    /* line 169, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .render {
+      height: 14mm;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000; }
+      /* line 174, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .render .title {
+        width: 13mm;
+        float: left;
+        margin-right: 1mm; }
+        /* line 179, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .render .title div {
+          padding-left: 1mm;
+          font-size: 14pt; }
+      /* line 184, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .render .address {
+        height: 13mm;
+        width: 35mm;
+        float: left;
+        font-size: 6pt;
+        margin-right: 1mm;
+        margin-top: 1mm; }
+        /* line 192, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .render .address .info {
+          height: 10mm; }
+      /* line 197, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .render .worker {
+        padding-left: 1mm;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        width: 20mm;
+        float: left;
+        height: 14mm;
+        font-size: 6pt; }
+        /* line 205, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .render .worker div {
+          padding-top: 1mm; }
+      /* line 209, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .render .receiver {
+        margin: 1mm 0 0 2mm;
+        float: left;
+        font-size: 7pt; }
+      /* line 214, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .render .original-code {
+        text-align: right; }
+    /* line 218, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .middle-logo {
+      height: 14mm;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      border-right: 1px solid #000; }
+      /* line 224, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .middle-logo .image-div {
+        padding-top: 1mm;
+        padding-left: 1mm;
+        float: left;
+        width: 42mm; }
+        /* line 229, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .middle-logo .image-div img {
+          width: 20mm; }
+      /* line 233, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .middle-logo .sf-mailno-barcode {
+        float: left;
+        height: 14mm;
+        border-left: 1px solid #000;
+        text-align: center; }
+        /* line 239, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .middle-logo .sf-mailno-barcode img {
+          height: 8mm;
+          width: 45mm;
+          padding-left: 2mm;
+          padding-top: 1mm; }
+        /* line 245, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .middle-logo .sf-mailno-barcode .mailno {
+          text-align: center;
+          font-family: arial;
+          font-size: 10pt; }
+    /* line 252, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .addresses {
+      height: 13mm;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      font-size: 6pt; }
+      /* line 257, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .addresses .sender {
+        width: 45mm; }
+      /* line 260, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .addresses .title {
+        padding-top: 1mm;
+        width: 5mm;
+        float: left;
+        margin-right: 1mm; }
+        /* line 266, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .addresses .title div {
+          padding-left: 1mm; }
+      /* line 270, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .addresses .address {
+        width: 35mm;
+        float: left;
+        line-height: 10pt;
+        padding-top: 1mm; }
+      /* line 276, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .addresses .render-time {
+        width: 80mm;
+        padding-left: 41mm;
+        padding-top: 10mm; }
+    /* line 282, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+    .sf_express_waybill .content .footer {
+      font-size: 6pt; }
+      /* line 284, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .footer table {
+        width: 100%; }
+        /* line 287, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer table th:first-child {
+          width: 10mm; }
+        /* line 290, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer table th:first-last {
+          width: 30mm; }
+        /* line 293, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer table td, .sf_express_waybill .content .footer table th {
+          text-align: center;
+          border: 1px solid #000;
+          max-height: 6mm; }
+        /* line 298, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer table .amount {
+          padding-bottom: 4mm; }
+        /* line 301, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer table tbody tr {
+          height: 10mm; }
+      /* line 305, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .footer .orderno-name {
+        width: 15mm;
+        float: left; }
+      /* line 309, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+      .sf_express_waybill .content .footer .orderno-barcode {
+        width: 50mm;
+        float: left; }
+        /* line 313, ../../stylesheets/pdf/sf_express_waybill.css.scss */
+        .sf_express_waybill .content .footer .orderno-barcode img {
+          height: 5mm;
+          width: 45mm; }

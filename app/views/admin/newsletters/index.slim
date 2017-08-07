@@ -1,0 +1,66 @@
+- breadcrumb :admin_newsletters
+- admin_title t('newsletters.sidebar_name')
+
+= will_paginate @newsletters
+
+.widget-box.ui-sortable-handle
+  .widget-body
+    .widget-main
+      .row
+        .col-xs-12
+          = search_form_for @search, url: admin_newsletters_path do |f|
+            .filters
+              = f.label :delivery_at_gteq, '發送日期大於'
+              = f.search_field :delivery_at_gteq, class: 'datetimepicker'
+            .filters
+              = f.label :delivery_at_lteq, '發送日期小於'
+              = f.search_field :delivery_at_lteq, class: 'datetimepicker'
+            .filters
+              = f.search_field :name_cont, style: 'width: 500px',
+                placeholder: 'Starting typing newsletter name to search.'
+              = f.submit 'Search' , class: 'btn btn-sm btn-primary'
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+    .widget-toolbar
+      .btn-group
+        = link_to url_for(action: :new), class: 'btn btn-success' do
+          = fa_icon('envelope')
+          = t('shared.form_actions.new')
+    .widget-toolbar.no-border
+      .btn-group
+        = link_to admin_newsletter_subscriptions_path, class: 'btn' do
+          = t('newsletter_subscriptions.sidebar_name')
+
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th ID
+            th Name
+            th Subject
+            th Last Update
+            th
+              | Status
+              br = '(點擊/開啟/到達/發送)'
+            th User Group
+            th
+        tbody
+          - @newsletters.each do |newsletter|
+            tr
+              td = newsletter.id
+              td = link_to newsletter.name, admin_newsletter_path(newsletter)
+              td = newsletter.subject
+              td = l newsletter.updated_at, format: :long
+              td = render_report(newsletter)
+              td = render_user_group(newsletter)
+              td
+                - if newsletter.unsent?
+                  = link_to 'Edit', edit_admin_newsletter_path(newsletter), class: 'btn btn-sm btn-primary'
+                  = link_to 'Send' , send_mail_admin_newsletter_path(newsletter), class: 'btn btn-sm btn-pink', data: { method: 'patch', confirm: 'Are you sure?'}
+                - if newsletter.sended?
+                  = link_to 'Update Report', get_report_admin_newsletter_path(newsletter), class: 'btn btn-sm btn-success', data: { method: 'patch'}
+
+= will_paginate @newsletters

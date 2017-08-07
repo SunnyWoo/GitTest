@@ -1,0 +1,26 @@
+- breadcrumb :variants, @product
+- admin_title t('variants.index.page_title', product: @product.name)
+
+.widget-box.widget-color-blue
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+
+  .widget-body
+    .widget-main.no-padding
+      table.table
+        thead
+          tr
+            th = t('variants.index.options')
+            th = t('shared.form_actions.operation')
+
+        tbody
+          - @variants.each do |variant|
+            tr
+              td = variant.options_text
+              td
+                = link_to t('shared.form_actions.edit'), edit_admin_product_model_variant_path(@product, variant), class: 'btn btn-sm'
+                = link_to t('shared.form_actions.delete'), admin_product_model_variant_path(@product, variant), method: :delete, class: 'btn btn-sm'

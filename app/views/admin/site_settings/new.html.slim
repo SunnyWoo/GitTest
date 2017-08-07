@@ -1,0 +1,4 @@
+- admin_title t('site_settings.create.page_title', key: member.key)
+
+= simple_form_for(member, url: [:admin, member], class: 'form-horizontal') do |f|
+ = render 'form', f: f

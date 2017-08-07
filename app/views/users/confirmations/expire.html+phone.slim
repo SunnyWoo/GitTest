@@ -1,0 +1,19 @@
+.mobile-v2-title
+  = t('mobile.confirmations.successfully_confirmed')
+
+.dotted-line
+.margin-top-fixed
+- if devise_error_messages?
+  .user_login
+    .error
+      i.alert
+      = devise_error_messages!
+
+= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+  = f.input :reset_password_token, as: :hidden
+  .mobile-form-field
+    = f.input :email, required: true, autofocus: true, label: 'E-mail', placeholder: 'hi@commandp.com'
+  footer.margin-top-fixed
+    .text-center
+      = f.button :submit, t('mobile.confirmations.resend')
+  .margin-top-fixed

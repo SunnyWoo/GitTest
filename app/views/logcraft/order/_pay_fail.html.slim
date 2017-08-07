@@ -1,0 +1,8 @@
+- order = activity.trackable
+- payment_method = activity.extra_info[:payment_method]
+- translated_payment_method = t("activerecord.attributes.order.payment_#{payment_method}")
+div 訂單 #{link_to_admin_order order } 使用 #{translated_payment_method} #{logcraft_keyword('付款失敗', 'red') }
+- if activity.message.present?
+  pre
+    | Message：
+    = activity.message

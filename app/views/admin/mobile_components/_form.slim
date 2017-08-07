@@ -1,0 +1,75 @@
+= simple_form_for(@mobile_component, url: path, class: 'form-horizontal',
+                  defaults: { placeholder: false, hint: false }, method: :put ) do |c|
+  = c.error_notification
+
+  .well.mobile_components_block
+    = c.input :mobile_page_id, as: :hidden
+    = c.input :position, as: :hidden, wrapper_html: { class: 'mobile_component_position' }
+    .row
+      .col-xs-6
+        = c.select :key, MobileComponent::KEYS, {}, { class: 'mobile_component_key' }
+      .col-xs-6.pull-right
+        span.move.btn.btn-xs = fa_icon 'arrows'
+    .row style='margin-top: 10px;margin-bottom: 10px;'
+      .col-xs-12
+        - MobileComponent::KEYS.each_with_index do |key, index|
+          - hide_class = index == 0 ? '' : 'hide'
+          = image_tag "admin/mobile_page_components/#{key}.png", id: "image_desc_#{key}", class: hide_class
+    .row
+      .col-xs-12
+        = c.input :image, as: :image, placeholder: false, hint: false, label: 'Background', wrapper_html: { class: 'image hide' }
+        = c.simple_fields_for(MobileComponentContentsForm.new(c.object.contents), nil, defaults: { placeholder: false, hint: false }) do |cf|
+          = cf.input :product_type, collection: MobileComponent::PRODUCT_TYPES, include_blank: false, wrapper_html: { class: 'product_type hide' }
+          = cf.input :product_filter, collection: MobileComponent::PRODUCT_FILTER, include_blank: false, wrapper_html: { class: 'product_filter hide' }
+          - %w(title section_title create_text shop_text )
+          = cf.input :title, wrapper_html: { class: 'title hide' }
+          = cf.input :section_title, wrapper_html: { class: 'section_title hide' }
+          = cf.input :section_color, as: :minicolors, wrapper_html: { class: 'section_color hide' },
+                     input_html: { data: { minicolors: { theme: :bootstrap } } }
+          = cf.input :designer_id, collection: @designers, wrapper_html: { class: 'designer_id product_filter_option hide' }
+          = cf.input :tag_id, collection: @tags, wrapper_html: { class: 'tag_id product_filter_option hide' }
+          = cf.input :collection_id, collection: @collections, wrapper_html: { class: 'collection_id product_filter_option hide' }
+          - %i(tip_text will_sale_text on_sale_text).each do |key|
+            = cf.input key, label: key, as: :string, wrapper_html: { class: "#{key} hide" }
+
+
+    .row.sub_components_block
+      = c.nested_fields_for :sub_components, class_name: 'MobileComponent', wrapper_html: '' do |cf|
+        .col-xs-15.widget-box style='margin: 10px 30px;'
+          .widget-header
+            .widget-toolbar
+              span.move.btn.btn-xs = fa_icon 'arrows'
+              = cf.remove_nested_fields_link '刪除', data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-danger'
+
+          .widget-body
+            .widget-main
+              = cf.input :parent_id, as: :hidden
+              = cf.input :position, as: :hidden, wrapper_html: { class: 'position hide' }
+              = cf.input :image, as: :image, placeholder: false, hint: false, label: 'Image', wrapper_html: { class: 'image hide' }
+              = cf.simple_fields_for(MobileComponentContentsForm.new(cf.object.contents), nil, defaults: { placeholder: false, hint: false }) do |cff|
+                - MobileComponent::CONTENT_KEYS.each do |key, type|
+                  - if type.to_sym == :select
+                    - collection = []
+                    - collection = [cf.object.contents['work_uuid']] if key == :work_uuid
+                    - collection = @campaigns if key == :campaign_id
+                    - collection = @price_tiers if key == :price_tier_id
+                    - collection = @media_types if key == :media_type
+                    - collection = @product_categories if key == :product_category_key
+                    - collection = @product_models if key == :product_model_key
+                    - collection = @tab_categories if key == :tab_category
+                    - collection = MobileComponent::ACTION_TYPES if key == :action_type
+                    = cff.input key, label: key, collection: collection, wrapper_html: { class: "#{key} hide" }, input_html: { style: 'width: 400px;' }
+                  - else
+                    - hint = false
+                    - hint = 'ex: 選填, action_type 為 create 時,需設定product_model, product_category, action_type 為 campaign 時需填入 campaign 標題' if key == :action_target
+                    - hint = 'ex: product_model_key: iphone_6_case, product_category_key: case, campaign_key: home' if key == :action_key
+                    = cff.input key, label: key, as: type, html5: true, hint: hint, wrapper_html: { class: "#{key} hide" }
+
+      .col-xs-3
+        .hide = c.add_nested_fields_link :sub_components, '增加 子元件'
+        a.add_sub_components.btn.btn-xs.btn-primary 增加 子元件
+
+    = c.remove_nested_fields_link '刪除', data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger pull-right'
+    div style='clear: both;'
+
+  = c.submit class: 'btn btn-primary'

@@ -1,0 +1,16 @@
+.modal.fade id=id
+  .modal-dialog
+    .modal-content
+      = simple_form_for order, url: admin_order_update_shipping_info_path(order),
+                               method: :patch,
+                               html: { class: 'form-horizontal order_update_invoice_number' } do |f|
+        .modal-header
+          h3 Edit Order Ship
+        .modal-body
+          = f.input :ship_code, label: t('orders.show.h3_ship.thead.ship_code')
+          - unless f.object.payment == 'cash_on_delivery'
+            = f.simple_fields_for :shipping_info do |g|
+              = g.input :shipping_way, label: t('orders.show.h3_ship.thead.shipping_way'),
+                                       collection: ShippingInfo.shipping_ways.except('cash_on_delivery').map{ |s| [s[0].capitalize, s[0]] }
+        .modal-footer
+            = f.button :submit, class: 'btn-primary'

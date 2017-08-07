@@ -1,0 +1,110 @@
+.delivery_note_back {
+  .title {
+    color: #575757;
+    border-top: 0.3mm solid #575757;
+    border-bottom: 0.3mm solid #575757;
+    text-align: center;
+    padding-top: 3mm;
+    padding-bottom: 3mm;
+    font-weight: bold;
+  }
+
+  .contact {
+    margin-top: 6mm;
+  }
+
+  .blockquote {
+    border-left: 1mm solid #eeeeee;
+  }
+
+  .head {
+    .head_label {
+      text-align: right;
+    }
+
+    .notice {
+      color: #575757;
+      margin: 6mm 3mm 5mm 3mm;
+    }
+
+    div {
+      margin-bottom: 2mm;
+    }
+  }
+
+  .content {
+    table {
+      width: 90%;
+      text-align: center;
+      margin: 5mm 5% auto;
+
+      thead {
+        border: 0.3mm solid #000;
+      }
+
+      th, td {
+        padding: 2mm 1mm;
+        text-align: center;
+      }
+
+      td {
+        border: 0.3mm solid #000;
+
+        span {
+          width: 3mm;
+          height: 3mm;
+          border: 0.3mm solid #000;
+          display: -webkit-inline-box;
+          display: inline-box;
+          margin-top: 3mm;
+          margin: 0 1mm 0 5mm;
+        }
+      }
+    }
+  }
+
+  .footer {
+    border-top: 0.3mm solid #575757;
+    .qrcode_list {
+      .qrcode {
+        margin-left: 11.5mm;
+      }
+
+      .android {
+        margin-left: 8.5mm;
+        img {
+          margin-left: 3mm;
+        }
+        div {
+          width: 23.5mm;
+        }
+      }
+    }
+  }
+
+  .footer.china {
+    margin-top: 20mm;
+    .qrcode_list {
+      margin-top: 15mm;
+    }
+  }
+  .footer.global {
+    font-size: 2mm;
+    margin-top: 15mm;
+    .qrcode_list {
+      margin-top: 10mm;
+    }
+  }
+
+  .qrcode {
+    float: left;
+    img {
+      width: 16mm;
+      height: 16mm;
+    }
+    div {
+      width: 16mm;
+      text-align: center;
+    }
+  }
+}

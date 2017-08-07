@@ -1,0 +1,5 @@
+zh-TW:
+  record_invalid_error: 指定されたデータが見つかりません
+  token_required: 必要なパラメーターが足りません
+  invalid_token: 適切なトークンが見つかりません
+  invalid_user_agent: 請求ヘッダーにあるコマプリが指定したユーザーエージェントを確認してください

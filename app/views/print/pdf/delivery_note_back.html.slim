@@ -1,0 +1,69 @@
+.head
+  .row.title = t('delivery_note.back_title1')
+  .row.notice = t('delivery_note.back_note')
+  .row.contact
+    .col-xs-10.head
+      .col-xs-4.head_label = t('delivery_note.return_address')
+      .col-xs-8.blockquote = t('delivery_note.return_address_info')
+      .col-xs-4.head_label = t('delivery_note.customer_service_type')
+      .col-xs-8.blockquote = t('delivery_note.customer_service')
+      - if Region.china?
+        .col-xs-4.head_label 咨询网址
+        .col-xs-8.blockquote https://commandp.com.cn
+    .col-xs-2
+      .qrcode
+        - service_img = Region.china? ? 'qrcode/weixin_service.png' : 'qrcode/service_global.jpg'
+        = wicked_pdf_image_tag service_img
+        - if Region.china?
+          div 微信客服扫描
+.content
+  .row.title = t('delivery_note.back_title2')
+  .row.contact
+    .col-xs-12.head
+      .row
+        .col-xs-3.head_label = t('delivery_note.name')
+        .col-xs-2.blockquote &nbsp;
+        .col-xs-3.head_label = t('delivery_note.phone')
+        .col-xs-4.blockquote &nbsp;
+      .row
+        .col-xs-3.head_label = t('delivery_note.shipping_address')
+        .col-xs-3.blockquote &nbsp;
+      .row
+        .col-xs-3.head_label = t('delivery_note.return_product')
+        .col-xs-3.blockquote &nbsp;
+    .row.input_table
+      table
+        thead
+          tr
+            th width='30%' = t('delivery_note.item_no')
+            th width='10%' = t('delivery_note.quantity')
+            th width='40%' = t('delivery_note.service_type')
+            th = t('delivery_note.reason')
+        - 3.times do
+          tr
+            td &nbsp;
+            td &nbsp;
+            td
+              span &nbsp;
+              label = t('delivery_note.return')
+              span &nbsp;
+              label = t('delivery_note.exchange')
+            td &nbsp;
+.footer class=Region.region
+  .row.qrcode_list
+    .qrcode
+      - website_img = Region.china? ? 'qrcode/website.png' : 'qrcode/website_global.jpg'
+      = wicked_pdf_image_tag website_img
+      div = t('delivery_note.website')
+    .qrcode
+      - weibo_img = Region.china? ? 'qrcode/weibo.png' : 'qrcode/weibo_global.jpg'
+      = wicked_pdf_image_tag weibo_img
+      div = t('delivery_note.weibo')
+    .qrcode
+      - ios_img = Region.china? ? 'qrcode/ios_download.png' : 'qrcode/ios_download_global.jpg'
+      = wicked_pdf_image_tag ios_img
+      div = t('delivery_note.ios')
+    .qrcode.android
+      - android_img = Region.china? ? 'qrcode/android_download.png' : 'qrcode/android_download_global.jpg'
+      = wicked_pdf_image_tag android_img
+      div = t('delivery_note.android')

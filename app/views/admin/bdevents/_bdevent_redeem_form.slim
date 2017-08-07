@@ -1,0 +1,30 @@
+= f.simple_fields_for :bdevent_redeem do |d|
+    = d.input :bdevent_id, as: :hidden, hints: false
+    .row
+      .col-xs-6.form-inline
+        label.inline 兌換碼類型
+        - select_option = (d.object.quantity == 1)  ? 0 : 1
+        = select_tag 'redeem_type', options_for_select([ ['Equal to', 0], ['Greater than', 1] ], select_option)
+        = d.input :quantity, label: false, readonly: (d.object.quantity == 1), hints: false, as: :integer,
+                  input_html: { class: 'input-small' }
+    #redeem_usage_count_limit
+      .row
+        .col-xs-5.form-inline
+          label.inline 設定兌換碼(自行填寫 或 不填寫自動產生)
+          = d.input :code, label: false, required: false, hints: false
+
+      .row.form-inline
+        .col-xs-4
+          label.inline 使用次數
+          = d.input :usage_count_limit, label: false, hints: false, readonly: (d.object.no_limit?)
+          = check_box_tag 'no_limit', true, (d.object.no_limit?)
+          label.inline No Limit
+
+    .row
+      .col-xs-3
+        = d.label '指定兌換產品類型'
+        = d.select :product_model_ids, @product_models, { include_blank: false, hints: false },
+           { multiple: true, style: 'width: 100%', data: { tags: true, bdevent_id: d.object.bdevent_id } }
+        = d.label '指定兌換作品'
+        = d.select :work_ids, [], { include_blank: false, hints: false },
+           { multiple: true, style: 'width: 100%', data: { tags: true, bdevent_id: d.object.bdevent_id } }

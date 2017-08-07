@@ -1,0 +1,73 @@
+// *************************************
+//
+//   Global
+//   -> sidebar menu info 中的項目
+//
+// *************************************
+.info
+  display: flex
+  flex-direction: column
+  @include rem(width, 120px)
+  @include rem(padding, 0 15px)
+  background-color: $white
+  border-top: 1px solid $c-border
+  border-left: 1px solid $c-border
+  border-bottom: 1px solid $c-border
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    @include rem(width, 12px)
+    @include rem(height, 12px)
+    @include rem(bottom, -7px)
+    @include rem(right, 15px)
+    background: $white
+    border-right: 1px solid $c-border
+    border-bottom: 1px solid $c-border
+    -webkit-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    -o-transform: rotate(45deg)
+    transform: rotate(45deg)
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+.info-item
+  @include rem(height, 50px)
+  @include rem(line-height, 50px)
+  color: $c-text-info
+  background-color: $c-bg-white
+  @include rem(font-size, $f-size-hint)
+  @include rem(padding-left, 30px)
+  background-position: left
+  @include rem(background-size, 20px)
+  background-repeat: no-repeat
+  text-decoration: none
+
+  &:not(:first-child)
+    border-top: 1px solid $c-border
+
+.info-item--download
+  background-image: asset_data_url('designer_store/sidebar_download.png')
+.info-item--share
+  background-image: asset_data_url('designer_store/sidebar_share.png')
+.info-item--search
+  background-image: asset_data_url('designer_store/sidebar_search.png')
+.info-item--cart
+  background-image: asset_data_url('designer_store/sidebar_cart.png')
+.info-item--contact
+  background-image: asset_data_url('designer_store/sidebar_contact.png')

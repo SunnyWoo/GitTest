@@ -1,0 +1,32 @@
+- admin_title t('orders.index.page_title'), subtitle: t('orders.index.crumb.list')
+- breadcrumb :admin_orders_list
+
+.widget-box.ui-sortable-handle
+  .widget-body
+    .widget-main data-path='#{index_init_admin_orders_path}' data-query-path='#{search_admin_orders_path}'
+      .row
+        .col-xs-12
+          .filters
+            / label Filters:
+            = react_component 'CmdpAdmin.Filters', {}, {id: 'filters'}
+          form.form-search
+            / label.search-label Search input:
+            input#order_input.input-medium.search-query type="text" placeholder= t('orders.index.placeholder.search_input') style="width: 720px;"
+            button#order_search.btn.btn-sm.btn-primary type="submit"  Search
+
+#orders_table
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th.sort data-id='order_no' = t('orders.index.thead.order_no')
+        th = t('orders.index.thead.cover_img')
+        th.sort data-id='aasm_state' = t('orders.index.thead.order_state')
+        th data-id='flags' = t('orders.index.thead.flags')
+        th.sort data-id='created_at' data-sort='desc' = t('orders.index.thead.order_created_at')
+        th.sort data-id='price' = t('orders.index.thead.order_amount_nt')
+        th.sort data-id='shipping_info_shipping_way' = t('orders.index.thead.ship')
+        th.sort data-id='shipping_info_country' = t('orders.index.thead.destination')
+        th = t('orders.index.thead.platform')
+    tbody#order_results
+
+#pagination

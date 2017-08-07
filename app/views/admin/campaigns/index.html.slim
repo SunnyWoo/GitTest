@@ -1,0 +1,39 @@
+- breadcrumb :admin_campaigns
+- admin_title t('campaigns.index.page_title')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-success'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered
+        thead
+          tr
+            th ID
+            th Key
+            th Name
+            th Title
+            th UpdatedAT
+            th CreatedAT
+            th
+        tbody
+          - @campaigns.each do |campaign|
+            tr
+              td= campaign.id
+              td= campaign.key
+              td= campaign.name
+              td= campaign.title
+              td= l campaign.updated_at, format: :long
+              td= l campaign.created_at, format: :long
+              td
+                .btn-group
+                  = link_to 'V2預覽', campaign_path(campaign.key), class: 'btn btn-success', target: '_blank'
+                  = link_to t('shared.form_actions.edit'), url_for([:edit, :admin, campaign]), class: 'btn btn-info'
+                  = link_to t('shared.form_actions.delete'), url_for([:admin, campaign]), class: 'btn btn-danger', data: { method: 'delete', confirm: 'Are you sure?' }
+                  = render partial: 'aasm_switch', locals: { resource: campaign, label: 'V3狀態' }
+
+= will_paginate @campaigns

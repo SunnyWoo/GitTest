@@ -1,0 +1,14 @@
+.crop-lists
+  .head
+    .prev-step data-target='#cropPanel'
+      i.overlays-img_addlayer_icon_back_normal
+    | Crops
+    .close-panel
+      i.overlays-img_addlayer_icon_cancel_normal
+  .components
+    - editor_crop_list.each do |hash|
+      - file, name = hash.values_at(:file, :name)
+      .obj data-type='crop' data-prop='crop' data-obj=file data-obj-name=name
+        i = image_tag("editor/crop_186px/#{name}.png")
+        / .name = name
+        .mask

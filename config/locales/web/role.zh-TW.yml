@@ -1,0 +1,73 @@
+zh-TW:
+  role:
+    factory_member:
+      index: 系統帳號列表
+      update: 更新帳號权限
+    factory_role_group:
+      index: 權限群組列表
+      create: 創建權限群組
+      update: 更新權限群組
+    imposition:
+      create: 新增拼板
+      update: 更新拼板
+      destory: 删除拼板
+      upload: 拼板上傳
+      download: 下載樣本
+      versions: 拼板歷史
+    note:
+      create: 新增留言
+      update: 編輯留言
+    order_item:
+      delivery_complete: 拋單完成
+      product_ticker: 商品貼紙
+    order:
+      package: 打包
+      express: 快遞公司
+      update_invoice: 發票編號
+      history: 訂單歷史
+      delivery_note_back: 出貨單背面
+      search: 搜索訂單
+      delivery_note: 訂單出貨單
+      schedule: 訂單處理進度
+      disable_schedule: 隐藏訂單處理進度
+    print_item:
+      sublimate: 熱轉印
+      print: 單一上傳
+      reprint: 重印
+      delayed: 遲到記錄
+      reprint_list: 重印記錄
+      download_img: 下載原圖
+      receive: 抛单确认完成
+      qualified_report: 質檢記錄
+      schedule: 商品處理進度
+      disable_schedule: 隐藏商品處理進度
+    product_model:
+      pick: 揀貨對應
+    shelf:
+      index: 倉儲貨架列表
+      create: 新增貨品
+      update: 編輯貨品
+      change: 取貨,盤點調整和調撥
+      stock: 上架
+      move: 移貨
+      activities: 倉儲貨架記錄
+      export_csv: 導出貨架CSV
+      restore: 反架
+      adjust: 盤點調整
+    temp_shelf:
+      create: 放入暫存區
+      update: 更新暫存區
+    shelf_material:
+      index: 物料清單
+      create: 新增物料
+      update: 編輯物料
+      stock: 物料補貨
+      adjust: 物料盤點
+      activities: 物料記錄
+    package:
+      index: 包裹搜尋
+      create: 打包
+      ship: 發貨
+      sf_express: 順豐訂單
+      sf_express_waybill: 順豐電子運單
+      delivery_note: 包裹出貨單

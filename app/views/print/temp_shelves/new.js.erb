@@ -1,0 +1,5 @@
+$('body').append("<%= j render 'modal', temp_shelf: @temp_shelf, print_item: @print_item %>");
+$('#temp_shelf_modal').modal('show');
+$('#temp_shelf_modal').on('hidden.bs.modal', function(e) {
+  $(e.target).remove();
+});

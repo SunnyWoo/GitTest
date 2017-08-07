@@ -1,0 +1,5 @@
+- user = activity.user
+- before, after = activity.extra_info[:state_change]
+div
+  | 將 #{logcraft_keyword "BatchFlow ID: #{activity.trackable_id}"} 的狀態
+  | 從 #{logcraft_keyword before} 變成 #{logcraft_keyword after} 了.

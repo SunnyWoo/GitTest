@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://218.17.248.244:11080/bsp-oisp/sfexpressService
+    body:
+      encoding: US-ASCII
+      string: xml=%3CRequest%20service%3D%22OrderService%22%20lang%3D%22zh-TW%22%3E%3CHead%3EWYWLKJ%3C%2FHead%3E%3CBody%3E%3COrder%20orderid%3D%221510269600012US%22%20mailno%3D%22%22%20express_type%3D%221%22%20j_company%3D%22%E6%88%91%E5%8D%B0%E7%B6%B2%E8%B7%AF%E7%A7%91%E6%8A%80%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%22%20j_contact%3D%22Saier%20Wang%22%20j_tel%3D%22886-02-2753-3555%22%20j_address%3D%22%E5%8F%B0%E5%8C%97%E5%B8%82%E6%9D%BE%E5%B1%B1%E5%8D%80%E5%8D%97%E4%BA%AC%E6%9D%B1%E8%B7%AF%E4%BA%94%E6%AE%B516%E8%99%9F3%E6%A8%93%22%20j_post_code%3D%22Saier%20Wang%22%20j_shippercode%3D%22886%22%20d_company%3D%22%22%20d_contact%3D%22Jamison%20Labadie%22%20d_tel%3D%22550-510-2669%22%20d_address%3D%22Taiwan%20Skilesville%206029%20Considine%20RidgesSuite%20885%22%20d_post_code%3D%2200439%22%20d_province%3D%22TaiWan%22%20d_city%3D%22Skilesville%22%20pay_method%3D%221%22%20parcel_quantity%3D%221%22%20declared_value%3D%220.0%22%20declared_value_currency%3D%22NTD%22%20custid%3D%228860425469%22%3E%3CCargo%20name%3D%22%E6%89%8B%E6%9C%BA%E5%A3%B3%22%20currency%3D%22NTD%22%20count%3D%220%22%20unit%3D%22%E4%B8%AA%22%20weight%3D%220.533%22%20source_area%3D%22%E4%B8%AD%E5%9B%BD%22%3E%3C%2FCargo%3E%3C%2FOrder%3E%3C%2FBody%3E%3C%2FRequest%3E&verifyCode=VMdFUk0PPP9G5yKpQWFt1g%3D%3D%0A
+    headers:
+      accept:
+      - "*/*; q=0.5, application/xml"
+      accept-encoding:
+      - gzip, deflate
+      content-length:
+      - '1287'
+      content-type:
+      - application/x-www-form-urlencoded
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache
+      content-type:
+      - text/xml;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Mon, 26 Oct 2015 09:29:38 GMT
+      set-cookie:
+      - BSP_CNSZ22_JBOSS_OISP=BSP_CNSZ22_JBOSS_OISP_84_178_8080; Path=/
+      connection:
+      - Keep-alive
+      via:
+      - 1.1 ID-0002262062176300 uproxy-6
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><Response service="OrderService"><Head>OK</Head><Body><OrderResponse
+        filter_result="2" mailno="444445937874" origincode="886" orderid="1510269600012US"/></Body></Response>
+    http_version: '1.1'
+  recorded_at: Mon, 26 Oct 2015 09:29:41 GMT
+- request:
+    method: post
+    uri: http://218.17.248.244:11080/bsp-oisp/sfexpressService
+    body:
+      encoding: US-ASCII
+      string: xml=%3CRequest%20service%3D%22OrderConfirmService%22%20lang%3D%22zh-TW%22%3E%3CHead%3EWYWLKJ%3C%2FHead%3E%3CBody%3E%3COrderConfirm%20orderid%3D%221510269600012US%22%20dealtype%3D%221%22%3E%3C%2FOrderConfirm%3E%3C%2FBody%3E%3C%2FRequest%3E&verifyCode=Gvcki715jmKsdbADv4qdXw%3D%3D%0A
+    headers:
+      accept:
+      - "*/*; q=0.5, application/xml"
+      accept-encoding:
+      - gzip, deflate
+      content-length:
+      - '281'
+      content-type:
+      - application/x-www-form-urlencoded
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - Apache-Coyote/1.1
+      cache-control:
+      - no-cache
+      content-type:
+      - text/xml;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      date:
+      - Mon, 26 Oct 2015 09:29:38 GMT
+      set-cookie:
+      - BSP_CNSZ22_JBOSS_OISP=BSP_CNSZ22_JBOSS_OISP_84_178_8080; Path=/
+      connection:
+      - Keep-alive
+      via:
+      - 1.1 ID-0002262062176300 uproxy-7
+    body:
+      encoding: UTF-8
+      string: <?xml version='1.0' encoding='UTF-8'?><Response service="OrderConfirmService"><Head>OK</Head><Body><OrderConfirmResponse
+        res_status="2" orderid="1510269600012US"/></Body></Response>
+    http_version: '1.1'
+  recorded_at: Mon, 26 Oct 2015 09:29:41 GMT
+recorded_with: VCR 2.9.2

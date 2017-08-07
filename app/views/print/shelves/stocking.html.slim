@@ -1,0 +1,21 @@
+.page-header
+  h1 上架
+= render 'print/shared/notice_bar'
+= simple_form_for @storage, url: stock_print_shelves_path(@storage),
+                  method: :put,
+                  html: {id: 'shelf_storage', class: 'form-horizontal'} do |f|
+  .col-xs-10
+    .form-inputs
+      = f.input :shelf_serial, input_html: {id: :shelf_serial}, label: t('storage.shelf_serial')
+    .form-inputs
+      = f.input :material_serial, input_html: {id: :material_serial}, label: t('storage.material_serial')
+    .form-inputs
+      = f.input :shelf_name, input_html: {id: :shelf_name, disabled: true}, label: t('storage.shelf_name')
+    .form-inputs
+      = f.input :material_name, input_html: {id: :material_name, disabled: true}, label: t('storage.material_name')
+    .form-inputs
+      = f.input :quantity, input_html: {id: :storage_quantity}, label: t('storage.quantity')
+    .form-inputs
+      = f.input :message, label: t('storage.message')
+    .form-actions
+      = f.button :submit, '上架', class: 'btn btn-primary'

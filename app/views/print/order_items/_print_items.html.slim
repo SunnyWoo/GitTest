@@ -1,0 +1,26 @@
+- print_items.each do |print_item|
+  - order = print_item.order_item.order
+  tr data-id="#{print_item.id}"
+    td
+      = render_order_shipper(order)
+      br
+      = order.remote_info['order_no']
+    td= print_item.id
+    td
+      = render_print_item_preview(print_item)
+      - if policy(PrintItem).download_img?
+        br
+        = link_to '下載原圖', print_item.print_image.url, class: 'btn btn-info', target: '_blank'
+    td = l print_item.prepare_at, format: :long
+    td = render_hours_from_target_time print_item.prepare_at
+    td = l order.created_at, format: :long
+    td = render_shipping_way(order.shipping_info.shipping_way)
+    td
+      - unless order.notes.empty?
+        = render 'print/notes/notes', noteable: order
+    td
+      - if print_item.pending?
+        = link_to "單一上傳", print_print_order_item_path(print_item),
+        class: "btn btn-primary btn-mini print_item_uploading", method: :patch, remote: true
+      - else
+        = link_to '重印', print_print_item_reprint_path(print_item.id, upload_fail: true), method: :patch, class: 'btn btn-danger', data: { confirm: '確定要重印？' }

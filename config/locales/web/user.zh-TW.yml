@@ -1,0 +1,33 @@
+zh-TW:
+  page:
+    user:
+      item_title: "我的帳戶"
+      profile: '我的個人資料'
+      address: '地址'
+      order_history: '訂單記錄'
+      my_gallery: '我的作品'
+      change_background: '變更背景圖'
+      log_out: 登出
+      need_help: '需要協助?'
+      need_help_text: '對你的訂單有問題?'
+      btns:
+        save: 儲存變更
+        edit: 編輯
+        delete: 刪除
+        add_new_address: 增加新地址
+        faq: 常見問題
+      thead:
+        order_no: 訂單編號
+        date: 日期
+        order_st: 訂單狀態
+        price: 售價
+      profile_attrs:
+        name: "姓名"
+        location: "地址"
+        gender: "性別"
+        gender_male: "男性"
+        gender_female: "女性"
+        gender_unspecified: "不指定"
+    work:
+      title: 開始印
+      del_confirm: 確定要刪除作品嗎？

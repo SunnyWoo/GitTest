@@ -1,0 +1,2 @@
+class OrderError < ApplicationError
+end

@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.weixin.qq.com/sns/userinfo?access_token=OezXcEiiBSKSxW&openid=osFwTuFLvlJLF
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      user-agent:
+      - Faraday v0.9.1
+      accept-encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.8.0
+      date:
+      - Mon, 31 Aug 2015 03:22:14 GMT
+      content-type:
+      - text/plain
+      content-length:
+      - '342'
+      connection:
+      - close
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJvcGVuaWQiOiJvc0Z3VHVGTHZsSkxGcVFya3NiQzA1SHdmNE1BIiwibmlj
+        a25hbWUiOiLkuIkiLCJzZXgiOjEsImxhbmd1YWdlIjoiemhfQ04iLCJjaXR5
+        IjoiSml1amlhbmciLCJwcm92aW5jZSI6IkppYW5neGkiLCJjb3VudHJ5Ijoi
+        Q04iLCJoZWFkaW1ndXJsIjoiaHR0cDpcL1wvd3gucWxvZ28uY25cL21tb3Bl
+        blwvZ25PeDJSWnlETnN4TjVnajZvYUJLa0RGRGNad3QwY2ljNVJtdHlSandn
+        WEYzTW82TndqTVZKdWFZZklPclVWaWJZRXJsOEgwOXZKM2J1Y29PVVVuc3RM
+        V2VZYU5SbW45R3NcLzAiLCJwcml2aWxlZ2UiOltdLCJ1bmlvbmlkIjoibzBY
+        QzN3U2NsWUwyMDFhMVZYZEFBbTFnUWVJMCJ9
+    http_version: '1.1'
+  recorded_at: Mon, 31 Aug 2015 03:22:21 GMT
+recorded_with: VCR 2.9.2

@@ -1,0 +1,40 @@
+- admin_title t('home_slides.index.page_title'), subtitle: t('home_slides.index.crumb.list')
+
+= render 'admin/home/nav', active: 'home_slides'
+
+.well.well-xs
+  h4 = t('home_slides.index.search_option')
+  = simple_form_for @search, url: admin_home_slides_path, method: :get do |f|
+    = f.label :is_enabled_eq, t('home_slides.index.search_attributes.enabled')
+    = f.select :is_enabled_eq, [['Y', true], ['N', false]]
+    = f.input :set_cont, label: t('home_slides.index.search_attributes.set')
+    br = f.button :submit, t('shared.form_actions.submit')
+
+.widget-box.widget-color-blue.ui-sortable-handle
+  .widget-header
+    h5.widget-title.bigger.lighter
+      = fa_icon 'table', class: 'ace-icon'
+    .widget-toolbar.no-border
+      .btn-group
+        = link_to t('shared.form_actions.new'), url_for(action: :new), class: 'btn btn-info btn-sm'
+  .widget-body
+    .widget-main.no-padding
+      table.table.table-striped.table-bordered.table-hover
+        thead
+          tr
+            th= sort_link @search, :id, t('home_slides.index.thead.id')
+            th = t('home_slides.index.thead.title')
+            th = t('home_slides.index.thead.link')
+            th = t('home_slides.index.thead.template')
+            th = t('home_slides.index.thead.set')
+            th = t('home_slides.index.thead.background')
+            th = t('home_slides.index.thead.slide')
+            th = t('home_slides.index.thead.enabled')
+            th = t('home_slides.index.thead.created_at')
+            th = t('home_slides.index.thead.priority')
+            th = t('home_slides.index.thead.operation')
+        tbody
+          = content_tag_for :tr, @resources do |mt|
+            = render mt
+
+= will_paginate @resources

@@ -1,0 +1,11 @@
+= f.simple_fields_for(Store::TextSettingsForm.new(f.object.settings), nil, defaults: { placeholder: false, hint: false }) do |cf|
+  = cf.input :font_name, as: :select, collection: collection_for_fonts_name, include_blank: false
+  = cf.input :font_text, as: :string, input_html: { value: 'Hello!!' }
+  = cf.input :max_font_size, as: :integer, input_html: { value: '150', min: 0 }
+  = cf.input :min_font_size, as: :hidden, input_html: { value: '150', min: 0 }
+  = cf.input :max_font_width, as: :integer, input_html: { value: '400', min: 0 }
+  = cf.input :position_x, as: :decimal, input_html: { value: '0' }
+  = cf.input :position_y, as: :decimal, input_html: { value: '0' }
+  = cf.input :rotation, as: :decimal, input_html: { value: '0' }
+  = cf.input :color, as: :minicolors, hint: I18n.t('store.forms.text_only.hint.color'),
+             input_html: { data: { minicolors: { theme: :bootstrap, position: :left } }, value: '#000000' }

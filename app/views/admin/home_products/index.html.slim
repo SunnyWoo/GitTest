@@ -1,0 +1,17 @@
+- admin_title t('home_products.sidebar_name')
+
+= render 'admin/home/nav', active: 'home_products'
+
+= form_tag admin_home_products_path, method: 'put' do
+  table.table
+    tbody
+      - @works.each_slice(3) do |slice|
+        tr
+          - slice.each do |work|
+            td
+              - if work
+                = text_field_tag 'ids[]', work.try(:id), data: { id: work.id, name: work.name, model: work.product_name }, class: 'form-control ids_input_token'
+              - else
+                = text_field_tag 'ids[]', nil, data: { id: nil, name: '空' }, class: 'form-control ids_input_token'
+
+  = submit_tag 'Submit', class: 'btn btn-primary'

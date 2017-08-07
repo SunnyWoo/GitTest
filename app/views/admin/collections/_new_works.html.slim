@@ -1,0 +1,38 @@
+.well
+  = simple_form_for @search, url: new_works_admin_collection_path(collection), method: 'get', html: { class: 'search-work-form' } do |f|
+    .row
+      .col-md-3
+        = f.input :user_of_Designer_type_display_name_cont, required: false, label: t('collections.works.search_options.designer')
+      .col-md-3
+        = f.input :product_id_eq, label: t('collections.works.search_options.product_model'),
+                  as: :grouped_select,
+                  collection: ProductCategory.all,
+                  group_method: :products,
+                  group_label_method: :name,
+                  label_method: :name,
+                  value_method: :id
+      .col-md-3
+        = f.input :name_cont, required: false, label: t('collections.works.search_options.work_name')
+      .col-md-3
+        = f.input :tags_translations_text_cont, required: false, label: t('collections.works.search_options.tag')
+      .col-md-12
+        = f.button :submit, t('shared.form_actions.submit'), class: 'pull-right'
+.widget-main.no-padding
+  = form_tag add_works_admin_collection_path(collection) do
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th= check_box_tag :all
+          th= t('collections.works.search_options.work_name')
+          th= t('collections.works.search_options.designer')
+          th= t('collections.works.search_options.product_model')
+          th= t('collections.works.search_options.tag')
+      tbody
+        - works.each do |work|
+          tr
+            td= check_box_tag 'work_ids[]', work.id
+            td= work.name
+            td= work.user_display_name
+            td= work.product_name
+            td= work.tag_names
+    =submit_tag t('collections.works.add_button'), class: 'btn btn-success pull-right'

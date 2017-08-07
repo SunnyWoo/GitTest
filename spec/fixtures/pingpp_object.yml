@@ -1,0 +1,86 @@
+--- !ruby/object:Pingpp::Charge
+retrieve_options: {}
+api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+values:
+  :id: ch_9W1Kq9qT0m10eXXb14H0qr5K
+  :object: charge
+  :created: 1449558590
+  :livemode: false
+  :paid: false
+  :refunded: false
+  :app: app_u9ujT414KeXTLaLO
+  :channel: alipay
+  :order_no: 1512088400018US
+  :client_ip: 0.0.0.0
+  :amount: 540000
+  :amount_settle: 0
+  :currency: cny
+  :subject: commandp 噗印商品
+  :body: commandp 噗印商品
+  :extra: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values: {}
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :time_paid: 
+  :time_expire: 1449644990
+  :time_settle: 
+  :transaction_no: 
+  :refunds: !ruby/object:Pingpp::ListObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values:
+      :object: list
+      :url: "/v1/charges/ch_9W1Kq9qT0m10eXXb14H0qr5K/refunds"
+      :has_more: false
+      :data: []
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :amount_refunded: 0
+  :failure_code: 
+  :failure_msg: 
+  :metadata: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values: {}
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :credential: !ruby/object:Pingpp::PingppObject
+    retrieve_options: {}
+    api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+    values:
+      :object: credential
+      :alipay_qr: http://sissi.pingxx.com/mock.php?ch_id=ch_Dqjjv1rDa58CrnbnT0mvPGW1&channel=alipay_qr
+      :alipay: !ruby/object:Pingpp::PingppObject
+        retrieve_options: {}
+        api_key: sk_test_yfHmj5iL0eLSW1ernDuvTGiL
+        values:
+          :orderInfo: _input_charset="utf-8"&body="commandp 噗印商品"&it_b_pay="2015-12-09
+            15:09:50"&notify_url="https%3A%2F%2Fapi.pingxx.com%2Fnotify%2Fcharges%2Fch_9W1Kq9qT0m10eXXb14H0qr5K"&out_trade_no="1512088400018US"&partner="2008471596487132"&payment_type="1"&seller_id="2008471596487132"&service="mobile.securitypay.pay"&subject="commandp
+            噗印商品"&total_fee="5400"&sign="ZW56TGkxYXoxbWJEWERlMUdHMUs4T2E1"&sign_type="RSA"
+        unsaved_values: !ruby/object:Set
+          hash: {}
+        transient_values: !ruby/object:Set
+          hash: {}
+        previous_metadata: 
+    unsaved_values: !ruby/object:Set
+      hash: {}
+    transient_values: !ruby/object:Set
+      hash: {}
+    previous_metadata: 
+  :description: 
+unsaved_values: !ruby/object:Set
+  hash: {}
+transient_values: !ruby/object:Set
+  hash: {}
+previous_metadata: {}
